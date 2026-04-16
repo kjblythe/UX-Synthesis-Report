@@ -58,17 +58,47 @@ Session log of misses, root causes, and fixes. Read at the start of every sessio
 
 ---
 
-## Standing rules (re-read before every session)
+## Session 2 — 2026-04-16 — Pass 2 fixes: nav, PDF, SEQ, chips
 
-1. Plan first (todo.md, approved before code).
-2. Content must fit the viewport; no overflow ever. Author against a content budget.
-3. No AI-slop card patterns. No left-border-card grids. No three-identical-cards.
-4. One focal point per slide. If the message takes >2 sec to grasp, simplify.
-5. No two consecutive slides share background or layout.
-6. Navigator must collapse and expand from both states with visible controls.
-7. PDF export must be a button (no reliance on browser print).
-8. Phone frames must look real (Dynamic Island, bezels, hardware buttons, squircle).
-9. Every data viz must reward interaction (hover/click/expand).
-10. Citation chips for every quantitative claim with a per-participant story.
-11. Verify at four viewports before declaring done: 1920, 1440, 1024, 390.
-12. Translate blueprint into slide-tight copy; don't transcribe paragraphs.
+### Miss: Overcorrected slide 2 — too sparse after trimming
+- **What:** Responding to "it overflows" from pass 1, I trimmed slide 2 copy down to one-line headlines + KPI pills. User flagged it swung too far — now nothing explains the findings.
+- **Root cause:** I treated "content budget" as a literal word-count minimization rather than a layout-fit constraint. The correct response to overflow is restructure, not amputate.
+- **Rule going forward:** content budget = what fits at target type sizes, not the absolute minimum. Split the difference: keep 1 supporting sentence per finding beyond the headline + KPIs. If it overflows, raise the info density via chips/popovers, not by deleting the context.
+
+### Miss: Citation chip content was shallow — mostly quote repetition
+- **What:** Chips opened to popovers that often repeated the same quote already on the slide. No new information value.
+- **Root cause:** I treated chips as "show the quote in more detail." They are "show the evidence BEHIND the claim." Two different jobs.
+- **Rule going forward:** A chip popover must deliver something the slide surface does NOT show: participant profile context (age/med/duration/tech-comfort/current app), the behavioral moment (what they did, where they looked, what they said unprompted), how it compares across the cohort, the WHY behind the inference. If a popover just restates a slide element, it's dead weight.
+- **Fix:** rewrite every chip to source from `spine.md`. For P-IDs: profile + current app + key moment. For n/7 ratios: list of WHO + a one-line behavioral note per participant. For findings: observation → inference → implication.
+
+### Miss: Used jargon ("CSS fix", "HTML") in business-stakeholder copy
+- **What:** Slide 6 and slide 2 finding 3 used "CSS fix — not a redesign." Technical audiences understand; BI business stakeholders see noise.
+- **Root cause:** Implementation vocabulary leaked into communication vocabulary.
+- **Rule going forward:** prefer "UI styling fix," "visual refinement," "visual polish" vs "foundational architecture issue," "structural redesign." Audience is business, not engineering.
+
+### Miss: Key claims not self-explanatory before clicking
+- **What:** "P07: lowest tech comfort, navigated everything" with a "[paradox]" chip was cryptic. The user has to click to understand why it matters.
+- **Root cause:** I front-loaded the chip as the explanation. A chip is supplemental depth — the slide must stand alone.
+- **Rule going forward:** every claim reads as a complete thought on the slide surface. The chip deepens; it does not define. Test: if I hide all the chips, does the slide still make sense?
+
+### Miss: SEQ slide data viz too static-looking; type too small; benchmark under-emphasized
+- **What:** The scale animates once on entry but still reads as a static image. Benchmark label is a small pill. Tick numbers, zone labels, and task labels are hard to read at production scale. When the breakdown expands, the scale shifts position (layout jump).
+- **Root cause:** Designed for 1920×1080 desktop at 1.0 scale, which everyone will only see at fractions. Also treated the benchmark and our-score as equal marks when the whole point is the distance between them.
+- **Rule going forward:** type calibration pass at the end of every session — no body label under 14px at native 1920 (renders ~10px at common viewport). The SEQ benchmark should read as "what we beat," not a passing landmark. Visual gap/bracket between the two markers telling the +0.9 story directly.
+- **Rule going forward:** any expansion that changes slide geometry should be animated in a reserved space — no "stage shifts up when you click".
+
+### Miss: Shipped without a fullscreen / present-mode affordance
+- **What:** No way to go fullscreen and hide browser chrome. Expected for any presentation tool.
+- **Fix:** Fullscreen button in the top bar + `F` keyboard shortcut, uses Fullscreen API.
+
+---
+
+## Session-2 additions to standing rules
+
+13. No jargon on slide surfaces (CSS/HTML/frontend terms). Translate to audience vocabulary.
+14. Chip popovers deliver new information (context, cohort breakdown, behavioral moment) — never repeat slide content.
+15. Every slide claim must be self-explanatory without the chip. Chip = deeper dive, not the punchline.
+16. Type scale calibrated for rendered size, not 1920 native. Minimum 14px for labels, 17-19px for body, at 1920.
+17. Any interactive expansion must reserve its space — no layout jump when opening/closing panels.
+18. Fullscreen / present mode is table stakes; add it upfront, not as a polish task.
+
