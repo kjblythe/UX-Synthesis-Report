@@ -1,0 +1,1843 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>GLP-1 Support App — Pre-Pilot Usability Testing Results</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,500;1,9..144,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<style id="tokens">
+:root {
+  /* forest greens */
+  --forest-deep: #062823;
+  --forest-base: #0A3B35;
+  --forest-mid:  #0F4A42;
+  --forest-rim:  #1A5A50;
+  --forest-veil: rgba(10, 59, 53, 0.92);
+
+  /* accents */
+  --teal-700: #0D9488;
+  --teal-500: #14B8A6;
+  --teal-400: #2DD4BF;
+  --teal-300: #5EEAD4;
+  --mint:     #34EEA7;
+  --mint-glow: rgba(52, 238, 167, 0.35);
+
+  /* warning / status */
+  --gold:     #F59E0B;
+  --gold-soft:#FBBF24;
+  --coral:    #EF4444;
+  --success:  #10B981;
+
+  /* paper (light slides) */
+  --paper:      #F7F1E5;
+  --paper-deep: #EBE3D1;
+  --paper-rim:  #D9CFB7;
+
+  /* ink (text on light) */
+  --ink:      #0A1A1C;
+  --ink-2:    #22333A;
+  --ink-mute: #4A5558;
+  --ink-dim:  #7A858A;
+
+  /* text on dark */
+  --on-dark:     #F5F2EA;
+  --on-dark-dim: #94A3B8;
+  --on-dark-mute:#6C7A7E;
+
+  /* glass surfaces on dark */
+  --glass-1: rgba(255,255,255,0.05);
+  --glass-2: rgba(255,255,255,0.08);
+  --glass-3: rgba(255,255,255,0.12);
+  --glass-rim: rgba(255,255,255,0.10);
+
+  /* type */
+  --f-display: "Sora", system-ui, sans-serif;
+  --f-body:    "Sora", system-ui, sans-serif;
+  --f-serif:   "Fraunces", Georgia, serif;
+  --f-mono:    "JetBrains Mono", ui-monospace, monospace;
+
+  /* scale (at 1920x1080 reference) */
+  --sz-eyebrow: 13px;
+  --sz-meta:    15px;
+  --sz-body:    19px;
+  --sz-lead:    22px;
+  --sz-h3:      26px;
+  --sz-h2:      34px;
+  --sz-h1:      52px;
+  --sz-display: 88px;
+
+  /* motion */
+  --ease-out: cubic-bezier(.22,.61,.36,1);
+  --ease-in-out: cubic-bezier(.65,.05,.36,1);
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  font-family: var(--f-body);
+  background: #050a0c;
+  color: var(--on-dark);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+  font-feature-settings: "ss01", "cv01";
+}
+button { font-family: inherit; }
+</style>
+
+<style id="shell">
+#app {
+  display: grid;
+  grid-template-columns: 256px 1fr;
+  grid-template-rows: 100vh;
+  width: 100vw; height: 100vh;
+  transition: grid-template-columns 320ms var(--ease-out);
+  background: #050a0c;
+}
+#app.nav-collapsed { grid-template-columns: 0 1fr; }
+#app.nav-collapsed #navigator { transform: translateX(-100%); opacity: 0; pointer-events: none; }
+
+/* NAVIGATOR */
+.nav-panel {
+  background: #071a1f;
+  border-right: 1px solid rgba(255,255,255,0.06);
+  padding: 28px 18px 18px 18px;
+  overflow-y: auto;
+  transition: transform 320ms var(--ease-out), opacity 200ms ease;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255,255,255,0.12) transparent;
+}
+.nav-panel::-webkit-scrollbar { width: 6px; }
+.nav-panel::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 3px; }
+.nav-header {
+  display: flex; align-items: center; gap: 10px;
+  padding-bottom: 18px; margin-bottom: 18px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.nav-header .mark { width: 36px; height: auto; opacity: 0.95; }
+.nav-header .label {
+  font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--on-dark-dim); font-weight: 500;
+}
+.nav-section {
+  font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--teal-300); font-weight: 600;
+  padding: 16px 4px 8px 4px;
+}
+.nav-item {
+  display: flex; align-items: flex-start; gap: 10px;
+  width: 100%; padding: 10px 10px 10px 10px;
+  background: transparent; border: 1px solid transparent;
+  color: var(--on-dark-dim); text-align: left; cursor: pointer;
+  border-radius: 10px;
+  transition: background 160ms ease, color 160ms ease, border-color 160ms ease;
+}
+.nav-item:hover { background: rgba(255,255,255,0.03); color: var(--on-dark); }
+.nav-item.active {
+  background: rgba(52, 238, 167, 0.06);
+  border-color: rgba(52, 238, 167, 0.25);
+  color: var(--on-dark);
+}
+.nav-item.active .nav-num { color: var(--mint); }
+.nav-num {
+  font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.02em;
+  color: var(--on-dark-mute); min-width: 22px; padding-top: 2px;
+}
+.nav-thumb {
+  flex: 1; display: flex; flex-direction: column; gap: 6px;
+}
+.nav-thumb-preview {
+  width: 100%; aspect-ratio: 16/9; border-radius: 4px;
+  background: var(--forest-base);
+  overflow: hidden; position: relative;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+.nav-thumb-title {
+  font-size: 12px; line-height: 1.35; font-weight: 500;
+  color: inherit;
+}
+
+/* NAV TOGGLE */
+.nav-toggle {
+  position: fixed; top: 14px; left: 14px;
+  width: 36px; height: 36px; border-radius: 10px;
+  background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+  color: var(--on-dark); cursor: pointer; z-index: 50;
+  display: none; align-items: center; justify-content: center;
+  font-size: 18px; line-height: 1;
+}
+#app.nav-collapsed .nav-toggle { display: flex; }
+
+/* STAGE */
+.stage {
+  position: relative;
+  background: #050a0c;
+  overflow: hidden;
+}
+.progress {
+  position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: rgba(255,255,255,0.06); z-index: 20;
+}
+.progress-bar {
+  height: 100%; background: linear-gradient(90deg, var(--teal-500), var(--mint));
+  width: 16.6%;
+  transition: width 400ms var(--ease-out);
+}
+.canvas-wrap {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  padding: 48px 48px 100px 48px;
+}
+.canvas {
+  width: 1920px; height: 1080px;
+  position: relative;
+  transform-origin: center center;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--forest-base);
+  box-shadow: 0 30px 80px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.03);
+}
+.controls {
+  position: absolute; bottom: 24px; left: 0; right: 0;
+  display: flex; align-items: center; justify-content: center; gap: 20px;
+  z-index: 15;
+}
+.ctrl {
+  width: 44px; height: 44px; border-radius: 12px;
+  background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+  color: var(--on-dark); cursor: pointer;
+  font-size: 18px; display: inline-flex; align-items: center; justify-content: center;
+  transition: background 160ms ease, transform 160ms ease, border-color 160ms ease;
+}
+.ctrl:hover { background: rgba(52, 238, 167, 0.10); border-color: rgba(52, 238, 167, 0.4); transform: translateY(-1px); }
+.ctrl:disabled { opacity: 0.35; cursor: not-allowed; transform: none; }
+.counter {
+  font-family: var(--f-mono); font-size: 12px; color: var(--on-dark-dim);
+  letter-spacing: 0.12em;
+}
+</style>
+
+<style id="slides">
+/* ============ SLIDE FRAME ============ */
+.slide {
+  position: absolute; inset: 0;
+  opacity: 0; pointer-events: none;
+  transition: opacity 380ms var(--ease-out);
+  overflow: hidden;
+}
+.slide.active { opacity: 1; pointer-events: auto; }
+
+.slide-frame {
+  position: absolute; inset: 0;
+  padding: 88px 112px 72px 112px;
+  display: flex; flex-direction: column;
+}
+
+.slide-dark {
+  background:
+    radial-gradient(1400px 900px at 85% 12%, rgba(20, 184, 166, 0.08), transparent 60%),
+    radial-gradient(1200px 800px at 10% 100%, rgba(6, 40, 35, 0.9), transparent 55%),
+    linear-gradient(180deg, #0C433C 0%, #0A3B35 60%, #062823 100%);
+  color: var(--on-dark);
+}
+.slide-paper {
+  background:
+    radial-gradient(1200px 900px at 90% 110%, rgba(20, 184, 166, 0.05), transparent 60%),
+    radial-gradient(900px 700px at 10% 0%, rgba(235, 227, 209, 0.55), transparent 60%),
+    var(--paper);
+  color: var(--ink);
+}
+.slide-paper-tinted {
+  background:
+    radial-gradient(900px 700px at 78% 28%, rgba(94, 234, 212, 0.28), transparent 55%),
+    radial-gradient(700px 600px at 8% 95%, rgba(52, 238, 167, 0.08), transparent 55%),
+    var(--paper);
+  color: var(--ink);
+}
+.slide-data-stage {
+  background:
+    radial-gradient(800px 520px at 70% 52%, rgba(52, 238, 167, 0.18), transparent 60%),
+    radial-gradient(1000px 800px at 10% 10%, rgba(20, 184, 166, 0.08), transparent 55%),
+    linear-gradient(180deg, #0B4039 0%, #0A3B35 55%, #072E29 100%);
+  color: var(--on-dark);
+}
+
+/* noise overlay */
+.slide-dark::before, .slide-data-stage::before {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.06 0'/></filter><rect width='220' height='220' filter='url(%23n)'/></svg>");
+  opacity: 0.55; mix-blend-mode: overlay;
+}
+.slide-paper::before, .slide-paper-tinted::before {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.18 0 0 0 0 0.15 0 0 0 0 0.1 0 0 0 0.05 0'/></filter><rect width='220' height='220' filter='url(%23n)'/></svg>");
+  opacity: 0.7; mix-blend-mode: multiply;
+}
+
+/* ============ BADGES / TEXT PRIMITIVES ============ */
+.eyebrow {
+  font-size: var(--sz-eyebrow); font-weight: 500;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--teal-400);
+  display: inline-flex; align-items: center; gap: 14px;
+}
+.slide-paper .eyebrow, .slide-paper-tinted .eyebrow { color: var(--teal-700); }
+.eyebrow::before {
+  content: ""; width: 28px; height: 1px; background: currentColor; opacity: 0.7;
+}
+
+.h1 {
+  font-family: var(--f-display);
+  font-size: var(--sz-h1); font-weight: 700;
+  line-height: 1.04; letter-spacing: -0.025em;
+  margin: 0;
+}
+.h2 {
+  font-family: var(--f-display);
+  font-size: var(--sz-h2); font-weight: 600;
+  line-height: 1.15; letter-spacing: -0.012em;
+  margin: 0;
+}
+.h3 {
+  font-family: var(--f-display);
+  font-size: var(--sz-h3); font-weight: 600;
+  line-height: 1.25; letter-spacing: -0.005em;
+  margin: 0;
+}
+.lead {
+  font-size: var(--sz-lead); line-height: 1.5; font-weight: 400;
+  color: inherit;
+}
+.body {
+  font-size: var(--sz-body); line-height: 1.55; font-weight: 400;
+}
+.muted-dark { color: var(--on-dark-dim); }
+.muted-light { color: var(--ink-mute); }
+.stress { color: var(--mint); font-weight: 500; }
+.stress-ink { color: var(--teal-700); font-weight: 600; }
+
+/* ============ SLIDE FOOTER ============ */
+.slide-foot {
+  position: absolute; left: 112px; right: 112px; bottom: 40px;
+  display: flex; align-items: center; justify-content: space-between;
+  font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+  font-weight: 500;
+}
+.slide-foot::before {
+  content: ""; position: absolute; left: 0; right: 0; top: -18px; height: 1px;
+  background: rgba(255,255,255,0.08);
+}
+.slide-paper .slide-foot::before, .slide-paper-tinted .slide-foot::before {
+  background: rgba(10,26,28,0.12);
+}
+.slide-foot .foot-left { display: flex; align-items: center; gap: 14px; }
+.slide-foot .foot-left .mark { width: 42px; height: auto; }
+.slide-paper .slide-foot .foot-left .mark path,
+.slide-paper-tinted .slide-foot .foot-left .mark path { fill: var(--ink); }
+.slide-foot .foot-internal { color: var(--on-dark-mute); }
+.slide-paper .slide-foot .foot-internal, .slide-paper-tinted .slide-foot .foot-internal { color: var(--ink-dim); }
+.slide-foot .foot-page { color: var(--on-dark-dim); font-family: var(--f-mono); letter-spacing: 0.08em; }
+.slide-paper .slide-foot .foot-page, .slide-paper-tinted .slide-foot .foot-page { color: var(--ink-mute); }
+
+/* ============ SLIDE 1 — TITLE ============ */
+.s1 .title-topbar {
+  display: flex; justify-content: space-between; align-items: flex-start;
+  z-index: 3;
+}
+.s1 .bix-mark { width: 128px; height: auto; }
+.s1 .top-meta {
+  text-align: right; font-size: 15px; line-height: 1.5; color: var(--on-dark-dim);
+}
+.s1 .top-meta .strong { color: var(--teal-300); font-weight: 500; display: block; }
+.s1 .title-body {
+  position: absolute; left: 112px; right: 112px; bottom: 160px;
+  z-index: 3;
+}
+.s1 .title-eyebrow {
+  font-size: 13px; letter-spacing: 0.24em; text-transform: uppercase;
+  color: var(--teal-300); font-weight: 500;
+  margin-bottom: 32px;
+}
+.s1 .title-main {
+  font-family: var(--f-display);
+  font-weight: 700; font-size: 122px; line-height: 0.98;
+  letter-spacing: -0.035em;
+  color: var(--on-dark);
+  max-width: 1420px;
+}
+.s1 .title-accent {
+  color: var(--mint);
+  display: block;
+}
+.s1 .title-sub {
+  margin-top: 36px;
+  font-family: var(--f-serif);
+  font-style: italic; font-weight: 400;
+  font-size: 32px; line-height: 1.35;
+  color: var(--teal-300);
+  letter-spacing: -0.005em;
+  max-width: 900px;
+}
+.s1 .title-meta {
+  margin-top: 28px;
+  font-size: 15px; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--on-dark-dim); font-weight: 500;
+}
+.s1 .title-meta .sep {
+  display: inline-block; width: 4px; height: 4px; border-radius: 50%;
+  background: var(--teal-400); margin: 0 14px 4px 14px; vertical-align: middle;
+}
+.s1 .x-watermark {
+  position: absolute;
+  right: -240px; top: -140px;
+  width: 1500px; height: 1250px;
+  opacity: 0.22; z-index: 1;
+  pointer-events: none;
+}
+.s1 .x-watermark path {
+  stroke: var(--teal-300);
+  stroke-width: 2.2;
+  fill: none;
+}
+.s1 .x-watermark-2 {
+  position: absolute;
+  left: -420px; bottom: -420px;
+  width: 900px; height: 760px;
+  opacity: 0.08; z-index: 1;
+  pointer-events: none;
+  transform: rotate(180deg);
+}
+.s1 .x-watermark-2 path {
+  stroke: var(--teal-400); stroke-width: 2; fill: none;
+}
+
+/* ============ SLIDE 2 — EXECUTIVE SUMMARY ============ */
+.s2 .exec-grid {
+  display: grid;
+  grid-template-columns: 540px 1fr;
+  gap: 96px;
+  margin-top: 58px;
+  flex: 1;
+}
+.s2 .exec-context h1 {
+  font-size: 56px; font-weight: 700; line-height: 1.02;
+  letter-spacing: -0.028em;
+  color: var(--ink);
+  margin: 0 0 28px 0;
+}
+.s2 .exec-context h1 .ital {
+  font-family: var(--f-serif); font-style: italic; font-weight: 500;
+  color: var(--teal-700);
+}
+.s2 .exec-context p {
+  font-size: 17px; line-height: 1.62; color: var(--ink-mute);
+  margin: 0 0 20px 0;
+  max-width: 500px;
+}
+.s2 .exec-context .tagline {
+  margin-top: 28px;
+  font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--teal-700); font-weight: 600;
+  display: flex; align-items: center; gap: 12px;
+}
+.s2 .exec-context .tagline::before {
+  content: ""; width: 28px; height: 1px; background: var(--teal-700);
+}
+.s2 .findings {
+  display: flex; flex-direction: column; gap: 0;
+  border-top: 1px solid rgba(10,26,28,0.15);
+}
+.s2 .finding {
+  display: grid; grid-template-columns: 92px 1fr;
+  gap: 28px;
+  padding: 26px 0 28px 0;
+  border-bottom: 1px solid rgba(10,26,28,0.12);
+}
+.s2 .finding-num {
+  font-family: var(--f-display);
+  font-size: 46px; font-weight: 700;
+  color: var(--teal-700);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  position: relative;
+  top: -4px;
+  font-variant-numeric: tabular-nums;
+}
+.s2 .finding-body h3 {
+  font-size: 24px; font-weight: 600; line-height: 1.25;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  margin: 0 0 10px 0;
+}
+.s2 .finding-body h3 .hl { color: var(--teal-700); }
+.s2 .finding-body p {
+  font-size: 15.5px; line-height: 1.58;
+  color: var(--ink-mute);
+  margin: 0;
+  max-width: 820px;
+}
+.s2 .finding-body .kpi {
+  display: inline-flex; align-items: baseline; gap: 6px;
+  margin-top: 12px;
+  font-family: var(--f-mono); font-size: 13px;
+  color: var(--teal-700);
+  letter-spacing: 0.02em;
+}
+.s2 .finding-body .kpi .dot {
+  width: 6px; height: 6px; border-radius: 50%; background: var(--mint);
+  display: inline-block; margin-right: 8px; transform: translateY(-1px);
+}
+
+/* ============ SLIDE 3 — ANCHOR QUOTE ============ */
+.s3 .quote-wrap {
+  flex: 1; display: grid; grid-template-columns: 1fr 400px;
+  gap: 80px; align-items: center; margin-top: 40px;
+}
+.s3 .quote-block {
+  position: relative;
+  padding-left: 10px;
+}
+.s3 .quote-mark {
+  position: absolute;
+  left: -36px; top: -110px;
+  font-family: var(--f-serif);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 340px;
+  line-height: 1; color: var(--mint);
+  opacity: 0.75;
+  user-select: none;
+}
+.s3 .quote-eyebrow {
+  position: relative; z-index: 2;
+  margin-bottom: 28px;
+  color: var(--teal-300);
+}
+.s3 .quote-text {
+  position: relative; z-index: 2;
+  font-family: var(--f-serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 72px;
+  line-height: 1.16;
+  letter-spacing: -0.015em;
+  color: var(--on-dark);
+  margin: 0;
+  max-width: 1000px;
+}
+.s3 .quote-text .hl {
+  color: var(--teal-300);
+  font-style: italic;
+}
+.s3 .attribution {
+  margin-top: 48px;
+  display: flex; align-items: baseline; gap: 22px;
+}
+.s3 .attribution .ident {
+  font-family: var(--f-display); font-size: 28px; font-weight: 600;
+  color: var(--mint);
+  letter-spacing: 0.01em;
+}
+.s3 .attribution .context {
+  color: var(--on-dark-dim);
+  font-size: 15px;
+  letter-spacing: 0.06em;
+  font-weight: 500;
+}
+
+/* DOVETAIL CLIP */
+.clip-card {
+  position: relative;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.09);
+  border-radius: 18px;
+  padding: 22px;
+  backdrop-filter: blur(12px);
+  transition: transform 220ms var(--ease-out), border-color 220ms ease, background 220ms ease;
+  cursor: pointer;
+}
+.clip-card:hover {
+  transform: translateY(-2px);
+  background: rgba(52, 238, 167, 0.05);
+  border-color: rgba(52, 238, 167, 0.30);
+}
+.clip-thumb {
+  aspect-ratio: 16/9;
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(300px 180px at 50% 50%, rgba(52,238,167,0.15), transparent 65%),
+    linear-gradient(135deg, #0A3B35 0%, #062823 100%);
+  border: 1px solid rgba(255,255,255,0.08);
+  margin-bottom: 16px;
+}
+.clip-thumb::after {
+  content: "";
+  position: absolute; inset: 0;
+  background-image:
+    repeating-linear-gradient(90deg, rgba(94,234,212,0.08) 0 1px, transparent 1px 6px);
+  opacity: 0.7;
+}
+.clip-waveform {
+  position: absolute;
+  left: 20px; right: 20px; bottom: 16px;
+  height: 36px;
+  display: flex; align-items: flex-end; gap: 3px;
+}
+.clip-waveform span {
+  flex: 1; background: rgba(94,234,212,0.5);
+  border-radius: 1px;
+}
+.clip-play {
+  position: absolute; left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+  width: 54px; height: 54px; border-radius: 50%;
+  background: var(--mint);
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 8px 24px rgba(52, 238, 167, 0.35);
+}
+.clip-play::after {
+  content: "";
+  width: 0; height: 0;
+  border-left: 16px solid var(--forest-deep);
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  margin-left: 4px;
+}
+.clip-meta {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 10px;
+  font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase;
+  font-weight: 500;
+}
+.clip-meta .pid { color: var(--mint); }
+.clip-meta .ts { color: var(--on-dark-dim); font-family: var(--f-mono); letter-spacing: 0.06em; }
+.clip-label {
+  font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--on-dark-mute); font-weight: 500;
+  display: flex; align-items: center; gap: 8px; margin-bottom: 10px;
+}
+.clip-label .rec-dot {
+  width: 7px; height: 7px; border-radius: 50%; background: var(--coral);
+  box-shadow: 0 0 10px rgba(239,68,68,0.6);
+}
+.clip-quote {
+  font-family: var(--f-serif); font-style: italic; font-weight: 400;
+  font-size: 15px; line-height: 1.4;
+  color: var(--on-dark);
+}
+
+/* ============ SLIDE 4 — SEQ EXPLAINER ============ */
+.s4 .seq-grid {
+  display: grid; grid-template-columns: 460px 1fr;
+  gap: 80px; flex: 1;
+  margin-top: 40px; align-items: center;
+}
+.s4 .seq-left h1 {
+  font-family: var(--f-display); font-weight: 700;
+  font-size: 60px; line-height: 1.02; letter-spacing: -0.028em;
+  color: var(--on-dark); margin: 22px 0 24px 0;
+}
+.s4 .seq-left h1 .hl { color: var(--mint); font-variant-numeric: tabular-nums; }
+.s4 .seq-left p {
+  font-size: 16px; line-height: 1.62;
+  color: var(--on-dark-dim);
+  margin: 0 0 18px 0; max-width: 420px;
+}
+.s4 .seq-source {
+  margin-top: 20px;
+  font-family: var(--f-mono); font-size: 11px;
+  color: var(--on-dark-mute); letter-spacing: 0.04em;
+}
+.s4 .seq-stage { position: relative; padding: 20px 40px 60px 40px; }
+.s4 .seq-scale { position: relative; height: 420px; }
+.s4 .seq-track {
+  position: absolute; left: 30px; right: 30px; top: 240px;
+  height: 40px; border-radius: 20px; overflow: hidden;
+  background: linear-gradient(90deg,
+    rgba(239, 68, 68, 0.35) 0%,
+    rgba(239, 68, 68, 0.35) 22%,
+    rgba(245, 158, 11, 0.35) 35%,
+    rgba(245, 158, 11, 0.35) 58%,
+    rgba(16, 185, 129, 0.4) 72%,
+    rgba(52, 238, 167, 0.55) 100%);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+.s4 .seq-ticks {
+  position: absolute; left: 30px; right: 30px; top: 300px;
+  display: flex; justify-content: space-between;
+}
+.s4 .seq-tick { display: flex; flex-direction: column; align-items: center; gap: 10px; width: 30px; }
+.s4 .seq-tick::before { content: ""; width: 1px; height: 14px; background: rgba(255,255,255,0.2); }
+.s4 .seq-tick-num { font-family: var(--f-mono); font-size: 13px; color: var(--on-dark-dim); font-variant-numeric: tabular-nums; }
+.s4 .seq-zones {
+  position: absolute; left: 30px; right: 30px; top: 196px;
+  display: flex;
+  font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 500;
+}
+.s4 .seq-zone { padding-bottom: 8px; border-bottom: 1px solid currentColor; text-align: center; }
+.s4 .seq-zone.zone-hard { color: rgba(239,68,68,0.85); flex-basis: 33.33%; }
+.s4 .seq-zone.zone-avg  { color: rgba(245,158,11,0.95); flex-basis: 33.33%; }
+.s4 .seq-zone.zone-easy { color: var(--mint); flex-basis: 33.33%; }
+.s4 .seq-benchmark {
+  position: absolute; top: 170px; bottom: 80px; width: 2px;
+  background: repeating-linear-gradient(180deg, rgba(255,255,255,0.45) 0 6px, transparent 6px 12px);
+}
+.s4 .seq-benchmark-tag {
+  position: absolute; bottom: -58px; left: 50%; transform: translateX(-50%);
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  backdrop-filter: blur(10px);
+  padding: 10px 14px; border-radius: 10px; white-space: nowrap;
+  font-size: 12px; letter-spacing: 0.08em; color: var(--on-dark-dim); text-align: center;
+}
+.s4 .seq-benchmark-tag .val {
+  display: block; font-family: var(--f-display); font-weight: 600;
+  color: var(--on-dark); font-size: 18px; letter-spacing: 0;
+  font-variant-numeric: tabular-nums; margin-bottom: 2px;
+}
+.s4 .seq-ours {
+  position: absolute; top: 100px; bottom: 30px; width: 3px;
+  background: linear-gradient(180deg, var(--mint), rgba(52,238,167,0.0));
+  opacity: 0;
+  transition: opacity 400ms ease, left 1100ms var(--ease-out);
+}
+.s4.active .seq-ours { opacity: 1; }
+.s4 .seq-ours-tag {
+  position: absolute; top: -140px; left: 50%; transform: translateX(-50%);
+  display: flex; flex-direction: column; align-items: center; gap: 6px;
+}
+.s4 .seq-ours-tag .label {
+  font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--mint); font-weight: 600;
+}
+.s4 .seq-ours-tag .big {
+  font-family: var(--f-display); font-weight: 700;
+  font-size: 110px; line-height: 1; color: var(--mint);
+  font-variant-numeric: tabular-nums; letter-spacing: -0.02em;
+  filter: drop-shadow(0 8px 28px rgba(52,238,167,0.35));
+}
+.s4 .seq-ours-tag .of {
+  font-family: var(--f-display); font-weight: 400;
+  font-size: 26px; color: var(--on-dark-dim);
+  letter-spacing: 0.04em; font-variant-numeric: tabular-nums;
+}
+.s4 .seq-ours::before {
+  content: ""; position: absolute; left: 50%; top: 0;
+  transform: translate(-50%, -50%);
+  width: 18px; height: 18px; border-radius: 50%;
+  background: var(--mint);
+  box-shadow: 0 0 0 6px rgba(52,238,167,0.15), 0 0 24px rgba(52,238,167,0.6);
+}
+.s4 .seq-compared {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-top: 72px; padding-top: 28px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+.s4 .seq-compared .cmp-row {
+  display: flex; align-items: baseline; gap: 18px;
+  font-size: 14px; color: var(--on-dark-dim);
+}
+.s4 .seq-compared .cmp-row .num {
+  font-family: var(--f-display); font-weight: 600; font-size: 22px;
+  color: var(--on-dark); font-variant-numeric: tabular-nums;
+  letter-spacing: 0.01em; min-width: 52px;
+}
+.s4 .seq-compared .cmp-row .num.mint { color: var(--mint); }
+
+/* ============ SLIDE 5 — PHOTO MEAL LOGGING ============ */
+.s5 .meal-grid {
+  display: grid; grid-template-columns: 420px 1fr;
+  gap: 80px; flex: 1;
+  margin-top: 26px; align-items: center;
+}
+.s5 .meal-phone-wrap {
+  display: flex; justify-content: center; align-items: center;
+  position: relative;
+}
+.s5 .meal-right { display: flex; flex-direction: column; gap: 24px; }
+.s5 .meal-headline {
+  font-family: var(--f-display); font-weight: 700;
+  font-size: 50px; line-height: 1.02;
+  letter-spacing: -0.025em;
+  color: var(--ink);
+  margin: 10px 0 0 0; max-width: 760px;
+}
+.s5 .meal-headline .hl {
+  font-family: var(--f-serif); font-style: italic; font-weight: 500;
+  color: var(--teal-700);
+}
+.s5 .meal-stat-row {
+  display: flex; align-items: flex-end; gap: 56px;
+  padding: 16px 0 20px 0;
+  border-top: 1px solid rgba(10,26,28,0.12);
+  border-bottom: 1px solid rgba(10,26,28,0.12);
+}
+.s5 .meal-stat { display: flex; flex-direction: column; gap: 4px; }
+.s5 .meal-stat .n {
+  font-family: var(--f-display); font-weight: 700;
+  font-size: 96px; line-height: 0.9; color: var(--teal-700);
+  font-variant-numeric: tabular-nums; letter-spacing: -0.03em;
+}
+.s5 .meal-stat .label {
+  font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--ink-mute); font-weight: 500;
+}
+.s5 .meal-stat.sm .n { font-size: 44px; color: var(--ink); }
+.s5 .meal-quotes { display: flex; flex-direction: column; gap: 16px; }
+.s5 .meal-quote { position: relative; padding-left: 30px; }
+.s5 .meal-quote::before {
+  content: "\201C";
+  position: absolute; left: -6px; top: -18px;
+  font-family: var(--f-serif); font-style: italic; font-weight: 500;
+  font-size: 58px; color: var(--teal-400); line-height: 1;
+}
+.s5 .meal-quote blockquote {
+  margin: 0;
+  font-family: var(--f-serif); font-style: italic; font-weight: 400;
+  font-size: 21px; line-height: 1.38; color: var(--ink);
+}
+.s5 .meal-quote cite {
+  display: block; margin-top: 4px;
+  font-family: var(--f-display); font-style: normal;
+  font-size: 11.5px; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--teal-700); font-weight: 600;
+}
+.s5 .meal-insight {
+  display: flex; align-items: flex-start; gap: 14px;
+  padding: 16px 20px;
+  background: rgba(20, 184, 166, 0.06);
+  border-radius: 12px;
+  border: 1px solid rgba(20, 184, 166, 0.18);
+}
+.s5 .meal-insight .spark {
+  width: 26px; height: 26px; flex: 0 0 26px; border-radius: 50%;
+  background: var(--teal-700); color: var(--paper);
+  font-weight: 700; display: flex; align-items: center; justify-content: center;
+  font-size: 13px; margin-top: 1px;
+}
+.s5 .meal-insight p { margin: 0; font-size: 14px; line-height: 1.5; color: var(--ink-2); }
+.s5 .meal-insight strong { color: var(--teal-700); font-weight: 600; }
+
+/* ============ SLIDE 6 — FINDING 1 ============ */
+.s6 .f1-grid {
+  display: grid; grid-template-columns: 420px 1fr;
+  gap: 80px; flex: 1;
+  margin-top: 28px; position: relative;
+}
+.s6 .f1-phone-col {
+  display: flex; justify-content: center; align-items: flex-start;
+  position: relative; padding-top: 8px;
+}
+.s6 .f1-right { display: flex; flex-direction: column; gap: 20px; padding-top: 8px; }
+.s6 .f1-headline {
+  font-family: var(--f-display); font-weight: 700;
+  font-size: 46px; line-height: 1.03; letter-spacing: -0.022em;
+  color: var(--on-dark); margin: 10px 0 0 0; max-width: 900px;
+}
+.s6 .f1-headline .hl {
+  font-family: var(--f-serif); font-style: italic; font-weight: 500;
+  color: var(--teal-300);
+}
+.s6 .f1-lead {
+  font-size: 16px; line-height: 1.55;
+  color: var(--on-dark-dim);
+  max-width: 780px; margin: 0;
+}
+.s6 .f1-callouts {
+  margin-top: 10px;
+  display: flex; flex-direction: column; gap: 10px;
+}
+.s6 .callout {
+  display: grid; grid-template-columns: 14px 1fr;
+  gap: 16px; align-items: flex-start;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.s6 .callout:last-child { border-bottom: none; }
+.s6 .callout .marker {
+  width: 14px; height: 14px; border-radius: 50%;
+  margin-top: 6px; position: relative;
+}
+.s6 .callout.neg .marker { background: var(--coral); box-shadow: 0 0 0 4px rgba(239,68,68,0.12); }
+.s6 .callout.pos .marker { background: var(--mint); box-shadow: 0 0 0 4px rgba(52,238,167,0.15); }
+.s6 .callout h4 {
+  margin: 0 0 3px 0; font-size: 15px; font-weight: 600; line-height: 1.3;
+  color: var(--on-dark); letter-spacing: -0.005em;
+}
+.s6 .callout p {
+  margin: 0; font-size: 13px; line-height: 1.5;
+  color: var(--on-dark-dim);
+}
+.s6 .f1-stat-strip {
+  display: flex; align-items: baseline; gap: 36px;
+  padding: 14px 0 0 0;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  margin-top: 4px;
+}
+.s6 .f1-stat-strip .sx { display: flex; align-items: baseline; gap: 10px; }
+.s6 .f1-stat-strip .sx .n {
+  font-family: var(--f-display); font-weight: 700; font-size: 34px;
+  color: var(--coral); font-variant-numeric: tabular-nums; letter-spacing: -0.01em;
+}
+.s6 .f1-stat-strip .sx .label { font-size: 12px; color: var(--on-dark-dim); letter-spacing: 0.02em; }
+.s6 .connectors { position: absolute; inset: 0; pointer-events: none; overflow: visible; }
+
+/* ============ PHONE FRAME ============ */
+.phone {
+  position: relative;
+  width: 330px;
+  aspect-ratio: 1260 / 2736;
+  border-radius: 52px;
+  background: linear-gradient(140deg, #2b2b2e 0%, #111112 40%, #0a0a0b 100%);
+  padding: 7px;
+  box-shadow:
+    0 40px 60px -20px rgba(0,0,0,0.55),
+    0 15px 30px -10px rgba(0,0,0,0.3),
+    inset 0 0 0 1px rgba(255,255,255,0.06),
+    inset 0 1px 0 rgba(255,255,255,0.18);
+}
+.phone::before {
+  content: ""; position: absolute; inset: 2px;
+  border-radius: 50px;
+  background: linear-gradient(145deg, #3a3a3d 0%, #1a1a1c 30%, #0c0c0d 70%, #222224 100%);
+  z-index: 0;
+}
+.phone::after {
+  content: ""; position: absolute; inset: 6px;
+  border-radius: 46px; background: #000; z-index: 1;
+}
+.phone-screen {
+  position: absolute; inset: 7px;
+  border-radius: 45px; overflow: hidden;
+  z-index: 2; background: #0A3B35;
+}
+.phone-island {
+  position: absolute; top: 14px; left: 50%;
+  transform: translateX(-50%);
+  width: 104px; height: 30px;
+  background: #000; border-radius: 18px; z-index: 5;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.03);
+}
+.phone-island::after {
+  content: ""; position: absolute; right: 8px; top: 50%;
+  transform: translateY(-50%);
+  width: 7px; height: 7px; border-radius: 50%;
+  background: #0a0a0b; box-shadow: inset 0 0 0 1px rgba(70,70,80,0.3);
+}
+.phone .btn-side {
+  position: absolute;
+}
+.phone .btn-vol-up    { right: -2px; top: 130px; width: 3px; height: 38px; border-radius: 0 3px 3px 0; background: linear-gradient(90deg, #1c1c1e, #2a2a2c); }
+.phone .btn-vol-down  { right: -2px; top: 176px; width: 3px; height: 38px; border-radius: 0 3px 3px 0; background: linear-gradient(90deg, #1c1c1e, #2a2a2c); }
+.phone .btn-action    { left: -2px; top: 112px; width: 3px; height: 24px; border-radius: 3px 0 0 3px; background: linear-gradient(90deg, #2a2a2c, #1c1c1e); }
+.phone .btn-power     { right: -2px; top: 244px; width: 3px; height: 68px; border-radius: 0 3px 3px 0; background: linear-gradient(90deg, #1c1c1e, #2a2a2c); }
+.phone-screen::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(150deg, rgba(255,255,255,0.05) 0%, transparent 35%);
+  pointer-events: none; z-index: 20;
+}
+
+/* ============ APP SCREEN MOCKS ============ */
+.screen { position: absolute; inset: 0; font-size: 11.5px; color: #E8EFEE; }
+.screen-status {
+  position: absolute; top: 12px; left: 0; right: 0;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 28px; font-size: 10px; font-weight: 600; color: #E8EFEE; z-index: 6;
+}
+.screen-status .time { font-family: var(--f-mono); letter-spacing: 0.02em; }
+.screen-status .icons { display: flex; gap: 4px; align-items: center; }
+.screen-status .icons span.wifi {
+  width: 12px; height: 9px; background: #E8EFEE; border-radius: 2px;
+  display: inline-block; clip-path: polygon(0 100%, 50% 20%, 100% 100%);
+}
+.screen-status .icons span.battery {
+  width: 20px; height: 10px; border-radius: 3px;
+  border: 1px solid rgba(255,255,255,0.5); background: transparent;
+  position: relative; display: inline-block;
+}
+.screen-status .icons span.battery::after {
+  content: ""; position: absolute; inset: 1.5px 4px 1.5px 1.5px;
+  background: #E8EFEE; border-radius: 1px;
+}
+
+/* HOME screen (slide 6) */
+.screen-home {
+  background: linear-gradient(180deg, #0B433C 0%, #0A3B35 50%, #062823 100%);
+  padding: 56px 16px 82px 16px;
+}
+.screen-home .greet-row {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 4px;
+}
+.screen-home .greet { font-size: 18px; font-weight: 700; color: #F5F2EA; letter-spacing: -0.01em; }
+.screen-home .avatar {
+  width: 28px; height: 28px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--teal-400), var(--mint));
+  display: inline-block;
+}
+.screen-home .subgreet { font-size: 10px; color: #94A3B8; margin-bottom: 16px; }
+
+.screen-home .rings { display: flex; justify-content: center; padding: 10px 0 16px 0; }
+.screen-home .ring-outer {
+  width: 148px; height: 148px; border-radius: 50%;
+  background: conic-gradient(var(--mint) 0deg 270deg, rgba(255,255,255,0.06) 270deg 360deg);
+  display: flex; align-items: center; justify-content: center; position: relative;
+}
+.screen-home .ring-mid {
+  width: 118px; height: 118px; border-radius: 50%;
+  background: #0A3B35;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: inset 0 0 0 8px rgba(45, 212, 191, 0.9), inset 0 0 0 9px rgba(0,0,0,0.2);
+}
+.screen-home .ring-inner {
+  width: 86px; height: 86px; border-radius: 50%;
+  background: #0A3B35;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: inset 0 0 0 7px rgba(245, 158, 11, 0.9), inset 0 0 0 8px rgba(0,0,0,0.2);
+}
+.screen-home .ring-core {
+  width: 56px; height: 56px; border-radius: 50%;
+  background: rgba(10, 59, 53, 0.95);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  color: #F5F2EA;
+}
+.screen-home .ring-core .n { font-size: 20px; font-weight: 700; color: var(--mint); line-height: 1; font-variant-numeric: tabular-nums; }
+.screen-home .ring-core .l { font-size: 7px; letter-spacing: 0.18em; color: rgba(245,242,234,0.7); text-transform: uppercase; margin-top: 2px; }
+
+.screen-home .card {
+  background: rgba(255,255,255,0.045);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 12px;
+  padding: 10px 12px;
+  margin-bottom: 8px;
+}
+.screen-home .card .ch {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 8.5px; letter-spacing: 0.12em; text-transform: uppercase;
+  color: rgba(245,242,234,0.55); margin-bottom: 4px; font-weight: 600;
+}
+.screen-home .card .ch .icon {
+  width: 18px; height: 18px; border-radius: 5px;
+  background: rgba(52,238,167,0.15);
+  display: inline-flex; align-items: center; justify-content: center;
+  color: var(--mint); font-size: 10px;
+}
+.screen-home .card .ch .icon.warm { background: rgba(245,158,11,0.18); color: var(--gold); }
+.screen-home .card .body { font-size: 10px; line-height: 1.4; color: #E8EFEE; }
+.screen-home .card .cta { margin-top: 4px; font-size: 8.5px; color: var(--teal-300); letter-spacing: 0.1em; text-transform: uppercase; font-weight: 600; }
+
+.screen-home .toast {
+  position: absolute; bottom: 94px; left: 16px; right: 16px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 10px; padding: 9px 12px;
+  font-size: 10px; color: rgba(245,242,234,0.7);
+  display: flex; align-items: center; gap: 8px;
+  z-index: 4;
+}
+.screen-home .toast .checkmark {
+  width: 14px; height: 14px; border-radius: 50%;
+  background: rgba(52,238,167,0.2); color: var(--mint); font-size: 9px;
+  display: inline-flex; align-items: center; justify-content: center;
+}
+.screen-home .fab {
+  position: absolute; bottom: 96px; right: 18px;
+  width: 38px; height: 38px; border-radius: 50%;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.08);
+  display: flex; align-items: center; justify-content: center;
+  color: rgba(245,242,234,0.6);
+  font-size: 20px; font-weight: 300; line-height: 1;
+  z-index: 4;
+}
+.screen-home .bottom-nav {
+  position: absolute; bottom: 0; left: 0; right: 0; height: 72px;
+  background: rgba(10, 40, 36, 0.55);
+  backdrop-filter: blur(8px);
+  border-top: 1px solid rgba(255,255,255,0.04);
+  display: flex; justify-content: space-around; align-items: center;
+  padding: 10px 0 18px 0; z-index: 3;
+}
+.screen-home .bottom-nav .bn {
+  display: flex; flex-direction: column; align-items: center; gap: 3px;
+  color: rgba(148, 163, 184, 0.5);
+  font-size: 8px; letter-spacing: 0.04em;
+}
+.screen-home .bottom-nav .bn .nav-icon {
+  width: 18px; height: 18px; border-radius: 5px;
+  background: rgba(148, 163, 184, 0.16);
+}
+.screen-home .bottom-nav .bn.active { color: var(--mint); }
+.screen-home .bottom-nav .bn.active .nav-icon { background: rgba(52,238,167,0.28); }
+
+/* MEAL screen */
+.screen-meal {
+  background: #0A3B35; padding: 46px 0 0 0;
+  display: flex; flex-direction: column;
+}
+.screen-meal .top {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 16px 10px 16px;
+}
+.screen-meal .top .back { color: rgba(245,242,234,0.7); font-size: 14px; }
+.screen-meal .top .title { font-size: 12px; font-weight: 600; color: var(--on-dark); letter-spacing: 0.04em; }
+.screen-meal .top .edit { font-size: 10px; color: var(--teal-300); letter-spacing: 0.1em; text-transform: uppercase; font-weight: 600; }
+.screen-meal .meal-photo {
+  position: relative;
+  margin: 2px 14px 12px 14px;
+  height: 150px; border-radius: 12px;
+  background:
+    radial-gradient(150px 110px at 30% 40%, #F59E0B 0%, #C2410C 32%, transparent 72%),
+    radial-gradient(140px 100px at 72% 62%, #84CC16 0%, #4D7C0F 32%, transparent 70%),
+    radial-gradient(120px 90px at 48% 78%, #EAB308 0%, #854D0E 25%, transparent 65%),
+    linear-gradient(135deg, #3F3A30 0%, #2E2A22 100%);
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+.screen-meal .meal-photo .ai-tag {
+  position: absolute; left: 10px; top: 10px;
+  display: flex; align-items: center; gap: 5px;
+  background: rgba(10, 10, 12, 0.55);
+  backdrop-filter: blur(6px);
+  padding: 4px 8px; border-radius: 999px;
+  font-size: 8.5px; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--mint); font-weight: 700;
+  border: 1px solid rgba(52,238,167,0.3);
+}
+.screen-meal .meal-photo .ai-tag .dot {
+  width: 5px; height: 5px; border-radius: 50%; background: var(--mint);
+  box-shadow: 0 0 6px rgba(52,238,167,0.8);
+}
+.screen-meal .meal-name { padding: 0 16px 2px 16px; font-size: 14px; font-weight: 600; color: var(--on-dark); }
+.screen-meal .meal-sub { padding: 0 16px 12px 16px; font-size: 10px; color: rgba(245,242,234,0.55); }
+.screen-meal .kcal-hero {
+  margin: 0 14px 12px 14px; padding: 14px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 12px;
+  display: flex; align-items: baseline; justify-content: space-between;
+}
+.screen-meal .kcal-hero .kcal {
+  font-family: var(--f-display); font-weight: 700;
+  font-size: 32px; color: var(--mint); line-height: 1;
+  font-variant-numeric: tabular-nums; letter-spacing: -0.02em;
+}
+.screen-meal .kcal-hero .kcal-sub {
+  font-size: 8.5px; letter-spacing: 0.14em; text-transform: uppercase;
+  color: rgba(245,242,234,0.55); margin-top: 3px;
+}
+.screen-meal .kcal-hero .pct { font-size: 10px; color: var(--teal-300); font-weight: 500; text-align: right; }
+.screen-meal .macros {
+  margin: 0 14px 12px 14px;
+  display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px;
+}
+.screen-meal .macro {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 9px; padding: 8px; text-align: center;
+}
+.screen-meal .macro .n {
+  font-family: var(--f-display); font-weight: 600;
+  font-size: 16px; color: var(--on-dark);
+  font-variant-numeric: tabular-nums;
+}
+.screen-meal .macro.p .n { color: var(--teal-300); }
+.screen-meal .macro.c .n { color: var(--gold-soft); }
+.screen-meal .macro.f .n { color: #FB923C; }
+.screen-meal .macro .l {
+  font-size: 8px; letter-spacing: 0.1em; text-transform: uppercase;
+  color: rgba(245,242,234,0.55); margin-top: 2px;
+}
+.screen-meal .scoring {
+  margin: 2px 14px 0 14px;
+  font-size: 10px; color: rgba(245,242,234,0.78); line-height: 1.5;
+  padding: 10px 12px;
+  background: rgba(52, 238, 167, 0.06);
+  border: 1px solid rgba(52, 238, 167, 0.18);
+  border-radius: 10px;
+}
+.screen-meal .scoring strong { color: var(--mint); font-weight: 600; }
+
+.slide .reveal {
+  opacity: 0; transform: translateY(14px);
+  transition: opacity 520ms var(--ease-out), transform 520ms var(--ease-out);
+}
+.slide.active .reveal { opacity: 1; transform: none; }
+.slide .reveal.d1 { transition-delay: 120ms; }
+.slide .reveal.d2 { transition-delay: 200ms; }
+.slide .reveal.d3 { transition-delay: 280ms; }
+.slide .reveal.d4 { transition-delay: 360ms; }
+.slide .reveal.d5 { transition-delay: 440ms; }
+.slide .reveal.d6 { transition-delay: 520ms; }
+.slide .reveal.d7 { transition-delay: 600ms; }
+</style>
+
+<style id="print">
+@media print {
+  @page { size: 1920px 1080px; margin: 0; }
+  html, body, #app, .stage { background: #000 !important; height: auto !important; overflow: visible !important; }
+  #app { display: block !important; width: auto !important; }
+  #navigator, #controls, #progress, #nav-toggle, .nav-toggle { display: none !important; }
+  .canvas-wrap { position: static !important; padding: 0 !important; display: block !important; }
+  .canvas {
+    transform: none !important; box-shadow: none !important; border-radius: 0 !important;
+    margin: 0 !important; width: 1920px !important; height: auto !important;
+    overflow: visible !important; position: static !important; background: transparent !important;
+  }
+  .slide {
+    position: relative !important;
+    width: 1920px !important; height: 1080px !important;
+    opacity: 1 !important; pointer-events: auto !important;
+    display: block !important;
+    page-break-inside: avoid; break-inside: avoid;
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+  .slide:not(:last-child) { page-break-after: always; break-after: page; }
+  .slide .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+  .slide .seq-ours { opacity: 1 !important; }
+  .slide * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+
+</style>
+
+</head>
+<body>
+<div id="app">
+  <aside id="navigator" class="nav-panel" aria-label="Slide navigator"></aside>
+  <main id="stage" class="stage">
+    <div id="progress" class="progress"><div class="progress-bar"></div></div>
+    <div id="canvas-wrap" class="canvas-wrap">
+      <div id="canvas" class="canvas">
+<!-- SLIDE 1: TITLE -->
+<section class="slide s1 slide-dark active">
+  <svg class="x-watermark" viewBox="0 0 1111 926" aria-hidden="true" style="color: var(--teal-300)"><use href="#x-symbol"/></svg>
+  <svg class="x-watermark-2" viewBox="0 0 1111 926" aria-hidden="true" style="color: var(--teal-400)"><use href="#x-symbol"/></svg>
+  <div class="slide-frame">
+    <div class="title-topbar">
+      <svg class="bix-mark" viewBox="0 0 1128 431" aria-label="BI X" style="color: var(--on-dark)"><use href="#bix-logo"/></svg>
+      <div class="top-meta reveal d1">
+        Digital Innovation Lab by<br/>
+        <span class="strong">Boehringer Ingelheim</span>
+      </div>
+    </div>
+    <div class="title-body">
+      <div class="title-eyebrow reveal d2">Pre-Pilot Research Readout · April 2026</div>
+      <h1 class="title-main reveal d3">
+        GLP-1 Support App<br/>
+        <span class="title-accent">Usability Testing Results</span>
+      </h1>
+      <div class="title-sub reveal d4">
+        Seven patients. Six tasks. One day in the life of the app.
+      </div>
+      <div class="title-meta reveal d5">
+        In-Person Moderated Testing<span class="sep"></span>April 7, 2026<span class="sep"></span>Bala Cynwyd, PA
+      </div>
+    </div>
+    <div class="slide-foot">
+      <div class="foot-left">
+        <svg class="mark" viewBox="0 0 1128 431" aria-label="BIX" style="color: var(--on-dark)"><use href="#bix-logo"/></svg>
+        <span class="foot-internal">BI X Digital Innovation Lab &nbsp;|&nbsp; ONLY FOR INTERNAL USE</span>
+      </div>
+      <div class="foot-page">01</div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 2: EXECUTIVE SUMMARY -->
+<section class="slide s2 slide-paper">
+  <div class="slide-frame">
+    <div class="reveal d1" style="display:flex;align-items:center;justify-content:space-between">
+      <div class="eyebrow">01 &middot; Executive Summary</div>
+      <div style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-dim);font-weight:500">n=7 &middot; April 7, 2026</div>
+    </div>
+    <div class="exec-grid">
+      <div class="exec-context reveal d2">
+        <h1>Above benchmark.<br/>Across <span class="ital">every</span> task.</h1>
+        <p>In April 2026, BI X conducted in-person moderated usability testing with <strong style="color:var(--ink);font-weight:600">7 GLP-1 patients</strong> at a professional research facility to evaluate the interactive prototype ahead of the planned 2-month diary study pilot.</p>
+        <p>Participants completed six structured tasks simulating a full day with the app — from morning exploration through medication logging, meal tracking, AI coach interaction, learning content, and evening reflection.</p>
+        <div class="tagline">Three findings &middot; One direction</div>
+      </div>
+      <div class="findings">
+        <div class="finding reveal d3">
+          <div class="finding-num">01</div>
+          <div class="finding-body">
+            <h3>Participants responded <span class="hl">overwhelmingly</span> positively to the app experience.</h3>
+            <p>Satisfaction averaged 6.6/7. SEQ task ease averaged 6.4/7 — well above the industry benchmark of 5.5/7 established across 10,000+ users. All 7 participants expressed willingness to use the app daily; two said they'd replace their current health app entirely.</p>
+            <div class="kpi"><span class="dot"></span>6.6/7 satisfaction &middot; 6.4/7 SEQ &middot; 7/7 willing</div>
+          </div>
+        </div>
+        <div class="finding reveal d4">
+          <div class="finding-num">02</div>
+          <div class="finding-body">
+            <h3>AI-powered nutrition features drove the <span class="hl">strongest engagement</span>.</h3>
+            <p>Photo-based meal logging emerged as a breakout feature &mdash; 6/7 participants chose it unprompted, with multiple expressing genuine surprise at the AI&apos;s recognition accuracy. Participants consistently requested more depth in nutritional tracking.</p>
+            <div class="kpi"><span class="dot"></span>6/7 chose photo unprompted</div>
+          </div>
+        </div>
+        <div class="finding reveal d5">
+          <div class="finding-num">03</div>
+          <div class="finding-body">
+            <h3>The primary usability gap is <span class="hl">visual styling</span> &mdash; not information architecture.</h3>
+            <p>Interactive elements (bottom navigation, action buttons, completion notifications) blend into the app&apos;s polished dark aesthetic. Confirmed by the participant with the lowest self-reported tech comfort (5/7), who navigated every feature intuitively on first attempt.</p>
+            <div class="kpi"><span class="dot"></span>A CSS fix &middot; not a redesign</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-foot">
+      <div class="foot-left">
+        <svg class="mark" viewBox="0 0 1128 431" aria-label="BIX"><use href="#bix-logo"/></svg>
+        <span class="foot-internal">BI X Digital Innovation Lab &nbsp;|&nbsp; ONLY FOR INTERNAL USE</span>
+      </div>
+      <div class="foot-page">02</div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 3: ANCHOR QUOTE P07 -->
+<section class="slide s3 slide-dark">
+  <div class="slide-frame">
+    <div class="reveal d1 eyebrow">02 &middot; The North Star</div>
+    <div class="quote-wrap">
+      <div class="quote-block">
+        <span class="quote-mark reveal d1">&ldquo;</span>
+        <blockquote class="quote-text reveal d2">
+          It&apos;s easy to take the medication and <span class="hl">lose weight,</span> but you have to change your <span class="hl">lifestyle</span>.
+        </blockquote>
+        <div class="attribution reveal d3">
+          <span class="ident">P07</span>
+          <span class="context">57F &middot; Zepbound &middot; 5 months &middot; self-rated 5/7 on tech comfort</span>
+        </div>
+      </div>
+      <div class="clip-card reveal d4" role="button" tabindex="0" aria-label="Play clip">
+        <div class="clip-label">
+          <span class="rec-dot"></span>
+          <span>Dovetail clip</span>
+        </div>
+        <div class="clip-thumb">
+          <div class="clip-waveform" aria-hidden="true">
+            <span style="height:18%"></span><span style="height:32%"></span><span style="height:56%"></span><span style="height:72%"></span><span style="height:44%"></span><span style="height:84%"></span><span style="height:60%"></span><span style="height:36%"></span><span style="height:70%"></span><span style="height:50%"></span><span style="height:82%"></span><span style="height:46%"></span><span style="height:64%"></span><span style="height:30%"></span><span style="height:52%"></span><span style="height:78%"></span><span style="height:40%"></span><span style="height:60%"></span><span style="height:88%"></span><span style="height:48%"></span><span style="height:34%"></span><span style="height:62%"></span><span style="height:24%"></span><span style="height:56%"></span>
+          </div>
+          <div class="clip-play" aria-hidden="true"></div>
+        </div>
+        <div class="clip-meta">
+          <span class="pid">P07 &middot; 53:48</span>
+          <span class="ts">0:12</span>
+        </div>
+        <div class="clip-quote">&ldquo;...you have to change your lifestyle.&rdquo;</div>
+      </div>
+    </div>
+    <div class="slide-foot">
+      <div class="foot-left">
+        <svg class="mark" viewBox="0 0 1128 431" aria-label="BIX" style="color: var(--on-dark)"><use href="#bix-logo"/></svg>
+        <span class="foot-internal">BI X Digital Innovation Lab &nbsp;|&nbsp; ONLY FOR INTERNAL USE</span>
+      </div>
+      <div class="foot-page">03</div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 4: SEQ HERO VIZ -->
+<section class="slide s4 slide-data-stage" data-on-enter="animateSEQ">
+  <div class="slide-frame">
+    <div class="seq-grid">
+      <div class="seq-left">
+        <div class="eyebrow reveal d1">How we measured ease</div>
+        <h1 class="reveal d2">A 1&ndash;7 scale. We hit <span class="hl">6.4</span>.</h1>
+        <p class="reveal d3">The <strong style="color:var(--on-dark);font-weight:500">Single Ease Question</strong> is the UX industry&apos;s yardstick. After every task, participants answer: &ldquo;How easy or difficult was this?&rdquo; on a 7-point scale.</p>
+        <p class="reveal d4">Because it&apos;s standardized, our scores can be compared against thousands of other products. The industry benchmark sits at <strong style="color:var(--on-dark);font-weight:500">5.5/7</strong> &mdash; the 50th percentile across 10,000+ users.</p>
+        <p class="reveal d5">Our overall mean is <strong style="color:var(--mint);font-weight:600">6.4/7</strong>. Every task cleared the benchmark.</p>
+        <div class="seq-source reveal d6">Source &middot; MeasuringU, 400+ tasks, 10,000+ users</div>
+      </div>
+      <div class="seq-stage reveal d3">
+        <div class="seq-scale">
+          <div class="seq-zones">
+            <div class="seq-zone zone-hard">Difficult</div>
+            <div class="seq-zone zone-avg">Average</div>
+            <div class="seq-zone zone-easy">Easy &middot; Excellent</div>
+          </div>
+          <div class="seq-benchmark" style="left: calc(30px + 75% - 22.5px)">
+            <div class="seq-benchmark-tag">
+              <span class="val">5.5</span>
+              Industry benchmark
+            </div>
+          </div>
+          <div class="seq-ours" style="left: 30px">
+            <div class="seq-ours-tag">
+              <span class="label">Our mean</span>
+              <span class="big">6.4</span>
+              <span class="of">/ 7</span>
+            </div>
+          </div>
+          <div class="seq-track"></div>
+          <div class="seq-ticks">
+            <div class="seq-tick"><span class="seq-tick-num">1</span></div>
+            <div class="seq-tick"><span class="seq-tick-num">2</span></div>
+            <div class="seq-tick"><span class="seq-tick-num">3</span></div>
+            <div class="seq-tick"><span class="seq-tick-num">4</span></div>
+            <div class="seq-tick"><span class="seq-tick-num">5</span></div>
+            <div class="seq-tick"><span class="seq-tick-num">6</span></div>
+            <div class="seq-tick"><span class="seq-tick-num">7</span></div>
+          </div>
+        </div>
+        <div class="seq-compared reveal d5">
+          <div class="cmp-row"><span class="num mint">+0.9</span><span>above industry average across 10,000+ products</span></div>
+          <div class="cmp-row"><span class="num">86%</span><span>task completion rate at 5.9 benchmark &mdash; we exceed on every task</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-foot">
+      <div class="foot-left">
+        <svg class="mark" viewBox="0 0 1128 431" aria-label="BIX" style="color: var(--on-dark)"><use href="#bix-logo"/></svg>
+        <span class="foot-internal">BI X Digital Innovation Lab &nbsp;|&nbsp; ONLY FOR INTERNAL USE</span>
+      </div>
+      <div class="foot-page">04</div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 5: PHOTO MEAL LOGGING -->
+<section class="slide s5 slide-paper-tinted">
+  <div class="slide-frame">
+    <div class="reveal d1" style="display:flex;align-items:center;justify-content:space-between">
+      <div class="eyebrow">What resonated &middot; The breakout feature</div>
+      <div style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-dim);font-weight:500">T3 Lunch &middot; SEQ 6.7 / 7</div>
+    </div>
+    <div class="meal-grid">
+      <div class="meal-phone-wrap reveal d2">
+        <div class="phone" aria-label="iPhone Air showing the meal logging screen">
+          <div class="btn-side btn-action"></div>
+          <div class="btn-side btn-vol-up"></div>
+          <div class="btn-side btn-vol-down"></div>
+          <div class="btn-side btn-power"></div>
+          <div class="phone-screen">
+            <div class="phone-island" aria-hidden="true"></div>
+            <div class="screen screen-meal">
+              <div class="screen-status">
+                <span class="time">12:47</span>
+                <span class="icons"><span class="wifi"></span><span class="battery"></span></span>
+              </div>
+              <div class="top">
+                <span class="back">&larr;</span>
+                <span class="title">Lunch</span>
+                <span class="edit">Edit</span>
+              </div>
+              <div class="meal-photo">
+                <span class="ai-tag"><span class="dot"></span>AI Detected</span>
+              </div>
+              <div class="meal-name">Grain bowl &middot; grilled chicken, avocado</div>
+              <div class="meal-sub">12:47 PM &middot; Logged via photo</div>
+              <div class="kcal-hero">
+                <div>
+                  <div class="kcal">585</div>
+                  <div class="kcal-sub">Calories</div>
+                </div>
+                <div class="pct">28% of daily goal</div>
+              </div>
+              <div class="macros">
+                <div class="macro p"><div class="n">46g</div><div class="l">Protein</div></div>
+                <div class="macro c"><div class="n">52g</div><div class="l">Carbs</div></div>
+                <div class="macro f"><div class="n">18g</div><div class="l">Fat</div></div>
+              </div>
+              <div class="scoring"><strong>Strong balance.</strong> High-quality protein, complex carbs, healthy fats. Good fit with your GLP-1 routine.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="meal-right">
+        <div class="reveal d3">
+          <h2 class="meal-headline">Photo logging is the <span class="hl">adoption gatekeeper</span>.</h2>
+        </div>
+        <div class="meal-stat-row reveal d4">
+          <div class="meal-stat">
+            <div class="n">6/7</div>
+            <div class="label">Chose photo, unprompted</div>
+          </div>
+          <div class="meal-stat sm">
+            <div class="n">6.7</div>
+            <div class="label">SEQ · Meal logging task</div>
+          </div>
+          <div class="meal-stat sm">
+            <div class="n">100%</div>
+            <div class="label">Task completion</div>
+          </div>
+        </div>
+        <div class="meal-quotes">
+          <div class="meal-quote reveal d5">
+            <blockquote>I didn&apos;t think it was gonna pick up the whole meal the way it did, so that was pretty cool.</blockquote>
+            <cite>P02 &middot; 44M &middot; Wegovy &middot; 5 months</cite>
+          </div>
+          <div class="meal-quote reveal d6">
+            <blockquote>If I could take a picture of it, I would do it all the time.</blockquote>
+            <cite>P04 &middot; 49F &middot; Zepbound &middot; 4 months</cite>
+          </div>
+        </div>
+        <div class="meal-insight reveal d7">
+          <div class="spark">i</div>
+          <p><strong>P04 explicitly tied daily tracking adoption to the photo feature.</strong> If she can photograph, she&apos;ll track every meal. If she has to type, she won&apos;t.</p>
+        </div>
+      </div>
+    </div>
+    <div class="slide-foot">
+      <div class="foot-left">
+        <svg class="mark" viewBox="0 0 1128 431" aria-label="BIX"><use href="#bix-logo"/></svg>
+        <span class="foot-internal">BI X Digital Innovation Lab &nbsp;|&nbsp; ONLY FOR INTERNAL USE</span>
+      </div>
+      <div class="foot-page">05</div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 6: FINDING 1 — VISUAL DIFFERENTIATION -->
+<section class="slide s6 slide-dark">
+  <div class="slide-frame">
+    <div class="reveal d1" style="display:flex;align-items:center;justify-content:space-between">
+      <div class="eyebrow">Finding 01 &middot; Visual differentiation</div>
+      <div style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--on-dark-mute);font-weight:500">Severity: Medium &middot; Complexity: Low</div>
+    </div>
+    <div class="f1-grid">
+      <div class="f1-phone-col reveal d2">
+        <div class="phone" aria-label="iPhone Air showing the home screen">
+          <div class="btn-side btn-action"></div>
+          <div class="btn-side btn-vol-up"></div>
+          <div class="btn-side btn-vol-down"></div>
+          <div class="btn-side btn-power"></div>
+          <div class="phone-screen">
+            <div class="phone-island" aria-hidden="true"></div>
+            <div class="screen screen-home">
+              <div class="screen-status">
+                <span class="time">9:41</span>
+                <span class="icons"><span class="wifi"></span><span class="battery"></span></span>
+              </div>
+              <div class="greet-row">
+                <div>
+                  <div class="greet">Good morning, Jennifer.</div>
+                  <div class="subgreet">Tuesday, April 7 &middot; Day 154</div>
+                </div>
+                <div class="avatar" aria-hidden="true"></div>
+              </div>
+              <div class="rings" aria-hidden="true">
+                <div class="ring-outer">
+                  <div class="ring-mid">
+                    <div class="ring-inner">
+                      <div class="ring-core">
+                        <div class="n">78</div>
+                        <div class="l">Wellness</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="ch"><span class="icon">&#9728;</span>Daily Insight</div>
+                <div class="body">You&apos;ve logged 4 symptoms this week. This data helps identify patterns.</div>
+              </div>
+              <div class="card">
+                <div class="ch"><span class="icon warm">!</span>Coach check-in</div>
+                <div class="body">How can I help improve your weight loss progress?</div>
+                <div class="cta">Ask Coach &rarr;</div>
+              </div>
+              <div class="card">
+                <div class="ch"><span class="icon">&#127835;</span>Meal Log</div>
+                <div class="body">0 / 3 meals logged today</div>
+              </div>
+              <div class="toast"><span class="checkmark">&#10003;</span>Injection logged &middot; 8:12 AM</div>
+              <div class="fab" aria-hidden="true">+</div>
+              <div class="bottom-nav">
+                <div class="bn active"><span class="nav-icon"></span>Home</div>
+                <div class="bn"><span class="nav-icon"></span>Track</div>
+                <div class="bn"><span class="nav-icon"></span>Coach</div>
+                <div class="bn"><span class="nav-icon"></span>Learn</div>
+                <div class="bn"><span class="nav-icon"></span>Me</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="f1-right">
+        <div class="reveal d3">
+          <h2 class="f1-headline">Interactive elements <span class="hl">blend into</span> the polished dark aesthetic.</h2>
+          <p class="f1-lead" style="margin-top:12px">The information architecture is sound. The problem is that affordances &mdash; nav, action buttons, confirmations &mdash; don&apos;t read as interactive against the app&apos;s dark surface.</p>
+        </div>
+        <div class="f1-callouts">
+          <div class="callout neg reveal d4">
+            <span class="marker" aria-hidden="true"></span>
+            <div>
+              <h4>Bottom nav disappears into the background</h4>
+              <p>Semi-transparent on dark. 3/7 didn&apos;t notice it on first use.</p>
+            </div>
+          </div>
+          <div class="callout neg reveal d5">
+            <span class="marker" aria-hidden="true"></span>
+            <div>
+              <h4>+ button doesn&apos;t announce itself</h4>
+              <p>5/7 never noticed it. Correct pattern, insufficient visual weight.</p>
+            </div>
+          </div>
+          <div class="callout neg reveal d5">
+            <span class="marker" aria-hidden="true"></span>
+            <div>
+              <h4>Toast confirmations read as content</h4>
+              <p>Styled identically to insight cards. P04: &ldquo;I did not know it was done until I knew it was done.&rdquo;</p>
+            </div>
+          </div>
+          <div class="callout pos reveal d6">
+            <span class="marker" aria-hidden="true"></span>
+            <div>
+              <h4>Wellness rings: treated as primary navigation</h4>
+              <p>Colorful, prominent, intuitive. Exactly as designed.</p>
+            </div>
+          </div>
+          <div class="callout pos reveal d6">
+            <span class="marker" aria-hidden="true"></span>
+            <div>
+              <h4>Insight cards: primary interaction model</h4>
+              <p>Participants engaged with contextual, action-oriented content first.</p>
+            </div>
+          </div>
+        </div>
+        <div class="f1-stat-strip reveal d7">
+          <div class="sx"><span class="n">5/7</span><span class="label">never noticed<br/>the + button</span></div>
+          <div class="sx"><span class="n">3/7</span><span class="label">missed the<br/>bottom nav</span></div>
+          <div class="sx"><span class="n" style="color:var(--mint)">CSS</span><span class="label">fix &mdash; not a<br/>structural redesign</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-foot">
+      <div class="foot-left">
+        <svg class="mark" viewBox="0 0 1128 431" aria-label="BIX" style="color: var(--on-dark)"><use href="#bix-logo"/></svg>
+        <span class="foot-internal">BI X Digital Innovation Lab &nbsp;|&nbsp; ONLY FOR INTERNAL USE</span>
+      </div>
+      <div class="foot-page">06</div>
+    </div>
+  </div>
+</section>
+      </div>
+    </div>
+    <div id="controls" class="controls">
+      <button id="btn-prev" class="ctrl" aria-label="Previous slide">&larr;</button>
+      <div id="slide-counter" class="counter">01 / 06</div>
+      <button id="btn-next" class="ctrl" aria-label="Next slide">&rarr;</button>
+    </div>
+  </main>
+  <button id="nav-toggle" class="nav-toggle" aria-label="Toggle navigator">&#8942;</button>
+</div>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs id="svg-defs">
+    <symbol id="bix-logo" viewBox="0 0 1128 431">
+      <path d="M341.393 237.291C323.583 220.669 299.669 210.019 269.652 205.241V200.463C293.666 194.889 312.076 184.737 324.884 170.006C337.691 155.274 344.094 136.064 344.094 112.375C344.094 88.6856 337.991 68.7786 325.584 51.8577C313.277 35.0363 295.667 22.1963 272.954 13.3377C250.141 4.37953 223.126 0 191.908 0H0V429.991H214.721C245.939 429.991 273.054 425.014 296.067 415.06C319.08 405.107 336.89 390.973 349.297 372.46C361.704 353.946 368.108 332.546 368.108 307.762C368.108 282.978 359.203 253.814 341.393 237.192V237.291ZM90.9514 72.2623H191.908C204.315 72.2623 214.821 74.4521 223.326 78.6326C231.831 82.9126 238.235 88.8847 242.537 96.5488C246.839 104.213 248.941 113.171 248.941 123.224C248.941 133.277 246.839 142.534 242.537 150.198C238.235 157.862 231.831 163.834 223.326 168.114C214.821 172.394 204.415 174.485 191.908 174.485H90.9514V72.0633V72.2623ZM266.35 331.551C261.948 339.812 255.444 346.282 246.739 350.86C238.034 355.439 227.328 357.728 214.821 357.728H91.0514V246.946H214.821C227.428 246.946 238.034 249.235 246.739 253.814C255.444 258.393 261.948 264.862 266.35 273.223C270.753 281.584 272.954 291.339 272.954 302.487C272.954 313.634 270.753 323.389 266.35 331.551Z" fill="currentColor"/>
+      <path d="M534.202 0H441.75V429.991H534.202V0Z" fill="currentColor"/>
+      <path d="M947.335 0L890.903 60.9154L785.344 0H619.25L607.843 30.7563L778.44 176.575H825.766L896.706 99.933L977.552 146.615L914.216 215.095L977.552 283.575L896.706 330.257L825.766 253.615H778.44L607.843 399.434L619.25 430.19H785.344L890.903 369.274L947.335 430.19H1113.43L1120.33 414.563L1127.04 399.434L1026.58 290.94L1127.04 232.912V197.378L1026.58 139.349L1127.04 30.8558L1113.43 0H947.335ZM960.843 30.7563H1084.91L999.064 123.423L918.219 76.7414L960.843 30.7563ZM802.353 156.469L655.17 30.6567H777.039L869.391 84.0074L802.353 156.469ZM956.24 214.995L1004.97 162.341L1096.12 214.995L1004.97 267.649L956.24 214.995ZM777.039 399.234H655.17L802.353 273.422L869.391 345.884L777.039 399.234ZM918.219 353.249L999.064 306.567L1084.91 399.234H960.843L918.219 353.249Z" fill="currentColor"/>
+    </symbol>
+    <symbol id="x-symbol" viewBox="0 0 1111 926">
+      <path d="M362.623 67.9956L1108.12 500.738V424.673L380.34 2.20996H26.4495L2.07227 67.9956H362.623Z" stroke="currentColor" stroke-width="4.42" stroke-linejoin="bevel" fill="none"/>
+      <path d="M744.53 462.71L1108.13 67.9956L1079.29 2.20996L655.08 462.71L1079.29 923.21L1108.13 857.424L744.53 462.71Z" stroke="currentColor" stroke-width="4.42" stroke-linejoin="bevel" fill="none"/>
+      <path d="M380.34 923.208L1108.12 500.745V424.681L362.623 857.423H2.07227L26.4495 923.208H380.34Z" stroke="currentColor" stroke-width="4.42" stroke-linejoin="bevel" fill="none"/>
+      <path d="M754.246 67.9957H1108.12L1079.28 2.20996H725.401L377.111 380.295H466.552L754.246 67.9957Z" stroke="currentColor" stroke-width="4.42" stroke-linejoin="bevel" fill="none"/>
+      <path d="M725.401 923.21H1079.28L1108.12 857.424H754.246L466.552 545.125H377.111L725.401 923.21Z" stroke="currentColor" stroke-width="4.42" stroke-linejoin="bevel" fill="none"/>
+      <path d="M365.602 545.125L2.07227 857.424L26.4495 923.21L466.556 545.125H365.602Z" stroke="currentColor" stroke-width="4.42" stroke-linejoin="bevel" fill="none"/>
+      <path d="M466.556 380.295L26.4495 2.20996L2.07227 67.9957L365.602 380.295H466.556Z" stroke="currentColor" stroke-width="4.42" stroke-linejoin="bevel" fill="none"/>
+    </symbol>
+  </defs>
+</svg>
+<script id="app-js">
+(function(){
+  const SLIDES = [
+    { id: 's1', num: 1, section: 'Front Matter', title: 'Title',              thumb: 'title' },
+    { id: 's2', num: 2, section: 'Executive Summary', title: 'Executive Summary', thumb: 'exec' },
+    { id: 's3', num: 3, section: 'Executive Summary', title: 'Anchor Quote — P07', thumb: 'quote' },
+    { id: 's4', num: 4, section: 'Task-by-Task Results', title: 'SEQ: The Benchmark', thumb: 'seq' },
+    { id: 's5', num: 5, section: 'What Resonated', title: 'Photo Meal Logging', thumb: 'meal' },
+    { id: 's6', num: 6, section: 'Design Findings', title: 'Finding 1 — Visual Differentiation', thumb: 'f1' }
+  ];
+  let current = 0;
+
+  const canvas = document.getElementById('canvas');
+  const navigator = document.getElementById('navigator');
+  const progressBar = document.querySelector('.progress-bar');
+  const counter = document.getElementById('slide-counter');
+  const btnPrev = document.getElementById('btn-prev');
+  const btnNext = document.getElementById('btn-next');
+  const btnToggle = document.getElementById('nav-toggle');
+  const app = document.getElementById('app');
+
+  // Build navigator
+  function buildNav() {
+    let html = `<div class="nav-header">
+      <svg class="mark" viewBox="0 0 1128 431" style="color: var(--on-dark)"><use href="#bix-logo"/></svg>
+      <div class="label">Research<br/>Readout</div>
+    </div>`;
+    let lastSection = null;
+    SLIDES.forEach((s, i) => {
+      if (s.section !== lastSection) {
+        html += `<div class="nav-section">${s.section}</div>`;
+        lastSection = s.section;
+      }
+      const pad = String(s.num).padStart(2, '0');
+      html += `<button class="nav-item" data-idx="${i}">
+        <span class="nav-num">${pad}</span>
+        <span class="nav-thumb">
+          <span class="nav-thumb-preview" data-thumb="${s.thumb}"></span>
+          <span class="nav-thumb-title">${s.title}</span>
+        </span>
+      </button>`;
+    });
+    navigator.innerHTML = html;
+    navigator.querySelectorAll('.nav-item').forEach(btn => {
+      btn.addEventListener('click', () => goTo(parseInt(btn.dataset.idx)));
+    });
+    // paint thumb previews
+    navigator.querySelectorAll('.nav-thumb-preview').forEach(el => {
+      paintThumb(el, el.dataset.thumb);
+    });
+  }
+
+  function paintThumb(el, key) {
+    const styles = {
+      title: 'background:linear-gradient(135deg,#0C433C,#062823); position:relative;',
+      exec:  'background:linear-gradient(135deg,#F3ECDB,#EBE3D1);',
+      quote: 'background:linear-gradient(135deg,#0A3B35,#062823); position:relative;',
+      seq:   'background:radial-gradient(60px 36px at 65% 50%,rgba(52,238,167,0.35),transparent 70%),linear-gradient(135deg,#0B4039,#072E29);',
+      meal:  'background:radial-gradient(60px 40px at 75% 30%,rgba(94,234,212,0.28),transparent 70%),#F7F1E5;',
+      f1:    'background:linear-gradient(135deg,#0A3B35,#062823); position:relative;'
+    };
+    el.setAttribute('style', el.getAttribute('style') + ';' + (styles[key]||''));
+    // minimal preview ornament
+    if (key === 'title') {
+      el.innerHTML = `<span style="position:absolute;right:-8px;top:-6px;width:48px;height:44px;opacity:0.4;color:#5EEAD4"><svg width="100%" height="100%" viewBox="0 0 1111 926" fill="none"><use href="#x-symbol"/></svg></span>
+        <span style="position:absolute;left:8px;bottom:8px;font-family:var(--f-display);font-size:10px;font-weight:700;color:#F5F2EA;line-height:1">GLP-1<br/><span style="color:#34EEA7">App</span></span>`;
+    } else if (key === 'exec') {
+      el.innerHTML = `<span style="position:absolute;left:6px;top:6px;font-size:6px;letter-spacing:0.16em;color:#0D9488;font-weight:700;text-transform:uppercase">01 Exec Summary</span>
+        <span style="position:absolute;left:6px;top:18px;right:50%;font-size:8px;font-weight:700;color:#0A1A1C;line-height:1.1">Three findings.</span>
+        <span style="position:absolute;right:6px;top:14px;bottom:6px;width:48%;display:flex;flex-direction:column;gap:2px">
+          <span style="height:1px;background:rgba(10,26,28,0.2)"></span>
+          <span style="font-family:var(--f-display);font-size:7px;font-weight:700;color:#0D9488">01</span>
+          <span style="height:1px;background:rgba(10,26,28,0.2)"></span>
+          <span style="font-family:var(--f-display);font-size:7px;font-weight:700;color:#0D9488">02</span>
+          <span style="height:1px;background:rgba(10,26,28,0.2)"></span>
+          <span style="font-family:var(--f-display);font-size:7px;font-weight:700;color:#0D9488">03</span>
+        </span>`;
+    } else if (key === 'quote') {
+      el.innerHTML = `<span style="position:absolute;left:8px;top:2px;font-family:var(--f-serif);font-style:italic;font-size:34px;color:#34EEA7;opacity:0.5;line-height:1">"</span>
+        <span style="position:absolute;left:16px;right:8px;top:18px;font-family:var(--f-serif);font-style:italic;font-size:7.5px;color:#F5F2EA;line-height:1.25">It's easy to take the medication...</span>
+        <span style="position:absolute;left:16px;bottom:6px;font-size:6px;color:#34EEA7;letter-spacing:0.14em">— P07</span>`;
+    } else if (key === 'seq') {
+      el.innerHTML = `<span style="position:absolute;left:6px;top:6px;font-size:6px;color:#2DD4BF;letter-spacing:0.14em;font-weight:600">SEQ · 1–7</span>
+        <span style="position:absolute;left:8px;right:8px;top:52%;height:4px;border-radius:2px;background:linear-gradient(90deg,rgba(239,68,68,0.4),rgba(245,158,11,0.4),rgba(52,238,167,0.6))"></span>
+        <span style="position:absolute;right:22%;top:38%;font-family:var(--f-display);font-size:14px;font-weight:700;color:#34EEA7;line-height:1">6.4</span>`;
+    } else if (key === 'meal') {
+      el.innerHTML = `<span style="position:absolute;left:6px;top:6px;font-size:6px;color:#0D9488;letter-spacing:0.14em;font-weight:600">BREAKOUT</span>
+        <span style="position:absolute;right:6px;top:16px;font-family:var(--f-display);font-size:20px;font-weight:700;color:#0D9488;line-height:1">6/7</span>
+        <span style="position:absolute;left:6px;bottom:6px;width:18px;height:34px;border-radius:3px;background:#111;border:1px solid #2b2b2e"></span>`;
+    } else if (key === 'f1') {
+      el.innerHTML = `<span style="position:absolute;left:6px;top:6px;font-size:6px;color:#EF4444;letter-spacing:0.14em;font-weight:600">FINDING 01</span>
+        <span style="position:absolute;left:6px;bottom:6px;width:16px;height:30px;border-radius:3px;background:#111;border:1px solid #2b2b2e"></span>
+        <span style="position:absolute;left:24px;top:50%;width:3px;height:3px;border-radius:50%;background:#EF4444;box-shadow:0 0 0 2px rgba(239,68,68,0.2)"></span>
+        <span style="position:absolute;left:30px;top:48%;right:6px;height:1px;background:rgba(239,68,68,0.4)"></span>`;
+    }
+  }
+
+  // Slide scale-to-fit
+  function resize() {
+    const wrap = document.getElementById('canvas-wrap');
+    const rect = wrap.getBoundingClientRect();
+    const scale = Math.min(rect.width / 1920, rect.height / 1080);
+    canvas.style.transform = `scale(${scale})`;
+  }
+
+  function goTo(idx) {
+    idx = Math.max(0, Math.min(SLIDES.length - 1, idx));
+    current = idx;
+    document.querySelectorAll('.slide').forEach((el, i) => {
+      el.classList.toggle('active', i === idx);
+    });
+    navigator.querySelectorAll('.nav-item').forEach((btn, i) => {
+      btn.classList.toggle('active', i === idx);
+    });
+    const pct = ((idx + 1) / SLIDES.length) * 100;
+    progressBar.style.width = pct + '%';
+    counter.textContent = String(idx + 1).padStart(2, '0') + ' / ' + String(SLIDES.length).padStart(2, '0');
+    btnPrev.disabled = idx === 0;
+    btnNext.disabled = idx === SLIDES.length - 1;
+    location.hash = 's' + (idx + 1);
+
+    // trigger per-slide enter hook
+    const active = document.querySelectorAll('.slide')[idx];
+    if (active && active.dataset.onEnter) {
+      try { window[active.dataset.onEnter] && window[active.dataset.onEnter](); } catch(e) {}
+    }
+  }
+
+  // Count-up animation helper (for SEQ)
+  window.animateSEQ = function() {
+    const ours = document.querySelector('.s4 .seq-ours');
+    const big = document.querySelector('.s4 .seq-ours-tag .big');
+    if (!ours || !big) return;
+    // position = (score - 1) / 6 * trackWidth
+    const trackWidth = 100; // percentage
+    const score = 6.4;
+    const pct = ((score - 1) / 6) * trackWidth;
+    // wrap offset (left: 30px, right: 30px, so track starts at 30 and ends at width-30)
+    // we use percentage-based positioning — container handled inside scale
+    requestAnimationFrame(() => {
+      setTimeout(() => {
+        ours.style.left = `calc(30px + ${pct}% - ${(30 * pct / 100) * 2}px)`;
+      }, 100);
+    });
+    // count up
+    const start = performance.now();
+    const duration = 1400;
+    const ease = t => 1 - Math.pow(1 - t, 3);
+    function tick(now) {
+      const t = Math.min(1, (now - start) / duration);
+      const v = ease(t) * score;
+      big.textContent = v.toFixed(1);
+      if (t < 1) requestAnimationFrame(tick);
+      else big.textContent = '6.4';
+    }
+    big.textContent = '0.0';
+    requestAnimationFrame(tick);
+  };
+
+  btnPrev.addEventListener('click', () => goTo(current - 1));
+  btnNext.addEventListener('click', () => goTo(current + 1));
+  btnToggle.addEventListener('click', () => app.classList.toggle('nav-collapsed'));
+
+  // Keyboard nav
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') { e.preventDefault(); goTo(current + 1); }
+    else if (e.key === 'ArrowLeft' || e.key === 'PageUp') { e.preventDefault(); goTo(current - 1); }
+    else if (e.key === 'Home') { goTo(0); }
+    else if (e.key === 'End') { goTo(SLIDES.length - 1); }
+    else if (e.key === 'n' || e.key === 'N') { app.classList.toggle('nav-collapsed'); }
+  });
+
+  // Hash routing
+  function fromHash() {
+    const m = /^#s(\d+)$/.exec(location.hash);
+    if (m) goTo(parseInt(m[1]) - 1);
+  }
+
+  // Print mode — auto-trigger browser's print dialog for PDF export
+  if (/[?&]print-pdf/.test(location.search)) {
+    setTimeout(() => { window.print(); }, 1200);
+  }
+
+  window.addEventListener('resize', resize);
+
+  // init
+  buildNav();
+  resize();
+  fromHash();
+  goTo(current);
+  setTimeout(() => { if (current === 3) window.animateSEQ(); }, 50);
+})();
+</script>
+</body>
+</html>
