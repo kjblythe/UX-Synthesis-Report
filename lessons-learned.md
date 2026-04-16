@@ -102,3 +102,46 @@ Session log of misses, root causes, and fixes. Read at the start of every sessio
 17. Any interactive expansion must reserve its space — no layout jump when opening/closing panels.
 18. Fullscreen / present mode is table stakes; add it upfront, not as a polish task.
 
+---
+
+## Session 3 — 2026-04-16 — Depth, chips, distribution model
+
+### Miss: Half the "chips" weren't chips
+- **What:** Slide 2 mixed clickable `.chip` buttons with static `.kpi-pill` spans styled identically. The hover/click inconsistency broke the mental model — users tried to click pills that weren't interactive.
+- **Root cause:** Style reuse without affordance parity. If two elements look the same, they must behave the same.
+- **Rule going forward:** if a pill carries a stat, it is clickable. Every pill opens a popover sourced from the spine. The only exceptions are pure typographic labels (eyebrows, tags, meta captions) — and those should not look like pills.
+
+### Miss: Popover typography had no rhythm
+- **What:** label (small uppercase) sat directly against title (bold sans) with no padding and minimal visual distinction. Subtitle read as "slightly smaller body text."
+- **Fix:** label is now italic Fraunces on a hairline divider, title is sans-serif bold below, body has explicit margin below the title, meta/lists sit under a second hairline. The popover now has three clear bands (label → title → body) not one cluttered block.
+- **Rule going forward:** popovers are mini-layouts. Treat them with the same typographic hierarchy discipline as a slide — label band, title band, body band, meta band. Dividers earn their keep.
+
+### Miss: Marketing voice leaked into research-readout copy
+- **What:** Headlines like "The app landed," "the breakout," "the adoption gatekeeper" read as pitch-deck language. Audience is a pharma business stakeholder — they want accurate + punchy, not hype.
+- **Rule going forward:** headlines must pass the "would a principal investigator say this?" test. Reach for declarative, evidence-first phrasing: "The experience resonated. All seven participants expressed willingness to use the app daily." is better than "The app landed." Punchy is fine; promotional is not.
+
+### Miss: SEQ data viz had visual collisions
+- **What:** "OUR MEAN 6.4 / 7" floated above the track at a horizontal position that overlapped with the "+0.9 Gap" label in the same vertical band. The big numeral occupied a wide visual footprint; the gap badge tried to live in the same strip. Also — expand CTA sat too close to the metric rows below it.
+- **Fix:** moved the gap bracket + label BELOW the track in the negative space between the benchmark tag and the score marker column. Added 40+ px of padding above the below-scale panel, another 40 px inside it before the metric grid, and positioned the expand button with generous top-margin on its own row.
+- **Rule going forward:** when building a composite data viz, sketch the vertical bands each element will own BEFORE placing pieces. If two elements need the same horizontal strip, one moves vertically; they do not share.
+
+### Distribution model: videos + truly-single-file
+- **What the user actually wants to ship:** `index.html` + `assets/videos/` (when clips exist). A zip you can email or drop on a USB. Nothing else.
+- **What this implies for the build:**
+  1. **Images** → base64-inlined in the HTML (or inline SVG). No separate `assets/images/` distribution folder.
+  2. **JS libraries** → inlined directly in `<script>` blocks. The HTML is 600–800 KB with jsPDF + html2canvas inlined; this is fine. No `assets/vendor/` in the distribution.
+  3. **Fonts** → Google Fonts CDN link (acceptable external dependency; degrades to system-serif fallback if offline).
+  4. **Videos** → `assets/videos/` with relative `<video src>` paths. Too large to base64 (any reasonable clip is tens of megabytes). The Dovetail clip card detects whether the video file is present; if so, renders a real `<video>` element; if not (single-file email share), shows the styled thumbnail placeholder.
+- **Rule going forward:** the file tree the user ships is the file tree the build assumes. Default to inline for everything EXCEPT videos. Never rely on an `assets/vendor/` or `assets/reference/` that the user has to remember to include.
+
+---
+
+## Session-3 additions to standing rules
+
+19. Every visible pill/badge is a chip-trigger; no static stat pills.
+20. Popover typography = label band / title band / body band / meta band, separated by hairlines with real padding.
+21. Headlines pass the "would a principal investigator say this?" test. No marketing-deck vocabulary.
+22. Composite data viz: sketch vertical bands per element before placing anything. No two elements share a horizontal strip unintentionally.
+23. Distribution = `index.html` (everything inlined) + `assets/videos/` (when present). Nothing else. Images are base64-inline; JS libs are `<script>`-inline.
+24. Dovetail clip component degrades: if the video file is present, render an actual `<video>`; if not, show the styled thumbnail placeholder. Both render correctly in the PDF export.
+
