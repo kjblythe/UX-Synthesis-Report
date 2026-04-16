@@ -30,6 +30,16 @@ Before writing ANY code, read these skills in order:
 1. `/mnt/skills/examples/theme-factory/SKILL.md` — theming patterns and color/font pairing principles.
 1. `/mnt/skills/examples/canvas-design/SKILL.md` — read the craftsmanship principles. The quality bar described there (“meticulously crafted, the product of deep expertise, painstaking attention, master-level execution”) is the quality bar for this presentation.
 
+## Visual Styling Reference
+
+If the repo contains a **reference presentation file** in `/assets/reference/` (e.g., a PDF or screenshots of an existing slide deck), use it to derive the color palette, typographic tone, and overall visual style. The agent should:
+
+1. Examine the reference file to extract dominant colors, accent colors, background treatments, and font characteristics
+1. Build upon and elevate that visual language — don’t just copy it, but treat it as the stylistic foundation
+1. Note the extracted palette in `todo.md` for user approval before building
+
+If no reference file is provided, follow the design brief’s color and typography direction.
+
 ## Architecture
 
 ### Framework Options (choose one based on project needs)
@@ -148,9 +158,9 @@ Participant quotes are the emotional core of research presentations. Style them 
 
 ### Phone/Device Frames
 
-When displaying app screenshots in device frames:
+When displaying screenshots in device frames:
 
-- **Ask the user what device the screenshots are from** before building the frame. The frame dimensions, corner radius, bezel proportions, and hardware details change significantly between devices (e.g., iPhone Air vs. iPhone 16 Pro vs. iPhone SE). Get the specific model so the frame is accurate.
+- **Ask the user what device the screenshots are from** before building the frame. The frame dimensions, corner radius, bezel proportions, and hardware details change significantly between devices.
 - Use CSS-only device frames with correct proportions for the specified device
 - **Emphasize the bezels** — the bezel is what makes a device frame look real vs. a flat rectangle. Thin but visible bezels with subtle color differentiation from the screen area. The bezel should have a slight sheen or material quality (subtle gradient or shadow) that suggests glass and metal.
 - **Show hardware button hints** on the outside of the device frame — the volume buttons and power/action button on the side edges, rendered as subtle raised elements. This small detail dramatically increases realism. Don’t overdo it — they should be hints, not focal points.
@@ -160,6 +170,17 @@ When displaying app screenshots in device frames:
 - Frame should cast a subtle shadow for depth and feel like it’s floating slightly above the slide surface
 - Never use low-fidelity wireframe boxes or flat rectangles as device frames
 - Consider a subtle reflection or gloss effect on the screen area for additional realism
+
+### Browser Frames (for Desktop/Web Screenshots)
+
+When displaying web application or desktop screenshots:
+
+- Elegant, high-fidelity but **abstracted** browser chrome — do not replicate Chrome/Safari/Firefox exactly
+- Include: a top bar with a subtle rounded address/URL area (can show a fake URL or be blank), window control dots (close/minimize/maximize) positioned correctly, and a clean tab area
+- The browser frame should feel modern and minimal — not a pixel-perfect copy of any specific browser, but unmistakably a browser window
+- Proper shadow and depth — the frame should feel like a floating window
+- The screenshot fills the content area below the chrome
+- Responsive: the browser frame should scale gracefully at different slide sizes
 
 ### Data Visualization
 
@@ -227,8 +248,11 @@ project-root/
 ├── design-brief.md            (project-specific creative direction)
 ├── blueprint.md               (slide-by-slide content spec)
 ├── spine.md                   (deep research data — reference only)
+├── todo.md                    (session plan — created before each build session)
+├── lessons-learned.md         (accumulated learnings — created after first session)
 ├── index.html                 (the presentation — or src/ if using React)
 ├── assets/
+│   ├── reference/             (reference presentation PDF/screenshots for style derivation)
 │   ├── logo.svg               (brand logo)
 │   ├── screenshots/           (app screenshots for phone frames)
 │   └── backgrounds/           (any background images/textures)
@@ -239,7 +263,9 @@ project-root/
 ## Workflow
 
 1. **Read the design brief** — understand the project-specific creative direction, color palette, and tone
+1. **Check for a reference presentation** in `/assets/reference/` — if present, derive colors and typographic style from it
 1. **Read the blueprint** — understand the slide-by-slide content, visualization specs, and quote placements
+1. **Create `todo.md`** — plan the session, share for approval, wait for approval
 1. **Establish the design system** — build the CSS custom properties, type scale, color tokens, and reusable component patterns BEFORE building individual slides
 1. **Build the proof of concept** — the first 5-6 slides establish the visual language (typically: title slide, executive summary, anchor quote, hero data visualization, feature highlight, finding slide)
 1. **Review with stakeholder** — iterate on the design system before building remaining slides
@@ -268,6 +294,7 @@ Share `todo.md` with the user and **wait for explicit approval.** Do not write p
 1. **Read CLAUDE.md** — especially the RULES at the top
 1. **Read `lessons-learned.md`** if it exists
 1. **Read the design brief**
+1. **Check for reference presentation** in `/assets/reference/`
 1. **Review the last 3-5 slides built** for visual continuity
 1. **State your principles** — colors (hex), fonts, anti-patterns, confirm you’ve read the rules
 1. **Create/update `todo.md`** and share for approval
