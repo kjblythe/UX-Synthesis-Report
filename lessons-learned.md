@@ -145,3 +145,26 @@ Session log of misses, root causes, and fixes. Read at the start of every sessio
 23. Distribution = `index.html` (everything inlined) + `assets/videos/` (when present). Nothing else. Images are base64-inline; JS libs are `<script>`-inline.
 24. Dovetail clip component degrades: if the video file is present, render an actual `<video>`; if not, show the styled thumbnail placeholder. Both render correctly in the PDF export.
 
+---
+
+## Session 4 — 2026-04-16 — Containment + the /7 overlap
+
+### Miss: Popovers overflowed the slide canvas
+- **What:** Chips near the bottom of a slide (e.g. Exec Summary Finding 03, Slide 5 quote chips, Slide 6 summary chip) opened popovers that extended BELOW the visible slide edge into the dark letterbox. The popover was clamped to the window, not the slide canvas. On a 16:9 slide inside a non-16:9 viewport, that meant popovers could render in the scaled-away whitespace — invisible.
+- **Root cause:** I positioned the popover in viewport coordinates and clamped to `window.innerWidth` / `window.innerHeight`. But the slide canvas is a 1920×1080 transformed element inside the window; its visual bounds are smaller than the window when the viewport isn't 16:9.
+- **Fix:** positioning now reads `#canvas.getBoundingClientRect()` and clamps the popover inside those bounds with 16px padding. Flip-above activates when the natural below-placement would exceed the canvas bottom (not the window bottom). Fallback: if neither above nor below fits cleanly, place in the side with more room.
+- **Rule going forward:** **the slide canvas is sacred.** No interactive element — popover, tooltip, modal, drawer — may extend outside the canvas bounds. Always clamp against `#canvas.getBoundingClientRect()`, never against the window.
+
+### Miss: SEQ /7 unit still collided with the marker line
+- **What:** The "/ 7" subunit sat below the "6.4" numeral in a flex-column; the mint vertical line from the marker dot passed up through the "/ 7" text, visually cutting the glyphs.
+- **Fix:** re-parented `/ 7` INSIDE the `.big` span as an absolutely-positioned child, anchored to the baseline of 6.4 and offset 8px to the right. The marker line now passes cleanly through the center of 6.4 alone; the /7 floats off to the right as a small unit label.
+- **Rule going forward:** when a callout has a directional line (arrow, connector, axis), treat the primary glyph as the anchor. Units, denominators, and annotations that aren't the number go NEXT to the number, never above or below where the line tracks through.
+
+---
+
+## Session-4 additions to standing rules
+
+25. The slide canvas is sacred. Popovers/tooltips/modals clamp against `#canvas.getBoundingClientRect()` with padding. Never extend beyond the slide visual frame, even if the viewport has room.
+26. Flip-above behavior for popovers uses canvas-bottom, not window-bottom. Measure popover height after append (offsetHeight) before final positioning.
+27. When a numeric callout has a directional marker line, the line anchors on the primary glyph only. Units and subunits float beside, not above/below.
+
