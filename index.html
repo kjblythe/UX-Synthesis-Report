@@ -71,14 +71,14 @@
   --f-mono:    "JetBrains Mono", ui-monospace, monospace;
 
   /* scale (at 1920x1080 reference) */
-  --sz-eyebrow: 13px;
-  --sz-meta:    15px;
-  --sz-body:    19px;
-  --sz-lead:    22px;
-  --sz-h3:      26px;
-  --sz-h2:      34px;
-  --sz-h1:      52px;
-  --sz-display: 88px;
+  --sz-eyebrow: 15px;
+  --sz-meta:    17px;
+  --sz-body:    20px;
+  --sz-lead:    23px;
+  --sz-h3:      28px;
+  --sz-h2:      36px;
+  --sz-h1:      54px;
+  --sz-display: 92px;
 
   /* motion */
   --ease-out: cubic-bezier(.22,.61,.36,1);
@@ -213,6 +213,19 @@ button { font-family: inherit; }
 }
 .topbar-btn:hover { background: rgba(52,238,167,0.12); border-color: rgba(52,238,167,0.5); transform: translateY(-1px); }
 .topbar-btn:disabled { opacity: 0.5; cursor: wait; }
+.topbar-btn.topbar-btn-ghost {
+  color: var(--on-dark-dim);
+  border-color: rgba(255,255,255,0.12);
+}
+.topbar-btn.topbar-btn-ghost:hover {
+  color: var(--mint); border-color: rgba(52,238,167,0.4);
+  background: rgba(52,238,167,0.08);
+}
+body:fullscreen #app, body:-webkit-full-screen #app {
+  background: #000;
+}
+body:fullscreen .topbar, body:-webkit-full-screen .topbar { opacity: 0.35; }
+body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity: 1; }
 
 /* STAGE */
 .stage {
@@ -692,9 +705,9 @@ button { font-family: inherit; }
 /* ============ SLIDE 2 — EXECUTIVE SUMMARY ============ */
 .s2 .exec-grid {
   display: grid;
-  grid-template-columns: 480px 1fr;
-  gap: 88px;
-  margin-top: 48px;
+  grid-template-columns: 500px 1fr;
+  gap: 80px;
+  margin-top: 40px;
   flex: 1;
   align-items: start;
 }
@@ -702,19 +715,23 @@ button { font-family: inherit; }
   font-size: 56px; font-weight: 700; line-height: 1.02;
   letter-spacing: -0.028em;
   color: var(--ink);
-  margin: 0 0 24px 0;
+  margin: 0 0 22px 0;
 }
 .s2 .exec-context h1 .ital {
   font-family: var(--f-serif); font-style: italic; font-weight: 500;
   color: var(--teal-700);
 }
 .s2 .exec-context p {
-  font-size: 17px; line-height: 1.55; color: var(--ink-mute);
-  margin: 0 0 24px 0;
-  max-width: 460px;
+  font-size: 18px; line-height: 1.55; color: var(--ink-mute);
+  margin: 0 0 16px 0;
+  max-width: 480px;
+}
+.s2 .exec-context p.context-details {
+  font-size: 15px; color: var(--ink-dim); line-height: 1.55;
 }
 .s2 .exec-context .tagline {
-  font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase;
+  margin-top: 8px;
+  font-size: 13px; letter-spacing: 0.2em; text-transform: uppercase;
   color: var(--teal-700); font-weight: 600;
   display: flex; align-items: center; gap: 12px;
 }
@@ -726,40 +743,46 @@ button { font-family: inherit; }
   border-top: 1px solid rgba(10,26,28,0.15);
 }
 .s2 .finding {
-  display: grid; grid-template-columns: 84px 1fr;
-  gap: 24px;
-  padding: 24px 0;
+  display: grid; grid-template-columns: 76px 1fr;
+  gap: 22px;
+  padding: 18px 0 20px 0;
   border-bottom: 1px solid rgba(10,26,28,0.12);
 }
 .s2 .finding:last-child { border-bottom: none; }
 .s2 .finding-num {
   font-family: var(--f-display);
-  font-size: 42px; font-weight: 700;
+  font-size: 38px; font-weight: 700;
   color: var(--teal-700);
   line-height: 1;
   letter-spacing: -0.02em;
-  position: relative; top: -2px;
+  position: relative; top: -1px;
   font-variant-numeric: tabular-nums;
 }
 .s2 .finding-body h3 {
-  font-size: 24px; font-weight: 600; line-height: 1.25;
-  letter-spacing: -0.01em;
+  font-size: 23px; font-weight: 600; line-height: 1.22;
+  letter-spacing: -0.012em;
   color: var(--ink);
-  margin: 0 0 12px 0;
+  margin: 0 0 8px 0;
   max-width: 920px;
 }
 .s2 .finding-body h3 .hl { color: var(--teal-700); }
+.s2 .finding-body p {
+  font-size: 15.5px; line-height: 1.5;
+  color: var(--ink-mute);
+  margin: 0 0 10px 0;
+  max-width: 940px;
+}
 .s2 .finding-body .kpi-row {
-  display: flex; flex-wrap: wrap; gap: 8px;
+  display: flex; flex-wrap: wrap; gap: 8px; align-items: center;
 }
 .s2 .kpi-pill {
   display: inline-flex; align-items: baseline; gap: 6px;
-  padding: 6px 12px;
+  padding: 5px 11px;
   background: rgba(20, 184, 166, 0.08);
   border: 1px solid rgba(20, 184, 166, 0.22);
   border-radius: 999px;
   color: var(--ink-mute);
-  font-size: 13px; line-height: 1.2;
+  font-size: 12.5px; line-height: 1.2;
   font-family: var(--f-display); font-weight: 500;
   letter-spacing: 0;
 }
@@ -789,13 +812,13 @@ button { font-family: inherit; }
 }
 .s3 .quote-mark {
   position: absolute;
-  left: -36px; top: -110px;
+  left: -32px; top: -200px;
   font-family: var(--f-serif);
   font-style: italic;
   font-weight: 500;
-  font-size: 340px;
+  font-size: 300px;
   line-height: 1; color: var(--mint);
-  opacity: 0.75;
+  opacity: 0.7;
   user-select: none;
 }
 .s3 .quote-eyebrow {
@@ -809,10 +832,10 @@ button { font-family: inherit; }
   font-style: italic;
   font-weight: 400;
   font-size: 72px;
-  line-height: 1.16;
+  line-height: 1.18;
   letter-spacing: -0.015em;
   color: var(--on-dark);
-  margin: 0;
+  margin: 80px 0 0 0;
   max-width: 1000px;
 }
 .s3 .quote-text .hl {
@@ -920,75 +943,137 @@ button { font-family: inherit; }
 
 /* ============ SLIDE 4 — SEQ EXPLAINER ============ */
 .s4 .seq-grid {
-  display: grid; grid-template-columns: 460px 1fr;
-  gap: 80px; flex: 1;
-  margin-top: 40px; align-items: center;
+  display: grid; grid-template-columns: 440px 1fr;
+  gap: 72px; flex: 1;
+  margin-top: 32px; align-items: stretch;
+}
+.s4 .seq-left {
+  display: flex; flex-direction: column;
+  padding-top: 8px;
 }
 .s4 .seq-left h1 {
   font-family: var(--f-display); font-weight: 700;
   font-size: 60px; line-height: 1.02; letter-spacing: -0.028em;
-  color: var(--on-dark); margin: 22px 0 24px 0;
+  color: var(--on-dark); margin: 20px 0 22px 0;
 }
 .s4 .seq-left h1 .hl { color: var(--mint); font-variant-numeric: tabular-nums; }
 .s4 .seq-left p {
-  font-size: 16px; line-height: 1.62;
+  font-size: 18px; line-height: 1.55;
   color: var(--on-dark-dim);
-  margin: 0 0 18px 0; max-width: 420px;
+  margin: 0 0 16px 0; max-width: 420px;
 }
 .s4 .seq-source {
-  margin-top: 20px;
-  font-family: var(--f-mono); font-size: 11px;
+  margin-top: 14px;
+  font-family: var(--f-mono); font-size: 12px;
   color: var(--on-dark-mute); letter-spacing: 0.04em;
 }
-.s4 .seq-stage { position: relative; padding: 20px 40px 60px 40px; }
-.s4 .seq-scale { position: relative; height: 420px; }
+.s4 .seq-stage {
+  position: relative;
+  padding: 0 30px;
+  height: 860px; /* reserved — no layout jump on expand */
+  display: flex; flex-direction: column;
+}
+.s4 .seq-scale-wrap {
+  position: relative;
+  height: 360px;
+  margin-top: 20px;
+}
+.s4 .seq-scale { position: relative; height: 100%; }
 .s4 .seq-track {
-  position: absolute; left: 30px; right: 30px; top: 240px;
-  height: 40px; border-radius: 20px; overflow: hidden;
+  position: absolute; left: 30px; right: 30px; top: 220px;
+  height: 44px; border-radius: 22px; overflow: hidden;
   background: linear-gradient(90deg,
-    rgba(239, 68, 68, 0.35) 0%,
-    rgba(239, 68, 68, 0.35) 22%,
-    rgba(245, 158, 11, 0.35) 35%,
-    rgba(245, 158, 11, 0.35) 58%,
-    rgba(16, 185, 129, 0.4) 72%,
-    rgba(52, 238, 167, 0.55) 100%);
-  border: 1px solid rgba(255,255,255,0.08);
+    rgba(239, 68, 68, 0.32) 0%,
+    rgba(239, 68, 68, 0.32) 22%,
+    rgba(245, 158, 11, 0.32) 35%,
+    rgba(245, 158, 11, 0.32) 58%,
+    rgba(16, 185, 129, 0.40) 72%,
+    rgba(52, 238, 167, 0.60) 100%);
+  border: 1px solid rgba(255,255,255,0.10);
 }
 .s4 .seq-ticks {
-  position: absolute; left: 30px; right: 30px; top: 300px;
+  position: absolute; left: 30px; right: 30px; top: 286px;
   display: flex; justify-content: space-between;
 }
 .s4 .seq-tick { display: flex; flex-direction: column; align-items: center; gap: 10px; width: 30px; }
-.s4 .seq-tick::before { content: ""; width: 1px; height: 14px; background: rgba(255,255,255,0.2); }
-.s4 .seq-tick-num { font-family: var(--f-mono); font-size: 13px; color: var(--on-dark-dim); font-variant-numeric: tabular-nums; }
+.s4 .seq-tick::before { content: ""; width: 1px; height: 16px; background: rgba(255,255,255,0.25); }
+.s4 .seq-tick-num { font-family: var(--f-mono); font-size: 16px; color: var(--on-dark-dim); font-variant-numeric: tabular-nums; font-weight: 500; }
 .s4 .seq-zones {
-  position: absolute; left: 30px; right: 30px; top: 196px;
+  position: absolute; left: 30px; right: 30px; top: 176px;
   display: flex;
-  font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 500;
+  font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 600;
 }
-.s4 .seq-zone { padding-bottom: 8px; border-bottom: 1px solid currentColor; text-align: center; }
+.s4 .seq-zone { padding-bottom: 10px; border-bottom: 1px solid currentColor; text-align: center; }
 .s4 .seq-zone.zone-hard { color: rgba(239,68,68,0.85); flex-basis: 33.33%; }
 .s4 .seq-zone.zone-avg  { color: rgba(245,158,11,0.95); flex-basis: 33.33%; }
 .s4 .seq-zone.zone-easy { color: var(--mint); flex-basis: 33.33%; }
-.s4 .seq-benchmark {
-  position: absolute; top: 170px; bottom: 80px; width: 2px;
-  background: repeating-linear-gradient(180deg, rgba(255,255,255,0.45) 0 6px, transparent 6px 12px);
+
+/* Benchmark: a shaded band at 5.3–5.6 (the MeasuringU benchmark range) — more prominent than a line */
+.s4 .seq-benchmark-band {
+  position: absolute;
+  top: 212px; height: 60px;
+  background: repeating-linear-gradient(135deg,
+    rgba(255,255,255,0.06) 0 6px,
+    rgba(255,255,255,0.10) 6px 12px);
+  border-left: 2px solid rgba(255,255,255,0.35);
+  border-right: 2px solid rgba(255,255,255,0.35);
+  border-radius: 4px;
+  pointer-events: none;
 }
 .s4 .seq-benchmark-tag {
-  position: absolute; bottom: -58px; left: 50%; transform: translateX(-50%);
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(255,255,255,0.15);
-  backdrop-filter: blur(10px);
-  padding: 10px 14px; border-radius: 10px; white-space: nowrap;
-  font-size: 12px; letter-spacing: 0.08em; color: var(--on-dark-dim); text-align: center;
+  position: absolute;
+  bottom: -52px; left: 50%; transform: translateX(-50%);
+  white-space: nowrap;
+  text-align: center;
+  line-height: 1.25;
+}
+.s4 .seq-benchmark-tag .lab {
+  font-size: 11px; letter-spacing: 0.20em; text-transform: uppercase;
+  color: var(--on-dark-dim); font-weight: 500;
+  display: block; margin-bottom: 4px;
 }
 .s4 .seq-benchmark-tag .val {
-  display: block; font-family: var(--f-display); font-weight: 600;
-  color: var(--on-dark); font-size: 18px; letter-spacing: 0;
-  font-variant-numeric: tabular-nums; margin-bottom: 2px;
+  font-family: var(--f-display); font-weight: 600;
+  color: var(--on-dark); font-size: 18px;
+  font-variant-numeric: tabular-nums;
 }
+
+/* GAP BRACKET — the +0.9 story rendered as a curved arc between benchmark and our score */
+.s4 .seq-gap-arc {
+  position: absolute;
+  top: 116px; height: 104px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 420ms ease 500ms;
+}
+.s4.active .seq-gap-arc { opacity: 1; }
+.s4 .seq-gap-arc svg { width: 100%; height: 100%; display: block; overflow: visible; }
+.s4 .seq-gap-label {
+  position: absolute;
+  top: 48px;
+  display: flex; flex-direction: column; align-items: center; gap: 2px;
+  font-family: var(--f-display); font-weight: 700;
+  color: var(--mint); font-size: 22px;
+  letter-spacing: -0.01em;
+  font-variant-numeric: tabular-nums;
+  padding: 6px 12px;
+  background: rgba(10, 40, 36, 0.85);
+  border: 1px solid rgba(52,238,167,0.35);
+  border-radius: 999px;
+  white-space: nowrap;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 380ms ease 820ms;
+}
+.s4.active .seq-gap-label { opacity: 1; }
+.s4 .seq-gap-label .lbl {
+  font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--on-dark-dim); font-weight: 600;
+}
+
+/* OUR MEAN marker — more emphatic */
 .s4 .seq-ours {
-  position: absolute; top: 100px; bottom: 30px; width: 3px;
+  position: absolute; top: 88px; bottom: 20px; width: 3px;
   background: linear-gradient(180deg, var(--mint), rgba(52,238,167,0.0));
   opacity: 0;
   transition: opacity 400ms ease, left 1100ms var(--ease-out);
@@ -996,17 +1081,18 @@ button { font-family: inherit; }
 .s4.active .seq-ours { opacity: 1; }
 .s4 .seq-ours-tag {
   position: absolute; top: -140px; left: 50%; transform: translateX(-50%);
-  display: flex; flex-direction: column; align-items: center; gap: 6px;
+  display: flex; flex-direction: column; align-items: center; gap: 4px;
 }
 .s4 .seq-ours-tag .label {
-  font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
+  font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase;
   color: var(--mint); font-weight: 600;
 }
 .s4 .seq-ours-tag .big {
   font-family: var(--f-display); font-weight: 700;
-  font-size: 110px; line-height: 1; color: var(--mint);
+  font-size: 124px; line-height: 1; color: var(--mint);
   font-variant-numeric: tabular-nums; letter-spacing: -0.02em;
   filter: drop-shadow(0 8px 28px rgba(52,238,167,0.35));
+  cursor: pointer;
 }
 .s4 .seq-ours-tag .of {
   font-family: var(--f-display); font-weight: 400;
@@ -1016,75 +1102,88 @@ button { font-family: inherit; }
 .s4 .seq-ours::before {
   content: ""; position: absolute; left: 50%; top: 0;
   transform: translate(-50%, -50%);
-  width: 18px; height: 18px; border-radius: 50%;
+  width: 20px; height: 20px; border-radius: 50%;
   background: var(--mint);
-  box-shadow: 0 0 0 6px rgba(52,238,167,0.15), 0 0 24px rgba(52,238,167,0.6);
+  box-shadow: 0 0 0 7px rgba(52,238,167,0.15), 0 0 26px rgba(52,238,167,0.6);
+}
+
+/* BELOW-SCALE: reserved dual panel — swaps between compare + breakdown */
+.s4 .seq-below {
+  position: relative;
+  margin-top: 68px;
+  flex: 1;
+  min-height: 260px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+.s4 .seq-compared,
+.s4 .seq-tasks {
+  position: absolute;
+  inset: 20px 0 0 0;
+  transition: opacity 240ms ease;
 }
 .s4 .seq-compared {
   display: grid; grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  margin-top: 72px; padding-top: 28px;
-  border-top: 1px solid rgba(255,255,255,0.08);
+  gap: 28px 40px;
+  padding: 0;
+  opacity: 1;
 }
+.s4.seq-expanded .seq-compared { opacity: 0 !important; pointer-events: none !important; }
+.s4.seq-expanded .seq-tasks { opacity: 1 !important; }
 .s4 .seq-compared .cmp-row {
-  display: flex; align-items: baseline; gap: 18px;
-  font-size: 14px; color: var(--on-dark-dim);
+  display: grid; grid-template-columns: auto 1fr; align-items: baseline; gap: 18px;
+  font-size: 15px; color: var(--on-dark-dim); line-height: 1.45;
 }
 .s4 .seq-compared .cmp-row .num {
-  font-family: var(--f-display); font-weight: 600; font-size: 22px;
+  font-family: var(--f-display); font-weight: 700; font-size: 32px;
   color: var(--on-dark); font-variant-numeric: tabular-nums;
-  letter-spacing: 0.01em; min-width: 52px;
+  letter-spacing: -0.01em;
 }
 .s4 .seq-compared .cmp-row .num.mint { color: var(--mint); }
+
 .s4 .seq-expand-btn {
-  margin-left: auto;
+  position: absolute;
+  top: -8px; right: 0;
+  z-index: 5;
   display: inline-flex; align-items: center; gap: 8px;
-  background: rgba(52, 238, 167, 0.08);
-  border: 1px solid rgba(52, 238, 167, 0.32);
+  background: rgba(52, 238, 167, 0.10);
+  border: 1px solid rgba(52, 238, 167, 0.38);
   border-radius: 999px;
-  padding: 8px 16px;
+  padding: 10px 18px;
   color: var(--mint);
-  font-family: var(--f-display); font-weight: 500;
-  font-size: 12px; letter-spacing: 0.06em;
+  font-family: var(--f-display); font-weight: 600;
+  font-size: 13px; letter-spacing: 0.06em;
   cursor: pointer;
   transition: background 160ms ease, border-color 160ms ease, transform 160ms ease;
-  align-self: center;
-  grid-column: 2 / 3;
-  justify-self: end;
 }
-.s4 .seq-expand-btn:hover { background: rgba(52, 238, 167, 0.18); border-color: rgba(52, 238, 167, 0.55); transform: translateY(-1px); }
-.s4 .seq-expand-btn svg { transition: transform 220ms var(--ease-out); }
+.s4 .seq-expand-btn:hover { background: rgba(52, 238, 167, 0.20); border-color: rgba(52, 238, 167, 0.60); transform: translateY(-1px); }
+.s4 .seq-expand-btn svg { transition: transform 240ms var(--ease-out); }
 .s4.seq-expanded .seq-expand-btn svg { transform: rotate(180deg); }
 
-/* Per-task panel — hidden by default, slides in on expand */
+/* TASKS PANEL */
 .s4 .seq-tasks {
-  position: absolute;
-  left: 40px; right: 40px;
-  bottom: 60px;
-  max-height: 0;
   opacity: 0;
-  overflow: hidden;
-  transition: max-height 360ms var(--ease-out), opacity 220ms ease;
-  padding: 0;
+  pointer-events: none;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 8px 24px;
+  gap: 6px 28px;
 }
 .s4.seq-expanded .seq-tasks {
-  max-height: 320px;
   opacity: 1;
-  padding-top: 14px;
-  border-top: 1px solid rgba(255,255,255,0.10);
+  pointer-events: auto;
 }
-.s4.seq-expanded .seq-stage { padding-bottom: 240px; }
-.s4.seq-expanded .seq-compared .cmp-row { opacity: 0; transition: opacity 200ms ease; pointer-events: none; }
-.s4 .seq-compared .cmp-row { transition: opacity 200ms ease; }
+.s4 .seq-tasks .seq-tasks-legend {
+  grid-column: 1 / -1;
+  display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: 4px;
+  font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--on-dark-dim); font-weight: 600;
+}
 .s4 .seq-task {
   display: grid;
-  grid-template-columns: 30px 160px 1fr 36px;
+  grid-template-columns: 32px 170px 1fr 48px;
   align-items: center;
-  gap: 12px;
-  padding: 8px 10px;
+  gap: 14px;
+  padding: 10px 12px;
   border-radius: 8px;
   cursor: pointer;
   transition: background 160ms ease;
@@ -1092,34 +1191,53 @@ button { font-family: inherit; }
 .s4 .seq-task:hover {
   background: rgba(52, 238, 167, 0.06);
 }
+.s4 .seq-task.chip-trigger {
+  /* override chip-trigger pill-border styling on the task row — keep the row styling */
+  padding: 10px 12px !important;
+  background: transparent;
+  border: none !important;
+  color: inherit;
+  height: auto !important;
+  border-radius: 8px !important;
+  font-family: inherit;
+  font-size: inherit;
+  letter-spacing: normal;
+}
+.s4 .seq-task.chip-trigger:hover {
+  background: rgba(52, 238, 167, 0.06) !important;
+  transform: none !important;
+  border: none !important;
+}
 .s4 .seq-task-tag {
-  font-family: var(--f-mono); font-size: 11px;
-  color: var(--on-dark-mute); letter-spacing: 0.04em;
+  font-family: var(--f-mono); font-size: 13px;
+  color: var(--on-dark-mute); letter-spacing: 0.04em; font-weight: 500;
 }
 .s4 .seq-task-name {
-  font-size: 13px; color: var(--on-dark);
+  font-size: 15px; color: var(--on-dark);
   font-weight: 500;
+  letter-spacing: -0.005em;
 }
 .s4 .seq-task-bar {
-  position: relative; height: 6px;
+  position: relative; height: 7px;
   background: rgba(255,255,255,0.06);
-  border-radius: 3px; overflow: hidden;
+  border-radius: 4px; overflow: hidden;
 }
 .s4 .seq-task-bar-fill {
   position: absolute; left: 0; top: 0; bottom: 0;
   width: 0%;
   background: linear-gradient(90deg, var(--teal-500), var(--mint));
-  border-radius: 3px;
+  border-radius: 4px;
   transition: width 800ms var(--ease-out);
 }
 .s4 .seq-task.low .seq-task-bar-fill {
   background: linear-gradient(90deg, var(--gold), var(--gold-soft));
 }
 .s4 .seq-task-score {
-  font-family: var(--f-display); font-weight: 600;
-  font-size: 16px; color: var(--mint);
+  font-family: var(--f-display); font-weight: 700;
+  font-size: 20px; color: var(--mint);
   font-variant-numeric: tabular-nums;
   text-align: right;
+  letter-spacing: -0.01em;
 }
 .s4 .seq-task.low .seq-task-score { color: var(--gold); }
 
@@ -1154,7 +1272,7 @@ button { font-family: inherit; }
 .s5 .meal-stat { display: flex; flex-direction: column; gap: 4px; }
 .s5 .meal-stat .n {
   font-family: var(--f-display); font-weight: 700;
-  font-size: 96px; line-height: 0.9; color: var(--teal-700);
+  font-size: 100px; line-height: 0.9; color: var(--teal-700);
   font-variant-numeric: tabular-nums; letter-spacing: -0.03em;
 }
 .s5 .meal-stat .label {
@@ -1247,18 +1365,27 @@ button { font-family: inherit; }
   margin: 0; font-size: 13px; line-height: 1.5;
   color: var(--on-dark-dim);
 }
-.s6 .f1-stat-strip {
-  display: flex; align-items: baseline; gap: 36px;
-  padding: 14px 0 0 0;
-  border-top: 1px solid rgba(255,255,255,0.08);
-  margin-top: 4px;
+.s6 .f1-summary {
+  margin-top: 8px;
+  padding: 18px 22px;
+  border-radius: 14px;
+  border: 1px solid rgba(52, 238, 167, 0.22);
+  background: rgba(52, 238, 167, 0.05);
 }
-.s6 .f1-stat-strip .sx { display: flex; align-items: baseline; gap: 10px; }
-.s6 .f1-stat-strip .sx .n {
-  font-family: var(--f-display); font-weight: 700; font-size: 34px;
-  color: var(--coral); font-variant-numeric: tabular-nums; letter-spacing: -0.01em;
+.s6 .f1-summary .fs-title {
+  font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--mint); font-weight: 600;
+  margin-bottom: 10px;
+  display: flex; align-items: center; gap: 12px;
 }
-.s6 .f1-stat-strip .sx .label { font-size: 12px; color: var(--on-dark-dim); letter-spacing: 0.02em; }
+.s6 .f1-summary .fs-title::before {
+  content: ""; width: 22px; height: 1px; background: var(--mint);
+}
+.s6 .f1-summary p {
+  margin: 0;
+  font-size: 15.5px; line-height: 1.55;
+  color: var(--on-dark);
+}
 .s6 .connectors { position: absolute; inset: 0; pointer-events: none; overflow: visible; }
 
 /* ============ PHONE FRAME ============ */
@@ -1592,6 +1719,11 @@ button { font-family: inherit; }
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
     </button>
     <div id="topbar" class="topbar">
+      <button id="btn-fullscreen" class="topbar-btn topbar-btn-ghost" title="Toggle fullscreen (F)" aria-label="Toggle fullscreen">
+        <svg class="ico-enter" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3"/><path d="M21 8V5a2 2 0 0 0-2-2h-3"/><path d="M3 16v3a2 2 0 0 0 2 2h3"/><path d="M16 21h3a2 2 0 0 0 2-2v-3"/></svg>
+        <svg class="ico-exit" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><path d="M8 3v3a2 2 0 0 1-2 2H3"/><path d="M21 8h-3a2 2 0 0 1-2-2V3"/><path d="M3 16h3a2 2 0 0 1 2 2v3"/><path d="M16 21v-3a2 2 0 0 1 2-2h3"/></svg>
+        <span class="fs-label">Fullscreen</span>
+      </button>
       <button id="btn-pdf" class="topbar-btn" title="Export as PDF">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
         <span>Export PDF</span>
@@ -1643,39 +1775,44 @@ button { font-family: inherit; }
     <div class="exec-grid">
       <div class="exec-context reveal d2">
         <h1>Above benchmark.<br/>Across <span class="ital">every</span> task.</h1>
-        <p>In April 2026 we ran in-person moderated testing with seven GLP-1 patients on the interactive prototype &mdash; six tasks across a simulated day with the app.</p>
+        <p>Seven GLP-1 patients, six structured tasks, one simulated day with the app. Fully interactive prototype with live AI &mdash; not a click-through.</p>
+        <p class="context-details">Professional research facility. Think-aloud protocol. SEQ after every task. Post-session satisfaction questionnaire. Full video + transcription via <button class="chip chip-inline" data-cite="study-design">Dovetail</button>.</p>
         <div class="tagline">Three findings &middot; One direction</div>
       </div>
       <div class="findings">
         <div class="finding reveal d3">
           <div class="finding-num">01</div>
           <div class="finding-body">
-            <h3>The app landed. <span class="hl">All 7 participants</span> wanted to use it daily.</h3>
+            <h3>The app landed. <span class="hl">All seven</span> wanted to use it daily.</h3>
+            <p>Satisfaction averaged 6.6/7, task ease 6.4/7 &mdash; well above the industry benchmark of 5.5. The most critical scorer <button class="chip chip-inline" data-cite="p03">P03</button> still said she would replace her current app with this one; <button class="chip chip-inline" data-cite="p04">P04</button> said she&apos;d replace her handwritten gratitude journal.</p>
             <div class="kpi-row">
               <span class="kpi-pill"><b>6.6</b><i>/7 satisfaction</i></span>
               <span class="kpi-pill"><b>6.4</b><i>/7 SEQ &middot; vs 5.5 benchmark</i></span>
-              <span class="kpi-pill"><b>2/7</b><i>would replace today&apos;s app</i></span>
+              <button class="chip chip-inline" data-cite="willing-replace">2/7 would replace today&apos;s app</button>
             </div>
           </div>
         </div>
         <div class="finding reveal d4">
           <div class="finding-num">02</div>
           <div class="finding-body">
-            <h3>AI nutrition was the <span class="hl">breakout</span>. Photo logging is the adoption gatekeeper.</h3>
+            <h3>AI nutrition is the <span class="hl">breakout</span>. Photo logging is the adoption gatekeeper.</h3>
+            <p>Six of seven chose photo logging unprompted &mdash; multiple surprised by the AI&apos;s recognition accuracy. <button class="chip chip-inline" data-cite="p04">P04</button> tied her willingness to track daily to the photo feature: if she can photograph, she logs every meal; if she has to type, she won&apos;t.</p>
             <div class="kpi-row">
-              <span class="kpi-pill"><b>6/7</b><i>chose photo unprompted</i></span>
+              <button class="chip chip-inline" data-cite="meal-67">6/7 chose photo unprompted</button>
               <span class="kpi-pill"><b>6.7</b><i>/7 SEQ on meal logging</i></span>
+              <button class="chip chip-inline" data-cite="p01">P01 outlier: typed, not photo</button>
             </div>
           </div>
         </div>
         <div class="finding reveal d5">
           <div class="finding-num">03</div>
           <div class="finding-body">
-            <h3>The usability gap is <span class="hl">visual styling</span>, not architecture.</h3>
+            <h3>The gaps are <span class="hl">visual refinements</span> &mdash; not architecture rebuilds.</h3>
+            <p>Interactive elements (bottom nav, action buttons, confirmations) blend into the polished dark surface. Confirmed by the <button class="chip chip-inline" data-cite="p07-paradox">paradox of P07</button>: the least tech-confident participant in the cohort navigated every feature intuitively on first try. Architecture is sound.</p>
             <div class="kpi-row">
-              <span class="kpi-pill"><b>5/7</b><i>missed the +&nbsp;button</i></span>
-              <span class="kpi-pill"><b>3/7</b><i>missed the bottom nav</i></span>
-              <span class="kpi-pill kpi-mint"><b>CSS</b><i>fix &mdash; not a redesign &middot;</i><button class="chip chip-inline chip-mint" data-cite="p07-paradox">P07 paradox</button></span>
+              <button class="chip chip-inline chip-neg" data-cite="f1-fab">5/7 missed the + button</button>
+              <button class="chip chip-inline chip-neg" data-cite="f1-bottomnav">3/7 missed the bottom nav</button>
+              <span class="kpi-pill kpi-mint"><b>UI polish</b><i>&mdash; not a redesign</i></span>
             </div>
           </div>
         </div>
@@ -1740,57 +1877,75 @@ button { font-family: inherit; }
     <div class="seq-grid">
       <div class="seq-left">
         <div class="eyebrow reveal d1">How we measured ease</div>
-        <h1 class="reveal d2">A 1&ndash;7 scale. We hit <span class="hl">6.4</span>.</h1>
-        <p class="reveal d3">The <strong style="color:var(--on-dark);font-weight:500">Single Ease Question</strong> is the UX industry&apos;s yardstick. After every task, participants answer: &ldquo;How easy or difficult was this?&rdquo; on a 7-point scale.</p>
-        <p class="reveal d4">Because it&apos;s standardized, our scores can be compared against thousands of other products. The industry benchmark sits at <strong style="color:var(--on-dark);font-weight:500">5.5/7</strong> &mdash; the 50th percentile across 10,000+ users.</p>
-        <p class="reveal d5">Our overall mean is <strong style="color:var(--mint);font-weight:600">6.4/7</strong>. Every task cleared the benchmark.</p>
-        <div class="seq-source reveal d6">Source &middot; MeasuringU, 400+ tasks, 10,000+ users</div>
+        <h1 class="reveal d2">A 1&ndash;7 scale.<br/>We hit <span class="hl">6.4</span>.</h1>
+        <p class="reveal d3">The <strong style="color:var(--on-dark);font-weight:500">Single Ease Question</strong> is the UX industry&apos;s standard metric. After every task, participants answer how easy it was on a 7-point scale.</p>
+        <p class="reveal d4">Because it&apos;s standardized, our result can be benchmarked against thousands of other digital products. The industry average sits at <strong style="color:var(--on-dark);font-weight:500">5.5/7</strong>.</p>
+        <p class="reveal d5">Our mean is <strong style="color:var(--mint);font-weight:600">6.4/7</strong>. Every single task cleared the benchmark.</p>
+        <div class="seq-source reveal d6">Source &middot; <button class="chip chip-inline" data-cite="seq-source">MeasuringU benchmark</button></div>
       </div>
       <div class="seq-stage reveal d3">
-        <div class="seq-scale">
-          <div class="seq-zones">
-            <div class="seq-zone zone-hard">Difficult</div>
-            <div class="seq-zone zone-avg">Average</div>
-            <div class="seq-zone zone-easy">Easy &middot; Excellent</div>
-          </div>
-          <div class="seq-benchmark" style="left: calc(30px + 75% - 22.5px)">
-            <div class="seq-benchmark-tag">
-              <span class="val">5.5</span>
-              Industry benchmark
+        <div class="seq-scale-wrap">
+          <div class="seq-scale">
+            <div class="seq-zones">
+              <div class="seq-zone zone-hard">Difficult</div>
+              <div class="seq-zone zone-avg">Average</div>
+              <div class="seq-zone zone-easy">Easy &middot; Excellent</div>
             </div>
-          </div>
-          <div class="seq-ours" style="left: 30px">
-            <div class="seq-ours-tag">
-              <span class="label">Our mean</span>
-              <span class="big">6.4</span>
-              <span class="of">/ 7</span>
+            <div class="seq-benchmark-band" style="left: calc(30px + 71.7% - 6px); width: calc(5% + 12px);">
+              <div class="seq-benchmark-tag">
+                <span class="lab">Industry benchmark</span>
+                <span class="val">5.3&ndash;5.6</span>
+              </div>
             </div>
-          </div>
-          <div class="seq-track"></div>
-          <div class="seq-ticks">
-            <div class="seq-tick"><span class="seq-tick-num">1</span></div>
-            <div class="seq-tick"><span class="seq-tick-num">2</span></div>
-            <div class="seq-tick"><span class="seq-tick-num">3</span></div>
-            <div class="seq-tick"><span class="seq-tick-num">4</span></div>
-            <div class="seq-tick"><span class="seq-tick-num">5</span></div>
-            <div class="seq-tick"><span class="seq-tick-num">6</span></div>
-            <div class="seq-tick"><span class="seq-tick-num">7</span></div>
+            <div class="seq-gap-arc" style="left: calc(30px + 75%); right: calc(30px + 10%);">
+              <svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+                <path d="M 2 100 Q 50 0 98 100" fill="none" stroke="rgba(52,238,167,0.55)" stroke-width="1.5" stroke-dasharray="3 4"/>
+              </svg>
+            </div>
+            <div class="seq-gap-label" style="left: calc(30px + 82.5%);">
+              <span class="lbl">Gap</span>
+              +0.9
+            </div>
+            <div class="seq-ours" style="left: 30px">
+              <div class="seq-ours-tag">
+                <span class="label">Our mean</span>
+                <span class="big chip-trigger" data-cite="seq-mean">6.4</span>
+                <span class="of">/ 7</span>
+              </div>
+            </div>
+            <div class="seq-track"></div>
+            <div class="seq-ticks">
+              <div class="seq-tick"><span class="seq-tick-num">1</span></div>
+              <div class="seq-tick"><span class="seq-tick-num">2</span></div>
+              <div class="seq-tick"><span class="seq-tick-num">3</span></div>
+              <div class="seq-tick"><span class="seq-tick-num">4</span></div>
+              <div class="seq-tick"><span class="seq-tick-num">5</span></div>
+              <div class="seq-tick"><span class="seq-tick-num">6</span></div>
+              <div class="seq-tick"><span class="seq-tick-num">7</span></div>
+            </div>
           </div>
         </div>
-        <div class="seq-compared reveal d5">
-          <div class="cmp-row"><span class="num mint">+0.9</span><span>above industry average across 10,000+ products</span></div>
+        <div class="seq-below">
           <button class="seq-expand-btn" type="button" aria-expanded="false">
             <span class="seq-expand-label">See per-task breakdown</span>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
           </button>
-        </div>
-        <div class="seq-tasks" aria-hidden="true">
-          <div class="seq-task" data-id="T1" data-score="6.7"><span class="seq-task-tag">T1</span><span class="seq-task-name">Morning Exploration</span><div class="seq-task-bar"><div class="seq-task-bar-fill"></div></div><span class="seq-task-score">6.7</span></div>
-          <div class="seq-task" data-id="T2" data-score="6.6"><span class="seq-task-tag">T2</span><span class="seq-task-name">Log Injection</span><div class="seq-task-bar"><div class="seq-task-bar-fill"></div></div><span class="seq-task-score">6.6</span></div>
-          <div class="seq-task" data-id="T3" data-score="6.7"><span class="seq-task-tag">T3</span><span class="seq-task-name">Log Meal</span><div class="seq-task-bar"><div class="seq-task-bar-fill"></div></div><span class="seq-task-score">6.7</span></div>
-          <div class="seq-task low" data-id="T4" data-score="5.4"><span class="seq-task-tag">T4</span><span class="seq-task-name">AI Coach</span><div class="seq-task-bar"><div class="seq-task-bar-fill"></div></div><span class="seq-task-score">5.4</span></div>
-          <div class="seq-task" data-id="T5" data-score="6.3"><span class="seq-task-tag">T5</span><span class="seq-task-name">Find Learning</span><div class="seq-task-bar"><div class="seq-task-bar-fill"></div></div><span class="seq-task-score">6.3</span></div>
-          <div class="seq-task" data-id="T6" data-score="6.9"><span class="seq-task-tag">T6</span><span class="seq-task-name">Evening Reflection</span><div class="seq-task-bar"><div class="seq-task-bar-fill"></div></div><span class="seq-task-score">6.9</span></div>
+          <div class="seq-compared reveal d5">
+            <div class="cmp-row"><span class="num mint">+0.9</span><span>above the industry average across 10,000+ tested products</span></div>
+            <div class="cmp-row"><span class="num">86%</span><span>task completion rate at an SEQ of 5.9 &mdash; we exceed on every task</span></div>
+          </div>
+          <div class="seq-tasks" aria-hidden="true">
+            <div class="seq-tasks-legend">
+              <span>Per-task SEQ</span>
+              <span>Click any task for the behavioural context</span>
+            </div>
+            <div class="seq-task" data-id="T1" data-score="6.7"><span class="seq-task-tag">T1</span><span class="seq-task-name">Morning Exploration</span><div class="seq-task-bar"><div class="seq-task-bar-fill"></div></div><span class="seq-task-score">6.7</span></div>
+            <div class="seq-task" data-id="T2" data-score="6.6"><span class="seq-task-tag">T2</span><span class="seq-task-name">Log Injection</span><div class="seq-task-bar"><div class="seq-task-bar-fill"></div></div><span class="seq-task-score">6.6</span></div>
+            <div class="seq-task" data-id="T3" data-score="6.7"><span class="seq-task-tag">T3</span><span class="seq-task-name">Log Meal</span><div class="seq-task-bar"><div class="seq-task-bar-fill"></div></div><span class="seq-task-score">6.7</span></div>
+            <div class="seq-task low" data-id="T4" data-score="5.4"><span class="seq-task-tag">T4</span><span class="seq-task-name">AI Coach</span><div class="seq-task-bar"><div class="seq-task-bar-fill"></div></div><span class="seq-task-score">5.4</span></div>
+            <div class="seq-task" data-id="T5" data-score="6.3"><span class="seq-task-tag">T5</span><span class="seq-task-name">Find Learning</span><div class="seq-task-bar"><div class="seq-task-bar-fill"></div></div><span class="seq-task-score">6.3</span></div>
+            <div class="seq-task" data-id="T6" data-score="6.9"><span class="seq-task-tag">T6</span><span class="seq-task-name">Evening Reflection</span><div class="seq-task-bar"><div class="seq-task-bar-fill"></div></div><span class="seq-task-score">6.9</span></div>
+          </div>
         </div>
       </div>
     </div>
@@ -1966,49 +2121,52 @@ button { font-family: inherit; }
       </div>
       <div class="f1-right">
         <div class="reveal d3">
-          <h2 class="f1-headline">Affordances <span class="hl">blend into</span> the dark surface.</h2>
-          <p class="f1-lead" style="margin-top:10px">Architecture is sound &mdash; styling needs contrast.</p>
+          <h2 class="f1-headline">Affordances <span class="hl">blend into</span> the polished dark surface.</h2>
+          <p class="f1-lead" style="margin-top:10px">The information architecture is sound. The problem is that interactive elements &mdash; navigation, action buttons, confirmations &mdash; don&apos;t visually announce themselves against the app&apos;s dark aesthetic. A <strong style="color:var(--mint);font-weight:600">visual styling pass</strong>, not a structural rebuild.</p>
         </div>
         <div class="f1-callouts">
           <div class="callout neg reveal d4">
             <span class="marker" aria-hidden="true"></span>
             <div>
-              <h4>Bottom nav fades into background</h4>
-              <p><button class="chip chip-inline chip-neg" data-cite="f1-bottomnav">3/7</button> missed it entirely on first use.</p>
+              <h4>Bottom navigation fades into the background</h4>
+              <p>Semi-transparent on a dark surface reads as decorative. <button class="chip chip-inline chip-neg" data-cite="f1-bottomnav">3/7 missed it entirely</button> on first use.</p>
             </div>
           </div>
           <div class="callout neg reveal d5">
             <span class="marker" aria-hidden="true"></span>
             <div>
-              <h4>+ button doesn&apos;t announce itself</h4>
-              <p><button class="chip chip-inline chip-neg" data-cite="f1-fab">5/7</button> never noticed it. Correct pattern, insufficient weight.</p>
+              <h4>The + button doesn&apos;t announce itself</h4>
+              <p>Correct pattern, insufficient visual weight. <button class="chip chip-inline chip-neg" data-cite="f1-fab">5/7 never noticed it</button>. Those who did used it correctly the first time.</p>
             </div>
           </div>
           <div class="callout neg reveal d5">
             <span class="marker" aria-hidden="true"></span>
             <div>
-              <h4>Toast confirmations read as content</h4>
-              <p><button class="chip chip-inline" data-cite="p04">P04</button>: &ldquo;I did not know it was done until I knew it was done.&rdquo;</p>
+              <h4>Toast confirmations read as more content</h4>
+              <p>Styled identically to insight cards. <button class="chip chip-inline" data-cite="p04">P04</button>: &ldquo;I did not know it was done until I knew it was done.&rdquo;</p>
             </div>
           </div>
           <div class="callout pos reveal d6">
             <span class="marker" aria-hidden="true"></span>
             <div>
-              <h4>Wellness rings: read as primary nav</h4>
-              <p>Colorful, prominent, intuitive &mdash; exactly as designed.</p>
+              <h4>Wellness rings are treated as primary navigation</h4>
+              <p>Colourful, prominent, intuitive. <button class="chip chip-inline" data-cite="p07">P07</button> decoded them unprompted &mdash; \u201Cgood range, about three-quarters of where you should be.\u201D</p>
             </div>
           </div>
           <div class="callout pos reveal d6">
             <span class="marker" aria-hidden="true"></span>
             <div>
-              <h4>Insight cards: primary interaction model</h4>
-              <p>Participants engaged with contextual content first.</p>
+              <h4>Insight cards carry the home screen</h4>
+              <p>Contextual, action-oriented content was where participants engaged first. The home-card path is the one they found on their own.</p>
             </div>
           </div>
         </div>
-        <div class="f1-stat-strip reveal d7">
-          <div class="sx"><span class="n" style="color:var(--mint)">CSS</span><span class="label">fix &mdash; not a<br/>structural redesign</span></div>
-          <div class="sx"><span class="n" style="color:var(--teal-300)">P07</span><span class="label">lowest tech comfort,<br/>navigated everything <button class="chip chip-inline" data-cite="p07-paradox">paradox</button></span></div>
+        <div class="f1-summary reveal d7">
+          <div class="fs-title">Why we&apos;re confident the architecture is sound</div>
+          <p>
+            <button class="chip chip-inline" data-cite="p07">P07</button> rated herself lowest on tech comfort (5/7). She uses Apple Health once a week for step counting \u2014 no nutrition apps, no AI tools. She was the <strong style="color:var(--mint);font-weight:600">strongest navigator</strong> of the cohort: decoded the wellness rings unprompted, found Learn on sight, predicted what every feature would do before tapping it.
+            <button class="chip chip-inline" data-cite="p07-paradox">Why that matters</button>
+          </p>
         </div>
       </div>
     </div>
@@ -2251,6 +2409,31 @@ button { font-family: inherit; }
     }
   }, { passive: true });
 
+  // FULLSCREEN — Fullscreen API
+  function isFullscreen() {
+    return !!(document.fullscreenElement || document.webkitFullscreenElement);
+  }
+  function toggleFullscreen() {
+    const el = document.documentElement;
+    if (!isFullscreen()) {
+      (el.requestFullscreen || el.webkitRequestFullscreen || (() => {})).call(el);
+    } else {
+      (document.exitFullscreen || document.webkitExitFullscreen || (() => {})).call(document);
+    }
+  }
+  document.getElementById('btn-fullscreen').addEventListener('click', toggleFullscreen);
+  function syncFullscreenIcon() {
+    const fs = isFullscreen();
+    const enter = document.querySelector('#btn-fullscreen .ico-enter');
+    const exit = document.querySelector('#btn-fullscreen .ico-exit');
+    if (enter) enter.style.display = fs ? 'none' : '';
+    if (exit) exit.style.display = fs ? '' : 'none';
+    const lbl = document.querySelector('#btn-fullscreen .fs-label');
+    if (lbl) lbl.textContent = fs ? 'Exit fullscreen' : 'Fullscreen';
+  }
+  document.addEventListener('fullscreenchange', syncFullscreenIcon);
+  document.addEventListener('webkitfullscreenchange', syncFullscreenIcon);
+
   // PDF EXPORT — render every slide to canvas at native 1920x1080, embed in a multi-page PDF, download
   document.getElementById('btn-pdf').addEventListener('click', exportPDF);
   async function exportPDF() {
@@ -2361,6 +2544,7 @@ button { font-family: inherit; }
     else if (e.key === 'Home') { goTo(0); }
     else if (e.key === 'End') { goTo(SLIDES.length - 1); }
     else if (e.key === 'n' || e.key === 'N') { app.classList.toggle('nav-collapsed'); }
+    else if (e.key === 'f' || e.key === 'F') { toggleFullscreen(); }
   });
 
   // Hash routing
@@ -2370,59 +2554,124 @@ button { font-family: inherit; }
   }
 
   // ============ CITATION CHIPS ============
+  // Each popover adds something the slide surface doesn't show — participant profile,
+  // the behavioral moment, cohort breakdown, what it means — NOT quote repetition.
   const CITATIONS = {
+    // ---------- Participant profiles ----------
+    'p01': {
+      label: 'Participant P01',
+      title: '36F · Wegovy · 5 months · Tech comfort 7/7',
+      detail: 'Heavy AI user in daily life. The only participant who typed her meal instead of photographing it — reason was AI fluency, not UI confusion. Refused evening reflections (\u201CI hate this\u201D) while still endorsing the app. Known current apps: MyFitnessPal on-and-off, Apple Health.'
+    },
     'p02': {
-      label: 'Participant Detail',
-      title: 'P02 — 44M, Wegovy, 5 months',
-      quote: '"I didn\u2019t think it was gonna pick up the whole meal the way it did, so that was pretty cool."',
-      meta: 'Reaction at [20:38] when AI surfaced ingredient breakdown. Tracks infusions on Microhealth today; would replace it with this.'
+      label: 'Participant P02',
+      title: '44M · Wegovy · 5 months · Tech comfort 7/7',
+      detail: 'Tracks his IV infusions for a bleeding disorder on Microhealth; tried to add his GLP-1 to it and couldn\u2019t. The injection-site rotation reminder was the moment he saw this app as \u201Ca lot better.\u201D',
+      meta: 'Key moment · photo logging surprise at [20:38]. Would keep GLP-1 and infusion apps separate.'
+    },
+    'p03': {
+      label: 'Participant P03',
+      title: '54F · Wegovy · 6 months · Tech comfort 6/7',
+      detail: 'The cohort\u2019s most critical scorer (overall mean 5.8/7). Currently uses Healthi (WeightWatchers successor). Still said she would replace her current app with this one. Chose photo logging and explicitly backtracked when the AI\u2019s Panera attribution was wrong \u2014 accuracy-first.'
     },
     'p04': {
-      label: 'Participant Detail',
-      title: 'P04 — 49F, Zepbound, 4 months',
-      quote: '"If I could take a picture of it, I would do it all the time."',
-      meta: 'Explicitly tied photo logging to her willingness to track daily. Tried MyFitnessPal — abandoned because typing was friction.'
+      label: 'Participant P04',
+      title: '49F · Zepbound · 4 months · Tech comfort 6/7',
+      detail: 'Strongest overall advocate in the cohort. Lapsed MyFitnessPal user (stopped when it went paid); has no current nutrition app. Self-described as \u201Clazy about logging food\u201D \u2014 the photo feature is the make-or-break.',
+      meta: 'Would replace her handwritten gratitude journal with evening reflections in the app.'
     },
-    'meal-67': {
-      label: '6 of 7 — Photo Logging',
-      title: 'Who chose photo unprompted',
-      list: [
-        { id: 'P02', text: 'Surprised by AI accuracy' },
-        { id: 'P03', text: 'Compared favorably to Healthi' },
-        { id: 'P04', text: 'Adoption gatekeeper quote' },
-        { id: 'P05', text: 'Faster than typing entries' },
-        { id: 'P06', text: 'Already photographs meals' },
-        { id: 'P07', text: 'Liked AI inference of portions' }
-      ],
-      meta: 'P01 was not tested on this flow — sequencing constraint, not a refusal.'
+    'p05': {
+      label: 'Participant P05',
+      title: '61F · Zepbound + methotrexate + Enbrel · 1 year · Tech comfort 7/7',
+      detail: 'Target demographic. Uses Shotzy for injection tracking; it has no site-rotation history. Already photographs her meals on her own \u2014 this app formalises what she\u2019s already doing. Managing her journey alone: \u201CI personally don\u2019t have anyone that I\u2019m going through like a weight loss journey with.\u201D'
     },
+    'p06': {
+      label: 'Participant P06',
+      title: '36F · Zepbound · 2 months · Tech comfort 6/7',
+      detail: 'Newest GLP-1 user in the cohort. Expected AI photo recognition going in (\u201CI kind of figured with all of AI\u2019s advancements\u2026\u201D). Identified the combined-calorie-and-guidance nutritional view as the right answer unprompted.'
+    },
+    'p07': {
+      label: 'Participant P07',
+      title: '57F · Zepbound · 5 months · Tech comfort 5/7',
+      detail: 'Target demographic. Lowest self-rated tech comfort in the cohort. Only tech she uses: Apple Health for step counting at dance class, once a week. No nutrition apps, no medication apps, no AI tools. The least digitally experienced participant \u2014 and the strongest navigator of the app.'
+    },
+
+    // ---------- Finding-level chips ----------
     'p07-paradox': {
       label: 'The P07 Paradox',
-      title: 'Lowest tech comfort. Highest navigation success.',
-      quote: '"There\u2019s always some apps that challenge me."',
-      meta: 'Self-rated 5/7 on tech comfort (lowest). Found every feature on first attempt. Architecture is sound — styling is the gap.'
+      title: 'Lowest tech comfort in the cohort. Strongest navigator of the app.',
+      detail: 'P07 rated her own tech comfort a 5/7 — the lowest in the cohort — and described herself as someone who \u201CX\u2019s out of things by mistake because I can\u2019t figure out how to get back.\u201D Yet she decoded the wellness rings unprompted (\u201Cgood range, about three-quarters of where you should be\u201D), found the Learn tab on sight (\u201Cright here at the bottom\u201D), found evening wind-down immediately, and correctly predicted what features would do before tapping them.',
+      meta: 'Inference · if the least confident user navigates the app intuitively, the information architecture is sound. The issues others hit are visual-salience issues, not structural ones.'
+    },
+    'meal-67': {
+      label: '6 of 7 · Photo logging unprompted',
+      title: 'Who reached for photo — and why it mattered',
+      list: [
+        { id: 'P02', text: 'Didn\u2019t expect AI would recognise the whole meal — \u201Cthat was pretty cool\u201D' },
+        { id: 'P03', text: 'Chose photo as \u201Ceasiest\u201D; backtracked when AI mis-attributed the meal to Panera' },
+        { id: 'P04', text: 'Expressed the desire before even seeing the option — \u201CI\u2019d love to do the take a photo\u201D' },
+        { id: 'P05', text: 'Already photographs meals on her own. \u201CThat\u2019s really cool, actually.\u201D' },
+        { id: 'P06', text: 'Expected AI photo recognition going in — it matched her mental model' },
+        { id: 'P07', text: '\u201CI feel like it\u2019s always easiest.\u201D AI got the salad right on first try.' }
+      ],
+      meta: 'P01 typed her entry — reason was comfort with AI chat, not an issue with the photo option. Photo is an adoption gatekeeper, not a novelty.'
+    },
+    'willing-replace': {
+      label: '2 of 7 · Would replace their current app',
+      title: 'The endorsement from the hardest-to-convince users',
+      list: [
+        { id: 'P03', text: 'The cohort\u2019s most critical scorer (mean 5.8/7). Currently on Healthi; would switch.' },
+        { id: 'P04', text: 'Would replace her handwritten gratitude journal with the evening reflections here.' }
+      ],
+      meta: 'The willingness signal is stronger than it reads: neither of these users is a novelty chaser.'
     },
     'f1-bottomnav': {
-      label: '3 of 7 — Bottom Nav',
-      title: 'Did not notice the bottom nav on first use',
+      label: '3 of 7 · Missed the bottom navigation',
+      title: 'Who didn\u2019t see the tab bar on first use',
       list: [
-        { id: 'P03', text: 'Discovered via accident on T5' },
-        { id: 'P05', text: '"I just didn\u2019t even think to look along the bottom"' },
-        { id: 'P06', text: 'Asked moderator if there was a menu' }
-      ]
+        { id: 'P05', text: '\u201CI just didn\u2019t even think to look along the bottom to see that there was a learning section.\u201D Found it by accident on T5.' },
+        { id: 'P06', text: 'Asked the moderator whether there was a menu.' },
+        { id: 'P02', text: 'Didn\u2019t notice during free exploration; found it only when guided.' }
+      ],
+      meta: 'Diagnosis · semi-transparent nav on a dark surface doesn\u2019t read as interactive. Visual contrast fix, not an IA rebuild.'
     },
     'f1-fab': {
-      label: '5 of 7 — + Button',
-      title: 'Never noticed the floating action button',
+      label: '5 of 7 · Missed the + button',
+      title: 'Who never noticed the floating action button',
       list: [
-        { id: 'P01', text: 'Never tapped it during session' },
-        { id: 'P03', text: 'Looked past it three times' },
-        { id: 'P04', text: 'Used insight cards instead' },
-        { id: 'P05', text: 'Did not register as interactive' },
-        { id: 'P07', text: 'Asked "is this clickable?"' }
-      ]
+        { id: 'P01', text: 'Never tapped it during the session.' },
+        { id: 'P03', text: 'Looked past it multiple times; used insight cards instead.' },
+        { id: 'P04', text: 'Used the home card carousel, didn\u2019t register the FAB.' },
+        { id: 'P05', text: 'Did not read it as interactive.' },
+        { id: 'P07', text: 'Asked the moderator \u201Cis this clickable?\u201D' }
+      ],
+      meta: 'Diagnosis · the pattern is correct, the weight is insufficient. Participants who did notice it used it correctly the first time.'
     },
-    'seq-task': null // populated dynamically
+
+    // ---------- Slide-4 supporting ----------
+    'seq-mean': {
+      label: 'Our mean · 6.4 / 7',
+      title: 'What a 6.4 actually means',
+      detail: 'SEQ of 6.4 sits squarely in MeasuringU\u2019s \u201Ceasy\u201D band (6.0\u20136.9). Their research correlates 5.9 with an 86% task completion rate. Every one of our six tasks scored above that correlation point. No single participant logged below a 5.',
+      meta: 'The mean masks unanimity, not variance. Click the breakdown to see task-by-task.'
+    },
+    'seq-source': {
+      label: 'Benchmark source',
+      title: 'MeasuringU\u2019s SEQ benchmark',
+      detail: 'The 5.3\u20135.6 range comes from a meta-analysis across 400+ tasks and more than 10,000 users. It represents the 50th percentile \u2014 half of all tested products score below it. We\u2019re +0.9 above that midpoint.',
+      meta: 'Standardised UX measurement. Comparable to any product that\u2019s been formally evaluated against SEQ.'
+    },
+
+    // ---------- Supporting ----------
+    'study-design': {
+      label: 'Study design',
+      title: 'How the session was run',
+      detail: 'Seven 60-minute moderated sessions at Core Human Factors in Bala Cynwyd, PA. Live interactive prototype built in Lovable on iOS \u2014 not a Figma click-through. Live AI integration (not scripted). Simulated patient profile \u201CJennifer.\u201D',
+      meta: 'Measurement · SEQ after every task, post-session satisfaction questionnaire (6 items), behavioural observation via Rainbow Grid (50+ observables), full video + transcription via Dovetail.'
+    },
+
+    // Populated dynamically when a task row is clicked on slide 4
+    'seq-task': null
   };
 
   let activePop = null;
@@ -2468,12 +2717,18 @@ button { font-family: inherit; }
 
   // ============ SEQ INTERACTIVITY: per-task breakdown ============
   const SEQ_TASKS = [
-    { id: 'T1', name: 'Morning Exploration', score: 6.7, completion: '7/7', detail: 'All 7 navigated home and decoded the wellness rings unprompted.' },
-    { id: 'T2', name: 'Log Injection',       score: 6.6, completion: '7/7', detail: '3/7 went to Meds first — natural entry point. All completed.' },
-    { id: 'T3', name: 'Log Meal',            score: 6.7, completion: '7/7', detail: '6/7 chose photo logging unprompted. Breakout feature.' },
-    { id: 'T4', name: 'AI Coach',            score: 5.4, completion: '4/7', detail: 'At benchmark — discoverability, not interaction quality. Mic was non-functional in prototype.' },
-    { id: 'T5', name: 'Find Learning',       score: 6.3, completion: '5/7', detail: 'Pathway format resonated. Recognition vs. recall on bottom nav.' },
-    { id: 'T6', name: 'Evening Reflection',  score: 6.9, completion: '4/7', detail: 'Highest score (excl. P01 who declined). Segment feature, by design.' }
+    { id: 'T1', name: 'Morning Exploration', score: 6.7, completion: '7/7 full',
+      detail: 'Free-exploration task. All seven articulated the app\u2019s purpose after 3\u20134 minutes. The wellness rings carried the screen \u2014 treated as primary navigation, not decoration. The +/action button and bottom nav were the recurring misses here \u2014 see Finding 1.' },
+    { id: 'T2', name: 'Log Injection',        score: 6.6, completion: '7/7 full',
+      detail: 'Three participants (P03, P05, P07) tried to log from the Meds section first \u2014 the label and calendar icon implied logging. All three self-corrected to the home card within 30 seconds. P07 articulated it clearest: \u201CIt literally says meds.\u201D' },
+    { id: 'T3', name: 'Log Meal',             score: 6.7, completion: '7/7 full',
+      detail: 'Six of seven reached for photo logging unprompted. P01 was the outlier \u2014 typed her entry, reason was AI fluency, not UI confusion. P04 on meal logging: \u201CIt was a 7, but I did not know it was done until I knew it was done.\u201D Confirmation states need stronger visual weight.' },
+    { id: 'T4', name: 'AI Coach',             score: 5.4, completion: '4 full · 3 partial',
+      detail: 'The one task at benchmark. Reflects discoverability \u2014 only 2\u20133 of 7 found the Coach independently. The \u201CCoach\u201D label carries mixed mental models (P04: \u201Ctutorial? pumping you up?\u201D; P02: \u201Ccustomer-service type thing\u201D). Once found, 7/7 said the Coach is useful. P07\u2019s score of 5 was explicitly attributed to a non-functional microphone (prototype limitation).' },
+    { id: 'T5', name: 'Find Learning',        score: 6.3, completion: '5 full · 1 partial · 1 fail',
+      detail: 'The pathway format landed \u2014 7/7 engaged once inside the tab. Discoverability was the soft spot: P05 found Learn while exploring but couldn\u2019t relocate it when directed to the task (recognition-vs-recall on the bottom nav). P04 got stuck inside a lesson without an obvious way back out.' },
+    { id: 'T6', name: 'Evening Reflection',   score: 6.9, completion: '4 full · 2 partial · 1 refused',
+      detail: 'The highest-scoring task across the cohort (excluding P01, who refused on personal preference: \u201CI hate this\u201D \u2014 immediately followed by \u201CI actually like the app though\u201D). Adoption is a spectrum \u2014 P04 would replace her handwritten journal; P07 would do it if a bedtime push notification prompted her.' }
   ];
   window.bindSEQ = function() {
     const slide = document.querySelector('.s4');
@@ -2498,22 +2753,20 @@ button { font-family: inherit; }
         }, i * 90);
       });
     }
-    // hover interactivity already via CSS; click each task to surface citation
+    // hover interactivity already via CSS; click each task to surface citation popover
     tasksWrap.querySelectorAll('.seq-task').forEach(el => {
+      el.classList.add('chip-trigger');
+      el.dataset.cite = 'seq-task';
       el.addEventListener('click', () => {
         const id = el.dataset.id;
         const t = SEQ_TASKS.find(x => x.id === id);
         if (!t) return;
         CITATIONS['seq-task'] = {
-          label: `${t.id} · SEQ ${t.score}/7`,
+          label: `${t.id} · SEQ ${t.score}/7 · ${t.completion}`,
           title: t.name,
-          meta: `Task completion: ${t.completion}`,
           detail: t.detail
         };
-        const fakeChip = el.querySelector('.seq-task-name');
-        fakeChip.dataset.cite = 'seq-task';
-        fakeChip.click();
-      });
+      }, true); // capture — set data before the main handler runs
     });
   };
 
