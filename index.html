@@ -1393,44 +1393,44 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
 }
 
 /* ============ SLIDE 4 — SEQ EXPLAINER ============ */
-.s-deferred-seq .seq-grid {
+.s21 .seq-grid {
   display: grid; grid-template-columns: 440px 1fr;
   gap: 72px; flex: 1;
   margin-top: 32px; align-items: stretch;
 }
-.s-deferred-seq .seq-left {
+.s21 .seq-left {
   display: flex; flex-direction: column;
   padding-top: 8px;
 }
-.s-deferred-seq .seq-left h1 {
+.s21 .seq-left h1 {
   font-family: var(--f-display); font-weight: 700;
   font-size: 60px; line-height: 1.02; letter-spacing: -0.028em;
   color: var(--on-dark); margin: 20px 0 22px 0;
 }
-.s-deferred-seq .seq-left h1 .hl { color: var(--mint); font-variant-numeric: tabular-nums; }
-.s-deferred-seq .seq-left p {
+.s21 .seq-left h1 .hl { color: var(--mint); font-variant-numeric: tabular-nums; }
+.s21 .seq-left p {
   font-size: 18px; line-height: 1.55;
   color: var(--on-dark-dim);
   margin: 0 0 16px 0; max-width: 420px;
 }
-.s-deferred-seq .seq-source {
+.s21 .seq-source {
   margin-top: 14px;
   font-family: var(--f-mono); font-size: 12px;
   color: var(--on-dark-mute); letter-spacing: 0.04em;
 }
-.s-deferred-seq .seq-stage {
+.s21 .seq-stage {
   position: relative;
   padding: 0 30px;
   height: 860px; /* reserved — no layout jump on expand */
   display: flex; flex-direction: column;
 }
-.s-deferred-seq .seq-scale-wrap {
+.s21 .seq-scale-wrap {
   position: relative;
   height: 360px;
   margin-top: 20px;
 }
-.s-deferred-seq .seq-scale { position: relative; height: 100%; }
-.s-deferred-seq .seq-track {
+.s21 .seq-scale { position: relative; height: 100%; }
+.s21 .seq-track {
   position: absolute; left: 30px; right: 30px; top: 220px;
   height: 44px; border-radius: 22px; overflow: hidden;
   background: linear-gradient(90deg,
@@ -1442,25 +1442,25 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
     rgba(52, 238, 167, 0.60) 100%);
   border: 1px solid rgba(255,255,255,0.10);
 }
-.s-deferred-seq .seq-ticks {
+.s21 .seq-ticks {
   position: absolute; left: 30px; right: 30px; top: 286px;
   display: flex; justify-content: space-between;
 }
-.s-deferred-seq .seq-tick { display: flex; flex-direction: column; align-items: center; gap: 10px; width: 30px; }
-.s-deferred-seq .seq-tick::before { content: ""; width: 1px; height: 16px; background: rgba(255,255,255,0.25); }
-.s-deferred-seq .seq-tick-num { font-family: var(--f-mono); font-size: 16px; color: var(--on-dark-dim); font-variant-numeric: tabular-nums; font-weight: 500; }
-.s-deferred-seq .seq-zones {
+.s21 .seq-tick { display: flex; flex-direction: column; align-items: center; gap: 10px; width: 30px; }
+.s21 .seq-tick::before { content: ""; width: 1px; height: 16px; background: rgba(255,255,255,0.25); }
+.s21 .seq-tick-num { font-family: var(--f-mono); font-size: 16px; color: var(--on-dark-dim); font-variant-numeric: tabular-nums; font-weight: 500; }
+.s21 .seq-zones {
   position: absolute; left: 30px; right: 30px; top: 176px;
   display: flex;
   font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 600;
 }
-.s-deferred-seq .seq-zone { padding-bottom: 10px; border-bottom: 1px solid currentColor; text-align: center; }
-.s-deferred-seq .seq-zone.zone-hard { color: rgba(239,68,68,0.85); flex-basis: 33.33%; }
-.s-deferred-seq .seq-zone.zone-avg  { color: rgba(245,158,11,0.95); flex-basis: 33.33%; }
-.s-deferred-seq .seq-zone.zone-easy { color: var(--mint); flex-basis: 33.33%; }
+.s21 .seq-zone { padding-bottom: 10px; border-bottom: 1px solid currentColor; text-align: center; }
+.s21 .seq-zone.zone-hard { color: rgba(239,68,68,0.85); flex-basis: 33.33%; }
+.s21 .seq-zone.zone-avg  { color: rgba(245,158,11,0.95); flex-basis: 33.33%; }
+.s21 .seq-zone.zone-easy { color: var(--mint); flex-basis: 33.33%; }
 
 /* Benchmark: a shaded band at 5.3–5.6 (the MeasuringU benchmark range) — more prominent than a line */
-.s-deferred-seq .seq-benchmark-band {
+.s21 .seq-benchmark-band {
   position: absolute;
   top: 212px; height: 60px;
   background: repeating-linear-gradient(135deg,
@@ -1471,26 +1471,26 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
   border-radius: 4px;
   pointer-events: none;
 }
-.s-deferred-seq .seq-benchmark-tag {
+.s21 .seq-benchmark-tag {
   position: absolute;
   bottom: -52px; left: 50%; transform: translateX(-50%);
   white-space: nowrap;
   text-align: center;
   line-height: 1.25;
 }
-.s-deferred-seq .seq-benchmark-tag .lab {
+.s21 .seq-benchmark-tag .lab {
   font-size: 11px; letter-spacing: 0.20em; text-transform: uppercase;
   color: var(--on-dark-dim); font-weight: 500;
   display: block; margin-bottom: 4px;
 }
-.s-deferred-seq .seq-benchmark-tag .val {
+.s21 .seq-benchmark-tag .val {
   font-family: var(--f-display); font-weight: 600;
   color: var(--on-dark); font-size: 18px;
   font-variant-numeric: tabular-nums;
 }
 
 /* GAP BRACKET — below the track, in the negative space between benchmark tag and our-score */
-.s-deferred-seq .seq-gap-bracket {
+.s21 .seq-gap-bracket {
   position: absolute;
   top: 284px; /* track bottom at 220+44=264, + 20 padding */
   height: 28px;
@@ -1498,24 +1498,24 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
   transition: opacity 420ms ease 500ms;
   pointer-events: none;
 }
-.s4.active .seq-gap-bracket { opacity: 1; }
-.s-deferred-seq .seq-gap-bracket::before,
-.s-deferred-seq .seq-gap-bracket::after {
+.s21.active .seq-gap-bracket { opacity: 1; }
+.s21 .seq-gap-bracket::before,
+.s21 .seq-gap-bracket::after {
   content: "";
   position: absolute;
   top: 0; bottom: 14px;
   width: 1px;
   background: rgba(52,238,167,0.55);
 }
-.s-deferred-seq .seq-gap-bracket::before { left: 0; }
-.s-deferred-seq .seq-gap-bracket::after  { right: 0; }
-.s-deferred-seq .seq-gap-bracket .seq-gap-rule {
+.s21 .seq-gap-bracket::before { left: 0; }
+.s21 .seq-gap-bracket::after  { right: 0; }
+.s21 .seq-gap-bracket .seq-gap-rule {
   position: absolute;
   left: 0; right: 0; bottom: 14px;
   height: 1px;
   background: rgba(52,238,167,0.55);
 }
-.s-deferred-seq .seq-gap-label {
+.s21 .seq-gap-label {
   position: absolute;
   top: 298px; left: 50%;
   display: inline-flex; align-items: center; gap: 8px;
@@ -1533,29 +1533,29 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
   transition: opacity 380ms ease 820ms;
   z-index: 3;
 }
-.s4.active .seq-gap-label { opacity: 1; }
-.s-deferred-seq .seq-gap-label .lbl {
+.s21.active .seq-gap-label { opacity: 1; }
+.s21 .seq-gap-label .lbl {
   font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
   color: var(--on-dark-dim); font-weight: 600;
 }
 
 /* OUR MEAN marker — more emphatic */
-.s-deferred-seq .seq-ours {
+.s21 .seq-ours {
   position: absolute; top: 88px; bottom: 20px; width: 3px;
   background: linear-gradient(180deg, var(--mint), rgba(52,238,167,0.0));
   opacity: 0;
   transition: opacity 400ms ease, left 1100ms var(--ease-out);
 }
-.s4.active .seq-ours { opacity: 1; }
-.s-deferred-seq .seq-ours-tag {
+.s21.active .seq-ours { opacity: 1; }
+.s21 .seq-ours-tag {
   position: absolute; top: -140px; left: 50%; transform: translateX(-50%);
   display: flex; flex-direction: column; align-items: center; gap: 6px;
 }
-.s-deferred-seq .seq-ours-tag .label {
+.s21 .seq-ours-tag .label {
   font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase;
   color: var(--mint); font-weight: 600;
 }
-.s-deferred-seq .seq-ours-tag .big {
+.s21 .seq-ours-tag .big {
   position: relative;
   font-family: var(--f-display); font-weight: 700;
   font-size: 124px; line-height: 1; color: var(--mint);
@@ -1563,7 +1563,7 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
   filter: drop-shadow(0 8px 28px rgba(52,238,167,0.35));
   cursor: pointer;
 }
-.s-deferred-seq .seq-ours-tag .of {
+.s21 .seq-ours-tag .of {
   position: absolute;
   left: calc(100% + 8px);
   bottom: 14px;
@@ -1572,7 +1572,7 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
   letter-spacing: 0.02em; font-variant-numeric: tabular-nums;
   white-space: nowrap;
 }
-.s-deferred-seq .seq-ours::before {
+.s21 .seq-ours::before {
   content: ""; position: absolute; left: 50%; top: 0;
   transform: translate(-50%, -50%);
   width: 20px; height: 20px; border-radius: 50%;
@@ -1581,7 +1581,7 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
 }
 
 /* BELOW-SCALE: reserved dual panel — swaps between compare + breakdown */
-.s-deferred-seq .seq-below {
+.s21 .seq-below {
   position: relative;
   margin-top: 96px;
   flex: 1;
@@ -1589,32 +1589,32 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
   border-top: 1px solid rgba(255,255,255,0.08);
   padding-top: 56px;
 }
-.s-deferred-seq .seq-compared,
-.s-deferred-seq .seq-tasks {
+.s21 .seq-compared,
+.s21 .seq-tasks {
   position: absolute;
   inset: 56px 0 0 0;
   transition: opacity 240ms ease;
 }
-.s-deferred-seq .seq-compared {
+.s21 .seq-compared {
   display: grid; grid-template-columns: 1fr 1fr;
   gap: 32px 44px;
   padding: 0;
   opacity: 1;
 }
-.s4.seq-expanded .seq-compared { opacity: 0 !important; pointer-events: none !important; }
-.s4.seq-expanded .seq-tasks { opacity: 1 !important; }
-.s-deferred-seq .seq-compared .cmp-row {
+.s21.seq-expanded .seq-compared { opacity: 0 !important; pointer-events: none !important; }
+.s21.seq-expanded .seq-tasks { opacity: 1 !important; }
+.s21 .seq-compared .cmp-row {
   display: grid; grid-template-columns: auto 1fr; align-items: baseline; gap: 18px;
   font-size: 15px; color: var(--on-dark-dim); line-height: 1.45;
 }
-.s-deferred-seq .seq-compared .cmp-row .num {
+.s21 .seq-compared .cmp-row .num {
   font-family: var(--f-display); font-weight: 700; font-size: 32px;
   color: var(--on-dark); font-variant-numeric: tabular-nums;
   letter-spacing: -0.01em;
 }
-.s-deferred-seq .seq-compared .cmp-row .num.mint { color: var(--mint); }
+.s21 .seq-compared .cmp-row .num.mint { color: var(--mint); }
 
-.s-deferred-seq .seq-expand-btn {
+.s21 .seq-expand-btn {
   position: absolute;
   top: 14px; right: 0;
   z-index: 5;
@@ -1629,30 +1629,30 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
   cursor: pointer;
   transition: background 160ms ease, border-color 160ms ease, transform 160ms ease;
 }
-.s-deferred-seq .seq-expand-btn:hover { background: rgba(52, 238, 167, 0.20); border-color: rgba(52, 238, 167, 0.60); transform: translateY(-1px); }
-.s-deferred-seq .seq-expand-btn svg { transition: transform 240ms var(--ease-out); }
-.s4.seq-expanded .seq-expand-btn svg { transform: rotate(180deg); }
+.s21 .seq-expand-btn:hover { background: rgba(52, 238, 167, 0.20); border-color: rgba(52, 238, 167, 0.60); transform: translateY(-1px); }
+.s21 .seq-expand-btn svg { transition: transform 240ms var(--ease-out); }
+.s21.seq-expanded .seq-expand-btn svg { transform: rotate(180deg); }
 
 /* TASKS PANEL */
-.s-deferred-seq .seq-tasks {
+.s21 .seq-tasks {
   opacity: 0;
   pointer-events: none;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 6px 28px;
 }
-.s4.seq-expanded .seq-tasks {
+.s21.seq-expanded .seq-tasks {
   opacity: 1;
   pointer-events: auto;
 }
-.s-deferred-seq .seq-tasks .seq-tasks-legend {
+.s21 .seq-tasks .seq-tasks-legend {
   grid-column: 1 / -1;
   display: flex; justify-content: space-between; align-items: center;
   margin-bottom: 4px;
   font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
   color: var(--on-dark-dim); font-weight: 600;
 }
-.s-deferred-seq .seq-task {
+.s21 .seq-task {
   display: grid;
   grid-template-columns: 32px 170px 1fr 48px;
   align-items: center;
@@ -1662,10 +1662,10 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
   cursor: pointer;
   transition: background 160ms ease;
 }
-.s-deferred-seq .seq-task:hover {
+.s21 .seq-task:hover {
   background: rgba(52, 238, 167, 0.06);
 }
-.s-deferred-seq .seq-task.chip-trigger {
+.s21 .seq-task.chip-trigger {
   /* override chip-trigger pill-border styling on the task row — keep the row styling */
   padding: 10px 12px !important;
   background: transparent;
@@ -1677,43 +1677,43 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
   font-size: inherit;
   letter-spacing: normal;
 }
-.s-deferred-seq .seq-task.chip-trigger:hover {
+.s21 .seq-task.chip-trigger:hover {
   background: rgba(52, 238, 167, 0.06) !important;
   transform: none !important;
   border: none !important;
 }
-.s-deferred-seq .seq-task-tag {
+.s21 .seq-task-tag {
   font-family: var(--f-mono); font-size: 13px;
   color: var(--on-dark-mute); letter-spacing: 0.04em; font-weight: 500;
 }
-.s-deferred-seq .seq-task-name {
+.s21 .seq-task-name {
   font-size: 15px; color: var(--on-dark);
   font-weight: 500;
   letter-spacing: -0.005em;
 }
-.s-deferred-seq .seq-task-bar {
+.s21 .seq-task-bar {
   position: relative; height: 7px;
   background: rgba(255,255,255,0.06);
   border-radius: 4px; overflow: hidden;
 }
-.s-deferred-seq .seq-task-bar-fill {
+.s21 .seq-task-bar-fill {
   position: absolute; left: 0; top: 0; bottom: 0;
   width: 0%;
   background: linear-gradient(90deg, var(--teal-500), var(--mint));
   border-radius: 4px;
   transition: width 800ms var(--ease-out);
 }
-.s-deferred-seq .seq-task.low .seq-task-bar-fill {
+.s21 .seq-task.low .seq-task-bar-fill {
   background: linear-gradient(90deg, var(--gold), var(--gold-soft));
 }
-.s-deferred-seq .seq-task-score {
+.s21 .seq-task-score {
   font-family: var(--f-display); font-weight: 700;
   font-size: 20px; color: var(--mint);
   font-variant-numeric: tabular-nums;
   text-align: right;
   letter-spacing: -0.01em;
 }
-.s-deferred-seq .seq-task.low .seq-task-score { color: var(--gold); }
+.s21 .seq-task.low .seq-task-score { color: var(--gold); }
 
 /* ============ SLIDE 5 — PHOTO MEAL LOGGING ============ */
 .s14 .meal-grid {
@@ -1790,77 +1790,77 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
 .s14 .meal-insight strong { color: var(--teal-700); font-weight: 600; }
 
 /* ============ SLIDE 6 — FINDING 1 ============ */
-.s-deferred-f1 .f1-grid {
+.s25 .f1-grid {
   display: grid; grid-template-columns: 420px 1fr;
   gap: 80px; flex: 1;
   margin-top: 28px; position: relative;
 }
-.s-deferred-f1 .f1-phone-col {
+.s25 .f1-phone-col {
   display: flex; justify-content: center; align-items: flex-start;
   position: relative; padding-top: 8px;
 }
-.s-deferred-f1 .f1-right { display: flex; flex-direction: column; gap: 20px; padding-top: 8px; }
-.s-deferred-f1 .f1-headline {
+.s25 .f1-right { display: flex; flex-direction: column; gap: 20px; padding-top: 8px; }
+.s25 .f1-headline {
   font-family: var(--f-display); font-weight: 700;
   font-size: 46px; line-height: 1.03; letter-spacing: -0.022em;
   color: var(--on-dark); margin: 10px 0 0 0; max-width: 900px;
 }
-.s-deferred-f1 .f1-headline .hl {
+.s25 .f1-headline .hl {
   font-family: var(--f-serif); font-style: italic; font-weight: 500;
   color: var(--teal-300);
 }
-.s-deferred-f1 .f1-lead {
+.s25 .f1-lead {
   font-size: 16px; line-height: 1.55;
   color: var(--on-dark-dim);
   max-width: 780px; margin: 0;
 }
-.s-deferred-f1 .f1-callouts {
+.s25 .f1-callouts {
   margin-top: 10px;
   display: flex; flex-direction: column; gap: 10px;
 }
-.s-deferred-f1 .callout {
+.s25 .callout {
   display: grid; grid-template-columns: 14px 1fr;
   gap: 16px; align-items: flex-start;
   padding: 10px 0;
   border-bottom: 1px solid rgba(255,255,255,0.06);
 }
-.s-deferred-f1 .callout:last-child { border-bottom: none; }
-.s-deferred-f1 .callout .marker {
+.s25 .callout:last-child { border-bottom: none; }
+.s25 .callout .marker {
   width: 14px; height: 14px; border-radius: 50%;
   margin-top: 6px; position: relative;
 }
-.s-deferred-f1 .callout.neg .marker { background: var(--coral); box-shadow: 0 0 0 4px rgba(239,68,68,0.12); }
-.s-deferred-f1 .callout.pos .marker { background: var(--mint); box-shadow: 0 0 0 4px rgba(52,238,167,0.15); }
-.s-deferred-f1 .callout h4 {
+.s25 .callout.neg .marker { background: var(--coral); box-shadow: 0 0 0 4px rgba(239,68,68,0.12); }
+.s25 .callout.pos .marker { background: var(--mint); box-shadow: 0 0 0 4px rgba(52,238,167,0.15); }
+.s25 .callout h4 {
   margin: 0 0 3px 0; font-size: 15px; font-weight: 600; line-height: 1.3;
   color: var(--on-dark); letter-spacing: -0.005em;
 }
-.s-deferred-f1 .callout p {
+.s25 .callout p {
   margin: 0; font-size: 13px; line-height: 1.5;
   color: var(--on-dark-dim);
 }
-.s-deferred-f1 .f1-summary {
+.s25 .f1-summary {
   margin-top: 8px;
   padding: 18px 22px;
   border-radius: 14px;
   border: 1px solid rgba(52, 238, 167, 0.22);
   background: rgba(52, 238, 167, 0.05);
 }
-.s-deferred-f1 .f1-summary .fs-title {
+.s25 .f1-summary .fs-title {
   font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
   color: var(--mint); font-weight: 600;
   margin-bottom: 10px;
   display: flex; align-items: center; gap: 12px;
 }
-.s-deferred-f1 .f1-summary .fs-title::before {
+.s25 .f1-summary .fs-title::before {
   content: ""; width: 22px; height: 1px; background: var(--mint);
 }
-.s-deferred-f1 .f1-summary p {
+.s25 .f1-summary p {
   margin: 0;
   font-size: 15.5px; line-height: 1.55;
   color: var(--on-dark);
 }
-.s-deferred-f1 .connectors { position: absolute; inset: 0; pointer-events: none; overflow: visible; }
+.s25 .connectors { position: absolute; inset: 0; pointer-events: none; overflow: visible; }
 
 /* ============ PHONE FRAME ============ */
 /* STANDARD phone-frame size across the deck: 380px wide × aspect-ratio 1260/2736
@@ -2194,7 +2194,7 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
     linear-gradient(180deg, #0B3E37 0%, #093631 60%, #05231F 100%);
 }
 /* S4 (What Is This App?): adds a warmer mint glow behind the phone column */
-.slide.s-deferred-seq{
+.slide.s21{
   background:
     radial-gradient(1000px 760px at 82% 55%, rgba(52,238,167,0.12), transparent 60%),
     radial-gradient(1200px 800px at 10% 0%, rgba(6,40,35,0.9), transparent 55%),
@@ -3065,6 +3065,1182 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
 }
 .screen-home-lite .nav-tabs span.active { color: var(--teal-300); }
 
+/* ============ SLIDE 16 — AI COACH CONTEXTUAL INTELLIGENCE ============ */
+.s16 .slide-frame { padding: 80px 112px 72px 112px; }
+.s16 .s16-hero {
+  margin-top: 30px;
+  display: grid; grid-template-columns: 380px 1fr;
+  gap: 56px; align-items: flex-end;
+  padding-bottom: 28px; border-bottom: 1px solid rgba(10,26,28,0.14);
+}
+.s16 .s16-stat-block { display: flex; flex-direction: column; gap: 10px; }
+.s16 .s16-stat-num {
+  font-family: var(--f-display); font-weight: 600;
+  font-size: 180px; line-height: 0.9; letter-spacing: -0.04em;
+  color: var(--teal-700); font-variant-numeric: tabular-nums;
+  display: inline-flex; align-items: flex-end;
+}
+.s16 .s16-stat-num .s16-stat-of {
+  font-style: normal; font-weight: 400;
+  font-size: 48px; color: var(--ink-mute); margin-left: 6px; padding-bottom: 22px;
+}
+.s16 .s16-stat-sub {
+  align-self: flex-start; border: 0; background: transparent;
+  font-family: var(--f-display); font-weight: 500;
+  font-size: 18px; letter-spacing: 0.01em; color: var(--ink);
+  padding: 6px 0; cursor: pointer; text-align: left;
+  border-bottom: 1px dashed rgba(13,118,110,0.45);
+}
+.s16 .s16-stat-sub:hover { color: var(--teal-700); border-bottom-color: var(--teal-700); }
+.s16 .s16-headline {
+  font-family: var(--f-display); font-weight: 500;
+  font-size: 38px; line-height: 1.14; letter-spacing: -0.015em;
+  color: var(--ink); margin: 0; max-width: 940px;
+}
+.s16 .s16-headline .ital {
+  font-family: var(--f-serif); font-style: italic; font-weight: 400;
+  color: var(--teal-700);
+}
+.s16 .s16-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  column-gap: 80px; margin-top: 40px;
+  position: relative;
+}
+.s16 .s16-grid::before {
+  content: ''; position: absolute; top: 10px; bottom: 10px; left: 50%;
+  width: 1px; background: rgba(10,26,28,0.12);
+}
+.s16 .s16-col-eyebrow {
+  font-family: var(--f-display); font-weight: 500;
+  font-size: 12px; letter-spacing: 0.24em; text-transform: uppercase;
+  color: var(--teal-700); margin-bottom: 22px;
+}
+.s16 .s16-col-vs .s16-col-eyebrow { color: var(--ink-mute); }
+.s16 .s16-qblock { margin-bottom: 26px; }
+.s16 .s16-qblock:last-child { margin-bottom: 0; }
+.s16 .s16-qblock blockquote {
+  margin: 0 0 10px;
+  font-family: var(--f-serif); font-style: italic; font-weight: 400;
+  font-size: 22px; line-height: 1.36; letter-spacing: -0.005em;
+  color: var(--ink);
+}
+.s16 .s16-qblock cite {
+  display: block; font-style: normal;
+  font-family: var(--f-display); font-weight: 500;
+  font-size: 13px; letter-spacing: 0.05em; color: var(--ink-mute);
+}
+.s16 .s16-qblock cite .s16-ts {
+  font-family: var(--f-mono); font-size: 12px; color: var(--ink-dim); margin-left: 4px;
+}
+.s16 .s16-foot {
+  margin-top: 36px; padding-top: 22px;
+  border-top: 1px solid rgba(10,26,28,0.14);
+  display: grid; grid-template-columns: 1fr auto; gap: 40px; align-items: center;
+}
+.s16 .s16-caveat { display: flex; flex-direction: column; gap: 10px; max-width: 640px; }
+.s16 .s16-caveat .kpi-pill { align-self: flex-start; }
+.s16 .s16-caveat-note {
+  margin: 0; font-family: var(--f-display); font-weight: 400;
+  font-size: 14px; line-height: 1.45; color: var(--ink-mute);
+}
+.s16 .s16-clip { width: 360px; }
+
+/* ============ SLIDE 17 — LEARNING PATHWAYS ============ */
+.s17 {
+  background:
+    radial-gradient(900px 720px at 18% 50%, rgba(52,238,167,0.12), transparent 62%),
+    radial-gradient(1100px 800px at 100% 0%, rgba(20,184,166,0.08), transparent 55%),
+    linear-gradient(180deg, #0C433C 0%, #0A3B35 60%, #062823 100%);
+}
+.s17 .slide-frame { padding: 80px 112px 72px 112px; }
+.s17 .s17-grid {
+  display: grid; grid-template-columns: 1.25fr 1fr;
+  column-gap: 72px; margin-top: 34px; align-items: flex-start;
+}
+.s17 .s17-viz { position: relative; }
+.s17 .s17-viz-card {
+  position: relative; padding: 28px 28px 26px;
+  border-radius: 22px;
+  background: linear-gradient(165deg, rgba(12, 67, 60, 0.95) 0%, rgba(7, 46, 41, 0.95) 100%);
+  border: 1px solid rgba(94,234,212,0.18);
+  box-shadow: 0 30px 60px -24px rgba(0,0,0,0.55), inset 0 1px 0 rgba(255,255,255,0.04);
+}
+.s17 .s17-viz-top {
+  display: flex; justify-content: space-between; align-items: baseline;
+  padding-bottom: 20px; margin-bottom: 16px;
+  border-bottom: 1px solid rgba(94,234,212,0.14);
+}
+.s17 .s17-viz-title {
+  font-family: var(--f-display); font-weight: 600; font-size: 24px; letter-spacing: -0.01em;
+  color: var(--on-dark);
+}
+.s17 .s17-viz-tag {
+  font-family: var(--f-display); font-weight: 500; font-size: 11px;
+  letter-spacing: 0.22em; text-transform: uppercase; color: var(--teal-300);
+}
+.s17 .s17-path {
+  padding: 14px 0 16px;
+  border-bottom: 1px solid rgba(94,234,212,0.08);
+}
+.s17 .s17-path:last-child { border-bottom: 0; padding-bottom: 4px; }
+.s17 .s17-path-head {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: 8px;
+}
+.s17 .s17-path-name {
+  font-family: var(--f-display); font-weight: 500; font-size: 17px;
+  color: var(--on-dark); letter-spacing: -0.005em;
+}
+.s17 .s17-path-tag {
+  font-family: var(--f-display); font-weight: 500; font-size: 10px;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--on-dark-mute);
+  padding: 4px 10px; border-radius: 999px; border: 1px solid rgba(94,234,212,0.18);
+  background: rgba(20,184,166,0.06);
+}
+.s17 .s17-path-tag-mint {
+  color: var(--mint); border-color: rgba(52,238,167,0.45);
+  background: rgba(52,238,167,0.10);
+}
+.s17 .s17-path-personal {
+  border-radius: 14px; padding: 14px 14px 16px; margin: 6px -14px 6px;
+  background: rgba(52,238,167,0.05);
+  border: 1px solid rgba(52,238,167,0.26);
+}
+.s17 .s17-path-personal + .s17-path { border-top: 0; }
+.s17 .s17-path-dots {
+  display: flex; gap: 6px; margin-bottom: 6px;
+}
+.s17 .s17-path-dots i {
+  width: 22px; height: 6px; border-radius: 3px;
+  background: rgba(94,234,212,0.14);
+  display: block;
+}
+.s17 .s17-path-dots i.on { background: var(--teal-400); }
+.s17 .s17-path-personal .s17-path-dots i.on { background: var(--mint); }
+.s17 .s17-path-meta {
+  font-family: var(--f-mono); font-size: 11px; color: var(--on-dark-dim);
+  letter-spacing: 0.02em;
+}
+.s17 .s17-viz-cap {
+  margin-top: 12px; font-family: var(--f-mono); font-size: 10px;
+  color: rgba(245,242,234,0.32); letter-spacing: 0.04em;
+}
+.s17 .s17-viz-cap code { color: rgba(245,242,234,0.5); font-size: 10px; }
+
+.s17 .s17-right { padding-top: 6px; display: flex; flex-direction: column; gap: 22px; }
+.s17 .s17-headline {
+  font-family: var(--f-display); font-weight: 500;
+  font-size: 38px; line-height: 1.15; letter-spacing: -0.015em;
+  color: var(--on-dark); margin: 0; max-width: 520px;
+}
+.s17 .s17-stat-row { display: flex; gap: 12px; flex-wrap: wrap; }
+.s17 .kpi-pill-dark {
+  background: rgba(20,184,166,0.15);
+  border: 1px solid rgba(94,234,212,0.3);
+  color: var(--on-dark);
+}
+.s17 .kpi-pill-dark b { color: var(--mint); }
+.s17 .kpi-pill-dark i { color: rgba(245,242,234,0.68); }
+.s17 .kpi-pill-dark:hover { background: rgba(20,184,166,0.25); }
+
+.s17 .s17-quotes { display: flex; flex-direction: column; gap: 18px; margin-top: 4px; }
+.s17 .s17-quote blockquote {
+  margin: 0 0 8px;
+  font-family: var(--f-serif); font-style: italic; font-weight: 400;
+  font-size: 20px; line-height: 1.38;
+  color: var(--on-dark);
+}
+.s17 .s17-quote cite {
+  display: block; font-style: normal;
+  font-family: var(--f-display); font-weight: 500;
+  font-size: 12.5px; letter-spacing: 0.05em; color: var(--on-dark-mute);
+}
+.s17 .s17-quote cite .s17-ts {
+  font-family: var(--f-mono); font-size: 11.5px; color: rgba(245,242,234,0.4); margin-left: 4px;
+}
+.s17 .s17-insight {
+  margin-top: 6px; padding-top: 18px;
+  border-top: 1px solid rgba(94,234,212,0.16);
+}
+.s17 .s17-insight-eb {
+  display: block;
+  font-family: var(--f-display); font-weight: 600; font-size: 14px;
+  letter-spacing: 0.01em; color: var(--mint); margin-bottom: 6px;
+}
+.s17 .s17-insight p {
+  margin: 0; font-family: var(--f-display); font-weight: 400;
+  font-size: 14px; line-height: 1.48; color: rgba(245,242,234,0.78);
+}
+
+/* Hide CSS-mock pathway when a real screenshot is loaded into the asset container */
+.s17 .s17-viz-card.has-asset .s17-viz-top,
+.s17 .s17-viz-card.has-asset .s17-path { display: none; }
+.s17 .s17-viz-card.has-asset { padding: 0; background: transparent; border: 0; box-shadow: none; }
+.s17 .s17-viz-card.has-asset .asset-img { border-radius: 22px; }
+
+/* ============ SLIDE 18 — COMPETITIVE COMPARISON ============ */
+.s18 .slide-frame { padding: 80px 112px 72px 112px; }
+.s18 .s18-hero { margin-top: 28px; max-width: 1200px; }
+.s18 .s18-headline {
+  font-family: var(--f-display); font-weight: 500;
+  font-size: 42px; line-height: 1.12; letter-spacing: -0.018em;
+  color: var(--ink); margin: 0 0 12px;
+}
+.s18 .s18-headline .ital {
+  font-family: var(--f-serif); font-style: italic; font-weight: 500;
+  color: var(--teal-700);
+}
+.s18 .s18-lede {
+  margin: 0; font-family: var(--f-display); font-weight: 400;
+  font-size: 16px; line-height: 1.5; color: var(--ink-mute); max-width: 820px;
+}
+.s18 .s18-table {
+  margin-top: 32px;
+  border-top: 1px solid rgba(10,26,28,0.2);
+}
+.s18 .s18-head, .s18 .s18-row {
+  display: grid;
+  grid-template-columns: 1.1fr 1.4fr 1.7fr 0.5fr;
+  column-gap: 32px; align-items: center;
+  padding: 14px 4px;
+}
+.s18 .s18-head {
+  border-bottom: 1px solid rgba(10,26,28,0.2);
+  padding-top: 10px; padding-bottom: 10px;
+}
+.s18 .s18-head .s18-col {
+  font-family: var(--f-display); font-weight: 500; font-size: 11px;
+  letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-mute);
+}
+.s18 .s18-row {
+  border-bottom: 1px solid rgba(10,26,28,0.1);
+  transition: background 160ms var(--ease-out);
+}
+.s18 .s18-row:last-child { border-bottom: 1px solid rgba(10,26,28,0.2); }
+.s18 .s18-row:hover { background: rgba(20,184,166,0.045); }
+.s18 .s18-col-tool {
+  display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+}
+.s18 .s18-tool-name {
+  font-family: var(--f-display); font-weight: 600; font-size: 19px;
+  letter-spacing: -0.005em; color: var(--ink);
+}
+.s18 .s18-tool-alias {
+  font-family: var(--f-display); font-weight: 400; font-size: 13px;
+  color: var(--ink-dim); margin-left: -4px;
+}
+.s18 .s18-col-does, .s18 .s18-col-gap {
+  font-family: var(--f-display); font-weight: 400; font-size: 15px;
+  line-height: 1.4; color: var(--ink);
+}
+.s18 .s18-col-gap { color: var(--ink-mute); }
+.s18 .s18-col-ours { justify-self: center; }
+.s18 .s18-check {
+  width: 28px; height: 28px; border-radius: 50%;
+  background: var(--teal-700); display: inline-block;
+  position: relative;
+  box-shadow: 0 0 0 4px rgba(13,118,110,0.12);
+}
+.s18 .s18-check::before {
+  content: ''; position: absolute; top: 9px; left: 7px;
+  width: 6px; height: 12px;
+  border-right: 2px solid var(--paper);
+  border-bottom: 2px solid var(--paper);
+  transform: rotate(45deg);
+}
+.s18 .chip-mini {
+  font-family: var(--f-mono); font-weight: 600; font-size: 10px;
+  padding: 2px 7px; border-radius: 999px;
+  border: 1px solid rgba(13,118,110,0.4);
+  background: rgba(13,118,110,0.10); color: var(--teal-700);
+  cursor: pointer; letter-spacing: 0.04em;
+}
+.s18 .chip-mini:hover { background: rgba(13,118,110,0.22); }
+
+.s18 .s18-foot {
+  margin-top: 32px;
+  display: grid; grid-template-columns: 1fr auto; gap: 40px; align-items: flex-start;
+}
+.s18 .s18-quotes { display: flex; flex-direction: column; gap: 18px; max-width: 900px; }
+.s18 .s18-quote blockquote {
+  margin: 0 0 6px;
+  font-family: var(--f-serif); font-style: italic; font-weight: 400;
+  font-size: 20px; line-height: 1.36; color: var(--ink);
+}
+.s18 .s18-quote cite {
+  display: block; font-style: normal;
+  font-family: var(--f-display); font-weight: 500;
+  font-size: 12.5px; letter-spacing: 0.05em; color: var(--ink-mute);
+}
+.s18 .s18-quote cite .s18-ts {
+  font-family: var(--f-mono); font-size: 11.5px; color: var(--ink-dim); margin-left: 4px;
+}
+.s18 .s18-clip { width: 320px; }
+
+/* ============ SLIDE 19 — VALUE PROPOSITION QUOTE MONTAGE ============ */
+.s19 {
+  background:
+    radial-gradient(1200px 900px at 92% 8%, rgba(20,184,166,0.06), transparent 58%),
+    radial-gradient(1000px 760px at 6% 100%, rgba(6,40,35,0.85), transparent 60%),
+    linear-gradient(180deg, #0A3B35 0%, #072E29 60%, #051F1C 100%);
+}
+.s19::after {
+  content: ''; position: absolute; right: -160px; top: 40%;
+  width: 420px; height: 420px;
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1111 926' fill='none' stroke='%235EEAD4' stroke-width='4.42' stroke-opacity='0.08'><path d='M362.623 67.9956L1108.12 500.738V424.673L380.34 2.20996H26.4495L2.07227 67.9956H362.623Z'/><path d='M744.53 462.71L1108.13 67.9956L1079.29 2.20996L655.08 462.71L1079.29 923.21L1108.13 857.424L744.53 462.71Z'/><path d='M380.34 923.208L1108.12 500.745V424.681L362.623 857.423H2.07227L26.4495 923.208H380.34Z'/></svg>") no-repeat center / contain;
+  pointer-events: none; z-index: 0;
+}
+.s19 .slide-frame { padding: 80px 140px 72px 140px; position: relative; z-index: 1; }
+.s19 .s19-stack {
+  margin-top: 36px;
+  display: flex; flex-direction: column; gap: 38px;
+  max-width: 1500px;
+}
+.s19 .s19-quote { margin: 0; position: relative; }
+.s19 .s19-quote blockquote {
+  margin: 0 0 10px; padding: 0;
+  font-family: var(--f-serif); font-style: italic; font-weight: 400;
+  line-height: 1.16; letter-spacing: -0.015em;
+  color: var(--on-dark);
+}
+.s19 .s19-quote-1 blockquote { font-size: 54px; max-width: 1280px; }
+.s19 .s19-quote-2 {
+  padding-left: 160px;
+  border-left: 1px solid rgba(94,234,212,0.22);
+  margin-left: 80px;
+}
+.s19 .s19-quote-2 blockquote { font-size: 42px; max-width: 1100px; }
+.s19 .s19-quote-3 {
+  text-align: right;
+  padding-right: 40px;
+}
+.s19 .s19-quote-3 blockquote { font-size: 36px; max-width: 1000px; margin-left: auto; }
+.s19 .s19-quote .s19-hl {
+  font-style: normal; font-weight: 500;
+  color: var(--mint);
+  background: linear-gradient(180deg, transparent 65%, rgba(52,238,167,0.14) 65%, rgba(52,238,167,0.14) 92%, transparent 92%);
+  padding: 0 2px;
+}
+.s19 .s19-quote figcaption {
+  font-family: var(--f-display); font-weight: 500; font-size: 13px;
+  letter-spacing: 0.06em; color: var(--on-dark-mute);
+}
+.s19 .s19-quote-3 figcaption { text-align: right; }
+.s19 .s19-quote figcaption .s19-ts {
+  font-family: var(--f-mono); font-size: 12px; color: rgba(245,242,234,0.4); margin-left: 4px;
+}
+.s19 .s19-divider {
+  margin-top: 44px; width: 80px; height: 1px;
+  background: rgba(94,234,212,0.4);
+}
+.s19 .s19-transition {
+  margin-top: 14px;
+  font-family: var(--f-display); font-weight: 500; font-size: 12px;
+  letter-spacing: 0.28em; text-transform: uppercase;
+  color: var(--teal-300);
+}
+
+/* ============ SLIDE 22 — POST-SESSION SATISFACTION ============ */
+.s22 .slide-frame { padding: 80px 112px 72px 112px; }
+.s22 .s22-hero {
+  margin-top: 28px;
+  display: grid; grid-template-columns: 1.05fr 1fr;
+  gap: 60px; align-items: flex-end;
+  padding-bottom: 26px; border-bottom: 1px solid rgba(10,26,28,0.14);
+}
+.s22 .s22-stat-row { display: flex; align-items: baseline; gap: 22px; margin-bottom: 12px; }
+.s22 .s22-stat-num {
+  font-family: var(--f-display); font-weight: 600;
+  font-size: 92px; line-height: 0.9; letter-spacing: -0.03em;
+  color: var(--teal-700); font-variant-numeric: tabular-nums;
+}
+.s22 .s22-stat-num i {
+  font-style: normal; font-weight: 400; font-size: 28px;
+  color: var(--ink-mute); margin-left: 2px;
+}
+.s22 .s22-stat-sub {
+  align-self: baseline;
+  border: 0; background: transparent; padding: 0; cursor: pointer;
+  font-family: var(--f-display); font-weight: 500;
+  font-size: 15px; letter-spacing: 0.01em; color: var(--ink);
+  border-bottom: 1px dashed rgba(13,118,110,0.45); padding-bottom: 2px;
+  text-align: left;
+}
+.s22 .s22-stat-sub:hover { color: var(--teal-700); border-bottom-color: var(--teal-700); }
+.s22 .s22-headline {
+  margin: 0; font-family: var(--f-display); font-weight: 500;
+  font-size: 32px; line-height: 1.18; letter-spacing: -0.015em;
+  color: var(--ink); max-width: 620px;
+}
+.s22 .s22-headline .hl {
+  color: var(--teal-700); font-weight: 600;
+  border-bottom: 2px solid rgba(52,238,167,0.45);
+}
+.s22 .s22-hero-right .s22-lede {
+  margin: 0; font-family: var(--f-display); font-weight: 400;
+  font-size: 15px; line-height: 1.52; color: var(--ink-mute);
+  max-width: 620px;
+}
+
+.s22 .s22-plot {
+  margin-top: 28px;
+}
+.s22 .s22-plot-head {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: 14px;
+}
+.s22 .s22-plot-title {
+  font-family: var(--f-display); font-weight: 500; font-size: 12px;
+  letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-mute);
+}
+.s22 .s22-plot-axis {
+  flex: 0 0 64%; display: grid; grid-template-columns: 14.3% 14.3% 14.3% 14.3% 14.3% 14.3%;
+  font-family: var(--f-mono); font-size: 11px; color: var(--ink-dim);
+  text-align: center; letter-spacing: 0.04em;
+}
+.s22 .s22-rows { display: flex; flex-direction: column; }
+.s22 .s22-row {
+  display: grid;
+  grid-template-columns: 280px 1fr 60px;
+  align-items: center; gap: 20px;
+  padding: 11px 0;
+  border-bottom: 1px solid rgba(10,26,28,0.08);
+}
+.s22 .s22-row:last-of-type { border-bottom: 1px solid rgba(10,26,28,0.14); }
+.s22 .s22-row-label {
+  font-family: var(--f-display); font-weight: 500;
+  font-size: 15px; color: var(--ink);
+}
+.s22 .s22-row-track {
+  position: relative; height: 10px;
+}
+.s22 .s22-row-track::before {
+  content: ''; position: absolute; top: 50%; left: 0; right: 0; height: 1px;
+  background: rgba(10,26,28,0.16);
+}
+.s22 .s22-row-bench {
+  position: absolute; top: 50%; left: 25%;
+  width: 0; height: 0;
+  border-left: 1px dashed rgba(245,158,11,0.85);
+  height: 22px; transform: translateY(-50%);
+}
+.s22 .s22-row-dot {
+  position: absolute; top: 50%; transform: translate(-50%, -50%);
+  width: 14px; height: 14px; border-radius: 50%;
+  background: var(--teal-700);
+  box-shadow: 0 0 0 4px rgba(13,118,110,0.12);
+  border: 0; padding: 0; cursor: pointer;
+}
+.s22 .s22-row[data-value="6.4"] .s22-row-dot { left: 70%; }
+.s22 .s22-row[data-value="6.6"] .s22-row-dot { left: 80%; }
+.s22 .s22-row[data-value="6.7"] .s22-row-dot { left: 85%; }
+.s22 .s22-row-track::after {
+  content: ''; position: absolute; top: 50%; left: 0; height: 2px; transform: translateY(-50%);
+  background: linear-gradient(90deg, rgba(13,118,110,0.08), rgba(13,118,110,0.85));
+  width: 80%;
+}
+.s22 .s22-row[data-value="6.4"] .s22-row-track::after { width: 70%; }
+.s22 .s22-row[data-value="6.7"] .s22-row-track::after { width: 85%; }
+.s22 .s22-row-val {
+  font-family: var(--f-mono); font-weight: 600;
+  font-size: 16px; color: var(--teal-700); text-align: right;
+  font-variant-numeric: tabular-nums; letter-spacing: -0.01em;
+}
+.s22 .s22-row-dot-soft { background: var(--teal-400); box-shadow: 0 0 0 4px rgba(20,184,166,0.10); }
+.s22 .s22-plot-bench-note {
+  margin-top: 8px; font-family: var(--f-mono); font-size: 10.5px;
+  color: var(--ink-dim); letter-spacing: 0.02em;
+}
+
+.s22 .s22-cohort {
+  margin-top: 24px; padding-top: 22px;
+  border-top: 1px solid rgba(10,26,28,0.14);
+  display: grid; grid-template-columns: 200px 1fr;
+  gap: 40px; align-items: center;
+}
+.s22 .s22-cohort-label {
+  font-family: var(--f-display); font-weight: 500; font-size: 12px;
+  letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-mute);
+}
+.s22 .s22-cohort-track {
+  grid-column: 2; position: relative; height: 48px;
+  margin-top: 16px;
+  border-radius: 6px;
+  background: linear-gradient(90deg, rgba(239,68,68,0.04) 0%, rgba(245,158,11,0.08) 40%, rgba(52,238,167,0.10) 100%);
+}
+.s22 .s22-cohort-axis {
+  grid-column: 2; position: relative; height: 16px;
+  font-family: var(--f-mono); font-size: 10px; color: var(--ink-dim);
+}
+.s22 .s22-cohort-tick { position: absolute; top: 0; transform: translateX(-50%); }
+.s22 .s22-cohort-track::before {
+  content: ''; position: absolute; top: 50%; left: 40%; width: 0;
+  border-left: 1px dashed rgba(245,158,11,0.85); height: 44px; transform: translateY(-50%);
+}
+.s22 .s22-dot {
+  position: absolute; top: 50%; transform: translate(-50%, -50%);
+  width: 28px; height: 28px; border-radius: 50%;
+  background: var(--teal-700); border: 2px solid var(--paper);
+  padding: 0; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 0 0 3px rgba(13,118,110,0.15), 0 2px 6px rgba(0,0,0,0.08);
+  transition: transform 160ms var(--ease-out), box-shadow 160ms var(--ease-out);
+}
+.s22 .s22-dot:hover {
+  transform: translate(-50%, -50%) scale(1.1);
+  box-shadow: 0 0 0 5px rgba(13,118,110,0.2), 0 4px 12px rgba(0,0,0,0.12);
+}
+.s22 .s22-dot-tag {
+  position: absolute; bottom: -22px; left: 50%; transform: translateX(-50%);
+  font-family: var(--f-mono); font-weight: 600; font-size: 10.5px;
+  color: var(--teal-700); white-space: nowrap; letter-spacing: 0.04em;
+}
+.s22 .s22-dot-lo { background: rgba(245,158,11,0.85); box-shadow: 0 0 0 3px rgba(245,158,11,0.18), 0 2px 6px rgba(0,0,0,0.08); }
+.s22 .s22-dot-lo .s22-dot-tag { color: #B45309; }
+.s22 .s22-dot-stack {
+  width: 52px; height: 30px; border-radius: 999px;
+  background: var(--teal-700);
+}
+.s22 .s22-dot-stack .s22-dot-tag { white-space: nowrap; font-size: 10px; }
+.s22 .s22-cohort-note {
+  grid-column: 1 / -1; margin: 20px 0 0;
+  font-family: var(--f-display); font-weight: 400; font-size: 14px; line-height: 1.45;
+  color: var(--ink-mute);
+}
+
+/* ============ SLIDE 23 — PROTOTYPE CONTEXT ============ */
+.s23 {
+  background:
+    radial-gradient(800px 640px at 92% 100%, rgba(6,40,35,0.8), transparent 55%),
+    radial-gradient(900px 720px at 10% 0%, rgba(20,184,166,0.04), transparent 60%),
+    linear-gradient(180deg, #083832 0%, #062823 60%, #051F1C 100%);
+}
+.s23 .slide-frame { padding: 80px 112px 72px 112px; }
+.s23 .s23-grid {
+  display: grid; grid-template-columns: 0.9fr 1.3fr;
+  gap: 72px; margin-top: 32px; align-items: flex-start;
+}
+.s23 .s23-left { padding-right: 10px; }
+.s23 .s23-headline {
+  margin: 0 0 18px;
+  font-family: var(--f-display); font-weight: 500;
+  font-size: 36px; line-height: 1.18; letter-spacing: -0.015em;
+  color: var(--on-dark); max-width: 520px;
+}
+.s23 .s23-body {
+  margin: 0 0 14px; font-family: var(--f-display); font-weight: 400;
+  font-size: 15.5px; line-height: 1.55; color: rgba(245,242,234,0.76);
+  max-width: 540px;
+}
+.s23 .s23-badge {
+  display: inline-flex; align-items: center; gap: 12px;
+  margin-top: 22px; padding: 12px 18px;
+  border: 1px solid rgba(94,234,212,0.28); border-radius: 10px;
+  background: rgba(20,184,166,0.08);
+}
+.s23 .s23-badge-dot {
+  width: 6px; height: 6px; border-radius: 50%; background: var(--mint);
+  box-shadow: 0 0 0 3px rgba(52,238,167,0.18);
+}
+.s23 .s23-badge-text {
+  font-family: var(--f-display); font-weight: 500; font-size: 12.5px;
+  letter-spacing: 0.02em; color: var(--on-dark);
+}
+
+.s23 .s23-ledger-head {
+  display: grid; grid-template-columns: 320px 1fr;
+  gap: 28px; padding-bottom: 12px;
+  border-bottom: 1px solid rgba(94,234,212,0.22);
+}
+.s23 .s23-ledger-head span {
+  font-family: var(--f-display); font-weight: 500; font-size: 11.5px;
+  letter-spacing: 0.22em; text-transform: uppercase; color: var(--on-dark-mute);
+}
+.s23 .s23-ledger { display: flex; flex-direction: column; }
+.s23 .s23-row {
+  display: grid; grid-template-columns: 320px 1fr;
+  gap: 28px; padding: 18px 0;
+  border-bottom: 1px solid rgba(94,234,212,0.08);
+}
+.s23 .s23-row:last-child { border-bottom: 0; }
+.s23 .s23-row-l {
+  display: flex; flex-direction: column; gap: 6px;
+}
+.s23 .s23-row-tag {
+  font-family: var(--f-mono); font-weight: 600; font-size: 11px;
+  letter-spacing: 0.12em; color: var(--gold);
+  padding: 3px 8px; border-radius: 3px;
+  background: rgba(245,158,11,0.12); border: 1px solid rgba(245,158,11,0.28);
+  align-self: flex-start;
+}
+.s23 .s23-row-title {
+  font-family: var(--f-display); font-weight: 500; font-size: 17px;
+  color: var(--on-dark); letter-spacing: -0.005em;
+}
+.s23 .s23-row-r {
+  font-family: var(--f-display); font-weight: 400; font-size: 15px;
+  line-height: 1.5; color: rgba(245,242,234,0.82);
+}
+
+/* ============ SLIDE 26 — P07 PARADOX (named duel) ============ */
+.s26 .slide-frame { padding: 80px 112px 72px 112px; }
+.s26 .s26-hero { margin-top: 28px; max-width: 1200px; text-align: left; }
+.s26 .s26-headline {
+  margin: 0 0 14px; font-family: var(--f-display); font-weight: 500;
+  font-size: 52px; line-height: 1.08; letter-spacing: -0.022em;
+  color: var(--ink);
+}
+.s26 .s26-headline .ital {
+  font-family: var(--f-serif); font-style: italic; font-weight: 500;
+  color: var(--teal-700);
+}
+.s26 .s26-lede {
+  margin: 0; max-width: 1000px;
+  font-family: var(--f-display); font-weight: 400;
+  font-size: 17px; line-height: 1.5; color: var(--ink-mute);
+}
+.s26 .s26-grid {
+  margin-top: 32px;
+  display: grid; grid-template-columns: 1fr 1fr;
+  column-gap: 80px; position: relative;
+}
+.s26 .s26-grid::before {
+  content: ''; position: absolute; top: 10px; bottom: 10px; left: 50%;
+  width: 1px; background: rgba(10,26,28,0.14);
+}
+.s26 .s26-col-eyebrow {
+  font-family: var(--f-display); font-weight: 500;
+  font-size: 12px; letter-spacing: 0.24em; text-transform: uppercase;
+  color: var(--ink-mute); margin-bottom: 20px;
+}
+.s26 .s26-col-eyebrow-mint { color: var(--teal-700); }
+.s26 .s26-list { list-style: none; padding: 0; margin: 0; }
+.s26 .s26-item {
+  padding: 14px 0 14px 2px;
+  border-bottom: 1px solid rgba(10,26,28,0.08);
+  display: flex; flex-direction: column; gap: 6px;
+}
+.s26 .s26-item:last-child { border-bottom: 0; }
+.s26 .s26-item-tag {
+  font-family: var(--f-mono); font-weight: 600;
+  font-size: 10.5px; letter-spacing: 0.08em;
+  color: var(--ink-dim); text-transform: uppercase;
+}
+.s26 .s26-item-tag .s26-ts {
+  font-family: var(--f-mono); font-weight: 400;
+  color: var(--ink-dim); margin-left: 4px; text-transform: none;
+  letter-spacing: 0.02em;
+}
+.s26 .s26-item-body {
+  font-family: var(--f-display); font-weight: 400;
+  font-size: 15.5px; line-height: 1.48; color: var(--ink);
+}
+.s26 .s26-item-body em { font-style: italic; font-family: var(--f-serif); color: var(--ink-mute); font-size: 16.5px; }
+.s26 .s26-item .s26-quote {
+  margin: 0; font-family: var(--f-serif); font-style: italic; font-weight: 400;
+  font-size: 18px; line-height: 1.42; color: var(--ink);
+}
+.s26 .s26-num {
+  font-family: var(--f-mono); font-weight: 700;
+  color: #B45309; font-variant-numeric: tabular-nums;
+}
+.s26 .s26-item-pos .s26-item-tag { color: var(--teal-700); }
+.s26 .s26-foot {
+  margin-top: 36px; padding-top: 24px;
+  border-top: 1px solid rgba(10,26,28,0.14);
+  display: grid; grid-template-columns: 1fr auto; gap: 40px; align-items: center;
+}
+.s26 .s26-takeaway { max-width: 820px; }
+.s26 .s26-takeaway-eb {
+  display: block; font-family: var(--f-display); font-weight: 600; font-size: 12px;
+  letter-spacing: 0.24em; text-transform: uppercase;
+  color: var(--teal-700); margin-bottom: 8px;
+}
+.s26 .s26-takeaway p {
+  margin: 0; font-family: var(--f-display); font-weight: 400;
+  font-size: 16px; line-height: 1.5; color: var(--ink);
+}
+.s26 .s26-clip { width: 340px; }
+
+/* ============ SLIDE 27 — F1 REMEDIATIONS ============ */
+.s27 .slide-frame { padding: 80px 112px 72px 112px; }
+.s27 .s27-hero { margin-top: 28px; max-width: 1240px; }
+.s27 .s27-headline {
+  margin: 0 0 12px; font-family: var(--f-display); font-weight: 500;
+  font-size: 42px; line-height: 1.14; letter-spacing: -0.018em;
+  color: var(--on-dark);
+}
+.s27 .s27-headline .hl {
+  color: var(--mint); font-weight: 600;
+  border-bottom: 2px solid rgba(52,238,167,0.45);
+}
+.s27 .s27-lede {
+  margin: 0; max-width: 960px;
+  font-family: var(--f-display); font-weight: 400;
+  font-size: 16px; line-height: 1.5; color: rgba(245,242,234,0.72);
+}
+.s27 .s27-table {
+  margin-top: 28px;
+  border-top: 1px solid rgba(94,234,212,0.22);
+}
+.s27 .s27-head, .s27 .s27-row {
+  display: grid;
+  grid-template-columns: 1.1fr 1.4fr 1.9fr 0.7fr;
+  column-gap: 32px; align-items: flex-start;
+  padding: 16px 4px;
+}
+.s27 .s27-head {
+  border-bottom: 1px solid rgba(94,234,212,0.22);
+  padding-top: 10px; padding-bottom: 10px; align-items: center;
+}
+.s27 .s27-head .s27-col {
+  font-family: var(--f-display); font-weight: 500; font-size: 11px;
+  letter-spacing: 0.22em; text-transform: uppercase; color: var(--on-dark-mute);
+}
+.s27 .s27-row {
+  border-bottom: 1px solid rgba(94,234,212,0.08);
+  transition: background 160ms var(--ease-out);
+}
+.s27 .s27-row:last-child { border-bottom: 1px solid rgba(94,234,212,0.22); }
+.s27 .s27-row:hover { background: rgba(20,184,166,0.05); }
+.s27 .s27-col-el {
+  display: flex; flex-direction: column; gap: 6px; align-items: flex-start;
+}
+.s27 .s27-el-name {
+  font-family: var(--f-display); font-weight: 600; font-size: 19px;
+  color: var(--on-dark); letter-spacing: -0.005em;
+}
+.s27 .s27-el-sub {
+  font-family: var(--f-mono); font-weight: 500; font-size: 11px;
+  color: var(--on-dark-dim); letter-spacing: 0.04em; margin-left: 4px;
+}
+.s27 .s27-col-issue, .s27 .s27-col-rec {
+  font-family: var(--f-display); font-weight: 400;
+  font-size: 15px; line-height: 1.48;
+}
+.s27 .s27-col-issue { color: rgba(245,242,234,0.72); }
+.s27 .s27-col-rec { color: var(--on-dark); }
+.s27 .s27-col-comp { align-self: center; justify-self: start; }
+.s27 .s27-tag {
+  display: inline-flex; align-items: center;
+  padding: 6px 14px; border-radius: 999px;
+  font-family: var(--f-display); font-weight: 500; font-size: 12px;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  border: 1px solid rgba(52,238,167,0.4); background: rgba(52,238,167,0.10);
+  color: var(--mint); cursor: pointer;
+}
+.s27 .s27-tag:hover { background: rgba(52,238,167,0.18); }
+.s27 .s27-tag-med { border-color: rgba(94,234,212,0.4); background: rgba(94,234,212,0.10); color: var(--teal-300); }
+.s27 .s27-tag-med:hover { background: rgba(94,234,212,0.18); }
+.s27 .s27-foot {
+  margin-top: 32px; padding-top: 22px;
+  border-top: 1px solid rgba(94,234,212,0.22);
+  display: grid; grid-template-columns: 1fr auto; gap: 40px; align-items: center;
+}
+.s27 .s27-foot-left { max-width: 820px; }
+.s27 .s27-foot-eb {
+  display: block; font-family: var(--f-display); font-weight: 600; font-size: 12px;
+  letter-spacing: 0.24em; text-transform: uppercase;
+  color: var(--teal-300); margin-bottom: 6px;
+}
+.s27 .s27-foot-left p {
+  margin: 0; font-family: var(--f-display); font-weight: 400;
+  font-size: 15px; line-height: 1.5; color: rgba(245,242,234,0.78);
+}
+.s27 .s27-cta {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 12px 18px; border-radius: 999px;
+  background: rgba(52,238,167,0.10); border: 1px solid rgba(52,238,167,0.4);
+  font-family: var(--f-display); font-weight: 500; font-size: 13px;
+  letter-spacing: 0.02em; color: var(--mint); cursor: pointer;
+}
+.s27 .s27-cta:hover { background: rgba(52,238,167,0.18); }
+
+/* ============ SLIDE 28 — F2 AI COACH SPECTRUM ============ */
+.s28 .slide-frame { padding: 80px 112px 72px 112px; }
+.s28 .s28-hero { margin-top: 28px; max-width: 1240px; }
+.s28 .s28-headline {
+  margin: 0 0 12px; font-family: var(--f-display); font-weight: 500;
+  font-size: 44px; line-height: 1.12; letter-spacing: -0.02em;
+  color: var(--ink);
+}
+.s28 .s28-headline .ital {
+  font-family: var(--f-serif); font-style: italic; font-weight: 500;
+  color: var(--teal-700);
+}
+.s28 .s28-lede {
+  margin: 0 0 18px; max-width: 900px;
+  font-family: var(--f-display); font-weight: 400;
+  font-size: 16px; line-height: 1.5; color: var(--ink-mute);
+}
+.s28 .s28-stats { display: flex; gap: 12px; flex-wrap: wrap; }
+
+.s28 .s28-spectrum { margin-top: 40px; padding: 0 40px; }
+.s28 .s28-spectrum-ends {
+  display: flex; justify-content: space-between; align-items: center;
+  font-family: var(--f-display); font-weight: 500; font-size: 12px;
+  letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-mute);
+  margin-bottom: 20px;
+}
+.s28 .s28-spectrum-end-l { color: #B45309; }
+.s28 .s28-spectrum-end-r { color: var(--teal-700); }
+.s28 .s28-spectrum-track {
+  position: relative; height: 120px;
+}
+.s28 .s28-spectrum-rule {
+  position: absolute; top: 60px; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, rgba(180,83,9,0.45) 0%, rgba(245,158,11,0.45) 30%, rgba(94,234,212,0.45) 65%, rgba(13,118,110,0.65) 100%);
+  border-radius: 2px;
+}
+.s28 .s28-plot {
+  position: absolute; top: 60px; transform: translate(-50%, -50%);
+  background: transparent; border: 0; padding: 0; cursor: pointer;
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  width: 220px;
+}
+.s28 .s28-plot:nth-child(odd) { flex-direction: column-reverse; }
+.s28 .s28-plot-dot {
+  width: 16px; height: 16px; border-radius: 50%;
+  background: #B45309; border: 3px solid var(--paper);
+  box-shadow: 0 0 0 2px rgba(180,83,9,0.3), 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 180ms var(--ease-out);
+}
+.s28 .s28-plot-dot-mint {
+  background: var(--teal-700);
+  box-shadow: 0 0 0 2px rgba(13,118,110,0.3), 0 2px 8px rgba(0,0,0,0.1);
+}
+.s28 .s28-plot:hover .s28-plot-dot { transform: scale(1.15); }
+.s28 .s28-plot-ident {
+  font-family: var(--f-display); font-weight: 600; font-size: 13px;
+  letter-spacing: 0.04em; color: var(--ink);
+}
+.s28 .s28-plot-ts {
+  font-family: var(--f-mono); font-weight: 400; font-size: 11px;
+  color: var(--ink-dim); margin-left: 4px;
+}
+.s28 .s28-plot-label {
+  font-family: var(--f-serif); font-style: italic; font-weight: 400;
+  font-size: 14px; line-height: 1.28; color: var(--ink-mute);
+  text-align: center; max-width: 200px;
+}
+.s28 .s28-plot:nth-child(odd) .s28-plot-ident,
+.s28 .s28-plot:nth-child(odd) .s28-plot-label { margin-top: 0; }
+.s28 .s28-spectrum-caption {
+  display: flex; justify-content: space-between;
+  margin-top: 24px; padding: 0 10px;
+  font-family: var(--f-mono); font-size: 11px;
+  color: var(--ink-dim); letter-spacing: 0.04em;
+}
+
+.s28 .s28-grid {
+  margin-top: 40px; padding-top: 26px;
+  border-top: 1px solid rgba(10,26,28,0.12);
+  display: grid; grid-template-columns: 1fr 1fr; column-gap: 80px;
+}
+.s28 .s28-block-eb {
+  font-family: var(--f-display); font-weight: 500;
+  font-size: 12px; letter-spacing: 0.24em; text-transform: uppercase;
+  color: var(--ink-mute); margin-bottom: 14px;
+}
+.s28 .s28-block-problem .s28-block-eb { color: #B45309; }
+.s28 .s28-block-value   .s28-block-eb { color: var(--teal-700); }
+.s28 .s28-block-quote {
+  margin: 0 0 6px; font-family: var(--f-serif); font-style: italic; font-weight: 400;
+  font-size: 20px; line-height: 1.36; color: var(--ink);
+}
+.s28 .s28-block-cite {
+  display: block; font-style: normal;
+  font-family: var(--f-display); font-weight: 500;
+  font-size: 13px; letter-spacing: 0.04em; color: var(--ink-mute);
+  margin-bottom: 18px;
+}
+.s28 .s28-block-cite:last-child { margin-bottom: 0; }
+
+/* ============ SLIDE 29 — F2 PRINCIPLE + RECOMMENDATIONS ============ */
+.s29 .slide-frame { padding: 80px 112px 72px 112px; }
+.s29 .s29-grid {
+  margin-top: 32px;
+  display: grid; grid-template-columns: 1fr 1.2fr;
+  column-gap: 80px; position: relative;
+}
+.s29 .s29-grid::before {
+  content: ''; position: absolute; top: 10px; bottom: 10px; left: 45.5%;
+  width: 1px; background: rgba(94,234,212,0.18);
+}
+.s29 .s29-col-eyebrow {
+  font-family: var(--f-display); font-weight: 500;
+  font-size: 12px; letter-spacing: 0.24em; text-transform: uppercase;
+  color: var(--teal-300); margin-bottom: 24px;
+}
+.s29 .s29-principle-text {
+  margin: 0 0 16px; font-family: var(--f-display); font-weight: 400;
+  font-size: 22px; line-height: 1.4; color: var(--on-dark);
+  max-width: 620px;
+}
+.s29 .s29-principle-text .s29-hl {
+  color: var(--mint); font-weight: 500;
+}
+.s29 .s29-principle-emphasis {
+  font-family: var(--f-serif); font-style: italic; font-weight: 400;
+  font-size: 20px; color: rgba(245,242,234,0.88);
+}
+.s29 .s29-evidence {
+  margin-top: 28px; padding-top: 20px;
+  border-top: 1px solid rgba(94,234,212,0.18);
+}
+.s29 .s29-evidence-eb {
+  font-family: var(--f-display); font-weight: 600; font-size: 12px;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--teal-300); margin-bottom: 10px;
+}
+.s29 .s29-ev-quote {
+  margin: 0 0 8px; font-family: var(--f-serif); font-style: italic;
+  font-size: 17px; line-height: 1.4; color: var(--on-dark);
+}
+.s29 .s29-ev-cite {
+  display: block; font-style: normal;
+  font-family: var(--f-display); font-weight: 500;
+  font-size: 12.5px; letter-spacing: 0.04em; color: var(--on-dark-mute);
+}
+.s29 .s29-ev-cite .s29-ts { font-family: var(--f-mono); color: rgba(245,242,234,0.4); margin-left: 4px; }
+
+.s29 .s29-rec-list {
+  list-style: none; padding: 0; margin: 0;
+  display: flex; flex-direction: column;
+}
+.s29 .s29-rec {
+  display: grid; grid-template-columns: 60px 1fr;
+  gap: 22px; padding: 18px 0;
+  border-bottom: 1px solid rgba(94,234,212,0.08);
+}
+.s29 .s29-rec:last-child { border-bottom: 0; }
+.s29 .s29-rec-num {
+  font-family: var(--f-display); font-weight: 700;
+  font-size: 28px; line-height: 1; letter-spacing: -0.02em;
+  color: var(--mint); font-variant-numeric: tabular-nums;
+}
+.s29 .s29-rec-title {
+  margin: 0 0 6px; font-family: var(--f-display); font-weight: 500;
+  font-size: 17px; line-height: 1.3; color: var(--on-dark);
+}
+.s29 .s29-rec-detail {
+  margin: 0; font-family: var(--f-display); font-weight: 400;
+  font-size: 14px; line-height: 1.5; color: rgba(245,242,234,0.72);
+}
+
+.s29 .s29-foot {
+  margin-top: 32px; padding-top: 22px;
+  border-top: 1px solid rgba(94,234,212,0.22);
+  display: flex; gap: 14px; flex-wrap: wrap;
+}
+.s29 .s29-tag-btn {
+  display: inline-flex; flex-direction: column; align-items: flex-start; gap: 2px;
+  padding: 10px 18px; border-radius: 10px;
+  border: 1px solid rgba(94,234,212,0.28); background: rgba(20,184,166,0.08);
+  cursor: pointer; font-family: var(--f-display);
+  transition: background 160ms var(--ease-out), border-color 160ms var(--ease-out);
+}
+.s29 .s29-tag-btn:hover { background: rgba(20,184,166,0.18); border-color: rgba(94,234,212,0.44); }
+.s29 .s29-tag-k {
+  font-weight: 500; font-size: 10.5px; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--on-dark-mute);
+}
+.s29 .s29-tag-v {
+  font-weight: 500; font-size: 14px; letter-spacing: 0.01em;
+  color: var(--mint);
+}
+
+/* ============ SLIDE 30 — F3 MEDS SCREEN ============ */
+.s30 .slide-frame { padding: 76px 112px 72px 112px; }
+.s30 .s30-grid {
+  margin-top: 24px;
+  display: grid; grid-template-columns: 440px 1fr;
+  column-gap: 60px; align-items: flex-start; position: relative;
+}
+.s30 .s30-phone-col { position: relative; display: flex; flex-direction: column; align-items: center; }
+.s30 .s30-phone-col .phone { transform: scale(0.88); transform-origin: top center; }
+.s30 .s30-anno {
+  position: absolute; top: 260px; right: -40px;
+  display: flex; align-items: center; gap: 10px;
+  padding: 8px 14px; border-radius: 999px;
+  background: rgba(245,158,11,0.12); border: 1px solid rgba(245,158,11,0.4);
+}
+.s30 .s30-anno-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--gold); box-shadow: 0 0 0 3px rgba(245,158,11,0.24);
+}
+.s30 .s30-anno-rule {
+  width: 26px; height: 1px; background: rgba(245,158,11,0.6); display: none;
+}
+.s30 .s30-anno-tag {
+  font-family: var(--f-display); font-weight: 500; font-size: 12px;
+  letter-spacing: 0.04em; color: #B45309;
+}
+.s30 .s30-anno-tag b {
+  font-family: var(--f-mono); font-weight: 700; margin-right: 4px;
+}
+
+.s30 .s30-right { padding-top: 4px; display: flex; flex-direction: column; gap: 18px; }
+.s30 .s30-headline {
+  margin: 0; font-family: var(--f-display); font-weight: 500;
+  font-size: 36px; line-height: 1.14; letter-spacing: -0.015em;
+  color: var(--ink); max-width: 700px;
+}
+.s30 .s30-headline .ital {
+  font-family: var(--f-serif); font-style: italic; font-weight: 500;
+  color: var(--teal-700);
+}
+.s30 .s30-stat-row { display: flex; gap: 12px; flex-wrap: wrap; }
+.s30 .s30-quote {
+  padding: 18px 22px;
+  border-left: none;
+  background: rgba(20,184,166,0.05);
+  border-radius: 10px;
+  border: 1px solid rgba(13,118,110,0.15);
+  position: relative;
+}
+.s30 .s30-quote::before {
+  content: '\201C'; position: absolute; top: -4px; left: 14px;
+  font-family: var(--f-serif); font-size: 48px; color: rgba(13,118,110,0.35);
+  line-height: 1;
+}
+.s30 .s30-quote blockquote {
+  margin: 8px 0 8px 28px;
+  font-family: var(--f-serif); font-style: italic; font-weight: 400;
+  font-size: 22px; line-height: 1.35; color: var(--ink);
+}
+.s30 .s30-quote cite {
+  display: block; font-style: normal; margin-left: 28px;
+  font-family: var(--f-display); font-weight: 500;
+  font-size: 13px; letter-spacing: 0.04em; color: var(--ink-mute);
+}
+.s30 .s30-quote cite .s30-ts { font-family: var(--f-mono); color: var(--ink-dim); margin-left: 4px; }
+
+.s30 .s30-micro { display: flex; flex-direction: column; gap: 10px; }
+.s30 .s30-micro-row {
+  display: grid; grid-template-columns: 80px 1fr; gap: 16px; align-items: baseline;
+  padding: 8px 0; border-bottom: 1px solid rgba(10,26,28,0.08);
+}
+.s30 .s30-micro-row:last-child { border-bottom: 0; }
+.s30 .s30-micro-row span {
+  font-family: var(--f-display); font-weight: 400;
+  font-size: 14px; line-height: 1.48; color: var(--ink);
+}
+.s30 .s30-micro-row .chip, .s30 .s30-micro-row .chip-inline { justify-self: start; }
+
+.s30 .s30-rec {
+  margin-top: 4px; padding: 16px 20px;
+  border-radius: 10px;
+  background: rgba(52,238,167,0.08);
+  border: 1px solid rgba(52,238,167,0.32);
+}
+.s30 .s30-rec-eb {
+  font-family: var(--f-display); font-weight: 600; font-size: 11.5px;
+  letter-spacing: 0.24em; text-transform: uppercase;
+  color: var(--teal-700); margin-bottom: 8px;
+}
+.s30 .s30-rec p {
+  margin: 0 0 10px; font-family: var(--f-display); font-weight: 400;
+  font-size: 14.5px; line-height: 1.5; color: var(--ink);
+}
+.s30 .s30-rec-tags { display: flex; gap: 10px; flex-wrap: wrap; }
+.s30 .s30-rec-tag {
+  font-family: var(--f-mono); font-weight: 600; font-size: 11px;
+  padding: 4px 10px; border-radius: 3px;
+  color: var(--teal-700); background: rgba(13,118,110,0.10); border: 1px solid rgba(13,118,110,0.24);
+  letter-spacing: 0.06em;
+}
+.s30 .s30-rec-tag-hi {
+  color: var(--mint); background: rgba(52,238,167,0.15); border-color: rgba(52,238,167,0.45);
+}
+
+.s30 .s30-clip { position: absolute; bottom: 72px; left: 112px; width: 320px; }
+
+/* Meds calendar CSS mock (drops in if assets/screenshots/meds-popover.png lands) */
+.screen-meds-lite {
+  background: linear-gradient(170deg, #0D4B44 0%, #06231F 100%);
+  color: var(--text-on-dark); padding: 44px 20px 16px;
+  display: flex; flex-direction: column; gap: 10px;
+}
+.screen-meds-lite .screen-status { display: flex; justify-content: space-between; font-size: 10px; font-weight: 600; opacity: 0.82; letter-spacing: 0.02em; }
+.screen-meds-lite .screen-status .icons { display: flex; gap: 4px; align-items: center; }
+.screen-meds-lite .screen-status .wifi { width: 10px; height: 7px; background: currentColor; clip-path: polygon(0 70%, 100% 70%, 100% 100%, 0 100%); }
+.screen-meds-lite .screen-status .battery { width: 18px; height: 8px; border: 1px solid currentColor; border-radius: 2px; position: relative; padding: 1px; }
+.screen-meds-lite .screen-status .battery::after { content:''; display:block; width: 78%; height: 100%; background: currentColor; border-radius: 1px; }
+.screen-meds-lite .meds-top {
+  display: flex; justify-content: space-between; align-items: center;
+  font-family: var(--f-display); font-size: 12px; color: var(--on-dark-mute);
+  padding-bottom: 6px; border-bottom: 1px solid rgba(94,234,212,0.14);
+}
+.screen-meds-lite .meds-top .meds-title { font-weight: 600; font-size: 16px; color: var(--on-dark); letter-spacing: -0.01em; }
+.screen-meds-lite .meds-top .meds-back, .screen-meds-lite .meds-top .meds-edit { color: var(--teal-300); font-weight: 500; font-size: 11px; }
+.screen-meds-lite .meds-dose {
+  background: rgba(20,184,166,0.08); border: 1px solid rgba(94,234,212,0.18);
+  border-radius: 8px; padding: 8px 12px;
+  display: flex; justify-content: space-between; align-items: baseline;
+}
+.screen-meds-lite .meds-dose-k { font-family: var(--f-display); font-weight: 600; font-size: 13px; color: var(--on-dark); }
+.screen-meds-lite .meds-dose-v { font-family: var(--f-mono); font-size: 11px; color: var(--teal-300); }
+.screen-meds-lite .meds-cal-head {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 4px 2px 2px;
+}
+.screen-meds-lite .meds-cal-month { font-family: var(--f-display); font-weight: 600; font-size: 13px; color: var(--on-dark); }
+.screen-meds-lite .meds-cal-nav { display: flex; gap: 16px; }
+.screen-meds-lite .meds-cal-arr { color: var(--on-dark-mute); font-size: 14px; }
+.screen-meds-lite .meds-cal-dow {
+  display: grid; grid-template-columns: repeat(7, 1fr);
+  gap: 2px; padding: 6px 0 4px;
+  font-family: var(--f-mono); font-size: 9.5px; color: var(--on-dark-dim);
+  text-align: center; letter-spacing: 0.04em; border-bottom: 1px solid rgba(94,234,212,0.08);
+}
+.screen-meds-lite .meds-cal-grid {
+  display: grid; grid-template-columns: repeat(7, 1fr);
+  gap: 4px; padding: 6px 0; flex: 1 1 auto;
+}
+.screen-meds-lite .meds-day {
+  aspect-ratio: 1 / 1; display: flex; align-items: center; justify-content: center;
+  font-family: var(--f-display); font-weight: 500; font-size: 11px;
+  color: rgba(245,242,234,0.82); border-radius: 6px;
+  position: relative;
+}
+.screen-meds-lite .meds-day-off { color: rgba(245,242,234,0.22); }
+.screen-meds-lite .meds-day-done {
+  background: rgba(20,184,166,0.18); color: var(--teal-300);
+}
+.screen-meds-lite .meds-day-done::after {
+  content: ''; position: absolute; bottom: 3px; left: 50%; transform: translateX(-50%);
+  width: 4px; height: 4px; border-radius: 50%; background: var(--teal-400);
+}
+.screen-meds-lite .meds-day-next {
+  color: var(--mint); border: 1px dashed rgba(52,238,167,0.5);
+}
+.screen-meds-lite .meds-day-today {
+  background: rgba(245,158,11,0.18); color: var(--gold);
+  border: 1.5px solid var(--gold); font-weight: 700;
+}
+.screen-meds-lite .meds-day-pulse {
+  position: absolute; inset: -4px; border-radius: 9px;
+  border: 2px solid rgba(245,158,11,0.45); pointer-events: none;
+  animation: medsPulse 2.6s ease-in-out infinite;
+}
+@keyframes medsPulse {
+  0%, 100% { transform: scale(1); opacity: 0.45; }
+  50%      { transform: scale(1.14); opacity: 0; }
+}
+.screen-meds-lite .meds-legend {
+  display: flex; gap: 10px; flex-wrap: wrap;
+  padding: 6px 2px 0; border-top: 1px solid rgba(94,234,212,0.08);
+  font-family: var(--f-display); font-size: 9.5px; color: var(--on-dark-mute);
+  letter-spacing: 0.02em;
+}
+.screen-meds-lite .meds-legend span { display: inline-flex; align-items: center; gap: 5px; }
+.screen-meds-lite .meds-sw { width: 7px; height: 7px; border-radius: 2px; display: inline-block; }
+.screen-meds-lite .meds-sw-done  { background: var(--teal-400); }
+.screen-meds-lite .meds-sw-today { background: var(--gold); }
+.screen-meds-lite .meds-sw-next  { background: transparent; border: 1px dashed rgba(52,238,167,0.6); }
+
 </style>
 
 <style id="print">
@@ -3471,93 +4647,7 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
   </div>
 </section>
 
-<!-- DEFERRED — originally SLIDE 4: SEQ HERO VIZ -->
-<!-- DEFERRED for Session 6 — blueprint Slide 21 (SEQ Scores & Task Completion). See lessons-learned.md. -->
-<section class="slide-deferred s-deferred-seq slide-data-stage" data-on-enter="animateSEQ">
-  <div class="slide-frame">
-    <div class="seq-grid">
-      <div class="seq-left">
-        <div class="eyebrow reveal d1">How we measured ease</div>
-        <h1 class="reveal d2">A 1&ndash;7 scale.<br/>We hit <span class="hl">6.4</span>.</h1>
-        <p class="reveal d3">The <strong style="color:var(--on-dark);font-weight:500">Single Ease Question</strong> is the UX industry&apos;s standard metric. After every task, participants answer how easy it was on a 7-point scale.</p>
-        <p class="reveal d4">Because it&apos;s standardized, our result can be benchmarked against thousands of other digital products. The industry average sits at <strong style="color:var(--on-dark);font-weight:500">5.5/7</strong>.</p>
-        <p class="reveal d5">Our mean is <strong style="color:var(--mint);font-weight:600">6.4/7</strong>. Every single task cleared the benchmark.</p>
-        <div class="seq-source reveal d6">Source &middot; <button class="chip chip-inline" data-cite="seq-source">MeasuringU benchmark</button></div>
-      </div>
-      <div class="seq-stage reveal d3">
-        <div class="seq-scale-wrap">
-          <div class="seq-scale">
-            <div class="seq-zones">
-              <div class="seq-zone zone-hard">Difficult</div>
-              <div class="seq-zone zone-avg">Average</div>
-              <div class="seq-zone zone-easy">Easy &middot; Excellent</div>
-            </div>
-            <div class="seq-benchmark-band" style="left: calc(30px + 71.7% - 6px); width: calc(5% + 12px);">
-              <div class="seq-benchmark-tag">
-                <span class="lab">Industry benchmark</span>
-                <span class="val">5.3&ndash;5.6</span>
-              </div>
-            </div>
-            <div class="seq-gap-bracket" style="left: calc(30px + 75%); right: calc(30px + 10%);">
-              <span class="seq-gap-rule"></span>
-            </div>
-            <div class="seq-gap-label" style="left: calc(30px + 82.5%);">
-              <span class="lbl">Gap</span>
-              +0.9
-            </div>
-            <div class="seq-ours" style="left: 30px">
-              <div class="seq-ours-tag">
-                <span class="label">Our mean</span>
-                <span class="big chip-trigger" data-cite="seq-mean">6.4<span class="of">/ 7</span></span>
-              </div>
-            </div>
-            <div class="seq-track"></div>
-            <div class="seq-ticks">
-              <div class="seq-tick"><span class="seq-tick-num">1</span></div>
-              <div class="seq-tick"><span class="seq-tick-num">2</span></div>
-              <div class="seq-tick"><span class="seq-tick-num">3</span></div>
-              <div class="seq-tick"><span class="seq-tick-num">4</span></div>
-              <div class="seq-tick"><span class="seq-tick-num">5</span></div>
-              <div class="seq-tick"><span class="seq-tick-num">6</span></div>
-              <div class="seq-tick"><span class="seq-tick-num">7</span></div>
-            </div>
-          </div>
-        </div>
-        <div class="seq-below">
-          <button class="seq-expand-btn" type="button" aria-expanded="false">
-            <span class="seq-expand-label">See per-task breakdown</span>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="seq-compared reveal d5">
-            <div class="cmp-row"><span class="num mint">+0.9</span><span>above the industry average across 10,000+ tested products</span></div>
-            <div class="cmp-row"><span class="num">86%</span><span>task completion rate at an SEQ of 5.9 &mdash; we exceed on every task</span></div>
-          </div>
-          <div class="seq-tasks" aria-hidden="true">
-            <div class="seq-tasks-legend">
-              <span>Per-task SEQ</span>
-              <span>Click any task for the behavioural context</span>
-            </div>
-            <div class="seq-task" data-id="T1" data-score="6.7"><span class="seq-task-tag">T1</span><span class="seq-task-name">Morning Exploration</span><div class="seq-task-bar"><div class="seq-task-bar-fill"></div></div><span class="seq-task-score">6.7</span></div>
-            <div class="seq-task" data-id="T2" data-score="6.6"><span class="seq-task-tag">T2</span><span class="seq-task-name">Log Injection</span><div class="seq-task-bar"><div class="seq-task-bar-fill"></div></div><span class="seq-task-score">6.6</span></div>
-            <div class="seq-task" data-id="T3" data-score="6.7"><span class="seq-task-tag">T3</span><span class="seq-task-name">Log Meal</span><div class="seq-task-bar"><div class="seq-task-bar-fill"></div></div><span class="seq-task-score">6.7</span></div>
-            <div class="seq-task low" data-id="T4" data-score="5.4"><span class="seq-task-tag">T4</span><span class="seq-task-name">AI Coach</span><div class="seq-task-bar"><div class="seq-task-bar-fill"></div></div><span class="seq-task-score">5.4</span></div>
-            <div class="seq-task" data-id="T5" data-score="6.3"><span class="seq-task-tag">T5</span><span class="seq-task-name">Find Learning</span><div class="seq-task-bar"><div class="seq-task-bar-fill"></div></div><span class="seq-task-score">6.3</span></div>
-            <div class="seq-task" data-id="T6" data-score="6.9"><span class="seq-task-tag">T6</span><span class="seq-task-name">Evening Reflection</span><div class="seq-task-bar"><div class="seq-task-bar-fill"></div></div><span class="seq-task-score">6.9</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="slide-foot">
-      <div class="foot-left">
-        <svg class="mark" viewBox="0 0 1128 431" aria-label="BIX" style="color: var(--on-dark)"><use href="#bix-logo"/></svg>
-        <span class="foot-internal">BI X Digital Innovation Lab &nbsp;|&nbsp; ONLY FOR INTERNAL USE</span>
-      </div>
-      <div class="foot-page">04</div>
-    </div>
-  </div>
-</section>
-
-<!-- SLIDE 5: PHOTO MEAL LOGGING -->
+<!-- (former deferred SEQ block — reinserted at slide 21, below s20) -->
 <!-- SLIDE 8: SECTION STARTER — STUDY DESIGN & PARTICIPANT PROFILE -->
 <section class="slide s8 slide-section-starter starter-a">
   <svg class="x-watermark" viewBox="0 0 1111 926" aria-hidden="true"><use href="#x-symbol"/></svg>
@@ -4218,8 +5308,584 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
   </div>
 </section>
 
-<!-- DEFERRED for Session 7 — blueprint Slide 25 (Finding 1 — Visual Differentiation). See lessons-learned.md. -->
-<section class="slide-deferred s-deferred-f1 slide-dark">
+<!-- SLIDE 16: AI COACH — CONTEXTUAL INTELLIGENCE -->
+<section class="slide s16 slide-paper">
+  <div class="slide-frame">
+    <div class="reveal d1" style="display:flex;align-items:center;justify-content:space-between">
+      <div class="eyebrow">What resonated &middot; AI coach</div>
+      <div style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-dim);font-weight:500">Contextual intelligence</div>
+    </div>
+    <div class="s16-hero reveal d2">
+      <div class="s16-stat-block">
+        <span class="s16-stat-num">7<i class="s16-stat-of">/7</i></span>
+        <button class="s16-stat-sub chip-trigger" data-cite="coach-77">found it useful after using it</button>
+      </div>
+      <h1 class="s16-headline">
+        Useful beyond novelty. Valued for <span class="ital">exploration, questions, and coaching feedback</span> &mdash; the things UI screens don&apos;t do well.
+      </h1>
+    </div>
+    <div class="s16-grid">
+      <div class="s16-col s16-col-advantage reveal d3">
+        <div class="s16-col-eyebrow">The contextual advantage</div>
+        <div class="s16-qblock">
+          <blockquote>It&apos;s focused on this app and what I&apos;m going through. I don&apos;t have to tell it anything because it already knows.</blockquote>
+          <cite><button class="chip" data-cite="p07">P07</button> <span class="s16-ts">[30:04]</span> &middot; target demographic</cite>
+        </div>
+        <div class="s16-qblock">
+          <blockquote>I personally don&apos;t have anyone that I&apos;m going through like a weight loss journey with. So it&apos;s just me, myself, and I.</blockquote>
+          <cite><button class="chip" data-cite="p05">P05</button> <span class="s16-ts">[38:22]</span> &middot; solo journey</cite>
+        </div>
+      </div>
+      <div class="s16-col s16-col-vs reveal d4">
+        <div class="s16-col-eyebrow">Why it beats a generic chatbot</div>
+        <div class="s16-qblock">
+          <blockquote>Helpful overall &mdash; to ask those questions without having to call your doctor.</blockquote>
+          <cite><button class="chip" data-cite="p01">P01</button> <span class="s16-ts">[33:43]</span> &middot; doctor-visit supplement</cite>
+        </div>
+        <div class="s16-qblock">
+          <blockquote>The screens feel more natural, but I like the idea of talking to the coach because I like the feedback.</blockquote>
+          <cite><button class="chip" data-cite="p04">P04</button> <span class="s16-ts">[28:48]</span> &middot; chat + UI coexist</cite>
+        </div>
+      </div>
+    </div>
+    <div class="s16-foot reveal d5">
+      <div class="s16-caveat">
+        <button class="kpi-pill chip-trigger" data-cite="coach-discover-caveat"><b>2&ndash;3/7</b><i>found it independently on the directed task</i></button>
+        <p class="s16-caveat-note">Discoverability is a distinct issue. <button class="chip chip-inline" data-cite="coach-labeling">Finding 2</button> covers the labelling problem and the remediation path.</p>
+      </div>
+      <div class="s16-clip" data-video="p05-coach-3822">
+        <div class="clip-card compact" role="button" tabindex="0" aria-label="Play clip">
+          <div class="clip-thumb">
+            <div class="clip-waveform" aria-hidden="true">
+              <span style="height:32%"></span><span style="height:58%"></span><span style="height:44%"></span><span style="height:70%"></span><span style="height:38%"></span><span style="height:82%"></span><span style="height:46%"></span><span style="height:60%"></span><span style="height:34%"></span><span style="height:72%"></span><span style="height:50%"></span><span style="height:40%"></span><span style="height:66%"></span><span style="height:48%"></span><span style="height:78%"></span><span style="height:42%"></span>
+            </div>
+            <div class="clip-play" aria-hidden="true"></div>
+          </div>
+          <div class="clip-info">
+            <div class="clip-info-top">
+              <span class="rec-dot"></span>
+              <span class="clip-label-text">Dovetail clip &middot; P05 @ 38:22</span>
+              <span class="ts">0:11</span>
+            </div>
+            <div class="clip-quote">&ldquo;It&rsquo;s just me, myself, and I&hellip;&rdquo;</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-foot">
+      <div class="foot-left">
+        <svg class="mark" viewBox="0 0 1128 431" aria-label="BIX" style="color: var(--ink)"><use href="#bix-logo"/></svg>
+        <span class="foot-internal">BI X Digital Innovation Lab &nbsp;|&nbsp; ONLY FOR INTERNAL USE</span>
+      </div>
+      <div class="foot-page">16</div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 17: LEARNING CONTENT -->
+<section class="slide s17 slide-dark">
+  <div class="slide-frame">
+    <div class="reveal d1" style="display:flex;align-items:center;justify-content:space-between">
+      <div class="eyebrow">What resonated &middot; Learning pathways</div>
+      <div style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--on-dark-mute);font-weight:500">Validated format &middot; Discoverability-bound</div>
+    </div>
+    <div class="s17-grid">
+      <div class="s17-viz reveal d2">
+        <div class="s17-viz-card" data-asset="learn-pathway" data-asset-folder="screenshots" data-asset-ext="png">
+          <div class="s17-viz-top">
+            <span class="s17-viz-title">Learn</span>
+            <span class="s17-viz-tag">Your pathways</span>
+          </div>
+          <div class="s17-path" data-tag="CORE">
+            <div class="s17-path-head">
+              <span class="s17-path-name">Medication fundamentals</span>
+              <span class="s17-path-tag">Core</span>
+            </div>
+            <div class="s17-path-dots"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></div>
+            <div class="s17-path-meta">CBT-grounded &middot; 4 of 6 complete</div>
+          </div>
+          <div class="s17-path" data-tag="CORE">
+            <div class="s17-path-head">
+              <span class="s17-path-name">Nutrition with GLP-1s</span>
+              <span class="s17-path-tag">Core</span>
+            </div>
+            <div class="s17-path-dots"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></div>
+            <div class="s17-path-meta">ACT-informed &middot; 2 of 5 complete</div>
+          </div>
+          <div class="s17-path s17-path-personal" data-tag="PERSONAL">
+            <div class="s17-path-head">
+              <span class="s17-path-name">Your emotional patterns</span>
+              <span class="s17-path-tag s17-path-tag-mint">Personalised</span>
+            </div>
+            <div class="s17-path-dots"><i class="on"></i><i></i><i></i><i></i></div>
+            <div class="s17-path-meta">AI-curated from your reflections &middot; 1 of 4</div>
+          </div>
+          <div class="s17-path" data-tag="CORE">
+            <div class="s17-path-head">
+              <span class="s17-path-name">Building daily habits</span>
+              <span class="s17-path-tag">Core</span>
+            </div>
+            <div class="s17-path-dots"><i></i><i></i><i></i><i></i><i></i></div>
+            <div class="s17-path-meta">Behavioural activation &middot; not started</div>
+          </div>
+          <div class="s17-path" data-tag="CORE">
+            <div class="s17-path-head">
+              <span class="s17-path-name">Handling side effects</span>
+              <span class="s17-path-tag">Core</span>
+            </div>
+            <div class="s17-path-dots"><i></i><i></i><i></i></div>
+            <div class="s17-path-meta">Clinical guidance &middot; not started</div>
+          </div>
+        </div>
+        <div class="s17-viz-cap">Stylised preview &middot; real screen drops in when <code>assets/screenshots/learn-pathway.png</code> is added.</div>
+      </div>
+      <div class="s17-right reveal d3">
+        <h1 class="s17-headline">The format works. Content resonated across every participant who found it.</h1>
+        <div class="s17-stat-row">
+          <button class="kpi-pill kpi-pill-dark chip-trigger" data-cite="learn-77"><b>7/7</b><i>engaged once found</i></button>
+          <button class="kpi-pill kpi-pill-dark chip-trigger" data-cite="learn-cbt"><b>CBT &middot; ACT</b><i>behavioural foundation</i></button>
+        </div>
+        <div class="s17-quotes">
+          <div class="s17-quote">
+            <blockquote>When you bunch a list together, it scrambles your brain. This one separates it so it&apos;s individualised.</blockquote>
+            <cite><button class="chip" data-cite="p02">P02</button> <span class="s17-ts">[38:13]</span> &middot; on pathway structure</cite>
+          </div>
+          <div class="s17-quote">
+            <blockquote>It gives people options if you&apos;re not an AI type person.</blockquote>
+            <cite><button class="chip" data-cite="p07">P07</button> <span class="s17-ts">[39:50]</span> &middot; Learn as non-AI path</cite>
+          </div>
+        </div>
+        <div class="s17-insight">
+          <span class="s17-insight-eb">The real gap is finding it.</span>
+          <p>Five participants reached Learn when directed; the content itself was valued by all who arrived. The bottom-nav label blends into the dark surface &mdash; a <button class="chip chip-inline" data-cite="ui-polish">visual-styling issue</button> covered in <button class="chip chip-inline" data-cite="f1-short">Finding 1</button>, not a Learn-specific problem.</p>
+        </div>
+      </div>
+    </div>
+    <div class="slide-foot">
+      <div class="foot-left">
+        <svg class="mark" viewBox="0 0 1128 431" aria-label="BIX" style="color: var(--on-dark)"><use href="#bix-logo"/></svg>
+        <span class="foot-internal">BI X Digital Innovation Lab &nbsp;|&nbsp; ONLY FOR INTERNAL USE</span>
+      </div>
+      <div class="foot-page">17</div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 18: COMPETITIVE ADVANTAGE -->
+<section class="slide s18 slide-paper">
+  <div class="slide-frame">
+    <div class="reveal d1" style="display:flex;align-items:center;justify-content:space-between">
+      <div class="eyebrow">What resonated &middot; Against what they use now</div>
+      <div style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-dim);font-weight:500">Competitive positioning</div>
+    </div>
+    <div class="s18-hero reveal d2">
+      <h1 class="s18-headline">Five participants named the app they currently use. <span class="ital">None of them</span> covers the full GLP-1 journey.</h1>
+      <p class="s18-lede">Participants were not prompted to compare. These are unsolicited references to existing tools surfaced during the warm-up and task flow.</p>
+    </div>
+    <div class="s18-table reveal d3">
+      <div class="s18-head">
+        <span class="s18-col s18-col-tool">Current tool</span>
+        <span class="s18-col s18-col-does">What it does for them</span>
+        <span class="s18-col s18-col-gap">Where it falls short</span>
+        <span class="s18-col s18-col-ours">This app</span>
+      </div>
+      <div class="s18-row">
+        <span class="s18-col s18-col-tool"><span class="s18-tool-name">MyFitnessPal</span><button class="chip chip-mini" data-cite="p04">P04</button></span>
+        <span class="s18-col s18-col-does">Calorie tracking (lapsed when it went paid)</span>
+        <span class="s18-col s18-col-gap">No GLP-1 awareness &middot; no photo logging &middot; no AI</span>
+        <span class="s18-col s18-col-ours"><span class="s18-check" aria-label="Full coverage"></span></span>
+      </div>
+      <div class="s18-row">
+        <span class="s18-col s18-col-tool"><span class="s18-tool-name">Shotzy</span><button class="chip chip-mini" data-cite="p05">P05</button></span>
+        <span class="s18-col s18-col-does">Injection tracking</span>
+        <span class="s18-col s18-col-gap">No site-rotation history &middot; no nutrition</span>
+        <span class="s18-col s18-col-ours"><span class="s18-check" aria-label="Full coverage"></span></span>
+      </div>
+      <div class="s18-row">
+        <span class="s18-col s18-col-tool"><span class="s18-tool-name">Healthi</span> <span class="s18-tool-alias">(WW successor)</span><button class="chip chip-mini" data-cite="p03">P03</button></span>
+        <span class="s18-col s18-col-does">Weight tracking, community</span>
+        <span class="s18-col s18-col-gap">No AI &middot; no medication tracking</span>
+        <span class="s18-col s18-col-ours"><span class="s18-check" aria-label="Full coverage"></span></span>
+      </div>
+      <div class="s18-row">
+        <span class="s18-col s18-col-tool"><span class="s18-tool-name">Microhealth</span><button class="chip chip-mini" data-cite="p02">P02</button></span>
+        <span class="s18-col s18-col-does">Infusion tracking for a bleeding disorder</span>
+        <span class="s18-col s18-col-gap">No nutrition &middot; limited body map &middot; &ldquo;tried to add my GLP-1 &mdash; couldn&rsquo;t&rdquo;</span>
+        <span class="s18-col s18-col-ours"><span class="s18-check" aria-label="Full coverage"></span></span>
+      </div>
+      <div class="s18-row">
+        <span class="s18-col s18-col-tool"><span class="s18-tool-name">Apple Health</span><button class="chip chip-mini" data-cite="p07">P07</button></span>
+        <span class="s18-col s18-col-does">Step counting at dance class, once a week</span>
+        <span class="s18-col s18-col-gap">No nutrition &middot; no AI &middot; no medication</span>
+        <span class="s18-col s18-col-ours"><span class="s18-check" aria-label="Full coverage"></span></span>
+      </div>
+    </div>
+    <div class="s18-foot reveal d4">
+      <div class="s18-quotes">
+        <div class="s18-quote">
+          <blockquote>I would definitely consider replacing the one I use with this and use this instead.</blockquote>
+          <cite><button class="chip" data-cite="p03">P03</button> <span class="s18-ts">[52:34]</span> &middot; the cohort&apos;s most critical scorer</cite>
+        </div>
+        <div class="s18-quote">
+          <blockquote>I tried to add my GLP-1 to [my app], but I couldn&apos;t. So I&apos;m interested in this app.</blockquote>
+          <cite><button class="chip" data-cite="p02">P02</button> <span class="s18-ts">[08:00]</span> &middot; unmet need</cite>
+        </div>
+      </div>
+      <div class="s18-clip" data-video="p03-replace-5234">
+        <div class="clip-card compact" role="button" tabindex="0" aria-label="Play clip">
+          <div class="clip-thumb">
+            <div class="clip-waveform" aria-hidden="true">
+              <span style="height:28%"></span><span style="height:52%"></span><span style="height:38%"></span><span style="height:66%"></span><span style="height:44%"></span><span style="height:76%"></span><span style="height:34%"></span><span style="height:60%"></span><span style="height:46%"></span><span style="height:72%"></span><span style="height:40%"></span><span style="height:56%"></span><span style="height:64%"></span><span style="height:42%"></span><span style="height:58%"></span><span style="height:36%"></span>
+            </div>
+            <div class="clip-play" aria-hidden="true"></div>
+          </div>
+          <div class="clip-info">
+            <div class="clip-info-top">
+              <span class="rec-dot"></span>
+              <span class="clip-label-text">Dovetail clip &middot; P03 @ 52:34</span>
+              <span class="ts">0:09</span>
+            </div>
+            <div class="clip-quote">&ldquo;I would definitely consider replacing&hellip;&rdquo;</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-foot">
+      <div class="foot-left">
+        <svg class="mark" viewBox="0 0 1128 431" aria-label="BIX" style="color: var(--ink)"><use href="#bix-logo"/></svg>
+        <span class="foot-internal">BI X Digital Innovation Lab &nbsp;|&nbsp; ONLY FOR INTERNAL USE</span>
+      </div>
+      <div class="foot-page">18</div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 19: VALUE PROPOSITION — IN THEIR WORDS -->
+<section class="slide s19 slide-dark">
+  <div class="slide-frame">
+    <div class="reveal d1" style="display:flex;align-items:center;justify-content:space-between">
+      <div class="eyebrow">In their words</div>
+      <div style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--on-dark-mute);font-weight:500">Section capstone</div>
+    </div>
+    <div class="s19-stack">
+      <figure class="s19-quote s19-quote-1 reveal d2">
+        <blockquote>It&apos;s a nutritional app, it&apos;s a fitness app, it&apos;s everything wrapped up in one&hellip; I would <span class="s19-hl">highly recommend</span> it.</blockquote>
+        <figcaption><button class="chip" data-cite="p04">P04</button> <span class="s19-ts">[48:26]</span> &middot; 49F &middot; Zepbound &middot; the cohort&apos;s strongest advocate</figcaption>
+      </figure>
+      <figure class="s19-quote s19-quote-2 reveal d3">
+        <blockquote>It would be great if the advertising could be geared towards tracking your journey, because this is not something you&apos;re just gonna lose weight on. You have to <span class="s19-hl">modify your life</span>.</blockquote>
+        <figcaption><button class="chip" data-cite="p07">P07</button> <span class="s19-ts">[52:52]</span> &middot; 57F &middot; Zepbound &middot; target demographic</figcaption>
+      </figure>
+      <figure class="s19-quote s19-quote-3 reveal d4">
+        <blockquote>This looks like it kind of <span class="s19-hl">combines a lot</span>, like more than one app.</blockquote>
+        <figcaption><button class="chip" data-cite="p05">P05</button> <span class="s19-ts">[10:40]</span> &middot; 61F &middot; Zepbound+ &middot; first impression</figcaption>
+      </figure>
+    </div>
+    <div class="s19-divider reveal d5"></div>
+    <div class="s19-transition reveal d5">Task-level evidence follows.</div>
+    <div class="slide-foot">
+      <div class="foot-left">
+        <svg class="mark" viewBox="0 0 1128 431" aria-label="BIX" style="color: var(--on-dark)"><use href="#bix-logo"/></svg>
+        <span class="foot-internal">BI X Digital Innovation Lab &nbsp;|&nbsp; ONLY FOR INTERNAL USE</span>
+      </div>
+      <div class="foot-page">19</div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 20: SECTION STARTER — DETAILED RESULTS -->
+<section class="slide s20 slide-section-starter starter-a">
+  <svg class="x-watermark" viewBox="0 0 1111 926" aria-hidden="true"><use href="#x-symbol"/></svg>
+  <div class="slide-frame">
+    <div class="ss-eyebrow reveal d1">Section 04</div>
+    <div class="ss-body">
+      <div class="ss-num reveal d2">04</div>
+      <h1 class="ss-title reveal d3">Detailed <span class="title-accent">Results</span></h1>
+      <p class="ss-sub reveal d4">Task-by-task SEQ, post-session satisfaction, and the prototype context that frames both.</p>
+      <div class="ss-rule reveal d5"></div>
+    </div>
+    <div class="slide-foot">
+      <div class="foot-left">
+        <svg class="mark" viewBox="0 0 1128 431" aria-label="BIX" style="color: var(--on-dark)"><use href="#bix-logo"/></svg>
+        <span class="foot-internal">BI X Digital Innovation Lab &nbsp;|&nbsp; ONLY FOR INTERNAL USE</span>
+      </div>
+      <div class="foot-page">20</div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 21: WHAT WE MEASURED — UNDERSTANDING SEQ (reinserted from session-5 deferred POC) -->
+<section class="slide s21 slide-data-stage" data-on-enter="animateSEQ">
+  <div class="slide-frame">
+    <div class="seq-grid">
+      <div class="seq-left">
+        <div class="eyebrow reveal d1">Section 04 &middot; Understanding SEQ</div>
+        <h1 class="reveal d2">A 1&ndash;7 scale.<br/>We hit <span class="hl">6.4</span>.</h1>
+        <p class="reveal d3">The <strong style="color:var(--on-dark);font-weight:500">Single Ease Question</strong> is the UX industry&apos;s standard metric. After every task, participants answer how easy it was on a 7-point scale.</p>
+        <p class="reveal d4">Because it&apos;s standardized, our result can be benchmarked against thousands of other digital products. The industry average sits at <strong style="color:var(--on-dark);font-weight:500">5.5/7</strong>.</p>
+        <p class="reveal d5">Our mean is <strong style="color:var(--mint);font-weight:600">6.4/7</strong>. Every single task cleared the benchmark.</p>
+        <div class="seq-source reveal d6">Source &middot; <button class="chip chip-inline" data-cite="seq-source">MeasuringU benchmark</button></div>
+      </div>
+      <div class="seq-stage reveal d3">
+        <div class="seq-scale-wrap">
+          <div class="seq-scale">
+            <div class="seq-zones">
+              <div class="seq-zone zone-hard">Difficult</div>
+              <div class="seq-zone zone-avg">Average</div>
+              <div class="seq-zone zone-easy">Easy &middot; Excellent</div>
+            </div>
+            <div class="seq-benchmark-band" style="left: calc(30px + 71.7% - 6px); width: calc(5% + 12px);">
+              <div class="seq-benchmark-tag">
+                <span class="lab">Industry benchmark</span>
+                <span class="val">5.3&ndash;5.6</span>
+              </div>
+            </div>
+            <div class="seq-gap-bracket" style="left: calc(30px + 75%); right: calc(30px + 10%);">
+              <span class="seq-gap-rule"></span>
+            </div>
+            <div class="seq-gap-label" style="left: calc(30px + 82.5%);">
+              <span class="lbl">Gap</span>
+              +0.9
+            </div>
+            <div class="seq-ours" style="left: 30px">
+              <div class="seq-ours-tag">
+                <span class="label">Our mean</span>
+                <span class="big chip-trigger" data-cite="seq-mean">6.4<span class="of">/ 7</span></span>
+              </div>
+            </div>
+            <div class="seq-track"></div>
+            <div class="seq-ticks">
+              <div class="seq-tick"><span class="seq-tick-num">1</span></div>
+              <div class="seq-tick"><span class="seq-tick-num">2</span></div>
+              <div class="seq-tick"><span class="seq-tick-num">3</span></div>
+              <div class="seq-tick"><span class="seq-tick-num">4</span></div>
+              <div class="seq-tick"><span class="seq-tick-num">5</span></div>
+              <div class="seq-tick"><span class="seq-tick-num">6</span></div>
+              <div class="seq-tick"><span class="seq-tick-num">7</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="seq-below">
+          <button class="seq-expand-btn" type="button" aria-expanded="false">
+            <span class="seq-expand-label">See per-task breakdown</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="seq-compared reveal d5">
+            <div class="cmp-row"><span class="num mint">+0.9</span><span>above the industry average across 10,000+ tested products</span></div>
+            <div class="cmp-row"><span class="num">86%</span><span>task completion rate at an SEQ of 5.9 &mdash; we exceed on every task</span></div>
+          </div>
+          <div class="seq-tasks" aria-hidden="true">
+            <div class="seq-tasks-legend">
+              <span>Per-task SEQ</span>
+              <span>Click any task for the behavioural context</span>
+            </div>
+            <div class="seq-task" data-id="T1" data-score="6.7"><span class="seq-task-tag">T1</span><span class="seq-task-name">Morning Exploration</span><div class="seq-task-bar"><div class="seq-task-bar-fill"></div></div><span class="seq-task-score">6.7</span></div>
+            <div class="seq-task" data-id="T2" data-score="6.6"><span class="seq-task-tag">T2</span><span class="seq-task-name">Log Injection</span><div class="seq-task-bar"><div class="seq-task-bar-fill"></div></div><span class="seq-task-score">6.6</span></div>
+            <div class="seq-task" data-id="T3" data-score="6.7"><span class="seq-task-tag">T3</span><span class="seq-task-name">Log Meal</span><div class="seq-task-bar"><div class="seq-task-bar-fill"></div></div><span class="seq-task-score">6.7</span></div>
+            <div class="seq-task low" data-id="T4" data-score="5.4"><span class="seq-task-tag">T4</span><span class="seq-task-name">AI Coach</span><div class="seq-task-bar"><div class="seq-task-bar-fill"></div></div><span class="seq-task-score">5.4</span></div>
+            <div class="seq-task" data-id="T5" data-score="6.3"><span class="seq-task-tag">T5</span><span class="seq-task-name">Find Learning</span><div class="seq-task-bar"><div class="seq-task-bar-fill"></div></div><span class="seq-task-score">6.3</span></div>
+            <div class="seq-task" data-id="T6" data-score="6.9"><span class="seq-task-tag">T6</span><span class="seq-task-name">Evening Reflection</span><div class="seq-task-bar"><div class="seq-task-bar-fill"></div></div><span class="seq-task-score">6.9</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-foot">
+      <div class="foot-left">
+        <svg class="mark" viewBox="0 0 1128 431" aria-label="BIX" style="color: var(--on-dark)"><use href="#bix-logo"/></svg>
+        <span class="foot-internal">BI X Digital Innovation Lab &nbsp;|&nbsp; ONLY FOR INTERNAL USE</span>
+      </div>
+      <div class="foot-page">21</div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 22: POST-SESSION SATISFACTION -->
+<section class="slide s22 slide-paper">
+  <div class="slide-frame">
+    <div class="reveal d1" style="display:flex;align-items:center;justify-content:space-between">
+      <div class="eyebrow">Section 04 &middot; Post-session satisfaction</div>
+      <div style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-dim);font-weight:500">n=7 &middot; 6 measures &middot; 7-point scale</div>
+    </div>
+    <div class="s22-hero reveal d2">
+      <div class="s22-hero-left">
+        <div class="s22-stat-row">
+          <span class="s22-stat-num">6.6<i>/7</i></span>
+          <button class="s22-stat-sub chip-trigger" data-cite="satisfaction-66">overall mean across six measures</button>
+        </div>
+        <h1 class="s22-headline">Every measure landed in the <span class="hl">excellent band</span>. Every participant scored above 5.8.</h1>
+      </div>
+      <div class="s22-hero-right">
+        <p class="s22-lede">Six post-session measures administered at the end of every session on a 7-point Likert scale. Clustering in a tight 6.4&ndash;6.7 band means the app is performing evenly across task ease, trust, daily fit, and AI usefulness &mdash; not leaning on one strength to carry weaker dimensions.</p>
+      </div>
+    </div>
+    <div class="s22-plot reveal d3">
+      <div class="s22-plot-head">
+        <span class="s22-plot-title">By measure &middot; lollipop plot</span>
+        <span class="s22-plot-axis">
+          <span>4</span><span>5</span><span>5.5</span><span>6</span><span>6.5</span><span>7</span>
+        </span>
+      </div>
+      <div class="s22-rows">
+        <div class="s22-row" data-value="6.6">
+          <span class="s22-row-label">Features meet my needs</span>
+          <span class="s22-row-track"><span class="s22-row-bench"></span><span class="s22-row-dot" data-cite="sat-features"></span></span>
+          <span class="s22-row-val">6.6</span>
+        </div>
+        <div class="s22-row" data-value="6.7">
+          <span class="s22-row-label">Easy to use</span>
+          <span class="s22-row-track"><span class="s22-row-bench"></span><span class="s22-row-dot" data-cite="sat-easy"></span></span>
+          <span class="s22-row-val">6.7</span>
+        </div>
+        <div class="s22-row" data-value="6.6">
+          <span class="s22-row-label">Trust with health information</span>
+          <span class="s22-row-track"><span class="s22-row-bench"></span><span class="s22-row-dot" data-cite="sat-trust"></span></span>
+          <span class="s22-row-val">6.6</span>
+        </div>
+        <div class="s22-row" data-value="6.7">
+          <span class="s22-row-label">Fits my daily routine</span>
+          <span class="s22-row-track"><span class="s22-row-bench"></span><span class="s22-row-dot" data-cite="sat-daily"></span></span>
+          <span class="s22-row-val">6.7</span>
+        </div>
+        <div class="s22-row" data-value="6.6">
+          <span class="s22-row-label">AI feels helpful, not gimmicky</span>
+          <span class="s22-row-track"><span class="s22-row-bench"></span><span class="s22-row-dot" data-cite="sat-ai"></span></span>
+          <span class="s22-row-val">6.6</span>
+        </div>
+        <div class="s22-row" data-value="6.4">
+          <span class="s22-row-label">Understands my journey</span>
+          <span class="s22-row-track"><span class="s22-row-bench"></span><span class="s22-row-dot s22-row-dot-soft" data-cite="sat-journey"></span></span>
+          <span class="s22-row-val">6.4</span>
+        </div>
+      </div>
+      <div class="s22-plot-bench-note">Dashed line at 5.5 = SEQ industry benchmark (included for reference; post-session has no direct benchmark).</div>
+    </div>
+    <div class="s22-cohort reveal d4">
+      <div class="s22-cohort-label">By participant &middot; overall mean</div>
+      <div class="s22-cohort-axis">
+        <span class="s22-cohort-tick" style="left:20%">5</span>
+        <span class="s22-cohort-tick" style="left:40%">5.5</span>
+        <span class="s22-cohort-tick" style="left:60%">6</span>
+        <span class="s22-cohort-tick" style="left:80%">6.5</span>
+        <span class="s22-cohort-tick" style="left:100%">7</span>
+      </div>
+      <div class="s22-cohort-track">
+        <button class="s22-dot s22-dot-lo chip-trigger" style="left:32%" data-cite="sat-p03" aria-label="P03 overall mean 5.8"><span class="s22-dot-tag">P03</span></button>
+        <button class="s22-dot chip-trigger" style="left:48%" data-cite="sat-p06" aria-label="P06 overall mean 6.2"><span class="s22-dot-tag">P06</span></button>
+        <button class="s22-dot chip-trigger" style="left:60%" data-cite="sat-p07" aria-label="P07 overall mean 6.5"><span class="s22-dot-tag">P07</span></button>
+        <button class="s22-dot chip-trigger" style="left:68%" data-cite="sat-p05" aria-label="P05 overall mean 6.7"><span class="s22-dot-tag">P05</span></button>
+        <button class="s22-dot s22-dot-stack s22-dot-hi chip-trigger" style="left:100%" data-cite="sat-sevens" aria-label="P01, P02, P04 all 7.0">
+          <span class="s22-dot-tag">P01 &middot; P02 &middot; P04</span>
+        </button>
+      </div>
+      <p class="s22-cohort-note">
+        <button class="chip chip-inline" data-cite="p03">P03</button> is the cohort&apos;s most critical scorer at 5.8 &mdash; and <strong style="font-weight:600">still said she would replace her current app with this one</strong>.
+      </p>
+    </div>
+    <div class="slide-foot">
+      <div class="foot-left">
+        <svg class="mark" viewBox="0 0 1128 431" aria-label="BIX" style="color: var(--ink)"><use href="#bix-logo"/></svg>
+        <span class="foot-internal">BI X Digital Innovation Lab &nbsp;|&nbsp; ONLY FOR INTERNAL USE</span>
+      </div>
+      <div class="foot-page">22</div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 23: PROTOTYPE CONTEXT -->
+<section class="slide s23 slide-dark s23-subdued">
+  <div class="slide-frame">
+    <div class="reveal d1" style="display:flex;align-items:center;justify-content:space-between">
+      <div class="eyebrow">Section 04 &middot; Prototype context</div>
+      <div style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--on-dark-mute);font-weight:500">Honest ledger &middot; 4 limitations</div>
+    </div>
+    <div class="s23-grid">
+      <div class="s23-left reveal d2">
+        <h1 class="s23-headline">A live interactive prototype, not a mockup. Participants treated it as a real app.</h1>
+        <p class="s23-body">The prototype was a fully interactive PWA built in Lovable with live AI integration, running on iOS in the lab. Not a Figma click-through. Where specific prototype constraints affected specific findings, we name them directly.</p>
+        <p class="s23-body">None of the four limitations below alter the top-line conclusions. We flag them so downstream readers can weight the evidence accurately.</p>
+        <div class="s23-badge">
+          <span class="s23-badge-dot"></span>
+          <span class="s23-badge-text">No limitation materially changes Finding 1, Finding 2, or the SEQ / satisfaction means.</span>
+        </div>
+      </div>
+      <div class="s23-right reveal d3">
+        <div class="s23-ledger-head">
+          <span>Limitation</span>
+          <span>Effect on the record</span>
+        </div>
+        <div class="s23-ledger">
+          <div class="s23-row">
+            <div class="s23-row-l">
+              <span class="s23-row-tag">PL2</span>
+              <span class="s23-row-title">Microphone non-functional</span>
+            </div>
+            <div class="s23-row-r">
+              <button class="chip chip-inline" data-cite="p07">P07</button>&apos;s T4 SEQ of 5 was explicitly attributed to this. <button class="chip chip-inline" data-cite="pl2-voice">Confirms voice-input demand</button> &mdash; not a Coach usability issue.
+            </div>
+          </div>
+          <div class="s23-row">
+            <div class="s23-row-l">
+              <span class="s23-row-tag">PL4</span>
+              <span class="s23-row-title">AI response variability</span>
+            </div>
+            <div class="s23-row-r">
+              Live Lovable AI produced inconsistent responses across sessions. May explain <button class="chip chip-inline" data-cite="pl4-t4-range">some T4 SEQ range</button> (4&ndash;7). The capability is real; the reliability is a prototype artefact.
+            </div>
+          </div>
+          <div class="s23-row">
+            <div class="s23-row-l">
+              <span class="s23-row-tag">PL3</span>
+              <span class="s23-row-title">Dose customisation not functional</span>
+            </div>
+            <div class="s23-row-r">
+              <button class="chip chip-inline" data-cite="p01">P01</button> and <button class="chip chip-inline" data-cite="p04">P04</button> tried to change dose. Expected behaviour the fixed-persona prototype could not support. Production supports per-user dose edits.
+            </div>
+          </div>
+          <div class="s23-row">
+            <div class="s23-row-l">
+              <span class="s23-row-tag">PL5</span>
+              <span class="s23-row-title">Catch-up logging out of scope</span>
+            </div>
+            <div class="s23-row-r">
+              Production has morning / evening catch-up flows to retroactively log missed entries. The prototype did not. Surfaces as an adoption lever for <button class="chip chip-inline" data-cite="refl-p01">reflections</button> in the pilot.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-foot">
+      <div class="foot-left">
+        <svg class="mark" viewBox="0 0 1128 431" aria-label="BIX" style="color: var(--on-dark)"><use href="#bix-logo"/></svg>
+        <span class="foot-internal">BI X Digital Innovation Lab &nbsp;|&nbsp; ONLY FOR INTERNAL USE</span>
+      </div>
+      <div class="foot-page">23</div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 24: SECTION STARTER — DESIGN FINDINGS & OPPORTUNITIES -->
+<section class="slide s24 slide-section-starter starter-a">
+  <svg class="x-watermark" viewBox="0 0 1111 926" aria-hidden="true"><use href="#x-symbol"/></svg>
+  <div class="slide-frame">
+    <div class="ss-eyebrow reveal d1">Section 05</div>
+    <div class="ss-body">
+      <div class="ss-num reveal d2">05</div>
+      <h1 class="ss-title reveal d3">Design <span class="title-accent">Findings &amp; Opportunities</span></h1>
+      <p class="ss-sub reveal d4">What we learned. How to make it better.</p>
+      <div class="ss-rule reveal d5"></div>
+    </div>
+    <div class="slide-foot">
+      <div class="foot-left">
+        <svg class="mark" viewBox="0 0 1128 431" aria-label="BIX" style="color: var(--on-dark)"><use href="#bix-logo"/></svg>
+        <span class="foot-internal">BI X Digital Innovation Lab &nbsp;|&nbsp; ONLY FOR INTERNAL USE</span>
+      </div>
+      <div class="foot-page">24</div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 25: FINDING 1 — VISUAL DIFFERENTIATION & AFFORDANCE CLARITY (reinserted from session-5 deferred POC) -->
+<section class="slide s25 slide-dark">
   <div class="slide-frame">
     <div class="reveal d1" style="display:flex;align-items:center;justify-content:space-between">
       <div class="eyebrow">Finding 01 &middot; Visual differentiation</div>
@@ -4340,7 +6006,464 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
         <svg class="mark" viewBox="0 0 1128 431" aria-label="BIX" style="color: var(--on-dark)"><use href="#bix-logo"/></svg>
         <span class="foot-internal">BI X Digital Innovation Lab &nbsp;|&nbsp; ONLY FOR INTERNAL USE</span>
       </div>
-      <div class="foot-page">06</div>
+      <div class="foot-page">25</div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 26: FINDING 1 — ARCHITECTURE VALIDATION (P07 PARADOX) -->
+<section class="slide s26 slide-paper">
+  <div class="slide-frame">
+    <div class="reveal d1" style="display:flex;align-items:center;justify-content:space-between">
+      <div class="eyebrow">Finding 01 &middot; Architecture validation</div>
+      <div style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-dim);font-weight:500">The P07 paradox</div>
+    </div>
+    <div class="s26-hero reveal d2">
+      <h1 class="s26-headline">The same person. <span class="ital">Two stories.</span></h1>
+      <p class="s26-lede">P07 self-rated lowest on tech comfort in the cohort. She then navigated every feature intuitively on her first attempt. If the least confident user can navigate the app, the problems others hit are styling, not structure.</p>
+    </div>
+    <div class="s26-grid">
+      <div class="s26-col s26-col-self reveal d3">
+        <div class="s26-col-eyebrow">What <button class="chip chip-inline" data-cite="p07">P07</button> said about herself</div>
+        <ul class="s26-list">
+          <li class="s26-item">
+            <span class="s26-item-tag">Self-assessment</span>
+            <span class="s26-item-body">App comfort: <span class="s26-num">5/7</span> &mdash; the lowest in the cohort</span>
+          </li>
+          <li class="s26-item">
+            <span class="s26-item-tag">Warm-up <span class="s26-ts">[03:46]</span></span>
+            <blockquote class="s26-quote">There&apos;s always some apps that challenge me. Maybe they&apos;re not as intuitive to me.</blockquote>
+          </li>
+          <li class="s26-item">
+            <span class="s26-item-tag">Warm-up <span class="s26-ts">[50:34]</span></span>
+            <blockquote class="s26-quote">I&apos;m the kind of person who X&apos;s out of things by mistake because I can&apos;t figure out how to get back.</blockquote>
+          </li>
+          <li class="s26-item">
+            <span class="s26-item-tag">Tech usage</span>
+            <span class="s26-item-body">Apple Health once a week for step counting at dance class. No nutrition apps, no AI tools, no medication apps.</span>
+          </li>
+        </ul>
+      </div>
+      <div class="s26-col s26-col-actual reveal d4">
+        <div class="s26-col-eyebrow s26-col-eyebrow-mint">What she actually did</div>
+        <ul class="s26-list">
+          <li class="s26-item s26-item-pos">
+            <span class="s26-item-tag">Home screen</span>
+            <span class="s26-item-body">Decoded the wellness-score rings unprompted &mdash; <em>&ldquo;good range, about three-quarters of where you should be.&rdquo;</em></span>
+          </li>
+          <li class="s26-item s26-item-pos">
+            <span class="s26-item-tag">Learn <span class="s26-ts">[35:01]</span></span>
+            <span class="s26-item-body">Found the Learn tab immediately: <em>&ldquo;right here at the bottom.&rdquo;</em> (3/7 of the cohort missed this tab entirely.)</span>
+          </li>
+          <li class="s26-item s26-item-pos">
+            <span class="s26-item-tag">Evening</span>
+            <span class="s26-item-body">Found the wind-down card on first look. Articulated the flow before the moderator prompted.</span>
+          </li>
+          <li class="s26-item s26-item-pos">
+            <span class="s26-item-tag">Predictive</span>
+            <span class="s26-item-body">Correctly predicted what every major feature would do <em>before tapping it</em>. Zero navigation hesitations.</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="s26-foot reveal d5">
+      <div class="s26-takeaway">
+        <span class="s26-takeaway-eb">The inference</span>
+        <p>If the participant with the lowest self-rated tech comfort <button class="chip chip-inline" data-cite="p07-paradox">navigates the app intuitively</button>, the information architecture is sound. Finding 1&apos;s gaps are <button class="chip chip-inline" data-cite="ui-polish">visual-styling refinements</button>, not structural problems &mdash; visible affordances, not new screens.</p>
+      </div>
+      <div class="s26-clip" data-video="p07-techdiscomfort-0346">
+        <div class="clip-card compact" role="button" tabindex="0" aria-label="Play clip">
+          <div class="clip-thumb">
+            <div class="clip-waveform" aria-hidden="true">
+              <span style="height:30%"></span><span style="height:48%"></span><span style="height:38%"></span><span style="height:64%"></span><span style="height:44%"></span><span style="height:76%"></span><span style="height:34%"></span><span style="height:58%"></span><span style="height:50%"></span><span style="height:72%"></span><span style="height:42%"></span><span style="height:66%"></span><span style="height:38%"></span><span style="height:54%"></span><span style="height:46%"></span><span style="height:60%"></span>
+            </div>
+            <div class="clip-play" aria-hidden="true"></div>
+          </div>
+          <div class="clip-info">
+            <div class="clip-info-top">
+              <span class="rec-dot"></span>
+              <span class="clip-label-text">Dovetail clip &middot; P07 @ 03:46</span>
+              <span class="ts">0:09</span>
+            </div>
+            <div class="clip-quote">&ldquo;There&rsquo;s always some apps that challenge me&hellip;&rdquo;</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-foot">
+      <div class="foot-left">
+        <svg class="mark" viewBox="0 0 1128 431" aria-label="BIX" style="color: var(--ink)"><use href="#bix-logo"/></svg>
+        <span class="foot-internal">BI X Digital Innovation Lab &nbsp;|&nbsp; ONLY FOR INTERNAL USE</span>
+      </div>
+      <div class="foot-page">26</div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 27: FINDING 1 — RECOMMENDED REMEDIATIONS -->
+<section class="slide s27 slide-dark">
+  <div class="slide-frame">
+    <div class="reveal d1" style="display:flex;align-items:center;justify-content:space-between">
+      <div class="eyebrow">Finding 01 &middot; Recommended remediations</div>
+      <div style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--on-dark-mute);font-weight:500">4 items &middot; all low complexity</div>
+    </div>
+    <div class="s27-hero reveal d2">
+      <h1 class="s27-headline">Every item is <span class="hl">ticketable pre-pilot</span>. No architectural changes required.</h1>
+      <p class="s27-lede">Contrast, visual weight, distinct confirmation states, and CTA placement. Four refinements, scoped small, that close the affordance gap surfaced in Finding 1.</p>
+    </div>
+    <div class="s27-table reveal d3">
+      <div class="s27-head">
+        <span class="s27-col s27-col-el">Element</span>
+        <span class="s27-col s27-col-issue">What&apos;s happening</span>
+        <span class="s27-col s27-col-rec">Recommendation</span>
+        <span class="s27-col s27-col-comp">Complexity</span>
+      </div>
+      <div class="s27-row">
+        <span class="s27-col s27-col-el">
+          <span class="s27-el-name">Bottom navigation</span>
+          <button class="chip chip-inline" data-cite="f1-bottomnav">3/7 missed it</button>
+        </span>
+        <span class="s27-col s27-col-issue">Semi-transparent on the dark surface &mdash; reads as decorative, not interactive.</span>
+        <span class="s27-col s27-col-rec">Solid / semi-opaque background. Larger icons. Stronger label weight.</span>
+        <span class="s27-col s27-col-comp"><button class="s27-tag s27-tag-low chip-trigger" data-cite="rem-low">Low</button></span>
+      </div>
+      <div class="s27-row">
+        <span class="s27-col s27-col-el">
+          <span class="s27-el-name">Primary action button</span>
+          <button class="chip chip-inline" data-cite="f1-fab">5/7 missed it</button>
+        </span>
+        <span class="s27-col s27-col-issue">Correct pattern, insufficient visual weight. Participants who did notice it used it correctly.</span>
+        <span class="s27-col s27-col-rec">Colour / contrast boost. Consider a subtle entrance animation to draw the eye on load.</span>
+        <span class="s27-col s27-col-comp"><button class="s27-tag s27-tag-low chip-trigger" data-cite="rem-low">Low</button></span>
+      </div>
+      <div class="s27-row">
+        <span class="s27-col s27-col-el">
+          <span class="s27-el-name">Toast confirmations</span>
+          <button class="chip chip-inline" data-cite="p04">P04</button>
+        </span>
+        <span class="s27-col s27-col-issue">Styled identically to insight cards. Users didn&apos;t register logging as complete.</span>
+        <span class="s27-col s27-col-rec">Distinct banner treatment (full-width, differentiated colour, brief animation). Add persistent <button class="chip chip-inline" data-cite="f1-last-logged">&ldquo;last logged&rdquo; indicators</button> on the home screen.</span>
+        <span class="s27-col s27-col-comp"><button class="s27-tag s27-tag-med chip-trigger" data-cite="rem-med">Low&ndash;Medium</button></span>
+      </div>
+      <div class="s27-row">
+        <span class="s27-col s27-col-el">
+          <span class="s27-el-name">Card CTAs <span class="s27-el-sub">(F11)</span></span>
+          <button class="chip chip-inline" data-cite="f11-card-cta">P04 moment</button>
+        </span>
+        <span class="s27-col s27-col-issue">Decorative icon above the fold mistaken for the tappable button; the actual CTA sits below the fold.</span>
+        <span class="s27-col s27-col-rec">Make the icon tappable, move the CTA above the fold, or visually de-emphasize the decorative icon.</span>
+        <span class="s27-col s27-col-comp"><button class="s27-tag s27-tag-low chip-trigger" data-cite="rem-low">Low</button></span>
+      </div>
+    </div>
+    <div class="s27-foot reveal d4">
+      <div class="s27-foot-left">
+        <span class="s27-foot-eb">What gets measured in the pilot</span>
+        <p>Post-remediation, discoverability of the bottom nav, FAB, and confirmation states becomes a direct diary-study measure. The pilot will tell us whether the visual refinements resolve the issues in multi-day use.</p>
+      </div>
+      <div class="s27-foot-right">
+        <button class="s27-cta chip-trigger" data-cite="ui-polish">
+          <span class="s27-cta-label">What &ldquo;visual-styling refinement&rdquo; means</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+      </div>
+    </div>
+    <div class="slide-foot">
+      <div class="foot-left">
+        <svg class="mark" viewBox="0 0 1128 431" aria-label="BIX" style="color: var(--on-dark)"><use href="#bix-logo"/></svg>
+        <span class="foot-internal">BI X Digital Innovation Lab &nbsp;|&nbsp; ONLY FOR INTERNAL USE</span>
+      </div>
+      <div class="foot-page">27</div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 28: FINDING 2 — AI COACH DISCOVERABILITY & POSITIONING -->
+<section class="slide s28 slide-paper">
+  <div class="slide-frame">
+    <div class="reveal d1" style="display:flex;align-items:center;justify-content:space-between">
+      <div class="eyebrow">Finding 02 &middot; AI Coach &middot; Discoverability + labelling</div>
+      <div style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-dim);font-weight:500">Severity medium &middot; Complexity low</div>
+    </div>
+    <div class="s28-hero reveal d2">
+      <h1 class="s28-headline"><span class="ital">Coach</span> meant four different things to four participants.</h1>
+      <p class="s28-lede">Post-discovery, every participant valued the Coach. The gate is before first interaction &mdash; the label &ldquo;Coach&rdquo; doesn&apos;t signal what the feature does.</p>
+      <div class="s28-stats">
+        <button class="kpi-pill chip-trigger" data-cite="coach-77"><b>7/7</b><i>valued it post-discovery</i></button>
+        <button class="kpi-pill chip-trigger" data-cite="coach-discover-caveat"><b>2&ndash;3/7</b><i>found it independently on T4</i></button>
+      </div>
+    </div>
+    <div class="s28-spectrum reveal d3">
+      <div class="s28-spectrum-ends">
+        <span class="s28-spectrum-end s28-spectrum-end-l">Customer service</span>
+        <span class="s28-spectrum-end s28-spectrum-end-r">Focused on my journey</span>
+      </div>
+      <div class="s28-spectrum-track">
+        <div class="s28-spectrum-rule"></div>
+        <button class="s28-plot chip-trigger" style="left:8%" data-cite="p02">
+          <span class="s28-plot-dot"></span>
+          <span class="s28-plot-ident">P02 <span class="s28-plot-ts">[31:49]</span></span>
+          <span class="s28-plot-label">&ldquo;Customer service type thing&rdquo;</span>
+        </button>
+        <button class="s28-plot chip-trigger" style="left:34%" data-cite="p04">
+          <span class="s28-plot-dot"></span>
+          <span class="s28-plot-ident">P04 <span class="s28-plot-ts">[09:44]</span></span>
+          <span class="s28-plot-label">&ldquo;Tutorial? Pumping you up?&rdquo;</span>
+        </button>
+        <button class="s28-plot chip-trigger" style="left:64%" data-cite="p05">
+          <span class="s28-plot-dot s28-plot-dot-mint"></span>
+          <span class="s28-plot-ident">P05 <span class="s28-plot-ts">[36:49]</span></span>
+          <span class="s28-plot-label">&ldquo;A buddy&rdquo;</span>
+        </button>
+        <button class="s28-plot chip-trigger" style="left:90%" data-cite="p07">
+          <span class="s28-plot-dot s28-plot-dot-mint"></span>
+          <span class="s28-plot-ident">P07 <span class="s28-plot-ts">[30:04]</span></span>
+          <span class="s28-plot-label">&ldquo;Focused on my journey&rdquo;</span>
+        </button>
+      </div>
+      <div class="s28-spectrum-caption">
+        <span class="s28-spectrum-cap-l">Reactive help</span>
+        <span class="s28-spectrum-cap-r">Proactive partner</span>
+      </div>
+    </div>
+    <div class="s28-grid reveal d4">
+      <div class="s28-block s28-block-problem">
+        <div class="s28-block-eb">The labelling problem &middot; pre-use</div>
+        <blockquote class="s28-block-quote">Is it a tutorial? Is it a more descriptive part of the app? Is it something giving you pep? Pumping you up?</blockquote>
+        <cite class="s28-block-cite"><button class="chip" data-cite="p04">P04</button> <span class="s28-plot-ts">[09:44]</span></cite>
+      </div>
+      <div class="s28-block s28-block-value">
+        <div class="s28-block-eb">The post-discovery value</div>
+        <blockquote class="s28-block-quote">It already knows that I&apos;m looking for that.</blockquote>
+        <cite class="s28-block-cite"><button class="chip" data-cite="p07">P07</button> <span class="s28-plot-ts">[30:04]</span></cite>
+        <blockquote class="s28-block-quote">It&apos;s almost like having a buddy.</blockquote>
+        <cite class="s28-block-cite"><button class="chip" data-cite="p05">P05</button> <span class="s28-plot-ts">[36:49]</span></cite>
+      </div>
+    </div>
+    <div class="slide-foot">
+      <div class="foot-left">
+        <svg class="mark" viewBox="0 0 1128 431" aria-label="BIX" style="color: var(--ink)"><use href="#bix-logo"/></svg>
+        <span class="foot-internal">BI X Digital Innovation Lab &nbsp;|&nbsp; ONLY FOR INTERNAL USE</span>
+      </div>
+      <div class="foot-page">28</div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 29: FINDING 2 — DESIGN PRINCIPLE & RECOMMENDATIONS -->
+<section class="slide s29 slide-dark">
+  <div class="slide-frame">
+    <div class="reveal d1" style="display:flex;align-items:center;justify-content:space-between">
+      <div class="eyebrow">Finding 02 &middot; Design principle + recommendations</div>
+      <div style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--on-dark-mute);font-weight:500">Both paths. Not a choice.</div>
+    </div>
+    <div class="s29-grid">
+      <div class="s29-principle reveal d2">
+        <div class="s29-col-eyebrow">What this means</div>
+        <p class="s29-principle-text">
+          The AI Coach is most valuable for <span class="s29-hl">exploration, questions, and coaching feedback</span>. UI screens are most natural for <span class="s29-hl">repetitive, structured actions</span>.
+        </p>
+        <p class="s29-principle-text s29-principle-emphasis">Both paths should coexist. This isn&apos;t a chat-vs-UI choice &mdash; each does a different job.</p>
+        <div class="s29-evidence">
+          <div class="s29-evidence-eb">Evidence for the temporal model</div>
+          <blockquote class="s29-ev-quote">If I was first starting out, I would prefer [chat] because it gives you coaching. But once you&apos;re in the rhythm, just going to the body diagram.</blockquote>
+          <cite class="s29-ev-cite"><button class="chip" data-cite="p05">P05</button> <span class="s29-ts">[42:29]</span> &middot; onboarding vs. maintenance</cite>
+        </div>
+      </div>
+      <div class="s29-recs reveal d3">
+        <div class="s29-col-eyebrow">Recommendations</div>
+        <ol class="s29-rec-list">
+          <li class="s29-rec">
+            <span class="s29-rec-num">01</span>
+            <div class="s29-rec-body">
+              <h4 class="s29-rec-title">Increase Coach prominence beyond the bottom nav</h4>
+              <p class="s29-rec-detail">Surface Coach-initiating affordances from within other features. The bottom-tab-only entry point is the discoverability bottleneck.</p>
+            </div>
+          </li>
+          <li class="s29-rec">
+            <span class="s29-rec-num">02</span>
+            <div class="s29-rec-body">
+              <h4 class="s29-rec-title">Rename or add a descriptive subtitle</h4>
+              <p class="s29-rec-detail">&ldquo;Coach&rdquo; alone doesn&apos;t communicate the feature. Candidate: subtitle on first launch (&ldquo;Ask questions. Get context-aware answers.&rdquo;). Revisit label A/B in the pilot.</p>
+            </div>
+          </li>
+          <li class="s29-rec">
+            <span class="s29-rec-num">03</span>
+            <div class="s29-rec-body">
+              <h4 class="s29-rec-title">Add contextual &ldquo;Ask Coach about this&rdquo; prompts</h4>
+              <p class="s29-rec-detail">Embed Coach entry points inside meal, meds, learning, and reflection flows &mdash; at the moment the user has a question, not as a separate destination.</p>
+            </div>
+          </li>
+          <li class="s29-rec">
+            <span class="s29-rec-num">04</span>
+            <div class="s29-rec-body">
+              <h4 class="s29-rec-title">Monitor natural discovery in the diary study</h4>
+              <p class="s29-rec-detail">Single-session discoverability is the hardest measure. Multi-day exposure may resolve it without the rename. Diary-study telemetry will tell us which levers matter.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </div>
+    <div class="s29-foot reveal d4">
+      <button class="s29-tag-btn chip-trigger" data-cite="coach-77"><span class="s29-tag-k">Strength</span><span class="s29-tag-v">High (post-discovery)</span></button>
+      <button class="s29-tag-btn chip-trigger" data-cite="coach-discover-caveat"><span class="s29-tag-k">Severity</span><span class="s29-tag-v">Medium (discoverability)</span></button>
+      <button class="s29-tag-btn chip-trigger" data-cite="coach-labeling"><span class="s29-tag-k">Complexity</span><span class="s29-tag-v">Low</span></button>
+    </div>
+    <div class="slide-foot">
+      <div class="foot-left">
+        <svg class="mark" viewBox="0 0 1128 431" aria-label="BIX" style="color: var(--on-dark)"><use href="#bix-logo"/></svg>
+        <span class="foot-internal">BI X Digital Innovation Lab &nbsp;|&nbsp; ONLY FOR INTERNAL USE</span>
+      </div>
+      <div class="foot-page">29</div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 30: FINDING 3 — MEDS SCREEN AS PRIMARY LOGGING ENTRY POINT -->
+<section class="slide s30 slide-paper">
+  <div class="slide-frame">
+    <div class="reveal d1" style="display:flex;align-items:center;justify-content:space-between">
+      <div class="eyebrow">Finding 03 &middot; Meds screen &middot; A natural entry point</div>
+      <div style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-dim);font-weight:500">Severity medium &middot; Complexity low</div>
+    </div>
+    <div class="s30-grid">
+      <div class="s30-phone-col reveal d2">
+        <div class="phone" aria-label="iPhone Air showing the meds calendar screen">
+          <div class="btn-side btn-action"></div>
+          <div class="btn-side btn-vol-up"></div>
+          <div class="btn-side btn-vol-down"></div>
+          <div class="btn-side btn-power"></div>
+          <div class="phone-screen">
+            <div class="phone-island" aria-hidden="true"></div>
+            <div class="screen screen-meds-lite" data-asset="meds-popover" data-asset-folder="screenshots" data-asset-ext="png">
+              <div class="screen-status">
+                <span class="time">9:41</span>
+                <span class="icons"><span class="wifi"></span><span class="battery"></span></span>
+              </div>
+              <div class="meds-top">
+                <span class="meds-back">&larr;</span>
+                <span class="meds-title">Meds</span>
+                <span class="meds-edit">Edit</span>
+              </div>
+              <div class="meds-dose">
+                <div class="meds-dose-k">Zepbound</div>
+                <div class="meds-dose-v">5 mg &middot; weekly</div>
+              </div>
+              <div class="meds-cal-head">
+                <span class="meds-cal-month">April 2026</span>
+                <span class="meds-cal-nav">
+                  <span class="meds-cal-arr">&lsaquo;</span>
+                  <span class="meds-cal-arr">&rsaquo;</span>
+                </span>
+              </div>
+              <div class="meds-cal-dow">
+                <span>S</span><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span>
+              </div>
+              <div class="meds-cal-grid">
+                <span class="meds-day meds-day-off">30</span>
+                <span class="meds-day">31</span>
+                <span class="meds-day">1</span>
+                <span class="meds-day">2</span>
+                <span class="meds-day">3</span>
+                <span class="meds-day">4</span>
+                <span class="meds-day">5</span>
+                <span class="meds-day">6</span>
+                <span class="meds-day meds-day-done">7</span>
+                <span class="meds-day">8</span>
+                <span class="meds-day">9</span>
+                <span class="meds-day">10</span>
+                <span class="meds-day">11</span>
+                <span class="meds-day">12</span>
+                <span class="meds-day">13</span>
+                <span class="meds-day meds-day-done">14</span>
+                <span class="meds-day">15</span>
+                <span class="meds-day">16</span>
+                <span class="meds-day">17</span>
+                <span class="meds-day">18</span>
+                <span class="meds-day">19</span>
+                <span class="meds-day">20</span>
+                <span class="meds-day meds-day-today" aria-label="Today, 21 April"><span class="meds-day-pulse"></span>21</span>
+                <span class="meds-day">22</span>
+                <span class="meds-day">23</span>
+                <span class="meds-day">24</span>
+                <span class="meds-day">25</span>
+                <span class="meds-day">26</span>
+                <span class="meds-day">27</span>
+                <span class="meds-day meds-day-next">28</span>
+                <span class="meds-day">29</span>
+                <span class="meds-day">30</span>
+              </div>
+              <div class="meds-legend">
+                <span><span class="meds-sw meds-sw-done"></span>Logged</span>
+                <span><span class="meds-sw meds-sw-today"></span>Today</span>
+                <span><span class="meds-sw meds-sw-next"></span>Next scheduled</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="s30-anno" aria-hidden="true">
+          <span class="s30-anno-dot"></span>
+          <span class="s30-anno-rule"></span>
+          <span class="s30-anno-tag"><b>3/7</b> tapped &ldquo;today&rdquo; expecting to log</span>
+        </div>
+      </div>
+      <div class="s30-right reveal d3">
+        <h1 class="s30-headline">Users tried to log from the meds calendar. <span class="ital">They were right</span> &mdash; the screen just doesn&apos;t support it yet.</h1>
+        <div class="s30-stat-row">
+          <button class="kpi-pill chip-trigger" data-cite="meds-3of7"><b>3/7</b><i>went to meds first</i></button>
+          <button class="kpi-pill chip-trigger" data-cite="meds-today-taps"><b>3/3</b><i>tapped &ldquo;today&rdquo;</i></button>
+        </div>
+        <div class="s30-quote">
+          <blockquote>It literally says meds. So I would have expected that if I went there, that would have been an option.</blockquote>
+          <cite><button class="chip" data-cite="p07">P07</button> <span class="s30-ts">[17:52]</span> &middot; the clearest articulation</cite>
+        </div>
+        <div class="s30-micro">
+          <div class="s30-micro-row">
+            <button class="chip" data-cite="p03">P03</button>
+            <span>Went to meds, tried tapping the calendar, couldn&apos;t find logging. Self-attributed the error.</span>
+          </div>
+          <div class="s30-micro-row">
+            <button class="chip" data-cite="p05">P05</button>
+            <span>Went to meds, saw schedule &amp; dosage info, but no logging surface. Backed out.</span>
+          </div>
+          <div class="s30-micro-row">
+            <button class="chip chip-inline" data-cite="meds-learning-transfer">Learning transfer</button>
+            <span>P03 explicitly avoided the same pattern on T3 after her T2 error: &ldquo;Well I learned not to hit those.&rdquo;</span>
+          </div>
+        </div>
+        <div class="s30-rec">
+          <div class="s30-rec-eb">Recommendation</div>
+          <p>Make the meds calendar&apos;s &ldquo;today&rdquo; date tappable to initiate the injection logging flow. The users&apos; instinct reveals the natural entry point &mdash; support it.</p>
+          <div class="s30-rec-tags">
+            <span class="s30-rec-tag">Low complexity</span>
+            <span class="s30-rec-tag s30-rec-tag-hi">High impact</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="s30-clip reveal d5" data-video="p07-meds-1752">
+      <div class="clip-card compact" role="button" tabindex="0" aria-label="Play clip">
+        <div class="clip-thumb">
+          <div class="clip-waveform" aria-hidden="true">
+            <span style="height:34%"></span><span style="height:52%"></span><span style="height:42%"></span><span style="height:68%"></span><span style="height:40%"></span><span style="height:76%"></span><span style="height:44%"></span><span style="height:60%"></span><span style="height:50%"></span><span style="height:72%"></span><span style="height:38%"></span><span style="height:64%"></span><span style="height:46%"></span><span style="height:58%"></span><span style="height:48%"></span><span style="height:66%"></span>
+          </div>
+          <div class="clip-play" aria-hidden="true"></div>
+        </div>
+        <div class="clip-info">
+          <div class="clip-info-top">
+            <span class="rec-dot"></span>
+            <span class="clip-label-text">Dovetail clip &middot; P07 @ 17:52</span>
+            <span class="ts">0:08</span>
+          </div>
+          <div class="clip-quote">&ldquo;It literally says meds&hellip;&rdquo;</div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-foot">
+      <div class="foot-left">
+        <svg class="mark" viewBox="0 0 1128 431" aria-label="BIX" style="color: var(--ink)"><use href="#bix-logo"/></svg>
+        <span class="foot-internal">BI X Digital Innovation Lab &nbsp;|&nbsp; ONLY FOR INTERNAL USE</span>
+      </div>
+      <div class="foot-page">30</div>
     </div>
   </div>
 </section>
@@ -4399,7 +6522,22 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
     { id: 's12', num: 12, section: 'What Resonated with Users',         title: 'Section Starter',               thumb: 'sec-resonated' },
     { id: 's13', num: 13, section: 'What Resonated with Users',         title: 'Feature Validation Overview',   thumb: 'matrix' },
     { id: 's14', num: 14, section: 'What Resonated with Users',         title: 'Photo Meal Logging',            thumb: 'meal' },
-    { id: 's15', num: 15, section: 'What Resonated with Users',         title: 'Body Map Injection Tracker',    thumb: 'bodymap' }
+    { id: 's15', num: 15, section: 'What Resonated with Users',         title: 'Body Map Injection Tracker',    thumb: 'bodymap' },
+    { id: 's16', num: 16, section: 'What Resonated with Users',         title: 'AI Coach — Contextual Intelligence', thumb: 'coach' },
+    { id: 's17', num: 17, section: 'What Resonated with Users',         title: 'Learning Pathways',             thumb: 'learn' },
+    { id: 's18', num: 18, section: 'What Resonated with Users',         title: 'Competitive Advantage',         thumb: 'compare' },
+    { id: 's19', num: 19, section: 'What Resonated with Users',         title: 'In Their Words',                thumb: 'montage' },
+    { id: 's20', num: 20, section: 'Detailed Results',                  title: 'Section Starter',               thumb: 'sec-detail' },
+    { id: 's21', num: 21, section: 'Detailed Results',                  title: 'Understanding SEQ',             thumb: 'seq' },
+    { id: 's22', num: 22, section: 'Detailed Results',                  title: 'Post-Session Satisfaction',     thumb: 'satisfaction' },
+    { id: 's23', num: 23, section: 'Detailed Results',                  title: 'Prototype Context',             thumb: 'limitations' },
+    { id: 's24', num: 24, section: 'Design Findings & Opportunities',   title: 'Section Starter',               thumb: 'sec-findings' },
+    { id: 's25', num: 25, section: 'Design Findings & Opportunities',   title: 'Finding 1 — Visual Differentiation', thumb: 'f1' },
+    { id: 's26', num: 26, section: 'Design Findings & Opportunities',   title: 'Finding 1 — P07 Paradox',       thumb: 'paradox' },
+    { id: 's27', num: 27, section: 'Design Findings & Opportunities',   title: 'Finding 1 — Remediations',      thumb: 'remediation' },
+    { id: 's28', num: 28, section: 'Design Findings & Opportunities',   title: 'Finding 2 — AI Coach Discoverability', thumb: 'spectrum' },
+    { id: 's29', num: 29, section: 'Design Findings & Opportunities',   title: 'Finding 2 — Recommendations',   thumb: 'recs' },
+    { id: 's30', num: 30, section: 'Design Findings & Opportunities',   title: 'Finding 3 — Meds Screen',       thumb: 'meds' }
   ];
   let current = 0;
 
@@ -4583,7 +6721,20 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
       seq:           'background:radial-gradient(60px 36px at 65% 50%,rgba(52,238,167,0.35),transparent 70%),linear-gradient(135deg,#0B4039,#072E29);',
       meal:          'background:radial-gradient(60px 40px at 75% 30%,rgba(94,234,212,0.28),transparent 70%),#F7F1E5;',
       bodymap:       'background:radial-gradient(50px 40px at 50% 45%,rgba(94,234,212,0.22),transparent 70%),linear-gradient(135deg,#0A3B35,#062823); position:relative;',
-      f1:            'background:linear-gradient(135deg,#0A3B35,#062823); position:relative;'
+      f1:            'background:linear-gradient(135deg,#0A3B35,#062823); position:relative;',
+      coach:         'background:linear-gradient(135deg,#F3ECDB,#EBE3D1); position:relative;',
+      learn:         'background:radial-gradient(60px 40px at 30% 50%,rgba(52,238,167,0.18),transparent 70%),linear-gradient(135deg,#0A3B35,#062823); position:relative;',
+      compare:       'background:linear-gradient(135deg,#F3ECDB,#EBE3D1); position:relative;',
+      montage:       'background:linear-gradient(135deg,#0A3B35,#062823); position:relative;',
+      'sec-detail':  'background:linear-gradient(135deg,#0C433C,#062823); position:relative;',
+      satisfaction:  'background:linear-gradient(135deg,#F3ECDB,#EBE3D1); position:relative;',
+      limitations:   'background:linear-gradient(135deg,#093631,#051F1C); position:relative;',
+      'sec-findings':'background:linear-gradient(135deg,#0C433C,#062823); position:relative;',
+      paradox:       'background:linear-gradient(135deg,#F3ECDB,#EBE3D1); position:relative;',
+      remediation:   'background:linear-gradient(135deg,#0A3B35,#062823); position:relative;',
+      spectrum:      'background:linear-gradient(135deg,#F3ECDB,#EBE3D1); position:relative;',
+      recs:          'background:linear-gradient(135deg,#0A3B35,#062823); position:relative;',
+      meds:          'background:linear-gradient(135deg,#F3ECDB,#EBE3D1); position:relative;'
     };
     el.setAttribute('style', el.getAttribute('style') + ';' + (styles[key]||''));
     // minimal preview ornament
@@ -4640,10 +6791,10 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
         <span style="position:absolute;left:6px;top:18px;right:42%;font-family:var(--f-display);font-size:7px;font-weight:600;color:#F5F2EA;line-height:1.2">A GLP-1 companion.</span>
         <span style="position:absolute;right:6px;top:10px;bottom:6px;width:22px;border-radius:4px;background:#111;border:1px solid #2b2b2e"></span>
         <span style="position:absolute;right:13px;top:14px;width:8px;height:2px;border-radius:2px;background:#0A1A1C"></span>`;
-    } else if (key === 'sec-exec' || key === 'sec-study' || key === 'sec-resonated') {
-      const label = { 'sec-exec': 'Executive Summary', 'sec-study': 'Study Design', 'sec-resonated': 'What Resonated' }[key];
-      const num   = { 'sec-exec': '01',                'sec-study': '02',         'sec-resonated': '03' }[key];
-      const color = { 'sec-exec': '#34EEA7',           'sec-study': '#5EEAD4',    'sec-resonated': '#14B8A6' }[key];
+    } else if (key === 'sec-exec' || key === 'sec-study' || key === 'sec-resonated' || key === 'sec-detail' || key === 'sec-findings') {
+      const label = { 'sec-exec': 'Executive Summary', 'sec-study': 'Study Design', 'sec-resonated': 'What Resonated', 'sec-detail': 'Detailed Results', 'sec-findings': 'Design Findings' }[key];
+      const num   = { 'sec-exec': '01',                'sec-study': '02',         'sec-resonated': '03',              'sec-detail': '04',               'sec-findings': '05' }[key];
+      const color = { 'sec-exec': '#34EEA7',           'sec-study': '#5EEAD4',    'sec-resonated': '#14B8A6',         'sec-detail': '#34EEA7',          'sec-findings': '#5EEAD4' }[key];
       el.innerHTML = `<span style="position:absolute;right:-4px;top:-4px;width:48px;height:44px;opacity:0.3;color:#5EEAD4"><svg width="100%" height="100%" viewBox="0 0 1111 926" fill="none"><use href="#x-symbol"/></svg></span>
         <span style="position:absolute;left:8px;top:6px;font-family:var(--f-display);font-size:22px;font-weight:700;color:${color};line-height:1;letter-spacing:-0.02em">${num}</span>
         <span style="position:absolute;left:8px;bottom:6px;font-size:5.5px;color:#5EEAD4;letter-spacing:0.12em;font-weight:600;text-transform:uppercase">${label}</span>`;
@@ -4684,6 +6835,72 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
           <span style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:3px;height:3px;border-radius:50%;background:#34EEA7;box-shadow:0 0 0 1px rgba(52,238,167,0.35)"></span>
         </span>
         <span style="position:absolute;right:6px;top:16px;font-family:var(--f-display);font-size:18px;font-weight:700;color:#34EEA7;line-height:1">7/7</span>`;
+    } else if (key === 'coach') {
+      el.innerHTML = `<span style="position:absolute;left:6px;top:6px;font-size:6px;letter-spacing:0.16em;color:#0D9488;font-weight:700;text-transform:uppercase">AI Coach</span>
+        <span style="position:absolute;left:6px;top:18px;font-family:var(--f-display);font-size:22px;font-weight:700;color:#0D9488;line-height:1;letter-spacing:-0.02em">7/7</span>
+        <span style="position:absolute;left:6px;bottom:6px;font-size:5px;color:#4A5558;line-height:1.2">useful · post-discovery</span>
+        <span style="position:absolute;right:5px;top:10px;width:26px;height:20px;border-radius:6px 6px 6px 2px;background:rgba(13,118,110,0.12);border:1px solid rgba(13,118,110,0.3)"></span>
+        <span style="position:absolute;right:5px;top:34px;width:18px;height:14px;border-radius:6px 6px 2px 6px;background:rgba(13,118,110,0.2)"></span>`;
+    } else if (key === 'learn') {
+      el.innerHTML = `<span style="position:absolute;left:6px;top:6px;font-size:6px;letter-spacing:0.16em;color:#5EEAD4;font-weight:600;text-transform:uppercase">Pathways</span>
+        <span style="position:absolute;left:6px;right:6px;top:18px;display:flex;flex-direction:column;gap:2.5px">
+          ${[4,2,1,0,0].map(on=>`<span style="display:flex;gap:1.5px">${Array.from({length:6}).map((_,i)=>`<span style="flex:1;height:2px;border-radius:1px;background:${i<on?'#34EEA7':'rgba(94,234,212,0.18)'}"></span>`).join('')}</span>`).join('')}
+        </span>
+        <span style="position:absolute;left:6px;bottom:6px;font-size:5px;color:#F5F2EA;opacity:0.6">CBT · ACT</span>`;
+    } else if (key === 'compare') {
+      el.innerHTML = `<span style="position:absolute;left:6px;top:6px;font-size:6px;letter-spacing:0.16em;color:#0D9488;font-weight:700;text-transform:uppercase">Vs. What They Use</span>
+        <span style="position:absolute;left:6px;right:22px;top:18px;bottom:6px;display:flex;flex-direction:column;gap:2px">
+          ${[1,1,1,1,1].map(()=>`<span style="display:flex;align-items:center;justify-content:space-between;padding:1px 0;border-bottom:1px solid rgba(10,26,28,0.12)"><span style="height:1.5px;width:40%;background:#0A1A1C;opacity:0.6"></span><span style="width:4px;height:4px;border-radius:50%;background:#0D9488"></span></span>`).join('')}
+        </span>`;
+    } else if (key === 'montage') {
+      el.innerHTML = `<span style="position:absolute;left:6px;top:6px;font-size:6px;letter-spacing:0.16em;color:#5EEAD4;font-weight:600;text-transform:uppercase">In Their Words</span>
+        <span style="position:absolute;left:6px;top:20px;font-family:var(--f-serif);font-style:italic;font-size:8px;color:#F5F2EA;line-height:1.2;max-width:56%">"everything wrapped up in one"</span>
+        <span style="position:absolute;right:6px;top:34px;font-family:var(--f-serif);font-style:italic;font-size:7px;color:#34EEA7;line-height:1.2;max-width:50%;text-align:right">"modify your life"</span>
+        <span style="position:absolute;left:6px;bottom:6px;font-family:var(--f-serif);font-style:italic;font-size:6px;color:rgba(245,242,234,0.7);line-height:1.2">"combines a lot"</span>`;
+    } else if (key === 'satisfaction') {
+      el.innerHTML = `<span style="position:absolute;left:6px;top:6px;font-size:6px;letter-spacing:0.16em;color:#0D9488;font-weight:700;text-transform:uppercase">Satisfaction</span>
+        <span style="position:absolute;left:6px;top:16px;font-family:var(--f-display);font-size:20px;font-weight:700;color:#0D9488;line-height:1;letter-spacing:-0.02em">6.6<span style="font-size:10px;font-weight:400;color:#4A5558"> /7</span></span>
+        <span style="position:absolute;left:6px;right:6px;bottom:8px;display:flex;flex-direction:column;gap:1.5px">
+          ${[6.6,6.7,6.6,6.7,6.6,6.4].map(v=>`<span style="display:flex;align-items:center;gap:3px"><span style="flex:1;height:1.5px;background:rgba(10,26,28,0.12);position:relative"><span style="position:absolute;left:0;top:0;height:100%;width:${(v/7)*100}%;background:#0D9488"></span></span><span style="width:8px;height:4px;border-radius:50%;background:#0D9488;box-shadow:0 0 0 1px rgba(13,118,110,0.15)"></span></span>`).join('')}
+        </span>`;
+    } else if (key === 'limitations') {
+      el.innerHTML = `<span style="position:absolute;left:6px;top:6px;font-size:6px;letter-spacing:0.16em;color:#F59E0B;font-weight:600;text-transform:uppercase">Prototype notes</span>
+        <span style="position:absolute;left:6px;right:6px;top:18px;bottom:6px;display:flex;flex-direction:column;gap:3px">
+          ${['PL2','PL4','PL3','PL5'].map(tag=>`<span style="display:flex;gap:3px;align-items:center;padding:1.5px 3px;border-bottom:1px solid rgba(245,158,11,0.1)"><span style="font-family:var(--f-mono);font-size:5px;color:#F59E0B;font-weight:700;padding:1px 3px;border:0.5px solid rgba(245,158,11,0.4);border-radius:1px">${tag}</span><span style="flex:1;height:1px;background:rgba(245,242,234,0.15)"></span></span>`).join('')}
+        </span>`;
+    } else if (key === 'paradox') {
+      el.innerHTML = `<span style="position:absolute;left:6px;top:6px;font-size:6px;letter-spacing:0.16em;color:#0D9488;font-weight:700;text-transform:uppercase">P07 paradox</span>
+        <span style="position:absolute;left:6px;right:6px;top:18px;bottom:6px;display:grid;grid-template-columns:1fr 1px 1fr;gap:4px;align-items:stretch">
+          <span style="display:flex;flex-direction:column;justify-content:center;gap:2px"><span style="font-family:var(--f-display);font-size:14px;font-weight:700;color:#B45309;line-height:1">5/7</span><span style="font-size:4.5px;color:#4A5558;letter-spacing:0.04em">self-rated</span></span>
+          <span style="background:rgba(10,26,28,0.25)"></span>
+          <span style="display:flex;flex-direction:column;justify-content:center;gap:2px"><span style="font-family:var(--f-display);font-size:14px;font-weight:700;color:#0D9488;line-height:1">7/7</span><span style="font-size:4.5px;color:#4A5558;letter-spacing:0.04em">features found</span></span>
+        </span>`;
+    } else if (key === 'remediation') {
+      el.innerHTML = `<span style="position:absolute;left:6px;top:6px;font-size:6px;letter-spacing:0.16em;color:#5EEAD4;font-weight:600;text-transform:uppercase">Fix list</span>
+        <span style="position:absolute;left:6px;right:6px;top:18px;bottom:6px;display:flex;flex-direction:column;gap:2.5px">
+          ${['Nav','FAB','Toast','CTA'].map(()=>`<span style="display:flex;gap:4px;align-items:center;padding:1px 0"><span style="flex:1;height:1.5px;background:rgba(245,242,234,0.25)"></span><span style="font-family:var(--f-mono);font-size:4.5px;color:#34EEA7;font-weight:700;letter-spacing:0.04em">LOW</span></span>`).join('')}
+        </span>`;
+    } else if (key === 'spectrum') {
+      el.innerHTML = `<span style="position:absolute;left:6px;top:6px;font-size:6px;letter-spacing:0.16em;color:#0D9488;font-weight:700;text-transform:uppercase">Coach spectrum</span>
+        <span style="position:absolute;left:6px;right:6px;top:50%;transform:translateY(-50%);height:1px;background:rgba(10,26,28,0.35)"></span>
+        <span style="position:absolute;left:10%;top:50%;transform:translate(-50%,-50%);width:4px;height:4px;border-radius:50%;background:#B45309;box-shadow:0 0 0 1px rgba(180,83,9,0.2)"></span>
+        <span style="position:absolute;left:36%;top:50%;transform:translate(-50%,-50%);width:4px;height:4px;border-radius:50%;background:#B45309"></span>
+        <span style="position:absolute;left:62%;top:50%;transform:translate(-50%,-50%);width:4px;height:4px;border-radius:50%;background:#0D9488"></span>
+        <span style="position:absolute;left:88%;top:50%;transform:translate(-50%,-50%);width:4px;height:4px;border-radius:50%;background:#0D9488;box-shadow:0 0 0 1.5px rgba(13,118,110,0.25)"></span>
+        <span style="position:absolute;left:6px;bottom:4px;font-size:5px;color:#4A5558;letter-spacing:0.04em">Customer service</span>
+        <span style="position:absolute;right:6px;bottom:4px;font-size:5px;color:#0D9488;letter-spacing:0.04em">Partner</span>`;
+    } else if (key === 'recs') {
+      el.innerHTML = `<span style="position:absolute;left:6px;top:6px;font-size:6px;letter-spacing:0.16em;color:#5EEAD4;font-weight:600;text-transform:uppercase">Coach · recs</span>
+        <span style="position:absolute;left:6px;right:6px;top:18px;bottom:6px;display:flex;flex-direction:column;gap:2.5px">
+          ${['01','02','03','04'].map(n=>`<span style="display:flex;gap:4px;align-items:center"><span style="font-family:var(--f-display);font-size:7px;font-weight:700;color:#34EEA7;width:10px">${n}</span><span style="flex:1;height:1.5px;background:rgba(245,242,234,0.2)"></span></span>`).join('')}
+        </span>`;
+    } else if (key === 'meds') {
+      el.innerHTML = `<span style="position:absolute;left:6px;top:6px;font-size:6px;letter-spacing:0.16em;color:#0D9488;font-weight:700;text-transform:uppercase">Meds · F3</span>
+        <span style="position:absolute;left:6px;top:16px;bottom:16px;width:18px;border-radius:3px;background:#F7F1E5;border:1px solid rgba(10,26,28,0.18);overflow:hidden">
+          <span style="position:absolute;left:50%;top:55%;transform:translate(-50%,-50%);width:6px;height:6px;border-radius:50%;background:#0D9488;box-shadow:0 0 0 1.5px rgba(13,118,110,0.3)"></span>
+        </span>
+        <span style="position:absolute;left:28px;top:22px;right:6px;font-family:var(--f-serif);font-style:italic;font-size:7px;color:#0A1A1C;line-height:1.2">&ldquo;It literally says meds.&rdquo;</span>
+        <span style="position:absolute;right:6px;bottom:6px;font-size:5px;color:#0D9488;font-weight:700;letter-spacing:0.08em">3/7</span>`;
     }
   }
 
@@ -4722,8 +6939,8 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
 
   // Count-up animation helper (for SEQ)
   window.animateSEQ = function() {
-    const ours = document.querySelector('.s-deferred-seq .seq-ours');
-    const big = document.querySelector('.s-deferred-seq .seq-ours-tag .big');
+    const ours = document.querySelector('.s21 .seq-ours');
+    const big = document.querySelector('.s21 .seq-ours-tag .big');
     if (!ours || !big) return;
     // position = (score - 1) / 6 * trackWidth
     const trackWidth = 100; // percentage
@@ -5225,6 +7442,216 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
       meta: 'The AI-feedback loop is a meaningful second adoption lever alongside the bedtime push.'
     },
 
+    // ---------- Slide 16 · AI Coach ----------
+    'coach-77': {
+      label: 'Cohort result · AI Coach',
+      title: '7 of 7 found it useful after using it',
+      list: [
+        { id: 'P01', text: '\u201CHelpful overall \u2014 to ask those questions without having to call your doctor.\u201D [33:43]' },
+        { id: 'P02', text: 'Initially thought \u201Ccustomer service type thing\u201D; post-use, treated it as a domain expert.' },
+        { id: 'P03', text: '\u201CLook at that, it gives you some ideas for dinner.\u201D [27:54] \u2014 warmed up once she tried it.' },
+        { id: 'P04', text: '\u201CThe screens feel more natural, but I like the idea of talking to the coach because I like the feedback.\u201D [28:48]' },
+        { id: 'P05', text: '\u201CIt\u2019s almost like having a buddy.\u201D [36:49] \u2014 her companion framing for the solo journey.' },
+        { id: 'P06', text: 'Used it for recipe ideas; expected AI recipes would be her primary use case.' },
+        { id: 'P07', text: '\u201CIt\u2019s focused on this app and what I\u2019m going through.\u201D [30:04] \u2014 the contextual-AI moment.' }
+      ],
+      meta: 'Post-discovery usefulness is unanimous. The gap is up-front discoverability \u2014 2\u20133/7 found the Coach independently on T4. See Finding 2 (Slide 28).'
+    },
+    'coach-discover-caveat': {
+      label: 'Discoverability · T4',
+      title: 'Only 2\u20133 of 7 found the AI Coach independently on the directed task',
+      detail: 'Participants detoured to Progress, to the Wellness Score, or to the Meds panel first. All 7 used the Coach successfully once brought to it. This separates \u201Ccan\u2019t find it\u201D (a styling/labelling issue) from \u201Cdoesn\u2019t work\u201D (not observed).',
+      meta: 'Root causes · label ambiguity (\u201CCoach\u201D = tutorial? customer service?) · mental model (users don\u2019t instinctively ask AI for progress summaries) · AI literacy (P04 self-identified as still learning AI). Addressed in Finding 2 recommendations.'
+    },
+    'coach-labeling': {
+      label: 'Finding 2 · AI Coach',
+      title: 'The labelling problem is real but tractable',
+      detail: 'Four participants offered four different mental models of what \u201CCoach\u201D meant: customer service (P02), tutorial/pep talk (P04), a buddy (P05), focused on my journey (P07). The label itself gates the first interaction. Once they used it, every participant recognised the value.',
+      meta: 'Remediation levers \u2192 rename or add a descriptive subtitle, raise prominence beyond the bottom nav, add contextual prompts inside other features (\u201CAsk Coach about this\u201D). Slide 28 has the full spectrum; Slide 29 has the recommendations.'
+    },
+
+    // ---------- Slide 17 · Learning pathways ----------
+    'learn-77': {
+      label: 'Learning pathways · cohort',
+      title: '7 of 7 engaged with the content once they found it',
+      list: [
+        { id: 'P01', text: 'Understood the pathway structure immediately; would pick and choose articles by need.' },
+        { id: 'P02', text: '\u201CWhen you bunch a list together, it scrambles your brain. This one separates it.\u201D [38:13]' },
+        { id: 'P03', text: '\u201CFor somebody who is new, absolutely.\u201D [37:13] \u2014 valued it for earlier-journey users.' },
+        { id: 'P04', text: 'Found the content valuable; had difficulty navigating back out of a lesson [32:56]. Minor pilot note.' },
+        { id: 'P05', text: 'Engaged meaningfully. Recognition-vs-recall on discoverability \u2014 see matrix \u26A0 cell on Slide 13.' },
+        { id: 'P06', text: 'Unfamiliar with the Duolingo-style pathway format initially, adapted quickly.' },
+        { id: 'P07', text: '\u201CIt gives people options if you\u2019re not an AI type person.\u201D [39:50] \u2014 Learn as non-AI alternative.' }
+      ],
+      meta: 'Format validated. Content resonated. The only gap was discoverability of the bottom-nav tab \u2014 which is Finding 1, not a Learn-specific problem.'
+    },
+    'learn-cbt': {
+      label: 'Content foundation',
+      title: 'CBT \u00b7 ACT \u00b7 behavioural activation',
+      detail: 'Content was built on three clinical frameworks: Cognitive Behavioural Therapy (reframing thought patterns around eating and self-image), Acceptance and Commitment Therapy (value-aligned behaviour under GLP-1 side effects), and behavioural activation (small daily actions that compound). Participants did not name the frameworks \u2014 they simply found the content useful.',
+      meta: 'The framework invisibility is the goal. When behavioural design works, users don\u2019t see the scaffolding; they see helpful content.'
+    },
+    'f1-short': {
+      label: 'Cross-reference',
+      title: 'Finding 1 \u00b7 Visual differentiation + affordance clarity',
+      detail: 'Interactive elements \u2014 bottom navigation, + button, toast confirmations \u2014 blend into the dark aesthetic. Learn discoverability is a symptom, not a separate finding. The remediation is contrast and visual-weight adjustments, not an IA rebuild.',
+      meta: 'Slide 25 has the full detail. Slide 27 has the remediation table.'
+    },
+
+    // ---------- Slide 22 · Post-session satisfaction ----------
+    'sat-features': {
+      label: 'Measure \u00b7 Features',
+      title: 'Has the features I\u2019m looking for \u2014 6.6 / 7',
+      list: [
+        { id: 'P01', text: '7' }, { id: 'P02', text: '7' }, { id: 'P03', text: '5 \u2014 the only sub-6 score on this item' },
+        { id: 'P04', text: '7' }, { id: 'P05', text: '7' }, { id: 'P06', text: '6' }, { id: 'P07', text: '7' }
+      ],
+      meta: 'P03 elsewhere: \u201CI would definitely consider replacing the one I use with this.\u201D The 5 reflects feature completeness, not negative sentiment.'
+    },
+    'sat-easy': {
+      label: 'Measure \u00b7 Ease of use',
+      title: 'Easy to use \u2014 6.7 / 7',
+      list: [
+        { id: 'P01', text: '7' }, { id: 'P02', text: '7' }, { id: 'P03', text: '6' },
+        { id: 'P04', text: '7' }, { id: 'P05', text: '7' }, { id: 'P06', text: '6' }, { id: 'P07', text: '7' }
+      ],
+      meta: 'Highest-scoring item. No participant scored below 6.'
+    },
+    'sat-trust': {
+      label: 'Measure \u00b7 Trust',
+      title: 'I trust it with my health information \u2014 6.6 / 7',
+      list: [
+        { id: 'P01', text: '7' }, { id: 'P02', text: '7' }, { id: 'P03', text: '7' },
+        { id: 'P04', text: '7' }, { id: 'P05', text: '7' }, { id: 'P06', text: '6' }, { id: 'P07', text: '5' }
+      ],
+      meta: 'P07 outlier. In context: her lowest self-rated tech comfort; related to data privacy on a GLP-1-specific app rather than any observed behaviour. Not a usability signal.'
+    },
+    'sat-daily': {
+      label: 'Measure \u00b7 Daily fit',
+      title: 'Fits my daily routine \u2014 6.7 / 7',
+      list: [
+        { id: 'P01', text: '7' }, { id: 'P02', text: '7' }, { id: 'P03', text: '6' },
+        { id: 'P04', text: '7' }, { id: 'P05', text: '7' }, { id: 'P06', text: '6' }, { id: 'P07', text: '7' }
+      ],
+      meta: 'Tied with Ease of Use for highest mean. All 7 expressed willingness to use the app in their daily routine.'
+    },
+    'sat-ai': {
+      label: 'Measure \u00b7 AI helpfulness',
+      title: 'The AI features feel helpful, not gimmicky \u2014 6.6 / 7',
+      list: [
+        { id: 'P01', text: '7' }, { id: 'P02', text: '7' }, { id: 'P03', text: '6' },
+        { id: 'P04', text: '7' }, { id: 'P05', text: '6' }, { id: 'P06', text: '7' }, { id: 'P07', text: '6' }
+      ],
+      meta: 'All AI-skeptical participants still rated this 6+. The Coach delivered \u2014 even when discoverability lagged.'
+    },
+    'sat-journey': {
+      label: 'Measure \u00b7 Journey understanding',
+      title: 'Understands my journey \u2014 6.4 / 7',
+      list: [
+        { id: 'P01', text: '7' }, { id: 'P02', text: '7' }, { id: 'P03', text: '5' },
+        { id: 'P04', text: '7' }, { id: 'P05', text: '6' }, { id: 'P06', text: '6' }, { id: 'P07', text: '7' }
+      ],
+      meta: 'The item with the widest spread. P03\u2019s 5 is the main driver \u2014 consistent with her skeptical-scorer profile. Still a mean in the excellent band.'
+    },
+    'sat-p03': {
+      label: 'Participant \u00b7 P03',
+      title: '5.8 / 7 overall \u2014 the cohort\u2019s most critical scorer',
+      detail: '54F \u00b7 Wegovy \u00b7 6 months \u00b7 Tech comfort 6/7. Currently uses Healthi (the WeightWatchers successor). Lowest scorer on five of six satisfaction measures. Still said she would replace her current app with this one. The floor of the distribution is still above-excellent.',
+      meta: 'Critical-scorer behaviour matters \u2014 her buy-in is a harder signal than an enthusiastic first-timer\u2019s.'
+    },
+    'sat-p05': {
+      label: 'Participant \u00b7 P05',
+      title: '6.7 / 7 overall',
+      detail: '61F \u00b7 Zepbound + methotrexate + Enbrel \u00b7 1 year \u00b7 Tech comfort 7/7. Target demographic. Asked about pricing unprompted (\u201CIs this something that would be an app you would purchase?\u201D [60:38]) \u2014 a clear purchase-intent signal not captured in the Likert alone.',
+      meta: 'The target-demographic validation slide has her profile in detail.'
+    },
+    'sat-p06': {
+      label: 'Participant \u00b7 P06',
+      title: '6.2 / 7 overall',
+      detail: '36F \u00b7 Zepbound \u00b7 2 months \u00b7 Tech comfort 6/7. Newest GLP-1 user in the cohort. Scored 6 consistently across measures. Identified the combined-calorie-and-guidance nutritional display as the right design (Finding 5).',
+      meta: 'Conservative scorer, unwavering. No item below 6.'
+    },
+    'sat-p07': {
+      label: 'Participant \u00b7 P07',
+      title: '6.5 / 7 overall',
+      detail: '57F \u00b7 Zepbound \u00b7 5 months \u00b7 Tech comfort 5/7. Target demographic. Single 5 (Trust with health info). Seven 7s elsewhere. The P07 paradox in action \u2014 lowest tech comfort, near-top satisfaction.',
+      meta: 'See Finding 1 architecture validation for her full behavioural profile.'
+    },
+    'sat-sevens': {
+      label: 'Three participants \u00b7 7.0',
+      title: 'P01, P02, P04 \u2014 straight sevens across all six measures',
+      list: [
+        { id: 'P01', text: '36F \u00b7 Wegovy \u00b7 Tech 7/7. Heavy AI user \u2014 assigned all 7s and refused evening reflections anyway.' },
+        { id: 'P02', text: '44M \u00b7 Wegovy \u00b7 Tech 7/7. Tracks his IV infusions elsewhere. Photo meal logging was his delight moment.' },
+        { id: 'P04', text: '49F \u00b7 Zepbound \u00b7 Tech 6/7. The cohort\u2019s strongest advocate. Would replace her handwritten gratitude journal.' }
+      ],
+      meta: 'Ceiling-effect scoring from three distinct profiles \u2014 not a high-tech-bias artefact.'
+    },
+
+    // ---------- Slide 23 · Prototype context ----------
+    'pl2-voice': {
+      label: 'Limitation \u00b7 PL2',
+      title: 'Microphone non-functional \u2014 and what it tells us',
+      detail: 'The prototype\u2019s voice input button was non-functional. Both P05 and P07 tried it. P07 explicitly attributed her T4 SEQ of 5 to this \u2014 if the voice had worked, her score would have been higher. The failure is a confirmed demand signal: voice input is wanted. We build it in production regardless of whether this session\u2019s T4 score deflation was the only reason to include it.',
+      meta: 'Not a finding. A note that flags where prototype artefacts deflated a specific metric.'
+    },
+    'pl4-t4-range': {
+      label: 'Limitation \u00b7 PL4 \u00b7 T4 range',
+      title: 'Why T4 SEQ ranged 4\u20137',
+      detail: 'Live Lovable AI produced variable responses across sessions. Examples: P07 asked \u201Chow many calories do I have left?\u201D and got meal-idea suggestions instead of a numeric answer. P06 received a hallucinated response during a meal-logging chat attempt (later tasks worked cleanly). P03 and P04 had clean chat-logging experiences. Production will use a tuned, scoped model.',
+      meta: 'T4 mean 5.4 / 7 is at benchmark. Without PL2 + PL4 effects, we believe the underlying usability of the Coach (once found) would score higher \u2014 consistent with the unanimous post-discovery usefulness.'
+    },
+
+    // ---------- Slide 27 · F1 remediations ----------
+    'rem-low': {
+      label: 'Complexity · Low',
+      title: 'Low-effort remediation',
+      detail: 'Visual styling and component-level changes only. No data-model changes, no new screens, no information-architecture shifts. Scoped for the pre-pilot release.',
+      meta: 'Estimated engineering effort · less than a sprint per item, often less than a day.'
+    },
+    'rem-med': {
+      label: 'Complexity · Low\u2013Medium',
+      title: 'Low-to-medium-effort remediation',
+      detail: 'Toast restyling is low. Adding persistent \u201Clast logged\u201D indicators on the home screen touches state and data rendering \u2014 medium. Combined, the pair represents the largest change on the F1 remediation list.',
+      meta: 'Both pieces should ship together \u2014 a toast is only useful in combination with a persistent state cue.'
+    },
+    'f1-last-logged': {
+      label: 'Design detail · persistent state',
+      title: '\u201CLast logged: today\u201D indicators on home cards',
+      detail: 'P06 explicitly requested this [15:35]: \u201CI kind of wish under injection day it would say \u2018last logged,\u2019 so you know it went through for sure.\u201D The persistent indicator solves the same problem as the toast, but continuously \u2014 reducing the cost of a missed toast animation.',
+      meta: 'P02, P03, P07 already used card disappearance as their confirmation cue \u2014 formalising that signal with an explicit \u201Clast logged\u201D label makes it reliable for everyone.'
+    },
+    'f11-card-cta': {
+      label: 'F11 \u00b7 P04 meal-log moment',
+      title: 'Decorative icon mistaken for the CTA',
+      detail: 'On the meal log card, a decorative icon sits above the fold and the real \u201CLog a meal\u201D button sits below. P04 tapped the icon and got confused [14:03]: \u201COh, I hit the wrong thing here. Wrong button.\u201D She scrolled to find the actual CTA after a short hesitation.',
+      meta: '1/7 directly affected, but represents a broader pattern \u2014 any card with a decorative icon + below-fold CTA risks the same.'
+    },
+
+    // ---------- Slide 30 · Meds screen ----------
+    'meds-3of7': {
+      label: 'Finding 3 \u00b7 Meds screen',
+      title: '3 of 7 went to the meds section first',
+      list: [
+        { id: 'P03', text: '[13:19] \u201CI would assume I would hit this meds button\u2026 I don\u2019t see a spot to say you\u2019re doing it.\u201D Tried the calendar; couldn\u2019t find logging.' },
+        { id: 'P05', text: '[18:40] Went to meds, saw schedule/dosage info, no logging surface. Backed out to the home card.' },
+        { id: 'P07', text: '[17:52] \u201CIt literally says meds. So I would have expected that\u2026 would have been an option.\u201D The clearest articulation of the pattern.' }
+      ],
+      meta: 'All three self-corrected to the home-screen injection card within 30 seconds. The instinct was correct \u2014 the screen just doesn\u2019t support it yet.'
+    },
+    'meds-today-taps': {
+      label: 'Behavioural detail \u00b7 \u201Ctoday\u201D taps',
+      title: 'All three tapped the \u201Ctoday\u201D date on the calendar',
+      detail: 'Not a coincidence. The calendar grid, the \u201Ctoday\u201D highlight, and the meds label combine to signal \u201Clog from here.\u201D The three participants each independently arrived at the same affordance hypothesis.',
+      meta: 'Remediation \u00b7 making the today date tappable initiates the logging flow users already expect. The data model supports it; only the UI binding is missing.'
+    },
+    'meds-learning-transfer': {
+      label: 'P03 \u00b7 Learning transfer',
+      title: 'Fast learning curve even when discoverability is imperfect',
+      detail: 'After her T2 meds-screen error, P03 explicitly avoided the same pattern on T3 [18:03]: \u201CWell I learned not to hit those.\u201D One imperfect first-try led to clean execution on the next task.',
+      meta: 'The cohort\u2019s ability to self-correct after one friction moment suggests the cost of F1 / F3 gaps is lower in multi-day use than in first-session metrics.'
+    },
+
     // ---------- Slide 15 · Body map ----------
     'body-map-77': {
       label: 'Cohort result · body map',
@@ -5316,7 +7743,7 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
       detail: 'The highest-scoring task across the cohort (excluding P01, who refused on personal preference: \u201CI hate this\u201D \u2014 immediately followed by \u201CI actually like the app though\u201D). Adoption is a spectrum \u2014 P04 would replace her handwritten journal; P07 would do it if a bedtime push notification prompted her.' }
   ];
   window.bindSEQ = function() {
-    const slide = document.querySelector('.s4');
+    const slide = document.querySelector('.s21');
     if (!slide || slide.dataset.seqBound) return;
     slide.dataset.seqBound = '1';
     const expandBtn = slide.querySelector('.seq-expand-btn');
@@ -5375,7 +7802,7 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
   resize();
   fromHash();
   goTo(current);
-  setTimeout(() => { if (current === 3) { window.animateSEQ(); window.bindSEQ(); } }, 50);
+  setTimeout(() => { if (current === 20) { window.animateSEQ(); window.bindSEQ(); } }, 50);
   // Bind SEQ on enter regardless
   window.bindSEQ();
 })();

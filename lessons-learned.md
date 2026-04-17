@@ -337,3 +337,71 @@ When the POC slides were renumbered to their blueprint positions (old `s2`→`s6
 
 
 
+
+## Session 6 — 2026-04-17 — Build slides 16–30 + reinsert deferred POCs
+
+Built 13 new slides and reinserted the two deferred POC slides (SEQ at 21, F1 at 25). Deck is now 30 slides, end of Section 6 is in reach (slides 31–38 remain for Session 7).
+
+### Miss: Rename protocol dropped the descendant-combinator space — TWICE
+
+**What:** Renamed `.s-deferred-seq` → `.s21` using `Edit` with `old_string=".s-deferred-seq "` (trailing space) and `new_string=".s21"` (no trailing space). Result: every descendant selector like `.s-deferred-seq .seq-tasks` became `.s21.seq-tasks` — a COMPOUND selector that matches an element with BOTH classes on it, not a descendant. 63 selectors silently broke. Same bug repeated on `.s-deferred-f1` → `.s25` rename (19 selectors).
+
+**Root cause:** The session-5 rule in this file literally warns against this: "Watch out for dropped trailing space — if the replacement loses the combinator, compound selectors like `.s6 .foo` turn into `.sNew.foo` (matches the same element with both classes, which is never what you want)." I read the rule, wrote the code, shipped the bug.
+
+**Fix sequence (applied for both seq and f1):**
+1. Edit 1: `.s-deferred-X ` → `.sNEW` (drops space, breaks things — didn't realize)
+2. Edit 2: `.s-deferred-X.` → `.sNEW.` (for compound selectors, correct)
+3. Edit 3 (the fix): `.sNEW.seq-` → `.sNEW .seq-` globally (restore descendant combinators)
+4. Edit 4: `.sNEW.f1-` → `.sNEW .f1-`, `.sNEW.callout` → `.sNEW .callout`, `.sNEW.connectors` → `.sNEW .connectors` (exhaustively fix compound cases)
+5. Also: `.s4.active` and `.s4.seq-expanded` (stale session-5 leftovers) had to be renamed to `.s21.active` / `.s21.seq-expanded` with the same care.
+
+**Verification that became essential:** After every rename, run `grep -oh "\.sNEW\.[a-zA-Z0-9_-]\+" index.html | sort -u` to list every compound-selector pattern. If any of the results look like child-element class names (e.g. `.s21.seq-tasks`, `.s25.f1-grid`), they are broken — those classes live on children, not on the slide itself.
+
+**Rule going forward — updated rename protocol:**
+- **Never** do `".s-OLD " → ".sNEW"` as a single replace_all. The replacement must preserve the descendant combinator.
+- **Do** `".s-OLD " → ".sNEW "` (trailing space preserved) for descendant form.
+- **Do** `".s-OLD." → ".sNEW."` for compound form.
+- **Better yet**, add a verification step to the protocol: after any slide-token rename, `grep "\.sNEW\.[a-zA-Z0-9_-]\+"` — manually confirm that every result is a legitimate compound (like `.s21.active`, `.s21.seq-expanded`), NOT a child-class pattern. If you see `.s21.seq-tasks`, the space is missing.
+
+### Miss: Stale JS references to old class tokens survived the session-5 rename
+
+**What:** In the session-5 rename of `s4` → `s-deferred-seq`, the CSS got renamed but the JS `document.querySelector('.s4')` in `bindSEQ()` did not. Because the deferred slide was `display:none`, the broken JS never triggered visibly. When I reinserted and renamed to `.s21` this session, I had to find and fix the JS reference too.
+
+**Root cause:** The session-5 rename-bug protocol covers CSS but not JS. Class tokens appear in both.
+
+**Rule going forward:** Before any slide-class rename, grep for the OLD token across the entire file, not just the `<style>` block. That means:
+- CSS: `grep "\.s-OLD\b"`
+- JS querySelectors: `grep "querySelector.*s-OLD\|querySelectorAll.*s-OLD"`
+- JS class manipulation: `grep "classList.*s-OLD\|className.*s-OLD"`
+- HTML class attributes: `grep "class=.*s-OLD"`
+- Data attributes: `grep "data-.*s-OLD"` (unlikely but cheap to check)
+
+All four places need to be updated in the same commit as the CSS rename.
+
+### Win: Running asset list in `todo.md`
+
+Added a consolidated asset-needed table to `todo.md` with file-path + hook-attribute + status for every screenshot, Dovetail clip, headshot, and photo across the deck. Discovered two gaps the user can fill async (learn-pathway screenshot, meds-popover screenshot) without blocking the build, and documented all five upcoming Dovetail clips needed for Session 6 slides. Graceful degradation was already wired in every case — the deck works end-to-end without any of the missing files, but tracking them explicitly saves time later.
+
+### Win: Content-consolidation judgment call on Slide 21
+
+Blueprint split the SEQ coverage across two slides: 21 (explainer) and 22 (per-task bar chart). The deferred POC slide combined both into one interactive surface (click-to-expand). Kept the consolidation — frees Slide 22 for post-session satisfaction (which needs the room). Flagged the deviation from blueprint in the plan; user approved.
+
+### Win: Lollipop plot over radar chart for Slide 22
+
+Blueprint suggested a radar or grouped bars for post-session satisfaction. I built a lollipop plot + cohort dot-strip instead. Reasoning: radar under-emphasizes meaningful differences at this data's tight range (6.4–6.7) and visually over-emphasizes irrelevant angular artifacts. Lollipop reads honestly at this range. User delegated the viz call.
+
+### Win: Phone-frame layout was preserved, not repeated
+
+Slides 14, 15, 25, 30 all carry phone frames. All four are separated from each other by non-phone slides. Rotation rule held. Slide 16 (AI Coach) explicitly did NOT use a phone frame, breaking a near-miss with slide 15's phone-left layout.
+
+### Win: Every chip delivers new info
+
+Verified by reading each CITATIONS popover against the slide surface. No popover restates slide content. Every pill opens to a participant profile, cohort breakdown, behavioural moment, or "why" detail sourced from the spine.
+
+### Standing-rule additions from Session 6
+
+28. **Always grep for the rename token in BOTH CSS and JS before renaming a slide class.** The rename is not complete until `querySelector`, `classList`, and inline data-attribute references have been updated alongside the CSS.
+29. **Verify compound-selector correctness after a descendant-combinator rename.** Run `grep "\.sNEW\.[a-zA-Z0-9_-]\+"` and confirm every hit is a legitimate compound, not a child-class pattern.
+30. **Running asset list in `todo.md`** is a first-class artifact. Update it every time a new asset hook is wired in. Helps async file prep.
+31. **Blueprint is the content authority, not the strict slide-count authority.** If two blueprint slides merge cleanly into one interactive HTML slide (like SEQ 21+22), make the call deliberately and flag for review.
+
