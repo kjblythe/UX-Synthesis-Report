@@ -4,6 +4,91 @@ Session log of misses, root causes, and fixes. Read at the start of every sessio
 
 ---
 
+## ⚠️ IMPORTANT — read before building more slides
+
+Slides 1–15 are shipped. Sessions 6+ will build 16–38 (plus reinsert the two deferred slides). Before you touch `index.html`, internalise the conventions below so you don't fight them.
+
+### Deferred slides — DO NOT lose, MUST reinsert
+
+Two POC slides are preserved in the DOM under `.slide-deferred`:
+
+| Token | Blueprint slide | Section | Inserts during |
+|---|---|---|---|
+| `.s-deferred-seq` (old `s4`) | **Slide 21** — SEQ Scores & Task Completion | Task-by-Task Results | Session 6 |
+| `.s-deferred-f1`  (old `s6`) | **Slide 25** — Finding 1 (Visual Differentiation) | Design Findings & Opportunities | Session 7 |
+
+They have full styling + interactivity from Sessions 1–4. To reinsert: move the section to its correct ordinal position, flip `.slide-deferred` → `.slide`, rename the scoped class (e.g. `.s-deferred-seq` → `.s21`), add to the `SLIDES` array, renumber `.foot-page`, **grep the entire CSS for `\.s-deferred-seq\b` and rename every occurrence** (same discipline as the rename bug from session 5).
+
+### The structural invariants — DO NOT override these
+
+1. **Slide base positioning is `position: absolute; inset: 0; opacity: 0 → 1 on .active`.** Never set `position: relative` on a `.slide-*` variant. Causes a 0-height slide; absolute children with `bottom:` land above the canvas. (Session 5, Bug 1.)
+2. **CSS scoped selectors must match the HTML class token.** When a slide's class changes (e.g. `.s2` → `.s6`), `grep -c '\.s2\b'` BEFORE changing the HTML, update every selector in the same commit, replace both `".s2 "` and `".s2."` forms. (Session 5.)
+3. **Same-specificity collisions matter.** Introducing `[data-x] { position: relative }` or similar utility at the same specificity as base rules on positioned containers (`.screen`, `.phone-screen`) wins in the cascade and breaks layout. Always scope with `:not()` or raise specificity deliberately. (Session 5, Bug 2.)
+4. **Phone-frame standard is 380 px wide, 8 px bezel.** The `loadDataAssets` JS hardcodes these for the aspect-ratio math (`phoneW=380; bezel=8`). If you ever change the CSS width, change the JS too.
+5. **Slide canvas is sacred.** Every popover clamps against `#canvas.getBoundingClientRect()`, not the window. Don't break this.
+
+### Chip / popover contract
+
+- Any `<button data-cite="key">` OR `.chip` / `.chip-trigger` opens a popover with `CITATIONS[key]`. The handler is global (document-level click) — don't rebind per-slide.
+- **A popover must deliver new information** the slide surface does not show (participant profile detail, cohort breakdown, behavioural moment, "why"). If it just restates slide content, cut it.
+- The `CITATIONS` content bank already covers 30+ keys. Reuse. Namespace new keys by feature (`feat-*`, `task-*`, `team-*`, `p01`–`p07`, `meal-*`, `learn-*`, `refl-*`, `body-*`).
+- Chips must be self-explanatory **before** click — the slide stands alone, the chip deepens.
+
+### PDF-export safety (html2canvas)
+
+The "Export PDF" button uses html2canvas inline. Known footguns — avoid all three:
+
+- **Don't use `object-fit: cover` on `<img>`.** html2canvas renders it distorted. Use `background-image: url(...)` + `background-size: cover` on the container instead. (That's why Session 5 switched team headshots from `<img>` child to bg-image on `.team-avatar`.)
+- **Don't use `inset: 0` shorthand on positioned overlays.** Use explicit `top / right / bottom / left`. html2canvas support for shorthand is inconsistent across versions.
+- **Don't use flex `gap`.** Use `margin` on children. Pre-2023 html2canvas versions flatten `gap` to zero, causing overlap.
+- **Don't use CSS-border triangles** (`border-left: 9px solid X; border-top: 6px solid transparent`). Use inline SVG data-URIs instead. Border-triangles render as rectangles or vanish in some html2canvas passes.
+- **Test PDF export whenever you touch a phone, clip card, table, or overlay.** Playwright `await page.evaluate(() => document.getElementById('btn-pdf').click())` and inspect the resulting render.
+
+### Asset hooks — naming and folders
+
+| Content | Folder | Filename pattern | Hook attribute |
+|---|---|---|---|
+| Headshots | `/assets/team/` | `{firstname-lastname}.jpg` | `data-headshot="firstname-lastname"` |
+| Screenshots (phone) | `/assets/screenshots/` | `{screen-name}.png` | `data-asset="slug" data-asset-folder="screenshots" data-asset-ext="png"` |
+| Other photos | `/assets/photos/` | `{subject}.jpg` | `data-asset="slug"` (folder default = photos) |
+| Dovetail videos | `/assets/videos/` | `p{NN}-{topic}-{mmss}.mp4` | `data-video="slug"` on the `.clip-card` or `.bm-clip` wrapper |
+
+All four pipelines have graceful fallbacks (monogram / CSS mock / placeholder card). Missing files don't break the deck.
+
+**Sanity-check file sizes when an asset "doesn't load."** Session 5 lost an hour to a 2-byte `lab-overhead.jpg` that was actually just `\r\n` — a broken upload. Real JPEGs are tens-to-hundreds of KB, PNGs are hundreds of KB to low MB.
+
+### Tone discipline — applies to every new slide
+
+Voice = a principal investigator presenting evidence to a funding committee that already knows the team and the program. Internal readout, not pitch deck.
+
+**Banned phrases** (observed in Sessions 1–5 and corrected):
+- "The North Star" · "One direction" · "the breakout feature" · "Universal approval" (as a headline)
+- "drove the strongest engagement" · "daily-adoption driver" · "the most requested X path"
+- "generated genuine delight" · "resonated with users" (OK in section title, not as a verb in body)
+- "cleared the bar" · "adoption curve" · "retrofitting"
+- "A day in the life of the app" · "natural rhythm of a day"
+- Any sentence shaped "Most X are Y. This does Z." (pitch-deck pattern)
+
+Read every new headline out loud as if you were a PI. If it would make a VP of R&D wince, cut it.
+
+### Visual system invariants
+
+- **Backgrounds rotate.** No two consecutive slides share bg family AND layout family. Section starters (5, 8, 12, and future 20, 24, 34) intentionally reuse the watermarked starter style — but they're never adjacent.
+- **All section starters use `.starter-a`** (mint numeral, upper-right X watermark, no rotation). Consistency was the user's explicit call (session 5).
+- **Agenda items are placeholder click-to-jump targets.** Once sections 4–6 are built, wire agenda `<div class="agenda-item">` → `goTo(sectionStarterIdx)`.
+- **Benchmark story is tiered** — Slide 6 hero headline + `?` chip mini-explainer on the `6.4` KPI pill → Slide 11 visual band + `+0.9` delta badge → Slide 21 full SEQ deep-dive with per-participant distribution. Preserve this three-tier flow when building Slide 21.
+- **Type scale baseline at 1920 native:** eyebrow 13 / label 12 / body 17–19 / lead 20 / h3 34 / h2 46 / h1 50–54 / section-starter numeral 320. Presentation-legibility calibrated (session 5).
+- **Phone magnifier** is universal on any `.phone .screen.has-asset`. Zoom 2.2×, loupe 400 px. Works on S4, S14, S15 today; any future phone-screenshot slide inherits it automatically.
+
+### Framework handoff
+
+- Single `index.html`, vanilla JS + CSS, Chart.js loaded only where needed, html2canvas + jsPDF inlined for the PDF button.
+- `SLIDES` array drives the navigator. Add entries in order when building new slides. The `paintThumb` function needs a matching `key` branch per slide type — section starters, light slides, dark slides, and hero-viz slides each have stylised mini-previews.
+- `.slide.active` flip, `.reveal.dN` delayed opacity/transform entrance, `@media print` override — all wired and working. Don't rebuild.
+
+---
+
+
 ## Session 1 — 2026-04-16 — Style system + 6-slide POC
 
 ### Miss: Navigator was not collapsible from its expanded state
