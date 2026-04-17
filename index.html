@@ -1136,7 +1136,7 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
 }
 
 /* ============ SLIDE 2 — EXECUTIVE SUMMARY ============ */
-.s2 .exec-grid {
+.s6 .exec-grid {
   display: grid;
   grid-template-columns: 500px 1fr;
   gap: 80px;
@@ -1144,45 +1144,45 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
   flex: 1;
   align-items: start;
 }
-.s2 .exec-context h1 {
+.s6 .exec-context h1 {
   font-size: 62px; font-weight: 700; line-height: 1.02;
   letter-spacing: -0.028em;
   color: var(--ink);
   margin: 0 0 22px 0;
 }
-.s2 .exec-context h1 .ital {
+.s6 .exec-context h1 .ital {
   font-family: var(--f-serif); font-style: italic; font-weight: 500;
   color: var(--teal-700);
 }
-.s2 .exec-context p {
+.s6 .exec-context p {
   font-size: 19px; line-height: 1.55; color: var(--ink-mute);
   margin: 0 0 16px 0;
   max-width: 480px;
 }
-.s2 .exec-context p.context-details {
+.s6 .exec-context p.context-details {
   font-size: 16px; color: var(--ink-dim); line-height: 1.55;
 }
-.s2 .exec-context .tagline {
+.s6 .exec-context .tagline {
   margin-top: 8px;
   font-size: 14px; letter-spacing: 0.2em; text-transform: uppercase;
   color: var(--teal-700); font-weight: 600;
   display: flex; align-items: center; gap: 12px;
 }
-.s2 .exec-context .tagline::before {
+.s6 .exec-context .tagline::before {
   content: ""; width: 28px; height: 1px; background: var(--teal-700);
 }
-.s2 .findings {
+.s6 .findings {
   display: flex; flex-direction: column; gap: 0;
   border-top: 1px solid rgba(10,26,28,0.15);
 }
-.s2 .finding {
+.s6 .finding {
   display: grid; grid-template-columns: 84px 1fr;
   gap: 22px;
   padding: 20px 0 22px 0;
   border-bottom: 1px solid rgba(10,26,28,0.12);
 }
-.s2 .finding:last-child { border-bottom: none; }
-.s2 .finding-num {
+.s6 .finding:last-child { border-bottom: none; }
+.s6 .finding-num {
   font-family: var(--f-display);
   font-size: 42px; font-weight: 700;
   color: var(--teal-700);
@@ -1191,24 +1191,24 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
   position: relative; top: -1px;
   font-variant-numeric: tabular-nums;
 }
-.s2 .finding-body h3 {
+.s6 .finding-body h3 {
   font-size: 25px; font-weight: 600; line-height: 1.22;
   letter-spacing: -0.012em;
   color: var(--ink);
   margin: 0 0 10px 0;
   max-width: 960px;
 }
-.s2 .finding-body h3 .hl { color: var(--teal-700); }
-.s2 .finding-body p {
+.s6 .finding-body h3 .hl { color: var(--teal-700); }
+.s6 .finding-body p {
   font-size: 17px; line-height: 1.5;
   color: var(--ink-mute);
   margin: 0 0 12px 0;
   max-width: 980px;
 }
-.s2 .finding-body .kpi-row {
+.s6 .finding-body .kpi-row {
   display: flex; flex-wrap: wrap; gap: 8px; align-items: center;
 }
-.s2 .kpi-pill {
+.s6 .kpi-pill {
   display: inline-flex; align-items: baseline; gap: 6px;
   padding: 6px 12px;
   background: rgba(20, 184, 166, 0.08);
@@ -1221,36 +1221,36 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
   cursor: pointer;
   transition: background 160ms ease, border-color 160ms ease, transform 160ms ease;
 }
-.s2 .kpi-pill:hover {
+.s6 .kpi-pill:hover {
   background: rgba(20, 184, 166, 0.16);
   border-color: rgba(20, 184, 166, 0.45);
   transform: translateY(-1px);
 }
-.s2 .kpi-pill b {
+.s6 .kpi-pill b {
   color: var(--teal-700); font-weight: 700;
   font-variant-numeric: tabular-nums;
   letter-spacing: -0.005em;
 }
-.s2 .kpi-pill i {
+.s6 .kpi-pill i {
   font-style: normal; color: var(--ink-mute);
   font-weight: 400;
 }
-.s2 .kpi-pill.kpi-mint {
+.s6 .kpi-pill.kpi-mint {
   background: rgba(52, 238, 167, 0.12);
   border-color: rgba(52, 238, 167, 0.3);
 }
-.s2 .kpi-pill.kpi-mint b { color: #0F766E; }
+.s6 .kpi-pill.kpi-mint b { color: #0F766E; }
 
 /* ============ SLIDE 3 — ANCHOR QUOTE ============ */
-.s3 .quote-wrap {
+.s7 .quote-wrap {
   flex: 1; display: grid; grid-template-columns: 1fr 400px;
   gap: 80px; align-items: center; margin-top: 40px;
 }
-.s3 .quote-block {
+.s7 .quote-block {
   position: relative;
   padding-left: 10px;
 }
-.s3 .quote-mark {
+.s7 .quote-mark {
   position: absolute;
   left: -32px; top: -200px;
   font-family: var(--f-serif);
@@ -1261,12 +1261,12 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
   opacity: 0.7;
   user-select: none;
 }
-.s3 .quote-eyebrow {
+.s7 .quote-eyebrow {
   position: relative; z-index: 2;
   margin-bottom: 28px;
   color: var(--teal-300);
 }
-.s3 .quote-text {
+.s7 .quote-text {
   position: relative; z-index: 2;
   font-family: var(--f-serif);
   font-style: italic;
@@ -1278,20 +1278,20 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
   margin: 80px 0 0 0;
   max-width: 1000px;
 }
-.s3 .quote-text .hl {
+.s7 .quote-text .hl {
   color: var(--teal-300);
   font-style: italic;
 }
-.s3 .attribution {
+.s7 .attribution {
   margin-top: 48px;
   display: flex; align-items: baseline; gap: 22px;
 }
-.s3 .attribution .ident {
+.s7 .attribution .ident {
   font-family: var(--f-display); font-size: 28px; font-weight: 600;
   color: var(--mint);
   letter-spacing: 0.01em;
 }
-.s3 .attribution .context {
+.s7 .attribution .context {
   color: var(--on-dark-dim);
   font-size: 15px;
   letter-spacing: 0.06em;
@@ -1382,44 +1382,44 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
 }
 
 /* ============ SLIDE 4 — SEQ EXPLAINER ============ */
-.s4 .seq-grid {
+.s-deferred-seq .seq-grid {
   display: grid; grid-template-columns: 440px 1fr;
   gap: 72px; flex: 1;
   margin-top: 32px; align-items: stretch;
 }
-.s4 .seq-left {
+.s-deferred-seq .seq-left {
   display: flex; flex-direction: column;
   padding-top: 8px;
 }
-.s4 .seq-left h1 {
+.s-deferred-seq .seq-left h1 {
   font-family: var(--f-display); font-weight: 700;
   font-size: 60px; line-height: 1.02; letter-spacing: -0.028em;
   color: var(--on-dark); margin: 20px 0 22px 0;
 }
-.s4 .seq-left h1 .hl { color: var(--mint); font-variant-numeric: tabular-nums; }
-.s4 .seq-left p {
+.s-deferred-seq .seq-left h1 .hl { color: var(--mint); font-variant-numeric: tabular-nums; }
+.s-deferred-seq .seq-left p {
   font-size: 18px; line-height: 1.55;
   color: var(--on-dark-dim);
   margin: 0 0 16px 0; max-width: 420px;
 }
-.s4 .seq-source {
+.s-deferred-seq .seq-source {
   margin-top: 14px;
   font-family: var(--f-mono); font-size: 12px;
   color: var(--on-dark-mute); letter-spacing: 0.04em;
 }
-.s4 .seq-stage {
+.s-deferred-seq .seq-stage {
   position: relative;
   padding: 0 30px;
   height: 860px; /* reserved — no layout jump on expand */
   display: flex; flex-direction: column;
 }
-.s4 .seq-scale-wrap {
+.s-deferred-seq .seq-scale-wrap {
   position: relative;
   height: 360px;
   margin-top: 20px;
 }
-.s4 .seq-scale { position: relative; height: 100%; }
-.s4 .seq-track {
+.s-deferred-seq .seq-scale { position: relative; height: 100%; }
+.s-deferred-seq .seq-track {
   position: absolute; left: 30px; right: 30px; top: 220px;
   height: 44px; border-radius: 22px; overflow: hidden;
   background: linear-gradient(90deg,
@@ -1431,25 +1431,25 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
     rgba(52, 238, 167, 0.60) 100%);
   border: 1px solid rgba(255,255,255,0.10);
 }
-.s4 .seq-ticks {
+.s-deferred-seq .seq-ticks {
   position: absolute; left: 30px; right: 30px; top: 286px;
   display: flex; justify-content: space-between;
 }
-.s4 .seq-tick { display: flex; flex-direction: column; align-items: center; gap: 10px; width: 30px; }
-.s4 .seq-tick::before { content: ""; width: 1px; height: 16px; background: rgba(255,255,255,0.25); }
-.s4 .seq-tick-num { font-family: var(--f-mono); font-size: 16px; color: var(--on-dark-dim); font-variant-numeric: tabular-nums; font-weight: 500; }
-.s4 .seq-zones {
+.s-deferred-seq .seq-tick { display: flex; flex-direction: column; align-items: center; gap: 10px; width: 30px; }
+.s-deferred-seq .seq-tick::before { content: ""; width: 1px; height: 16px; background: rgba(255,255,255,0.25); }
+.s-deferred-seq .seq-tick-num { font-family: var(--f-mono); font-size: 16px; color: var(--on-dark-dim); font-variant-numeric: tabular-nums; font-weight: 500; }
+.s-deferred-seq .seq-zones {
   position: absolute; left: 30px; right: 30px; top: 176px;
   display: flex;
   font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 600;
 }
-.s4 .seq-zone { padding-bottom: 10px; border-bottom: 1px solid currentColor; text-align: center; }
-.s4 .seq-zone.zone-hard { color: rgba(239,68,68,0.85); flex-basis: 33.33%; }
-.s4 .seq-zone.zone-avg  { color: rgba(245,158,11,0.95); flex-basis: 33.33%; }
-.s4 .seq-zone.zone-easy { color: var(--mint); flex-basis: 33.33%; }
+.s-deferred-seq .seq-zone { padding-bottom: 10px; border-bottom: 1px solid currentColor; text-align: center; }
+.s-deferred-seq .seq-zone.zone-hard { color: rgba(239,68,68,0.85); flex-basis: 33.33%; }
+.s-deferred-seq .seq-zone.zone-avg  { color: rgba(245,158,11,0.95); flex-basis: 33.33%; }
+.s-deferred-seq .seq-zone.zone-easy { color: var(--mint); flex-basis: 33.33%; }
 
 /* Benchmark: a shaded band at 5.3–5.6 (the MeasuringU benchmark range) — more prominent than a line */
-.s4 .seq-benchmark-band {
+.s-deferred-seq .seq-benchmark-band {
   position: absolute;
   top: 212px; height: 60px;
   background: repeating-linear-gradient(135deg,
@@ -1460,26 +1460,26 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
   border-radius: 4px;
   pointer-events: none;
 }
-.s4 .seq-benchmark-tag {
+.s-deferred-seq .seq-benchmark-tag {
   position: absolute;
   bottom: -52px; left: 50%; transform: translateX(-50%);
   white-space: nowrap;
   text-align: center;
   line-height: 1.25;
 }
-.s4 .seq-benchmark-tag .lab {
+.s-deferred-seq .seq-benchmark-tag .lab {
   font-size: 11px; letter-spacing: 0.20em; text-transform: uppercase;
   color: var(--on-dark-dim); font-weight: 500;
   display: block; margin-bottom: 4px;
 }
-.s4 .seq-benchmark-tag .val {
+.s-deferred-seq .seq-benchmark-tag .val {
   font-family: var(--f-display); font-weight: 600;
   color: var(--on-dark); font-size: 18px;
   font-variant-numeric: tabular-nums;
 }
 
 /* GAP BRACKET — below the track, in the negative space between benchmark tag and our-score */
-.s4 .seq-gap-bracket {
+.s-deferred-seq .seq-gap-bracket {
   position: absolute;
   top: 284px; /* track bottom at 220+44=264, + 20 padding */
   height: 28px;
@@ -1488,23 +1488,23 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
   pointer-events: none;
 }
 .s4.active .seq-gap-bracket { opacity: 1; }
-.s4 .seq-gap-bracket::before,
-.s4 .seq-gap-bracket::after {
+.s-deferred-seq .seq-gap-bracket::before,
+.s-deferred-seq .seq-gap-bracket::after {
   content: "";
   position: absolute;
   top: 0; bottom: 14px;
   width: 1px;
   background: rgba(52,238,167,0.55);
 }
-.s4 .seq-gap-bracket::before { left: 0; }
-.s4 .seq-gap-bracket::after  { right: 0; }
-.s4 .seq-gap-bracket .seq-gap-rule {
+.s-deferred-seq .seq-gap-bracket::before { left: 0; }
+.s-deferred-seq .seq-gap-bracket::after  { right: 0; }
+.s-deferred-seq .seq-gap-bracket .seq-gap-rule {
   position: absolute;
   left: 0; right: 0; bottom: 14px;
   height: 1px;
   background: rgba(52,238,167,0.55);
 }
-.s4 .seq-gap-label {
+.s-deferred-seq .seq-gap-label {
   position: absolute;
   top: 298px; left: 50%;
   display: inline-flex; align-items: center; gap: 8px;
@@ -1523,28 +1523,28 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
   z-index: 3;
 }
 .s4.active .seq-gap-label { opacity: 1; }
-.s4 .seq-gap-label .lbl {
+.s-deferred-seq .seq-gap-label .lbl {
   font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
   color: var(--on-dark-dim); font-weight: 600;
 }
 
 /* OUR MEAN marker — more emphatic */
-.s4 .seq-ours {
+.s-deferred-seq .seq-ours {
   position: absolute; top: 88px; bottom: 20px; width: 3px;
   background: linear-gradient(180deg, var(--mint), rgba(52,238,167,0.0));
   opacity: 0;
   transition: opacity 400ms ease, left 1100ms var(--ease-out);
 }
 .s4.active .seq-ours { opacity: 1; }
-.s4 .seq-ours-tag {
+.s-deferred-seq .seq-ours-tag {
   position: absolute; top: -140px; left: 50%; transform: translateX(-50%);
   display: flex; flex-direction: column; align-items: center; gap: 6px;
 }
-.s4 .seq-ours-tag .label {
+.s-deferred-seq .seq-ours-tag .label {
   font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase;
   color: var(--mint); font-weight: 600;
 }
-.s4 .seq-ours-tag .big {
+.s-deferred-seq .seq-ours-tag .big {
   position: relative;
   font-family: var(--f-display); font-weight: 700;
   font-size: 124px; line-height: 1; color: var(--mint);
@@ -1552,7 +1552,7 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
   filter: drop-shadow(0 8px 28px rgba(52,238,167,0.35));
   cursor: pointer;
 }
-.s4 .seq-ours-tag .of {
+.s-deferred-seq .seq-ours-tag .of {
   position: absolute;
   left: calc(100% + 8px);
   bottom: 14px;
@@ -1561,7 +1561,7 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
   letter-spacing: 0.02em; font-variant-numeric: tabular-nums;
   white-space: nowrap;
 }
-.s4 .seq-ours::before {
+.s-deferred-seq .seq-ours::before {
   content: ""; position: absolute; left: 50%; top: 0;
   transform: translate(-50%, -50%);
   width: 20px; height: 20px; border-radius: 50%;
@@ -1570,7 +1570,7 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
 }
 
 /* BELOW-SCALE: reserved dual panel — swaps between compare + breakdown */
-.s4 .seq-below {
+.s-deferred-seq .seq-below {
   position: relative;
   margin-top: 96px;
   flex: 1;
@@ -1578,13 +1578,13 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
   border-top: 1px solid rgba(255,255,255,0.08);
   padding-top: 56px;
 }
-.s4 .seq-compared,
-.s4 .seq-tasks {
+.s-deferred-seq .seq-compared,
+.s-deferred-seq .seq-tasks {
   position: absolute;
   inset: 56px 0 0 0;
   transition: opacity 240ms ease;
 }
-.s4 .seq-compared {
+.s-deferred-seq .seq-compared {
   display: grid; grid-template-columns: 1fr 1fr;
   gap: 32px 44px;
   padding: 0;
@@ -1592,18 +1592,18 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
 }
 .s4.seq-expanded .seq-compared { opacity: 0 !important; pointer-events: none !important; }
 .s4.seq-expanded .seq-tasks { opacity: 1 !important; }
-.s4 .seq-compared .cmp-row {
+.s-deferred-seq .seq-compared .cmp-row {
   display: grid; grid-template-columns: auto 1fr; align-items: baseline; gap: 18px;
   font-size: 15px; color: var(--on-dark-dim); line-height: 1.45;
 }
-.s4 .seq-compared .cmp-row .num {
+.s-deferred-seq .seq-compared .cmp-row .num {
   font-family: var(--f-display); font-weight: 700; font-size: 32px;
   color: var(--on-dark); font-variant-numeric: tabular-nums;
   letter-spacing: -0.01em;
 }
-.s4 .seq-compared .cmp-row .num.mint { color: var(--mint); }
+.s-deferred-seq .seq-compared .cmp-row .num.mint { color: var(--mint); }
 
-.s4 .seq-expand-btn {
+.s-deferred-seq .seq-expand-btn {
   position: absolute;
   top: 14px; right: 0;
   z-index: 5;
@@ -1618,12 +1618,12 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
   cursor: pointer;
   transition: background 160ms ease, border-color 160ms ease, transform 160ms ease;
 }
-.s4 .seq-expand-btn:hover { background: rgba(52, 238, 167, 0.20); border-color: rgba(52, 238, 167, 0.60); transform: translateY(-1px); }
-.s4 .seq-expand-btn svg { transition: transform 240ms var(--ease-out); }
+.s-deferred-seq .seq-expand-btn:hover { background: rgba(52, 238, 167, 0.20); border-color: rgba(52, 238, 167, 0.60); transform: translateY(-1px); }
+.s-deferred-seq .seq-expand-btn svg { transition: transform 240ms var(--ease-out); }
 .s4.seq-expanded .seq-expand-btn svg { transform: rotate(180deg); }
 
 /* TASKS PANEL */
-.s4 .seq-tasks {
+.s-deferred-seq .seq-tasks {
   opacity: 0;
   pointer-events: none;
   display: grid;
@@ -1634,14 +1634,14 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
   opacity: 1;
   pointer-events: auto;
 }
-.s4 .seq-tasks .seq-tasks-legend {
+.s-deferred-seq .seq-tasks .seq-tasks-legend {
   grid-column: 1 / -1;
   display: flex; justify-content: space-between; align-items: center;
   margin-bottom: 4px;
   font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
   color: var(--on-dark-dim); font-weight: 600;
 }
-.s4 .seq-task {
+.s-deferred-seq .seq-task {
   display: grid;
   grid-template-columns: 32px 170px 1fr 48px;
   align-items: center;
@@ -1651,10 +1651,10 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
   cursor: pointer;
   transition: background 160ms ease;
 }
-.s4 .seq-task:hover {
+.s-deferred-seq .seq-task:hover {
   background: rgba(52, 238, 167, 0.06);
 }
-.s4 .seq-task.chip-trigger {
+.s-deferred-seq .seq-task.chip-trigger {
   /* override chip-trigger pill-border styling on the task row — keep the row styling */
   padding: 10px 12px !important;
   background: transparent;
@@ -1666,190 +1666,190 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
   font-size: inherit;
   letter-spacing: normal;
 }
-.s4 .seq-task.chip-trigger:hover {
+.s-deferred-seq .seq-task.chip-trigger:hover {
   background: rgba(52, 238, 167, 0.06) !important;
   transform: none !important;
   border: none !important;
 }
-.s4 .seq-task-tag {
+.s-deferred-seq .seq-task-tag {
   font-family: var(--f-mono); font-size: 13px;
   color: var(--on-dark-mute); letter-spacing: 0.04em; font-weight: 500;
 }
-.s4 .seq-task-name {
+.s-deferred-seq .seq-task-name {
   font-size: 15px; color: var(--on-dark);
   font-weight: 500;
   letter-spacing: -0.005em;
 }
-.s4 .seq-task-bar {
+.s-deferred-seq .seq-task-bar {
   position: relative; height: 7px;
   background: rgba(255,255,255,0.06);
   border-radius: 4px; overflow: hidden;
 }
-.s4 .seq-task-bar-fill {
+.s-deferred-seq .seq-task-bar-fill {
   position: absolute; left: 0; top: 0; bottom: 0;
   width: 0%;
   background: linear-gradient(90deg, var(--teal-500), var(--mint));
   border-radius: 4px;
   transition: width 800ms var(--ease-out);
 }
-.s4 .seq-task.low .seq-task-bar-fill {
+.s-deferred-seq .seq-task.low .seq-task-bar-fill {
   background: linear-gradient(90deg, var(--gold), var(--gold-soft));
 }
-.s4 .seq-task-score {
+.s-deferred-seq .seq-task-score {
   font-family: var(--f-display); font-weight: 700;
   font-size: 20px; color: var(--mint);
   font-variant-numeric: tabular-nums;
   text-align: right;
   letter-spacing: -0.01em;
 }
-.s4 .seq-task.low .seq-task-score { color: var(--gold); }
+.s-deferred-seq .seq-task.low .seq-task-score { color: var(--gold); }
 
 /* ============ SLIDE 5 — PHOTO MEAL LOGGING ============ */
-.s5 .meal-grid {
+.s14 .meal-grid {
   display: grid; grid-template-columns: 420px 1fr;
   gap: 80px; flex: 1;
   margin-top: 26px; align-items: center;
 }
-.s5 .meal-phone-wrap {
+.s14 .meal-phone-wrap {
   display: flex; justify-content: center; align-items: center;
   position: relative;
 }
-.s5 .meal-right { display: flex; flex-direction: column; gap: 24px; }
-.s5 .meal-headline {
+.s14 .meal-right { display: flex; flex-direction: column; gap: 24px; }
+.s14 .meal-headline {
   font-family: var(--f-display); font-weight: 700;
   font-size: 50px; line-height: 1.02;
   letter-spacing: -0.025em;
   color: var(--ink);
   margin: 10px 0 0 0; max-width: 760px;
 }
-.s5 .meal-headline .hl {
+.s14 .meal-headline .hl {
   font-family: var(--f-serif); font-style: italic; font-weight: 500;
   color: var(--teal-700);
 }
-.s5 .meal-stat-row {
+.s14 .meal-stat-row {
   display: flex; align-items: flex-end; gap: 56px;
   padding: 16px 0 20px 0;
   border-top: 1px solid rgba(10,26,28,0.12);
   border-bottom: 1px solid rgba(10,26,28,0.12);
 }
-.s5 .meal-stat { display: flex; flex-direction: column; gap: 4px; }
-.s5 .meal-stat .n {
+.s14 .meal-stat { display: flex; flex-direction: column; gap: 4px; }
+.s14 .meal-stat .n {
   font-family: var(--f-display); font-weight: 700;
   font-size: 100px; line-height: 0.9; color: var(--teal-700);
   font-variant-numeric: tabular-nums; letter-spacing: -0.03em;
 }
-.s5 .meal-stat .label {
+.s14 .meal-stat .label {
   font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase;
   color: var(--ink-mute); font-weight: 500;
 }
-.s5 .meal-stat.sm .n { font-size: 44px; color: var(--ink); }
-.s5 .meal-quotes { display: flex; flex-direction: column; gap: 16px; }
-.s5 .meal-quote { position: relative; padding-left: 30px; }
-.s5 .meal-quote::before {
+.s14 .meal-stat.sm .n { font-size: 44px; color: var(--ink); }
+.s14 .meal-quotes { display: flex; flex-direction: column; gap: 16px; }
+.s14 .meal-quote { position: relative; padding-left: 30px; }
+.s14 .meal-quote::before {
   content: "\201C";
   position: absolute; left: -6px; top: -18px;
   font-family: var(--f-serif); font-style: italic; font-weight: 500;
   font-size: 58px; color: var(--teal-400); line-height: 1;
 }
-.s5 .meal-quote blockquote {
+.s14 .meal-quote blockquote {
   margin: 0;
   font-family: var(--f-serif); font-style: italic; font-weight: 400;
   font-size: 21px; line-height: 1.38; color: var(--ink);
 }
-.s5 .meal-quote cite {
+.s14 .meal-quote cite {
   display: block; margin-top: 4px;
   font-family: var(--f-display); font-style: normal;
   font-size: 11.5px; letter-spacing: 0.16em; text-transform: uppercase;
   color: var(--teal-700); font-weight: 600;
 }
-.s5 .meal-insight {
+.s14 .meal-insight {
   display: flex; align-items: flex-start; gap: 14px;
   padding: 16px 20px;
   background: rgba(20, 184, 166, 0.06);
   border-radius: 12px;
   border: 1px solid rgba(20, 184, 166, 0.18);
 }
-.s5 .meal-insight .spark {
+.s14 .meal-insight .spark {
   width: 26px; height: 26px; flex: 0 0 26px; border-radius: 50%;
   background: var(--teal-700); color: var(--paper);
   font-weight: 700; display: flex; align-items: center; justify-content: center;
   font-size: 13px; margin-top: 1px;
 }
-.s5 .meal-insight p { margin: 0; font-size: 14px; line-height: 1.5; color: var(--ink-2); }
-.s5 .meal-insight strong { color: var(--teal-700); font-weight: 600; }
+.s14 .meal-insight p { margin: 0; font-size: 14px; line-height: 1.5; color: var(--ink-2); }
+.s14 .meal-insight strong { color: var(--teal-700); font-weight: 600; }
 
 /* ============ SLIDE 6 — FINDING 1 ============ */
-.s6 .f1-grid {
+.s-deferred-f1 .f1-grid {
   display: grid; grid-template-columns: 420px 1fr;
   gap: 80px; flex: 1;
   margin-top: 28px; position: relative;
 }
-.s6 .f1-phone-col {
+.s-deferred-f1 .f1-phone-col {
   display: flex; justify-content: center; align-items: flex-start;
   position: relative; padding-top: 8px;
 }
-.s6 .f1-right { display: flex; flex-direction: column; gap: 20px; padding-top: 8px; }
-.s6 .f1-headline {
+.s-deferred-f1 .f1-right { display: flex; flex-direction: column; gap: 20px; padding-top: 8px; }
+.s-deferred-f1 .f1-headline {
   font-family: var(--f-display); font-weight: 700;
   font-size: 46px; line-height: 1.03; letter-spacing: -0.022em;
   color: var(--on-dark); margin: 10px 0 0 0; max-width: 900px;
 }
-.s6 .f1-headline .hl {
+.s-deferred-f1 .f1-headline .hl {
   font-family: var(--f-serif); font-style: italic; font-weight: 500;
   color: var(--teal-300);
 }
-.s6 .f1-lead {
+.s-deferred-f1 .f1-lead {
   font-size: 16px; line-height: 1.55;
   color: var(--on-dark-dim);
   max-width: 780px; margin: 0;
 }
-.s6 .f1-callouts {
+.s-deferred-f1 .f1-callouts {
   margin-top: 10px;
   display: flex; flex-direction: column; gap: 10px;
 }
-.s6 .callout {
+.s-deferred-f1 .callout {
   display: grid; grid-template-columns: 14px 1fr;
   gap: 16px; align-items: flex-start;
   padding: 10px 0;
   border-bottom: 1px solid rgba(255,255,255,0.06);
 }
-.s6 .callout:last-child { border-bottom: none; }
-.s6 .callout .marker {
+.s-deferred-f1 .callout:last-child { border-bottom: none; }
+.s-deferred-f1 .callout .marker {
   width: 14px; height: 14px; border-radius: 50%;
   margin-top: 6px; position: relative;
 }
-.s6 .callout.neg .marker { background: var(--coral); box-shadow: 0 0 0 4px rgba(239,68,68,0.12); }
-.s6 .callout.pos .marker { background: var(--mint); box-shadow: 0 0 0 4px rgba(52,238,167,0.15); }
-.s6 .callout h4 {
+.s-deferred-f1 .callout.neg .marker { background: var(--coral); box-shadow: 0 0 0 4px rgba(239,68,68,0.12); }
+.s-deferred-f1 .callout.pos .marker { background: var(--mint); box-shadow: 0 0 0 4px rgba(52,238,167,0.15); }
+.s-deferred-f1 .callout h4 {
   margin: 0 0 3px 0; font-size: 15px; font-weight: 600; line-height: 1.3;
   color: var(--on-dark); letter-spacing: -0.005em;
 }
-.s6 .callout p {
+.s-deferred-f1 .callout p {
   margin: 0; font-size: 13px; line-height: 1.5;
   color: var(--on-dark-dim);
 }
-.s6 .f1-summary {
+.s-deferred-f1 .f1-summary {
   margin-top: 8px;
   padding: 18px 22px;
   border-radius: 14px;
   border: 1px solid rgba(52, 238, 167, 0.22);
   background: rgba(52, 238, 167, 0.05);
 }
-.s6 .f1-summary .fs-title {
+.s-deferred-f1 .f1-summary .fs-title {
   font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
   color: var(--mint); font-weight: 600;
   margin-bottom: 10px;
   display: flex; align-items: center; gap: 12px;
 }
-.s6 .f1-summary .fs-title::before {
+.s-deferred-f1 .f1-summary .fs-title::before {
   content: ""; width: 22px; height: 1px; background: var(--mint);
 }
-.s6 .f1-summary p {
+.s-deferred-f1 .f1-summary p {
   margin: 0;
   font-size: 15.5px; line-height: 1.55;
   color: var(--on-dark);
 }
-.s6 .connectors { position: absolute; inset: 0; pointer-events: none; overflow: visible; }
+.s-deferred-f1 .connectors { position: absolute; inset: 0; pointer-events: none; overflow: visible; }
 
 /* ============ PHONE FRAME ============ */
 .phone {
@@ -2142,14 +2142,14 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
 
 /* ============ BATCH-A BG DIFFERENTIATORS ============ */
 /* S3 (Agenda): dark forest with accent shifted to lower-left so it reads distinct from S4's upper-right mint emphasis */
-.slide.s3 {
+.slide.s7{
   background:
     radial-gradient(900px 700px at 15% 100%, rgba(20,184,166,0.10), transparent 60%),
     radial-gradient(1100px 800px at 92% 10%, rgba(6,40,35,0.9), transparent 55%),
     linear-gradient(180deg, #0B3E37 0%, #093631 60%, #05231F 100%);
 }
 /* S4 (What Is This App?): adds a warmer mint glow behind the phone column */
-.slide.s4 {
+.slide.s-deferred-seq{
   background:
     radial-gradient(1000px 760px at 82% 55%, rgba(52,238,167,0.12), transparent 60%),
     radial-gradient(1200px 800px at 10% 0%, rgba(6,40,35,0.9), transparent 55%),
@@ -2212,7 +2212,7 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
   z-index: 3;
 }
 .slide-section-starter .ss-body {
-  position: absolute; left: 112px; right: 112px; bottom: 180px;
+  position: absolute; left: 112px; right: 112px; top: 180px;
   display: flex; flex-direction: column; align-items: flex-start;
   gap: 14px;
   z-index: 3;
@@ -2238,8 +2238,514 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
 }
 .slide-section-starter .slide-foot { z-index: 3; }
 
+/* ============ SLIDE 15 — BODY MAP INJECTION TRACKER ============ */
+.s15 .bm-grid {
+  margin-top: 28px;
+  display: grid; grid-template-columns: minmax(0, 1fr) 420px;
+  gap: 96px;
+  align-items: start;
+  height: calc(1080px - 88px - 108px - 28px);
+}
+.s15 .bm-left { display: flex; flex-direction: column; gap: 20px; min-width: 0; }
+.s15 .bm-headline {
+  font-family: var(--f-display); font-weight: 600; font-size: 42px; line-height: 1.12;
+  letter-spacing: -0.02em; color: var(--text-on-dark); margin: 0; max-width: 900px;
+}
+.s15 .bm-headline .hl { color: var(--mint-accent); }
+.s15 .bm-stat-row { display: flex; align-items: center; gap: 36px; padding: 12px 0 16px 0; border-bottom: 1px solid rgba(245,242,234,0.08); }
+.s15 .bm-primary {
+  appearance: none; background: transparent; border: 0; padding: 0; margin: 0;
+  display: flex; flex-direction: column; align-items: flex-start; gap: 6px;
+  color: inherit; cursor: pointer;
+  transition: transform 180ms var(--ease-out);
+}
+.s15 .bm-primary:hover { transform: translateY(-2px); }
+.s15 .bm-primary .n {
+  font-family: var(--f-display); font-weight: 700; font-size: 82px; line-height: 0.9; letter-spacing: -0.03em;
+  color: var(--mint-accent); font-variant-numeric: tabular-nums;
+}
+.s15 .bm-primary .n i { font-style: normal; font-weight: 400; font-size: 32px; color: rgba(52,238,167,0.55); margin-left: 2px; }
+.s15 .bm-primary .label {
+  font-family: var(--f-display); font-weight: 500; font-size: 12px; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--teal-300);
+}
+.s15 .bm-stat.sm { display: flex; flex-direction: column; gap: 4px; padding-left: 32px; border-left: 1px solid rgba(245,242,234,0.08); }
+.s15 .bm-stat.sm .n {
+  font-family: var(--f-display); font-weight: 700; font-size: 30px; line-height: 1; letter-spacing: -0.02em;
+  color: var(--text-on-dark); font-variant-numeric: tabular-nums;
+}
+.s15 .bm-stat.sm .label {
+  font-family: var(--f-display); font-weight: 500; font-size: 11px; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--text-dim-dark);
+}
+/* Differentiator block — editorial, not a card */
+.s15 .bm-diff { display: flex; flex-direction: column; gap: 6px; padding-top: 4px; }
+.s15 .diff-label {
+  font-family: var(--f-display); font-weight: 500; font-size: 11px; letter-spacing: 0.22em;
+  text-transform: uppercase; color: var(--mint-accent);
+}
+.s15 .diff-body {
+  font-family: var(--f-display); font-weight: 600; font-size: 20px; line-height: 1.35;
+  color: var(--text-on-dark); letter-spacing: -0.005em;
+}
+.s15 .diff-body .sep { color: var(--teal-300); font-weight: 400; margin: 0 6px; }
+.s15 .diff-compare {
+  font-family: var(--f-display); font-weight: 400; font-size: 14px; line-height: 1.55;
+  color: var(--text-dim-dark); margin-top: 4px;
+}
+/* Quotes */
+.s15 .bm-quotes { display: flex; flex-direction: column; gap: 14px; margin-top: 8px; }
+.s15 .bm-quote { display: flex; flex-direction: column; gap: 8px; }
+.s15 .bm-quote blockquote {
+  margin: 0;
+  font-family: var(--f-serif); font-style: italic; font-weight: 400; font-size: 20px; line-height: 1.35;
+  color: var(--text-on-dark); letter-spacing: -0.005em;
+  padding-left: 20px; border-left: 2px solid rgba(94,234,212,0.28);
+}
+.s15 .bm-quote cite {
+  font-style: normal; padding-left: 22px;
+  font-family: var(--f-display); font-weight: 500; font-size: 12px; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--text-dim-dark);
+}
+/* Dovetail clip */
+.s15 .bm-clip { margin-top: 8px; max-width: 420px; }
+
+/* Right column — phone frame */
+.s15 .bm-right { display: flex; justify-content: center; align-items: flex-start; padding-top: 8px; }
+.s15 .bm-phone-wrap { position: relative; }
+.s15 .bm-phone-wrap::before {
+  content: ''; position: absolute; inset: -40px;
+  background: radial-gradient(60% 55% at 50% 55%, rgba(52,238,167,0.12), transparent 70%);
+  pointer-events: none;
+}
+
+/* Body map screen mock */
+.s15 .screen-bodymap-lite {
+  background: linear-gradient(170deg, #062A26 0%, #03100E 100%);
+  color: var(--text-on-dark);
+  padding: 44px 18px 18px 18px;
+  display: flex; flex-direction: column; gap: 10px;
+}
+.s15 .screen-bodymap-lite .screen-status { display: flex; justify-content: space-between; font-size: 11px; font-weight: 600; opacity: 0.88; letter-spacing: 0.02em; }
+.s15 .screen-bodymap-lite .screen-status .icons { display: flex; gap: 4px; align-items: center; }
+.s15 .screen-bodymap-lite .screen-status .wifi { width: 12px; height: 8px; background: currentColor; clip-path: polygon(0 70%, 100% 70%, 100% 100%, 0 100%); }
+.s15 .screen-bodymap-lite .screen-status .battery { width: 22px; height: 10px; border: 1px solid currentColor; border-radius: 2px; position: relative; padding: 1px; }
+.s15 .screen-bodymap-lite .screen-status .battery::after { content: ''; display: block; width: 80%; height: 100%; background: currentColor; border-radius: 1px; }
+.s15 .bm-top { display: flex; align-items: center; justify-content: space-between; padding-top: 4px; font-family: var(--f-display); font-weight: 600; font-size: 14px; color: var(--text-on-dark); }
+.s15 .bm-top .back { color: var(--teal-300); font-weight: 400; }
+.s15 .bm-step { font-family: var(--f-display); font-weight: 500; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--teal-300); }
+.s15 .bm-body-svg { flex: 1; min-height: 0; display: flex; align-items: center; justify-content: center; margin: 4px 0; }
+.s15 .bm-legend { display: flex; flex-direction: column; gap: 4px; padding: 10px 8px; border-radius: 8px; background: rgba(94,234,212,0.05); }
+.s15 .bm-legend .lg { display: flex; align-items: center; gap: 8px; font-family: var(--f-display); font-weight: 500; font-size: 10px; letter-spacing: 0.05em; color: rgba(245,242,234,0.78); }
+.s15 .bm-legend .sw { width: 9px; height: 9px; border-radius: 50%; border: 1px solid transparent; }
+.s15 .bm-legend .lg-suggest { background: rgba(52,238,167,0.22); border-color: rgba(52,238,167,0.8); }
+.s15 .bm-legend .lg-recent  { background: rgba(245,158,11,0.14); border-color: rgba(245,158,11,0.45); }
+.s15 .bm-legend .lg-avail   { background: rgba(94,234,212,0.08); border: 1px dashed rgba(94,234,212,0.45); }
+.s15 .bm-cta {
+  text-align: center; padding: 10px 14px; border-radius: 10px;
+  background: var(--mint-accent); color: #062823;
+  font-family: var(--f-display); font-weight: 600; font-size: 14px; letter-spacing: 0.02em;
+  margin-top: 4px;
+}
+
+/* ============ SLIDE 13 — FEATURE VALIDATION HEAT MATRIX ============ */
+.s13 .fm-headline {
+  font-family: var(--f-display); font-weight: 600; font-size: 42px; line-height: 1.12;
+  letter-spacing: -0.02em; color: var(--ink); margin: 28px 0 0 0; max-width: 1360px;
+}
+.s13 .fm-headline .hl { color: var(--teal-700); }
+.s13 .fm-grid { margin-top: 36px; }
+.s13 .fm-matrix {
+  width: 100%;
+  border-collapse: separate; border-spacing: 6px 0;
+  font-family: var(--f-display);
+  color: var(--ink);
+  table-layout: fixed;
+}
+.s13 .fm-matrix thead th {
+  font-weight: 500; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--ink-mute);
+  text-align: center;
+  padding: 0 0 14px 0;
+  border-bottom: 1px solid rgba(10,26,28,0.14);
+}
+.s13 .fm-matrix thead th.fm-feat { text-align: left; padding-left: 6px; }
+.s13 .fm-matrix thead th .chip { margin: 0; }
+.s13 .fm-matrix tbody td {
+  padding: 0;
+  vertical-align: middle;
+}
+.s13 .fm-matrix tbody td.fm-feat {
+  padding: 14px 16px 14px 6px;
+  font-size: 15px; font-weight: 500; color: var(--ink);
+  border-bottom: 1px solid rgba(10,26,28,0.05);
+  text-align: left;
+}
+.s13 .fm-matrix tbody td.fm-feat .chip { font-size: 14px; letter-spacing: 0; text-transform: none; padding: 6px 12px; height: auto; border-radius: 8px; font-weight: 500; }
+.s13 .fm-matrix tbody td.fm-feat .chip:hover { text-decoration: none; }
+.s13 .fm-matrix tbody tr:last-child td.fm-feat { border-bottom: none; }
+.s13 .fm-note { color: var(--ink-mute); font-weight: 400; font-size: 12px; font-style: italic; margin-left: 6px; }
+.s13 .fm-matrix tbody tr { transition: background 180ms var(--ease-out); }
+.s13 .fm-matrix tbody tr:hover { background: rgba(20,184,166,0.04); }
+
+/* Cell glyph styling */
+.s13 .fm-cell {
+  appearance: none; border: 0; padding: 0; margin: 0;
+  display: flex; align-items: center; justify-content: center;
+  width: 100%; height: 56px;
+  font-family: var(--f-display); font-weight: 600; font-size: 18px;
+  border-radius: 8px;
+  transition: transform 160ms var(--ease-out), background 160ms var(--ease-out);
+  cursor: default;
+  background: transparent; color: var(--ink-mute);
+}
+.s13 .fm-cell.ok   { background: rgba(20,184,166,0.12);  color: var(--teal-700); }
+.s13 .fm-cell.warn { background: rgba(245,158,11,0.14);  color: #B35B00; cursor: pointer; }
+.s13 .fm-cell.bad  { background: rgba(239,68,68,0.14);   color: #B91C1C; cursor: pointer; }
+.s13 .fm-cell.na   { background: rgba(10,26,28,0.05);    color: rgba(10,26,28,0.35); cursor: pointer; }
+.s13 button.fm-cell:hover { transform: translateY(-1px); filter: brightness(0.95); }
+.s13 button.fm-cell:focus-visible { outline: 2px solid var(--teal-500); outline-offset: 2px; }
+
+/* Legend */
+.s13 .fm-legend {
+  display: flex; gap: 28px; flex-wrap: wrap;
+  margin-top: 22px; padding-top: 18px;
+  border-top: 1px solid rgba(10,26,28,0.08);
+  font-family: var(--f-display); font-weight: 500; font-size: 12px; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--ink-mute);
+}
+.s13 .fm-key { display: flex; align-items: center; gap: 8px; }
+.s13 .fm-cell.static {
+  display: inline-flex; width: 26px; height: 26px; font-size: 14px; cursor: default;
+}
+
+/* Callout below */
+.s13 .fm-callout {
+  margin-top: 28px;
+  display: grid; grid-template-columns: auto 1fr; gap: 20px; align-items: center;
+  font-family: var(--f-display); font-weight: 400; font-size: 15px; line-height: 1.5;
+  color: var(--ink-mute);
+}
+.s13 .fm-callout-pill {
+  display: inline-block;
+  padding: 8px 14px; border-radius: 999px;
+  background: var(--teal-500); color: var(--paper);
+  font-family: var(--f-display); font-weight: 600; font-size: 12px; letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+/* ============ SLIDE 11 — TASK FLOW DAY ARC ============ */
+.s11 .flow-headline {
+  font-family: var(--f-display); font-weight: 600; font-size: 42px; line-height: 1.12;
+  letter-spacing: -0.02em; color: var(--text-on-dark); margin: 28px 0 0 0; max-width: 1400px;
+}
+.s11 .flow-headline .hl { color: var(--teal-300); }
+.s11 .flow-chart {
+  position: relative;
+  margin: 54px 0 0 0;
+  height: 460px;
+  padding: 24px 80px 0 80px;
+}
+/* soft mint glow behind the chart */
+.s11 .flow-chart::before {
+  content: ''; position: absolute; inset: -20px -40px;
+  background: radial-gradient(70% 55% at 50% 60%, rgba(52,238,167,0.10), transparent 70%);
+  pointer-events: none; z-index: 0;
+}
+.s11 .flow-endcap {
+  position: absolute; top: 100px;
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  color: var(--teal-300); opacity: 0.7; z-index: 1;
+}
+.s11 .flow-endcap.start { left: 8px; }
+.s11 .flow-endcap.end   { right: 8px; }
+.s11 .flow-endcap .t {
+  font-family: var(--f-display); font-weight: 500; font-size: 10.5px; letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+.s11 .flow-track {
+  position: absolute;
+  left: 140px; right: 140px; top: 132px;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(94,234,212,0.15), rgba(52,238,167,0.35) 50%, rgba(94,234,212,0.15));
+  z-index: 1;
+}
+/* benchmark zone band */
+.s11 .flow-benchmark {
+  position: absolute; left: 140px; right: 140px; top: 128px;
+  height: 10px;
+  pointer-events: none; z-index: 1;
+}
+.s11 .flow-benchmark .band {
+  position: absolute; inset: 0;
+  background: repeating-linear-gradient(135deg, rgba(245,158,11,0.10) 0 4px, transparent 4px 8px);
+  border-top: 1px dashed rgba(245,158,11,0.35);
+  border-bottom: 1px dashed rgba(245,158,11,0.35);
+}
+.s11 .flow-benchmark .band-label {
+  position: absolute; right: 0; top: 20px;
+  font-family: var(--f-display); font-weight: 500; font-size: 10.5px; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--gold);
+}
+.s11 .flow-nodes {
+  position: relative;
+  display: grid; grid-template-columns: repeat(6, 1fr); gap: 0;
+  height: 100%;
+  padding: 0 60px;
+  z-index: 2;
+}
+.s11 .flow-node {
+  appearance: none; background: transparent; border: 0; padding: 0; margin: 0;
+  display: flex; flex-direction: column; align-items: center; gap: 14px;
+  color: var(--text-on-dark); font: inherit;
+  cursor: pointer;
+  position: relative;
+  transition: transform 180ms var(--ease-out);
+}
+.s11 .flow-node:hover { transform: translateY(-3px); }
+.s11 .flow-node:focus-visible { outline: none; }
+.s11 .flow-node:focus-visible .node-dot { box-shadow: 0 0 0 3px var(--teal-300), 0 0 0 6px rgba(94,234,212,0.3); }
+.s11 .node-ico {
+  font-size: 32px; line-height: 1;
+  filter: drop-shadow(0 6px 14px rgba(0,0,0,0.25));
+}
+.s11 .node-dot {
+  width: 16px; height: 16px; border-radius: 50%;
+  background: var(--mint-accent);
+  box-shadow: 0 0 0 4px rgba(52,238,167,0.15), 0 0 16px rgba(52,238,167,0.4);
+  margin-top: 14px;
+  transition: box-shadow 200ms var(--ease-out);
+}
+.s11 .flow-node.flagged .node-dot { background: var(--gold); box-shadow: 0 0 0 4px rgba(245,158,11,0.18), 0 0 16px rgba(245,158,11,0.4); }
+.s11 .node-body {
+  display: flex; flex-direction: column; align-items: center; gap: 6px;
+  margin-top: 20px;
+  text-align: center;
+  min-width: 0;
+}
+.s11 .node-task {
+  font-family: var(--f-display); font-weight: 500; font-size: 11px; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--teal-300);
+}
+.s11 .node-name {
+  font-family: var(--f-display); font-weight: 600; font-size: 16px; line-height: 1.25;
+  color: var(--text-on-dark); letter-spacing: -0.005em;
+  max-width: 150px;
+}
+.s11 .node-score {
+  display: inline-flex; align-items: baseline; gap: 5px;
+  padding: 6px 12px; border-radius: 999px;
+  background: rgba(52,238,167,0.10);
+  border: 1px solid rgba(52,238,167,0.28);
+  font-family: var(--f-display); font-variant-numeric: tabular-nums;
+  margin-top: 4px;
+}
+.s11 .node-score b { font-weight: 700; font-size: 17px; color: var(--mint-accent); letter-spacing: -0.01em; }
+.s11 .node-score i { font-style: normal; font-weight: 500; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(52,238,167,0.75); }
+.s11 .node-score.warn {
+  background: rgba(245,158,11,0.10); border-color: rgba(245,158,11,0.38);
+}
+.s11 .node-score.warn b { color: var(--gold); }
+.s11 .node-score.warn i { color: rgba(245,158,11,0.8); }
+
+/* Summary / caption below the chart */
+.s11 .flow-caption {
+  margin-top: 28px;
+  display: grid; grid-template-columns: auto 1fr; gap: 48px; align-items: center;
+  padding: 22px 0 0 0;
+  border-top: 1px solid rgba(94,234,212,0.12);
+}
+.s11 .flow-summary { display: flex; align-items: baseline; gap: 18px; }
+.s11 .summary-num {
+  font-family: var(--f-display); font-weight: 700; font-size: 56px; line-height: 1;
+  letter-spacing: -0.03em; color: var(--mint-accent);
+  font-variant-numeric: tabular-nums;
+}
+.s11 .summary-num i {
+  font-style: normal; font-weight: 400; font-size: 22px; color: rgba(52,238,167,0.55); margin-left: 4px;
+}
+.s11 .summary-label {
+  font-family: var(--f-display); font-weight: 500; font-size: 14px; letter-spacing: 0.16em;
+  text-transform: uppercase; color: var(--teal-300); max-width: 360px; line-height: 1.4;
+}
+.s11 .flow-note {
+  font-family: var(--f-display); font-weight: 400; font-size: 15px; line-height: 1.5;
+  color: var(--text-dim-dark);
+}
+
+/* ============ SLIDE 10 — PARTICIPANT PROFILE ============ */
+.s10 .p-headline {
+  font-family: var(--f-display); font-weight: 600; font-size: 42px; line-height: 1.12;
+  letter-spacing: -0.02em; color: var(--text-on-dark); margin: 28px 0 0 0; max-width: 1400px;
+}
+.s10 .p-grid {
+  margin-top: 40px;
+  display: grid; grid-template-columns: minmax(0, 1fr) 360px;
+  gap: 72px; align-items: start;
+}
+.s10 .p-table-wrap { min-width: 0; }
+.s10 .p-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--f-display);
+  color: var(--text-on-dark);
+  font-variant-numeric: tabular-nums;
+}
+.s10 .p-table thead th {
+  font-weight: 500; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--teal-300);
+  text-align: left;
+  padding: 0 14px 14px 14px;
+  border-bottom: 1px solid rgba(94,234,212,0.24);
+  white-space: nowrap;
+}
+.s10 .p-table thead th:first-child { padding-left: 0; }
+.s10 .p-table thead th:last-child  { padding-right: 0; }
+.s10 .p-table tbody td {
+  padding: 18px 14px;
+  border-bottom: 1px solid rgba(245,242,234,0.06);
+  font-size: 17px; font-weight: 400;
+  color: var(--text-on-dark);
+  vertical-align: middle;
+}
+.s10 .p-table tbody td:first-child { padding-left: 0; }
+.s10 .p-table tbody td:last-child  { padding-right: 0; }
+.s10 .p-table tbody tr:last-child td { border-bottom: none; }
+.s10 .p-table tbody tr.target td { color: var(--mint-accent); }
+.s10 .p-table tbody tr.target td:nth-child(n+2):nth-child(-n+5) { color: rgba(245,242,234,0.92); }
+.s10 .p-table .col-tech { width: 180px; }
+.s10 .p-table .col-id   { width: 80px; }
+.s10 .p-table .col-age  { width: 70px; }
+.s10 .p-table .col-gender { width: 90px; }
+.s10 .p-table .col-dur  { width: 110px; }
+.s10 .p-table tbody .chip { font-size: 12px; letter-spacing: 0.1em; padding: 3px 10px; height: 24px; }
+/* 7-dot tech-comfort bar */
+.s10 .tc-row { display: inline-flex; align-items: center; gap: 12px; }
+.s10 .dots { display: inline-flex; gap: 4px; align-items: center; }
+.s10 .dots i {
+  display: inline-block; width: 7px; height: 7px; border-radius: 50%;
+  background: rgba(245,242,234,0.14);
+}
+.s10 .dots i.on { background: var(--mint-accent); box-shadow: 0 0 0 1px rgba(52,238,167,0.16); }
+.s10 .tc-val { font-family: var(--f-display); font-weight: 600; font-size: 14px; color: rgba(245,242,234,0.82); font-variant-numeric: tabular-nums; letter-spacing: 0.02em; }
+.s10 .tc-val i { font-style: normal; font-weight: 400; color: rgba(245,242,234,0.5); }
+
+/* Sidebar callouts — typographic stack, no cards */
+.s10 .p-aside { display: flex; flex-direction: column; padding-top: 4px; }
+.s10 .p-stat {
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(245,242,234,0.08);
+  display: flex; flex-direction: column; gap: 4px;
+}
+.s10 .p-stat:first-child { padding-top: 0; }
+.s10 .p-stat-val {
+  font-family: var(--f-display); font-weight: 600; font-size: 30px; line-height: 1;
+  letter-spacing: -0.01em; color: var(--text-on-dark);
+  font-variant-numeric: tabular-nums;
+}
+.s10 .p-stat-val i { font-style: normal; font-weight: 400; color: rgba(245,242,234,0.45); font-size: 18px; letter-spacing: 0; }
+.s10 .p-stat-val .sep { color: var(--teal-300); font-weight: 400; margin: 0 4px; }
+.s10 .p-stat-lbl {
+  font-family: var(--f-display); font-weight: 500; font-size: 11px; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--text-dim-dark);
+}
+.s10 .p-target { padding: 22px 0 0 0; display: flex; flex-direction: column; gap: 10px; }
+.s10 .p-target-lbl {
+  font-family: var(--f-display); font-weight: 500; font-size: 11px; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--mint-accent);
+}
+.s10 .p-target-chips { display: flex; gap: 8px; }
+
+/* ============ SLIDE 9 — STUDY DESIGN OVERVIEW ============ */
+/* Explicit flex layout with hard height budgets — grid+1fr was letting
+   children overflow (see lessons-learned.md Batch B entry). */
+.s9 .study-grid {
+  margin-top: 28px;
+  display: flex; flex-direction: column; gap: 32px;
+  height: calc(1080px - 88px - 108px - 28px); /* top pad · foot · grid margin */
+}
+.s9 .study-head { flex: 0 0 auto; }
+.s9 .study-headline {
+  font-family: var(--f-display); font-weight: 600; font-size: 42px; line-height: 1.12;
+  letter-spacing: -0.02em; color: var(--ink); margin: 0; max-width: 1400px;
+}
+.s9 .study-headline .hl { color: var(--teal-700); }
+.s9 .study-main {
+  flex: 1 1 auto; min-height: 0;
+  display: grid; grid-template-columns: minmax(0, 1fr) 560px; gap: 56px; align-items: stretch;
+}
+.s9 .study-photo {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 24px 56px -28px rgba(10,26,28,0.28), 0 2px 8px -2px rgba(10,26,28,0.10);
+  background: var(--ink);
+  min-height: 0;
+}
+.s9 .study-specs { display: flex; flex-direction: column; gap: 36px; padding-top: 4px; min-height: 0; }
+.s9 .spec-col { display: flex; flex-direction: column; gap: 14px; }
+.s9 .spec-label {
+  font-family: var(--f-display); font-weight: 600; font-size: 12px; letter-spacing: 0.22em;
+  text-transform: uppercase; color: var(--teal-700);
+  padding-bottom: 12px; border-bottom: 1px solid rgba(10,26,28,0.14);
+}
+.s9 .spec-list {
+  list-style: none; counter-reset: spec; margin: 0; padding: 0;
+  display: flex; flex-direction: column;
+}
+.s9 .spec-list li {
+  counter-increment: spec;
+  position: relative;
+  padding: 11px 0 11px 44px;
+  border-bottom: 1px solid rgba(10,26,28,0.06);
+  font-family: var(--f-display); font-weight: 400; font-size: 16px; line-height: 1.45; color: var(--ink-mute);
+}
+.s9 .spec-list li:last-child { border-bottom: none; }
+.s9 .spec-list li::before {
+  content: counter(spec, decimal-leading-zero);
+  position: absolute; left: 0; top: 13px;
+  font-family: var(--f-display); font-weight: 700; font-size: 13px; letter-spacing: 0.08em;
+  color: var(--teal-700);
+  font-variant-numeric: tabular-nums;
+}
+.s9 .spec-list .spec-lead { color: var(--ink); font-weight: 600; }
+/* Chip inside a spec list aligns flush with body copy */
+.s9 .spec-list .chip.chip-inline { vertical-align: baseline; transform: translateY(1px); }
+
+/* ---------- Lab-photo placeholder (swaps for real still via data-asset) ---------- */
+.s9 .study-photo-placeholder {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column;
+  background:
+    repeating-linear-gradient(135deg, rgba(245,242,234,0.015) 0 2px, transparent 2px 6px),
+    linear-gradient(180deg, #0B2B27 0%, #041714 100%);
+  color: var(--text-on-dark);
+}
+.s9 .sp-chrome {
+  display: flex; align-items: center; gap: 14px;
+  padding: 14px 18px;
+  border-bottom: 1px solid rgba(94,234,212,0.16);
+  font-family: var(--f-display); font-weight: 500; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--teal-300);
+}
+.s9 .sp-recdot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: #EF4444; box-shadow: 0 0 0 3px rgba(239,68,68,0.22);
+  animation: rec-pulse 1.8s infinite ease-in-out;
+}
+@keyframes rec-pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.55; } }
+.s9 .sp-label { flex: 1; }
+.s9 .sp-ts { font-family: var(--f-display); font-variant-numeric: tabular-nums; color: rgba(245,242,234,0.6); letter-spacing: 0.08em; }
+.s9 .sp-caption {
+  flex: 1; display: flex; align-items: center; justify-content: center;
+  font-family: var(--f-display); font-weight: 400; font-size: 14px; letter-spacing: 0.04em;
+  color: rgba(245,242,234,0.38); text-align: center; padding: 20px;
+}
+/* When a real photo loads, hide the placeholder layer */
+.s9 .study-photo.has-asset .study-photo-placeholder { display: none; }
+
 /* ============ SLIDE 2 — MEET THE TEAM ============ */
-.s2 .slide-frame { padding-bottom: 96px; }
+.s6 .slide-frame { padding-bottom: 96px; }
 .team-head { margin-top: 36px; display: grid; grid-template-columns: minmax(0,1fr) 380px; gap: 72px; align-items: end; }
 .team-headline {
   font-family: var(--f-display); font-weight: 600; font-size: 46px; line-height: 1.1; letter-spacing: -0.02em;
@@ -2283,7 +2789,7 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
 /* Per-person crop biases — object-position: the 2nd % picks which part of the source image
    anchors to the container. 0% = top of image, 100% = bottom. Henry's face is near the bottom
    of the source, so we anchor toward the bottom. */
-.team-avatar[data-headshot="henry-levinson"] img { object-position: 50% 85%; }
+.team-avatar[data-headshot="henry-levinson"] img { object-position: 50% 65%; }
 .team-avatar .monogram {
   font-family: var(--f-display); font-weight: 600; font-size: 64px; color: var(--text-on-dark);
   letter-spacing: -0.02em; text-transform: uppercase;
@@ -2902,15 +3408,16 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
 </section>
 
 <!-- SLIDE 5: PHOTO MEAL LOGGING -->
-<!-- SLIDE 8: SECTION STARTER — STUDY DESIGN (shell for Batch B) -->
-<section class="slide s8 slide-shell">
+<!-- SLIDE 8: SECTION STARTER — STUDY DESIGN & PARTICIPANT PROFILE -->
+<section class="slide s8 slide-section-starter starter-a">
+  <svg class="x-watermark" viewBox="0 0 1111 926" aria-hidden="true"><use href="#x-symbol"/></svg>
   <div class="slide-frame">
-    <div class="shell-body">
-      <div class="shell-eyebrow reveal d1">Slide 08 · Section Starter</div>
-      <div class="shell-num reveal d2">08</div>
-      <h1 class="shell-title reveal d3">Section 02 — Study Design & Participant Profile</h1>
-      <p class="shell-sub reveal d4">Under construction — built in Batch B.</p>
-      <span class="shell-tag reveal d5"><span class="dot"></span>Batch B · Pending</span>
+    <div class="ss-eyebrow reveal d1">Section 02</div>
+    <div class="ss-body">
+      <div class="ss-num reveal d2">02</div>
+      <h1 class="ss-title reveal d3">Study Design &amp; <span class="title-accent">Participant Profile</span></h1>
+      <p class="ss-sub reveal d4">How the study was run, who participated, and what was measured.</p>
+      <div class="ss-rule reveal d5"></div>
     </div>
     <div class="slide-foot">
       <div class="foot-left">
@@ -2922,19 +3429,55 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
   </div>
 </section>
 
-<!-- SLIDE 9: STUDY DESIGN OVERVIEW (shell for Batch B) -->
-<section class="slide s9 slide-shell">
+<!-- SLIDE 9: STUDY DESIGN OVERVIEW -->
+<section class="slide s9 slide-paper">
   <div class="slide-frame">
-    <div class="shell-body">
-      <div class="shell-eyebrow reveal d1">Slide 09 · Study Design</div>
-      <div class="shell-num reveal d2">09</div>
-      <h1 class="shell-title reveal d3">Study Design Overview</h1>
-      <p class="shell-sub reveal d4">Under construction — built in Batch B.</p>
-      <span class="shell-tag reveal d5"><span class="dot"></span>Batch B · Pending</span>
+    <div class="reveal d1" style="display:flex;align-items:center;justify-content:space-between">
+      <div class="eyebrow">Section 02 &middot; Study Design</div>
+      <div style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-dim);font-weight:500">April 7, 2026 &middot; Bala Cynwyd, PA</div>
+    </div>
+    <div class="study-grid">
+      <div class="study-head reveal d2">
+        <h1 class="study-headline">Seven moderated sessions. One simulated day with the <span class="hl">MetabolX</span> prototype.</h1>
+      </div>
+      <div class="study-main">
+        <div class="study-photo reveal d3" data-asset="lab-overhead" data-asset-folder="photos" data-asset-ext="jpg">
+          <div class="study-photo-placeholder">
+            <div class="sp-chrome">
+              <span class="sp-recdot"></span>
+              <span class="sp-label">Dovetail &middot; Session recording</span>
+              <span class="sp-ts">00:42:18</span>
+            </div>
+            <div class="sp-caption">Overhead lab-session still &mdash; swap when final asset lands</div>
+          </div>
+        </div>
+        <div class="study-specs">
+          <div class="spec-col reveal d4">
+            <div class="spec-label">Methodology</div>
+            <ol class="spec-list">
+              <li><span class="spec-lead">Moderated in-person testing</span> at Core Human Factors, Bala Cynwyd PA</li>
+              <li><span class="spec-lead">60-minute sessions</span>, think-aloud protocol</li>
+              <li><button class="chip chip-inline" data-cite="seq-metric">SEQ</button> after every task</li>
+              <li><span class="spec-lead">Post-session questionnaire</span> &mdash; 6 satisfaction items, 7-point scale</li>
+              <li><button class="chip chip-inline" data-cite="rainbow-grid">Rainbow Grid</button> behavioural observation</li>
+              <li><span class="spec-lead">Full video + transcription</span> via Dovetail</li>
+            </ol>
+          </div>
+          <div class="spec-col reveal d5">
+            <div class="spec-label">Prototype</div>
+            <ol class="spec-list">
+              <li><span class="spec-lead">Lovable-built PWA</span> on iOS &mdash; fully interactive</li>
+              <li><span class="spec-lead">Live AI integration</span>, not scripted responses</li>
+              <li><span class="spec-lead">Simulated patient profile</span> &ldquo;Jennifer&rdquo;</li>
+              <li><span class="spec-lead">Treated as a real app</span> by every participant</li>
+            </ol>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="slide-foot">
       <div class="foot-left">
-        <svg class="mark" viewBox="0 0 1128 431" aria-label="BIX" style="color: var(--on-dark)"><use href="#bix-logo"/></svg>
+        <svg class="mark" viewBox="0 0 1128 431" aria-label="BIX"><use href="#bix-logo"/></svg>
         <span class="foot-internal">BI X Digital Innovation Lab &nbsp;|&nbsp; ONLY FOR INTERNAL USE</span>
       </div>
       <div class="foot-page">09</div>
@@ -2942,15 +3485,93 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
   </div>
 </section>
 
-<!-- SLIDE 10: PARTICIPANT PROFILE (shell for Batch B) -->
-<section class="slide s10 slide-shell">
+<!-- SLIDE 10: PARTICIPANT PROFILE -->
+<section class="slide s10 slide-dark">
   <div class="slide-frame">
-    <div class="shell-body">
-      <div class="shell-eyebrow reveal d1">Slide 10 · Study Design</div>
-      <div class="shell-num reveal d2">10</div>
-      <h1 class="shell-title reveal d3">Participant Profile</h1>
-      <p class="shell-sub reveal d4">Under construction — built in Batch B.</p>
-      <span class="shell-tag reveal d5"><span class="dot"></span>Batch B · Pending</span>
+    <div class="reveal d1" style="display:flex;align-items:center;justify-content:space-between">
+      <div class="eyebrow">Section 02 &middot; Who participated</div>
+      <div style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--on-dark-mute);font-weight:500">n = 7</div>
+    </div>
+    <div class="reveal d2">
+      <h1 class="p-headline">Seven GLP-1 patients. Target segment &mdash; women, 50&ndash;65 &mdash; over-represented by design.</h1>
+    </div>
+    <div class="p-grid">
+      <div class="p-table-wrap reveal d3">
+        <table class="p-table">
+          <thead>
+            <tr>
+              <th class="col-id">ID</th>
+              <th class="col-age">Age</th>
+              <th class="col-gender">Gender</th>
+              <th class="col-med">Medication</th>
+              <th class="col-dur">Duration</th>
+              <th class="col-tech">Tech comfort</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><button class="chip chip-inline" data-cite="p01">P01</button></td>
+              <td>36</td><td>F</td><td>Wegovy</td><td>5 mo</td>
+              <td><span class="tc-row"><span class="dots" data-value="7"></span><span class="tc-val">7<i>/7</i></span></span></td>
+            </tr>
+            <tr>
+              <td><button class="chip chip-inline" data-cite="p02">P02</button></td>
+              <td>44</td><td>M</td><td>Wegovy</td><td>5 mo</td>
+              <td><span class="tc-row"><span class="dots" data-value="7"></span><span class="tc-val">7<i>/7</i></span></span></td>
+            </tr>
+            <tr>
+              <td><button class="chip chip-inline" data-cite="p03">P03</button></td>
+              <td>54</td><td>F</td><td>Wegovy</td><td>6 mo</td>
+              <td><span class="tc-row"><span class="dots" data-value="6"></span><span class="tc-val">6<i>/7</i></span></span></td>
+            </tr>
+            <tr>
+              <td><button class="chip chip-inline" data-cite="p04">P04</button></td>
+              <td>49</td><td>F</td><td>Zepbound</td><td>4 mo</td>
+              <td><span class="tc-row"><span class="dots" data-value="7"></span><span class="tc-val">7<i>/7</i></span></span></td>
+            </tr>
+            <tr class="target">
+              <td><button class="chip chip-inline" data-cite="p05">P05</button></td>
+              <td>61</td><td>F</td><td>Zepbound +</td><td>1 yr</td>
+              <td><span class="tc-row"><span class="dots" data-value="7"></span><span class="tc-val">7<i>/7</i></span></span></td>
+            </tr>
+            <tr>
+              <td><button class="chip chip-inline" data-cite="p06">P06</button></td>
+              <td>36</td><td>F</td><td>Zepbound</td><td>2 mo</td>
+              <td><span class="tc-row"><span class="dots" data-value="6"></span><span class="tc-val">6<i>/7</i></span></span></td>
+            </tr>
+            <tr class="target">
+              <td><button class="chip chip-inline" data-cite="p07">P07</button></td>
+              <td>57</td><td>F</td><td>Zepbound</td><td>5 mo</td>
+              <td><span class="tc-row"><span class="dots" data-value="5"></span><span class="tc-val">5<i>/7</i></span></span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <aside class="p-aside reveal d4">
+        <div class="p-stat">
+          <div class="p-stat-val">6 F <span class="sep">&middot;</span> 1 M</div>
+          <div class="p-stat-lbl">Gender split</div>
+        </div>
+        <div class="p-stat">
+          <div class="p-stat-val">36 <span class="sep">&ndash;</span> 61</div>
+          <div class="p-stat-lbl">Age range &middot; median 49</div>
+        </div>
+        <div class="p-stat">
+          <div class="p-stat-val">2 mo <span class="sep">&ndash;</span> 1 yr</div>
+          <div class="p-stat-lbl">GLP-1 duration</div>
+        </div>
+        <div class="p-stat">
+          <div class="p-stat-val">7 <i>/ 7</i></div>
+          <div class="p-stat-lbl">Prior health-app experience</div>
+        </div>
+        <div class="p-target">
+          <div class="p-target-lbl">Women, 50&ndash;65 &middot; target segment</div>
+          <div class="p-target-chips">
+            <button class="chip chip-inline" data-cite="p05">P05</button>
+            <button class="chip chip-inline" data-cite="p07">P07</button>
+          </div>
+        </div>
+      </aside>
     </div>
     <div class="slide-foot">
       <div class="foot-left">
@@ -2962,15 +3583,93 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
   </div>
 </section>
 
-<!-- SLIDE 11: TASK FLOW (shell for Batch C) -->
-<section class="slide s11 slide-shell">
+<!-- SLIDE 11: TASK FLOW — A DAY WITH METABOLX -->
+<section class="slide s11 slide-data-stage">
   <div class="slide-frame">
-    <div class="shell-body">
-      <div class="shell-eyebrow reveal d1">Slide 11 · Study Design</div>
-      <div class="shell-num reveal d2">11</div>
-      <h1 class="shell-title reveal d3">Task Flow — A Day in the App</h1>
-      <p class="shell-sub reveal d4">Under construction — built in Batch C.</p>
-      <span class="shell-tag reveal d5"><span class="dot"></span>Batch C · Pending</span>
+    <div class="reveal d1" style="display:flex;align-items:center;justify-content:space-between">
+      <div class="eyebrow">Section 02 &middot; What we measured</div>
+      <div style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--on-dark-mute);font-weight:500">Six tasks &middot; One simulated day</div>
+    </div>
+    <div class="reveal d2">
+      <h1 class="flow-headline">A day with <span class="hl">MetabolX</span> &mdash; structured as six tasks from morning to evening.</h1>
+    </div>
+    <div class="flow-chart reveal d3" aria-label="Day arc showing six tasks and their SEQ scores">
+      <div class="flow-endcap start" aria-hidden="true">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="4.5" fill="currentColor"/><g stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="2" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="22"/><line x1="2" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="22" y2="12"/><line x1="4.22" y1="4.22" x2="6.34" y2="6.34"/><line x1="17.66" y1="17.66" x2="19.78" y2="19.78"/><line x1="4.22" y1="19.78" x2="6.34" y2="17.66"/><line x1="17.66" y1="6.34" x2="19.78" y2="4.22"/></g></svg>
+        <span class="t">Morning</span>
+      </div>
+      <div class="flow-endcap end" aria-hidden="true">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" fill="currentColor" fill-opacity="0.15"/></svg>
+        <span class="t">Evening</span>
+      </div>
+      <div class="flow-benchmark" aria-hidden="true">
+        <span class="band"></span>
+        <span class="band-label">Industry benchmark &middot; 5.5 / 7</span>
+      </div>
+      <div class="flow-track" aria-hidden="true"></div>
+      <div class="flow-nodes">
+        <button type="button" class="flow-node chip-trigger" data-cite="task-t1" style="--score: 6.7">
+          <span class="node-ico">&#9728;&#65039;</span>
+          <span class="node-dot"></span>
+          <span class="node-body">
+            <span class="node-task">T1 &middot; Explore</span>
+            <span class="node-name">Morning home screen</span>
+            <span class="node-score"><b>6.7</b><i>SEQ</i></span>
+          </span>
+        </button>
+        <button type="button" class="flow-node chip-trigger" data-cite="task-t2" style="--score: 6.6">
+          <span class="node-ico">&#128137;</span>
+          <span class="node-dot"></span>
+          <span class="node-body">
+            <span class="node-task">T2 &middot; Log</span>
+            <span class="node-name">Injection</span>
+            <span class="node-score"><b>6.6</b><i>SEQ</i></span>
+          </span>
+        </button>
+        <button type="button" class="flow-node chip-trigger" data-cite="task-t3" style="--score: 6.7">
+          <span class="node-ico">&#127869;&#65039;</span>
+          <span class="node-dot"></span>
+          <span class="node-body">
+            <span class="node-task">T3 &middot; Log</span>
+            <span class="node-name">Lunch</span>
+            <span class="node-score"><b>6.7</b><i>SEQ</i></span>
+          </span>
+        </button>
+        <button type="button" class="flow-node chip-trigger flagged" data-cite="task-t4" style="--score: 5.4">
+          <span class="node-ico">&#129302;</span>
+          <span class="node-dot"></span>
+          <span class="node-body">
+            <span class="node-task">T4 &middot; Use</span>
+            <span class="node-name">AI Coach</span>
+            <span class="node-score warn"><b>5.4</b><i>SEQ</i></span>
+          </span>
+        </button>
+        <button type="button" class="flow-node chip-trigger" data-cite="task-t5" style="--score: 6.3">
+          <span class="node-ico">&#128218;</span>
+          <span class="node-dot"></span>
+          <span class="node-body">
+            <span class="node-task">T5 &middot; Find</span>
+            <span class="node-name">Learning content</span>
+            <span class="node-score"><b>6.3</b><i>SEQ</i></span>
+          </span>
+        </button>
+        <button type="button" class="flow-node chip-trigger" data-cite="task-t6" style="--score: 6.9">
+          <span class="node-ico">&#127769;</span>
+          <span class="node-dot"></span>
+          <span class="node-body">
+            <span class="node-task">T6 &middot; Reflect</span>
+            <span class="node-name">Evening wind-down</span>
+            <span class="node-score"><b>6.9</b><i>SEQ</i></span>
+          </span>
+        </button>
+      </div>
+    </div>
+    <div class="flow-caption reveal d4">
+      <div class="flow-summary">
+        <span class="summary-num">6.4<i>/ 7</i></span>
+        <span class="summary-label">Overall mean SEQ &middot; all six tasks above the industry benchmark</span>
+      </div>
+      <div class="flow-note">T4&rsquo;s lower score reflects discoverability &mdash; not interaction quality. Once users found the AI Coach, 7/7 found it useful.</div>
     </div>
     <div class="slide-foot">
       <div class="foot-left">
@@ -2982,15 +3681,16 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
   </div>
 </section>
 
-<!-- SLIDE 12: SECTION STARTER — WHAT RESONATED (shell for Batch C) -->
-<section class="slide s12 slide-shell">
+<!-- SLIDE 12: SECTION STARTER — WHAT RESONATED WITH USERS -->
+<section class="slide s12 slide-section-starter starter-a">
+  <svg class="x-watermark" viewBox="0 0 1111 926" aria-hidden="true"><use href="#x-symbol"/></svg>
   <div class="slide-frame">
-    <div class="shell-body">
-      <div class="shell-eyebrow reveal d1">Slide 12 · Section Starter</div>
-      <div class="shell-num reveal d2">12</div>
-      <h1 class="shell-title reveal d3">Section 03 — What Resonated with Users</h1>
-      <p class="shell-sub reveal d4">Under construction — built in Batch C.</p>
-      <span class="shell-tag reveal d5"><span class="dot"></span>Batch C · Pending</span>
+    <div class="ss-eyebrow reveal d1">Section 03</div>
+    <div class="ss-body">
+      <div class="ss-num reveal d2">03</div>
+      <h1 class="ss-title reveal d3">What Resonated <span class="title-accent">with Users</span></h1>
+      <p class="ss-sub reveal d4">The features that generated genuine delight &mdash; in participants&rsquo; own words.</p>
+      <div class="ss-rule reveal d5"></div>
     </div>
     <div class="slide-foot">
       <div class="foot-left">
@@ -3002,19 +3702,107 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
   </div>
 </section>
 
-<!-- SLIDE 13: FEATURE VALIDATION OVERVIEW (shell for Batch C) -->
-<section class="slide s13 slide-shell">
+<!-- SLIDE 13: FEATURE VALIDATION OVERVIEW — HEAT MATRIX -->
+<section class="slide s13 slide-paper">
   <div class="slide-frame">
-    <div class="shell-body">
-      <div class="shell-eyebrow reveal d1">Slide 13 · What Resonated</div>
-      <div class="shell-num reveal d2">13</div>
-      <h1 class="shell-title reveal d3">Feature Validation Overview</h1>
-      <p class="shell-sub reveal d4">Under construction — built in Batch C.</p>
-      <span class="shell-tag reveal d5"><span class="dot"></span>Batch C · Pending</span>
+    <div class="reveal d1" style="display:flex;align-items:center;justify-content:space-between">
+      <div class="eyebrow">Section 03 &middot; Feature reception</div>
+      <div style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-dim);font-weight:500">6 features &middot; 7 participants &middot; 42 data points</div>
+    </div>
+    <div class="reveal d2">
+      <h1 class="fm-headline">Core features validated across the cohort. <span class="hl">Every critical path</span> cleared the bar.</h1>
+    </div>
+    <div class="fm-grid reveal d3">
+      <table class="fm-matrix">
+        <thead>
+          <tr>
+            <th class="fm-feat">Feature</th>
+            <th><button class="chip chip-inline" data-cite="p01">P01</button></th>
+            <th><button class="chip chip-inline" data-cite="p02">P02</button></th>
+            <th><button class="chip chip-inline" data-cite="p03">P03</button></th>
+            <th><button class="chip chip-inline" data-cite="p04">P04</button></th>
+            <th><button class="chip chip-inline" data-cite="p05">P05</button></th>
+            <th><button class="chip chip-inline" data-cite="p06">P06</button></th>
+            <th><button class="chip chip-inline" data-cite="p07">P07</button></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="fm-feat"><button class="chip chip-inline" data-cite="feat-home">Home &middot; Wellness Score</button></td>
+            <td><span class="fm-cell ok">&#10003;</span></td>
+            <td><span class="fm-cell ok">&#10003;</span></td>
+            <td><span class="fm-cell ok">&#10003;</span></td>
+            <td><span class="fm-cell ok">&#10003;</span></td>
+            <td><span class="fm-cell ok">&#10003;</span></td>
+            <td><span class="fm-cell ok">&#10003;</span></td>
+            <td><span class="fm-cell ok">&#10003;</span></td>
+          </tr>
+          <tr>
+            <td class="fm-feat"><button class="chip chip-inline" data-cite="feat-body">Body-map injection tracker</button></td>
+            <td><span class="fm-cell ok">&#10003;</span></td>
+            <td><span class="fm-cell ok">&#10003;</span></td>
+            <td><span class="fm-cell ok">&#10003;</span></td>
+            <td><span class="fm-cell ok">&#10003;</span></td>
+            <td><span class="fm-cell ok">&#10003;</span></td>
+            <td><span class="fm-cell ok">&#10003;</span></td>
+            <td><span class="fm-cell ok">&#10003;</span></td>
+          </tr>
+          <tr>
+            <td class="fm-feat"><button class="chip chip-inline" data-cite="feat-meal">Photo meal logging</button></td>
+            <td><button class="fm-cell na" data-cite="meal-p01">&mdash;</button></td>
+            <td><span class="fm-cell ok">&#10003;</span></td>
+            <td><span class="fm-cell ok">&#10003;</span></td>
+            <td><span class="fm-cell ok">&#10003;</span></td>
+            <td><span class="fm-cell ok">&#10003;</span></td>
+            <td><span class="fm-cell ok">&#10003;</span></td>
+            <td><span class="fm-cell ok">&#10003;</span></td>
+          </tr>
+          <tr>
+            <td class="fm-feat"><button class="chip chip-inline" data-cite="feat-coach">AI Coach <span class="fm-note">(post-discovery)</span></button></td>
+            <td><span class="fm-cell ok">&#10003;</span></td>
+            <td><span class="fm-cell ok">&#10003;</span></td>
+            <td><span class="fm-cell ok">&#10003;</span></td>
+            <td><span class="fm-cell ok">&#10003;</span></td>
+            <td><span class="fm-cell ok">&#10003;</span></td>
+            <td><span class="fm-cell ok">&#10003;</span></td>
+            <td><span class="fm-cell ok">&#10003;</span></td>
+          </tr>
+          <tr>
+            <td class="fm-feat"><button class="chip chip-inline" data-cite="feat-learn">Learning pathways</button></td>
+            <td><span class="fm-cell ok">&#10003;</span></td>
+            <td><span class="fm-cell ok">&#10003;</span></td>
+            <td><span class="fm-cell ok">&#10003;</span></td>
+            <td><span class="fm-cell ok">&#10003;</span></td>
+            <td><button class="fm-cell warn" data-cite="learn-p05">!</button></td>
+            <td><span class="fm-cell ok">&#10003;</span></td>
+            <td><span class="fm-cell ok">&#10003;</span></td>
+          </tr>
+          <tr>
+            <td class="fm-feat"><button class="chip chip-inline" data-cite="feat-refl">Evening reflections <span class="fm-note">(segment feature)</span></button></td>
+            <td><button class="fm-cell bad" data-cite="refl-p01">&#10005;</button></td>
+            <td><button class="fm-cell warn" data-cite="refl-p02">!</button></td>
+            <td><button class="fm-cell warn" data-cite="refl-p03">!</button></td>
+            <td><span class="fm-cell ok">&#10003;</span></td>
+            <td><button class="fm-cell warn" data-cite="refl-p05">!</button></td>
+            <td><span class="fm-cell ok">&#10003;</span></td>
+            <td><span class="fm-cell ok">&#10003;</span></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="fm-legend">
+        <span class="fm-key"><span class="fm-cell ok static">&#10003;</span> Positive reception</span>
+        <span class="fm-key"><span class="fm-cell warn static">!</span> Mixed / conditional</span>
+        <span class="fm-key"><span class="fm-cell bad static">&#10005;</span> Refused</span>
+        <span class="fm-key"><span class="fm-cell na static">&mdash;</span> Not tested</span>
+      </div>
+    </div>
+    <div class="fm-callout reveal d4">
+      <span class="fm-callout-pill">Reflections variation is by design</span>
+      Every universal feature cleared the cohort. Evening reflections is a segment feature &mdash; its adoption curve depends on matching the right users, not retrofitting all of them.
     </div>
     <div class="slide-foot">
       <div class="foot-left">
-        <svg class="mark" viewBox="0 0 1128 431" aria-label="BIX" style="color: var(--on-dark)"><use href="#bix-logo"/></svg>
+        <svg class="mark" viewBox="0 0 1128 431" aria-label="BIX"><use href="#bix-logo"/></svg>
         <span class="foot-internal">BI X Digital Innovation Lab &nbsp;|&nbsp; ONLY FOR INTERNAL USE</span>
       </div>
       <div class="foot-page">13</div>
@@ -3116,15 +3904,115 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
   </div>
 </section>
 
-<!-- SLIDE 15: BODY MAP INJECTION TRACKER (shell for Batch C) -->
-<section class="slide s15 slide-shell">
+<!-- SLIDE 15: BODY MAP INJECTION TRACKER — phone-right variant per user pref -->
+<section class="slide s15 slide-dark">
   <div class="slide-frame">
-    <div class="shell-body">
-      <div class="shell-eyebrow reveal d1">Slide 15 · What Resonated</div>
-      <div class="shell-num reveal d2">15</div>
-      <h1 class="shell-title reveal d3">Body Map Injection Tracker</h1>
-      <p class="shell-sub reveal d4">Under construction — built in Batch C.</p>
-      <span class="shell-tag reveal d5"><span class="dot"></span>Batch C · Pending</span>
+    <div class="reveal d1" style="display:flex;align-items:center;justify-content:space-between">
+      <div class="eyebrow">What resonated &middot; Universal approval</div>
+      <div style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--on-dark-mute);font-weight:500">Body map &middot; injection tracker</div>
+    </div>
+    <div class="bm-grid">
+      <div class="bm-left">
+        <div class="reveal d2">
+          <h1 class="bm-headline">Seven out of seven positive. <span class="hl">No competitor</span> offers the same combination.</h1>
+        </div>
+        <div class="bm-stat-row reveal d3">
+          <button class="chip-trigger n-trigger bm-primary" data-cite="body-map-77">
+            <div class="n">7<i>/7</i></div>
+            <div class="label">Positive reception</div>
+          </button>
+          <div class="bm-stat sm">
+            <div class="n">6.7</div>
+            <div class="label">Mean usefulness</div>
+          </div>
+        </div>
+        <div class="bm-diff reveal d4">
+          <div class="diff-label">Differentiator</div>
+          <div class="diff-body">Visual site selection <span class="sep">&middot;</span> rotation history <span class="sep">&middot;</span> suggested next site</div>
+          <div class="diff-compare">Against <button class="chip chip-inline" data-cite="p02">P02</button>&rsquo;s Microhealth, <button class="chip chip-inline" data-cite="p05">P05</button>&rsquo;s Shotzy, and generic health-tracker tools &mdash; this combination is unique.</div>
+        </div>
+        <div class="bm-quotes">
+          <div class="bm-quote reveal d5">
+            <blockquote>This is a lot better because the app that I use only tracks my infusions.</blockquote>
+            <cite><button class="chip" data-cite="p02">P02</button> &middot; 44M &middot; Wegovy</cite>
+          </div>
+          <div class="bm-quote reveal d6">
+            <blockquote>I like that it tells you where your last one was &mdash; in [my app] I actually have to go back and look.</blockquote>
+            <cite><button class="chip" data-cite="p05">P05</button> &middot; 61F &middot; Zepbound +</cite>
+          </div>
+        </div>
+        <div class="bm-clip reveal d7" data-video="p02-bodymap-1546">
+          <div class="clip-card" role="button" tabindex="0" aria-label="Play clip">
+            <div class="clip-label">
+              <span class="rec-dot"></span>
+              <span>Dovetail clip</span>
+            </div>
+            <div class="clip-thumb">
+              <div class="clip-waveform" aria-hidden="true">
+                <span style="height:26%"></span><span style="height:44%"></span><span style="height:62%"></span><span style="height:38%"></span><span style="height:78%"></span><span style="height:50%"></span><span style="height:30%"></span><span style="height:68%"></span><span style="height:52%"></span><span style="height:40%"></span><span style="height:86%"></span><span style="height:56%"></span><span style="height:44%"></span><span style="height:72%"></span><span style="height:36%"></span><span style="height:60%"></span><span style="height:48%"></span><span style="height:80%"></span><span style="height:42%"></span><span style="height:58%"></span>
+              </div>
+              <div class="clip-play" aria-hidden="true"></div>
+            </div>
+            <div class="clip-meta">
+              <span class="pid">P02 &middot; 15:46</span>
+              <span class="ts">0:08</span>
+            </div>
+            <div class="clip-quote">&ldquo;This is a lot better&hellip;&rdquo;</div>
+          </div>
+        </div>
+      </div>
+      <div class="bm-right reveal d3">
+        <div class="bm-phone-wrap">
+          <div class="phone" aria-label="iPhone Air showing the body map injection tracker">
+            <div class="btn-side btn-action"></div>
+            <div class="btn-side btn-vol-up"></div>
+            <div class="btn-side btn-vol-down"></div>
+            <div class="btn-side btn-power"></div>
+            <div class="phone-screen">
+              <div class="phone-island" aria-hidden="true"></div>
+              <div class="screen screen-bodymap-lite" data-asset="bodymap-injection" data-asset-folder="screenshots" data-asset-ext="png">
+                <div class="screen-status">
+                  <span class="time">9:41</span>
+                  <span class="icons"><span class="wifi"></span><span class="battery"></span></span>
+                </div>
+                <div class="bm-top">
+                  <span class="back">&larr;</span>
+                  <span class="title">Log injection</span>
+                  <span class="edit">&nbsp;</span>
+                </div>
+                <div class="bm-step">Step 2 of 3 &middot; Choose site</div>
+                <div class="bm-body-svg" aria-hidden="true">
+                  <!-- torso silhouette + 6 zones -->
+                  <svg viewBox="0 0 200 260" width="100%" height="100%">
+                    <defs>
+                      <linearGradient id="torso" x1="0" x2="0" y1="0" y2="1">
+                        <stop offset="0" stop-color="#0F4A42"/>
+                        <stop offset="1" stop-color="#062823"/>
+                      </linearGradient>
+                    </defs>
+                    <path d="M100 14 C 78 14 72 26 72 40 C 72 50 66 58 54 62 C 40 68 30 80 30 96 L30 160 C30 172 36 184 46 192 L46 250 L154 250 L154 192 C164 184 170 172 170 160 L170 96 C170 80 160 68 146 62 C134 58 128 50 128 40 C128 26 122 14 100 14 Z" fill="url(#torso)" stroke="rgba(94,234,212,0.18)" stroke-width="1"/>
+                    <!-- zones: tl, tr, ml, mr, bl, br -->
+                    <circle cx="70"  cy="96"  r="15" fill="rgba(94,234,212,0.08)" stroke="rgba(94,234,212,0.25)" stroke-width="0.8" stroke-dasharray="2 2"/>
+                    <circle cx="130" cy="96"  r="15" fill="rgba(94,234,212,0.08)" stroke="rgba(94,234,212,0.25)" stroke-width="0.8" stroke-dasharray="2 2"/>
+                    <circle cx="70"  cy="138" r="15" fill="rgba(245,158,11,0.14)" stroke="rgba(245,158,11,0.45)" stroke-width="1"/>
+                    <circle cx="130" cy="138" r="15" fill="rgba(94,234,212,0.08)" stroke="rgba(94,234,212,0.25)" stroke-width="0.8" stroke-dasharray="2 2"/>
+                    <circle cx="70"  cy="180" r="15" fill="rgba(52,238,167,0.22)" stroke="rgba(52,238,167,0.8)" stroke-width="1.5"/>
+                    <circle cx="130" cy="180" r="15" fill="rgba(94,234,212,0.08)" stroke="rgba(94,234,212,0.25)" stroke-width="0.8" stroke-dasharray="2 2"/>
+                    <!-- suggested pulse -->
+                    <circle cx="70"  cy="180" r="20" fill="none" stroke="rgba(52,238,167,0.35)" stroke-width="0.8"/>
+                  </svg>
+                </div>
+                <div class="bm-legend">
+                  <span class="lg"><span class="sw lg-suggest"></span>Suggested</span>
+                  <span class="lg"><span class="sw lg-recent"></span>Recent (&lt; 48 hr)</span>
+                  <span class="lg"><span class="sw lg-avail"></span>Available</span>
+                </div>
+                <div class="bm-cta">Continue</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="slide-foot">
       <div class="foot-left">
@@ -3368,6 +4256,14 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
     });
   }
 
+  // Paint the 7-dot tech-comfort bars on slide 10 from each .dots[data-value]
+  function paintDotBars() {
+    document.querySelectorAll('.dots[data-value]').forEach(el => {
+      const n = Math.max(0, Math.min(7, parseInt(el.dataset.value, 10) || 0));
+      el.innerHTML = Array.from({ length: 7 }).map((_, i) => `<i class="${i < n ? 'on' : ''}"></i>`).join('');
+    });
+  }
+
   // Auto-load headshots: if assets/team/<slug>.jpg exists, swap in the image;
   // otherwise the monogram placeholder renders. Degrades gracefully offline.
   function loadHeadshots() {
@@ -3580,8 +4476,8 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
 
   // Count-up animation helper (for SEQ)
   window.animateSEQ = function() {
-    const ours = document.querySelector('.s4 .seq-ours');
-    const big = document.querySelector('.s4 .seq-ours-tag .big');
+    const ours = document.querySelector('.s-deferred-seq .seq-ours');
+    const big = document.querySelector('.s-deferred-seq .seq-ours-tag .big');
     if (!ours || !big) return;
     // position = (score - 1) / 6 * trackWidth
     const trackWidth = 100; // percentage
@@ -3956,6 +4852,140 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
       detail: 'Seven 60-minute moderated sessions at Core Human Factors in Bala Cynwyd, PA. Live interactive prototype built in Lovable on iOS \u2014 not a Figma click-through. Live AI integration (not scripted). Simulated patient profile \u201CJennifer.\u201D',
       meta: 'Measurement · SEQ after every task, post-session satisfaction questionnaire (6 items), behavioural observation via Rainbow Grid (50+ observables), full video + transcription via Dovetail.'
     },
+    'seq-metric': {
+      label: 'Metric · SEQ',
+      title: 'Single Ease Question',
+      detail: 'A standardised post-task usability metric. After each task the participant answers one question: \u201COverall, how easy or difficult was this task?\u201D on a 7-point scale (1 = Very Difficult, 7 = Very Easy).',
+      meta: 'Industry benchmark · 5.5 / 7 at the 50th percentile across 400+ tasks and 10,000+ users (MeasuringU).'
+    },
+    'rainbow-grid': {
+      label: 'Observation · Rainbow Grid',
+      title: '50+ behavioural observables, colour-coded live',
+      detail: 'A structured observation framework the moderator marks in real time during each session. Categories include navigation path, help-seeking, articulation of mental models, error recovery, and unprompted reactions. Colour coding keeps high-signal moments scannable during synthesis.',
+      meta: 'Combined with full transcript + video in Dovetail for pattern-level analysis across the cohort.'
+    },
+
+    // ---------- Slide 11 task nodes ----------
+    'task-t1': {
+      label: 'Task T1 · Morning Exploration',
+      title: 'SEQ 6.7 / 7  ·  7/7 full completion',
+      detail: 'Free-exploration task. All seven participants articulated the app\u2019s purpose after 3\u20134 minutes. The wellness rings carried the screen \u2014 treated as primary navigation, not decoration.',
+      meta: 'The +/action button and bottom nav were the recurring misses here \u2014 surfaced as Finding 1.'
+    },
+    'task-t2': {
+      label: 'Task T2 · Log Injection',
+      title: 'SEQ 6.6 / 7  ·  7/7 full completion',
+      detail: 'Three participants (P03, P05, P07) tried to log from the Meds section first \u2014 the label and calendar icon implied logging. All three self-corrected to the home card within 30 seconds.',
+      meta: 'P07 articulated it clearest: \u201CIt literally says meds.\u201D Surfaced as Finding 3 \u2014 meds calendar \u201Ctoday\u201D as a natural entry point.'
+    },
+    'task-t3': {
+      label: 'Task T3 · Log Lunch',
+      title: 'SEQ 6.7 / 7  ·  7/7 full completion',
+      detail: 'Six of seven chose photo logging unprompted. P01 was the outlier (typed) \u2014 attributable to AI fluency, not UI friction. Multiple participants surprised by the AI\u2019s recognition accuracy.',
+      meta: 'Photo logging drove the highest delight moment in the session \u2014 the breakout feature.'
+    },
+    'task-t4': {
+      label: 'Task T4 · AI Coach',
+      title: 'SEQ 5.4 / 7  ·  4/7 full · 3/7 partial',
+      detail: 'Score reflects discoverability, not interaction quality. Only 2\u20133 participants found the Coach independently on the first attempt. Once discovered, 7/7 found it useful and expressed willingness to return.',
+      meta: 'P07\u2019s 5 partially attributable to the non-functional microphone in the prototype \u2014 confirms demand for voice input.'
+    },
+    'task-t5': {
+      label: 'Task T5 · Find Learning Content',
+      title: 'SEQ 6.3 / 7  ·  5/7 full · 1 partial · 1 fail',
+      detail: 'Most participants found the Learn section on their second pass after discovering it during exploration. P05 is the classic recognition-vs-recall case \u2014 found it earlier, couldn\u2019t relocate it during the directed task.',
+      meta: 'Pathway format resonated. CBT- and ACT-grounded content structure went unremarked as a framework \u2014 participants just found it useful.'
+    },
+    'task-t6': {
+      label: 'Task T6 · Evening Reflection',
+      title: 'SEQ 6.9 / 7  ·  4/7 full · 2 partial · 1 refused',
+      detail: 'Highest SEQ in the set among participants who engaged. 4/7 engaged meaningfully. Scoring P01 as \u201Cfail\u201D is technically correct but overstates \u2014 she refused on personal preference (\u201CI hate this\u201D) while endorsing the app overall.',
+      meta: 'Segment feature by design. Surfaces as Finding 6 \u2014 adoption strategy needs to match the right users, not all users.'
+    },
+
+    // ---------- Slide 13 · Feature overviews ----------
+    'feat-home': {
+      label: 'Feature overview',
+      title: 'Home screen / Wellness Score',
+      detail: '7/7 positive. Treated as primary navigation rather than decoration \u2014 participants tapped rings to drill in. P07 (lowest self-rated tech comfort) decoded the rings unprompted, which is the single strongest evidence that the information architecture is sound.',
+      meta: 'Dedicated follow-up \u2192 Finding 1 (visual differentiation of the surrounding interactive affordances).'
+    },
+    'feat-body': {
+      label: 'Feature overview',
+      title: 'Body-map injection tracker',
+      detail: '7/7 positive. Highest-praised single feature after photo meal logging. Participants who already track injections on other apps (P02 Microhealth, P05 Shotzy) explicitly said this was better. The combination of visual selection, rotation history, and suggested next site has no direct competitor equivalent.',
+      meta: 'P05 usefulness rating 6.7 / 7 mean. Dedicated slide \u2192 Slide 15.'
+    },
+    'feat-meal': {
+      label: 'Feature overview',
+      title: 'Photo meal logging',
+      detail: 'The breakout feature. 6/7 chose photo logging unprompted when told to log lunch. The AI recognition accuracy generated genuine surprise moments across multiple sessions. P04 explicitly tied her willingness to log meals daily to this feature.',
+      meta: 'P01 not tested \u2014 she preferred text input on AI fluency grounds, not UI friction. Dedicated slide \u2192 Slide 14.'
+    },
+    'feat-coach': {
+      label: 'Feature overview',
+      title: 'AI Coach (post-discovery)',
+      detail: '7/7 found it useful once found. Initial discoverability was uneven \u2014 only 2\u20133 participants found the Coach independently on the first directed task. Once engaged, the context-aware behaviour (\u201Cit already knows I\u2019m on Zepbound\u201D) separated it meaningfully from generic AI tools in participants\u2019 minds.',
+      meta: 'Dedicated slide \u2192 Slide 16. Remediation proposals \u2192 Finding 2.'
+    },
+    'feat-learn': {
+      label: 'Feature overview',
+      title: 'Learning pathways',
+      detail: '7/7 understood the pathway structure. 7/7 engaged with content once found. The CBT / ACT foundation went unremarked as a framework \u2014 participants simply found the content useful. The single warn cell is a recognition-vs-recall case, not a content problem.',
+      meta: 'Dedicated slide \u2192 Slide 17.'
+    },
+    'feat-refl': {
+      label: 'Feature overview',
+      title: 'Evening reflections',
+      detail: 'The most polarised feature. 4/7 meaningful engagement, 2/7 conditional, 1/7 refusal. This was the expected outcome \u2014 reflections is a segment feature, not a universal one, and the prototype intentionally did not force adoption.',
+      meta: 'Adoption strategy by segment surfaces as Finding 6 \u2014 Slide 33. Bedtime push, immediate AI positive feedback, and catch-up logging are the three levers.'
+    },
+
+    // ---------- Slide 13 · Exception cells (spine-sourced per-participant) ----------
+    'meal-p01': {
+      label: 'Cell · P01 × Photo meal logging',
+      title: 'Not tested \u2014 by participant choice',
+      detail: 'P01 was the only participant who chose to type rather than photograph her meal. Moderator note: this was AI fluency, not UI friction \u2014 she uses ChatGPT daily and preferred the text path as faster for her.',
+      meta: 'Represented as \u201C\u2014\u201D in the matrix to distinguish from a negative reception.'
+    },
+    'learn-p05': {
+      label: 'Cell · P05 × Learning pathways',
+      title: 'Recognition, not recall',
+      detail: 'P05 found the Learn section during free exploration and articulated its purpose correctly. During the directed task later, she could not relocate it and first looked in the bottom nav \u2014 which blends into the dark surface. Post-discovery, she engaged meaningfully.',
+      meta: 'Classic discoverability case. Remediation is styling-level (Finding 1), not content. The pathway itself worked for her.'
+    },
+    'refl-p01': {
+      label: 'Cell · P01 × Evening reflections',
+      title: 'Refused \u2014 then immediately endorsed the app',
+      detail: '\u201CI hate this.\u201D Followed, unprompted, by: \u201CI actually like the app though.\u201D P01 is the edge case that proves reflections is a segment feature. The refusal is real; so is the overall endorsement.',
+      meta: 'Not a usability failure. This is what opt-out looks like in the wild.'
+    },
+    'refl-p02': {
+      label: 'Cell · P02 × Evening reflections',
+      title: 'Conditional \u2014 not his habit',
+      detail: 'P02 engaged briefly but described reflections as \u201Cnot something I\u2019d do on my own.\u201D Suggested he\u2019d use it if prompted. Matches the prompted-adoption pattern.',
+      meta: 'Candidate for the bedtime-push adoption lever.'
+    },
+    'refl-p03': {
+      label: 'Cell · P03 × Evening reflections',
+      title: 'Conditional \u2014 would need prompts',
+      detail: 'Critical-scorer P03 gave reflections a 5.0 / 7 SEQ but articulated she\u2019d only use it if the app nudged her. Content was fine; habit adherence was the gap.',
+      meta: 'Same lever applies \u2014 evening push notification tied to her typical phone-before-bed window.'
+    },
+    'refl-p05': {
+      label: 'Cell · P05 × Evening reflections',
+      title: 'Conditional \u2014 recognised AI feedback value',
+      detail: 'Engaged once she saw the immediate AI-generated positive feedback. Described the feature warmly but would not schedule it herself. Asked whether the AI responses scale with her input.',
+      meta: 'The AI-feedback loop is a meaningful second adoption lever alongside the bedtime push.'
+    },
+
+    // ---------- Slide 15 · Body map ----------
+    'body-map-77': {
+      label: 'Cohort result · body map',
+      title: '7 of 7 positive  ·  mean usefulness 6.7 / 7',
+      detail: 'Universal approval across the cohort. No competitor combines visual site selection, rotation history, and suggested-next-site reminders in one view. P02 and P05 \u2014 both current users of other tracking apps \u2014 articulated the gap explicitly.',
+      meta: 'Per-participant breakdown: P01 positive \u00b7 P02 \u201Ca lot better\u201D (current: Microhealth) \u00b7 P03 positive \u00b7 P04 positive \u00b7 P05 \u201Ctells you where your last one was\u201D (current: Shotzy) \u00b7 P06 positive \u00b7 P07 positive.'
+    },
 
     // Populated dynamically when a task row is clicked on slide 4
     'seq-task': null
@@ -4087,6 +5117,7 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
 
   // init
   buildNav();
+  paintDotBars();
   loadHeadshots();
   loadDataAssets();
   // Auto-collapse navigator on tablet/mobile (defer to user to open)
