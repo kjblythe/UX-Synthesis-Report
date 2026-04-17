@@ -3069,9 +3069,11 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
 .s16 .slide-frame { padding: 76px 112px 64px 112px; }
 .s16 .s16-grid {
   margin-top: 28px;
-  display: grid; grid-template-columns: 1fr 440px;
+  display: grid; grid-template-columns: 440px 1fr;
   column-gap: 64px; align-items: flex-start;
 }
+.s16 .s16-right { order: 1; }
+.s16 .s16-left  { order: 2; }
 .s16 .s16-left { display: flex; flex-direction: column; gap: 26px; }
 .s16 .s16-hero { display: flex; flex-direction: column; gap: 14px; }
 .s16 .s16-stat-block { display: flex; align-items: baseline; gap: 18px; }
@@ -3214,11 +3216,11 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
 }
 .s17 .slide-frame { padding: 76px 112px 64px 112px; }
 .s17 .s17-grid {
-  display: grid; grid-template-columns: 440px 1fr;
+  display: grid; grid-template-columns: 1fr 440px;
   column-gap: 64px; margin-top: 28px; align-items: flex-start;
 }
-.s17 .s17-phone-col { display: flex; justify-content: center; padding-top: 2px; }
-.s17 .s17-right { padding-top: 6px; display: flex; flex-direction: column; gap: 22px; }
+.s17 .s17-right     { order: 1; padding-top: 6px; display: flex; flex-direction: column; gap: 22px; }
+.s17 .s17-phone-col { order: 2; display: flex; justify-content: center; padding-top: 2px; }
 .s17 .s17-headline {
   font-family: var(--f-display); font-weight: 500;
   font-size: 40px; line-height: 1.14; letter-spacing: -0.018em;
@@ -5472,7 +5474,7 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
             <span class="s16-stat-num">7<i class="s16-stat-of">/7</i></span>
             <button class="s16-stat-sub chip-trigger" data-cite="coach-77">found it useful after using it</button>
           </div>
-          <h1 class="s16-headline">Valued for <span class="ital">exploration, questions, and coaching feedback</span> &mdash; the things UI screens don&apos;t do well.</h1>
+          <h1 class="s16-headline">Valued for <span class="ital">exploration, open questions, and coaching feedback</span>.</h1>
         </div>
         <div class="s16-quotes">
           <div class="s16-qblock">
@@ -5572,7 +5574,7 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
   <div class="slide-frame">
     <div class="reveal d1" style="display:flex;align-items:center;justify-content:space-between">
       <div class="eyebrow">What resonated &middot; Learning pathways</div>
-      <div style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--on-dark-mute);font-weight:500">Validated format &middot; Discoverability-bound</div>
+      <div style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--on-dark-mute);font-weight:500">Format validated &middot; Finding 1 discoverability</div>
     </div>
     <div class="s17-grid">
       <div class="s17-phone-col reveal d2">
@@ -5637,7 +5639,7 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
         </div>
       </div>
       <div class="s17-right reveal d3">
-        <h1 class="s17-headline">The format works. Content resonated across every participant who found it.</h1>
+        <h1 class="s17-headline">Format understood. Content engaged with by every participant who reached the section.</h1>
         <div class="s17-stat-row">
           <button class="kpi-pill kpi-pill-dark chip-trigger" data-cite="learn-77"><b>7/7</b><i>engaged once found</i></button>
           <button class="kpi-pill kpi-pill-dark chip-trigger" data-cite="learn-cbt"><b>CBT &middot; ACT</b><i>behavioural foundation</i></button>
@@ -5676,7 +5678,7 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
       <div style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-dim);font-weight:500">Competitive positioning</div>
     </div>
     <div class="s18-hero reveal d2">
-      <h1 class="s18-headline">Five participants named the app they currently use. <span class="ital">None of them</span> covers the full GLP-1 journey.</h1>
+      <h1 class="s18-headline">Five participants named the app they currently use. None covers the full GLP-1 journey.</h1>
       <p class="s18-lede">Participants were not prompted to compare. These are unsolicited references to existing tools surfaced during the warm-up and task flow.</p>
     </div>
     <div class="s18-table reveal d3">
@@ -5744,7 +5746,11 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
         </span>
         <span class="s18-col s18-col-does">Step counting at dance class, once a week.</span>
         <span class="s18-col s18-col-adds">
-          <span class="s18-add s18-add-hi">+ Everything GLP-1-specific</span>
+          <span class="s18-add">+ Medication</span>
+          <span class="s18-add">+ Nutrition</span>
+          <span class="s18-add">+ AI coach</span>
+          <span class="s18-add">+ Body map</span>
+          <span class="s18-add">+ Learning</span>
         </span>
       </div>
     </div>
@@ -5960,7 +5966,7 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
           <span class="s22-stat-num">6.6<i>/7</i></span>
           <button class="s22-stat-sub chip-trigger" data-cite="satisfaction-66">overall mean across six measures</button>
         </div>
-        <h1 class="s22-headline">Every measure landed in the <span class="hl">excellent band</span>. Every participant scored above 5.8.</h1>
+        <h1 class="s22-headline">Every measure scored <span class="hl">6.4 or higher</span>. Every participant averaged 5.8 or above.</h1>
       </div>
       <div class="s22-hero-right">
         <p class="s22-lede">Six post-session measures administered at the end of every session on a 7-point Likert scale. Clustering in a tight 6.4&ndash;6.7 band means the app is performing evenly across task ease, trust, daily fit, and AI usefulness &mdash; not leaning on one strength to carry weaker dimensions.</p>
@@ -6026,7 +6032,7 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
         </button>
       </div>
       <p class="s22-cohort-note">
-        <button class="chip chip-inline" data-cite="p03">P03</button> is the cohort&apos;s most critical scorer at 5.8 &mdash; and <strong style="font-weight:600">still said she would replace her current app with this one</strong>.
+        <button class="chip chip-inline" data-cite="p03">P03</button> is the cohort&apos;s most critical scorer at 5.8, and said she would replace her current app with this one.
       </p>
     </div>
     <div class="slide-foot">
@@ -6044,11 +6050,11 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
   <div class="slide-frame">
     <div class="reveal d1" style="display:flex;align-items:center;justify-content:space-between">
       <div class="eyebrow">Section 04 &middot; Prototype context</div>
-      <div style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--on-dark-mute);font-weight:500">Honest ledger &middot; 4 limitations</div>
+      <div style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--on-dark-mute);font-weight:500">4 prototype limitations</div>
     </div>
     <div class="s23-intro reveal d2">
-      <h1 class="s23-headline">A few prototype constraints nudged specific scores down. <span class="hl">They aren&apos;t in the product.</span></h1>
-      <p class="s23-lede">We&apos;re flagging these so no one reads a prototype artefact as a product finding. In each row, the left shows what happened in the lab. The right shows what the production app will do instead.</p>
+      <h1 class="s23-headline">Four prototype constraints affected specific scores. <span class="hl">None is present in the production build.</span></h1>
+      <p class="s23-lede">We flag these so the record is clean: a prototype artefact shouldn&apos;t be read as a product finding. Each row pairs what happened in the lab with the corresponding production behaviour.</p>
     </div>
     <div class="s23-ledger reveal d3">
       <div class="s23-ledger-head">
@@ -6119,7 +6125,7 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
     </div>
     <div class="s23-take reveal d4">
       <span class="s23-take-eb">Takeaway</span>
-      <p>Every limitation above tells the same story: the lab pulled a specific score down, and the production app doesn&apos;t have that constraint. No conclusion in this deck relies on a prototype artefact.</p>
+      <p>Every limitation above follows the same pattern: a specific score was constrained by the prototype build, not by the product. No conclusion in this deck depends on a prototype artefact.</p>
     </div>
     <div class="slide-foot">
       <div class="foot-left">
@@ -6378,17 +6384,17 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
     <div class="s27-hero reveal d2">
       <div class="s27-compare">
         <div class="s27-compare-col s27-compare-good">
-          <span class="s27-compare-eb">What we have</span>
-          <span class="s27-compare-word">Visual-presentation gaps</span>
-          <span class="s27-compare-note">How things look. Contrast, weight, placement. Easy to fix.</span>
+          <span class="s27-compare-eb">The class of issue we observed</span>
+          <span class="s27-compare-word">Visual presentation</span>
+          <span class="s27-compare-note">Contrast, weight, placement of interactive elements. Low-effort to change; scoped per-component.</span>
         </div>
         <div class="s27-compare-col s27-compare-bad">
-          <span class="s27-compare-eb">What we <em>don&apos;t</em> have</span>
-          <span class="s27-compare-word">Architectural issues</span>
-          <span class="s27-compare-note">How the app is structured. Information architecture, flows, data model. Those would be expensive.</span>
+          <span class="s27-compare-eb">The class of issue we did <em>not</em> observe</span>
+          <span class="s27-compare-word">Information architecture</span>
+          <span class="s27-compare-note">Navigation structure, flows, data model. High-cost changes we don&apos;t have to make.</span>
         </div>
       </div>
-      <h1 class="s27-headline">Every remediation below is a <span class="hl">visual tweak</span>. No structural changes. No new screens. No redesign.</h1>
+      <h1 class="s27-headline">Every remediation below is a <span class="hl">visual-styling change</span>. No information-architecture changes. No new screens.</h1>
     </div>
     <div class="s27-table reveal d3">
       <div class="s27-head">
@@ -6541,12 +6547,12 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
   <div class="slide-frame">
     <div class="reveal d1" style="display:flex;align-items:center;justify-content:space-between">
       <div class="eyebrow">Finding 02 &middot; Design principle + recommendations</div>
-      <div style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--on-dark-mute);font-weight:500">Both paths. Not a choice.</div>
+      <div style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--on-dark-mute);font-weight:500">Design principle + 4 recommendations</div>
     </div>
     <div class="s29-hero reveal d2">
-      <h1 class="s29-headline">Chat and UI aren&apos;t a choice. <span class="s29-hl">They do different jobs.</span></h1>
+      <h1 class="s29-headline">Chat and UI are not substitutes. <span class="s29-hl">They address different user needs.</span></h1>
       <p class="s29-principle">
-        The AI Coach is the right tool for <strong class="s29-bold">exploration, open questions, and coaching feedback</strong>. UI screens are the right tool for <strong class="s29-bold">repetitive, structured actions</strong>. Both paths should coexist &mdash; each serves a need the other can&apos;t.
+        The AI Coach is the appropriate path for <strong class="s29-bold">exploration, open questions, and coaching feedback</strong>. UI screens are the appropriate path for <strong class="s29-bold">repetitive, structured actions</strong>. Both should coexist; each handles a need the other does not.
       </p>
       <div class="s29-evidence">
         <blockquote class="s29-ev-quote">&ldquo;If I was first starting out, I would prefer [chat] because it gives you coaching. But once you&apos;re in the rhythm, just going to the body diagram.&rdquo;</blockquote>
@@ -6579,7 +6585,7 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
           <span class="s29-rec-num">03</span>
           <div class="s29-rec-body">
             <h4 class="s29-rec-title">Contextual &ldquo;Ask Coach about this&rdquo; prompts</h4>
-            <p class="s29-rec-detail">Put the Coach at the moment of the question, not a destination. Meal screen: &ldquo;Why was this logged high-carb?&rdquo; Meds screen: &ldquo;What if I missed today&apos;s dose?&rdquo; Small surfaces, in-context.</p>
+            <p class="s29-rec-detail">Place Coach prompts at the moment of the question, not as a separate destination. Meal screen: &ldquo;Why was this logged high-carb?&rdquo; Meds screen: &ldquo;What if I missed today&apos;s dose?&rdquo; Small in-context surfaces.</p>
             <span class="s29-rec-when">Pre-pilot</span>
           </div>
         </li>
@@ -6697,7 +6703,7 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
         </div>
       </div>
       <div class="s30-right reveal d3">
-        <h1 class="s30-headline">Users tried to log from the meds calendar. <span class="ital">They were right</span> &mdash; the screen just doesn&apos;t support it yet.</h1>
+        <h1 class="s30-headline">Three participants tried to log from the meds calendar. The instinct is correct; the screen <span class="ital">does not yet support</span> it.</h1>
         <div class="s30-stat-row">
           <button class="kpi-pill chip-trigger" data-cite="meds-3of7"><b>3/7</b><i>went to meds first</i></button>
           <button class="kpi-pill chip-trigger" data-cite="meds-today-taps"><b>3/3</b><i>tapped &ldquo;today&rdquo;</i></button>
@@ -6726,7 +6732,7 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
         </div>
         <div class="s30-rec">
           <div class="s30-rec-eb">Recommendation</div>
-          <p>Make the meds calendar&apos;s &ldquo;today&rdquo; date tappable to initiate the injection logging flow. Also seen in <button class="chip chip-inline" data-cite="p03">P03</button>, <button class="chip chip-inline" data-cite="p05">P05</button> &mdash; plus <button class="chip chip-inline" data-cite="meds-learning-transfer">fast learning-transfer</button> once corrected.</p>
+          <p>Make the meds calendar&apos;s &ldquo;today&rdquo; date tappable to initiate the injection logging flow. Same pattern observed with <button class="chip chip-inline" data-cite="p03">P03</button> and <button class="chip chip-inline" data-cite="p05">P05</button>; <button class="chip chip-inline" data-cite="meds-learning-transfer">fast learning-transfer</button> after a single self-correction.</p>
           <div class="s30-rec-tags">
             <span class="s30-rec-tag">Low complexity</span>
             <span class="s30-rec-tag s30-rec-tag-hi">High impact</span>
