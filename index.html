@@ -2238,6 +2238,341 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
 }
 .slide-section-starter .slide-foot { z-index: 3; }
 
+/* ============ SLIDE 15 — BODY MAP INJECTION TRACKER ============ */
+.s15 .bm-grid {
+  margin-top: 28px;
+  display: grid; grid-template-columns: minmax(0, 1fr) 420px;
+  gap: 96px;
+  align-items: start;
+  height: calc(1080px - 88px - 108px - 28px);
+}
+.s15 .bm-left { display: flex; flex-direction: column; gap: 20px; min-width: 0; }
+.s15 .bm-headline {
+  font-family: var(--f-display); font-weight: 600; font-size: 42px; line-height: 1.12;
+  letter-spacing: -0.02em; color: var(--text-on-dark); margin: 0; max-width: 900px;
+}
+.s15 .bm-headline .hl { color: var(--mint-accent); }
+.s15 .bm-stat-row { display: flex; align-items: center; gap: 36px; padding: 12px 0 16px 0; border-bottom: 1px solid rgba(245,242,234,0.08); }
+.s15 .bm-primary {
+  appearance: none; background: transparent; border: 0; padding: 0; margin: 0;
+  display: flex; flex-direction: column; align-items: flex-start; gap: 6px;
+  color: inherit; cursor: pointer;
+  transition: transform 180ms var(--ease-out);
+}
+.s15 .bm-primary:hover { transform: translateY(-2px); }
+.s15 .bm-primary .n {
+  font-family: var(--f-display); font-weight: 700; font-size: 82px; line-height: 0.9; letter-spacing: -0.03em;
+  color: var(--mint-accent); font-variant-numeric: tabular-nums;
+}
+.s15 .bm-primary .n i { font-style: normal; font-weight: 400; font-size: 32px; color: rgba(52,238,167,0.55); margin-left: 2px; }
+.s15 .bm-primary .label {
+  font-family: var(--f-display); font-weight: 500; font-size: 12px; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--teal-300);
+}
+.s15 .bm-stat.sm { display: flex; flex-direction: column; gap: 4px; padding-left: 32px; border-left: 1px solid rgba(245,242,234,0.08); }
+.s15 .bm-stat.sm .n {
+  font-family: var(--f-display); font-weight: 700; font-size: 30px; line-height: 1; letter-spacing: -0.02em;
+  color: var(--text-on-dark); font-variant-numeric: tabular-nums;
+}
+.s15 .bm-stat.sm .label {
+  font-family: var(--f-display); font-weight: 500; font-size: 11px; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--text-dim-dark);
+}
+/* Differentiator block — editorial, not a card */
+.s15 .bm-diff { display: flex; flex-direction: column; gap: 6px; padding-top: 4px; }
+.s15 .diff-label {
+  font-family: var(--f-display); font-weight: 500; font-size: 11px; letter-spacing: 0.22em;
+  text-transform: uppercase; color: var(--mint-accent);
+}
+.s15 .diff-body {
+  font-family: var(--f-display); font-weight: 600; font-size: 20px; line-height: 1.35;
+  color: var(--text-on-dark); letter-spacing: -0.005em;
+}
+.s15 .diff-body .sep { color: var(--teal-300); font-weight: 400; margin: 0 6px; }
+.s15 .diff-compare {
+  font-family: var(--f-display); font-weight: 400; font-size: 14px; line-height: 1.55;
+  color: var(--text-dim-dark); margin-top: 4px;
+}
+/* Quotes */
+.s15 .bm-quotes { display: flex; flex-direction: column; gap: 14px; margin-top: 8px; }
+.s15 .bm-quote { display: flex; flex-direction: column; gap: 8px; }
+.s15 .bm-quote blockquote {
+  margin: 0;
+  font-family: var(--f-serif); font-style: italic; font-weight: 400; font-size: 20px; line-height: 1.35;
+  color: var(--text-on-dark); letter-spacing: -0.005em;
+  padding-left: 20px; border-left: 2px solid rgba(94,234,212,0.28);
+}
+.s15 .bm-quote cite {
+  font-style: normal; padding-left: 22px;
+  font-family: var(--f-display); font-weight: 500; font-size: 12px; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--text-dim-dark);
+}
+/* Dovetail clip */
+.s15 .bm-clip { margin-top: 8px; max-width: 420px; }
+
+/* Right column — phone frame */
+.s15 .bm-right { display: flex; justify-content: center; align-items: flex-start; padding-top: 8px; }
+.s15 .bm-phone-wrap { position: relative; }
+.s15 .bm-phone-wrap::before {
+  content: ''; position: absolute; inset: -40px;
+  background: radial-gradient(60% 55% at 50% 55%, rgba(52,238,167,0.12), transparent 70%);
+  pointer-events: none;
+}
+
+/* Body map screen mock */
+.s15 .screen-bodymap-lite {
+  background: linear-gradient(170deg, #062A26 0%, #03100E 100%);
+  color: var(--text-on-dark);
+  padding: 44px 18px 18px 18px;
+  display: flex; flex-direction: column; gap: 10px;
+}
+.s15 .screen-bodymap-lite .screen-status { display: flex; justify-content: space-between; font-size: 11px; font-weight: 600; opacity: 0.88; letter-spacing: 0.02em; }
+.s15 .screen-bodymap-lite .screen-status .icons { display: flex; gap: 4px; align-items: center; }
+.s15 .screen-bodymap-lite .screen-status .wifi { width: 12px; height: 8px; background: currentColor; clip-path: polygon(0 70%, 100% 70%, 100% 100%, 0 100%); }
+.s15 .screen-bodymap-lite .screen-status .battery { width: 22px; height: 10px; border: 1px solid currentColor; border-radius: 2px; position: relative; padding: 1px; }
+.s15 .screen-bodymap-lite .screen-status .battery::after { content: ''; display: block; width: 80%; height: 100%; background: currentColor; border-radius: 1px; }
+.s15 .bm-top { display: flex; align-items: center; justify-content: space-between; padding-top: 4px; font-family: var(--f-display); font-weight: 600; font-size: 14px; color: var(--text-on-dark); }
+.s15 .bm-top .back { color: var(--teal-300); font-weight: 400; }
+.s15 .bm-step { font-family: var(--f-display); font-weight: 500; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--teal-300); }
+.s15 .bm-body-svg { flex: 1; min-height: 0; display: flex; align-items: center; justify-content: center; margin: 4px 0; }
+.s15 .bm-legend { display: flex; flex-direction: column; gap: 4px; padding: 10px 8px; border-radius: 8px; background: rgba(94,234,212,0.05); }
+.s15 .bm-legend .lg { display: flex; align-items: center; gap: 8px; font-family: var(--f-display); font-weight: 500; font-size: 10px; letter-spacing: 0.05em; color: rgba(245,242,234,0.78); }
+.s15 .bm-legend .sw { width: 9px; height: 9px; border-radius: 50%; border: 1px solid transparent; }
+.s15 .bm-legend .lg-suggest { background: rgba(52,238,167,0.22); border-color: rgba(52,238,167,0.8); }
+.s15 .bm-legend .lg-recent  { background: rgba(245,158,11,0.14); border-color: rgba(245,158,11,0.45); }
+.s15 .bm-legend .lg-avail   { background: rgba(94,234,212,0.08); border: 1px dashed rgba(94,234,212,0.45); }
+.s15 .bm-cta {
+  text-align: center; padding: 10px 14px; border-radius: 10px;
+  background: var(--mint-accent); color: #062823;
+  font-family: var(--f-display); font-weight: 600; font-size: 14px; letter-spacing: 0.02em;
+  margin-top: 4px;
+}
+
+/* ============ SLIDE 13 — FEATURE VALIDATION HEAT MATRIX ============ */
+.s13 .fm-headline {
+  font-family: var(--f-display); font-weight: 600; font-size: 42px; line-height: 1.12;
+  letter-spacing: -0.02em; color: var(--ink); margin: 28px 0 0 0; max-width: 1360px;
+}
+.s13 .fm-headline .hl { color: var(--teal-700); }
+.s13 .fm-grid { margin-top: 36px; }
+.s13 .fm-matrix {
+  width: 100%;
+  border-collapse: separate; border-spacing: 6px 0;
+  font-family: var(--f-display);
+  color: var(--ink);
+  table-layout: fixed;
+}
+.s13 .fm-matrix thead th {
+  font-weight: 500; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--ink-mute);
+  text-align: center;
+  padding: 0 0 14px 0;
+  border-bottom: 1px solid rgba(10,26,28,0.14);
+}
+.s13 .fm-matrix thead th.fm-feat { text-align: left; padding-left: 6px; }
+.s13 .fm-matrix thead th .chip { margin: 0; }
+.s13 .fm-matrix tbody td {
+  padding: 0;
+  vertical-align: middle;
+}
+.s13 .fm-matrix tbody td.fm-feat {
+  padding: 14px 16px 14px 6px;
+  font-size: 15px; font-weight: 500; color: var(--ink);
+  border-bottom: 1px solid rgba(10,26,28,0.05);
+  text-align: left;
+}
+.s13 .fm-matrix tbody td.fm-feat .chip { font-size: 14px; letter-spacing: 0; text-transform: none; padding: 6px 12px; height: auto; border-radius: 8px; font-weight: 500; }
+.s13 .fm-matrix tbody td.fm-feat .chip:hover { text-decoration: none; }
+.s13 .fm-matrix tbody tr:last-child td.fm-feat { border-bottom: none; }
+.s13 .fm-note { color: var(--ink-mute); font-weight: 400; font-size: 12px; font-style: italic; margin-left: 6px; }
+.s13 .fm-matrix tbody tr { transition: background 180ms var(--ease-out); }
+.s13 .fm-matrix tbody tr:hover { background: rgba(20,184,166,0.04); }
+
+/* Cell glyph styling */
+.s13 .fm-cell {
+  appearance: none; border: 0; padding: 0; margin: 0;
+  display: flex; align-items: center; justify-content: center;
+  width: 100%; height: 56px;
+  font-family: var(--f-display); font-weight: 600; font-size: 18px;
+  border-radius: 8px;
+  transition: transform 160ms var(--ease-out), background 160ms var(--ease-out);
+  cursor: default;
+  background: transparent; color: var(--ink-mute);
+}
+.s13 .fm-cell.ok   { background: rgba(20,184,166,0.12);  color: var(--teal-700); }
+.s13 .fm-cell.warn { background: rgba(245,158,11,0.14);  color: #B35B00; cursor: pointer; }
+.s13 .fm-cell.bad  { background: rgba(239,68,68,0.14);   color: #B91C1C; cursor: pointer; }
+.s13 .fm-cell.na   { background: rgba(10,26,28,0.05);    color: rgba(10,26,28,0.35); cursor: pointer; }
+.s13 button.fm-cell:hover { transform: translateY(-1px); filter: brightness(0.95); }
+.s13 button.fm-cell:focus-visible { outline: 2px solid var(--teal-500); outline-offset: 2px; }
+
+/* Legend */
+.s13 .fm-legend {
+  display: flex; gap: 28px; flex-wrap: wrap;
+  margin-top: 22px; padding-top: 18px;
+  border-top: 1px solid rgba(10,26,28,0.08);
+  font-family: var(--f-display); font-weight: 500; font-size: 12px; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--ink-mute);
+}
+.s13 .fm-key { display: flex; align-items: center; gap: 8px; }
+.s13 .fm-cell.static {
+  display: inline-flex; width: 26px; height: 26px; font-size: 14px; cursor: default;
+}
+
+/* Callout below */
+.s13 .fm-callout {
+  margin-top: 28px;
+  display: grid; grid-template-columns: auto 1fr; gap: 20px; align-items: center;
+  font-family: var(--f-display); font-weight: 400; font-size: 15px; line-height: 1.5;
+  color: var(--ink-mute);
+}
+.s13 .fm-callout-pill {
+  display: inline-block;
+  padding: 8px 14px; border-radius: 999px;
+  background: var(--teal-500); color: var(--paper);
+  font-family: var(--f-display); font-weight: 600; font-size: 12px; letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+/* ============ SLIDE 11 — TASK FLOW DAY ARC ============ */
+.s11 .flow-headline {
+  font-family: var(--f-display); font-weight: 600; font-size: 42px; line-height: 1.12;
+  letter-spacing: -0.02em; color: var(--text-on-dark); margin: 28px 0 0 0; max-width: 1400px;
+}
+.s11 .flow-headline .hl { color: var(--teal-300); }
+.s11 .flow-chart {
+  position: relative;
+  margin: 54px 0 0 0;
+  height: 460px;
+  padding: 24px 80px 0 80px;
+}
+/* soft mint glow behind the chart */
+.s11 .flow-chart::before {
+  content: ''; position: absolute; inset: -20px -40px;
+  background: radial-gradient(70% 55% at 50% 60%, rgba(52,238,167,0.10), transparent 70%);
+  pointer-events: none; z-index: 0;
+}
+.s11 .flow-endcap {
+  position: absolute; top: 100px;
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  color: var(--teal-300); opacity: 0.7; z-index: 1;
+}
+.s11 .flow-endcap.start { left: 8px; }
+.s11 .flow-endcap.end   { right: 8px; }
+.s11 .flow-endcap .t {
+  font-family: var(--f-display); font-weight: 500; font-size: 10.5px; letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+.s11 .flow-track {
+  position: absolute;
+  left: 140px; right: 140px; top: 132px;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(94,234,212,0.15), rgba(52,238,167,0.35) 50%, rgba(94,234,212,0.15));
+  z-index: 1;
+}
+/* benchmark zone band */
+.s11 .flow-benchmark {
+  position: absolute; left: 140px; right: 140px; top: 128px;
+  height: 10px;
+  pointer-events: none; z-index: 1;
+}
+.s11 .flow-benchmark .band {
+  position: absolute; inset: 0;
+  background: repeating-linear-gradient(135deg, rgba(245,158,11,0.10) 0 4px, transparent 4px 8px);
+  border-top: 1px dashed rgba(245,158,11,0.35);
+  border-bottom: 1px dashed rgba(245,158,11,0.35);
+}
+.s11 .flow-benchmark .band-label {
+  position: absolute; right: 0; top: 20px;
+  font-family: var(--f-display); font-weight: 500; font-size: 10.5px; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--gold);
+}
+.s11 .flow-nodes {
+  position: relative;
+  display: grid; grid-template-columns: repeat(6, 1fr); gap: 0;
+  height: 100%;
+  padding: 0 60px;
+  z-index: 2;
+}
+.s11 .flow-node {
+  appearance: none; background: transparent; border: 0; padding: 0; margin: 0;
+  display: flex; flex-direction: column; align-items: center; gap: 14px;
+  color: var(--text-on-dark); font: inherit;
+  cursor: pointer;
+  position: relative;
+  transition: transform 180ms var(--ease-out);
+}
+.s11 .flow-node:hover { transform: translateY(-3px); }
+.s11 .flow-node:focus-visible { outline: none; }
+.s11 .flow-node:focus-visible .node-dot { box-shadow: 0 0 0 3px var(--teal-300), 0 0 0 6px rgba(94,234,212,0.3); }
+.s11 .node-ico {
+  font-size: 32px; line-height: 1;
+  filter: drop-shadow(0 6px 14px rgba(0,0,0,0.25));
+}
+.s11 .node-dot {
+  width: 16px; height: 16px; border-radius: 50%;
+  background: var(--mint-accent);
+  box-shadow: 0 0 0 4px rgba(52,238,167,0.15), 0 0 16px rgba(52,238,167,0.4);
+  margin-top: 14px;
+  transition: box-shadow 200ms var(--ease-out);
+}
+.s11 .flow-node.flagged .node-dot { background: var(--gold); box-shadow: 0 0 0 4px rgba(245,158,11,0.18), 0 0 16px rgba(245,158,11,0.4); }
+.s11 .node-body {
+  display: flex; flex-direction: column; align-items: center; gap: 6px;
+  margin-top: 20px;
+  text-align: center;
+  min-width: 0;
+}
+.s11 .node-task {
+  font-family: var(--f-display); font-weight: 500; font-size: 11px; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--teal-300);
+}
+.s11 .node-name {
+  font-family: var(--f-display); font-weight: 600; font-size: 16px; line-height: 1.25;
+  color: var(--text-on-dark); letter-spacing: -0.005em;
+  max-width: 150px;
+}
+.s11 .node-score {
+  display: inline-flex; align-items: baseline; gap: 5px;
+  padding: 6px 12px; border-radius: 999px;
+  background: rgba(52,238,167,0.10);
+  border: 1px solid rgba(52,238,167,0.28);
+  font-family: var(--f-display); font-variant-numeric: tabular-nums;
+  margin-top: 4px;
+}
+.s11 .node-score b { font-weight: 700; font-size: 17px; color: var(--mint-accent); letter-spacing: -0.01em; }
+.s11 .node-score i { font-style: normal; font-weight: 500; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(52,238,167,0.75); }
+.s11 .node-score.warn {
+  background: rgba(245,158,11,0.10); border-color: rgba(245,158,11,0.38);
+}
+.s11 .node-score.warn b { color: var(--gold); }
+.s11 .node-score.warn i { color: rgba(245,158,11,0.8); }
+
+/* Summary / caption below the chart */
+.s11 .flow-caption {
+  margin-top: 28px;
+  display: grid; grid-template-columns: auto 1fr; gap: 48px; align-items: center;
+  padding: 22px 0 0 0;
+  border-top: 1px solid rgba(94,234,212,0.12);
+}
+.s11 .flow-summary { display: flex; align-items: baseline; gap: 18px; }
+.s11 .summary-num {
+  font-family: var(--f-display); font-weight: 700; font-size: 56px; line-height: 1;
+  letter-spacing: -0.03em; color: var(--mint-accent);
+  font-variant-numeric: tabular-nums;
+}
+.s11 .summary-num i {
+  font-style: normal; font-weight: 400; font-size: 22px; color: rgba(52,238,167,0.55); margin-left: 4px;
+}
+.s11 .summary-label {
+  font-family: var(--f-display); font-weight: 500; font-size: 14px; letter-spacing: 0.16em;
+  text-transform: uppercase; color: var(--teal-300); max-width: 360px; line-height: 1.4;
+}
+.s11 .flow-note {
+  font-family: var(--f-display); font-weight: 400; font-size: 15px; line-height: 1.5;
+  color: var(--text-dim-dark);
+}
+
 /* ============ SLIDE 10 — PARTICIPANT PROFILE ============ */
 .s10 .p-headline {
   font-family: var(--f-display); font-weight: 600; font-size: 42px; line-height: 1.12;
@@ -3248,15 +3583,93 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
   </div>
 </section>
 
-<!-- SLIDE 11: TASK FLOW (shell for Batch C) -->
-<section class="slide s11 slide-shell">
+<!-- SLIDE 11: TASK FLOW — A DAY WITH METABOLX -->
+<section class="slide s11 slide-data-stage">
   <div class="slide-frame">
-    <div class="shell-body">
-      <div class="shell-eyebrow reveal d1">Slide 11 · Study Design</div>
-      <div class="shell-num reveal d2">11</div>
-      <h1 class="shell-title reveal d3">Task Flow — A Day in the App</h1>
-      <p class="shell-sub reveal d4">Under construction — built in Batch C.</p>
-      <span class="shell-tag reveal d5"><span class="dot"></span>Batch C · Pending</span>
+    <div class="reveal d1" style="display:flex;align-items:center;justify-content:space-between">
+      <div class="eyebrow">Section 02 &middot; What we measured</div>
+      <div style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--on-dark-mute);font-weight:500">Six tasks &middot; One simulated day</div>
+    </div>
+    <div class="reveal d2">
+      <h1 class="flow-headline">A day with <span class="hl">MetabolX</span> &mdash; structured as six tasks from morning to evening.</h1>
+    </div>
+    <div class="flow-chart reveal d3" aria-label="Day arc showing six tasks and their SEQ scores">
+      <div class="flow-endcap start" aria-hidden="true">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="4.5" fill="currentColor"/><g stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="2" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="22"/><line x1="2" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="22" y2="12"/><line x1="4.22" y1="4.22" x2="6.34" y2="6.34"/><line x1="17.66" y1="17.66" x2="19.78" y2="19.78"/><line x1="4.22" y1="19.78" x2="6.34" y2="17.66"/><line x1="17.66" y1="6.34" x2="19.78" y2="4.22"/></g></svg>
+        <span class="t">Morning</span>
+      </div>
+      <div class="flow-endcap end" aria-hidden="true">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" fill="currentColor" fill-opacity="0.15"/></svg>
+        <span class="t">Evening</span>
+      </div>
+      <div class="flow-benchmark" aria-hidden="true">
+        <span class="band"></span>
+        <span class="band-label">Industry benchmark &middot; 5.5 / 7</span>
+      </div>
+      <div class="flow-track" aria-hidden="true"></div>
+      <div class="flow-nodes">
+        <button type="button" class="flow-node chip-trigger" data-cite="task-t1" style="--score: 6.7">
+          <span class="node-ico">&#9728;&#65039;</span>
+          <span class="node-dot"></span>
+          <span class="node-body">
+            <span class="node-task">T1 &middot; Explore</span>
+            <span class="node-name">Morning home screen</span>
+            <span class="node-score"><b>6.7</b><i>SEQ</i></span>
+          </span>
+        </button>
+        <button type="button" class="flow-node chip-trigger" data-cite="task-t2" style="--score: 6.6">
+          <span class="node-ico">&#128137;</span>
+          <span class="node-dot"></span>
+          <span class="node-body">
+            <span class="node-task">T2 &middot; Log</span>
+            <span class="node-name">Injection</span>
+            <span class="node-score"><b>6.6</b><i>SEQ</i></span>
+          </span>
+        </button>
+        <button type="button" class="flow-node chip-trigger" data-cite="task-t3" style="--score: 6.7">
+          <span class="node-ico">&#127869;&#65039;</span>
+          <span class="node-dot"></span>
+          <span class="node-body">
+            <span class="node-task">T3 &middot; Log</span>
+            <span class="node-name">Lunch</span>
+            <span class="node-score"><b>6.7</b><i>SEQ</i></span>
+          </span>
+        </button>
+        <button type="button" class="flow-node chip-trigger flagged" data-cite="task-t4" style="--score: 5.4">
+          <span class="node-ico">&#129302;</span>
+          <span class="node-dot"></span>
+          <span class="node-body">
+            <span class="node-task">T4 &middot; Use</span>
+            <span class="node-name">AI Coach</span>
+            <span class="node-score warn"><b>5.4</b><i>SEQ</i></span>
+          </span>
+        </button>
+        <button type="button" class="flow-node chip-trigger" data-cite="task-t5" style="--score: 6.3">
+          <span class="node-ico">&#128218;</span>
+          <span class="node-dot"></span>
+          <span class="node-body">
+            <span class="node-task">T5 &middot; Find</span>
+            <span class="node-name">Learning content</span>
+            <span class="node-score"><b>6.3</b><i>SEQ</i></span>
+          </span>
+        </button>
+        <button type="button" class="flow-node chip-trigger" data-cite="task-t6" style="--score: 6.9">
+          <span class="node-ico">&#127769;</span>
+          <span class="node-dot"></span>
+          <span class="node-body">
+            <span class="node-task">T6 &middot; Reflect</span>
+            <span class="node-name">Evening wind-down</span>
+            <span class="node-score"><b>6.9</b><i>SEQ</i></span>
+          </span>
+        </button>
+      </div>
+    </div>
+    <div class="flow-caption reveal d4">
+      <div class="flow-summary">
+        <span class="summary-num">6.4<i>/ 7</i></span>
+        <span class="summary-label">Overall mean SEQ &middot; all six tasks above the industry benchmark</span>
+      </div>
+      <div class="flow-note">T4&rsquo;s lower score reflects discoverability &mdash; not interaction quality. Once users found the AI Coach, 7/7 found it useful.</div>
     </div>
     <div class="slide-foot">
       <div class="foot-left">
@@ -3268,15 +3681,16 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
   </div>
 </section>
 
-<!-- SLIDE 12: SECTION STARTER — WHAT RESONATED (shell for Batch C) -->
-<section class="slide s12 slide-shell">
+<!-- SLIDE 12: SECTION STARTER — WHAT RESONATED WITH USERS -->
+<section class="slide s12 slide-section-starter starter-a">
+  <svg class="x-watermark" viewBox="0 0 1111 926" aria-hidden="true"><use href="#x-symbol"/></svg>
   <div class="slide-frame">
-    <div class="shell-body">
-      <div class="shell-eyebrow reveal d1">Slide 12 · Section Starter</div>
-      <div class="shell-num reveal d2">12</div>
-      <h1 class="shell-title reveal d3">Section 03 — What Resonated with Users</h1>
-      <p class="shell-sub reveal d4">Under construction — built in Batch C.</p>
-      <span class="shell-tag reveal d5"><span class="dot"></span>Batch C · Pending</span>
+    <div class="ss-eyebrow reveal d1">Section 03</div>
+    <div class="ss-body">
+      <div class="ss-num reveal d2">03</div>
+      <h1 class="ss-title reveal d3">What Resonated <span class="title-accent">with Users</span></h1>
+      <p class="ss-sub reveal d4">The features that generated genuine delight &mdash; in participants&rsquo; own words.</p>
+      <div class="ss-rule reveal d5"></div>
     </div>
     <div class="slide-foot">
       <div class="foot-left">
@@ -3288,19 +3702,107 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
   </div>
 </section>
 
-<!-- SLIDE 13: FEATURE VALIDATION OVERVIEW (shell for Batch C) -->
-<section class="slide s13 slide-shell">
+<!-- SLIDE 13: FEATURE VALIDATION OVERVIEW — HEAT MATRIX -->
+<section class="slide s13 slide-paper">
   <div class="slide-frame">
-    <div class="shell-body">
-      <div class="shell-eyebrow reveal d1">Slide 13 · What Resonated</div>
-      <div class="shell-num reveal d2">13</div>
-      <h1 class="shell-title reveal d3">Feature Validation Overview</h1>
-      <p class="shell-sub reveal d4">Under construction — built in Batch C.</p>
-      <span class="shell-tag reveal d5"><span class="dot"></span>Batch C · Pending</span>
+    <div class="reveal d1" style="display:flex;align-items:center;justify-content:space-between">
+      <div class="eyebrow">Section 03 &middot; Feature reception</div>
+      <div style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-dim);font-weight:500">6 features &middot; 7 participants &middot; 42 data points</div>
+    </div>
+    <div class="reveal d2">
+      <h1 class="fm-headline">Core features validated across the cohort. <span class="hl">Every critical path</span> cleared the bar.</h1>
+    </div>
+    <div class="fm-grid reveal d3">
+      <table class="fm-matrix">
+        <thead>
+          <tr>
+            <th class="fm-feat">Feature</th>
+            <th><button class="chip chip-inline" data-cite="p01">P01</button></th>
+            <th><button class="chip chip-inline" data-cite="p02">P02</button></th>
+            <th><button class="chip chip-inline" data-cite="p03">P03</button></th>
+            <th><button class="chip chip-inline" data-cite="p04">P04</button></th>
+            <th><button class="chip chip-inline" data-cite="p05">P05</button></th>
+            <th><button class="chip chip-inline" data-cite="p06">P06</button></th>
+            <th><button class="chip chip-inline" data-cite="p07">P07</button></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="fm-feat"><button class="chip chip-inline" data-cite="feat-home">Home &middot; Wellness Score</button></td>
+            <td><span class="fm-cell ok">&#10003;</span></td>
+            <td><span class="fm-cell ok">&#10003;</span></td>
+            <td><span class="fm-cell ok">&#10003;</span></td>
+            <td><span class="fm-cell ok">&#10003;</span></td>
+            <td><span class="fm-cell ok">&#10003;</span></td>
+            <td><span class="fm-cell ok">&#10003;</span></td>
+            <td><span class="fm-cell ok">&#10003;</span></td>
+          </tr>
+          <tr>
+            <td class="fm-feat"><button class="chip chip-inline" data-cite="feat-body">Body-map injection tracker</button></td>
+            <td><span class="fm-cell ok">&#10003;</span></td>
+            <td><span class="fm-cell ok">&#10003;</span></td>
+            <td><span class="fm-cell ok">&#10003;</span></td>
+            <td><span class="fm-cell ok">&#10003;</span></td>
+            <td><span class="fm-cell ok">&#10003;</span></td>
+            <td><span class="fm-cell ok">&#10003;</span></td>
+            <td><span class="fm-cell ok">&#10003;</span></td>
+          </tr>
+          <tr>
+            <td class="fm-feat"><button class="chip chip-inline" data-cite="feat-meal">Photo meal logging</button></td>
+            <td><button class="fm-cell na" data-cite="meal-p01">&mdash;</button></td>
+            <td><span class="fm-cell ok">&#10003;</span></td>
+            <td><span class="fm-cell ok">&#10003;</span></td>
+            <td><span class="fm-cell ok">&#10003;</span></td>
+            <td><span class="fm-cell ok">&#10003;</span></td>
+            <td><span class="fm-cell ok">&#10003;</span></td>
+            <td><span class="fm-cell ok">&#10003;</span></td>
+          </tr>
+          <tr>
+            <td class="fm-feat"><button class="chip chip-inline" data-cite="feat-coach">AI Coach <span class="fm-note">(post-discovery)</span></button></td>
+            <td><span class="fm-cell ok">&#10003;</span></td>
+            <td><span class="fm-cell ok">&#10003;</span></td>
+            <td><span class="fm-cell ok">&#10003;</span></td>
+            <td><span class="fm-cell ok">&#10003;</span></td>
+            <td><span class="fm-cell ok">&#10003;</span></td>
+            <td><span class="fm-cell ok">&#10003;</span></td>
+            <td><span class="fm-cell ok">&#10003;</span></td>
+          </tr>
+          <tr>
+            <td class="fm-feat"><button class="chip chip-inline" data-cite="feat-learn">Learning pathways</button></td>
+            <td><span class="fm-cell ok">&#10003;</span></td>
+            <td><span class="fm-cell ok">&#10003;</span></td>
+            <td><span class="fm-cell ok">&#10003;</span></td>
+            <td><span class="fm-cell ok">&#10003;</span></td>
+            <td><button class="fm-cell warn" data-cite="learn-p05">!</button></td>
+            <td><span class="fm-cell ok">&#10003;</span></td>
+            <td><span class="fm-cell ok">&#10003;</span></td>
+          </tr>
+          <tr>
+            <td class="fm-feat"><button class="chip chip-inline" data-cite="feat-refl">Evening reflections <span class="fm-note">(segment feature)</span></button></td>
+            <td><button class="fm-cell bad" data-cite="refl-p01">&#10005;</button></td>
+            <td><button class="fm-cell warn" data-cite="refl-p02">!</button></td>
+            <td><button class="fm-cell warn" data-cite="refl-p03">!</button></td>
+            <td><span class="fm-cell ok">&#10003;</span></td>
+            <td><button class="fm-cell warn" data-cite="refl-p05">!</button></td>
+            <td><span class="fm-cell ok">&#10003;</span></td>
+            <td><span class="fm-cell ok">&#10003;</span></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="fm-legend">
+        <span class="fm-key"><span class="fm-cell ok static">&#10003;</span> Positive reception</span>
+        <span class="fm-key"><span class="fm-cell warn static">!</span> Mixed / conditional</span>
+        <span class="fm-key"><span class="fm-cell bad static">&#10005;</span> Refused</span>
+        <span class="fm-key"><span class="fm-cell na static">&mdash;</span> Not tested</span>
+      </div>
+    </div>
+    <div class="fm-callout reveal d4">
+      <span class="fm-callout-pill">Reflections variation is by design</span>
+      Every universal feature cleared the cohort. Evening reflections is a segment feature &mdash; its adoption curve depends on matching the right users, not retrofitting all of them.
     </div>
     <div class="slide-foot">
       <div class="foot-left">
-        <svg class="mark" viewBox="0 0 1128 431" aria-label="BIX" style="color: var(--on-dark)"><use href="#bix-logo"/></svg>
+        <svg class="mark" viewBox="0 0 1128 431" aria-label="BIX"><use href="#bix-logo"/></svg>
         <span class="foot-internal">BI X Digital Innovation Lab &nbsp;|&nbsp; ONLY FOR INTERNAL USE</span>
       </div>
       <div class="foot-page">13</div>
@@ -3402,15 +3904,115 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
   </div>
 </section>
 
-<!-- SLIDE 15: BODY MAP INJECTION TRACKER (shell for Batch C) -->
-<section class="slide s15 slide-shell">
+<!-- SLIDE 15: BODY MAP INJECTION TRACKER — phone-right variant per user pref -->
+<section class="slide s15 slide-dark">
   <div class="slide-frame">
-    <div class="shell-body">
-      <div class="shell-eyebrow reveal d1">Slide 15 · What Resonated</div>
-      <div class="shell-num reveal d2">15</div>
-      <h1 class="shell-title reveal d3">Body Map Injection Tracker</h1>
-      <p class="shell-sub reveal d4">Under construction — built in Batch C.</p>
-      <span class="shell-tag reveal d5"><span class="dot"></span>Batch C · Pending</span>
+    <div class="reveal d1" style="display:flex;align-items:center;justify-content:space-between">
+      <div class="eyebrow">What resonated &middot; Universal approval</div>
+      <div style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--on-dark-mute);font-weight:500">Body map &middot; injection tracker</div>
+    </div>
+    <div class="bm-grid">
+      <div class="bm-left">
+        <div class="reveal d2">
+          <h1 class="bm-headline">Seven out of seven positive. <span class="hl">No competitor</span> offers the same combination.</h1>
+        </div>
+        <div class="bm-stat-row reveal d3">
+          <button class="chip-trigger n-trigger bm-primary" data-cite="body-map-77">
+            <div class="n">7<i>/7</i></div>
+            <div class="label">Positive reception</div>
+          </button>
+          <div class="bm-stat sm">
+            <div class="n">6.7</div>
+            <div class="label">Mean usefulness</div>
+          </div>
+        </div>
+        <div class="bm-diff reveal d4">
+          <div class="diff-label">Differentiator</div>
+          <div class="diff-body">Visual site selection <span class="sep">&middot;</span> rotation history <span class="sep">&middot;</span> suggested next site</div>
+          <div class="diff-compare">Against <button class="chip chip-inline" data-cite="p02">P02</button>&rsquo;s Microhealth, <button class="chip chip-inline" data-cite="p05">P05</button>&rsquo;s Shotzy, and generic health-tracker tools &mdash; this combination is unique.</div>
+        </div>
+        <div class="bm-quotes">
+          <div class="bm-quote reveal d5">
+            <blockquote>This is a lot better because the app that I use only tracks my infusions.</blockquote>
+            <cite><button class="chip" data-cite="p02">P02</button> &middot; 44M &middot; Wegovy</cite>
+          </div>
+          <div class="bm-quote reveal d6">
+            <blockquote>I like that it tells you where your last one was &mdash; in [my app] I actually have to go back and look.</blockquote>
+            <cite><button class="chip" data-cite="p05">P05</button> &middot; 61F &middot; Zepbound +</cite>
+          </div>
+        </div>
+        <div class="bm-clip reveal d7" data-video="p02-bodymap-1546">
+          <div class="clip-card" role="button" tabindex="0" aria-label="Play clip">
+            <div class="clip-label">
+              <span class="rec-dot"></span>
+              <span>Dovetail clip</span>
+            </div>
+            <div class="clip-thumb">
+              <div class="clip-waveform" aria-hidden="true">
+                <span style="height:26%"></span><span style="height:44%"></span><span style="height:62%"></span><span style="height:38%"></span><span style="height:78%"></span><span style="height:50%"></span><span style="height:30%"></span><span style="height:68%"></span><span style="height:52%"></span><span style="height:40%"></span><span style="height:86%"></span><span style="height:56%"></span><span style="height:44%"></span><span style="height:72%"></span><span style="height:36%"></span><span style="height:60%"></span><span style="height:48%"></span><span style="height:80%"></span><span style="height:42%"></span><span style="height:58%"></span>
+              </div>
+              <div class="clip-play" aria-hidden="true"></div>
+            </div>
+            <div class="clip-meta">
+              <span class="pid">P02 &middot; 15:46</span>
+              <span class="ts">0:08</span>
+            </div>
+            <div class="clip-quote">&ldquo;This is a lot better&hellip;&rdquo;</div>
+          </div>
+        </div>
+      </div>
+      <div class="bm-right reveal d3">
+        <div class="bm-phone-wrap">
+          <div class="phone" aria-label="iPhone Air showing the body map injection tracker">
+            <div class="btn-side btn-action"></div>
+            <div class="btn-side btn-vol-up"></div>
+            <div class="btn-side btn-vol-down"></div>
+            <div class="btn-side btn-power"></div>
+            <div class="phone-screen">
+              <div class="phone-island" aria-hidden="true"></div>
+              <div class="screen screen-bodymap-lite" data-asset="bodymap-injection" data-asset-folder="screenshots" data-asset-ext="png">
+                <div class="screen-status">
+                  <span class="time">9:41</span>
+                  <span class="icons"><span class="wifi"></span><span class="battery"></span></span>
+                </div>
+                <div class="bm-top">
+                  <span class="back">&larr;</span>
+                  <span class="title">Log injection</span>
+                  <span class="edit">&nbsp;</span>
+                </div>
+                <div class="bm-step">Step 2 of 3 &middot; Choose site</div>
+                <div class="bm-body-svg" aria-hidden="true">
+                  <!-- torso silhouette + 6 zones -->
+                  <svg viewBox="0 0 200 260" width="100%" height="100%">
+                    <defs>
+                      <linearGradient id="torso" x1="0" x2="0" y1="0" y2="1">
+                        <stop offset="0" stop-color="#0F4A42"/>
+                        <stop offset="1" stop-color="#062823"/>
+                      </linearGradient>
+                    </defs>
+                    <path d="M100 14 C 78 14 72 26 72 40 C 72 50 66 58 54 62 C 40 68 30 80 30 96 L30 160 C30 172 36 184 46 192 L46 250 L154 250 L154 192 C164 184 170 172 170 160 L170 96 C170 80 160 68 146 62 C134 58 128 50 128 40 C128 26 122 14 100 14 Z" fill="url(#torso)" stroke="rgba(94,234,212,0.18)" stroke-width="1"/>
+                    <!-- zones: tl, tr, ml, mr, bl, br -->
+                    <circle cx="70"  cy="96"  r="15" fill="rgba(94,234,212,0.08)" stroke="rgba(94,234,212,0.25)" stroke-width="0.8" stroke-dasharray="2 2"/>
+                    <circle cx="130" cy="96"  r="15" fill="rgba(94,234,212,0.08)" stroke="rgba(94,234,212,0.25)" stroke-width="0.8" stroke-dasharray="2 2"/>
+                    <circle cx="70"  cy="138" r="15" fill="rgba(245,158,11,0.14)" stroke="rgba(245,158,11,0.45)" stroke-width="1"/>
+                    <circle cx="130" cy="138" r="15" fill="rgba(94,234,212,0.08)" stroke="rgba(94,234,212,0.25)" stroke-width="0.8" stroke-dasharray="2 2"/>
+                    <circle cx="70"  cy="180" r="15" fill="rgba(52,238,167,0.22)" stroke="rgba(52,238,167,0.8)" stroke-width="1.5"/>
+                    <circle cx="130" cy="180" r="15" fill="rgba(94,234,212,0.08)" stroke="rgba(94,234,212,0.25)" stroke-width="0.8" stroke-dasharray="2 2"/>
+                    <!-- suggested pulse -->
+                    <circle cx="70"  cy="180" r="20" fill="none" stroke="rgba(52,238,167,0.35)" stroke-width="0.8"/>
+                  </svg>
+                </div>
+                <div class="bm-legend">
+                  <span class="lg"><span class="sw lg-suggest"></span>Suggested</span>
+                  <span class="lg"><span class="sw lg-recent"></span>Recent (&lt; 48 hr)</span>
+                  <span class="lg"><span class="sw lg-avail"></span>Available</span>
+                </div>
+                <div class="bm-cta">Continue</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="slide-foot">
       <div class="foot-left">
@@ -4261,6 +4863,128 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
       title: '50+ behavioural observables, colour-coded live',
       detail: 'A structured observation framework the moderator marks in real time during each session. Categories include navigation path, help-seeking, articulation of mental models, error recovery, and unprompted reactions. Colour coding keeps high-signal moments scannable during synthesis.',
       meta: 'Combined with full transcript + video in Dovetail for pattern-level analysis across the cohort.'
+    },
+
+    // ---------- Slide 11 task nodes ----------
+    'task-t1': {
+      label: 'Task T1 · Morning Exploration',
+      title: 'SEQ 6.7 / 7  ·  7/7 full completion',
+      detail: 'Free-exploration task. All seven participants articulated the app\u2019s purpose after 3\u20134 minutes. The wellness rings carried the screen \u2014 treated as primary navigation, not decoration.',
+      meta: 'The +/action button and bottom nav were the recurring misses here \u2014 surfaced as Finding 1.'
+    },
+    'task-t2': {
+      label: 'Task T2 · Log Injection',
+      title: 'SEQ 6.6 / 7  ·  7/7 full completion',
+      detail: 'Three participants (P03, P05, P07) tried to log from the Meds section first \u2014 the label and calendar icon implied logging. All three self-corrected to the home card within 30 seconds.',
+      meta: 'P07 articulated it clearest: \u201CIt literally says meds.\u201D Surfaced as Finding 3 \u2014 meds calendar \u201Ctoday\u201D as a natural entry point.'
+    },
+    'task-t3': {
+      label: 'Task T3 · Log Lunch',
+      title: 'SEQ 6.7 / 7  ·  7/7 full completion',
+      detail: 'Six of seven chose photo logging unprompted. P01 was the outlier (typed) \u2014 attributable to AI fluency, not UI friction. Multiple participants surprised by the AI\u2019s recognition accuracy.',
+      meta: 'Photo logging drove the highest delight moment in the session \u2014 the breakout feature.'
+    },
+    'task-t4': {
+      label: 'Task T4 · AI Coach',
+      title: 'SEQ 5.4 / 7  ·  4/7 full · 3/7 partial',
+      detail: 'Score reflects discoverability, not interaction quality. Only 2\u20133 participants found the Coach independently on the first attempt. Once discovered, 7/7 found it useful and expressed willingness to return.',
+      meta: 'P07\u2019s 5 partially attributable to the non-functional microphone in the prototype \u2014 confirms demand for voice input.'
+    },
+    'task-t5': {
+      label: 'Task T5 · Find Learning Content',
+      title: 'SEQ 6.3 / 7  ·  5/7 full · 1 partial · 1 fail',
+      detail: 'Most participants found the Learn section on their second pass after discovering it during exploration. P05 is the classic recognition-vs-recall case \u2014 found it earlier, couldn\u2019t relocate it during the directed task.',
+      meta: 'Pathway format resonated. CBT- and ACT-grounded content structure went unremarked as a framework \u2014 participants just found it useful.'
+    },
+    'task-t6': {
+      label: 'Task T6 · Evening Reflection',
+      title: 'SEQ 6.9 / 7  ·  4/7 full · 2 partial · 1 refused',
+      detail: 'Highest SEQ in the set among participants who engaged. 4/7 engaged meaningfully. Scoring P01 as \u201Cfail\u201D is technically correct but overstates \u2014 she refused on personal preference (\u201CI hate this\u201D) while endorsing the app overall.',
+      meta: 'Segment feature by design. Surfaces as Finding 6 \u2014 adoption strategy needs to match the right users, not all users.'
+    },
+
+    // ---------- Slide 13 · Feature overviews ----------
+    'feat-home': {
+      label: 'Feature overview',
+      title: 'Home screen / Wellness Score',
+      detail: '7/7 positive. Treated as primary navigation rather than decoration \u2014 participants tapped rings to drill in. P07 (lowest self-rated tech comfort) decoded the rings unprompted, which is the single strongest evidence that the information architecture is sound.',
+      meta: 'Dedicated follow-up \u2192 Finding 1 (visual differentiation of the surrounding interactive affordances).'
+    },
+    'feat-body': {
+      label: 'Feature overview',
+      title: 'Body-map injection tracker',
+      detail: '7/7 positive. Highest-praised single feature after photo meal logging. Participants who already track injections on other apps (P02 Microhealth, P05 Shotzy) explicitly said this was better. The combination of visual selection, rotation history, and suggested next site has no direct competitor equivalent.',
+      meta: 'P05 usefulness rating 6.7 / 7 mean. Dedicated slide \u2192 Slide 15.'
+    },
+    'feat-meal': {
+      label: 'Feature overview',
+      title: 'Photo meal logging',
+      detail: 'The breakout feature. 6/7 chose photo logging unprompted when told to log lunch. The AI recognition accuracy generated genuine surprise moments across multiple sessions. P04 explicitly tied her willingness to log meals daily to this feature.',
+      meta: 'P01 not tested \u2014 she preferred text input on AI fluency grounds, not UI friction. Dedicated slide \u2192 Slide 14.'
+    },
+    'feat-coach': {
+      label: 'Feature overview',
+      title: 'AI Coach (post-discovery)',
+      detail: '7/7 found it useful once found. Initial discoverability was uneven \u2014 only 2\u20133 participants found the Coach independently on the first directed task. Once engaged, the context-aware behaviour (\u201Cit already knows I\u2019m on Zepbound\u201D) separated it meaningfully from generic AI tools in participants\u2019 minds.',
+      meta: 'Dedicated slide \u2192 Slide 16. Remediation proposals \u2192 Finding 2.'
+    },
+    'feat-learn': {
+      label: 'Feature overview',
+      title: 'Learning pathways',
+      detail: '7/7 understood the pathway structure. 7/7 engaged with content once found. The CBT / ACT foundation went unremarked as a framework \u2014 participants simply found the content useful. The single warn cell is a recognition-vs-recall case, not a content problem.',
+      meta: 'Dedicated slide \u2192 Slide 17.'
+    },
+    'feat-refl': {
+      label: 'Feature overview',
+      title: 'Evening reflections',
+      detail: 'The most polarised feature. 4/7 meaningful engagement, 2/7 conditional, 1/7 refusal. This was the expected outcome \u2014 reflections is a segment feature, not a universal one, and the prototype intentionally did not force adoption.',
+      meta: 'Adoption strategy by segment surfaces as Finding 6 \u2014 Slide 33. Bedtime push, immediate AI positive feedback, and catch-up logging are the three levers.'
+    },
+
+    // ---------- Slide 13 · Exception cells (spine-sourced per-participant) ----------
+    'meal-p01': {
+      label: 'Cell · P01 × Photo meal logging',
+      title: 'Not tested \u2014 by participant choice',
+      detail: 'P01 was the only participant who chose to type rather than photograph her meal. Moderator note: this was AI fluency, not UI friction \u2014 she uses ChatGPT daily and preferred the text path as faster for her.',
+      meta: 'Represented as \u201C\u2014\u201D in the matrix to distinguish from a negative reception.'
+    },
+    'learn-p05': {
+      label: 'Cell · P05 × Learning pathways',
+      title: 'Recognition, not recall',
+      detail: 'P05 found the Learn section during free exploration and articulated its purpose correctly. During the directed task later, she could not relocate it and first looked in the bottom nav \u2014 which blends into the dark surface. Post-discovery, she engaged meaningfully.',
+      meta: 'Classic discoverability case. Remediation is styling-level (Finding 1), not content. The pathway itself worked for her.'
+    },
+    'refl-p01': {
+      label: 'Cell · P01 × Evening reflections',
+      title: 'Refused \u2014 then immediately endorsed the app',
+      detail: '\u201CI hate this.\u201D Followed, unprompted, by: \u201CI actually like the app though.\u201D P01 is the edge case that proves reflections is a segment feature. The refusal is real; so is the overall endorsement.',
+      meta: 'Not a usability failure. This is what opt-out looks like in the wild.'
+    },
+    'refl-p02': {
+      label: 'Cell · P02 × Evening reflections',
+      title: 'Conditional \u2014 not his habit',
+      detail: 'P02 engaged briefly but described reflections as \u201Cnot something I\u2019d do on my own.\u201D Suggested he\u2019d use it if prompted. Matches the prompted-adoption pattern.',
+      meta: 'Candidate for the bedtime-push adoption lever.'
+    },
+    'refl-p03': {
+      label: 'Cell · P03 × Evening reflections',
+      title: 'Conditional \u2014 would need prompts',
+      detail: 'Critical-scorer P03 gave reflections a 5.0 / 7 SEQ but articulated she\u2019d only use it if the app nudged her. Content was fine; habit adherence was the gap.',
+      meta: 'Same lever applies \u2014 evening push notification tied to her typical phone-before-bed window.'
+    },
+    'refl-p05': {
+      label: 'Cell · P05 × Evening reflections',
+      title: 'Conditional \u2014 recognised AI feedback value',
+      detail: 'Engaged once she saw the immediate AI-generated positive feedback. Described the feature warmly but would not schedule it herself. Asked whether the AI responses scale with her input.',
+      meta: 'The AI-feedback loop is a meaningful second adoption lever alongside the bedtime push.'
+    },
+
+    // ---------- Slide 15 · Body map ----------
+    'body-map-77': {
+      label: 'Cohort result · body map',
+      title: '7 of 7 positive  ·  mean usefulness 6.7 / 7',
+      detail: 'Universal approval across the cohort. No competitor combines visual site selection, rotation history, and suggested-next-site reminders in one view. P02 and P05 \u2014 both current users of other tracking apps \u2014 articulated the gap explicitly.',
+      meta: 'Per-participant breakdown: P01 positive \u00b7 P02 \u201Ca lot better\u201D (current: Microhealth) \u00b7 P03 positive \u00b7 P04 positive \u00b7 P05 \u201Ctells you where your last one was\u201D (current: Shotzy) \u00b7 P06 positive \u00b7 P07 positive.'
     },
 
     // Populated dynamically when a task row is clicked on slide 4
