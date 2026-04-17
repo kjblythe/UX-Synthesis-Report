@@ -194,5 +194,34 @@ Both slides passed QA in sessions 1–4 with full polish (SEQ chart interactions
 
 Build blueprint slides 1–15 in three batches of 5. Batch A first. See `todo.md` for the full plan.
 
+### ⚠️ IMPORTANT — TONE DISCIPLINE (standing rule; applies to every slide going forward)
+
+**What:** Body and headline copy on slides 2 and 4 (and the title slide subtitle) drifted into pitch-deck marketing voice. Examples that were shipped and must be avoided:
+- "A small, cross-functional team built this." (slide 2 headline)
+- "One team, one prototype, one week in the field." (slide 2 lede)
+- "A GLP-1-specific companion that turns the medication into a lifestyle — in one app." (slide 4 headline)
+- "Most patients are stitching together three or four tools…" (slide 4 lede)
+- "Seven patients. Six tasks. One day in the life of the app." (title slide)
+
+**Root cause:** I treated audience-facing copy the same way I'd treat website hero copy — punchy, evocative, story-shaped. But this is an **internal research readout to BI business stakeholders who already know the team, the program, and the product**. Self-introduction, mission language, and evocative consolidation narratives are NOT what they need. They need findings and evidence, stated precisely.
+
+**Rule going forward:** the voice of this deck is a **principal investigator presenting evidence to a funding committee they already work with**. That means:
+- Declarative, not evocative. "Six core-team members built this prototype." not "A small, cross-functional team built this."
+- Factual, not aspirational. "The prototype integrates medication logging, nutrition tracking, an AI coach, behavioral learning, and reflections." not "…turns the medication into a lifestyle."
+- Concrete counts and nouns beat adjectives. "Seven patients. Six tasks. Five hours of recorded session." not "One day in the life of the app."
+- No "story-shaped" lede patterns ("Most X are Y. This does Z."). Lede should orient, not persuade.
+- No self-congratulation. The findings speak for themselves — don't editorialize the work.
+- No "in one app," "one team," "this is what X looks like when…" — those are all marketing constructions.
+
+**Test before shipping any copy:** read it out loud as if presenting to a VP of R&D who has been briefed on BI X for years. If any sentence would make them wince, reach for the delete key.
+
+### ⚠️ Session 5 content fix log
+
+- **Tone pass 1** — rewrote slide 1 subtitle, slide 2 headline + lede, slide 4 headline + lede per rule above. Kept the structure and information; changed the voice.
+- **Slide 2 restructure** — 6 primary team members in a 2×3 grid (was 1×6 row). Roles moved off the visible surface into chip popovers (surfaced on click) along with email addresses. Aligns with rule 19 (every visible pill/badge is a chip-trigger) and avoids the "CV-style role cards in a grid" anti-pattern.
+- **Slide 4 phone** — screenshot was cropped because `object-fit: cover` forced the screen aspect to match the frame. Switched to `object-fit: contain` + dynamic aspect-ratio match (the phone frame now adopts the loaded image's natural dimensions), so the frame wraps the image instead of cropping it.
+- **Slide 5 content not rendering** — the `.ss-inner > ss-focus` flex-column with `justify-content: space-between` collapsed content to the bottom edge off-canvas in certain viewport scales. Rebuilt to match slide 1's proven layout pattern (direct children of `.slide-frame`, no extra wrapper, explicit left alignment).
+- **Henry crop** — `object-position` moved from 22% → 8% (head was at the very bottom of the source image; needed to shift the crop further toward the top of the frame).
+
 
 
