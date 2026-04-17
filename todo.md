@@ -386,6 +386,7 @@ Updated as each slide is built. File names/paths use the stable hooks wired into
 | s4 — What Is This App? | `data-asset="home-wellness"` | `assets/screenshots/home-wellness.png` | ✅ present |
 | s14 — Photo Meal Logging | `data-asset="meal-logging"` | `assets/screenshots/meal-logging.png` | ✅ present |
 | s15 — Body Map | `data-asset="bodymap-injection"` | `assets/screenshots/bodymap-injection.png` | ✅ present |
+| s16 — AI Coach chat | `data-asset="ai-coach"` | `assets/screenshots/ai-coach.png` | ⏳ needed |
 | s17 — Learning pathways | `data-asset="learn-pathway"` | `assets/screenshots/learn-pathway.png` | ⏳ needed |
 | s25 — F1 home screen (deferred) | CSS mock only (home rings, cards, toast, FAB, bottom-nav) | — | CSS fine; real screenshot optional |
 | s30 — Meds calendar popover | `data-asset="meds-popover"` | `assets/screenshots/meds-popover.png` | ⏳ needed |
