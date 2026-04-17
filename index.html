@@ -2210,9 +2210,18 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
 .starter-c .ss-rule { background: var(--teal-400); }
 
 /* ============ SLIDE 2 — MEET THE TEAM ============ */
+.team-head { margin-top: 44px; display: grid; grid-template-columns: minmax(0,1fr) 520px; gap: 88px; align-items: end; }
+.team-headline {
+  font-family: var(--f-display); font-weight: 600; font-size: 52px; line-height: 1.08; letter-spacing: -0.02em;
+  color: var(--ink); margin: 0; max-width: 820px;
+}
+.team-lede {
+  font-family: var(--f-display); font-weight: 400; font-size: 17px; line-height: 1.55; color: var(--ink-mute);
+  max-width: 480px; margin: 0;
+}
 .team-grid {
-  display: grid; grid-template-columns: 1fr; gap: 64px;
-  margin-top: 56px;
+  display: grid; grid-template-columns: 1fr; gap: 48px;
+  margin-top: 60px;
 }
 .team-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 24px; }
 .team-row.primary { gap: 32px; }
@@ -2422,19 +2431,75 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
   </div>
 </section>
 
-<!-- SLIDE 2: MEET THE TEAM — shell (replaced in Batch A sub-chunk A2) -->
-<section class="slide s2 slide-shell">
+<!-- SLIDE 2: MEET THE TEAM -->
+<section class="slide s2 slide-paper">
   <div class="slide-frame">
-    <div class="shell-body">
-      <div class="shell-eyebrow reveal d1">Slide 02 · Front Matter</div>
-      <div class="shell-num reveal d2">02</div>
-      <h1 class="shell-title reveal d3">Meet the Team</h1>
-      <p class="shell-sub reveal d4">Under construction — replaced in sub-chunk A2.</p>
-      <span class="shell-tag reveal d5"><span class="dot"></span>Batch A · In Progress</span>
+    <div class="reveal d1" style="display:flex;align-items:center;justify-content:space-between">
+      <div class="eyebrow">The Team</div>
+      <div style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-dim);font-weight:500">BI X · US &amp; Ingelheim</div>
+    </div>
+    <div class="team-head reveal d2">
+      <h1 class="team-headline">A small, cross-functional team built this.</h1>
+      <p class="team-lede">Researchers, designers, engineers, and product leaders from BI X — the Digital Innovation Lab by Boehringer Ingelheim. One team, one prototype, one week in the field.</p>
+    </div>
+    <div class="team-grid">
+      <div class="team-row primary reveal d3">
+        <div class="team-member">
+          <div class="team-avatar lead" data-headshot="kyle-blythe"><span class="monogram">KB</span></div>
+          <div class="team-name">Kyle Blythe</div>
+          <div class="team-role">UX Designer / Researcher</div>
+        </div>
+        <div class="team-member">
+          <div class="team-avatar" data-headshot="vincent-crossley"><span class="monogram">VC</span></div>
+          <div class="team-name">Vincent Crossley</div>
+          <div class="team-role">Digital Product Manager</div>
+        </div>
+        <div class="team-member">
+          <div class="team-avatar" data-headshot="lisa-michelson"><span class="monogram">LM</span></div>
+          <div class="team-name">Lisa Michelson</div>
+          <div class="team-role">Digital Innovation Scout</div>
+        </div>
+        <div class="team-member">
+          <div class="team-avatar" data-headshot="kamal-shaham"><span class="monogram">KS</span></div>
+          <div class="team-name">Kamal Shaham</div>
+          <div class="team-role">Full Stack Engineer</div>
+        </div>
+        <div class="team-member">
+          <div class="team-avatar" data-headshot="henry-levinson"><span class="monogram">HL</span></div>
+          <div class="team-name">Henry Levinson</div>
+          <div class="team-role">Engineer · IT Rotation</div>
+        </div>
+        <div class="team-member">
+          <div class="team-avatar" data-headshot="allen-on"><span class="monogram">AO</span></div>
+          <div class="team-name">Allen On</div>
+          <div class="team-role">Technology Scout</div>
+        </div>
+      </div>
+      <div class="team-divider-band reveal d4">
+        <span class="rule"></span>
+        <span class="label">Additional support from BI Ingelheim</span>
+        <span class="rule"></span>
+      </div>
+      <div class="team-row support reveal d5">
+        <div class="team-member">
+          <div class="team-avatar" data-headshot="andrea-reyes-montenegro"><span class="monogram">AR</span></div>
+          <div class="team-info">
+            <div class="team-name">Andrea Reyes Montenegro</div>
+            <div class="team-role">UX Designer</div>
+          </div>
+        </div>
+        <div class="team-member">
+          <div class="team-avatar" data-headshot="jeannine-kramer"><span class="monogram">JK</span></div>
+          <div class="team-info">
+            <div class="team-name">Jeannine Krämer</div>
+            <div class="team-role">UX Designer</div>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="slide-foot">
       <div class="foot-left">
-        <svg class="mark" viewBox="0 0 1128 431" aria-label="BIX" style="color: var(--on-dark)"><use href="#bix-logo"/></svg>
+        <svg class="mark" viewBox="0 0 1128 431" aria-label="BIX"><use href="#bix-logo"/></svg>
         <span class="foot-internal">BI X Digital Innovation Lab &nbsp;|&nbsp; ONLY FOR INTERNAL USE</span>
       </div>
       <div class="foot-page">02</div>
@@ -3161,6 +3226,47 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
     });
   }
 
+  // Auto-load headshots: if assets/team/<slug>.jpg exists, swap in the image;
+  // otherwise the monogram placeholder renders. Degrades gracefully offline.
+  function loadHeadshots() {
+    document.querySelectorAll('[data-headshot]').forEach(el => {
+      const slug = el.dataset.headshot;
+      if (!slug) return;
+      const img = new Image();
+      img.onload = () => {
+        const monogram = el.querySelector('.monogram');
+        if (monogram) monogram.remove();
+        const inserted = document.createElement('img');
+        inserted.src = img.src;
+        inserted.alt = slug.replace(/-/g, ' ');
+        el.appendChild(inserted);
+      };
+      img.onerror = () => { /* keep monogram */ };
+      img.src = `assets/team/${slug}.jpg`;
+    });
+  }
+
+  // Auto-load generic data-asset images (lab photo, screenshots, etc.)
+  function loadDataAssets() {
+    document.querySelectorAll('[data-asset]').forEach(el => {
+      const slug = el.dataset.asset;
+      const folder = el.dataset.assetFolder || 'photos';
+      if (!slug) return;
+      const ext = el.dataset.assetExt || 'jpg';
+      const img = new Image();
+      img.onload = () => {
+        const placeholder = el.querySelector('.asset-placeholder');
+        if (placeholder) placeholder.remove();
+        const inserted = document.createElement('img');
+        inserted.src = img.src;
+        inserted.alt = slug.replace(/-/g, ' ');
+        inserted.className = 'asset-img';
+        el.appendChild(inserted);
+      };
+      img.src = `assets/${folder}/${slug}.${ext}`;
+    });
+  }
+
   function paintThumb(el, key) {
     const styles = {
       title:         'background:linear-gradient(135deg,#0C433C,#062823); position:relative;',
@@ -3787,6 +3893,8 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
 
   // init
   buildNav();
+  loadHeadshots();
+  loadDataAssets();
   // Auto-collapse navigator on tablet/mobile (defer to user to open)
   if (window.matchMedia('(max-width: 1100px)').matches) {
     app.classList.add('nav-collapsed');
