@@ -2238,6 +2238,89 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
 }
 .slide-section-starter .slide-foot { z-index: 3; }
 
+/* ============ SLIDE 10 — PARTICIPANT PROFILE ============ */
+.s10 .p-headline {
+  font-family: var(--f-display); font-weight: 600; font-size: 42px; line-height: 1.12;
+  letter-spacing: -0.02em; color: var(--text-on-dark); margin: 28px 0 0 0; max-width: 1400px;
+}
+.s10 .p-grid {
+  margin-top: 40px;
+  display: grid; grid-template-columns: minmax(0, 1fr) 360px;
+  gap: 72px; align-items: start;
+}
+.s10 .p-table-wrap { min-width: 0; }
+.s10 .p-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--f-display);
+  color: var(--text-on-dark);
+  font-variant-numeric: tabular-nums;
+}
+.s10 .p-table thead th {
+  font-weight: 500; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--teal-300);
+  text-align: left;
+  padding: 0 14px 14px 14px;
+  border-bottom: 1px solid rgba(94,234,212,0.24);
+  white-space: nowrap;
+}
+.s10 .p-table thead th:first-child { padding-left: 0; }
+.s10 .p-table thead th:last-child  { padding-right: 0; }
+.s10 .p-table tbody td {
+  padding: 18px 14px;
+  border-bottom: 1px solid rgba(245,242,234,0.06);
+  font-size: 17px; font-weight: 400;
+  color: var(--text-on-dark);
+  vertical-align: middle;
+}
+.s10 .p-table tbody td:first-child { padding-left: 0; }
+.s10 .p-table tbody td:last-child  { padding-right: 0; }
+.s10 .p-table tbody tr:last-child td { border-bottom: none; }
+.s10 .p-table tbody tr.target td { color: var(--mint-accent); }
+.s10 .p-table tbody tr.target td:nth-child(n+2):nth-child(-n+5) { color: rgba(245,242,234,0.92); }
+.s10 .p-table .col-tech { width: 180px; }
+.s10 .p-table .col-id   { width: 80px; }
+.s10 .p-table .col-age  { width: 70px; }
+.s10 .p-table .col-gender { width: 90px; }
+.s10 .p-table .col-dur  { width: 110px; }
+.s10 .p-table tbody .chip { font-size: 12px; letter-spacing: 0.1em; padding: 3px 10px; height: 24px; }
+/* 7-dot tech-comfort bar */
+.s10 .tc-row { display: inline-flex; align-items: center; gap: 12px; }
+.s10 .dots { display: inline-flex; gap: 4px; align-items: center; }
+.s10 .dots i {
+  display: inline-block; width: 7px; height: 7px; border-radius: 50%;
+  background: rgba(245,242,234,0.14);
+}
+.s10 .dots i.on { background: var(--mint-accent); box-shadow: 0 0 0 1px rgba(52,238,167,0.16); }
+.s10 .tc-val { font-family: var(--f-display); font-weight: 600; font-size: 14px; color: rgba(245,242,234,0.82); font-variant-numeric: tabular-nums; letter-spacing: 0.02em; }
+.s10 .tc-val i { font-style: normal; font-weight: 400; color: rgba(245,242,234,0.5); }
+
+/* Sidebar callouts — typographic stack, no cards */
+.s10 .p-aside { display: flex; flex-direction: column; padding-top: 4px; }
+.s10 .p-stat {
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(245,242,234,0.08);
+  display: flex; flex-direction: column; gap: 4px;
+}
+.s10 .p-stat:first-child { padding-top: 0; }
+.s10 .p-stat-val {
+  font-family: var(--f-display); font-weight: 600; font-size: 30px; line-height: 1;
+  letter-spacing: -0.01em; color: var(--text-on-dark);
+  font-variant-numeric: tabular-nums;
+}
+.s10 .p-stat-val i { font-style: normal; font-weight: 400; color: rgba(245,242,234,0.45); font-size: 18px; letter-spacing: 0; }
+.s10 .p-stat-val .sep { color: var(--teal-300); font-weight: 400; margin: 0 4px; }
+.s10 .p-stat-lbl {
+  font-family: var(--f-display); font-weight: 500; font-size: 11px; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--text-dim-dark);
+}
+.s10 .p-target { padding: 22px 0 0 0; display: flex; flex-direction: column; gap: 10px; }
+.s10 .p-target-lbl {
+  font-family: var(--f-display); font-weight: 500; font-size: 11px; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--mint-accent);
+}
+.s10 .p-target-chips { display: flex; gap: 8px; }
+
 /* ============ SLIDE 9 — STUDY DESIGN OVERVIEW ============ */
 /* Explicit flex layout with hard height budgets — grid+1fr was letting
    children overflow (see lessons-learned.md Batch B entry). */
@@ -3067,15 +3150,93 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
   </div>
 </section>
 
-<!-- SLIDE 10: PARTICIPANT PROFILE (shell for Batch B) -->
-<section class="slide s10 slide-shell">
+<!-- SLIDE 10: PARTICIPANT PROFILE -->
+<section class="slide s10 slide-dark">
   <div class="slide-frame">
-    <div class="shell-body">
-      <div class="shell-eyebrow reveal d1">Slide 10 · Study Design</div>
-      <div class="shell-num reveal d2">10</div>
-      <h1 class="shell-title reveal d3">Participant Profile</h1>
-      <p class="shell-sub reveal d4">Under construction — built in Batch B.</p>
-      <span class="shell-tag reveal d5"><span class="dot"></span>Batch B · Pending</span>
+    <div class="reveal d1" style="display:flex;align-items:center;justify-content:space-between">
+      <div class="eyebrow">Section 02 &middot; Who participated</div>
+      <div style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--on-dark-mute);font-weight:500">n = 7</div>
+    </div>
+    <div class="reveal d2">
+      <h1 class="p-headline">Seven GLP-1 patients. Target segment &mdash; women, 50&ndash;65 &mdash; over-represented by design.</h1>
+    </div>
+    <div class="p-grid">
+      <div class="p-table-wrap reveal d3">
+        <table class="p-table">
+          <thead>
+            <tr>
+              <th class="col-id">ID</th>
+              <th class="col-age">Age</th>
+              <th class="col-gender">Gender</th>
+              <th class="col-med">Medication</th>
+              <th class="col-dur">Duration</th>
+              <th class="col-tech">Tech comfort</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><button class="chip chip-inline" data-cite="p01">P01</button></td>
+              <td>36</td><td>F</td><td>Wegovy</td><td>5 mo</td>
+              <td><span class="tc-row"><span class="dots" data-value="7"></span><span class="tc-val">7<i>/7</i></span></span></td>
+            </tr>
+            <tr>
+              <td><button class="chip chip-inline" data-cite="p02">P02</button></td>
+              <td>44</td><td>M</td><td>Wegovy</td><td>5 mo</td>
+              <td><span class="tc-row"><span class="dots" data-value="7"></span><span class="tc-val">7<i>/7</i></span></span></td>
+            </tr>
+            <tr>
+              <td><button class="chip chip-inline" data-cite="p03">P03</button></td>
+              <td>54</td><td>F</td><td>Wegovy</td><td>6 mo</td>
+              <td><span class="tc-row"><span class="dots" data-value="6"></span><span class="tc-val">6<i>/7</i></span></span></td>
+            </tr>
+            <tr>
+              <td><button class="chip chip-inline" data-cite="p04">P04</button></td>
+              <td>49</td><td>F</td><td>Zepbound</td><td>4 mo</td>
+              <td><span class="tc-row"><span class="dots" data-value="7"></span><span class="tc-val">7<i>/7</i></span></span></td>
+            </tr>
+            <tr class="target">
+              <td><button class="chip chip-inline" data-cite="p05">P05</button></td>
+              <td>61</td><td>F</td><td>Zepbound +</td><td>1 yr</td>
+              <td><span class="tc-row"><span class="dots" data-value="7"></span><span class="tc-val">7<i>/7</i></span></span></td>
+            </tr>
+            <tr>
+              <td><button class="chip chip-inline" data-cite="p06">P06</button></td>
+              <td>36</td><td>F</td><td>Zepbound</td><td>2 mo</td>
+              <td><span class="tc-row"><span class="dots" data-value="6"></span><span class="tc-val">6<i>/7</i></span></span></td>
+            </tr>
+            <tr class="target">
+              <td><button class="chip chip-inline" data-cite="p07">P07</button></td>
+              <td>57</td><td>F</td><td>Zepbound</td><td>5 mo</td>
+              <td><span class="tc-row"><span class="dots" data-value="5"></span><span class="tc-val">5<i>/7</i></span></span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <aside class="p-aside reveal d4">
+        <div class="p-stat">
+          <div class="p-stat-val">6 F <span class="sep">&middot;</span> 1 M</div>
+          <div class="p-stat-lbl">Gender split</div>
+        </div>
+        <div class="p-stat">
+          <div class="p-stat-val">36 <span class="sep">&ndash;</span> 61</div>
+          <div class="p-stat-lbl">Age range &middot; median 49</div>
+        </div>
+        <div class="p-stat">
+          <div class="p-stat-val">2 mo <span class="sep">&ndash;</span> 1 yr</div>
+          <div class="p-stat-lbl">GLP-1 duration</div>
+        </div>
+        <div class="p-stat">
+          <div class="p-stat-val">7 <i>/ 7</i></div>
+          <div class="p-stat-lbl">Prior health-app experience</div>
+        </div>
+        <div class="p-target">
+          <div class="p-target-lbl">Women, 50&ndash;65 &middot; target segment</div>
+          <div class="p-target-chips">
+            <button class="chip chip-inline" data-cite="p05">P05</button>
+            <button class="chip chip-inline" data-cite="p07">P07</button>
+          </div>
+        </div>
+      </aside>
     </div>
     <div class="slide-foot">
       <div class="foot-left">
@@ -3490,6 +3651,14 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
     // paint thumb previews
     navigator.querySelectorAll('.nav-thumb-preview').forEach(el => {
       paintThumb(el, el.dataset.thumb);
+    });
+  }
+
+  // Paint the 7-dot tech-comfort bars on slide 10 from each .dots[data-value]
+  function paintDotBars() {
+    document.querySelectorAll('.dots[data-value]').forEach(el => {
+      const n = Math.max(0, Math.min(7, parseInt(el.dataset.value, 10) || 0));
+      el.innerHTML = Array.from({ length: 7 }).map((_, i) => `<i class="${i < n ? 'on' : ''}"></i>`).join('');
     });
   }
 
@@ -4224,6 +4393,7 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
 
   // init
   buildNav();
+  paintDotBars();
   loadHeadshots();
   loadDataAssets();
   // Auto-collapse navigator on tablet/mobile (defer to user to open)
