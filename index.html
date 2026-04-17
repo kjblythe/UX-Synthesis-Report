@@ -1922,7 +1922,7 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
 .phone-loupe {
   position: absolute;
   left: 0; top: 0;
-  width: 500px; height: 500px;
+  width: 400px; height: 400px;
   border-radius: 50%;
   border: 3px solid var(--mint-accent);
   box-shadow:
@@ -2341,61 +2341,71 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
 /* Dovetail clip — compact horizontal variant. Sits directly below the quotes,
    not pinned to bottom, so it clears the slide footer. */
 .s15 .bm-clip, .s14 .meal-clip { margin-top: 10px; max-width: 520px; }
-.s14 .meal-clip .clip-card.compact { background: rgba(14,66,60,0.9); border-color: rgba(20,184,166,0.20); }
-.s15 .bm-clip .clip-card, .s14 .meal-clip .clip-card.compact,
-.s14 .meal-clip .clip-card.compact {
+/* Compact Dovetail clip card — used on S14 + S15. PDF-safe:
+   explicit top/right/bottom/left (not `inset` shorthand), no flex `gap`
+   (html2canvas is unreliable on it), play button is an inline SVG not a
+   CSS-border triangle (html2canvas occasionally misrenders those). */
+.s14 .meal-clip .clip-card.compact, .s15 .bm-clip .clip-card.compact {
   display: grid; grid-template-columns: 140px 1fr;
-  background: rgba(11,43,39,0.6);
-  border: 1px solid rgba(94,234,212,0.16);
+  background: rgba(11,43,39,0.75);
+  border: 1px solid rgba(94,234,212,0.20);
   border-radius: 10px;
   overflow: hidden;
   cursor: pointer;
   transition: border-color 180ms var(--ease-out);
 }
-.s15 .bm-clip .clip-card, .s14 .meal-clip .clip-card.compact:hover { border-color: rgba(94,234,212,0.38); }
-.s15 .bm-clip .clip-thumb, .s14 .meal-clip .clip-thumb {
+.s14 .meal-clip .clip-card.compact:hover,
+.s15 .bm-clip .clip-card.compact:hover { border-color: rgba(94,234,212,0.42); }
+
+.s14 .meal-clip .clip-thumb, .s15 .bm-clip .clip-thumb {
   position: relative; height: 76px;
   background: linear-gradient(180deg, #0A3B35 0%, #062823 100%);
   display: flex; align-items: center; justify-content: center;
   border-right: 1px solid rgba(94,234,212,0.14);
 }
-.s15 .bm-clip .clip-waveform, .s14 .meal-clip .clip-waveform {
-  position: absolute; inset: 0;
-  display: flex; align-items: center; justify-content: center; gap: 2px;
-  padding: 0 8px;
+.s14 .meal-clip .clip-waveform, .s15 .bm-clip .clip-waveform {
+  position: absolute; top: 0; right: 8px; bottom: 0; left: 8px;
+  display: flex; align-items: center; justify-content: center;
 }
-.s15 .bm-clip .clip-waveform, .s14 .meal-clip .clip-waveform span {
-  width: 2px; background: var(--teal-300); opacity: 0.45; border-radius: 1px;
+.s14 .meal-clip .clip-waveform > span, .s15 .bm-clip .clip-waveform > span {
+  display: inline-block;
+  width: 2px; margin: 0 1px;
+  background: var(--teal-300); opacity: 0.45; border-radius: 1px;
 }
-.s15 .bm-clip .clip-play, .s14 .meal-clip .clip-play {
+.s14 .meal-clip .clip-play, .s15 .bm-clip .clip-play {
   position: relative; width: 32px; height: 32px; border-radius: 50%;
   background: var(--mint-accent);
-  display: flex; align-items: center; justify-content: center;
   z-index: 1;
   box-shadow: 0 2px 10px rgba(52,238,167,0.4);
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M9 6 L9 18 L19 12 Z' fill='%23062823'/></svg>");
+  background-repeat: no-repeat;
+  background-position: 55% 50%;
+  background-size: 18px 18px;
 }
-.s15 .bm-clip .clip-play, .s14 .meal-clip .clip-play::after {
-  content: ''; display: block; width: 0; height: 0;
-  border-left: 9px solid #062823; border-top: 6px solid transparent; border-bottom: 6px solid transparent;
-  margin-left: 2px;
+/* Hide the legacy ::after triangle if any browser still renders it */
+.s14 .meal-clip .clip-play::after, .s15 .bm-clip .clip-play::after { display: none; }
+
+.s14 .meal-clip .clip-info, .s15 .bm-clip .clip-info {
+  padding: 10px 14px;
+  display: flex; flex-direction: column; justify-content: center;
 }
-.s15 .bm-clip .clip-info, .s14 .meal-clip .clip-info {
-  padding: 10px 14px; display: flex; flex-direction: column; justify-content: center; gap: 4px;
-}
-.s15 .bm-clip .clip-info, .s14 .meal-clip .clip-info-top {
-  display: flex; align-items: center; gap: 8px;
-  font-family: var(--f-display); font-weight: 500; font-size: 10.5px; letter-spacing: 0.14em;
+.s14 .meal-clip .clip-info-top, .s15 .bm-clip .clip-info-top {
+  display: flex; align-items: center;
+  margin-bottom: 4px;
+  font-family: var(--f-display); font-weight: 500; font-size: 11px; letter-spacing: 0.14em;
   text-transform: uppercase; color: var(--teal-300);
 }
-.s15 .bm-clip .clip-info, .s14 .meal-clip .clip-info-top .rec-dot {
+.s14 .meal-clip .clip-info-top .rec-dot, .s15 .bm-clip .clip-info-top .rec-dot {
+  display: inline-block;
   width: 6px; height: 6px; border-radius: 50%; background: #EF4444;
-  box-shadow: 0 0 0 2px rgba(239,68,68,0.22);
-  animation: rec-pulse 1.8s infinite ease-in-out;
+  margin-right: 8px;
 }
-.s15 .bm-clip .clip-info, .s14 .meal-clip .clip-info-top .clip-label-text { flex: 1; }
-.s15 .bm-clip .clip-info, .s14 .meal-clip .clip-info-top .ts { color: rgba(245,242,234,0.55); letter-spacing: 0.08em; }
-.s15 .bm-clip .clip-quote {
-  font-family: var(--f-serif); font-style: italic; font-weight: 400; font-size: 14px;
+.s14 .meal-clip .clip-info-top .clip-label-text, .s15 .bm-clip .clip-info-top .clip-label-text { flex: 1; }
+.s14 .meal-clip .clip-info-top .ts, .s15 .bm-clip .clip-info-top .ts {
+  color: rgba(245,242,234,0.60); letter-spacing: 0.08em; margin-left: 8px;
+}
+.s14 .meal-clip .clip-quote, .s15 .bm-clip .clip-quote {
+  font-family: var(--f-serif); font-style: italic; font-weight: 400; font-size: 15px;
   color: var(--text-on-dark); line-height: 1.3;
 }
 
