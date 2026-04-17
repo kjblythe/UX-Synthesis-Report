@@ -1208,9 +1208,10 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
 .s6 .finding-body .kpi-row {
   display: flex; flex-wrap: wrap; gap: 8px; align-items: center;
 }
-.s6 .kpi-pill {
-  display: inline-flex; align-items: baseline; gap: 6px;
-  padding: 6px 12px;
+/* ========= base kpi-pill (shared across slides; s6 etc. layer on top) ========= */
+.kpi-pill {
+  display: inline-flex; align-items: baseline; gap: 8px;
+  padding: 8px 14px;
   background: rgba(20, 184, 166, 0.08);
   border: 1px solid rgba(20, 184, 166, 0.22);
   border-radius: 999px;
@@ -1221,20 +1222,21 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
   cursor: pointer;
   transition: background 160ms ease, border-color 160ms ease, transform 160ms ease;
 }
-.s6 .kpi-pill:hover {
+.kpi-pill:hover {
   background: rgba(20, 184, 166, 0.16);
   border-color: rgba(20, 184, 166, 0.45);
   transform: translateY(-1px);
 }
-.s6 .kpi-pill b {
+.kpi-pill b {
   color: var(--teal-700); font-weight: 700;
   font-variant-numeric: tabular-nums;
   letter-spacing: -0.005em;
 }
-.s6 .kpi-pill i {
+.kpi-pill i {
   font-style: normal; color: var(--ink-mute);
   font-weight: 400;
 }
+/* s6 variants (legacy scoped overrides — no-op after globalisation, kept for any edge uses) */
 .s6 .kpi-pill .kpi-hint {
   display: inline-flex; align-items: center; justify-content: center;
   width: 16px; height: 16px; margin-left: 4px;
@@ -3084,7 +3086,7 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
 }
 .s16 .s16-stat-num .s16-stat-of {
   font-style: normal; font-weight: 400;
-  font-size: 34px; color: var(--ink-mute); margin-left: 4px;
+  font-size: 38px; color: var(--ink-mute); margin-left: 10px;
 }
 .s16 .s16-stat-sub {
   border: 0; background: transparent;
@@ -3408,7 +3410,7 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
 .s18 .chip-mini:hover { background: rgba(13,118,110,0.22); }
 
 .s18 .s18-foot {
-  margin-top: 32px;
+  margin-top: 28px; margin-bottom: 20px;
   display: grid; grid-template-columns: 1fr auto; gap: 40px; align-items: flex-start;
 }
 .s18 .s18-quotes { display: flex; flex-direction: column; gap: 18px; max-width: 900px; }
@@ -4035,41 +4037,42 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
   transform: translateY(-50%);
 }
 .s28 .s28-plot {
-  position: absolute; top: 0; bottom: 0; left: 0;
+  position: absolute; top: 0; bottom: 0; width: 200px;
   transform: translateX(-50%);
-  display: flex; flex-direction: column; align-items: center;
-  width: 200px;
 }
-.s28 .s28-plot-above { justify-content: flex-start; padding-top: 12px; }
-.s28 .s28-plot-below { justify-content: flex-end; padding-bottom: 12px; }
 .s28 .s28-plot-dot {
+  position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
   width: 14px; height: 14px; border-radius: 50%;
   background: #B45309; border: 3px solid var(--paper);
   box-shadow: 0 0 0 2px rgba(180,83,9,0.3), 0 2px 8px rgba(0,0,0,0.1);
   transition: transform 180ms var(--ease-out);
-  position: relative; top: 50%; transform: translateY(-50%);
+  z-index: 3;
 }
-.s28 .s28-plot-above .s28-plot-dot { top: auto; bottom: calc(50% - 7px); transform: translateY(50%); }
-.s28 .s28-plot-below .s28-plot-dot { top: calc(50% - 7px); transform: translateY(-50%); }
 .s28 .s28-plot-dot-mint {
   background: var(--teal-700);
   box-shadow: 0 0 0 2px rgba(13,118,110,0.3), 0 2px 8px rgba(0,0,0,0.1);
 }
 .s28 .s28-plot-tick {
-  width: 1px; background: rgba(10,26,28,0.22);
-  margin: 4px 0;
+  position: absolute; left: 50%; width: 1px;
+  background: rgba(10,26,28,0.22);
+  transform: translateX(-50%);
+  z-index: 2;
 }
-.s28 .s28-plot-above .s28-plot-tick { height: 34px; order: 2; }
-.s28 .s28-plot-above .s28-plot-label { order: 1; }
-.s28 .s28-plot-above .s28-plot-dot { order: 3; }
-.s28 .s28-plot-below .s28-plot-tick { height: 34px; }
+.s28 .s28-plot-above .s28-plot-tick { bottom: calc(50% + 14px); height: 22px; }
+.s28 .s28-plot-below .s28-plot-tick { top: calc(50% + 14px); height: 22px; }
 .s28 .s28-plot-label {
+  position: absolute; left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
   border: 0; background: transparent; padding: 8px 10px; cursor: pointer;
   display: flex; flex-direction: column; gap: 4px; align-items: center;
-  max-width: 190px; text-align: center;
+  text-align: center;
   border-radius: 8px;
   transition: background 160ms var(--ease-out);
 }
+.s28 .s28-plot-above .s28-plot-label { bottom: calc(50% + 44px); }
+.s28 .s28-plot-below .s28-plot-label { top: calc(50% + 44px); }
 .s28 .s28-plot-label:hover { background: rgba(20,184,166,0.08); }
 .s28 .s28-plot-ident {
   font-family: var(--f-display); font-weight: 600; font-size: 13px;
@@ -4083,9 +4086,7 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
   font-family: var(--f-serif); font-style: italic; font-weight: 400;
   font-size: 15px; line-height: 1.28; color: var(--ink);
 }
-.s28 .s28-plot:hover .s28-plot-dot { transform: scale(1.15); }
-.s28 .s28-plot-above:hover .s28-plot-dot { transform: translateY(50%) scale(1.15); }
-.s28 .s28-plot-below:hover .s28-plot-dot { transform: translateY(-50%) scale(1.15); }
+.s28 .s28-plot:hover .s28-plot-dot { transform: translate(-50%, -50%) scale(1.15); }
 
 .s28 .s28-grid {
   margin-top: 40px; padding-top: 26px;
@@ -4193,14 +4194,6 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
 .s29 .s29-rec-detail {
   margin: 0; font-family: var(--f-display); font-weight: 400;
   font-size: 15px; line-height: 1.5; color: rgba(245,242,234,0.78);
-}
-.s29 .s29-rec-when {
-  align-self: flex-start; margin-top: 4px;
-  font-family: var(--f-mono); font-weight: 600; font-size: 10px;
-  letter-spacing: 0.14em; text-transform: uppercase;
-  color: var(--teal-300);
-  padding: 3px 8px; border-radius: 3px;
-  background: rgba(20,184,166,0.12); border: 1px solid rgba(94,234,212,0.24);
 }
 
 .s29 .s29-foot {
@@ -6104,7 +6097,7 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
         </div>
         <div class="s23-prod">
           <span class="s23-prod-check" aria-hidden="true"></span>
-          Per-user dose edits are built in production. The behaviour we saw <em>is</em> what the app supports.
+          Per-user dose edits are built in production. The behaviour observed matches what the app already supports.
         </div>
       </div>
       <div class="s23-row">
@@ -6562,7 +6555,7 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
     <div class="s29-recs reveal d3">
       <div class="s29-recs-head">
         <span class="s29-col-eyebrow">Recommendations &middot; 4 levers</span>
-        <span class="s29-col-meta">All low complexity &middot; sequenced pre-pilot &rarr; in pilot</span>
+        <span class="s29-col-meta">All low complexity</span>
       </div>
       <ol class="s29-rec-list">
         <li class="s29-rec">
@@ -6570,7 +6563,6 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
           <div class="s29-rec-body">
             <h4 class="s29-rec-title">Raise Coach prominence beyond the bottom nav</h4>
             <p class="s29-rec-detail">The single-tab entry point is the bottleneck. Add a home-screen Coach affordance and surface Coach-initiating links inside meal, meds, learning, and reflection flows.</p>
-            <span class="s29-rec-when">Pre-pilot</span>
           </div>
         </li>
         <li class="s29-rec">
@@ -6578,7 +6570,6 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
           <div class="s29-rec-body">
             <h4 class="s29-rec-title">Rename, or add a descriptive subtitle</h4>
             <p class="s29-rec-detail">&ldquo;Coach&rdquo; alone doesn&apos;t signal the feature&apos;s job. Candidate: subtitle on first launch &mdash; &ldquo;Ask questions. Get context-aware answers.&rdquo; Revisit labels via a pilot A/B.</p>
-            <span class="s29-rec-when">Pre-pilot</span>
           </div>
         </li>
         <li class="s29-rec">
@@ -6586,7 +6577,6 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
           <div class="s29-rec-body">
             <h4 class="s29-rec-title">Contextual &ldquo;Ask Coach about this&rdquo; prompts</h4>
             <p class="s29-rec-detail">Place Coach prompts at the moment of the question, not as a separate destination. Meal screen: &ldquo;Why was this logged high-carb?&rdquo; Meds screen: &ldquo;What if I missed today&apos;s dose?&rdquo; Small in-context surfaces.</p>
-            <span class="s29-rec-when">Pre-pilot</span>
           </div>
         </li>
         <li class="s29-rec">
@@ -6594,7 +6584,6 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
           <div class="s29-rec-body">
             <h4 class="s29-rec-title">Measure natural discovery in the diary study</h4>
             <p class="s29-rec-detail">Single-session discoverability is the hardest bar. Multi-day usage may resolve it without the rename. Telemetry (time-to-first-Coach, return rate) will tell us which levers actually moved adoption.</p>
-            <span class="s29-rec-when">In pilot</span>
           </div>
         </li>
       </ol>
