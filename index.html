@@ -2238,6 +2238,94 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
 }
 .slide-section-starter .slide-foot { z-index: 3; }
 
+/* ============ SLIDE 9 — STUDY DESIGN OVERVIEW ============ */
+/* Explicit flex layout with hard height budgets — grid+1fr was letting
+   children overflow (see lessons-learned.md Batch B entry). */
+.s9 .study-grid {
+  margin-top: 28px;
+  display: flex; flex-direction: column; gap: 32px;
+  height: calc(1080px - 88px - 108px - 28px); /* top pad · foot · grid margin */
+}
+.s9 .study-head { flex: 0 0 auto; }
+.s9 .study-headline {
+  font-family: var(--f-display); font-weight: 600; font-size: 42px; line-height: 1.12;
+  letter-spacing: -0.02em; color: var(--ink); margin: 0; max-width: 1400px;
+}
+.s9 .study-headline .hl { color: var(--teal-700); }
+.s9 .study-main {
+  flex: 1 1 auto; min-height: 0;
+  display: grid; grid-template-columns: minmax(0, 1fr) 560px; gap: 56px; align-items: stretch;
+}
+.s9 .study-photo {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 24px 56px -28px rgba(10,26,28,0.28), 0 2px 8px -2px rgba(10,26,28,0.10);
+  background: var(--ink);
+  min-height: 0;
+}
+.s9 .study-specs { display: flex; flex-direction: column; gap: 36px; padding-top: 4px; min-height: 0; }
+.s9 .spec-col { display: flex; flex-direction: column; gap: 14px; }
+.s9 .spec-label {
+  font-family: var(--f-display); font-weight: 600; font-size: 12px; letter-spacing: 0.22em;
+  text-transform: uppercase; color: var(--teal-700);
+  padding-bottom: 12px; border-bottom: 1px solid rgba(10,26,28,0.14);
+}
+.s9 .spec-list {
+  list-style: none; counter-reset: spec; margin: 0; padding: 0;
+  display: flex; flex-direction: column;
+}
+.s9 .spec-list li {
+  counter-increment: spec;
+  position: relative;
+  padding: 11px 0 11px 44px;
+  border-bottom: 1px solid rgba(10,26,28,0.06);
+  font-family: var(--f-display); font-weight: 400; font-size: 16px; line-height: 1.45; color: var(--ink-mute);
+}
+.s9 .spec-list li:last-child { border-bottom: none; }
+.s9 .spec-list li::before {
+  content: counter(spec, decimal-leading-zero);
+  position: absolute; left: 0; top: 13px;
+  font-family: var(--f-display); font-weight: 700; font-size: 13px; letter-spacing: 0.08em;
+  color: var(--teal-700);
+  font-variant-numeric: tabular-nums;
+}
+.s9 .spec-list .spec-lead { color: var(--ink); font-weight: 600; }
+/* Chip inside a spec list aligns flush with body copy */
+.s9 .spec-list .chip.chip-inline { vertical-align: baseline; transform: translateY(1px); }
+
+/* ---------- Lab-photo placeholder (swaps for real still via data-asset) ---------- */
+.s9 .study-photo-placeholder {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column;
+  background:
+    repeating-linear-gradient(135deg, rgba(245,242,234,0.015) 0 2px, transparent 2px 6px),
+    linear-gradient(180deg, #0B2B27 0%, #041714 100%);
+  color: var(--text-on-dark);
+}
+.s9 .sp-chrome {
+  display: flex; align-items: center; gap: 14px;
+  padding: 14px 18px;
+  border-bottom: 1px solid rgba(94,234,212,0.16);
+  font-family: var(--f-display); font-weight: 500; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--teal-300);
+}
+.s9 .sp-recdot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: #EF4444; box-shadow: 0 0 0 3px rgba(239,68,68,0.22);
+  animation: rec-pulse 1.8s infinite ease-in-out;
+}
+@keyframes rec-pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.55; } }
+.s9 .sp-label { flex: 1; }
+.s9 .sp-ts { font-family: var(--f-display); font-variant-numeric: tabular-nums; color: rgba(245,242,234,0.6); letter-spacing: 0.08em; }
+.s9 .sp-caption {
+  flex: 1; display: flex; align-items: center; justify-content: center;
+  font-family: var(--f-display); font-weight: 400; font-size: 14px; letter-spacing: 0.04em;
+  color: rgba(245,242,234,0.38); text-align: center; padding: 20px;
+}
+/* When a real photo loads, hide the placeholder layer */
+.s9 .study-photo.has-asset .study-photo-placeholder { display: none; }
+
 /* ============ SLIDE 2 — MEET THE TEAM ============ */
 .s6 .slide-frame { padding-bottom: 96px; }
 .team-head { margin-top: 36px; display: grid; grid-template-columns: minmax(0,1fr) 380px; gap: 72px; align-items: end; }
@@ -2902,15 +2990,16 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
 </section>
 
 <!-- SLIDE 5: PHOTO MEAL LOGGING -->
-<!-- SLIDE 8: SECTION STARTER — STUDY DESIGN (shell for Batch B) -->
-<section class="slide s8 slide-shell">
+<!-- SLIDE 8: SECTION STARTER — STUDY DESIGN & PARTICIPANT PROFILE -->
+<section class="slide s8 slide-section-starter starter-a">
+  <svg class="x-watermark" viewBox="0 0 1111 926" aria-hidden="true"><use href="#x-symbol"/></svg>
   <div class="slide-frame">
-    <div class="shell-body">
-      <div class="shell-eyebrow reveal d1">Slide 08 · Section Starter</div>
-      <div class="shell-num reveal d2">08</div>
-      <h1 class="shell-title reveal d3">Section 02 — Study Design & Participant Profile</h1>
-      <p class="shell-sub reveal d4">Under construction — built in Batch B.</p>
-      <span class="shell-tag reveal d5"><span class="dot"></span>Batch B · Pending</span>
+    <div class="ss-eyebrow reveal d1">Section 02</div>
+    <div class="ss-body">
+      <div class="ss-num reveal d2">02</div>
+      <h1 class="ss-title reveal d3">Study Design &amp; <span class="title-accent">Participant Profile</span></h1>
+      <p class="ss-sub reveal d4">How the study was run, who participated, and what was measured.</p>
+      <div class="ss-rule reveal d5"></div>
     </div>
     <div class="slide-foot">
       <div class="foot-left">
@@ -2922,19 +3011,55 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
   </div>
 </section>
 
-<!-- SLIDE 9: STUDY DESIGN OVERVIEW (shell for Batch B) -->
-<section class="slide s9 slide-shell">
+<!-- SLIDE 9: STUDY DESIGN OVERVIEW -->
+<section class="slide s9 slide-paper">
   <div class="slide-frame">
-    <div class="shell-body">
-      <div class="shell-eyebrow reveal d1">Slide 09 · Study Design</div>
-      <div class="shell-num reveal d2">09</div>
-      <h1 class="shell-title reveal d3">Study Design Overview</h1>
-      <p class="shell-sub reveal d4">Under construction — built in Batch B.</p>
-      <span class="shell-tag reveal d5"><span class="dot"></span>Batch B · Pending</span>
+    <div class="reveal d1" style="display:flex;align-items:center;justify-content:space-between">
+      <div class="eyebrow">Section 02 &middot; Study Design</div>
+      <div style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-dim);font-weight:500">April 7, 2026 &middot; Bala Cynwyd, PA</div>
+    </div>
+    <div class="study-grid">
+      <div class="study-head reveal d2">
+        <h1 class="study-headline">Seven moderated sessions. One simulated day with the <span class="hl">MetabolX</span> prototype.</h1>
+      </div>
+      <div class="study-main">
+        <div class="study-photo reveal d3" data-asset="lab-overhead" data-asset-folder="photos" data-asset-ext="jpg">
+          <div class="study-photo-placeholder">
+            <div class="sp-chrome">
+              <span class="sp-recdot"></span>
+              <span class="sp-label">Dovetail &middot; Session recording</span>
+              <span class="sp-ts">00:42:18</span>
+            </div>
+            <div class="sp-caption">Overhead lab-session still &mdash; swap when final asset lands</div>
+          </div>
+        </div>
+        <div class="study-specs">
+          <div class="spec-col reveal d4">
+            <div class="spec-label">Methodology</div>
+            <ol class="spec-list">
+              <li><span class="spec-lead">Moderated in-person testing</span> at Core Human Factors, Bala Cynwyd PA</li>
+              <li><span class="spec-lead">60-minute sessions</span>, think-aloud protocol</li>
+              <li><button class="chip chip-inline" data-cite="seq-metric">SEQ</button> after every task</li>
+              <li><span class="spec-lead">Post-session questionnaire</span> &mdash; 6 satisfaction items, 7-point scale</li>
+              <li><button class="chip chip-inline" data-cite="rainbow-grid">Rainbow Grid</button> behavioural observation</li>
+              <li><span class="spec-lead">Full video + transcription</span> via Dovetail</li>
+            </ol>
+          </div>
+          <div class="spec-col reveal d5">
+            <div class="spec-label">Prototype</div>
+            <ol class="spec-list">
+              <li><span class="spec-lead">Lovable-built PWA</span> on iOS &mdash; fully interactive</li>
+              <li><span class="spec-lead">Live AI integration</span>, not scripted responses</li>
+              <li><span class="spec-lead">Simulated patient profile</span> &ldquo;Jennifer&rdquo;</li>
+              <li><span class="spec-lead">Treated as a real app</span> by every participant</li>
+            </ol>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="slide-foot">
       <div class="foot-left">
-        <svg class="mark" viewBox="0 0 1128 431" aria-label="BIX" style="color: var(--on-dark)"><use href="#bix-logo"/></svg>
+        <svg class="mark" viewBox="0 0 1128 431" aria-label="BIX"><use href="#bix-logo"/></svg>
         <span class="foot-internal">BI X Digital Innovation Lab &nbsp;|&nbsp; ONLY FOR INTERNAL USE</span>
       </div>
       <div class="foot-page">09</div>
@@ -3955,6 +4080,18 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
       title: 'How the session was run',
       detail: 'Seven 60-minute moderated sessions at Core Human Factors in Bala Cynwyd, PA. Live interactive prototype built in Lovable on iOS \u2014 not a Figma click-through. Live AI integration (not scripted). Simulated patient profile \u201CJennifer.\u201D',
       meta: 'Measurement · SEQ after every task, post-session satisfaction questionnaire (6 items), behavioural observation via Rainbow Grid (50+ observables), full video + transcription via Dovetail.'
+    },
+    'seq-metric': {
+      label: 'Metric · SEQ',
+      title: 'Single Ease Question',
+      detail: 'A standardised post-task usability metric. After each task the participant answers one question: \u201COverall, how easy or difficult was this task?\u201D on a 7-point scale (1 = Very Difficult, 7 = Very Easy).',
+      meta: 'Industry benchmark · 5.5 / 7 at the 50th percentile across 400+ tasks and 10,000+ users (MeasuringU).'
+    },
+    'rainbow-grid': {
+      label: 'Observation · Rainbow Grid',
+      title: '50+ behavioural observables, colour-coded live',
+      detail: 'A structured observation framework the moderator marks in real time during each session. Categories include navigation path, help-seeking, articulation of mental models, error recovery, and unprompted reactions. Colour coding keeps high-signal moments scannable during synthesis.',
+      meta: 'Combined with full transcript + video in Dovetail for pattern-level analysis across the cohort.'
     },
 
     // Populated dynamically when a task row is clicked on slide 4
