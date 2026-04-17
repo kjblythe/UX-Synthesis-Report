@@ -1393,44 +1393,44 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
 }
 
 /* ============ SLIDE 4 — SEQ EXPLAINER ============ */
-.s-deferred-seq .seq-grid {
+.s21 .seq-grid {
   display: grid; grid-template-columns: 440px 1fr;
   gap: 72px; flex: 1;
   margin-top: 32px; align-items: stretch;
 }
-.s-deferred-seq .seq-left {
+.s21 .seq-left {
   display: flex; flex-direction: column;
   padding-top: 8px;
 }
-.s-deferred-seq .seq-left h1 {
+.s21 .seq-left h1 {
   font-family: var(--f-display); font-weight: 700;
   font-size: 60px; line-height: 1.02; letter-spacing: -0.028em;
   color: var(--on-dark); margin: 20px 0 22px 0;
 }
-.s-deferred-seq .seq-left h1 .hl { color: var(--mint); font-variant-numeric: tabular-nums; }
-.s-deferred-seq .seq-left p {
+.s21 .seq-left h1 .hl { color: var(--mint); font-variant-numeric: tabular-nums; }
+.s21 .seq-left p {
   font-size: 18px; line-height: 1.55;
   color: var(--on-dark-dim);
   margin: 0 0 16px 0; max-width: 420px;
 }
-.s-deferred-seq .seq-source {
+.s21 .seq-source {
   margin-top: 14px;
   font-family: var(--f-mono); font-size: 12px;
   color: var(--on-dark-mute); letter-spacing: 0.04em;
 }
-.s-deferred-seq .seq-stage {
+.s21 .seq-stage {
   position: relative;
   padding: 0 30px;
   height: 860px; /* reserved — no layout jump on expand */
   display: flex; flex-direction: column;
 }
-.s-deferred-seq .seq-scale-wrap {
+.s21 .seq-scale-wrap {
   position: relative;
   height: 360px;
   margin-top: 20px;
 }
-.s-deferred-seq .seq-scale { position: relative; height: 100%; }
-.s-deferred-seq .seq-track {
+.s21 .seq-scale { position: relative; height: 100%; }
+.s21 .seq-track {
   position: absolute; left: 30px; right: 30px; top: 220px;
   height: 44px; border-radius: 22px; overflow: hidden;
   background: linear-gradient(90deg,
@@ -1442,25 +1442,25 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
     rgba(52, 238, 167, 0.60) 100%);
   border: 1px solid rgba(255,255,255,0.10);
 }
-.s-deferred-seq .seq-ticks {
+.s21 .seq-ticks {
   position: absolute; left: 30px; right: 30px; top: 286px;
   display: flex; justify-content: space-between;
 }
-.s-deferred-seq .seq-tick { display: flex; flex-direction: column; align-items: center; gap: 10px; width: 30px; }
-.s-deferred-seq .seq-tick::before { content: ""; width: 1px; height: 16px; background: rgba(255,255,255,0.25); }
-.s-deferred-seq .seq-tick-num { font-family: var(--f-mono); font-size: 16px; color: var(--on-dark-dim); font-variant-numeric: tabular-nums; font-weight: 500; }
-.s-deferred-seq .seq-zones {
+.s21 .seq-tick { display: flex; flex-direction: column; align-items: center; gap: 10px; width: 30px; }
+.s21 .seq-tick::before { content: ""; width: 1px; height: 16px; background: rgba(255,255,255,0.25); }
+.s21 .seq-tick-num { font-family: var(--f-mono); font-size: 16px; color: var(--on-dark-dim); font-variant-numeric: tabular-nums; font-weight: 500; }
+.s21 .seq-zones {
   position: absolute; left: 30px; right: 30px; top: 176px;
   display: flex;
   font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 600;
 }
-.s-deferred-seq .seq-zone { padding-bottom: 10px; border-bottom: 1px solid currentColor; text-align: center; }
-.s-deferred-seq .seq-zone.zone-hard { color: rgba(239,68,68,0.85); flex-basis: 33.33%; }
-.s-deferred-seq .seq-zone.zone-avg  { color: rgba(245,158,11,0.95); flex-basis: 33.33%; }
-.s-deferred-seq .seq-zone.zone-easy { color: var(--mint); flex-basis: 33.33%; }
+.s21 .seq-zone { padding-bottom: 10px; border-bottom: 1px solid currentColor; text-align: center; }
+.s21 .seq-zone.zone-hard { color: rgba(239,68,68,0.85); flex-basis: 33.33%; }
+.s21 .seq-zone.zone-avg  { color: rgba(245,158,11,0.95); flex-basis: 33.33%; }
+.s21 .seq-zone.zone-easy { color: var(--mint); flex-basis: 33.33%; }
 
 /* Benchmark: a shaded band at 5.3–5.6 (the MeasuringU benchmark range) — more prominent than a line */
-.s-deferred-seq .seq-benchmark-band {
+.s21 .seq-benchmark-band {
   position: absolute;
   top: 212px; height: 60px;
   background: repeating-linear-gradient(135deg,
@@ -1471,26 +1471,26 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
   border-radius: 4px;
   pointer-events: none;
 }
-.s-deferred-seq .seq-benchmark-tag {
+.s21 .seq-benchmark-tag {
   position: absolute;
   bottom: -52px; left: 50%; transform: translateX(-50%);
   white-space: nowrap;
   text-align: center;
   line-height: 1.25;
 }
-.s-deferred-seq .seq-benchmark-tag .lab {
+.s21 .seq-benchmark-tag .lab {
   font-size: 11px; letter-spacing: 0.20em; text-transform: uppercase;
   color: var(--on-dark-dim); font-weight: 500;
   display: block; margin-bottom: 4px;
 }
-.s-deferred-seq .seq-benchmark-tag .val {
+.s21 .seq-benchmark-tag .val {
   font-family: var(--f-display); font-weight: 600;
   color: var(--on-dark); font-size: 18px;
   font-variant-numeric: tabular-nums;
 }
 
 /* GAP BRACKET — below the track, in the negative space between benchmark tag and our-score */
-.s-deferred-seq .seq-gap-bracket {
+.s21 .seq-gap-bracket {
   position: absolute;
   top: 284px; /* track bottom at 220+44=264, + 20 padding */
   height: 28px;
@@ -1498,24 +1498,24 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
   transition: opacity 420ms ease 500ms;
   pointer-events: none;
 }
-.s4.active .seq-gap-bracket { opacity: 1; }
-.s-deferred-seq .seq-gap-bracket::before,
-.s-deferred-seq .seq-gap-bracket::after {
+.s21.active .seq-gap-bracket { opacity: 1; }
+.s21 .seq-gap-bracket::before,
+.s21 .seq-gap-bracket::after {
   content: "";
   position: absolute;
   top: 0; bottom: 14px;
   width: 1px;
   background: rgba(52,238,167,0.55);
 }
-.s-deferred-seq .seq-gap-bracket::before { left: 0; }
-.s-deferred-seq .seq-gap-bracket::after  { right: 0; }
-.s-deferred-seq .seq-gap-bracket .seq-gap-rule {
+.s21 .seq-gap-bracket::before { left: 0; }
+.s21 .seq-gap-bracket::after  { right: 0; }
+.s21 .seq-gap-bracket .seq-gap-rule {
   position: absolute;
   left: 0; right: 0; bottom: 14px;
   height: 1px;
   background: rgba(52,238,167,0.55);
 }
-.s-deferred-seq .seq-gap-label {
+.s21 .seq-gap-label {
   position: absolute;
   top: 298px; left: 50%;
   display: inline-flex; align-items: center; gap: 8px;
@@ -1533,29 +1533,29 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
   transition: opacity 380ms ease 820ms;
   z-index: 3;
 }
-.s4.active .seq-gap-label { opacity: 1; }
-.s-deferred-seq .seq-gap-label .lbl {
+.s21.active .seq-gap-label { opacity: 1; }
+.s21 .seq-gap-label .lbl {
   font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
   color: var(--on-dark-dim); font-weight: 600;
 }
 
 /* OUR MEAN marker — more emphatic */
-.s-deferred-seq .seq-ours {
+.s21 .seq-ours {
   position: absolute; top: 88px; bottom: 20px; width: 3px;
   background: linear-gradient(180deg, var(--mint), rgba(52,238,167,0.0));
   opacity: 0;
   transition: opacity 400ms ease, left 1100ms var(--ease-out);
 }
-.s4.active .seq-ours { opacity: 1; }
-.s-deferred-seq .seq-ours-tag {
+.s21.active .seq-ours { opacity: 1; }
+.s21 .seq-ours-tag {
   position: absolute; top: -140px; left: 50%; transform: translateX(-50%);
   display: flex; flex-direction: column; align-items: center; gap: 6px;
 }
-.s-deferred-seq .seq-ours-tag .label {
+.s21 .seq-ours-tag .label {
   font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase;
   color: var(--mint); font-weight: 600;
 }
-.s-deferred-seq .seq-ours-tag .big {
+.s21 .seq-ours-tag .big {
   position: relative;
   font-family: var(--f-display); font-weight: 700;
   font-size: 124px; line-height: 1; color: var(--mint);
@@ -1563,7 +1563,7 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
   filter: drop-shadow(0 8px 28px rgba(52,238,167,0.35));
   cursor: pointer;
 }
-.s-deferred-seq .seq-ours-tag .of {
+.s21 .seq-ours-tag .of {
   position: absolute;
   left: calc(100% + 8px);
   bottom: 14px;
@@ -1572,7 +1572,7 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
   letter-spacing: 0.02em; font-variant-numeric: tabular-nums;
   white-space: nowrap;
 }
-.s-deferred-seq .seq-ours::before {
+.s21 .seq-ours::before {
   content: ""; position: absolute; left: 50%; top: 0;
   transform: translate(-50%, -50%);
   width: 20px; height: 20px; border-radius: 50%;
@@ -1581,7 +1581,7 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
 }
 
 /* BELOW-SCALE: reserved dual panel — swaps between compare + breakdown */
-.s-deferred-seq .seq-below {
+.s21 .seq-below {
   position: relative;
   margin-top: 96px;
   flex: 1;
@@ -1589,32 +1589,32 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
   border-top: 1px solid rgba(255,255,255,0.08);
   padding-top: 56px;
 }
-.s-deferred-seq .seq-compared,
-.s-deferred-seq .seq-tasks {
+.s21 .seq-compared,
+.s21 .seq-tasks {
   position: absolute;
   inset: 56px 0 0 0;
   transition: opacity 240ms ease;
 }
-.s-deferred-seq .seq-compared {
+.s21 .seq-compared {
   display: grid; grid-template-columns: 1fr 1fr;
   gap: 32px 44px;
   padding: 0;
   opacity: 1;
 }
-.s4.seq-expanded .seq-compared { opacity: 0 !important; pointer-events: none !important; }
-.s4.seq-expanded .seq-tasks { opacity: 1 !important; }
-.s-deferred-seq .seq-compared .cmp-row {
+.s21.seq-expanded .seq-compared { opacity: 0 !important; pointer-events: none !important; }
+.s21.seq-expanded .seq-tasks { opacity: 1 !important; }
+.s21 .seq-compared .cmp-row {
   display: grid; grid-template-columns: auto 1fr; align-items: baseline; gap: 18px;
   font-size: 15px; color: var(--on-dark-dim); line-height: 1.45;
 }
-.s-deferred-seq .seq-compared .cmp-row .num {
+.s21 .seq-compared .cmp-row .num {
   font-family: var(--f-display); font-weight: 700; font-size: 32px;
   color: var(--on-dark); font-variant-numeric: tabular-nums;
   letter-spacing: -0.01em;
 }
-.s-deferred-seq .seq-compared .cmp-row .num.mint { color: var(--mint); }
+.s21 .seq-compared .cmp-row .num.mint { color: var(--mint); }
 
-.s-deferred-seq .seq-expand-btn {
+.s21 .seq-expand-btn {
   position: absolute;
   top: 14px; right: 0;
   z-index: 5;
@@ -1629,30 +1629,30 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
   cursor: pointer;
   transition: background 160ms ease, border-color 160ms ease, transform 160ms ease;
 }
-.s-deferred-seq .seq-expand-btn:hover { background: rgba(52, 238, 167, 0.20); border-color: rgba(52, 238, 167, 0.60); transform: translateY(-1px); }
-.s-deferred-seq .seq-expand-btn svg { transition: transform 240ms var(--ease-out); }
-.s4.seq-expanded .seq-expand-btn svg { transform: rotate(180deg); }
+.s21 .seq-expand-btn:hover { background: rgba(52, 238, 167, 0.20); border-color: rgba(52, 238, 167, 0.60); transform: translateY(-1px); }
+.s21 .seq-expand-btn svg { transition: transform 240ms var(--ease-out); }
+.s21.seq-expanded .seq-expand-btn svg { transform: rotate(180deg); }
 
 /* TASKS PANEL */
-.s-deferred-seq .seq-tasks {
+.s21 .seq-tasks {
   opacity: 0;
   pointer-events: none;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 6px 28px;
 }
-.s4.seq-expanded .seq-tasks {
+.s21.seq-expanded .seq-tasks {
   opacity: 1;
   pointer-events: auto;
 }
-.s-deferred-seq .seq-tasks .seq-tasks-legend {
+.s21 .seq-tasks .seq-tasks-legend {
   grid-column: 1 / -1;
   display: flex; justify-content: space-between; align-items: center;
   margin-bottom: 4px;
   font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
   color: var(--on-dark-dim); font-weight: 600;
 }
-.s-deferred-seq .seq-task {
+.s21 .seq-task {
   display: grid;
   grid-template-columns: 32px 170px 1fr 48px;
   align-items: center;
@@ -1662,10 +1662,10 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
   cursor: pointer;
   transition: background 160ms ease;
 }
-.s-deferred-seq .seq-task:hover {
+.s21 .seq-task:hover {
   background: rgba(52, 238, 167, 0.06);
 }
-.s-deferred-seq .seq-task.chip-trigger {
+.s21 .seq-task.chip-trigger {
   /* override chip-trigger pill-border styling on the task row — keep the row styling */
   padding: 10px 12px !important;
   background: transparent;
@@ -1677,43 +1677,43 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
   font-size: inherit;
   letter-spacing: normal;
 }
-.s-deferred-seq .seq-task.chip-trigger:hover {
+.s21 .seq-task.chip-trigger:hover {
   background: rgba(52, 238, 167, 0.06) !important;
   transform: none !important;
   border: none !important;
 }
-.s-deferred-seq .seq-task-tag {
+.s21 .seq-task-tag {
   font-family: var(--f-mono); font-size: 13px;
   color: var(--on-dark-mute); letter-spacing: 0.04em; font-weight: 500;
 }
-.s-deferred-seq .seq-task-name {
+.s21 .seq-task-name {
   font-size: 15px; color: var(--on-dark);
   font-weight: 500;
   letter-spacing: -0.005em;
 }
-.s-deferred-seq .seq-task-bar {
+.s21 .seq-task-bar {
   position: relative; height: 7px;
   background: rgba(255,255,255,0.06);
   border-radius: 4px; overflow: hidden;
 }
-.s-deferred-seq .seq-task-bar-fill {
+.s21 .seq-task-bar-fill {
   position: absolute; left: 0; top: 0; bottom: 0;
   width: 0%;
   background: linear-gradient(90deg, var(--teal-500), var(--mint));
   border-radius: 4px;
   transition: width 800ms var(--ease-out);
 }
-.s-deferred-seq .seq-task.low .seq-task-bar-fill {
+.s21 .seq-task.low .seq-task-bar-fill {
   background: linear-gradient(90deg, var(--gold), var(--gold-soft));
 }
-.s-deferred-seq .seq-task-score {
+.s21 .seq-task-score {
   font-family: var(--f-display); font-weight: 700;
   font-size: 20px; color: var(--mint);
   font-variant-numeric: tabular-nums;
   text-align: right;
   letter-spacing: -0.01em;
 }
-.s-deferred-seq .seq-task.low .seq-task-score { color: var(--gold); }
+.s21 .seq-task.low .seq-task-score { color: var(--gold); }
 
 /* ============ SLIDE 5 — PHOTO MEAL LOGGING ============ */
 .s14 .meal-grid {
@@ -1790,77 +1790,77 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
 .s14 .meal-insight strong { color: var(--teal-700); font-weight: 600; }
 
 /* ============ SLIDE 6 — FINDING 1 ============ */
-.s-deferred-f1 .f1-grid {
+.s25 .f1-grid {
   display: grid; grid-template-columns: 420px 1fr;
   gap: 80px; flex: 1;
   margin-top: 28px; position: relative;
 }
-.s-deferred-f1 .f1-phone-col {
+.s25 .f1-phone-col {
   display: flex; justify-content: center; align-items: flex-start;
   position: relative; padding-top: 8px;
 }
-.s-deferred-f1 .f1-right { display: flex; flex-direction: column; gap: 20px; padding-top: 8px; }
-.s-deferred-f1 .f1-headline {
+.s25 .f1-right { display: flex; flex-direction: column; gap: 20px; padding-top: 8px; }
+.s25 .f1-headline {
   font-family: var(--f-display); font-weight: 700;
   font-size: 46px; line-height: 1.03; letter-spacing: -0.022em;
   color: var(--on-dark); margin: 10px 0 0 0; max-width: 900px;
 }
-.s-deferred-f1 .f1-headline .hl {
+.s25 .f1-headline .hl {
   font-family: var(--f-serif); font-style: italic; font-weight: 500;
   color: var(--teal-300);
 }
-.s-deferred-f1 .f1-lead {
+.s25 .f1-lead {
   font-size: 16px; line-height: 1.55;
   color: var(--on-dark-dim);
   max-width: 780px; margin: 0;
 }
-.s-deferred-f1 .f1-callouts {
+.s25 .f1-callouts {
   margin-top: 10px;
   display: flex; flex-direction: column; gap: 10px;
 }
-.s-deferred-f1 .callout {
+.s25 .callout {
   display: grid; grid-template-columns: 14px 1fr;
   gap: 16px; align-items: flex-start;
   padding: 10px 0;
   border-bottom: 1px solid rgba(255,255,255,0.06);
 }
-.s-deferred-f1 .callout:last-child { border-bottom: none; }
-.s-deferred-f1 .callout .marker {
+.s25 .callout:last-child { border-bottom: none; }
+.s25 .callout .marker {
   width: 14px; height: 14px; border-radius: 50%;
   margin-top: 6px; position: relative;
 }
-.s-deferred-f1 .callout.neg .marker { background: var(--coral); box-shadow: 0 0 0 4px rgba(239,68,68,0.12); }
-.s-deferred-f1 .callout.pos .marker { background: var(--mint); box-shadow: 0 0 0 4px rgba(52,238,167,0.15); }
-.s-deferred-f1 .callout h4 {
+.s25 .callout.neg .marker { background: var(--coral); box-shadow: 0 0 0 4px rgba(239,68,68,0.12); }
+.s25 .callout.pos .marker { background: var(--mint); box-shadow: 0 0 0 4px rgba(52,238,167,0.15); }
+.s25 .callout h4 {
   margin: 0 0 3px 0; font-size: 15px; font-weight: 600; line-height: 1.3;
   color: var(--on-dark); letter-spacing: -0.005em;
 }
-.s-deferred-f1 .callout p {
+.s25 .callout p {
   margin: 0; font-size: 13px; line-height: 1.5;
   color: var(--on-dark-dim);
 }
-.s-deferred-f1 .f1-summary {
+.s25 .f1-summary {
   margin-top: 8px;
   padding: 18px 22px;
   border-radius: 14px;
   border: 1px solid rgba(52, 238, 167, 0.22);
   background: rgba(52, 238, 167, 0.05);
 }
-.s-deferred-f1 .f1-summary .fs-title {
+.s25 .f1-summary .fs-title {
   font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
   color: var(--mint); font-weight: 600;
   margin-bottom: 10px;
   display: flex; align-items: center; gap: 12px;
 }
-.s-deferred-f1 .f1-summary .fs-title::before {
+.s25 .f1-summary .fs-title::before {
   content: ""; width: 22px; height: 1px; background: var(--mint);
 }
-.s-deferred-f1 .f1-summary p {
+.s25 .f1-summary p {
   margin: 0;
   font-size: 15.5px; line-height: 1.55;
   color: var(--on-dark);
 }
-.s-deferred-f1 .connectors { position: absolute; inset: 0; pointer-events: none; overflow: visible; }
+.s25 .connectors { position: absolute; inset: 0; pointer-events: none; overflow: visible; }
 
 /* ============ PHONE FRAME ============ */
 /* STANDARD phone-frame size across the deck: 380px wide × aspect-ratio 1260/2736
@@ -2194,7 +2194,7 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
     linear-gradient(180deg, #0B3E37 0%, #093631 60%, #05231F 100%);
 }
 /* S4 (What Is This App?): adds a warmer mint glow behind the phone column */
-.slide.s-deferred-seq{
+.slide.s21{
   background:
     radial-gradient(1000px 760px at 82% 55%, rgba(52,238,167,0.12), transparent 60%),
     radial-gradient(1200px 800px at 10% 0%, rgba(6,40,35,0.9), transparent 55%),
@@ -3441,6 +3441,248 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
   color: var(--teal-300);
 }
 
+/* ============ SLIDE 22 — POST-SESSION SATISFACTION ============ */
+.s22 .slide-frame { padding: 80px 112px 72px 112px; }
+.s22 .s22-hero {
+  margin-top: 28px;
+  display: grid; grid-template-columns: 1.05fr 1fr;
+  gap: 60px; align-items: flex-end;
+  padding-bottom: 26px; border-bottom: 1px solid rgba(10,26,28,0.14);
+}
+.s22 .s22-stat-row { display: flex; align-items: baseline; gap: 22px; margin-bottom: 12px; }
+.s22 .s22-stat-num {
+  font-family: var(--f-display); font-weight: 600;
+  font-size: 92px; line-height: 0.9; letter-spacing: -0.03em;
+  color: var(--teal-700); font-variant-numeric: tabular-nums;
+}
+.s22 .s22-stat-num i {
+  font-style: normal; font-weight: 400; font-size: 28px;
+  color: var(--ink-mute); margin-left: 2px;
+}
+.s22 .s22-stat-sub {
+  align-self: baseline;
+  border: 0; background: transparent; padding: 0; cursor: pointer;
+  font-family: var(--f-display); font-weight: 500;
+  font-size: 15px; letter-spacing: 0.01em; color: var(--ink);
+  border-bottom: 1px dashed rgba(13,118,110,0.45); padding-bottom: 2px;
+  text-align: left;
+}
+.s22 .s22-stat-sub:hover { color: var(--teal-700); border-bottom-color: var(--teal-700); }
+.s22 .s22-headline {
+  margin: 0; font-family: var(--f-display); font-weight: 500;
+  font-size: 32px; line-height: 1.18; letter-spacing: -0.015em;
+  color: var(--ink); max-width: 620px;
+}
+.s22 .s22-headline .hl {
+  color: var(--teal-700); font-weight: 600;
+  border-bottom: 2px solid rgba(52,238,167,0.45);
+}
+.s22 .s22-hero-right .s22-lede {
+  margin: 0; font-family: var(--f-display); font-weight: 400;
+  font-size: 15px; line-height: 1.52; color: var(--ink-mute);
+  max-width: 620px;
+}
+
+.s22 .s22-plot {
+  margin-top: 28px;
+}
+.s22 .s22-plot-head {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: 14px;
+}
+.s22 .s22-plot-title {
+  font-family: var(--f-display); font-weight: 500; font-size: 12px;
+  letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-mute);
+}
+.s22 .s22-plot-axis {
+  flex: 0 0 64%; display: grid; grid-template-columns: 14.3% 14.3% 14.3% 14.3% 14.3% 14.3%;
+  font-family: var(--f-mono); font-size: 11px; color: var(--ink-dim);
+  text-align: center; letter-spacing: 0.04em;
+}
+.s22 .s22-rows { display: flex; flex-direction: column; }
+.s22 .s22-row {
+  display: grid;
+  grid-template-columns: 280px 1fr 60px;
+  align-items: center; gap: 20px;
+  padding: 11px 0;
+  border-bottom: 1px solid rgba(10,26,28,0.08);
+}
+.s22 .s22-row:last-of-type { border-bottom: 1px solid rgba(10,26,28,0.14); }
+.s22 .s22-row-label {
+  font-family: var(--f-display); font-weight: 500;
+  font-size: 15px; color: var(--ink);
+}
+.s22 .s22-row-track {
+  position: relative; height: 10px;
+}
+.s22 .s22-row-track::before {
+  content: ''; position: absolute; top: 50%; left: 0; right: 0; height: 1px;
+  background: rgba(10,26,28,0.16);
+}
+.s22 .s22-row-bench {
+  position: absolute; top: 50%; left: 25%;
+  width: 0; height: 0;
+  border-left: 1px dashed rgba(245,158,11,0.85);
+  height: 22px; transform: translateY(-50%);
+}
+.s22 .s22-row-dot {
+  position: absolute; top: 50%; transform: translate(-50%, -50%);
+  width: 14px; height: 14px; border-radius: 50%;
+  background: var(--teal-700);
+  box-shadow: 0 0 0 4px rgba(13,118,110,0.12);
+  border: 0; padding: 0; cursor: pointer;
+}
+.s22 .s22-row[data-value="6.4"] .s22-row-dot { left: 70%; }
+.s22 .s22-row[data-value="6.6"] .s22-row-dot { left: 80%; }
+.s22 .s22-row[data-value="6.7"] .s22-row-dot { left: 85%; }
+.s22 .s22-row-track::after {
+  content: ''; position: absolute; top: 50%; left: 0; height: 2px; transform: translateY(-50%);
+  background: linear-gradient(90deg, rgba(13,118,110,0.08), rgba(13,118,110,0.85));
+  width: 80%;
+}
+.s22 .s22-row[data-value="6.4"] .s22-row-track::after { width: 70%; }
+.s22 .s22-row[data-value="6.7"] .s22-row-track::after { width: 85%; }
+.s22 .s22-row-val {
+  font-family: var(--f-mono); font-weight: 600;
+  font-size: 16px; color: var(--teal-700); text-align: right;
+  font-variant-numeric: tabular-nums; letter-spacing: -0.01em;
+}
+.s22 .s22-row-dot-soft { background: var(--teal-400); box-shadow: 0 0 0 4px rgba(20,184,166,0.10); }
+.s22 .s22-plot-bench-note {
+  margin-top: 8px; font-family: var(--f-mono); font-size: 10.5px;
+  color: var(--ink-dim); letter-spacing: 0.02em;
+}
+
+.s22 .s22-cohort {
+  margin-top: 24px; padding-top: 22px;
+  border-top: 1px solid rgba(10,26,28,0.14);
+  display: grid; grid-template-columns: 200px 1fr;
+  gap: 40px; align-items: center;
+}
+.s22 .s22-cohort-label {
+  font-family: var(--f-display); font-weight: 500; font-size: 12px;
+  letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-mute);
+}
+.s22 .s22-cohort-track {
+  grid-column: 2; position: relative; height: 48px;
+  margin-top: 16px;
+  border-radius: 6px;
+  background: linear-gradient(90deg, rgba(239,68,68,0.04) 0%, rgba(245,158,11,0.08) 40%, rgba(52,238,167,0.10) 100%);
+}
+.s22 .s22-cohort-axis {
+  grid-column: 2; position: relative; height: 16px;
+  font-family: var(--f-mono); font-size: 10px; color: var(--ink-dim);
+}
+.s22 .s22-cohort-tick { position: absolute; top: 0; transform: translateX(-50%); }
+.s22 .s22-cohort-track::before {
+  content: ''; position: absolute; top: 50%; left: 40%; width: 0;
+  border-left: 1px dashed rgba(245,158,11,0.85); height: 44px; transform: translateY(-50%);
+}
+.s22 .s22-dot {
+  position: absolute; top: 50%; transform: translate(-50%, -50%);
+  width: 28px; height: 28px; border-radius: 50%;
+  background: var(--teal-700); border: 2px solid var(--paper);
+  padding: 0; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 0 0 3px rgba(13,118,110,0.15), 0 2px 6px rgba(0,0,0,0.08);
+  transition: transform 160ms var(--ease-out), box-shadow 160ms var(--ease-out);
+}
+.s22 .s22-dot:hover {
+  transform: translate(-50%, -50%) scale(1.1);
+  box-shadow: 0 0 0 5px rgba(13,118,110,0.2), 0 4px 12px rgba(0,0,0,0.12);
+}
+.s22 .s22-dot-tag {
+  position: absolute; bottom: -22px; left: 50%; transform: translateX(-50%);
+  font-family: var(--f-mono); font-weight: 600; font-size: 10.5px;
+  color: var(--teal-700); white-space: nowrap; letter-spacing: 0.04em;
+}
+.s22 .s22-dot-lo { background: rgba(245,158,11,0.85); box-shadow: 0 0 0 3px rgba(245,158,11,0.18), 0 2px 6px rgba(0,0,0,0.08); }
+.s22 .s22-dot-lo .s22-dot-tag { color: #B45309; }
+.s22 .s22-dot-stack {
+  width: 52px; height: 30px; border-radius: 999px;
+  background: var(--teal-700);
+}
+.s22 .s22-dot-stack .s22-dot-tag { white-space: nowrap; font-size: 10px; }
+.s22 .s22-cohort-note {
+  grid-column: 1 / -1; margin: 20px 0 0;
+  font-family: var(--f-display); font-weight: 400; font-size: 14px; line-height: 1.45;
+  color: var(--ink-mute);
+}
+
+/* ============ SLIDE 23 — PROTOTYPE CONTEXT ============ */
+.s23 {
+  background:
+    radial-gradient(800px 640px at 92% 100%, rgba(6,40,35,0.8), transparent 55%),
+    radial-gradient(900px 720px at 10% 0%, rgba(20,184,166,0.04), transparent 60%),
+    linear-gradient(180deg, #083832 0%, #062823 60%, #051F1C 100%);
+}
+.s23 .slide-frame { padding: 80px 112px 72px 112px; }
+.s23 .s23-grid {
+  display: grid; grid-template-columns: 0.9fr 1.3fr;
+  gap: 72px; margin-top: 32px; align-items: flex-start;
+}
+.s23 .s23-left { padding-right: 10px; }
+.s23 .s23-headline {
+  margin: 0 0 18px;
+  font-family: var(--f-display); font-weight: 500;
+  font-size: 36px; line-height: 1.18; letter-spacing: -0.015em;
+  color: var(--on-dark); max-width: 520px;
+}
+.s23 .s23-body {
+  margin: 0 0 14px; font-family: var(--f-display); font-weight: 400;
+  font-size: 15.5px; line-height: 1.55; color: rgba(245,242,234,0.76);
+  max-width: 540px;
+}
+.s23 .s23-badge {
+  display: inline-flex; align-items: center; gap: 12px;
+  margin-top: 22px; padding: 12px 18px;
+  border: 1px solid rgba(94,234,212,0.28); border-radius: 10px;
+  background: rgba(20,184,166,0.08);
+}
+.s23 .s23-badge-dot {
+  width: 6px; height: 6px; border-radius: 50%; background: var(--mint);
+  box-shadow: 0 0 0 3px rgba(52,238,167,0.18);
+}
+.s23 .s23-badge-text {
+  font-family: var(--f-display); font-weight: 500; font-size: 12.5px;
+  letter-spacing: 0.02em; color: var(--on-dark);
+}
+
+.s23 .s23-ledger-head {
+  display: grid; grid-template-columns: 320px 1fr;
+  gap: 28px; padding-bottom: 12px;
+  border-bottom: 1px solid rgba(94,234,212,0.22);
+}
+.s23 .s23-ledger-head span {
+  font-family: var(--f-display); font-weight: 500; font-size: 11.5px;
+  letter-spacing: 0.22em; text-transform: uppercase; color: var(--on-dark-mute);
+}
+.s23 .s23-ledger { display: flex; flex-direction: column; }
+.s23 .s23-row {
+  display: grid; grid-template-columns: 320px 1fr;
+  gap: 28px; padding: 18px 0;
+  border-bottom: 1px solid rgba(94,234,212,0.08);
+}
+.s23 .s23-row:last-child { border-bottom: 0; }
+.s23 .s23-row-l {
+  display: flex; flex-direction: column; gap: 6px;
+}
+.s23 .s23-row-tag {
+  font-family: var(--f-mono); font-weight: 600; font-size: 11px;
+  letter-spacing: 0.12em; color: var(--gold);
+  padding: 3px 8px; border-radius: 3px;
+  background: rgba(245,158,11,0.12); border: 1px solid rgba(245,158,11,0.28);
+  align-self: flex-start;
+}
+.s23 .s23-row-title {
+  font-family: var(--f-display); font-weight: 500; font-size: 17px;
+  color: var(--on-dark); letter-spacing: -0.005em;
+}
+.s23 .s23-row-r {
+  font-family: var(--f-display); font-weight: 400; font-size: 15px;
+  line-height: 1.5; color: rgba(245,242,234,0.82);
+}
+
 </style>
 
 <style id="print">
@@ -3847,93 +4089,7 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
   </div>
 </section>
 
-<!-- DEFERRED — originally SLIDE 4: SEQ HERO VIZ -->
-<!-- DEFERRED for Session 6 — blueprint Slide 21 (SEQ Scores & Task Completion). See lessons-learned.md. -->
-<section class="slide-deferred s-deferred-seq slide-data-stage" data-on-enter="animateSEQ">
-  <div class="slide-frame">
-    <div class="seq-grid">
-      <div class="seq-left">
-        <div class="eyebrow reveal d1">How we measured ease</div>
-        <h1 class="reveal d2">A 1&ndash;7 scale.<br/>We hit <span class="hl">6.4</span>.</h1>
-        <p class="reveal d3">The <strong style="color:var(--on-dark);font-weight:500">Single Ease Question</strong> is the UX industry&apos;s standard metric. After every task, participants answer how easy it was on a 7-point scale.</p>
-        <p class="reveal d4">Because it&apos;s standardized, our result can be benchmarked against thousands of other digital products. The industry average sits at <strong style="color:var(--on-dark);font-weight:500">5.5/7</strong>.</p>
-        <p class="reveal d5">Our mean is <strong style="color:var(--mint);font-weight:600">6.4/7</strong>. Every single task cleared the benchmark.</p>
-        <div class="seq-source reveal d6">Source &middot; <button class="chip chip-inline" data-cite="seq-source">MeasuringU benchmark</button></div>
-      </div>
-      <div class="seq-stage reveal d3">
-        <div class="seq-scale-wrap">
-          <div class="seq-scale">
-            <div class="seq-zones">
-              <div class="seq-zone zone-hard">Difficult</div>
-              <div class="seq-zone zone-avg">Average</div>
-              <div class="seq-zone zone-easy">Easy &middot; Excellent</div>
-            </div>
-            <div class="seq-benchmark-band" style="left: calc(30px + 71.7% - 6px); width: calc(5% + 12px);">
-              <div class="seq-benchmark-tag">
-                <span class="lab">Industry benchmark</span>
-                <span class="val">5.3&ndash;5.6</span>
-              </div>
-            </div>
-            <div class="seq-gap-bracket" style="left: calc(30px + 75%); right: calc(30px + 10%);">
-              <span class="seq-gap-rule"></span>
-            </div>
-            <div class="seq-gap-label" style="left: calc(30px + 82.5%);">
-              <span class="lbl">Gap</span>
-              +0.9
-            </div>
-            <div class="seq-ours" style="left: 30px">
-              <div class="seq-ours-tag">
-                <span class="label">Our mean</span>
-                <span class="big chip-trigger" data-cite="seq-mean">6.4<span class="of">/ 7</span></span>
-              </div>
-            </div>
-            <div class="seq-track"></div>
-            <div class="seq-ticks">
-              <div class="seq-tick"><span class="seq-tick-num">1</span></div>
-              <div class="seq-tick"><span class="seq-tick-num">2</span></div>
-              <div class="seq-tick"><span class="seq-tick-num">3</span></div>
-              <div class="seq-tick"><span class="seq-tick-num">4</span></div>
-              <div class="seq-tick"><span class="seq-tick-num">5</span></div>
-              <div class="seq-tick"><span class="seq-tick-num">6</span></div>
-              <div class="seq-tick"><span class="seq-tick-num">7</span></div>
-            </div>
-          </div>
-        </div>
-        <div class="seq-below">
-          <button class="seq-expand-btn" type="button" aria-expanded="false">
-            <span class="seq-expand-label">See per-task breakdown</span>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="seq-compared reveal d5">
-            <div class="cmp-row"><span class="num mint">+0.9</span><span>above the industry average across 10,000+ tested products</span></div>
-            <div class="cmp-row"><span class="num">86%</span><span>task completion rate at an SEQ of 5.9 &mdash; we exceed on every task</span></div>
-          </div>
-          <div class="seq-tasks" aria-hidden="true">
-            <div class="seq-tasks-legend">
-              <span>Per-task SEQ</span>
-              <span>Click any task for the behavioural context</span>
-            </div>
-            <div class="seq-task" data-id="T1" data-score="6.7"><span class="seq-task-tag">T1</span><span class="seq-task-name">Morning Exploration</span><div class="seq-task-bar"><div class="seq-task-bar-fill"></div></div><span class="seq-task-score">6.7</span></div>
-            <div class="seq-task" data-id="T2" data-score="6.6"><span class="seq-task-tag">T2</span><span class="seq-task-name">Log Injection</span><div class="seq-task-bar"><div class="seq-task-bar-fill"></div></div><span class="seq-task-score">6.6</span></div>
-            <div class="seq-task" data-id="T3" data-score="6.7"><span class="seq-task-tag">T3</span><span class="seq-task-name">Log Meal</span><div class="seq-task-bar"><div class="seq-task-bar-fill"></div></div><span class="seq-task-score">6.7</span></div>
-            <div class="seq-task low" data-id="T4" data-score="5.4"><span class="seq-task-tag">T4</span><span class="seq-task-name">AI Coach</span><div class="seq-task-bar"><div class="seq-task-bar-fill"></div></div><span class="seq-task-score">5.4</span></div>
-            <div class="seq-task" data-id="T5" data-score="6.3"><span class="seq-task-tag">T5</span><span class="seq-task-name">Find Learning</span><div class="seq-task-bar"><div class="seq-task-bar-fill"></div></div><span class="seq-task-score">6.3</span></div>
-            <div class="seq-task" data-id="T6" data-score="6.9"><span class="seq-task-tag">T6</span><span class="seq-task-name">Evening Reflection</span><div class="seq-task-bar"><div class="seq-task-bar-fill"></div></div><span class="seq-task-score">6.9</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="slide-foot">
-      <div class="foot-left">
-        <svg class="mark" viewBox="0 0 1128 431" aria-label="BIX" style="color: var(--on-dark)"><use href="#bix-logo"/></svg>
-        <span class="foot-internal">BI X Digital Innovation Lab &nbsp;|&nbsp; ONLY FOR INTERNAL USE</span>
-      </div>
-      <div class="foot-page">04</div>
-    </div>
-  </div>
-</section>
-
-<!-- SLIDE 5: PHOTO MEAL LOGGING -->
+<!-- (former deferred SEQ block — reinserted at slide 21, below s20) -->
 <!-- SLIDE 8: SECTION STARTER — STUDY DESIGN & PARTICIPANT PROFILE -->
 <section class="slide s8 slide-section-starter starter-a">
   <svg class="x-watermark" viewBox="0 0 1111 926" aria-hidden="true"><use href="#x-symbol"/></svg>
@@ -4900,8 +5056,278 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
   </div>
 </section>
 
-<!-- DEFERRED for Session 7 — blueprint Slide 25 (Finding 1 — Visual Differentiation). See lessons-learned.md. -->
-<section class="slide-deferred s-deferred-f1 slide-dark">
+<!-- SLIDE 21: WHAT WE MEASURED — UNDERSTANDING SEQ (reinserted from session-5 deferred POC) -->
+<section class="slide s21 slide-data-stage" data-on-enter="animateSEQ">
+  <div class="slide-frame">
+    <div class="seq-grid">
+      <div class="seq-left">
+        <div class="eyebrow reveal d1">Section 04 &middot; Understanding SEQ</div>
+        <h1 class="reveal d2">A 1&ndash;7 scale.<br/>We hit <span class="hl">6.4</span>.</h1>
+        <p class="reveal d3">The <strong style="color:var(--on-dark);font-weight:500">Single Ease Question</strong> is the UX industry&apos;s standard metric. After every task, participants answer how easy it was on a 7-point scale.</p>
+        <p class="reveal d4">Because it&apos;s standardized, our result can be benchmarked against thousands of other digital products. The industry average sits at <strong style="color:var(--on-dark);font-weight:500">5.5/7</strong>.</p>
+        <p class="reveal d5">Our mean is <strong style="color:var(--mint);font-weight:600">6.4/7</strong>. Every single task cleared the benchmark.</p>
+        <div class="seq-source reveal d6">Source &middot; <button class="chip chip-inline" data-cite="seq-source">MeasuringU benchmark</button></div>
+      </div>
+      <div class="seq-stage reveal d3">
+        <div class="seq-scale-wrap">
+          <div class="seq-scale">
+            <div class="seq-zones">
+              <div class="seq-zone zone-hard">Difficult</div>
+              <div class="seq-zone zone-avg">Average</div>
+              <div class="seq-zone zone-easy">Easy &middot; Excellent</div>
+            </div>
+            <div class="seq-benchmark-band" style="left: calc(30px + 71.7% - 6px); width: calc(5% + 12px);">
+              <div class="seq-benchmark-tag">
+                <span class="lab">Industry benchmark</span>
+                <span class="val">5.3&ndash;5.6</span>
+              </div>
+            </div>
+            <div class="seq-gap-bracket" style="left: calc(30px + 75%); right: calc(30px + 10%);">
+              <span class="seq-gap-rule"></span>
+            </div>
+            <div class="seq-gap-label" style="left: calc(30px + 82.5%);">
+              <span class="lbl">Gap</span>
+              +0.9
+            </div>
+            <div class="seq-ours" style="left: 30px">
+              <div class="seq-ours-tag">
+                <span class="label">Our mean</span>
+                <span class="big chip-trigger" data-cite="seq-mean">6.4<span class="of">/ 7</span></span>
+              </div>
+            </div>
+            <div class="seq-track"></div>
+            <div class="seq-ticks">
+              <div class="seq-tick"><span class="seq-tick-num">1</span></div>
+              <div class="seq-tick"><span class="seq-tick-num">2</span></div>
+              <div class="seq-tick"><span class="seq-tick-num">3</span></div>
+              <div class="seq-tick"><span class="seq-tick-num">4</span></div>
+              <div class="seq-tick"><span class="seq-tick-num">5</span></div>
+              <div class="seq-tick"><span class="seq-tick-num">6</span></div>
+              <div class="seq-tick"><span class="seq-tick-num">7</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="seq-below">
+          <button class="seq-expand-btn" type="button" aria-expanded="false">
+            <span class="seq-expand-label">See per-task breakdown</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="seq-compared reveal d5">
+            <div class="cmp-row"><span class="num mint">+0.9</span><span>above the industry average across 10,000+ tested products</span></div>
+            <div class="cmp-row"><span class="num">86%</span><span>task completion rate at an SEQ of 5.9 &mdash; we exceed on every task</span></div>
+          </div>
+          <div class="seq-tasks" aria-hidden="true">
+            <div class="seq-tasks-legend">
+              <span>Per-task SEQ</span>
+              <span>Click any task for the behavioural context</span>
+            </div>
+            <div class="seq-task" data-id="T1" data-score="6.7"><span class="seq-task-tag">T1</span><span class="seq-task-name">Morning Exploration</span><div class="seq-task-bar"><div class="seq-task-bar-fill"></div></div><span class="seq-task-score">6.7</span></div>
+            <div class="seq-task" data-id="T2" data-score="6.6"><span class="seq-task-tag">T2</span><span class="seq-task-name">Log Injection</span><div class="seq-task-bar"><div class="seq-task-bar-fill"></div></div><span class="seq-task-score">6.6</span></div>
+            <div class="seq-task" data-id="T3" data-score="6.7"><span class="seq-task-tag">T3</span><span class="seq-task-name">Log Meal</span><div class="seq-task-bar"><div class="seq-task-bar-fill"></div></div><span class="seq-task-score">6.7</span></div>
+            <div class="seq-task low" data-id="T4" data-score="5.4"><span class="seq-task-tag">T4</span><span class="seq-task-name">AI Coach</span><div class="seq-task-bar"><div class="seq-task-bar-fill"></div></div><span class="seq-task-score">5.4</span></div>
+            <div class="seq-task" data-id="T5" data-score="6.3"><span class="seq-task-tag">T5</span><span class="seq-task-name">Find Learning</span><div class="seq-task-bar"><div class="seq-task-bar-fill"></div></div><span class="seq-task-score">6.3</span></div>
+            <div class="seq-task" data-id="T6" data-score="6.9"><span class="seq-task-tag">T6</span><span class="seq-task-name">Evening Reflection</span><div class="seq-task-bar"><div class="seq-task-bar-fill"></div></div><span class="seq-task-score">6.9</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-foot">
+      <div class="foot-left">
+        <svg class="mark" viewBox="0 0 1128 431" aria-label="BIX" style="color: var(--on-dark)"><use href="#bix-logo"/></svg>
+        <span class="foot-internal">BI X Digital Innovation Lab &nbsp;|&nbsp; ONLY FOR INTERNAL USE</span>
+      </div>
+      <div class="foot-page">21</div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 22: POST-SESSION SATISFACTION -->
+<section class="slide s22 slide-paper">
+  <div class="slide-frame">
+    <div class="reveal d1" style="display:flex;align-items:center;justify-content:space-between">
+      <div class="eyebrow">Section 04 &middot; Post-session satisfaction</div>
+      <div style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-dim);font-weight:500">n=7 &middot; 6 measures &middot; 7-point scale</div>
+    </div>
+    <div class="s22-hero reveal d2">
+      <div class="s22-hero-left">
+        <div class="s22-stat-row">
+          <span class="s22-stat-num">6.6<i>/7</i></span>
+          <button class="s22-stat-sub chip-trigger" data-cite="satisfaction-66">overall mean across six measures</button>
+        </div>
+        <h1 class="s22-headline">Every measure landed in the <span class="hl">excellent band</span>. Every participant scored above 5.8.</h1>
+      </div>
+      <div class="s22-hero-right">
+        <p class="s22-lede">Six post-session measures administered at the end of every session on a 7-point Likert scale. Clustering in a tight 6.4&ndash;6.7 band means the app is performing evenly across task ease, trust, daily fit, and AI usefulness &mdash; not leaning on one strength to carry weaker dimensions.</p>
+      </div>
+    </div>
+    <div class="s22-plot reveal d3">
+      <div class="s22-plot-head">
+        <span class="s22-plot-title">By measure &middot; lollipop plot</span>
+        <span class="s22-plot-axis">
+          <span>4</span><span>5</span><span>5.5</span><span>6</span><span>6.5</span><span>7</span>
+        </span>
+      </div>
+      <div class="s22-rows">
+        <div class="s22-row" data-value="6.6">
+          <span class="s22-row-label">Features meet my needs</span>
+          <span class="s22-row-track"><span class="s22-row-bench"></span><span class="s22-row-dot" data-cite="sat-features"></span></span>
+          <span class="s22-row-val">6.6</span>
+        </div>
+        <div class="s22-row" data-value="6.7">
+          <span class="s22-row-label">Easy to use</span>
+          <span class="s22-row-track"><span class="s22-row-bench"></span><span class="s22-row-dot" data-cite="sat-easy"></span></span>
+          <span class="s22-row-val">6.7</span>
+        </div>
+        <div class="s22-row" data-value="6.6">
+          <span class="s22-row-label">Trust with health information</span>
+          <span class="s22-row-track"><span class="s22-row-bench"></span><span class="s22-row-dot" data-cite="sat-trust"></span></span>
+          <span class="s22-row-val">6.6</span>
+        </div>
+        <div class="s22-row" data-value="6.7">
+          <span class="s22-row-label">Fits my daily routine</span>
+          <span class="s22-row-track"><span class="s22-row-bench"></span><span class="s22-row-dot" data-cite="sat-daily"></span></span>
+          <span class="s22-row-val">6.7</span>
+        </div>
+        <div class="s22-row" data-value="6.6">
+          <span class="s22-row-label">AI feels helpful, not gimmicky</span>
+          <span class="s22-row-track"><span class="s22-row-bench"></span><span class="s22-row-dot" data-cite="sat-ai"></span></span>
+          <span class="s22-row-val">6.6</span>
+        </div>
+        <div class="s22-row" data-value="6.4">
+          <span class="s22-row-label">Understands my journey</span>
+          <span class="s22-row-track"><span class="s22-row-bench"></span><span class="s22-row-dot s22-row-dot-soft" data-cite="sat-journey"></span></span>
+          <span class="s22-row-val">6.4</span>
+        </div>
+      </div>
+      <div class="s22-plot-bench-note">Dashed line at 5.5 = SEQ industry benchmark (included for reference; post-session has no direct benchmark).</div>
+    </div>
+    <div class="s22-cohort reveal d4">
+      <div class="s22-cohort-label">By participant &middot; overall mean</div>
+      <div class="s22-cohort-axis">
+        <span class="s22-cohort-tick" style="left:20%">5</span>
+        <span class="s22-cohort-tick" style="left:40%">5.5</span>
+        <span class="s22-cohort-tick" style="left:60%">6</span>
+        <span class="s22-cohort-tick" style="left:80%">6.5</span>
+        <span class="s22-cohort-tick" style="left:100%">7</span>
+      </div>
+      <div class="s22-cohort-track">
+        <button class="s22-dot s22-dot-lo chip-trigger" style="left:32%" data-cite="sat-p03" aria-label="P03 overall mean 5.8"><span class="s22-dot-tag">P03</span></button>
+        <button class="s22-dot chip-trigger" style="left:48%" data-cite="sat-p06" aria-label="P06 overall mean 6.2"><span class="s22-dot-tag">P06</span></button>
+        <button class="s22-dot chip-trigger" style="left:60%" data-cite="sat-p07" aria-label="P07 overall mean 6.5"><span class="s22-dot-tag">P07</span></button>
+        <button class="s22-dot chip-trigger" style="left:68%" data-cite="sat-p05" aria-label="P05 overall mean 6.7"><span class="s22-dot-tag">P05</span></button>
+        <button class="s22-dot s22-dot-stack s22-dot-hi chip-trigger" style="left:100%" data-cite="sat-sevens" aria-label="P01, P02, P04 all 7.0">
+          <span class="s22-dot-tag">P01 &middot; P02 &middot; P04</span>
+        </button>
+      </div>
+      <p class="s22-cohort-note">
+        <button class="chip chip-inline" data-cite="p03">P03</button> is the cohort&apos;s most critical scorer at 5.8 &mdash; and <strong style="font-weight:600">still said she would replace her current app with this one</strong>.
+      </p>
+    </div>
+    <div class="slide-foot">
+      <div class="foot-left">
+        <svg class="mark" viewBox="0 0 1128 431" aria-label="BIX" style="color: var(--ink)"><use href="#bix-logo"/></svg>
+        <span class="foot-internal">BI X Digital Innovation Lab &nbsp;|&nbsp; ONLY FOR INTERNAL USE</span>
+      </div>
+      <div class="foot-page">22</div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 23: PROTOTYPE CONTEXT -->
+<section class="slide s23 slide-dark s23-subdued">
+  <div class="slide-frame">
+    <div class="reveal d1" style="display:flex;align-items:center;justify-content:space-between">
+      <div class="eyebrow">Section 04 &middot; Prototype context</div>
+      <div style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--on-dark-mute);font-weight:500">Honest ledger &middot; 4 limitations</div>
+    </div>
+    <div class="s23-grid">
+      <div class="s23-left reveal d2">
+        <h1 class="s23-headline">A live interactive prototype, not a mockup. Participants treated it as a real app.</h1>
+        <p class="s23-body">The prototype was a fully interactive PWA built in Lovable with live AI integration, running on iOS in the lab. Not a Figma click-through. Where specific prototype constraints affected specific findings, we name them directly.</p>
+        <p class="s23-body">None of the four limitations below alter the top-line conclusions. We flag them so downstream readers can weight the evidence accurately.</p>
+        <div class="s23-badge">
+          <span class="s23-badge-dot"></span>
+          <span class="s23-badge-text">No limitation materially changes Finding 1, Finding 2, or the SEQ / satisfaction means.</span>
+        </div>
+      </div>
+      <div class="s23-right reveal d3">
+        <div class="s23-ledger-head">
+          <span>Limitation</span>
+          <span>Effect on the record</span>
+        </div>
+        <div class="s23-ledger">
+          <div class="s23-row">
+            <div class="s23-row-l">
+              <span class="s23-row-tag">PL2</span>
+              <span class="s23-row-title">Microphone non-functional</span>
+            </div>
+            <div class="s23-row-r">
+              <button class="chip chip-inline" data-cite="p07">P07</button>&apos;s T4 SEQ of 5 was explicitly attributed to this. <button class="chip chip-inline" data-cite="pl2-voice">Confirms voice-input demand</button> &mdash; not a Coach usability issue.
+            </div>
+          </div>
+          <div class="s23-row">
+            <div class="s23-row-l">
+              <span class="s23-row-tag">PL4</span>
+              <span class="s23-row-title">AI response variability</span>
+            </div>
+            <div class="s23-row-r">
+              Live Lovable AI produced inconsistent responses across sessions. May explain <button class="chip chip-inline" data-cite="pl4-t4-range">some T4 SEQ range</button> (4&ndash;7). The capability is real; the reliability is a prototype artefact.
+            </div>
+          </div>
+          <div class="s23-row">
+            <div class="s23-row-l">
+              <span class="s23-row-tag">PL3</span>
+              <span class="s23-row-title">Dose customisation not functional</span>
+            </div>
+            <div class="s23-row-r">
+              <button class="chip chip-inline" data-cite="p01">P01</button> and <button class="chip chip-inline" data-cite="p04">P04</button> tried to change dose. Expected behaviour the fixed-persona prototype could not support. Production supports per-user dose edits.
+            </div>
+          </div>
+          <div class="s23-row">
+            <div class="s23-row-l">
+              <span class="s23-row-tag">PL5</span>
+              <span class="s23-row-title">Catch-up logging out of scope</span>
+            </div>
+            <div class="s23-row-r">
+              Production has morning / evening catch-up flows to retroactively log missed entries. The prototype did not. Surfaces as an adoption lever for <button class="chip chip-inline" data-cite="refl-p01">reflections</button> in the pilot.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-foot">
+      <div class="foot-left">
+        <svg class="mark" viewBox="0 0 1128 431" aria-label="BIX" style="color: var(--on-dark)"><use href="#bix-logo"/></svg>
+        <span class="foot-internal">BI X Digital Innovation Lab &nbsp;|&nbsp; ONLY FOR INTERNAL USE</span>
+      </div>
+      <div class="foot-page">23</div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 24: SECTION STARTER — DESIGN FINDINGS & OPPORTUNITIES -->
+<section class="slide s24 slide-section-starter starter-a">
+  <svg class="x-watermark" viewBox="0 0 1111 926" aria-hidden="true"><use href="#x-symbol"/></svg>
+  <div class="slide-frame">
+    <div class="ss-eyebrow reveal d1">Section 05</div>
+    <div class="ss-body">
+      <div class="ss-num reveal d2">05</div>
+      <h1 class="ss-title reveal d3">Design <span class="title-accent">Findings &amp; Opportunities</span></h1>
+      <p class="ss-sub reveal d4">What we learned. How to make it better.</p>
+      <div class="ss-rule reveal d5"></div>
+    </div>
+    <div class="slide-foot">
+      <div class="foot-left">
+        <svg class="mark" viewBox="0 0 1128 431" aria-label="BIX" style="color: var(--on-dark)"><use href="#bix-logo"/></svg>
+        <span class="foot-internal">BI X Digital Innovation Lab &nbsp;|&nbsp; ONLY FOR INTERNAL USE</span>
+      </div>
+      <div class="foot-page">24</div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 25: FINDING 1 — VISUAL DIFFERENTIATION & AFFORDANCE CLARITY (reinserted from session-5 deferred POC) -->
+<section class="slide s25 slide-dark">
   <div class="slide-frame">
     <div class="reveal d1" style="display:flex;align-items:center;justify-content:space-between">
       <div class="eyebrow">Finding 01 &middot; Visual differentiation</div>
@@ -5022,7 +5448,7 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
         <svg class="mark" viewBox="0 0 1128 431" aria-label="BIX" style="color: var(--on-dark)"><use href="#bix-logo"/></svg>
         <span class="foot-internal">BI X Digital Innovation Lab &nbsp;|&nbsp; ONLY FOR INTERNAL USE</span>
       </div>
-      <div class="foot-page">06</div>
+      <div class="foot-page">25</div>
     </div>
   </div>
 </section>
@@ -5086,7 +5512,12 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
     { id: 's17', num: 17, section: 'What Resonated with Users',         title: 'Learning Pathways',             thumb: 'learn' },
     { id: 's18', num: 18, section: 'What Resonated with Users',         title: 'Competitive Advantage',         thumb: 'compare' },
     { id: 's19', num: 19, section: 'What Resonated with Users',         title: 'In Their Words',                thumb: 'montage' },
-    { id: 's20', num: 20, section: 'Detailed Results',                  title: 'Section Starter',               thumb: 'sec-detail' }
+    { id: 's20', num: 20, section: 'Detailed Results',                  title: 'Section Starter',               thumb: 'sec-detail' },
+    { id: 's21', num: 21, section: 'Detailed Results',                  title: 'Understanding SEQ',             thumb: 'seq' },
+    { id: 's22', num: 22, section: 'Detailed Results',                  title: 'Post-Session Satisfaction',     thumb: 'satisfaction' },
+    { id: 's23', num: 23, section: 'Detailed Results',                  title: 'Prototype Context',             thumb: 'limitations' },
+    { id: 's24', num: 24, section: 'Design Findings & Opportunities',   title: 'Section Starter',               thumb: 'sec-findings' },
+    { id: 's25', num: 25, section: 'Design Findings & Opportunities',   title: 'Finding 1 — Visual Differentiation', thumb: 'f1' }
   ];
   let current = 0;
 
@@ -5275,7 +5706,10 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
       learn:         'background:radial-gradient(60px 40px at 30% 50%,rgba(52,238,167,0.18),transparent 70%),linear-gradient(135deg,#0A3B35,#062823); position:relative;',
       compare:       'background:linear-gradient(135deg,#F3ECDB,#EBE3D1); position:relative;',
       montage:       'background:linear-gradient(135deg,#0A3B35,#062823); position:relative;',
-      'sec-detail':  'background:linear-gradient(135deg,#0C433C,#062823); position:relative;'
+      'sec-detail':  'background:linear-gradient(135deg,#0C433C,#062823); position:relative;',
+      satisfaction:  'background:linear-gradient(135deg,#F3ECDB,#EBE3D1); position:relative;',
+      limitations:   'background:linear-gradient(135deg,#093631,#051F1C); position:relative;',
+      'sec-findings':'background:linear-gradient(135deg,#0C433C,#062823); position:relative;'
     };
     el.setAttribute('style', el.getAttribute('style') + ';' + (styles[key]||''));
     // minimal preview ornament
@@ -5332,10 +5766,10 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
         <span style="position:absolute;left:6px;top:18px;right:42%;font-family:var(--f-display);font-size:7px;font-weight:600;color:#F5F2EA;line-height:1.2">A GLP-1 companion.</span>
         <span style="position:absolute;right:6px;top:10px;bottom:6px;width:22px;border-radius:4px;background:#111;border:1px solid #2b2b2e"></span>
         <span style="position:absolute;right:13px;top:14px;width:8px;height:2px;border-radius:2px;background:#0A1A1C"></span>`;
-    } else if (key === 'sec-exec' || key === 'sec-study' || key === 'sec-resonated' || key === 'sec-detail') {
-      const label = { 'sec-exec': 'Executive Summary', 'sec-study': 'Study Design', 'sec-resonated': 'What Resonated', 'sec-detail': 'Detailed Results' }[key];
-      const num   = { 'sec-exec': '01',                'sec-study': '02',         'sec-resonated': '03',              'sec-detail': '04' }[key];
-      const color = { 'sec-exec': '#34EEA7',           'sec-study': '#5EEAD4',    'sec-resonated': '#14B8A6',         'sec-detail': '#34EEA7' }[key];
+    } else if (key === 'sec-exec' || key === 'sec-study' || key === 'sec-resonated' || key === 'sec-detail' || key === 'sec-findings') {
+      const label = { 'sec-exec': 'Executive Summary', 'sec-study': 'Study Design', 'sec-resonated': 'What Resonated', 'sec-detail': 'Detailed Results', 'sec-findings': 'Design Findings' }[key];
+      const num   = { 'sec-exec': '01',                'sec-study': '02',         'sec-resonated': '03',              'sec-detail': '04',               'sec-findings': '05' }[key];
+      const color = { 'sec-exec': '#34EEA7',           'sec-study': '#5EEAD4',    'sec-resonated': '#14B8A6',         'sec-detail': '#34EEA7',          'sec-findings': '#5EEAD4' }[key];
       el.innerHTML = `<span style="position:absolute;right:-4px;top:-4px;width:48px;height:44px;opacity:0.3;color:#5EEAD4"><svg width="100%" height="100%" viewBox="0 0 1111 926" fill="none"><use href="#x-symbol"/></svg></span>
         <span style="position:absolute;left:8px;top:6px;font-family:var(--f-display);font-size:22px;font-weight:700;color:${color};line-height:1;letter-spacing:-0.02em">${num}</span>
         <span style="position:absolute;left:8px;bottom:6px;font-size:5.5px;color:#5EEAD4;letter-spacing:0.12em;font-weight:600;text-transform:uppercase">${label}</span>`;
@@ -5398,6 +5832,17 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
         <span style="position:absolute;left:6px;top:20px;font-family:var(--f-serif);font-style:italic;font-size:8px;color:#F5F2EA;line-height:1.2;max-width:56%">"everything wrapped up in one"</span>
         <span style="position:absolute;right:6px;top:34px;font-family:var(--f-serif);font-style:italic;font-size:7px;color:#34EEA7;line-height:1.2;max-width:50%;text-align:right">"modify your life"</span>
         <span style="position:absolute;left:6px;bottom:6px;font-family:var(--f-serif);font-style:italic;font-size:6px;color:rgba(245,242,234,0.7);line-height:1.2">"combines a lot"</span>`;
+    } else if (key === 'satisfaction') {
+      el.innerHTML = `<span style="position:absolute;left:6px;top:6px;font-size:6px;letter-spacing:0.16em;color:#0D9488;font-weight:700;text-transform:uppercase">Satisfaction</span>
+        <span style="position:absolute;left:6px;top:16px;font-family:var(--f-display);font-size:20px;font-weight:700;color:#0D9488;line-height:1;letter-spacing:-0.02em">6.6<span style="font-size:10px;font-weight:400;color:#4A5558"> /7</span></span>
+        <span style="position:absolute;left:6px;right:6px;bottom:8px;display:flex;flex-direction:column;gap:1.5px">
+          ${[6.6,6.7,6.6,6.7,6.6,6.4].map(v=>`<span style="display:flex;align-items:center;gap:3px"><span style="flex:1;height:1.5px;background:rgba(10,26,28,0.12);position:relative"><span style="position:absolute;left:0;top:0;height:100%;width:${(v/7)*100}%;background:#0D9488"></span></span><span style="width:8px;height:4px;border-radius:50%;background:#0D9488;box-shadow:0 0 0 1px rgba(13,118,110,0.15)"></span></span>`).join('')}
+        </span>`;
+    } else if (key === 'limitations') {
+      el.innerHTML = `<span style="position:absolute;left:6px;top:6px;font-size:6px;letter-spacing:0.16em;color:#F59E0B;font-weight:600;text-transform:uppercase">Prototype notes</span>
+        <span style="position:absolute;left:6px;right:6px;top:18px;bottom:6px;display:flex;flex-direction:column;gap:3px">
+          ${['PL2','PL4','PL3','PL5'].map(tag=>`<span style="display:flex;gap:3px;align-items:center;padding:1.5px 3px;border-bottom:1px solid rgba(245,158,11,0.1)"><span style="font-family:var(--f-mono);font-size:5px;color:#F59E0B;font-weight:700;padding:1px 3px;border:0.5px solid rgba(245,158,11,0.4);border-radius:1px">${tag}</span><span style="flex:1;height:1px;background:rgba(245,242,234,0.15)"></span></span>`).join('')}
+        </span>`;
     }
   }
 
@@ -5436,8 +5881,8 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
 
   // Count-up animation helper (for SEQ)
   window.animateSEQ = function() {
-    const ours = document.querySelector('.s-deferred-seq .seq-ours');
-    const big = document.querySelector('.s-deferred-seq .seq-ours-tag .big');
+    const ours = document.querySelector('.s21 .seq-ours');
+    const big = document.querySelector('.s21 .seq-ours-tag .big');
     if (!ours || !big) return;
     // position = (score - 1) / 6 * trackWidth
     const trackWidth = 100; // percentage
@@ -5995,6 +6440,110 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
       meta: 'Slide 25 has the full detail. Slide 27 has the remediation table.'
     },
 
+    // ---------- Slide 22 · Post-session satisfaction ----------
+    'sat-features': {
+      label: 'Measure \u00b7 Features',
+      title: 'Has the features I\u2019m looking for \u2014 6.6 / 7',
+      list: [
+        { id: 'P01', text: '7' }, { id: 'P02', text: '7' }, { id: 'P03', text: '5 \u2014 the only sub-6 score on this item' },
+        { id: 'P04', text: '7' }, { id: 'P05', text: '7' }, { id: 'P06', text: '6' }, { id: 'P07', text: '7' }
+      ],
+      meta: 'P03 elsewhere: \u201CI would definitely consider replacing the one I use with this.\u201D The 5 reflects feature completeness, not negative sentiment.'
+    },
+    'sat-easy': {
+      label: 'Measure \u00b7 Ease of use',
+      title: 'Easy to use \u2014 6.7 / 7',
+      list: [
+        { id: 'P01', text: '7' }, { id: 'P02', text: '7' }, { id: 'P03', text: '6' },
+        { id: 'P04', text: '7' }, { id: 'P05', text: '7' }, { id: 'P06', text: '6' }, { id: 'P07', text: '7' }
+      ],
+      meta: 'Highest-scoring item. No participant scored below 6.'
+    },
+    'sat-trust': {
+      label: 'Measure \u00b7 Trust',
+      title: 'I trust it with my health information \u2014 6.6 / 7',
+      list: [
+        { id: 'P01', text: '7' }, { id: 'P02', text: '7' }, { id: 'P03', text: '7' },
+        { id: 'P04', text: '7' }, { id: 'P05', text: '7' }, { id: 'P06', text: '6' }, { id: 'P07', text: '5' }
+      ],
+      meta: 'P07 outlier. In context: her lowest self-rated tech comfort; related to data privacy on a GLP-1-specific app rather than any observed behaviour. Not a usability signal.'
+    },
+    'sat-daily': {
+      label: 'Measure \u00b7 Daily fit',
+      title: 'Fits my daily routine \u2014 6.7 / 7',
+      list: [
+        { id: 'P01', text: '7' }, { id: 'P02', text: '7' }, { id: 'P03', text: '6' },
+        { id: 'P04', text: '7' }, { id: 'P05', text: '7' }, { id: 'P06', text: '6' }, { id: 'P07', text: '7' }
+      ],
+      meta: 'Tied with Ease of Use for highest mean. All 7 expressed willingness to use the app in their daily routine.'
+    },
+    'sat-ai': {
+      label: 'Measure \u00b7 AI helpfulness',
+      title: 'The AI features feel helpful, not gimmicky \u2014 6.6 / 7',
+      list: [
+        { id: 'P01', text: '7' }, { id: 'P02', text: '7' }, { id: 'P03', text: '6' },
+        { id: 'P04', text: '7' }, { id: 'P05', text: '6' }, { id: 'P06', text: '7' }, { id: 'P07', text: '6' }
+      ],
+      meta: 'All AI-skeptical participants still rated this 6+. The Coach delivered \u2014 even when discoverability lagged.'
+    },
+    'sat-journey': {
+      label: 'Measure \u00b7 Journey understanding',
+      title: 'Understands my journey \u2014 6.4 / 7',
+      list: [
+        { id: 'P01', text: '7' }, { id: 'P02', text: '7' }, { id: 'P03', text: '5' },
+        { id: 'P04', text: '7' }, { id: 'P05', text: '6' }, { id: 'P06', text: '6' }, { id: 'P07', text: '7' }
+      ],
+      meta: 'The item with the widest spread. P03\u2019s 5 is the main driver \u2014 consistent with her skeptical-scorer profile. Still a mean in the excellent band.'
+    },
+    'sat-p03': {
+      label: 'Participant \u00b7 P03',
+      title: '5.8 / 7 overall \u2014 the cohort\u2019s most critical scorer',
+      detail: '54F \u00b7 Wegovy \u00b7 6 months \u00b7 Tech comfort 6/7. Currently uses Healthi (the WeightWatchers successor). Lowest scorer on five of six satisfaction measures. Still said she would replace her current app with this one. The floor of the distribution is still above-excellent.',
+      meta: 'Critical-scorer behaviour matters \u2014 her buy-in is a harder signal than an enthusiastic first-timer\u2019s.'
+    },
+    'sat-p05': {
+      label: 'Participant \u00b7 P05',
+      title: '6.7 / 7 overall',
+      detail: '61F \u00b7 Zepbound + methotrexate + Enbrel \u00b7 1 year \u00b7 Tech comfort 7/7. Target demographic. Asked about pricing unprompted (\u201CIs this something that would be an app you would purchase?\u201D [60:38]) \u2014 a clear purchase-intent signal not captured in the Likert alone.',
+      meta: 'The target-demographic validation slide has her profile in detail.'
+    },
+    'sat-p06': {
+      label: 'Participant \u00b7 P06',
+      title: '6.2 / 7 overall',
+      detail: '36F \u00b7 Zepbound \u00b7 2 months \u00b7 Tech comfort 6/7. Newest GLP-1 user in the cohort. Scored 6 consistently across measures. Identified the combined-calorie-and-guidance nutritional display as the right design (Finding 5).',
+      meta: 'Conservative scorer, unwavering. No item below 6.'
+    },
+    'sat-p07': {
+      label: 'Participant \u00b7 P07',
+      title: '6.5 / 7 overall',
+      detail: '57F \u00b7 Zepbound \u00b7 5 months \u00b7 Tech comfort 5/7. Target demographic. Single 5 (Trust with health info). Seven 7s elsewhere. The P07 paradox in action \u2014 lowest tech comfort, near-top satisfaction.',
+      meta: 'See Finding 1 architecture validation for her full behavioural profile.'
+    },
+    'sat-sevens': {
+      label: 'Three participants \u00b7 7.0',
+      title: 'P01, P02, P04 \u2014 straight sevens across all six measures',
+      list: [
+        { id: 'P01', text: '36F \u00b7 Wegovy \u00b7 Tech 7/7. Heavy AI user \u2014 assigned all 7s and refused evening reflections anyway.' },
+        { id: 'P02', text: '44M \u00b7 Wegovy \u00b7 Tech 7/7. Tracks his IV infusions elsewhere. Photo meal logging was his delight moment.' },
+        { id: 'P04', text: '49F \u00b7 Zepbound \u00b7 Tech 6/7. The cohort\u2019s strongest advocate. Would replace her handwritten gratitude journal.' }
+      ],
+      meta: 'Ceiling-effect scoring from three distinct profiles \u2014 not a high-tech-bias artefact.'
+    },
+
+    // ---------- Slide 23 · Prototype context ----------
+    'pl2-voice': {
+      label: 'Limitation \u00b7 PL2',
+      title: 'Microphone non-functional \u2014 and what it tells us',
+      detail: 'The prototype\u2019s voice input button was non-functional. Both P05 and P07 tried it. P07 explicitly attributed her T4 SEQ of 5 to this \u2014 if the voice had worked, her score would have been higher. The failure is a confirmed demand signal: voice input is wanted. We build it in production regardless of whether this session\u2019s T4 score deflation was the only reason to include it.',
+      meta: 'Not a finding. A note that flags where prototype artefacts deflated a specific metric.'
+    },
+    'pl4-t4-range': {
+      label: 'Limitation \u00b7 PL4 \u00b7 T4 range',
+      title: 'Why T4 SEQ ranged 4\u20137',
+      detail: 'Live Lovable AI produced variable responses across sessions. Examples: P07 asked \u201Chow many calories do I have left?\u201D and got meal-idea suggestions instead of a numeric answer. P06 received a hallucinated response during a meal-logging chat attempt (later tasks worked cleanly). P03 and P04 had clean chat-logging experiences. Production will use a tuned, scoped model.',
+      meta: 'T4 mean 5.4 / 7 is at benchmark. Without PL2 + PL4 effects, we believe the underlying usability of the Coach (once found) would score higher \u2014 consistent with the unanimous post-discovery usefulness.'
+    },
+
     // ---------- Slide 15 · Body map ----------
     'body-map-77': {
       label: 'Cohort result · body map',
@@ -6086,7 +6635,7 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
       detail: 'The highest-scoring task across the cohort (excluding P01, who refused on personal preference: \u201CI hate this\u201D \u2014 immediately followed by \u201CI actually like the app though\u201D). Adoption is a spectrum \u2014 P04 would replace her handwritten journal; P07 would do it if a bedtime push notification prompted her.' }
   ];
   window.bindSEQ = function() {
-    const slide = document.querySelector('.s4');
+    const slide = document.querySelector('.s21');
     if (!slide || slide.dataset.seqBound) return;
     slide.dataset.seqBound = '1';
     const expandBtn = slide.querySelector('.seq-expand-btn');
@@ -6145,7 +6694,7 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
   resize();
   fromHash();
   goTo(current);
-  setTimeout(() => { if (current === 3) { window.animateSEQ(); window.bindSEQ(); } }, 50);
+  setTimeout(() => { if (current === 20) { window.animateSEQ(); window.bindSEQ(); } }, 50);
   // Bind SEQ on enter regardless
   window.bindSEQ();
 })();

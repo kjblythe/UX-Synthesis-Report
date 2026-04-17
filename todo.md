@@ -373,3 +373,48 @@ Between each batch I verify:
 ---
 
 **Awaiting approval (or adjustments via the Chunk 5 open questions) before I start on Batch A.**
+
+---
+
+## RUNNING ASSET LIST — drop-in hooks for the deck
+
+Updated as each slide is built. File names/paths use the stable hooks wired into `index.html` — drop the real asset at the path and the loader swaps it in automatically (CSS mock / placeholder card falls back gracefully if missing).
+
+### Screenshots (phone / app UI)
+| Slide | Hook attribute | File path | Status |
+|---|---|---|---|
+| s4 — What Is This App? | `data-asset="home-wellness"` | `assets/screenshots/home-wellness.png` | ✅ present |
+| s14 — Photo Meal Logging | `data-asset="meal-logging"` | `assets/screenshots/meal-logging.png` | ✅ present |
+| s15 — Body Map | `data-asset="bodymap-injection"` | `assets/screenshots/bodymap-injection.png` | ✅ present |
+| s17 — Learning pathways | `data-asset="learn-pathway"` | `assets/screenshots/learn-pathway.png` | ⏳ needed |
+| s25 — F1 home screen (deferred) | CSS mock only (home rings, cards, toast, FAB, bottom-nav) | — | CSS fine; real screenshot optional |
+| s30 — Meds calendar popover | `data-asset="meds-popover"` | `assets/screenshots/meds-popover.png` | ⏳ needed |
+
+### Dovetail video clips
+| Slide | Hook attribute | File path | Clip content | Status |
+|---|---|---|---|---|
+| s7 — Anchor quote | `data-video="p07-lifestyle-5348"` | `assets/videos/p07-lifestyle-5348.mp4` | P07 @ 53:48 "It's easy to take the medication and lose weight…" | ⏳ needed |
+| s14 — Photo meal logging | `data-video="p02-photomeal-2038"` | `assets/videos/p02-photomeal-2038.mp4` | P02 @ 20:38 "I didn't think it was gonna pick up the whole meal…" | ⏳ needed |
+| s15 — Body map | `data-video="p02-bodymap-1546"` | `assets/videos/p02-bodymap-1546.mp4` | P02 @ 15:46 "This is a lot better…" | ⏳ needed |
+| s16 — AI Coach | `data-video="p05-coach-3822"` | `assets/videos/p05-coach-3822.mp4` | P05 @ 38:22 "I personally don't have anyone…" | ⏳ needed |
+| s18 — Competitive Advantage | `data-video="p03-replace-5234"` | `assets/videos/p03-replace-5234.mp4` | P03 @ 52:34 "I would definitely consider replacing…" | ⏳ needed |
+| s26 — P07 Paradox (upcoming) | `data-video="p07-techdiscomfort-0346"` | `assets/videos/p07-techdiscomfort-0346.mp4` | P07 @ 03:46 "There's always some apps that challenge me…" | planned |
+| s30 — Meds screen (upcoming) | `data-video="p07-meds-1752"` | `assets/videos/p07-meds-1752.mp4` | P07 @ 17:52 "It literally says meds…" | planned |
+
+### Team headshots
+| Slot | Hook | File path | Status |
+|---|---|---|---|
+| Kyle Blythe | `data-headshot="kyle-blythe"` | `assets/team/kyle-blythe.jpg` | ✅ present |
+| Vincent Crossley | `data-headshot="vincent-crossley"` | `assets/team/vincent-crossley.jpg` | ✅ present |
+| Lisa Michelson | `data-headshot="lisa-michelson"` | `assets/team/lisa-michelson.jpg` | ✅ present |
+| Kamal Shaham | `data-headshot="kamal-shaham"` | `assets/team/kamal-shaham.jpg` | ✅ present |
+| Henry Levinson | `data-headshot="henry-levinson"` | `assets/team/henry-levinson.jpg` | ✅ present |
+| Allen On | `data-headshot="allen-on"` | `assets/team/allen-on.jpg` | ✅ present |
+
+### Other photos
+| Slide | Hook | File path | Status |
+|---|---|---|---|
+| s9 — Lab overhead | `data-asset="lab-overhead"` | `assets/photos/lab-overhead.jpg` | ⏳ needed (was 2-byte corrupted; re-upload) |
+
+**Graceful degradation:** every missing asset falls back to a styled placeholder — CSS mock, waveform clip card with the quote text, or monogram avatar. The deck works end-to-end without any of the ⏳ items.
+
