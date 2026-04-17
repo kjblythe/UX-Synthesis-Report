@@ -2195,9 +2195,9 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
   color: var(--forest-rim); opacity: 0.55;
   z-index: 1;
 }
-.slide-section-starter.starter-a .x-watermark { right: -320px; top: -160px; transform: rotate(-6deg); }
-.slide-section-starter.starter-b .x-watermark { left: -380px; bottom: -240px; transform: rotate(186deg); }
-.slide-section-starter.starter-c .x-watermark { right: -380px; bottom: -200px; transform: rotate(12deg); }
+.slide-section-starter.starter-a .x-watermark { right: -320px; top: -160px; }
+.slide-section-starter.starter-b .x-watermark { left: -380px; bottom: -240px; transform: rotate(180deg); }
+.slide-section-starter.starter-c .x-watermark { right: -380px; bottom: -200px; }
 .slide-section-starter::before {
   content: ''; position: absolute; inset: 0; pointer-events: none;
   background: radial-gradient(60% 40% at 28% 72%, rgba(52,238,167,0.08), transparent 70%);
@@ -2212,7 +2212,7 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
   z-index: 3;
 }
 .slide-section-starter .ss-body {
-  position: absolute; left: 112px; right: 112px; bottom: 120px;
+  position: absolute; left: 112px; right: 112px; bottom: 180px;
   display: flex; flex-direction: column; align-items: flex-start;
   gap: 14px;
   z-index: 3;
@@ -2280,8 +2280,10 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
 }
 .team-member:hover .team-avatar { box-shadow: 0 24px 48px -16px rgba(10,26,28,0.36), 0 4px 12px -2px rgba(10,26,28,0.14); }
 .team-avatar img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; display: block; }
-/* Per-person crop biases — tweak the percent if the face isn't framed ideally. */
-.team-avatar[data-headshot="henry-levinson"] img { object-position: 50% 8%; }
+/* Per-person crop biases — object-position: the 2nd % picks which part of the source image
+   anchors to the container. 0% = top of image, 100% = bottom. Henry's face is near the bottom
+   of the source, so we anchor toward the bottom. */
+.team-avatar[data-headshot="henry-levinson"] img { object-position: 50% 85%; }
 .team-avatar .monogram {
   font-family: var(--f-display); font-weight: 600; font-size: 64px; color: var(--text-on-dark);
   letter-spacing: -0.02em; text-transform: uppercase;
@@ -3783,7 +3785,7 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
     'team-kyle': {
       label: 'Core team · BI X US',
       title: 'Kyle Blythe',
-      detail: 'UX Designer / Researcher. Study design, moderation, and synthesis.',
+      detail: 'UX Designer / Researcher.',
       meta: '<a href="mailto:kyle.blythe@boehringer-ingelheim.com" class="pop-email">kyle.blythe@boehringer-ingelheim.com</a>'
     },
     'team-vincent': {
