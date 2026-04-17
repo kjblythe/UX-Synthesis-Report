@@ -3065,6 +3065,382 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
 }
 .screen-home-lite .nav-tabs span.active { color: var(--teal-300); }
 
+/* ============ SLIDE 16 — AI COACH CONTEXTUAL INTELLIGENCE ============ */
+.s16 .slide-frame { padding: 80px 112px 72px 112px; }
+.s16 .s16-hero {
+  margin-top: 30px;
+  display: grid; grid-template-columns: 380px 1fr;
+  gap: 56px; align-items: flex-end;
+  padding-bottom: 28px; border-bottom: 1px solid rgba(10,26,28,0.14);
+}
+.s16 .s16-stat-block { display: flex; flex-direction: column; gap: 10px; }
+.s16 .s16-stat-num {
+  font-family: var(--f-display); font-weight: 600;
+  font-size: 180px; line-height: 0.9; letter-spacing: -0.04em;
+  color: var(--teal-700); font-variant-numeric: tabular-nums;
+  display: inline-flex; align-items: flex-end;
+}
+.s16 .s16-stat-num .s16-stat-of {
+  font-style: normal; font-weight: 400;
+  font-size: 48px; color: var(--ink-mute); margin-left: 6px; padding-bottom: 22px;
+}
+.s16 .s16-stat-sub {
+  align-self: flex-start; border: 0; background: transparent;
+  font-family: var(--f-display); font-weight: 500;
+  font-size: 18px; letter-spacing: 0.01em; color: var(--ink);
+  padding: 6px 0; cursor: pointer; text-align: left;
+  border-bottom: 1px dashed rgba(13,118,110,0.45);
+}
+.s16 .s16-stat-sub:hover { color: var(--teal-700); border-bottom-color: var(--teal-700); }
+.s16 .s16-headline {
+  font-family: var(--f-display); font-weight: 500;
+  font-size: 38px; line-height: 1.14; letter-spacing: -0.015em;
+  color: var(--ink); margin: 0; max-width: 940px;
+}
+.s16 .s16-headline .ital {
+  font-family: var(--f-serif); font-style: italic; font-weight: 400;
+  color: var(--teal-700);
+}
+.s16 .s16-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  column-gap: 80px; margin-top: 40px;
+  position: relative;
+}
+.s16 .s16-grid::before {
+  content: ''; position: absolute; top: 10px; bottom: 10px; left: 50%;
+  width: 1px; background: rgba(10,26,28,0.12);
+}
+.s16 .s16-col-eyebrow {
+  font-family: var(--f-display); font-weight: 500;
+  font-size: 12px; letter-spacing: 0.24em; text-transform: uppercase;
+  color: var(--teal-700); margin-bottom: 22px;
+}
+.s16 .s16-col-vs .s16-col-eyebrow { color: var(--ink-mute); }
+.s16 .s16-qblock { margin-bottom: 26px; }
+.s16 .s16-qblock:last-child { margin-bottom: 0; }
+.s16 .s16-qblock blockquote {
+  margin: 0 0 10px;
+  font-family: var(--f-serif); font-style: italic; font-weight: 400;
+  font-size: 22px; line-height: 1.36; letter-spacing: -0.005em;
+  color: var(--ink);
+}
+.s16 .s16-qblock cite {
+  display: block; font-style: normal;
+  font-family: var(--f-display); font-weight: 500;
+  font-size: 13px; letter-spacing: 0.05em; color: var(--ink-mute);
+}
+.s16 .s16-qblock cite .s16-ts {
+  font-family: var(--f-mono); font-size: 12px; color: var(--ink-dim); margin-left: 4px;
+}
+.s16 .s16-foot {
+  margin-top: 36px; padding-top: 22px;
+  border-top: 1px solid rgba(10,26,28,0.14);
+  display: grid; grid-template-columns: 1fr auto; gap: 40px; align-items: center;
+}
+.s16 .s16-caveat { display: flex; flex-direction: column; gap: 10px; max-width: 640px; }
+.s16 .s16-caveat .kpi-pill { align-self: flex-start; }
+.s16 .s16-caveat-note {
+  margin: 0; font-family: var(--f-display); font-weight: 400;
+  font-size: 14px; line-height: 1.45; color: var(--ink-mute);
+}
+.s16 .s16-clip { width: 360px; }
+
+/* ============ SLIDE 17 — LEARNING PATHWAYS ============ */
+.s17 {
+  background:
+    radial-gradient(900px 720px at 18% 50%, rgba(52,238,167,0.12), transparent 62%),
+    radial-gradient(1100px 800px at 100% 0%, rgba(20,184,166,0.08), transparent 55%),
+    linear-gradient(180deg, #0C433C 0%, #0A3B35 60%, #062823 100%);
+}
+.s17 .slide-frame { padding: 80px 112px 72px 112px; }
+.s17 .s17-grid {
+  display: grid; grid-template-columns: 1.25fr 1fr;
+  column-gap: 72px; margin-top: 34px; align-items: flex-start;
+}
+.s17 .s17-viz { position: relative; }
+.s17 .s17-viz-card {
+  position: relative; padding: 28px 28px 26px;
+  border-radius: 22px;
+  background: linear-gradient(165deg, rgba(12, 67, 60, 0.95) 0%, rgba(7, 46, 41, 0.95) 100%);
+  border: 1px solid rgba(94,234,212,0.18);
+  box-shadow: 0 30px 60px -24px rgba(0,0,0,0.55), inset 0 1px 0 rgba(255,255,255,0.04);
+}
+.s17 .s17-viz-top {
+  display: flex; justify-content: space-between; align-items: baseline;
+  padding-bottom: 20px; margin-bottom: 16px;
+  border-bottom: 1px solid rgba(94,234,212,0.14);
+}
+.s17 .s17-viz-title {
+  font-family: var(--f-display); font-weight: 600; font-size: 24px; letter-spacing: -0.01em;
+  color: var(--on-dark);
+}
+.s17 .s17-viz-tag {
+  font-family: var(--f-display); font-weight: 500; font-size: 11px;
+  letter-spacing: 0.22em; text-transform: uppercase; color: var(--teal-300);
+}
+.s17 .s17-path {
+  padding: 14px 0 16px;
+  border-bottom: 1px solid rgba(94,234,212,0.08);
+}
+.s17 .s17-path:last-child { border-bottom: 0; padding-bottom: 4px; }
+.s17 .s17-path-head {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: 8px;
+}
+.s17 .s17-path-name {
+  font-family: var(--f-display); font-weight: 500; font-size: 17px;
+  color: var(--on-dark); letter-spacing: -0.005em;
+}
+.s17 .s17-path-tag {
+  font-family: var(--f-display); font-weight: 500; font-size: 10px;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--on-dark-mute);
+  padding: 4px 10px; border-radius: 999px; border: 1px solid rgba(94,234,212,0.18);
+  background: rgba(20,184,166,0.06);
+}
+.s17 .s17-path-tag-mint {
+  color: var(--mint); border-color: rgba(52,238,167,0.45);
+  background: rgba(52,238,167,0.10);
+}
+.s17 .s17-path-personal {
+  border-radius: 14px; padding: 14px 14px 16px; margin: 6px -14px 6px;
+  background: rgba(52,238,167,0.05);
+  border: 1px solid rgba(52,238,167,0.26);
+}
+.s17 .s17-path-personal + .s17-path { border-top: 0; }
+.s17 .s17-path-dots {
+  display: flex; gap: 6px; margin-bottom: 6px;
+}
+.s17 .s17-path-dots i {
+  width: 22px; height: 6px; border-radius: 3px;
+  background: rgba(94,234,212,0.14);
+  display: block;
+}
+.s17 .s17-path-dots i.on { background: var(--teal-400); }
+.s17 .s17-path-personal .s17-path-dots i.on { background: var(--mint); }
+.s17 .s17-path-meta {
+  font-family: var(--f-mono); font-size: 11px; color: var(--on-dark-dim);
+  letter-spacing: 0.02em;
+}
+.s17 .s17-viz-cap {
+  margin-top: 12px; font-family: var(--f-mono); font-size: 10px;
+  color: rgba(245,242,234,0.32); letter-spacing: 0.04em;
+}
+.s17 .s17-viz-cap code { color: rgba(245,242,234,0.5); font-size: 10px; }
+
+.s17 .s17-right { padding-top: 6px; display: flex; flex-direction: column; gap: 22px; }
+.s17 .s17-headline {
+  font-family: var(--f-display); font-weight: 500;
+  font-size: 38px; line-height: 1.15; letter-spacing: -0.015em;
+  color: var(--on-dark); margin: 0; max-width: 520px;
+}
+.s17 .s17-stat-row { display: flex; gap: 12px; flex-wrap: wrap; }
+.s17 .kpi-pill-dark {
+  background: rgba(20,184,166,0.15);
+  border: 1px solid rgba(94,234,212,0.3);
+  color: var(--on-dark);
+}
+.s17 .kpi-pill-dark b { color: var(--mint); }
+.s17 .kpi-pill-dark i { color: rgba(245,242,234,0.68); }
+.s17 .kpi-pill-dark:hover { background: rgba(20,184,166,0.25); }
+
+.s17 .s17-quotes { display: flex; flex-direction: column; gap: 18px; margin-top: 4px; }
+.s17 .s17-quote blockquote {
+  margin: 0 0 8px;
+  font-family: var(--f-serif); font-style: italic; font-weight: 400;
+  font-size: 20px; line-height: 1.38;
+  color: var(--on-dark);
+}
+.s17 .s17-quote cite {
+  display: block; font-style: normal;
+  font-family: var(--f-display); font-weight: 500;
+  font-size: 12.5px; letter-spacing: 0.05em; color: var(--on-dark-mute);
+}
+.s17 .s17-quote cite .s17-ts {
+  font-family: var(--f-mono); font-size: 11.5px; color: rgba(245,242,234,0.4); margin-left: 4px;
+}
+.s17 .s17-insight {
+  margin-top: 6px; padding-top: 18px;
+  border-top: 1px solid rgba(94,234,212,0.16);
+}
+.s17 .s17-insight-eb {
+  display: block;
+  font-family: var(--f-display); font-weight: 600; font-size: 14px;
+  letter-spacing: 0.01em; color: var(--mint); margin-bottom: 6px;
+}
+.s17 .s17-insight p {
+  margin: 0; font-family: var(--f-display); font-weight: 400;
+  font-size: 14px; line-height: 1.48; color: rgba(245,242,234,0.78);
+}
+
+/* Hide CSS-mock pathway when a real screenshot is loaded into the asset container */
+.s17 .s17-viz-card.has-asset .s17-viz-top,
+.s17 .s17-viz-card.has-asset .s17-path { display: none; }
+.s17 .s17-viz-card.has-asset { padding: 0; background: transparent; border: 0; box-shadow: none; }
+.s17 .s17-viz-card.has-asset .asset-img { border-radius: 22px; }
+
+/* ============ SLIDE 18 — COMPETITIVE COMPARISON ============ */
+.s18 .slide-frame { padding: 80px 112px 72px 112px; }
+.s18 .s18-hero { margin-top: 28px; max-width: 1200px; }
+.s18 .s18-headline {
+  font-family: var(--f-display); font-weight: 500;
+  font-size: 42px; line-height: 1.12; letter-spacing: -0.018em;
+  color: var(--ink); margin: 0 0 12px;
+}
+.s18 .s18-headline .ital {
+  font-family: var(--f-serif); font-style: italic; font-weight: 500;
+  color: var(--teal-700);
+}
+.s18 .s18-lede {
+  margin: 0; font-family: var(--f-display); font-weight: 400;
+  font-size: 16px; line-height: 1.5; color: var(--ink-mute); max-width: 820px;
+}
+.s18 .s18-table {
+  margin-top: 32px;
+  border-top: 1px solid rgba(10,26,28,0.2);
+}
+.s18 .s18-head, .s18 .s18-row {
+  display: grid;
+  grid-template-columns: 1.1fr 1.4fr 1.7fr 0.5fr;
+  column-gap: 32px; align-items: center;
+  padding: 14px 4px;
+}
+.s18 .s18-head {
+  border-bottom: 1px solid rgba(10,26,28,0.2);
+  padding-top: 10px; padding-bottom: 10px;
+}
+.s18 .s18-head .s18-col {
+  font-family: var(--f-display); font-weight: 500; font-size: 11px;
+  letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-mute);
+}
+.s18 .s18-row {
+  border-bottom: 1px solid rgba(10,26,28,0.1);
+  transition: background 160ms var(--ease-out);
+}
+.s18 .s18-row:last-child { border-bottom: 1px solid rgba(10,26,28,0.2); }
+.s18 .s18-row:hover { background: rgba(20,184,166,0.045); }
+.s18 .s18-col-tool {
+  display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+}
+.s18 .s18-tool-name {
+  font-family: var(--f-display); font-weight: 600; font-size: 19px;
+  letter-spacing: -0.005em; color: var(--ink);
+}
+.s18 .s18-tool-alias {
+  font-family: var(--f-display); font-weight: 400; font-size: 13px;
+  color: var(--ink-dim); margin-left: -4px;
+}
+.s18 .s18-col-does, .s18 .s18-col-gap {
+  font-family: var(--f-display); font-weight: 400; font-size: 15px;
+  line-height: 1.4; color: var(--ink);
+}
+.s18 .s18-col-gap { color: var(--ink-mute); }
+.s18 .s18-col-ours { justify-self: center; }
+.s18 .s18-check {
+  width: 28px; height: 28px; border-radius: 50%;
+  background: var(--teal-700); display: inline-block;
+  position: relative;
+  box-shadow: 0 0 0 4px rgba(13,118,110,0.12);
+}
+.s18 .s18-check::before {
+  content: ''; position: absolute; top: 9px; left: 7px;
+  width: 6px; height: 12px;
+  border-right: 2px solid var(--paper);
+  border-bottom: 2px solid var(--paper);
+  transform: rotate(45deg);
+}
+.s18 .chip-mini {
+  font-family: var(--f-mono); font-weight: 600; font-size: 10px;
+  padding: 2px 7px; border-radius: 999px;
+  border: 1px solid rgba(13,118,110,0.4);
+  background: rgba(13,118,110,0.10); color: var(--teal-700);
+  cursor: pointer; letter-spacing: 0.04em;
+}
+.s18 .chip-mini:hover { background: rgba(13,118,110,0.22); }
+
+.s18 .s18-foot {
+  margin-top: 32px;
+  display: grid; grid-template-columns: 1fr auto; gap: 40px; align-items: flex-start;
+}
+.s18 .s18-quotes { display: flex; flex-direction: column; gap: 18px; max-width: 900px; }
+.s18 .s18-quote blockquote {
+  margin: 0 0 6px;
+  font-family: var(--f-serif); font-style: italic; font-weight: 400;
+  font-size: 20px; line-height: 1.36; color: var(--ink);
+}
+.s18 .s18-quote cite {
+  display: block; font-style: normal;
+  font-family: var(--f-display); font-weight: 500;
+  font-size: 12.5px; letter-spacing: 0.05em; color: var(--ink-mute);
+}
+.s18 .s18-quote cite .s18-ts {
+  font-family: var(--f-mono); font-size: 11.5px; color: var(--ink-dim); margin-left: 4px;
+}
+.s18 .s18-clip { width: 320px; }
+
+/* ============ SLIDE 19 — VALUE PROPOSITION QUOTE MONTAGE ============ */
+.s19 {
+  background:
+    radial-gradient(1200px 900px at 92% 8%, rgba(20,184,166,0.06), transparent 58%),
+    radial-gradient(1000px 760px at 6% 100%, rgba(6,40,35,0.85), transparent 60%),
+    linear-gradient(180deg, #0A3B35 0%, #072E29 60%, #051F1C 100%);
+}
+.s19::after {
+  content: ''; position: absolute; right: -160px; top: 40%;
+  width: 420px; height: 420px;
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1111 926' fill='none' stroke='%235EEAD4' stroke-width='4.42' stroke-opacity='0.08'><path d='M362.623 67.9956L1108.12 500.738V424.673L380.34 2.20996H26.4495L2.07227 67.9956H362.623Z'/><path d='M744.53 462.71L1108.13 67.9956L1079.29 2.20996L655.08 462.71L1079.29 923.21L1108.13 857.424L744.53 462.71Z'/><path d='M380.34 923.208L1108.12 500.745V424.681L362.623 857.423H2.07227L26.4495 923.208H380.34Z'/></svg>") no-repeat center / contain;
+  pointer-events: none; z-index: 0;
+}
+.s19 .slide-frame { padding: 80px 140px 72px 140px; position: relative; z-index: 1; }
+.s19 .s19-stack {
+  margin-top: 36px;
+  display: flex; flex-direction: column; gap: 38px;
+  max-width: 1500px;
+}
+.s19 .s19-quote { margin: 0; position: relative; }
+.s19 .s19-quote blockquote {
+  margin: 0 0 10px; padding: 0;
+  font-family: var(--f-serif); font-style: italic; font-weight: 400;
+  line-height: 1.16; letter-spacing: -0.015em;
+  color: var(--on-dark);
+}
+.s19 .s19-quote-1 blockquote { font-size: 54px; max-width: 1280px; }
+.s19 .s19-quote-2 {
+  padding-left: 160px;
+  border-left: 1px solid rgba(94,234,212,0.22);
+  margin-left: 80px;
+}
+.s19 .s19-quote-2 blockquote { font-size: 42px; max-width: 1100px; }
+.s19 .s19-quote-3 {
+  text-align: right;
+  padding-right: 40px;
+}
+.s19 .s19-quote-3 blockquote { font-size: 36px; max-width: 1000px; margin-left: auto; }
+.s19 .s19-quote .s19-hl {
+  font-style: normal; font-weight: 500;
+  color: var(--mint);
+  background: linear-gradient(180deg, transparent 65%, rgba(52,238,167,0.14) 65%, rgba(52,238,167,0.14) 92%, transparent 92%);
+  padding: 0 2px;
+}
+.s19 .s19-quote figcaption {
+  font-family: var(--f-display); font-weight: 500; font-size: 13px;
+  letter-spacing: 0.06em; color: var(--on-dark-mute);
+}
+.s19 .s19-quote-3 figcaption { text-align: right; }
+.s19 .s19-quote figcaption .s19-ts {
+  font-family: var(--f-mono); font-size: 12px; color: rgba(245,242,234,0.4); margin-left: 4px;
+}
+.s19 .s19-divider {
+  margin-top: 44px; width: 80px; height: 1px;
+  background: rgba(94,234,212,0.4);
+}
+.s19 .s19-transition {
+  margin-top: 14px;
+  font-family: var(--f-display); font-weight: 500; font-size: 12px;
+  letter-spacing: 0.28em; text-transform: uppercase;
+  color: var(--teal-300);
+}
+
 </style>
 
 <style id="print">
@@ -4218,6 +4594,312 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
   </div>
 </section>
 
+<!-- SLIDE 16: AI COACH — CONTEXTUAL INTELLIGENCE -->
+<section class="slide s16 slide-paper">
+  <div class="slide-frame">
+    <div class="reveal d1" style="display:flex;align-items:center;justify-content:space-between">
+      <div class="eyebrow">What resonated &middot; AI coach</div>
+      <div style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-dim);font-weight:500">Contextual intelligence</div>
+    </div>
+    <div class="s16-hero reveal d2">
+      <div class="s16-stat-block">
+        <span class="s16-stat-num">7<i class="s16-stat-of">/7</i></span>
+        <button class="s16-stat-sub chip-trigger" data-cite="coach-77">found it useful after using it</button>
+      </div>
+      <h1 class="s16-headline">
+        Useful beyond novelty. Valued for <span class="ital">exploration, questions, and coaching feedback</span> &mdash; the things UI screens don&apos;t do well.
+      </h1>
+    </div>
+    <div class="s16-grid">
+      <div class="s16-col s16-col-advantage reveal d3">
+        <div class="s16-col-eyebrow">The contextual advantage</div>
+        <div class="s16-qblock">
+          <blockquote>It&apos;s focused on this app and what I&apos;m going through. I don&apos;t have to tell it anything because it already knows.</blockquote>
+          <cite><button class="chip" data-cite="p07">P07</button> <span class="s16-ts">[30:04]</span> &middot; target demographic</cite>
+        </div>
+        <div class="s16-qblock">
+          <blockquote>I personally don&apos;t have anyone that I&apos;m going through like a weight loss journey with. So it&apos;s just me, myself, and I.</blockquote>
+          <cite><button class="chip" data-cite="p05">P05</button> <span class="s16-ts">[38:22]</span> &middot; solo journey</cite>
+        </div>
+      </div>
+      <div class="s16-col s16-col-vs reveal d4">
+        <div class="s16-col-eyebrow">Why it beats a generic chatbot</div>
+        <div class="s16-qblock">
+          <blockquote>Helpful overall &mdash; to ask those questions without having to call your doctor.</blockquote>
+          <cite><button class="chip" data-cite="p01">P01</button> <span class="s16-ts">[33:43]</span> &middot; doctor-visit supplement</cite>
+        </div>
+        <div class="s16-qblock">
+          <blockquote>The screens feel more natural, but I like the idea of talking to the coach because I like the feedback.</blockquote>
+          <cite><button class="chip" data-cite="p04">P04</button> <span class="s16-ts">[28:48]</span> &middot; chat + UI coexist</cite>
+        </div>
+      </div>
+    </div>
+    <div class="s16-foot reveal d5">
+      <div class="s16-caveat">
+        <button class="kpi-pill chip-trigger" data-cite="coach-discover-caveat"><b>2&ndash;3/7</b><i>found it independently on the directed task</i></button>
+        <p class="s16-caveat-note">Discoverability is a distinct issue. <button class="chip chip-inline" data-cite="coach-labeling">Finding 2</button> covers the labelling problem and the remediation path.</p>
+      </div>
+      <div class="s16-clip" data-video="p05-coach-3822">
+        <div class="clip-card compact" role="button" tabindex="0" aria-label="Play clip">
+          <div class="clip-thumb">
+            <div class="clip-waveform" aria-hidden="true">
+              <span style="height:32%"></span><span style="height:58%"></span><span style="height:44%"></span><span style="height:70%"></span><span style="height:38%"></span><span style="height:82%"></span><span style="height:46%"></span><span style="height:60%"></span><span style="height:34%"></span><span style="height:72%"></span><span style="height:50%"></span><span style="height:40%"></span><span style="height:66%"></span><span style="height:48%"></span><span style="height:78%"></span><span style="height:42%"></span>
+            </div>
+            <div class="clip-play" aria-hidden="true"></div>
+          </div>
+          <div class="clip-info">
+            <div class="clip-info-top">
+              <span class="rec-dot"></span>
+              <span class="clip-label-text">Dovetail clip &middot; P05 @ 38:22</span>
+              <span class="ts">0:11</span>
+            </div>
+            <div class="clip-quote">&ldquo;It&rsquo;s just me, myself, and I&hellip;&rdquo;</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-foot">
+      <div class="foot-left">
+        <svg class="mark" viewBox="0 0 1128 431" aria-label="BIX" style="color: var(--ink)"><use href="#bix-logo"/></svg>
+        <span class="foot-internal">BI X Digital Innovation Lab &nbsp;|&nbsp; ONLY FOR INTERNAL USE</span>
+      </div>
+      <div class="foot-page">16</div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 17: LEARNING CONTENT -->
+<section class="slide s17 slide-dark">
+  <div class="slide-frame">
+    <div class="reveal d1" style="display:flex;align-items:center;justify-content:space-between">
+      <div class="eyebrow">What resonated &middot; Learning pathways</div>
+      <div style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--on-dark-mute);font-weight:500">Validated format &middot; Discoverability-bound</div>
+    </div>
+    <div class="s17-grid">
+      <div class="s17-viz reveal d2">
+        <div class="s17-viz-card" data-asset="learn-pathway" data-asset-folder="screenshots" data-asset-ext="png">
+          <div class="s17-viz-top">
+            <span class="s17-viz-title">Learn</span>
+            <span class="s17-viz-tag">Your pathways</span>
+          </div>
+          <div class="s17-path" data-tag="CORE">
+            <div class="s17-path-head">
+              <span class="s17-path-name">Medication fundamentals</span>
+              <span class="s17-path-tag">Core</span>
+            </div>
+            <div class="s17-path-dots"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></div>
+            <div class="s17-path-meta">CBT-grounded &middot; 4 of 6 complete</div>
+          </div>
+          <div class="s17-path" data-tag="CORE">
+            <div class="s17-path-head">
+              <span class="s17-path-name">Nutrition with GLP-1s</span>
+              <span class="s17-path-tag">Core</span>
+            </div>
+            <div class="s17-path-dots"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></div>
+            <div class="s17-path-meta">ACT-informed &middot; 2 of 5 complete</div>
+          </div>
+          <div class="s17-path s17-path-personal" data-tag="PERSONAL">
+            <div class="s17-path-head">
+              <span class="s17-path-name">Your emotional patterns</span>
+              <span class="s17-path-tag s17-path-tag-mint">Personalised</span>
+            </div>
+            <div class="s17-path-dots"><i class="on"></i><i></i><i></i><i></i></div>
+            <div class="s17-path-meta">AI-curated from your reflections &middot; 1 of 4</div>
+          </div>
+          <div class="s17-path" data-tag="CORE">
+            <div class="s17-path-head">
+              <span class="s17-path-name">Building daily habits</span>
+              <span class="s17-path-tag">Core</span>
+            </div>
+            <div class="s17-path-dots"><i></i><i></i><i></i><i></i><i></i></div>
+            <div class="s17-path-meta">Behavioural activation &middot; not started</div>
+          </div>
+          <div class="s17-path" data-tag="CORE">
+            <div class="s17-path-head">
+              <span class="s17-path-name">Handling side effects</span>
+              <span class="s17-path-tag">Core</span>
+            </div>
+            <div class="s17-path-dots"><i></i><i></i><i></i></div>
+            <div class="s17-path-meta">Clinical guidance &middot; not started</div>
+          </div>
+        </div>
+        <div class="s17-viz-cap">Stylised preview &middot; real screen drops in when <code>assets/screenshots/learn-pathway.png</code> is added.</div>
+      </div>
+      <div class="s17-right reveal d3">
+        <h1 class="s17-headline">The format works. Content resonated across every participant who found it.</h1>
+        <div class="s17-stat-row">
+          <button class="kpi-pill kpi-pill-dark chip-trigger" data-cite="learn-77"><b>7/7</b><i>engaged once found</i></button>
+          <button class="kpi-pill kpi-pill-dark chip-trigger" data-cite="learn-cbt"><b>CBT &middot; ACT</b><i>behavioural foundation</i></button>
+        </div>
+        <div class="s17-quotes">
+          <div class="s17-quote">
+            <blockquote>When you bunch a list together, it scrambles your brain. This one separates it so it&apos;s individualised.</blockquote>
+            <cite><button class="chip" data-cite="p02">P02</button> <span class="s17-ts">[38:13]</span> &middot; on pathway structure</cite>
+          </div>
+          <div class="s17-quote">
+            <blockquote>It gives people options if you&apos;re not an AI type person.</blockquote>
+            <cite><button class="chip" data-cite="p07">P07</button> <span class="s17-ts">[39:50]</span> &middot; Learn as non-AI path</cite>
+          </div>
+        </div>
+        <div class="s17-insight">
+          <span class="s17-insight-eb">The real gap is finding it.</span>
+          <p>Five participants reached Learn when directed; the content itself was valued by all who arrived. The bottom-nav label blends into the dark surface &mdash; a <button class="chip chip-inline" data-cite="ui-polish">visual-styling issue</button> covered in <button class="chip chip-inline" data-cite="f1-short">Finding 1</button>, not a Learn-specific problem.</p>
+        </div>
+      </div>
+    </div>
+    <div class="slide-foot">
+      <div class="foot-left">
+        <svg class="mark" viewBox="0 0 1128 431" aria-label="BIX" style="color: var(--on-dark)"><use href="#bix-logo"/></svg>
+        <span class="foot-internal">BI X Digital Innovation Lab &nbsp;|&nbsp; ONLY FOR INTERNAL USE</span>
+      </div>
+      <div class="foot-page">17</div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 18: COMPETITIVE ADVANTAGE -->
+<section class="slide s18 slide-paper">
+  <div class="slide-frame">
+    <div class="reveal d1" style="display:flex;align-items:center;justify-content:space-between">
+      <div class="eyebrow">What resonated &middot; Against what they use now</div>
+      <div style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-dim);font-weight:500">Competitive positioning</div>
+    </div>
+    <div class="s18-hero reveal d2">
+      <h1 class="s18-headline">Five participants named the app they currently use. <span class="ital">None of them</span> covers the full GLP-1 journey.</h1>
+      <p class="s18-lede">Participants were not prompted to compare. These are unsolicited references to existing tools surfaced during the warm-up and task flow.</p>
+    </div>
+    <div class="s18-table reveal d3">
+      <div class="s18-head">
+        <span class="s18-col s18-col-tool">Current tool</span>
+        <span class="s18-col s18-col-does">What it does for them</span>
+        <span class="s18-col s18-col-gap">Where it falls short</span>
+        <span class="s18-col s18-col-ours">This app</span>
+      </div>
+      <div class="s18-row">
+        <span class="s18-col s18-col-tool"><span class="s18-tool-name">MyFitnessPal</span><button class="chip chip-mini" data-cite="p04">P04</button></span>
+        <span class="s18-col s18-col-does">Calorie tracking (lapsed when it went paid)</span>
+        <span class="s18-col s18-col-gap">No GLP-1 awareness &middot; no photo logging &middot; no AI</span>
+        <span class="s18-col s18-col-ours"><span class="s18-check" aria-label="Full coverage"></span></span>
+      </div>
+      <div class="s18-row">
+        <span class="s18-col s18-col-tool"><span class="s18-tool-name">Shotzy</span><button class="chip chip-mini" data-cite="p05">P05</button></span>
+        <span class="s18-col s18-col-does">Injection tracking</span>
+        <span class="s18-col s18-col-gap">No site-rotation history &middot; no nutrition</span>
+        <span class="s18-col s18-col-ours"><span class="s18-check" aria-label="Full coverage"></span></span>
+      </div>
+      <div class="s18-row">
+        <span class="s18-col s18-col-tool"><span class="s18-tool-name">Healthi</span> <span class="s18-tool-alias">(WW successor)</span><button class="chip chip-mini" data-cite="p03">P03</button></span>
+        <span class="s18-col s18-col-does">Weight tracking, community</span>
+        <span class="s18-col s18-col-gap">No AI &middot; no medication tracking</span>
+        <span class="s18-col s18-col-ours"><span class="s18-check" aria-label="Full coverage"></span></span>
+      </div>
+      <div class="s18-row">
+        <span class="s18-col s18-col-tool"><span class="s18-tool-name">Microhealth</span><button class="chip chip-mini" data-cite="p02">P02</button></span>
+        <span class="s18-col s18-col-does">Infusion tracking for a bleeding disorder</span>
+        <span class="s18-col s18-col-gap">No nutrition &middot; limited body map &middot; &ldquo;tried to add my GLP-1 &mdash; couldn&rsquo;t&rdquo;</span>
+        <span class="s18-col s18-col-ours"><span class="s18-check" aria-label="Full coverage"></span></span>
+      </div>
+      <div class="s18-row">
+        <span class="s18-col s18-col-tool"><span class="s18-tool-name">Apple Health</span><button class="chip chip-mini" data-cite="p07">P07</button></span>
+        <span class="s18-col s18-col-does">Step counting at dance class, once a week</span>
+        <span class="s18-col s18-col-gap">No nutrition &middot; no AI &middot; no medication</span>
+        <span class="s18-col s18-col-ours"><span class="s18-check" aria-label="Full coverage"></span></span>
+      </div>
+    </div>
+    <div class="s18-foot reveal d4">
+      <div class="s18-quotes">
+        <div class="s18-quote">
+          <blockquote>I would definitely consider replacing the one I use with this and use this instead.</blockquote>
+          <cite><button class="chip" data-cite="p03">P03</button> <span class="s18-ts">[52:34]</span> &middot; the cohort&apos;s most critical scorer</cite>
+        </div>
+        <div class="s18-quote">
+          <blockquote>I tried to add my GLP-1 to [my app], but I couldn&apos;t. So I&apos;m interested in this app.</blockquote>
+          <cite><button class="chip" data-cite="p02">P02</button> <span class="s18-ts">[08:00]</span> &middot; unmet need</cite>
+        </div>
+      </div>
+      <div class="s18-clip" data-video="p03-replace-5234">
+        <div class="clip-card compact" role="button" tabindex="0" aria-label="Play clip">
+          <div class="clip-thumb">
+            <div class="clip-waveform" aria-hidden="true">
+              <span style="height:28%"></span><span style="height:52%"></span><span style="height:38%"></span><span style="height:66%"></span><span style="height:44%"></span><span style="height:76%"></span><span style="height:34%"></span><span style="height:60%"></span><span style="height:46%"></span><span style="height:72%"></span><span style="height:40%"></span><span style="height:56%"></span><span style="height:64%"></span><span style="height:42%"></span><span style="height:58%"></span><span style="height:36%"></span>
+            </div>
+            <div class="clip-play" aria-hidden="true"></div>
+          </div>
+          <div class="clip-info">
+            <div class="clip-info-top">
+              <span class="rec-dot"></span>
+              <span class="clip-label-text">Dovetail clip &middot; P03 @ 52:34</span>
+              <span class="ts">0:09</span>
+            </div>
+            <div class="clip-quote">&ldquo;I would definitely consider replacing&hellip;&rdquo;</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-foot">
+      <div class="foot-left">
+        <svg class="mark" viewBox="0 0 1128 431" aria-label="BIX" style="color: var(--ink)"><use href="#bix-logo"/></svg>
+        <span class="foot-internal">BI X Digital Innovation Lab &nbsp;|&nbsp; ONLY FOR INTERNAL USE</span>
+      </div>
+      <div class="foot-page">18</div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 19: VALUE PROPOSITION — IN THEIR WORDS -->
+<section class="slide s19 slide-dark">
+  <div class="slide-frame">
+    <div class="reveal d1" style="display:flex;align-items:center;justify-content:space-between">
+      <div class="eyebrow">In their words</div>
+      <div style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--on-dark-mute);font-weight:500">Section capstone</div>
+    </div>
+    <div class="s19-stack">
+      <figure class="s19-quote s19-quote-1 reveal d2">
+        <blockquote>It&apos;s a nutritional app, it&apos;s a fitness app, it&apos;s everything wrapped up in one&hellip; I would <span class="s19-hl">highly recommend</span> it.</blockquote>
+        <figcaption><button class="chip" data-cite="p04">P04</button> <span class="s19-ts">[48:26]</span> &middot; 49F &middot; Zepbound &middot; the cohort&apos;s strongest advocate</figcaption>
+      </figure>
+      <figure class="s19-quote s19-quote-2 reveal d3">
+        <blockquote>It would be great if the advertising could be geared towards tracking your journey, because this is not something you&apos;re just gonna lose weight on. You have to <span class="s19-hl">modify your life</span>.</blockquote>
+        <figcaption><button class="chip" data-cite="p07">P07</button> <span class="s19-ts">[52:52]</span> &middot; 57F &middot; Zepbound &middot; target demographic</figcaption>
+      </figure>
+      <figure class="s19-quote s19-quote-3 reveal d4">
+        <blockquote>This looks like it kind of <span class="s19-hl">combines a lot</span>, like more than one app.</blockquote>
+        <figcaption><button class="chip" data-cite="p05">P05</button> <span class="s19-ts">[10:40]</span> &middot; 61F &middot; Zepbound+ &middot; first impression</figcaption>
+      </figure>
+    </div>
+    <div class="s19-divider reveal d5"></div>
+    <div class="s19-transition reveal d5">Task-level evidence follows.</div>
+    <div class="slide-foot">
+      <div class="foot-left">
+        <svg class="mark" viewBox="0 0 1128 431" aria-label="BIX" style="color: var(--on-dark)"><use href="#bix-logo"/></svg>
+        <span class="foot-internal">BI X Digital Innovation Lab &nbsp;|&nbsp; ONLY FOR INTERNAL USE</span>
+      </div>
+      <div class="foot-page">19</div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 20: SECTION STARTER — DETAILED RESULTS -->
+<section class="slide s20 slide-section-starter starter-a">
+  <svg class="x-watermark" viewBox="0 0 1111 926" aria-hidden="true"><use href="#x-symbol"/></svg>
+  <div class="slide-frame">
+    <div class="ss-eyebrow reveal d1">Section 04</div>
+    <div class="ss-body">
+      <div class="ss-num reveal d2">04</div>
+      <h1 class="ss-title reveal d3">Detailed <span class="title-accent">Results</span></h1>
+      <p class="ss-sub reveal d4">Task-by-task SEQ, post-session satisfaction, and the prototype context that frames both.</p>
+      <div class="ss-rule reveal d5"></div>
+    </div>
+    <div class="slide-foot">
+      <div class="foot-left">
+        <svg class="mark" viewBox="0 0 1128 431" aria-label="BIX" style="color: var(--on-dark)"><use href="#bix-logo"/></svg>
+        <span class="foot-internal">BI X Digital Innovation Lab &nbsp;|&nbsp; ONLY FOR INTERNAL USE</span>
+      </div>
+      <div class="foot-page">20</div>
+    </div>
+  </div>
+</section>
+
 <!-- DEFERRED for Session 7 — blueprint Slide 25 (Finding 1 — Visual Differentiation). See lessons-learned.md. -->
 <section class="slide-deferred s-deferred-f1 slide-dark">
   <div class="slide-frame">
@@ -4399,7 +5081,12 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
     { id: 's12', num: 12, section: 'What Resonated with Users',         title: 'Section Starter',               thumb: 'sec-resonated' },
     { id: 's13', num: 13, section: 'What Resonated with Users',         title: 'Feature Validation Overview',   thumb: 'matrix' },
     { id: 's14', num: 14, section: 'What Resonated with Users',         title: 'Photo Meal Logging',            thumb: 'meal' },
-    { id: 's15', num: 15, section: 'What Resonated with Users',         title: 'Body Map Injection Tracker',    thumb: 'bodymap' }
+    { id: 's15', num: 15, section: 'What Resonated with Users',         title: 'Body Map Injection Tracker',    thumb: 'bodymap' },
+    { id: 's16', num: 16, section: 'What Resonated with Users',         title: 'AI Coach — Contextual Intelligence', thumb: 'coach' },
+    { id: 's17', num: 17, section: 'What Resonated with Users',         title: 'Learning Pathways',             thumb: 'learn' },
+    { id: 's18', num: 18, section: 'What Resonated with Users',         title: 'Competitive Advantage',         thumb: 'compare' },
+    { id: 's19', num: 19, section: 'What Resonated with Users',         title: 'In Their Words',                thumb: 'montage' },
+    { id: 's20', num: 20, section: 'Detailed Results',                  title: 'Section Starter',               thumb: 'sec-detail' }
   ];
   let current = 0;
 
@@ -4583,7 +5270,12 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
       seq:           'background:radial-gradient(60px 36px at 65% 50%,rgba(52,238,167,0.35),transparent 70%),linear-gradient(135deg,#0B4039,#072E29);',
       meal:          'background:radial-gradient(60px 40px at 75% 30%,rgba(94,234,212,0.28),transparent 70%),#F7F1E5;',
       bodymap:       'background:radial-gradient(50px 40px at 50% 45%,rgba(94,234,212,0.22),transparent 70%),linear-gradient(135deg,#0A3B35,#062823); position:relative;',
-      f1:            'background:linear-gradient(135deg,#0A3B35,#062823); position:relative;'
+      f1:            'background:linear-gradient(135deg,#0A3B35,#062823); position:relative;',
+      coach:         'background:linear-gradient(135deg,#F3ECDB,#EBE3D1); position:relative;',
+      learn:         'background:radial-gradient(60px 40px at 30% 50%,rgba(52,238,167,0.18),transparent 70%),linear-gradient(135deg,#0A3B35,#062823); position:relative;',
+      compare:       'background:linear-gradient(135deg,#F3ECDB,#EBE3D1); position:relative;',
+      montage:       'background:linear-gradient(135deg,#0A3B35,#062823); position:relative;',
+      'sec-detail':  'background:linear-gradient(135deg,#0C433C,#062823); position:relative;'
     };
     el.setAttribute('style', el.getAttribute('style') + ';' + (styles[key]||''));
     // minimal preview ornament
@@ -4640,10 +5332,10 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
         <span style="position:absolute;left:6px;top:18px;right:42%;font-family:var(--f-display);font-size:7px;font-weight:600;color:#F5F2EA;line-height:1.2">A GLP-1 companion.</span>
         <span style="position:absolute;right:6px;top:10px;bottom:6px;width:22px;border-radius:4px;background:#111;border:1px solid #2b2b2e"></span>
         <span style="position:absolute;right:13px;top:14px;width:8px;height:2px;border-radius:2px;background:#0A1A1C"></span>`;
-    } else if (key === 'sec-exec' || key === 'sec-study' || key === 'sec-resonated') {
-      const label = { 'sec-exec': 'Executive Summary', 'sec-study': 'Study Design', 'sec-resonated': 'What Resonated' }[key];
-      const num   = { 'sec-exec': '01',                'sec-study': '02',         'sec-resonated': '03' }[key];
-      const color = { 'sec-exec': '#34EEA7',           'sec-study': '#5EEAD4',    'sec-resonated': '#14B8A6' }[key];
+    } else if (key === 'sec-exec' || key === 'sec-study' || key === 'sec-resonated' || key === 'sec-detail') {
+      const label = { 'sec-exec': 'Executive Summary', 'sec-study': 'Study Design', 'sec-resonated': 'What Resonated', 'sec-detail': 'Detailed Results' }[key];
+      const num   = { 'sec-exec': '01',                'sec-study': '02',         'sec-resonated': '03',              'sec-detail': '04' }[key];
+      const color = { 'sec-exec': '#34EEA7',           'sec-study': '#5EEAD4',    'sec-resonated': '#14B8A6',         'sec-detail': '#34EEA7' }[key];
       el.innerHTML = `<span style="position:absolute;right:-4px;top:-4px;width:48px;height:44px;opacity:0.3;color:#5EEAD4"><svg width="100%" height="100%" viewBox="0 0 1111 926" fill="none"><use href="#x-symbol"/></svg></span>
         <span style="position:absolute;left:8px;top:6px;font-family:var(--f-display);font-size:22px;font-weight:700;color:${color};line-height:1;letter-spacing:-0.02em">${num}</span>
         <span style="position:absolute;left:8px;bottom:6px;font-size:5.5px;color:#5EEAD4;letter-spacing:0.12em;font-weight:600;text-transform:uppercase">${label}</span>`;
@@ -4684,6 +5376,28 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
           <span style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:3px;height:3px;border-radius:50%;background:#34EEA7;box-shadow:0 0 0 1px rgba(52,238,167,0.35)"></span>
         </span>
         <span style="position:absolute;right:6px;top:16px;font-family:var(--f-display);font-size:18px;font-weight:700;color:#34EEA7;line-height:1">7/7</span>`;
+    } else if (key === 'coach') {
+      el.innerHTML = `<span style="position:absolute;left:6px;top:6px;font-size:6px;letter-spacing:0.16em;color:#0D9488;font-weight:700;text-transform:uppercase">AI Coach</span>
+        <span style="position:absolute;left:6px;top:18px;font-family:var(--f-display);font-size:22px;font-weight:700;color:#0D9488;line-height:1;letter-spacing:-0.02em">7/7</span>
+        <span style="position:absolute;left:6px;bottom:6px;font-size:5px;color:#4A5558;line-height:1.2">useful · post-discovery</span>
+        <span style="position:absolute;right:5px;top:10px;width:26px;height:20px;border-radius:6px 6px 6px 2px;background:rgba(13,118,110,0.12);border:1px solid rgba(13,118,110,0.3)"></span>
+        <span style="position:absolute;right:5px;top:34px;width:18px;height:14px;border-radius:6px 6px 2px 6px;background:rgba(13,118,110,0.2)"></span>`;
+    } else if (key === 'learn') {
+      el.innerHTML = `<span style="position:absolute;left:6px;top:6px;font-size:6px;letter-spacing:0.16em;color:#5EEAD4;font-weight:600;text-transform:uppercase">Pathways</span>
+        <span style="position:absolute;left:6px;right:6px;top:18px;display:flex;flex-direction:column;gap:2.5px">
+          ${[4,2,1,0,0].map(on=>`<span style="display:flex;gap:1.5px">${Array.from({length:6}).map((_,i)=>`<span style="flex:1;height:2px;border-radius:1px;background:${i<on?'#34EEA7':'rgba(94,234,212,0.18)'}"></span>`).join('')}</span>`).join('')}
+        </span>
+        <span style="position:absolute;left:6px;bottom:6px;font-size:5px;color:#F5F2EA;opacity:0.6">CBT · ACT</span>`;
+    } else if (key === 'compare') {
+      el.innerHTML = `<span style="position:absolute;left:6px;top:6px;font-size:6px;letter-spacing:0.16em;color:#0D9488;font-weight:700;text-transform:uppercase">Vs. What They Use</span>
+        <span style="position:absolute;left:6px;right:22px;top:18px;bottom:6px;display:flex;flex-direction:column;gap:2px">
+          ${[1,1,1,1,1].map(()=>`<span style="display:flex;align-items:center;justify-content:space-between;padding:1px 0;border-bottom:1px solid rgba(10,26,28,0.12)"><span style="height:1.5px;width:40%;background:#0A1A1C;opacity:0.6"></span><span style="width:4px;height:4px;border-radius:50%;background:#0D9488"></span></span>`).join('')}
+        </span>`;
+    } else if (key === 'montage') {
+      el.innerHTML = `<span style="position:absolute;left:6px;top:6px;font-size:6px;letter-spacing:0.16em;color:#5EEAD4;font-weight:600;text-transform:uppercase">In Their Words</span>
+        <span style="position:absolute;left:6px;top:20px;font-family:var(--f-serif);font-style:italic;font-size:8px;color:#F5F2EA;line-height:1.2;max-width:56%">"everything wrapped up in one"</span>
+        <span style="position:absolute;right:6px;top:34px;font-family:var(--f-serif);font-style:italic;font-size:7px;color:#34EEA7;line-height:1.2;max-width:50%;text-align:right">"modify your life"</span>
+        <span style="position:absolute;left:6px;bottom:6px;font-family:var(--f-serif);font-style:italic;font-size:6px;color:rgba(245,242,234,0.7);line-height:1.2">"combines a lot"</span>`;
     }
   }
 
@@ -5223,6 +5937,62 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
       title: 'Conditional \u2014 recognised AI feedback value',
       detail: 'Engaged once she saw the immediate AI-generated positive feedback. Described the feature warmly but would not schedule it herself. Asked whether the AI responses scale with her input.',
       meta: 'The AI-feedback loop is a meaningful second adoption lever alongside the bedtime push.'
+    },
+
+    // ---------- Slide 16 · AI Coach ----------
+    'coach-77': {
+      label: 'Cohort result · AI Coach',
+      title: '7 of 7 found it useful after using it',
+      list: [
+        { id: 'P01', text: '\u201CHelpful overall \u2014 to ask those questions without having to call your doctor.\u201D [33:43]' },
+        { id: 'P02', text: 'Initially thought \u201Ccustomer service type thing\u201D; post-use, treated it as a domain expert.' },
+        { id: 'P03', text: '\u201CLook at that, it gives you some ideas for dinner.\u201D [27:54] \u2014 warmed up once she tried it.' },
+        { id: 'P04', text: '\u201CThe screens feel more natural, but I like the idea of talking to the coach because I like the feedback.\u201D [28:48]' },
+        { id: 'P05', text: '\u201CIt\u2019s almost like having a buddy.\u201D [36:49] \u2014 her companion framing for the solo journey.' },
+        { id: 'P06', text: 'Used it for recipe ideas; expected AI recipes would be her primary use case.' },
+        { id: 'P07', text: '\u201CIt\u2019s focused on this app and what I\u2019m going through.\u201D [30:04] \u2014 the contextual-AI moment.' }
+      ],
+      meta: 'Post-discovery usefulness is unanimous. The gap is up-front discoverability \u2014 2\u20133/7 found the Coach independently on T4. See Finding 2 (Slide 28).'
+    },
+    'coach-discover-caveat': {
+      label: 'Discoverability · T4',
+      title: 'Only 2\u20133 of 7 found the AI Coach independently on the directed task',
+      detail: 'Participants detoured to Progress, to the Wellness Score, or to the Meds panel first. All 7 used the Coach successfully once brought to it. This separates \u201Ccan\u2019t find it\u201D (a styling/labelling issue) from \u201Cdoesn\u2019t work\u201D (not observed).',
+      meta: 'Root causes · label ambiguity (\u201CCoach\u201D = tutorial? customer service?) · mental model (users don\u2019t instinctively ask AI for progress summaries) · AI literacy (P04 self-identified as still learning AI). Addressed in Finding 2 recommendations.'
+    },
+    'coach-labeling': {
+      label: 'Finding 2 · AI Coach',
+      title: 'The labelling problem is real but tractable',
+      detail: 'Four participants offered four different mental models of what \u201CCoach\u201D meant: customer service (P02), tutorial/pep talk (P04), a buddy (P05), focused on my journey (P07). The label itself gates the first interaction. Once they used it, every participant recognised the value.',
+      meta: 'Remediation levers \u2192 rename or add a descriptive subtitle, raise prominence beyond the bottom nav, add contextual prompts inside other features (\u201CAsk Coach about this\u201D). Slide 28 has the full spectrum; Slide 29 has the recommendations.'
+    },
+
+    // ---------- Slide 17 · Learning pathways ----------
+    'learn-77': {
+      label: 'Learning pathways · cohort',
+      title: '7 of 7 engaged with the content once they found it',
+      list: [
+        { id: 'P01', text: 'Understood the pathway structure immediately; would pick and choose articles by need.' },
+        { id: 'P02', text: '\u201CWhen you bunch a list together, it scrambles your brain. This one separates it.\u201D [38:13]' },
+        { id: 'P03', text: '\u201CFor somebody who is new, absolutely.\u201D [37:13] \u2014 valued it for earlier-journey users.' },
+        { id: 'P04', text: 'Found the content valuable; had difficulty navigating back out of a lesson [32:56]. Minor pilot note.' },
+        { id: 'P05', text: 'Engaged meaningfully. Recognition-vs-recall on discoverability \u2014 see matrix \u26A0 cell on Slide 13.' },
+        { id: 'P06', text: 'Unfamiliar with the Duolingo-style pathway format initially, adapted quickly.' },
+        { id: 'P07', text: '\u201CIt gives people options if you\u2019re not an AI type person.\u201D [39:50] \u2014 Learn as non-AI alternative.' }
+      ],
+      meta: 'Format validated. Content resonated. The only gap was discoverability of the bottom-nav tab \u2014 which is Finding 1, not a Learn-specific problem.'
+    },
+    'learn-cbt': {
+      label: 'Content foundation',
+      title: 'CBT \u00b7 ACT \u00b7 behavioural activation',
+      detail: 'Content was built on three clinical frameworks: Cognitive Behavioural Therapy (reframing thought patterns around eating and self-image), Acceptance and Commitment Therapy (value-aligned behaviour under GLP-1 side effects), and behavioural activation (small daily actions that compound). Participants did not name the frameworks \u2014 they simply found the content useful.',
+      meta: 'The framework invisibility is the goal. When behavioural design works, users don\u2019t see the scaffolding; they see helpful content.'
+    },
+    'f1-short': {
+      label: 'Cross-reference',
+      title: 'Finding 1 \u00b7 Visual differentiation + affordance clarity',
+      detail: 'Interactive elements \u2014 bottom navigation, + button, toast confirmations \u2014 blend into the dark aesthetic. Learn discoverability is a symptom, not a separate finding. The remediation is contrast and visual-weight adjustments, not an IA rebuild.',
+      meta: 'Slide 25 has the full detail. Slide 27 has the remediation table.'
     },
 
     // ---------- Slide 15 · Body map ----------
