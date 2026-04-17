@@ -2269,7 +2269,7 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
 .team-row.support .team-avatar { width: 72px; height: 72px; margin-bottom: 0; flex-shrink: 0; }
 .team-avatar img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; display: block; }
 /* Per-person crop biases — tweak the percent if the face isn't centered ideally. */
-.team-avatar[data-headshot="henry-levinson"] img { object-position: 50% 22%; }
+.team-avatar[data-headshot="henry-levinson"] img { object-position: 50% 8%; }
 .team-avatar .monogram {
   font-family: var(--f-display); font-weight: 600; font-size: 42px; color: var(--text-on-dark);
   letter-spacing: -0.02em; text-transform: uppercase;
@@ -2340,11 +2340,13 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
 /* ============ ASSET OVERLAY (real screenshots overlay CSS mocks when available) ============ */
 [data-asset] { position: relative; }
 [data-asset] > .asset-img {
-  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block;
+  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; display: block;
   z-index: 2; border-radius: inherit;
 }
+/* Inside a phone screen, the image should fill edge-to-edge (frame already adopts image aspect via JS) */
+.screen.has-asset > .asset-img { object-fit: cover; }
 /* When a screenshot is loaded into a phone .screen, hide the CSS mock underneath for clarity */
-.screen.has-asset > *:not(.asset-img) { visibility: hidden; }
+.screen.has-asset > *:not(.asset-img):not(.phone-island) { visibility: hidden; }
 
 /* ============ APP SCREEN — HOME (placeholder for slide 4) ============ */
 .screen-home-lite { background: linear-gradient(170deg, #071F1C 0%, #04110F 100%); color: var(--text-on-dark); padding: 44px 26px 26px; display: flex; flex-direction: column; gap: 14px; }
@@ -2580,8 +2582,8 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
     </div>
     <div class="product-grid">
       <div class="product-col">
-        <h1 class="reveal d2">A <span class="hl">GLP-1-specific</span> companion that turns the medication into a lifestyle &mdash; in one app.</h1>
-        <p class="lede reveal d3">Most patients are stitching together three or four tools to manage a GLP-1 journey. This prototype consolidates what matters &mdash; tracking, learning, coaching, reflection &mdash; around a single Wellness Score that adapts to each day.</p>
+        <h1 class="reveal d2">A GLP-1 patient support app with <span class="hl">four integrated modules</span>.</h1>
+        <p class="lede reveal d3">The prototype combines medication logging, photo-based nutrition tracking, a context-aware AI coach paired with behavioral learning pathways, and evening reflections. A daily Wellness Score summarises activity across modules.</p>
         <div class="product-props">
           <div class="product-prop reveal d4">
             <div class="num">01</div>
@@ -3378,6 +3380,17 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
         inserted.className = 'asset-img';
         el.appendChild(inserted);
         el.classList.add('has-asset');
+        // If this asset lives inside a phone .screen, resize the phone frame to match the image's natural aspect ratio
+        // so the screenshot fills the screen area without any cropping. The 7px bezel is preserved on all sides.
+        const phone = el.closest('.phone');
+        if (phone && img.naturalWidth && img.naturalHeight && el.classList.contains('screen')) {
+          const bezel = 7; // matches .phone-screen inset and .phone padding
+          const phoneW = phone.getBoundingClientRect().width || 330;
+          const screenW = phoneW - bezel * 2;
+          const screenH = screenW * (img.naturalHeight / img.naturalWidth);
+          const phoneH = screenH + bezel * 2;
+          phone.style.aspectRatio = `${phoneW} / ${phoneH}`;
+        }
       };
       img.src = `assets/${folder}/${slug}.${ext}`;
     });
