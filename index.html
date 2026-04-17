@@ -1235,6 +1235,17 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
   font-style: normal; color: var(--ink-mute);
   font-weight: 400;
 }
+.s6 .kpi-pill .kpi-hint {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 16px; height: 16px; margin-left: 4px;
+  border-radius: 50%;
+  background: rgba(20,184,166,0.14);
+  color: var(--teal-700);
+  font-family: var(--f-display); font-weight: 700; font-size: 11px; line-height: 1;
+  letter-spacing: 0;
+  transition: background 160ms ease;
+}
+.s6 .kpi-pill:hover .kpi-hint { background: rgba(20,184,166,0.28); }
 .s6 .kpi-pill.kpi-mint {
   background: rgba(52, 238, 167, 0.12);
   border-color: rgba(52, 238, 167, 0.3);
@@ -1854,11 +1865,11 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
 /* ============ PHONE FRAME ============ */
 .phone {
   position: relative;
-  width: 330px;
+  width: 420px;
   aspect-ratio: 1260 / 2736;
-  border-radius: 52px;
+  border-radius: 64px;
   background: linear-gradient(140deg, #2b2b2e 0%, #111112 40%, #0a0a0b 100%);
-  padding: 7px;
+  padding: 8px;
   box-shadow:
     0 40px 60px -20px rgba(0,0,0,0.55),
     0 15px 30px -10px rgba(0,0,0,0.3),
@@ -1876,35 +1887,66 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
   border-radius: 46px; background: #000; z-index: 1;
 }
 .phone-screen {
-  position: absolute; inset: 7px;
-  border-radius: 45px; overflow: hidden;
+  position: absolute; inset: 8px;
+  border-radius: 56px; overflow: hidden;
   z-index: 2; background: #0A3B35;
 }
 .phone-island {
-  position: absolute; top: 14px; left: 50%;
+  position: absolute; top: 18px; left: 50%;
   transform: translateX(-50%);
-  width: 104px; height: 30px;
-  background: #000; border-radius: 18px; z-index: 5;
+  width: 132px; height: 38px;
+  background: #000; border-radius: 22px; z-index: 5;
   box-shadow: inset 0 0 0 1px rgba(255,255,255,0.03);
 }
 .phone-island::after {
-  content: ""; position: absolute; right: 8px; top: 50%;
+  content: ""; position: absolute; right: 10px; top: 50%;
   transform: translateY(-50%);
-  width: 7px; height: 7px; border-radius: 50%;
+  width: 9px; height: 9px; border-radius: 50%;
   background: #0a0a0b; box-shadow: inset 0 0 0 1px rgba(70,70,80,0.3);
 }
-.phone .btn-side {
-  position: absolute;
-}
-.phone .btn-vol-up    { right: -2px; top: 130px; width: 3px; height: 38px; border-radius: 0 3px 3px 0; background: linear-gradient(90deg, #1c1c1e, #2a2a2c); }
-.phone .btn-vol-down  { right: -2px; top: 176px; width: 3px; height: 38px; border-radius: 0 3px 3px 0; background: linear-gradient(90deg, #1c1c1e, #2a2a2c); }
-.phone .btn-action    { left: -2px; top: 112px; width: 3px; height: 24px; border-radius: 3px 0 0 3px; background: linear-gradient(90deg, #2a2a2c, #1c1c1e); }
-.phone .btn-power     { right: -2px; top: 244px; width: 3px; height: 68px; border-radius: 0 3px 3px 0; background: linear-gradient(90deg, #1c1c1e, #2a2a2c); }
+.phone .btn-side { position: absolute; }
+.phone .btn-vol-up    { right: -3px; top: 166px; width: 3px; height: 48px; border-radius: 0 3px 3px 0; background: linear-gradient(90deg, #1c1c1e, #2a2a2c); }
+.phone .btn-vol-down  { right: -3px; top: 224px; width: 3px; height: 48px; border-radius: 0 3px 3px 0; background: linear-gradient(90deg, #1c1c1e, #2a2a2c); }
+.phone .btn-action    { left: -3px; top: 142px; width: 3px; height: 30px; border-radius: 3px 0 0 3px; background: linear-gradient(90deg, #2a2a2c, #1c1c1e); }
+.phone .btn-power     { right: -3px; top: 312px; width: 3px; height: 88px; border-radius: 0 3px 3px 0; background: linear-gradient(90deg, #1c1c1e, #2a2a2c); }
 .phone-screen::after {
   content: ""; position: absolute; inset: 0;
   background: linear-gradient(150deg, rgba(255,255,255,0.05) 0%, transparent 35%);
   pointer-events: none; z-index: 20;
 }
+
+/* ============ PHONE MAGNIFIER (hover loupe over real screenshots) ============ */
+.phone-loupe {
+  position: absolute;
+  left: 0; top: 0;
+  width: 180px; height: 180px;
+  border-radius: 50%;
+  border: 3px solid var(--mint-accent);
+  box-shadow:
+    0 14px 36px rgba(0,0,0,0.50),
+    inset 0 0 0 3px rgba(0,0,0,0.35),
+    inset 0 0 0 4px rgba(255,255,255,0.06);
+  background-repeat: no-repeat;
+  pointer-events: none;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.82);
+  transition: opacity 140ms var(--ease-out), transform 140ms var(--ease-out);
+  z-index: 30;
+  overflow: hidden;
+}
+.phone-loupe.on { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+.phone-loupe::after {
+  content: '';
+  position: absolute; left: 50%; top: 50%;
+  width: 8px; height: 8px;
+  transform: translate(-50%, -50%);
+  background: var(--mint-accent);
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px rgba(10,26,28,0.5);
+}
+/* cursor hint on interactive phone screens */
+.phone .screen.has-asset { cursor: zoom-in; }
+@media print { .phone-loupe { display: none !important; } }
 
 /* ============ APP SCREEN MOCKS ============ */
 .screen { position: absolute; inset: 0; font-size: 11.5px; color: #E8EFEE; }
@@ -2240,82 +2282,123 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
 
 /* ============ SLIDE 15 — BODY MAP INJECTION TRACKER ============ */
 .s15 .bm-grid {
-  margin-top: 28px;
-  display: grid; grid-template-columns: minmax(0, 1fr) 420px;
-  gap: 96px;
-  align-items: start;
-  height: calc(1080px - 88px - 108px - 28px);
+  margin-top: 22px;
+  display: grid; grid-template-columns: minmax(0, 1fr) 460px;
+  gap: 80px;
+  align-items: stretch;
+  height: calc(1080px - 88px - 108px - 22px);
 }
-.s15 .bm-left { display: flex; flex-direction: column; gap: 20px; min-width: 0; }
+.s15 .bm-left { display: flex; flex-direction: column; gap: 18px; min-width: 0; padding-top: 4px; }
 .s15 .bm-headline {
-  font-family: var(--f-display); font-weight: 600; font-size: 42px; line-height: 1.12;
-  letter-spacing: -0.02em; color: var(--text-on-dark); margin: 0; max-width: 900px;
+  font-family: var(--f-display); font-weight: 600; font-size: 34px; line-height: 1.18;
+  letter-spacing: -0.02em; color: var(--text-on-dark); margin: 0; max-width: 920px;
 }
 .s15 .bm-headline .hl { color: var(--mint-accent); }
-.s15 .bm-stat-row { display: flex; align-items: center; gap: 36px; padding: 12px 0 16px 0; border-bottom: 1px solid rgba(245,242,234,0.08); }
+.s15 .bm-stat-row { display: flex; align-items: center; gap: 28px; padding: 8px 0 14px 0; border-bottom: 1px solid rgba(245,242,234,0.08); }
 .s15 .bm-primary {
   appearance: none; background: transparent; border: 0; padding: 0; margin: 0;
-  display: flex; flex-direction: column; align-items: flex-start; gap: 6px;
+  display: flex; flex-direction: column; align-items: flex-start; gap: 4px;
   color: inherit; cursor: pointer;
   transition: transform 180ms var(--ease-out);
 }
 .s15 .bm-primary:hover { transform: translateY(-2px); }
 .s15 .bm-primary .n {
-  font-family: var(--f-display); font-weight: 700; font-size: 82px; line-height: 0.9; letter-spacing: -0.03em;
+  font-family: var(--f-display); font-weight: 700; font-size: 68px; line-height: 0.9; letter-spacing: -0.03em;
   color: var(--mint-accent); font-variant-numeric: tabular-nums;
 }
-.s15 .bm-primary .n i { font-style: normal; font-weight: 400; font-size: 32px; color: rgba(52,238,167,0.55); margin-left: 2px; }
+.s15 .bm-primary .n i { font-style: normal; font-weight: 400; font-size: 28px; color: rgba(52,238,167,0.55); margin-left: 2px; }
 .s15 .bm-primary .label {
-  font-family: var(--f-display); font-weight: 500; font-size: 12px; letter-spacing: 0.2em;
+  font-family: var(--f-display); font-weight: 500; font-size: 11px; letter-spacing: 0.2em;
   text-transform: uppercase; color: var(--teal-300);
 }
-.s15 .bm-stat.sm { display: flex; flex-direction: column; gap: 4px; padding-left: 32px; border-left: 1px solid rgba(245,242,234,0.08); }
+.s15 .bm-stat.sm { display: flex; flex-direction: column; gap: 4px; padding-left: 24px; border-left: 1px solid rgba(245,242,234,0.08); max-width: 220px; }
 .s15 .bm-stat.sm .n {
-  font-family: var(--f-display); font-weight: 700; font-size: 30px; line-height: 1; letter-spacing: -0.02em;
+  font-family: var(--f-display); font-weight: 700; font-size: 28px; line-height: 1; letter-spacing: -0.02em;
   color: var(--text-on-dark); font-variant-numeric: tabular-nums;
 }
+.s15 .bm-stat.sm .n i { font-style: normal; font-weight: 400; font-size: 14px; color: var(--text-dim-dark); margin-left: 2px; }
 .s15 .bm-stat.sm .label {
-  font-family: var(--f-display); font-weight: 500; font-size: 11px; letter-spacing: 0.2em;
-  text-transform: uppercase; color: var(--text-dim-dark);
+  font-family: var(--f-display); font-weight: 500; font-size: 11px; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--text-dim-dark); line-height: 1.35;
 }
-/* Differentiator block — editorial, not a card */
-.s15 .bm-diff { display: flex; flex-direction: column; gap: 6px; padding-top: 4px; }
-.s15 .diff-label {
-  font-family: var(--f-display); font-weight: 500; font-size: 11px; letter-spacing: 0.22em;
-  text-transform: uppercase; color: var(--mint-accent);
-}
-.s15 .diff-body {
-  font-family: var(--f-display); font-weight: 600; font-size: 20px; line-height: 1.35;
-  color: var(--text-on-dark); letter-spacing: -0.005em;
-}
-.s15 .diff-body .sep { color: var(--teal-300); font-weight: 400; margin: 0 6px; }
-.s15 .diff-compare {
-  font-family: var(--f-display); font-weight: 400; font-size: 14px; line-height: 1.55;
-  color: var(--text-dim-dark); margin-top: 4px;
-}
-/* Quotes */
-.s15 .bm-quotes { display: flex; flex-direction: column; gap: 14px; margin-top: 8px; }
-.s15 .bm-quote { display: flex; flex-direction: column; gap: 8px; }
+/* Quotes — compact, two-column stack */
+.s15 .bm-quotes { display: flex; flex-direction: column; gap: 14px; margin-top: 4px; }
+.s15 .bm-quote { display: flex; flex-direction: column; gap: 6px; }
 .s15 .bm-quote blockquote {
   margin: 0;
-  font-family: var(--f-serif); font-style: italic; font-weight: 400; font-size: 20px; line-height: 1.35;
+  font-family: var(--f-serif); font-style: italic; font-weight: 400; font-size: 18px; line-height: 1.35;
   color: var(--text-on-dark); letter-spacing: -0.005em;
-  padding-left: 20px; border-left: 2px solid rgba(94,234,212,0.28);
+  padding-left: 18px; border-left: 2px solid rgba(94,234,212,0.28);
 }
 .s15 .bm-quote cite {
-  font-style: normal; padding-left: 22px;
-  font-family: var(--f-display); font-weight: 500; font-size: 12px; letter-spacing: 0.14em;
+  font-style: normal; padding-left: 20px;
+  font-family: var(--f-display); font-weight: 500; font-size: 11px; letter-spacing: 0.12em;
   text-transform: uppercase; color: var(--text-dim-dark);
 }
-/* Dovetail clip */
-.s15 .bm-clip { margin-top: 8px; max-width: 420px; }
+/* Dovetail clip — compact horizontal variant */
+.s15 .bm-clip { margin-top: auto; max-width: 520px; }
+.s15 .bm-clip .clip-card.compact {
+  display: grid; grid-template-columns: 140px 1fr;
+  background: rgba(11,43,39,0.6);
+  border: 1px solid rgba(94,234,212,0.16);
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: border-color 180ms var(--ease-out);
+}
+.s15 .bm-clip .clip-card.compact:hover { border-color: rgba(94,234,212,0.38); }
+.s15 .bm-clip .clip-thumb {
+  position: relative; height: 76px;
+  background: linear-gradient(180deg, #0A3B35 0%, #062823 100%);
+  display: flex; align-items: center; justify-content: center;
+  border-right: 1px solid rgba(94,234,212,0.14);
+}
+.s15 .bm-clip .clip-waveform {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center; gap: 2px;
+  padding: 0 8px;
+}
+.s15 .bm-clip .clip-waveform span {
+  width: 2px; background: var(--teal-300); opacity: 0.45; border-radius: 1px;
+}
+.s15 .bm-clip .clip-play {
+  position: relative; width: 32px; height: 32px; border-radius: 50%;
+  background: var(--mint-accent);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 1;
+  box-shadow: 0 2px 10px rgba(52,238,167,0.4);
+}
+.s15 .bm-clip .clip-play::after {
+  content: ''; display: block; width: 0; height: 0;
+  border-left: 9px solid #062823; border-top: 6px solid transparent; border-bottom: 6px solid transparent;
+  margin-left: 2px;
+}
+.s15 .bm-clip .clip-info {
+  padding: 10px 14px; display: flex; flex-direction: column; justify-content: center; gap: 4px;
+}
+.s15 .bm-clip .clip-info-top {
+  display: flex; align-items: center; gap: 8px;
+  font-family: var(--f-display); font-weight: 500; font-size: 10.5px; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--teal-300);
+}
+.s15 .bm-clip .clip-info-top .rec-dot {
+  width: 6px; height: 6px; border-radius: 50%; background: #EF4444;
+  box-shadow: 0 0 0 2px rgba(239,68,68,0.22);
+  animation: rec-pulse 1.8s infinite ease-in-out;
+}
+.s15 .bm-clip .clip-info-top .clip-label-text { flex: 1; }
+.s15 .bm-clip .clip-info-top .ts { color: rgba(245,242,234,0.55); letter-spacing: 0.08em; }
+.s15 .bm-clip .clip-quote {
+  font-family: var(--f-serif); font-style: italic; font-weight: 400; font-size: 14px;
+  color: var(--text-on-dark); line-height: 1.3;
+}
 
 /* Right column — phone frame */
-.s15 .bm-right { display: flex; justify-content: center; align-items: flex-start; padding-top: 8px; }
+.s15 .bm-right { display: flex; justify-content: center; align-items: center; position: relative; }
 .s15 .bm-phone-wrap { position: relative; }
 .s15 .bm-phone-wrap::before {
   content: ''; position: absolute; inset: -40px;
-  background: radial-gradient(60% 55% at 50% 55%, rgba(52,238,167,0.12), transparent 70%);
+  background: radial-gradient(60% 55% at 50% 55%, rgba(52,238,167,0.14), transparent 70%);
   pointer-events: none;
 }
 
@@ -2434,142 +2517,178 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
   text-transform: uppercase;
 }
 
-/* ============ SLIDE 11 — TASK FLOW DAY ARC ============ */
+/* ============ SLIDE 11 — TASK FLOW DAY ARC (v2) ============ */
 .s11 .flow-headline {
-  font-family: var(--f-display); font-weight: 600; font-size: 42px; line-height: 1.12;
-  letter-spacing: -0.02em; color: var(--text-on-dark); margin: 28px 0 0 0; max-width: 1400px;
+  font-family: var(--f-display); font-weight: 600; font-size: 38px; line-height: 1.15;
+  letter-spacing: -0.02em; color: var(--text-on-dark); margin: 22px 0 0 0; max-width: 1380px;
 }
-.s11 .flow-headline .hl { color: var(--teal-300); }
 .s11 .flow-chart {
   position: relative;
-  margin: 54px 0 0 0;
-  height: 460px;
-  padding: 24px 80px 0 80px;
+  margin: 36px 0 0 0;
+  height: 560px;
+  padding: 0 40px;
 }
-/* soft mint glow behind the chart */
+/* soft mint glow behind the entire arc */
 .s11 .flow-chart::before {
-  content: ''; position: absolute; inset: -20px -40px;
-  background: radial-gradient(70% 55% at 50% 60%, rgba(52,238,167,0.10), transparent 70%);
+  content: ''; position: absolute; inset: -40px -60px -20px -60px;
+  background: radial-gradient(60% 70% at 50% 32%, rgba(52,238,167,0.10), transparent 70%);
   pointer-events: none; z-index: 0;
 }
+.s11 .flow-arc {
+  position: absolute; top: 0; left: 0; right: 0;
+  width: 100%; height: 420px;
+  z-index: 1; pointer-events: none;
+}
 .s11 .flow-endcap {
-  position: absolute; top: 100px;
-  display: flex; flex-direction: column; align-items: center; gap: 8px;
-  color: var(--teal-300); opacity: 0.7; z-index: 1;
-}
-.s11 .flow-endcap.start { left: 8px; }
-.s11 .flow-endcap.end   { right: 8px; }
-.s11 .flow-endcap .t {
-  font-family: var(--f-display); font-weight: 500; font-size: 10.5px; letter-spacing: 0.22em;
-  text-transform: uppercase;
-}
-.s11 .flow-track {
-  position: absolute;
-  left: 140px; right: 140px; top: 132px;
-  height: 2px;
-  background: linear-gradient(90deg, rgba(94,234,212,0.15), rgba(52,238,167,0.35) 50%, rgba(94,234,212,0.15));
+  position: absolute; top: 118px;
+  width: 44px; height: 44px;
+  color: var(--teal-300); opacity: 0.55;
   z-index: 1;
 }
-/* benchmark zone band */
-.s11 .flow-benchmark {
-  position: absolute; left: 140px; right: 140px; top: 128px;
-  height: 10px;
-  pointer-events: none; z-index: 1;
-}
-.s11 .flow-benchmark .band {
-  position: absolute; inset: 0;
-  background: repeating-linear-gradient(135deg, rgba(245,158,11,0.10) 0 4px, transparent 4px 8px);
-  border-top: 1px dashed rgba(245,158,11,0.35);
-  border-bottom: 1px dashed rgba(245,158,11,0.35);
-}
-.s11 .flow-benchmark .band-label {
-  position: absolute; right: 0; top: 20px;
-  font-family: var(--f-display); font-weight: 500; font-size: 10.5px; letter-spacing: 0.2em;
-  text-transform: uppercase; color: var(--gold);
-}
-.s11 .flow-nodes {
-  position: relative;
-  display: grid; grid-template-columns: repeat(6, 1fr); gap: 0;
-  height: 100%;
-  padding: 0 60px;
-  z-index: 2;
-}
+.s11 .flow-endcap svg { width: 100%; height: 100%; }
+.s11 .flow-endcap.start { left: 4px; }
+.s11 .flow-endcap.end   { right: 4px; }
+/* Each node is a full-height column at --x. Children position within it using --y. */
 .s11 .flow-node {
   appearance: none; background: transparent; border: 0; padding: 0; margin: 0;
-  display: flex; flex-direction: column; align-items: center; gap: 14px;
+  position: absolute;
+  left: var(--x); top: 0; bottom: 0;
+  width: 200px; transform: translateX(-50%);
   color: var(--text-on-dark); font: inherit;
-  cursor: pointer;
-  position: relative;
-  transition: transform 180ms var(--ease-out);
+  cursor: pointer; z-index: 2;
+  transition: transform 220ms var(--ease-out);
 }
-.s11 .flow-node:hover { transform: translateY(-3px); }
+.s11 .flow-node:hover { transform: translateX(-50%) translateY(-3px); }
 .s11 .flow-node:focus-visible { outline: none; }
-.s11 .flow-node:focus-visible .node-dot { box-shadow: 0 0 0 3px var(--teal-300), 0 0 0 6px rgba(94,234,212,0.3); }
-.s11 .node-ico {
-  font-size: 32px; line-height: 1;
-  filter: drop-shadow(0 6px 14px rgba(0,0,0,0.25));
+.s11 .flow-node:focus-visible .node-dot { box-shadow: 0 0 0 3px var(--teal-300), 0 0 0 7px rgba(94,234,212,0.3); }
+/* Emoji sits just above the dot */
+.s11 .node-emoji {
+  position: absolute;
+  left: 50%; top: calc(var(--y) - 46px);
+  transform: translateX(-50%);
+  font-size: 36px; line-height: 1;
+  filter: drop-shadow(0 8px 18px rgba(0,0,0,0.3));
 }
 .s11 .node-dot {
-  width: 16px; height: 16px; border-radius: 50%;
+  position: absolute;
+  left: 50%; top: var(--y);
+  transform: translate(-50%, -50%);
+  width: 14px; height: 14px; border-radius: 50%;
   background: var(--mint-accent);
-  box-shadow: 0 0 0 4px rgba(52,238,167,0.15), 0 0 16px rgba(52,238,167,0.4);
-  margin-top: 14px;
-  transition: box-shadow 200ms var(--ease-out);
+  box-shadow: 0 0 0 4px rgba(52,238,167,0.18), 0 0 16px rgba(52,238,167,0.45);
+  transition: box-shadow 220ms var(--ease-out);
+  z-index: 2;
 }
-.s11 .flow-node.flagged .node-dot { background: var(--gold); box-shadow: 0 0 0 4px rgba(245,158,11,0.18), 0 0 16px rgba(245,158,11,0.4); }
-.s11 .node-body {
+.s11 .flow-node.flagged .node-dot { background: var(--gold); box-shadow: 0 0 0 4px rgba(245,158,11,0.20), 0 0 16px rgba(245,158,11,0.45); }
+/* Stem line from dot down to the card baseline (all cards bottom: 0). */
+.s11 .node-stem {
+  position: absolute;
+  left: 50%; top: calc(var(--y) + 8px);
+  bottom: 160px; /* matches card vertical space reserved below */
+  width: 1px;
+  background: linear-gradient(180deg, rgba(94,234,212,0.35), rgba(94,234,212,0.05));
+  transform: translateX(-0.5px);
+  pointer-events: none;
+}
+.s11 .flow-node.flagged .node-stem { background: linear-gradient(180deg, rgba(245,158,11,0.35), rgba(245,158,11,0.05)); }
+/* Card anchored to the bottom of the chart — all cards share one baseline. */
+.s11 .node-card {
+  position: absolute;
+  left: 50%; bottom: 0;
+  transform: translateX(-50%);
   display: flex; flex-direction: column; align-items: center; gap: 6px;
-  margin-top: 20px;
+  padding: 12px 16px;
+  width: 170px;
+  border-radius: 14px;
+  background: rgba(11, 43, 39, 0.72);
+  border: 1px solid rgba(94,234,212,0.14);
+  box-shadow: 0 10px 32px -16px rgba(0,0,0,0.55);
+  transition: border-color 200ms var(--ease-out), background 200ms var(--ease-out);
   text-align: center;
-  min-width: 0;
 }
+.s11 .flow-node:hover .node-card { border-color: rgba(94,234,212,0.42); background: rgba(11,43,39,0.88); }
+.s11 .flow-node.flagged .node-card { border-color: rgba(245,158,11,0.24); }
+.s11 .flow-node.flagged:hover .node-card { border-color: rgba(245,158,11,0.48); }
 .s11 .node-task {
-  font-family: var(--f-display); font-weight: 500; font-size: 11px; letter-spacing: 0.2em;
+  font-family: var(--f-display); font-weight: 500; font-size: 10.5px; letter-spacing: 0.22em;
   text-transform: uppercase; color: var(--teal-300);
 }
+.s11 .flow-node.flagged .node-task { color: var(--gold); }
 .s11 .node-name {
-  font-family: var(--f-display); font-weight: 600; font-size: 16px; line-height: 1.25;
+  font-family: var(--f-display); font-weight: 600; font-size: 15px; line-height: 1.25;
   color: var(--text-on-dark); letter-spacing: -0.005em;
-  max-width: 150px;
+  max-width: 170px;
 }
 .s11 .node-score {
-  display: inline-flex; align-items: baseline; gap: 5px;
-  padding: 6px 12px; border-radius: 999px;
+  display: inline-flex; align-items: baseline; gap: 6px;
+  padding: 5px 12px; border-radius: 999px;
   background: rgba(52,238,167,0.10);
-  border: 1px solid rgba(52,238,167,0.28);
+  border: 1px solid rgba(52,238,167,0.30);
   font-family: var(--f-display); font-variant-numeric: tabular-nums;
   margin-top: 4px;
 }
-.s11 .node-score b { font-weight: 700; font-size: 17px; color: var(--mint-accent); letter-spacing: -0.01em; }
-.s11 .node-score i { font-style: normal; font-weight: 500; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(52,238,167,0.75); }
-.s11 .node-score.warn {
-  background: rgba(245,158,11,0.10); border-color: rgba(245,158,11,0.38);
-}
+.s11 .node-score b { font-weight: 700; font-size: 18px; color: var(--mint-accent); letter-spacing: -0.01em; }
+.s11 .node-score i { font-style: normal; font-weight: 500; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(52,238,167,0.78); }
+.s11 .node-score.warn { background: rgba(245,158,11,0.12); border-color: rgba(245,158,11,0.40); }
 .s11 .node-score.warn b { color: var(--gold); }
-.s11 .node-score.warn i { color: rgba(245,158,11,0.8); }
+.s11 .node-score.warn i { color: rgba(245,158,11,0.82); }
 
 /* Summary / caption below the chart */
 .s11 .flow-caption {
-  margin-top: 28px;
-  display: grid; grid-template-columns: auto 1fr; gap: 48px; align-items: center;
+  margin-top: 14px;
+  display: grid; grid-template-columns: minmax(320px, 0.9fr) minmax(0, 1fr); gap: 64px; align-items: center;
   padding: 22px 0 0 0;
-  border-top: 1px solid rgba(94,234,212,0.12);
+  border-top: 1px solid rgba(94,234,212,0.16);
 }
-.s11 .flow-summary { display: flex; align-items: baseline; gap: 18px; }
+.s11 .flow-summary { display: flex; align-items: center; gap: 24px; }
 .s11 .summary-num {
-  font-family: var(--f-display); font-weight: 700; font-size: 56px; line-height: 1;
+  font-family: var(--f-display); font-weight: 700; font-size: 72px; line-height: 1;
   letter-spacing: -0.03em; color: var(--mint-accent);
   font-variant-numeric: tabular-nums;
 }
 .s11 .summary-num i {
-  font-style: normal; font-weight: 400; font-size: 22px; color: rgba(52,238,167,0.55); margin-left: 4px;
+  font-style: normal; font-weight: 400; font-size: 26px; color: rgba(52,238,167,0.55); margin-left: 4px;
 }
-.s11 .summary-label {
-  font-family: var(--f-display); font-weight: 500; font-size: 14px; letter-spacing: 0.16em;
-  text-transform: uppercase; color: var(--teal-300); max-width: 360px; line-height: 1.4;
+.s11 .summary-meta { display: flex; flex-direction: column; gap: 4px; }
+.s11 .summary-lbl {
+  font-family: var(--f-display); font-weight: 600; font-size: 12px; letter-spacing: 0.22em;
+  text-transform: uppercase; color: var(--teal-300);
 }
-.s11 .flow-note {
-  font-family: var(--f-display); font-weight: 400; font-size: 15px; line-height: 1.5;
+.s11 .summary-sub {
+  font-family: var(--f-display); font-weight: 400; font-size: 15px; line-height: 1.4;
+  color: var(--text-on-dark); letter-spacing: -0.005em;
+}
+.s11 .summary-delta {
+  appearance: none; background: transparent; border: 0; padding: 0; margin: 4px 0 0 0;
+  display: inline-flex; align-items: center; gap: 8px;
+  color: inherit; font: inherit; cursor: pointer;
+}
+.s11 .summary-delta .delta-arrow {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 22px; height: 22px; border-radius: 50%;
+  background: var(--mint-accent); color: #062823;
+  font-weight: 800; font-size: 13px;
+}
+.s11 .summary-delta .delta-val {
+  font-family: var(--f-display); font-weight: 700; font-size: 22px; line-height: 1;
+  letter-spacing: -0.01em; color: var(--mint-accent); font-variant-numeric: tabular-nums;
+}
+.s11 .summary-delta .delta-lbl {
+  font-family: var(--f-display); font-weight: 500; font-size: 12px; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--text-dim-dark);
+}
+.s11 .summary-delta:hover .delta-arrow { transform: translateY(-1px); transition: transform 160ms var(--ease-out); }
+.s11 .flow-note { display: flex; align-items: flex-start; gap: 14px; padding-left: 28px; border-left: 1px solid rgba(94,234,212,0.16); }
+.s11 .note-tag {
+  display: inline-block;
+  padding: 3px 10px; border-radius: 999px;
+  font-family: var(--f-display); font-weight: 600; font-size: 10.5px; letter-spacing: 0.16em;
+  text-transform: uppercase; color: var(--gold);
+  background: rgba(245,158,11,0.10); border: 1px solid rgba(245,158,11,0.30);
+  white-space: nowrap; flex-shrink: 0;
+}
+.s11 .note-body {
+  font-family: var(--f-display); font-weight: 400; font-size: 14px; line-height: 1.55;
   color: var(--text-dim-dark);
 }
 
@@ -2649,12 +2768,16 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
   font-family: var(--f-display); font-weight: 500; font-size: 11px; letter-spacing: 0.18em;
   text-transform: uppercase; color: var(--text-dim-dark);
 }
-.s10 .p-target { padding: 22px 0 0 0; display: flex; flex-direction: column; gap: 10px; }
+.s10 .p-target { padding: 22px 0 0 0; display: flex; flex-direction: column; gap: 8px; }
 .s10 .p-target-lbl {
   font-family: var(--f-display); font-weight: 500; font-size: 11px; letter-spacing: 0.18em;
   text-transform: uppercase; color: var(--mint-accent);
 }
-.s10 .p-target-chips { display: flex; gap: 8px; }
+.s10 .p-target-sub {
+  font-family: var(--f-display); font-weight: 400; font-size: 13px; line-height: 1.45;
+  color: var(--text-dim-dark);
+}
+.s10 .p-target-chips { display: flex; gap: 8px; margin-top: 4px; }
 
 /* ============ SLIDE 9 — STUDY DESIGN OVERVIEW ============ */
 /* Explicit flex layout with hard height budgets — grid+1fr was letting
@@ -2741,8 +2864,9 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
   font-family: var(--f-display); font-weight: 400; font-size: 14px; letter-spacing: 0.04em;
   color: rgba(245,242,234,0.38); text-align: center; padding: 20px;
 }
-/* When a real photo loads, hide the placeholder layer */
+/* When a real photo loads, hide the placeholder layer and fill the frame (crop, don't letterbox) */
 .s9 .study-photo.has-asset .study-photo-placeholder { display: none; }
+.s9 .study-photo.has-asset > .asset-img { object-fit: cover; }
 
 /* ============ SLIDE 2 — MEET THE TEAM ============ */
 .s6 .slide-frame { padding-bottom: 96px; }
@@ -2786,10 +2910,8 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
 }
 .team-member:hover .team-avatar { box-shadow: 0 24px 48px -16px rgba(10,26,28,0.36), 0 4px 12px -2px rgba(10,26,28,0.14); }
 .team-avatar img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; display: block; }
-/* Per-person crop biases — object-position: the 2nd % picks which part of the source image
-   anchors to the container. 0% = top of image, 100% = bottom. Henry's face is near the bottom
-   of the source, so we anchor toward the bottom. */
-.team-avatar[data-headshot="henry-levinson"] img { object-position: 50% 65%; }
+/* Per-person crop biases — object-position picks which part of the source image anchors
+   to the container. Defaults to 50% 50% (centered). Tweak per person if needed. */
 .team-avatar .monogram {
   font-family: var(--f-display); font-weight: 600; font-size: 64px; color: var(--text-on-dark);
   letter-spacing: -0.02em; text-transform: uppercase;
@@ -3091,7 +3213,7 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
         <div class="count">7<i>participants</i></div>
         <div class="count">6<i>tasks</i></div>
         <div class="count">1<i>simulated day</i></div>
-        <div class="thin">The session follows the natural rhythm of a day with the app &mdash; from morning exploration to evening reflection.</div>
+        <div class="thin">The session follows the morning-to-evening structure of a full day with the prototype.</div>
       </div>
     </div>
     <div class="slide-foot">
@@ -3227,7 +3349,7 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
         <h1>Above benchmark.<br/>Across <span class="ital">every</span> task.</h1>
         <p>Seven GLP-1 patients, six structured tasks, one simulated day with the app. Fully interactive prototype with live AI &mdash; not a click-through.</p>
         <p class="context-details">Professional research facility. Think-aloud protocol. SEQ after every task. Post-session satisfaction questionnaire. Full video + transcription via <button class="chip chip-inline" data-cite="study-design">Dovetail</button>.</p>
-        <div class="tagline">Three findings &middot; One direction</div>
+        <div class="tagline">Three findings from the pre-pilot</div>
       </div>
       <div class="findings">
         <div class="finding reveal d3">
@@ -3237,7 +3359,7 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
             <p>Satisfaction averaged 6.6/7, task ease 6.4/7 &mdash; well above the industry benchmark of 5.5. The most critical scorer <button class="chip chip-inline" data-cite="p03">P03</button> still said she would replace her current app with this one; <button class="chip chip-inline" data-cite="p04">P04</button> said she&apos;d replace her handwritten gratitude journal.</p>
             <div class="kpi-row">
               <button class="kpi-pill chip-trigger" data-cite="satisfaction-66"><b>6.6</b><i>/7 satisfaction</i></button>
-              <button class="kpi-pill chip-trigger" data-cite="seq-mean"><b>6.4</b><i>/7 SEQ &middot; vs 5.5 benchmark</i></button>
+              <button class="kpi-pill chip-trigger" data-cite="seq-mean" aria-label="6.4 out of 7 SEQ, details"><b>6.4</b><i>/7 SEQ &middot; vs 5.5 benchmark</i><span class="kpi-hint" aria-hidden="true">?</span></button>
               <button class="kpi-pill chip-trigger" data-cite="willing-replace"><b>2/7</b><i>would replace today&apos;s app</i></button>
             </div>
           </div>
@@ -3245,7 +3367,7 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
         <div class="finding reveal d4">
           <div class="finding-num">02</div>
           <div class="finding-body">
-            <h3>AI-powered nutrition drove the <span class="hl">strongest engagement</span>. Photo logging is the daily-adoption driver.</h3>
+            <h3>AI-powered nutrition drew the <span class="hl">strongest engagement</span>. Photo logging is the feature participants tied directly to daily use.</h3>
             <p>Six of seven chose photo logging unprompted &mdash; multiple surprised by the AI&apos;s recognition accuracy. <button class="chip chip-inline" data-cite="p04">P04</button> tied her willingness to track daily to the photo feature: if she can photograph, she logs every meal; if she has to type, she won&apos;t.</p>
             <div class="kpi-row">
               <button class="kpi-pill chip-trigger" data-cite="meal-67"><b>6/7</b><i>chose photo unprompted</i></button>
@@ -3281,7 +3403,7 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
 <!-- SLIDE 7: ANCHOR QUOTE P07 -->
 <section class="slide s7 slide-dark">
   <div class="slide-frame">
-    <div class="reveal d1 eyebrow">Section 01 &middot; The North Star</div>
+    <div class="reveal d1 eyebrow">Section 01 &middot; Anchor quote</div>
     <div class="quote-wrap">
       <div class="quote-block">
         <span class="quote-mark reveal d1">&ldquo;</span>
@@ -3493,7 +3615,7 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
       <div style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--on-dark-mute);font-weight:500">n = 7</div>
     </div>
     <div class="reveal d2">
-      <h1 class="p-headline">Seven GLP-1 patients. Target segment &mdash; women, 50&ndash;65 &mdash; over-represented by design.</h1>
+      <h1 class="p-headline">Seven GLP-1 patients. Three within the primary target demographic &mdash; women aged 50&ndash;65.</h1>
     </div>
     <div class="p-grid">
       <div class="p-table-wrap reveal d3">
@@ -3519,7 +3641,7 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
               <td>44</td><td>M</td><td>Wegovy</td><td>5 mo</td>
               <td><span class="tc-row"><span class="dots" data-value="7"></span><span class="tc-val">7<i>/7</i></span></span></td>
             </tr>
-            <tr>
+            <tr class="target">
               <td><button class="chip chip-inline" data-cite="p03">P03</button></td>
               <td>54</td><td>F</td><td>Wegovy</td><td>6 mo</td>
               <td><span class="tc-row"><span class="dots" data-value="6"></span><span class="tc-val">6<i>/7</i></span></span></td>
@@ -3566,7 +3688,9 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
         </div>
         <div class="p-target">
           <div class="p-target-lbl">Women, 50&ndash;65 &middot; target segment</div>
+          <div class="p-target-sub">Three of seven participants fall inside the primary target demographic.</div>
           <div class="p-target-chips">
+            <button class="chip chip-inline" data-cite="p03">P03</button>
             <button class="chip chip-inline" data-cite="p05">P05</button>
             <button class="chip chip-inline" data-cite="p07">P07</button>
           </div>
@@ -3588,88 +3712,114 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
   <div class="slide-frame">
     <div class="reveal d1" style="display:flex;align-items:center;justify-content:space-between">
       <div class="eyebrow">Section 02 &middot; What we measured</div>
-      <div style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--on-dark-mute);font-weight:500">Six tasks &middot; One simulated day</div>
+      <div style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--on-dark-mute);font-weight:500">Six tasks &middot; one simulated day</div>
     </div>
     <div class="reveal d2">
-      <h1 class="flow-headline">A day with <span class="hl">MetabolX</span> &mdash; structured as six tasks from morning to evening.</h1>
+      <h1 class="flow-headline">The session followed a full day with the prototype &mdash; six tasks, morning to evening.</h1>
     </div>
     <div class="flow-chart reveal d3" aria-label="Day arc showing six tasks and their SEQ scores">
+      <!-- curved arc path across the top zone -->
+      <svg class="flow-arc" viewBox="0 0 1600 420" preserveAspectRatio="none" aria-hidden="true">
+        <defs>
+          <linearGradient id="arcGrad" x1="0" x2="1" y1="0" y2="0">
+            <stop offset="0%"  stop-color="rgba(94,234,212,0.20)"/>
+            <stop offset="50%" stop-color="rgba(52,238,167,0.55)"/>
+            <stop offset="100%" stop-color="rgba(94,234,212,0.20)"/>
+          </linearGradient>
+        </defs>
+        <!-- benchmark band visible as a horizontal dashed band at 5.5/7 (≈ y:290) -->
+        <rect x="40" y="288" width="1520" height="14" fill="rgba(245,158,11,0.06)" stroke="rgba(245,158,11,0.30)" stroke-dasharray="4 4" stroke-width="1"/>
+        <text x="1554" y="282" text-anchor="end" font-family="Sora, sans-serif" font-size="12" font-weight="500" letter-spacing="2" fill="rgba(245,158,11,0.70)">INDUSTRY BENCHMARK 5.5 / 7</text>
+        <!-- the day arc itself -->
+        <path d="M 60 340 Q 800 40 1540 340" fill="none" stroke="url(#arcGrad)" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+
+      <!-- Morning / Evening ambient icons at the ends -->
       <div class="flow-endcap start" aria-hidden="true">
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="4.5" fill="currentColor"/><g stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="2" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="22"/><line x1="2" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="22" y2="12"/><line x1="4.22" y1="4.22" x2="6.34" y2="6.34"/><line x1="17.66" y1="17.66" x2="19.78" y2="19.78"/><line x1="4.22" y1="19.78" x2="6.34" y2="17.66"/><line x1="17.66" y1="6.34" x2="19.78" y2="4.22"/></g></svg>
-        <span class="t">Morning</span>
+        <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="4.5" fill="currentColor" opacity="0.65"/><g stroke="currentColor" stroke-width="1.8" stroke-linecap="round" opacity="0.7"><line x1="12" y1="2.5" x2="12" y2="5"/><line x1="2.5" y1="12" x2="5" y2="12"/><line x1="4.9" y1="4.9" x2="6.6" y2="6.6"/><line x1="4.9" y1="19.1" x2="6.6" y2="17.4"/></g></svg>
       </div>
       <div class="flow-endcap end" aria-hidden="true">
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" fill="currentColor" fill-opacity="0.15"/></svg>
-        <span class="t">Evening</span>
+        <svg viewBox="0 0 24 24" fill="none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" fill="currentColor" fill-opacity="0.15" opacity="0.75"/></svg>
       </div>
-      <div class="flow-benchmark" aria-hidden="true">
-        <span class="band"></span>
-        <span class="band-label">Industry benchmark &middot; 5.5 / 7</span>
-      </div>
-      <div class="flow-track" aria-hidden="true"></div>
-      <div class="flow-nodes">
-        <button type="button" class="flow-node chip-trigger" data-cite="task-t1" style="--score: 6.7">
-          <span class="node-ico">&#9728;&#65039;</span>
-          <span class="node-dot"></span>
-          <span class="node-body">
-            <span class="node-task">T1 &middot; Explore</span>
-            <span class="node-name">Morning home screen</span>
-            <span class="node-score"><b>6.7</b><i>SEQ</i></span>
-          </span>
-        </button>
-        <button type="button" class="flow-node chip-trigger" data-cite="task-t2" style="--score: 6.6">
-          <span class="node-ico">&#128137;</span>
-          <span class="node-dot"></span>
-          <span class="node-body">
-            <span class="node-task">T2 &middot; Log</span>
-            <span class="node-name">Injection</span>
-            <span class="node-score"><b>6.6</b><i>SEQ</i></span>
-          </span>
-        </button>
-        <button type="button" class="flow-node chip-trigger" data-cite="task-t3" style="--score: 6.7">
-          <span class="node-ico">&#127869;&#65039;</span>
-          <span class="node-dot"></span>
-          <span class="node-body">
-            <span class="node-task">T3 &middot; Log</span>
-            <span class="node-name">Lunch</span>
-            <span class="node-score"><b>6.7</b><i>SEQ</i></span>
-          </span>
-        </button>
-        <button type="button" class="flow-node chip-trigger flagged" data-cite="task-t4" style="--score: 5.4">
-          <span class="node-ico">&#129302;</span>
-          <span class="node-dot"></span>
-          <span class="node-body">
-            <span class="node-task">T4 &middot; Use</span>
-            <span class="node-name">AI Coach</span>
-            <span class="node-score warn"><b>5.4</b><i>SEQ</i></span>
-          </span>
-        </button>
-        <button type="button" class="flow-node chip-trigger" data-cite="task-t5" style="--score: 6.3">
-          <span class="node-ico">&#128218;</span>
-          <span class="node-dot"></span>
-          <span class="node-body">
-            <span class="node-task">T5 &middot; Find</span>
-            <span class="node-name">Learning content</span>
-            <span class="node-score"><b>6.3</b><i>SEQ</i></span>
-          </span>
-        </button>
-        <button type="button" class="flow-node chip-trigger" data-cite="task-t6" style="--score: 6.9">
-          <span class="node-ico">&#127769;</span>
-          <span class="node-dot"></span>
-          <span class="node-body">
-            <span class="node-task">T6 &middot; Reflect</span>
-            <span class="node-name">Evening wind-down</span>
-            <span class="node-score"><b>6.9</b><i>SEQ</i></span>
-          </span>
-        </button>
-      </div>
+
+      <!-- 6 nodes, each positioned along the arc via --x / --y -->
+      <button type="button" class="flow-node chip-trigger" data-cite="task-t1" style="--x:11%; --y:165px;">
+        <span class="node-emoji">&#9728;&#65039;</span>
+        <span class="node-dot"></span>
+        <span class="node-stem" aria-hidden="true"></span>
+        <span class="node-card">
+          <span class="node-task">T1 &middot; Explore</span>
+          <span class="node-name">Morning home screen</span>
+          <span class="node-score"><b>6.7</b><i>SEQ</i></span>
+        </span>
+      </button>
+      <button type="button" class="flow-node chip-trigger" data-cite="task-t2" style="--x:26%; --y:96px;">
+        <span class="node-emoji">&#128137;</span>
+        <span class="node-dot"></span>
+        <span class="node-stem" aria-hidden="true"></span>
+        <span class="node-card">
+          <span class="node-task">T2 &middot; Log</span>
+          <span class="node-name">Injection</span>
+          <span class="node-score"><b>6.6</b><i>SEQ</i></span>
+        </span>
+      </button>
+      <button type="button" class="flow-node chip-trigger" data-cite="task-t3" style="--x:41%; --y:60px;">
+        <span class="node-emoji">&#127869;&#65039;</span>
+        <span class="node-dot"></span>
+        <span class="node-stem" aria-hidden="true"></span>
+        <span class="node-card">
+          <span class="node-task">T3 &middot; Log</span>
+          <span class="node-name">Lunch</span>
+          <span class="node-score"><b>6.7</b><i>SEQ</i></span>
+        </span>
+      </button>
+      <button type="button" class="flow-node chip-trigger flagged" data-cite="task-t4" style="--x:58%; --y:90px;">
+        <span class="node-emoji">&#129302;</span>
+        <span class="node-dot"></span>
+        <span class="node-stem" aria-hidden="true"></span>
+        <span class="node-card">
+          <span class="node-task">T4 &middot; Use</span>
+          <span class="node-name">AI Coach</span>
+          <span class="node-score warn"><b>5.4</b><i>SEQ</i></span>
+        </span>
+      </button>
+      <button type="button" class="flow-node chip-trigger" data-cite="task-t5" style="--x:74%; --y:140px;">
+        <span class="node-emoji">&#128218;</span>
+        <span class="node-dot"></span>
+        <span class="node-stem" aria-hidden="true"></span>
+        <span class="node-card">
+          <span class="node-task">T5 &middot; Find</span>
+          <span class="node-name">Learning content</span>
+          <span class="node-score"><b>6.3</b><i>SEQ</i></span>
+        </span>
+      </button>
+      <button type="button" class="flow-node chip-trigger" data-cite="task-t6" style="--x:89%; --y:210px;">
+        <span class="node-emoji">&#127769;</span>
+        <span class="node-dot"></span>
+        <span class="node-stem" aria-hidden="true"></span>
+        <span class="node-card">
+          <span class="node-task">T6 &middot; Reflect</span>
+          <span class="node-name">Evening wind-down</span>
+          <span class="node-score"><b>6.9</b><i>SEQ</i></span>
+        </span>
+      </button>
     </div>
     <div class="flow-caption reveal d4">
       <div class="flow-summary">
-        <span class="summary-num">6.4<i>/ 7</i></span>
-        <span class="summary-label">Overall mean SEQ &middot; all six tasks above the industry benchmark</span>
+        <div class="summary-num">6.4<i>/ 7</i></div>
+        <div class="summary-meta">
+          <div class="summary-lbl">Overall mean SEQ</div>
+          <button type="button" class="summary-delta chip-trigger" data-cite="seq-mean" aria-label="+0.9 above benchmark, details">
+            <span class="delta-arrow" aria-hidden="true">&uarr;</span>
+            <span class="delta-val">+0.9</span>
+            <span class="delta-lbl">vs 5.5 industry benchmark</span>
+          </button>
+        </div>
       </div>
-      <div class="flow-note">T4&rsquo;s lower score reflects discoverability &mdash; not interaction quality. Once users found the AI Coach, 7/7 found it useful.</div>
+      <div class="flow-note">
+        <div class="note-tag">On T4</div>
+        <div class="note-body">The lower AI Coach score reflects discoverability, not interaction quality. Once the feature was found, 7/7 participants described it as useful.</div>
+      </div>
     </div>
     <div class="slide-foot">
       <div class="foot-left">
@@ -3689,7 +3839,7 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
     <div class="ss-body">
       <div class="ss-num reveal d2">03</div>
       <h1 class="ss-title reveal d3">What Resonated <span class="title-accent">with Users</span></h1>
-      <p class="ss-sub reveal d4">The features that generated genuine delight &mdash; in participants&rsquo; own words.</p>
+      <p class="ss-sub reveal d4">The features participants responded to most positively &mdash; in their own words.</p>
       <div class="ss-rule reveal d5"></div>
     </div>
     <div class="slide-foot">
@@ -3710,7 +3860,7 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
       <div style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-dim);font-weight:500">6 features &middot; 7 participants &middot; 42 data points</div>
     </div>
     <div class="reveal d2">
-      <h1 class="fm-headline">Core features validated across the cohort. <span class="hl">Every critical path</span> cleared the bar.</h1>
+      <h1 class="fm-headline">Every core feature was positively received across the cohort. The one variation is the one <span class="hl">we expected</span>.</h1>
     </div>
     <div class="fm-grid reveal d3">
       <table class="fm-matrix">
@@ -3797,8 +3947,8 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
       </div>
     </div>
     <div class="fm-callout reveal d4">
-      <span class="fm-callout-pill">Reflections variation is by design</span>
-      Every universal feature cleared the cohort. Evening reflections is a segment feature &mdash; its adoption curve depends on matching the right users, not retrofitting all of them.
+      <span class="fm-callout-pill">Variation is expected</span>
+      The five universal features were received positively by all seven participants. Evening reflections was designed as a segment feature &mdash; meaningful engagement is expected from a subset of users, not the full cohort.
     </div>
     <div class="slide-foot">
       <div class="foot-left">
@@ -3814,7 +3964,7 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
 <section class="slide s14 slide-paper-tinted">
   <div class="slide-frame">
     <div class="reveal d1" style="display:flex;align-items:center;justify-content:space-between">
-      <div class="eyebrow">What resonated &middot; The breakout feature</div>
+      <div class="eyebrow">What resonated &middot; Photo meal logging</div>
       <div style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-dim);font-weight:500">T3 Lunch &middot; SEQ 6.7 / 7</div>
     </div>
     <div class="meal-grid">
@@ -3826,7 +3976,7 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
           <div class="btn-side btn-power"></div>
           <div class="phone-screen">
             <div class="phone-island" aria-hidden="true"></div>
-            <div class="screen screen-meal">
+            <div class="screen screen-meal" data-asset="meal-logging" data-asset-folder="screenshots" data-asset-ext="png">
               <div class="screen-status">
                 <span class="time">12:47</span>
                 <span class="icons"><span class="wifi"></span><span class="battery"></span></span>
@@ -3860,7 +4010,7 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
       </div>
       <div class="meal-right">
         <div class="reveal d3">
-          <h2 class="meal-headline">Photo meal logging: <span class="hl">the most requested</span> nutrition-tracking path.</h2>
+          <h2 class="meal-headline">Six of seven chose photo logging <span class="hl">unprompted</span> when told to log a meal.</h2>
         </div>
         <div class="meal-stat-row reveal d4">
           <div class="meal-stat">
@@ -3890,7 +4040,7 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
         </div>
         <div class="meal-insight reveal d7">
           <div class="spark">i</div>
-          <p>P04 tied daily tracking adoption to the photo feature. <strong>If she can photograph, she&apos;ll track. If she has to type, she won&apos;t.</strong></p>
+          <p>P04 tied her willingness to log daily to this feature specifically. <strong>If she can photograph, she&rsquo;ll track. If she has to type, she won&rsquo;t.</strong></p>
         </div>
       </div>
     </div>
@@ -3908,13 +4058,13 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
 <section class="slide s15 slide-dark">
   <div class="slide-frame">
     <div class="reveal d1" style="display:flex;align-items:center;justify-content:space-between">
-      <div class="eyebrow">What resonated &middot; Universal approval</div>
+      <div class="eyebrow">What resonated &middot; Body map</div>
       <div style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--on-dark-mute);font-weight:500">Body map &middot; injection tracker</div>
     </div>
     <div class="bm-grid">
       <div class="bm-left">
         <div class="reveal d2">
-          <h1 class="bm-headline">Seven out of seven positive. <span class="hl">No competitor</span> offers the same combination.</h1>
+          <h1 class="bm-headline">Seven of seven participants responded positively. <span class="hl">No competitor</span> combines site selection, rotation history, and suggested next site in one view.</h1>
         </div>
         <div class="bm-stat-row reveal d3">
           <button class="chip-trigger n-trigger bm-primary" data-cite="body-map-77">
@@ -3922,42 +4072,40 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
             <div class="label">Positive reception</div>
           </button>
           <div class="bm-stat sm">
-            <div class="n">6.7</div>
+            <div class="n">6.7<i>/7</i></div>
             <div class="label">Mean usefulness</div>
           </div>
+          <div class="bm-stat sm">
+            <div class="n">2</div>
+            <div class="label">Existing users compared it to their current tool</div>
+          </div>
         </div>
-        <div class="bm-diff reveal d4">
-          <div class="diff-label">Differentiator</div>
-          <div class="diff-body">Visual site selection <span class="sep">&middot;</span> rotation history <span class="sep">&middot;</span> suggested next site</div>
-          <div class="diff-compare">Against <button class="chip chip-inline" data-cite="p02">P02</button>&rsquo;s Microhealth, <button class="chip chip-inline" data-cite="p05">P05</button>&rsquo;s Shotzy, and generic health-tracker tools &mdash; this combination is unique.</div>
-        </div>
-        <div class="bm-quotes">
-          <div class="bm-quote reveal d5">
+        <div class="bm-quotes reveal d4">
+          <div class="bm-quote">
             <blockquote>This is a lot better because the app that I use only tracks my infusions.</blockquote>
-            <cite><button class="chip" data-cite="p02">P02</button> &middot; 44M &middot; Wegovy</cite>
+            <cite><button class="chip" data-cite="p02">P02</button> &middot; 44M &middot; Wegovy &middot; currently uses Microhealth</cite>
           </div>
-          <div class="bm-quote reveal d6">
-            <blockquote>I like that it tells you where your last one was &mdash; in [my app] I actually have to go back and look.</blockquote>
-            <cite><button class="chip" data-cite="p05">P05</button> &middot; 61F &middot; Zepbound +</cite>
+          <div class="bm-quote">
+            <blockquote>I like that it tells you where your last one was &mdash; in my app I actually have to go back and look.</blockquote>
+            <cite><button class="chip" data-cite="p05">P05</button> &middot; 61F &middot; Zepbound+ &middot; currently uses Shotzy</cite>
           </div>
         </div>
-        <div class="bm-clip reveal d7" data-video="p02-bodymap-1546">
-          <div class="clip-card" role="button" tabindex="0" aria-label="Play clip">
-            <div class="clip-label">
-              <span class="rec-dot"></span>
-              <span>Dovetail clip</span>
-            </div>
+        <div class="bm-clip reveal d5" data-video="p02-bodymap-1546">
+          <div class="clip-card compact" role="button" tabindex="0" aria-label="Play clip">
             <div class="clip-thumb">
               <div class="clip-waveform" aria-hidden="true">
-                <span style="height:26%"></span><span style="height:44%"></span><span style="height:62%"></span><span style="height:38%"></span><span style="height:78%"></span><span style="height:50%"></span><span style="height:30%"></span><span style="height:68%"></span><span style="height:52%"></span><span style="height:40%"></span><span style="height:86%"></span><span style="height:56%"></span><span style="height:44%"></span><span style="height:72%"></span><span style="height:36%"></span><span style="height:60%"></span><span style="height:48%"></span><span style="height:80%"></span><span style="height:42%"></span><span style="height:58%"></span>
+                <span style="height:26%"></span><span style="height:44%"></span><span style="height:62%"></span><span style="height:38%"></span><span style="height:78%"></span><span style="height:50%"></span><span style="height:30%"></span><span style="height:68%"></span><span style="height:52%"></span><span style="height:40%"></span><span style="height:86%"></span><span style="height:56%"></span><span style="height:44%"></span><span style="height:72%"></span><span style="height:36%"></span><span style="height:60%"></span>
               </div>
               <div class="clip-play" aria-hidden="true"></div>
             </div>
-            <div class="clip-meta">
-              <span class="pid">P02 &middot; 15:46</span>
-              <span class="ts">0:08</span>
+            <div class="clip-info">
+              <div class="clip-info-top">
+                <span class="rec-dot"></span>
+                <span class="clip-label-text">Dovetail clip &middot; P02 @ 15:46</span>
+                <span class="ts">0:08</span>
+              </div>
+              <div class="clip-quote">&ldquo;This is a lot better&hellip;&rdquo;</div>
             </div>
-            <div class="clip-quote">&ldquo;This is a lot better&hellip;&rdquo;</div>
           </div>
         </div>
       </div>
@@ -4284,6 +4432,54 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
     });
   }
 
+  // Attach hover-magnifier behavior to every .phone. Active only when the
+  // inner .screen has a loaded screenshot (.has-asset). Loupe is appended
+  // into the phone so it scales with the canvas transform.
+  function attachPhoneMagnifier(phone) {
+    const screen = phone.querySelector('.screen');
+    if (!screen) return;
+    let loupe = null;
+    const ZOOM = 2.2;
+    const ensureLoupe = (img) => {
+      if (!loupe) {
+        loupe = document.createElement('div');
+        loupe.className = 'phone-loupe';
+        loupe.setAttribute('aria-hidden', 'true');
+        phone.appendChild(loupe);
+      }
+      if (loupe.dataset.src !== img.src) {
+        loupe.style.backgroundImage = `url("${img.src}")`;
+        loupe.dataset.src = img.src;
+      }
+      return loupe;
+    };
+    screen.addEventListener('mousemove', (e) => {
+      if (!screen.classList.contains('has-asset')) return;
+      const img = screen.querySelector('.asset-img');
+      if (!img || !img.naturalWidth) return;
+      const l = ensureLoupe(img);
+      const sRect = screen.getBoundingClientRect();
+      const pRect = phone.getBoundingClientRect();
+      if (sRect.width === 0) return;
+      const scale = sRect.width / screen.offsetWidth;
+      const cx = (e.clientX - pRect.left) / scale;
+      const cy = (e.clientY - pRect.top) / scale;
+      const xPct = Math.max(0, Math.min(100, ((e.clientX - sRect.left) / sRect.width) * 100));
+      const yPct = Math.max(0, Math.min(100, ((e.clientY - sRect.top) / sRect.height) * 100));
+      l.style.left = cx + 'px';
+      l.style.top  = cy + 'px';
+      l.style.backgroundSize = `${screen.offsetWidth * ZOOM}px ${screen.offsetHeight * ZOOM}px`;
+      l.style.backgroundPosition = `${xPct}% ${yPct}%`;
+      l.classList.add('on');
+    });
+    const hide = () => { if (loupe) loupe.classList.remove('on'); };
+    screen.addEventListener('mouseleave', hide);
+    phone.addEventListener('mouseleave', hide);
+  }
+  function initPhoneMagnifiers() {
+    document.querySelectorAll('.phone').forEach(attachPhoneMagnifier);
+  }
+
   // Auto-load generic data-asset images (lab photo, screenshots, etc.)
   function loadDataAssets() {
     document.querySelectorAll('[data-asset]').forEach(el => {
@@ -4307,8 +4503,8 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
         const phone = el.closest('.phone');
         if (phone && img.naturalWidth && img.naturalHeight && el.classList.contains('screen')) {
           // Native CSS dimensions, independent of any canvas transform:scale
-          const phoneW = 330; // .phone width in local CSS pixels
-          const bezel  = 7;   // .phone padding + .phone-screen inset
+          const phoneW = 420; // .phone width in local CSS pixels (keep in sync with .phone width in CSS)
+          const bezel  = 8;   // .phone padding + .phone-screen inset
           const screenW = phoneW - bezel * 2;
           const screenH = screenW * (img.naturalHeight / img.naturalWidth);
           const phoneH  = screenH + bezel * 2;
@@ -4705,7 +4901,7 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
     'team-henry': {
       label: 'Core team · BI X US',
       title: 'Henry Levinson',
-      detail: 'Engineer, IT Rotation.',
+      detail: 'Full Stack Engineer.',
       meta: '<a href="mailto:henry.levinson@boehringer-ingelheim.com" class="pop-email">henry.levinson@boehringer-ingelheim.com</a>'
     },
     'team-allen': {
@@ -4808,10 +5004,10 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
 
     // ---------- Slide-4 supporting ----------
     'seq-mean': {
-      label: 'Our mean · 6.4 / 7',
-      title: 'What a 6.4 actually means',
-      detail: 'SEQ of 6.4 sits squarely in MeasuringU\u2019s \u201Ceasy\u201D band (6.0\u20136.9). Their research correlates 5.9 with an 86% task completion rate. Every one of our six tasks scored above that correlation point. No single participant logged below a 5.',
-      meta: 'The mean masks unanimity, not variance. Click the breakdown to see task-by-task.'
+      label: 'Metric \u00b7 SEQ',
+      title: '6.4 / 7  \u2014  +0.9 above the industry benchmark',
+      detail: 'The Single Ease Question is a standardised post-task usability metric: after each task, participants rate \u201Coverall, how easy or difficult was this task?\u201D on a 7-point scale. Because it\u2019s standardised, the scores can be benchmarked against any product that\u2019s been formally evaluated.',
+      meta: 'Industry benchmark \u00b7 5.5 / 7 (50th percentile across 400+ tasks and 10,000+ users, MeasuringU). Our 6.4 sits in the \u201Ceasy\u201D band; 5.9 correlates with an 86% task completion rate, and every task in our study scored above that threshold. Slide 21 has the full per-task and per-participant distribution.'
     },
     'seq-source': {
       label: 'Benchmark source',
@@ -4996,7 +5192,8 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
     if (activePop) { activePop.remove(); activePop = null; }
   }
   document.addEventListener('click', (e) => {
-    const chip = e.target.closest('.chip, .chip-trigger');
+    // Any element with a data-cite attribute that is a button (or .chip/.chip-trigger) opens a popover.
+    const chip = e.target.closest('.chip, .chip-trigger, button[data-cite]');
     if (chip) {
       e.stopPropagation();
       const key = chip.dataset.cite;
@@ -5120,6 +5317,7 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
   paintDotBars();
   loadHeadshots();
   loadDataAssets();
+  initPhoneMagnifiers();
   // Auto-collapse navigator on tablet/mobile (defer to user to open)
   if (window.matchMedia('(max-width: 1100px)').matches) {
     app.classList.add('nav-collapsed');
