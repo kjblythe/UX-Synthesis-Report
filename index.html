@@ -1350,6 +1350,7 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
   object-fit: cover;
   border-radius: inherit;
   background: #000;
+  position: relative; z-index: 2;
 }
 .clip-thumb::after {
   content: "";
@@ -1357,7 +1358,9 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
   background-image:
     repeating-linear-gradient(90deg, rgba(94,234,212,0.08) 0 1px, transparent 1px 6px);
   opacity: 0.7;
+  pointer-events: none;
 }
+.clip-card.playing .clip-thumb::after { display: none; }
 .clip-waveform {
   position: absolute;
   left: 20px; right: 20px; bottom: 16px;
@@ -6955,11 +6958,23 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
           const v = document.createElement('video');
           v.src = src;
           v.controls = true;
-          v.autoplay = true;
           v.playsInline = true;
+          v.preload = 'auto';
           v.className = 'clip-video';
           thumb.replaceChildren(v);
           card.classList.add('playing');
+          // Edge drops the user-gesture trust flag across DOM insertion in some builds,
+          // so autoplay-on-attribute gets blocked. Call play() explicitly; if the
+          // promise rejects, fall back to muted autoplay (universally allowed) so the
+          // viewer at least sees frames — they can unmute via native controls.
+          const tryPlay = () => {
+            const p = v.play();
+            if (p && typeof p.catch === 'function') {
+              p.catch(() => { v.muted = true; v.play().catch(() => {}); });
+            }
+          };
+          if (v.readyState >= 2) tryPlay();
+          else v.addEventListener('loadeddata', tryPlay, { once: true });
         };
         card.addEventListener('click', onClick);
       };
