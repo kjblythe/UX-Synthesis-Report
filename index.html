@@ -2186,7 +2186,10 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
 .slide-shell .shell-tag .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--mint-accent); box-shadow: 0 0 0 3px rgba(52,238,167,0.18); }
 
 /* ============ SECTION STARTER (slides 5, 8, 12) ============ */
-.slide-section-starter { background: linear-gradient(135deg, var(--forest-base) 0%, var(--forest-deep) 100%); position: relative; overflow: hidden; color: var(--text-on-dark); }
+/* NOTE: DO NOT set `position: relative` here — the base `.slide` is `position:absolute;inset:0`,
+   and overriding it collapses the slide to height:0 (absolute children of a 0-height element
+   end up positioned above the canvas via `bottom:`). Keep the base positioning intact. */
+.slide-section-starter { background: linear-gradient(135deg, var(--forest-base) 0%, var(--forest-deep) 100%); overflow: hidden; color: var(--text-on-dark); }
 .slide-section-starter .x-watermark {
   position: absolute; width: 1600px; height: 1200px; pointer-events: none;
   color: var(--forest-rim); opacity: 0.55;
@@ -2362,7 +2365,10 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
 }
 
 /* ============ ASSET OVERLAY (real screenshots overlay CSS mocks when available) ============ */
-[data-asset] { position: relative; }
+/* NOTE: scope this `position: relative` so it does NOT override an already-positioned
+   container like `.screen` (which is position:absolute inset:0 inside a phone frame).
+   Same-specificity rule order bit us once — don't repeat. */
+[data-asset]:not(.screen):not(.phone-screen) { position: relative; }
 [data-asset] > .asset-img {
   position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; display: block;
   z-index: 2; border-radius: inherit;
