@@ -3066,26 +3066,26 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
 .screen-home-lite .nav-tabs span.active { color: var(--teal-300); }
 
 /* ============ SLIDE 16 — AI COACH CONTEXTUAL INTELLIGENCE ============ */
-.s16 .slide-frame { padding: 80px 112px 72px 112px; }
-.s16 .s16-hero {
-  margin-top: 30px;
-  display: grid; grid-template-columns: 380px 1fr;
-  gap: 56px; align-items: flex-end;
-  padding-bottom: 28px; border-bottom: 1px solid rgba(10,26,28,0.14);
+.s16 .slide-frame { padding: 76px 112px 64px 112px; }
+.s16 .s16-grid {
+  margin-top: 28px;
+  display: grid; grid-template-columns: 1fr 440px;
+  column-gap: 64px; align-items: flex-start;
 }
-.s16 .s16-stat-block { display: flex; flex-direction: column; gap: 10px; }
+.s16 .s16-left { display: flex; flex-direction: column; gap: 26px; }
+.s16 .s16-hero { display: flex; flex-direction: column; gap: 14px; }
+.s16 .s16-stat-block { display: flex; align-items: baseline; gap: 18px; }
 .s16 .s16-stat-num {
   font-family: var(--f-display); font-weight: 600;
-  font-size: 180px; line-height: 0.9; letter-spacing: -0.04em;
+  font-size: 120px; line-height: 0.9; letter-spacing: -0.035em;
   color: var(--teal-700); font-variant-numeric: tabular-nums;
-  display: inline-flex; align-items: flex-end;
 }
 .s16 .s16-stat-num .s16-stat-of {
   font-style: normal; font-weight: 400;
-  font-size: 48px; color: var(--ink-mute); margin-left: 6px; padding-bottom: 22px;
+  font-size: 34px; color: var(--ink-mute); margin-left: 4px;
 }
 .s16 .s16-stat-sub {
-  align-self: flex-start; border: 0; background: transparent;
+  border: 0; background: transparent;
   font-family: var(--f-display); font-weight: 500;
   font-size: 18px; letter-spacing: 0.01em; color: var(--ink);
   padding: 6px 0; cursor: pointer; text-align: left;
@@ -3094,34 +3094,21 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
 .s16 .s16-stat-sub:hover { color: var(--teal-700); border-bottom-color: var(--teal-700); }
 .s16 .s16-headline {
   font-family: var(--f-display); font-weight: 500;
-  font-size: 38px; line-height: 1.14; letter-spacing: -0.015em;
-  color: var(--ink); margin: 0; max-width: 940px;
+  font-size: 36px; line-height: 1.14; letter-spacing: -0.015em;
+  color: var(--ink); margin: 0; max-width: 780px;
 }
 .s16 .s16-headline .ital {
   font-family: var(--f-serif); font-style: italic; font-weight: 400;
   color: var(--teal-700);
 }
-.s16 .s16-grid {
-  display: grid; grid-template-columns: 1fr 1fr;
-  column-gap: 80px; margin-top: 40px;
-  position: relative;
+.s16 .s16-quotes {
+  display: flex; flex-direction: column; gap: 18px;
+  padding-top: 18px; border-top: 1px solid rgba(10,26,28,0.12);
 }
-.s16 .s16-grid::before {
-  content: ''; position: absolute; top: 10px; bottom: 10px; left: 50%;
-  width: 1px; background: rgba(10,26,28,0.12);
-}
-.s16 .s16-col-eyebrow {
-  font-family: var(--f-display); font-weight: 500;
-  font-size: 12px; letter-spacing: 0.24em; text-transform: uppercase;
-  color: var(--teal-700); margin-bottom: 22px;
-}
-.s16 .s16-col-vs .s16-col-eyebrow { color: var(--ink-mute); }
-.s16 .s16-qblock { margin-bottom: 26px; }
-.s16 .s16-qblock:last-child { margin-bottom: 0; }
 .s16 .s16-qblock blockquote {
-  margin: 0 0 10px;
+  margin: 0 0 8px;
   font-family: var(--f-serif); font-style: italic; font-weight: 400;
-  font-size: 22px; line-height: 1.36; letter-spacing: -0.005em;
+  font-size: 22px; line-height: 1.34; letter-spacing: -0.005em;
   color: var(--ink);
 }
 .s16 .s16-qblock cite {
@@ -3133,106 +3120,109 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
   font-family: var(--f-mono); font-size: 12px; color: var(--ink-dim); margin-left: 4px;
 }
 .s16 .s16-foot {
-  margin-top: 36px; padding-top: 22px;
-  border-top: 1px solid rgba(10,26,28,0.14);
-  display: grid; grid-template-columns: 1fr auto; gap: 40px; align-items: center;
+  margin-top: 6px; padding-top: 18px;
+  border-top: 1px solid rgba(10,26,28,0.12);
+  display: grid; grid-template-columns: 1fr auto; gap: 32px; align-items: center;
 }
-.s16 .s16-caveat { display: flex; flex-direction: column; gap: 10px; max-width: 640px; }
+.s16 .s16-caveat { display: flex; flex-direction: column; gap: 8px; max-width: 560px; }
 .s16 .s16-caveat .kpi-pill { align-self: flex-start; }
 .s16 .s16-caveat-note {
   margin: 0; font-family: var(--f-display); font-weight: 400;
   font-size: 14px; line-height: 1.45; color: var(--ink-mute);
 }
-.s16 .s16-clip { width: 360px; }
+.s16 .s16-clip { width: 340px; }
+.s16 .s16-right { display: flex; justify-content: center; padding-top: 2px; }
+
+/* Screen mock: AI Coach chat */
+.screen-coach-lite {
+  background: linear-gradient(175deg, #0D4B44 0%, #06231F 100%);
+  color: var(--text-on-dark); padding: 42px 18px 14px;
+  display: flex; flex-direction: column; gap: 8px;
+}
+.screen-coach-lite .screen-status { display: flex; justify-content: space-between; font-size: 10px; font-weight: 600; opacity: 0.82; letter-spacing: 0.02em; }
+.screen-coach-lite .screen-status .icons { display: flex; gap: 4px; align-items: center; }
+.screen-coach-lite .screen-status .wifi { width: 10px; height: 7px; background: currentColor; clip-path: polygon(0 70%, 100% 70%, 100% 100%, 0 100%); }
+.screen-coach-lite .screen-status .battery { width: 18px; height: 8px; border: 1px solid currentColor; border-radius: 2px; position: relative; padding: 1px; }
+.screen-coach-lite .screen-status .battery::after { content:''; display:block; width: 78%; height: 100%; background: currentColor; border-radius: 1px; }
+.screen-coach-lite .coach-top {
+  display: flex; justify-content: space-between; align-items: center;
+  padding-bottom: 4px;
+}
+.screen-coach-lite .coach-top .coach-back { color: var(--teal-300); font-size: 12px; font-weight: 500; }
+.screen-coach-lite .coach-top .coach-title {
+  font-family: var(--f-display); font-weight: 600; font-size: 17px; color: var(--on-dark); letter-spacing: -0.01em;
+}
+.screen-coach-lite .coach-top .coach-dot {
+  width: 8px; height: 8px; border-radius: 50%; background: var(--mint);
+  box-shadow: 0 0 0 3px rgba(52,238,167,0.18);
+}
+.screen-coach-lite .coach-sub {
+  font-family: var(--f-mono); font-size: 10px;
+  color: var(--teal-300); letter-spacing: 0.03em; text-align: center;
+  padding: 6px 0 10px; border-bottom: 1px solid rgba(94,234,212,0.12);
+}
+.screen-coach-lite .coach-thread {
+  display: flex; flex-direction: column; gap: 10px;
+  flex: 1; overflow: hidden; padding: 6px 0;
+}
+.screen-coach-lite .coach-msg { display: flex; gap: 6px; }
+.screen-coach-lite .coach-msg-user { justify-content: flex-end; }
+.screen-coach-lite .coach-msg-user .coach-bubble {
+  background: rgba(94,234,212,0.18); color: var(--on-dark);
+  border-radius: 14px 14px 4px 14px;
+  padding: 8px 12px;
+  font-family: var(--f-display); font-weight: 500; font-size: 12px; line-height: 1.36;
+  max-width: 78%;
+}
+.screen-coach-lite .coach-msg-ai { align-items: flex-end; }
+.screen-coach-lite .coach-avatar {
+  flex: 0 0 22px; width: 22px; height: 22px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--teal-300), var(--mint));
+  box-shadow: 0 0 0 2px rgba(52,238,167,0.2);
+}
+.screen-coach-lite .coach-msg-ai .coach-bubble {
+  background: rgba(255,255,255,0.04); color: var(--on-dark);
+  border: 1px solid rgba(94,234,212,0.18);
+  border-radius: 4px 14px 14px 14px;
+  padding: 8px 12px;
+  font-family: var(--f-display); font-weight: 400; font-size: 12px; line-height: 1.4;
+  max-width: 82%;
+}
+.screen-coach-lite .coach-msg-ai .coach-bubble b { color: var(--mint); font-weight: 600; }
+.screen-coach-lite .coach-input {
+  margin-top: auto; display: flex; align-items: center;
+  padding: 8px 12px; border-radius: 22px;
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(94,234,212,0.18);
+}
+.screen-coach-lite .coach-input-ph { flex: 1; font-family: var(--f-display); font-size: 12px; color: rgba(245,242,234,0.45); }
+.screen-coach-lite .coach-input-mic {
+  width: 18px; height: 18px; border-radius: 50%;
+  background: rgba(94,234,212,0.22);
+  position: relative;
+}
+.screen-coach-lite .coach-input-mic::before {
+  content: ''; position: absolute; left: 50%; top: 28%; transform: translateX(-50%);
+  width: 4px; height: 8px; border-radius: 2px; background: var(--teal-300);
+}
 
 /* ============ SLIDE 17 — LEARNING PATHWAYS ============ */
 .s17 {
   background:
-    radial-gradient(900px 720px at 18% 50%, rgba(52,238,167,0.12), transparent 62%),
-    radial-gradient(1100px 800px at 100% 0%, rgba(20,184,166,0.08), transparent 55%),
+    radial-gradient(900px 720px at 85% 50%, rgba(52,238,167,0.10), transparent 62%),
+    radial-gradient(1100px 800px at 0% 0%, rgba(20,184,166,0.08), transparent 55%),
     linear-gradient(180deg, #0C433C 0%, #0A3B35 60%, #062823 100%);
 }
-.s17 .slide-frame { padding: 80px 112px 72px 112px; }
+.s17 .slide-frame { padding: 76px 112px 64px 112px; }
 .s17 .s17-grid {
-  display: grid; grid-template-columns: 1.25fr 1fr;
-  column-gap: 72px; margin-top: 34px; align-items: flex-start;
+  display: grid; grid-template-columns: 440px 1fr;
+  column-gap: 64px; margin-top: 28px; align-items: flex-start;
 }
-.s17 .s17-viz { position: relative; }
-.s17 .s17-viz-card {
-  position: relative; padding: 28px 28px 26px;
-  border-radius: 22px;
-  background: linear-gradient(165deg, rgba(12, 67, 60, 0.95) 0%, rgba(7, 46, 41, 0.95) 100%);
-  border: 1px solid rgba(94,234,212,0.18);
-  box-shadow: 0 30px 60px -24px rgba(0,0,0,0.55), inset 0 1px 0 rgba(255,255,255,0.04);
-}
-.s17 .s17-viz-top {
-  display: flex; justify-content: space-between; align-items: baseline;
-  padding-bottom: 20px; margin-bottom: 16px;
-  border-bottom: 1px solid rgba(94,234,212,0.14);
-}
-.s17 .s17-viz-title {
-  font-family: var(--f-display); font-weight: 600; font-size: 24px; letter-spacing: -0.01em;
-  color: var(--on-dark);
-}
-.s17 .s17-viz-tag {
-  font-family: var(--f-display); font-weight: 500; font-size: 11px;
-  letter-spacing: 0.22em; text-transform: uppercase; color: var(--teal-300);
-}
-.s17 .s17-path {
-  padding: 14px 0 16px;
-  border-bottom: 1px solid rgba(94,234,212,0.08);
-}
-.s17 .s17-path:last-child { border-bottom: 0; padding-bottom: 4px; }
-.s17 .s17-path-head {
-  display: flex; justify-content: space-between; align-items: center;
-  margin-bottom: 8px;
-}
-.s17 .s17-path-name {
-  font-family: var(--f-display); font-weight: 500; font-size: 17px;
-  color: var(--on-dark); letter-spacing: -0.005em;
-}
-.s17 .s17-path-tag {
-  font-family: var(--f-display); font-weight: 500; font-size: 10px;
-  letter-spacing: 0.2em; text-transform: uppercase;
-  color: var(--on-dark-mute);
-  padding: 4px 10px; border-radius: 999px; border: 1px solid rgba(94,234,212,0.18);
-  background: rgba(20,184,166,0.06);
-}
-.s17 .s17-path-tag-mint {
-  color: var(--mint); border-color: rgba(52,238,167,0.45);
-  background: rgba(52,238,167,0.10);
-}
-.s17 .s17-path-personal {
-  border-radius: 14px; padding: 14px 14px 16px; margin: 6px -14px 6px;
-  background: rgba(52,238,167,0.05);
-  border: 1px solid rgba(52,238,167,0.26);
-}
-.s17 .s17-path-personal + .s17-path { border-top: 0; }
-.s17 .s17-path-dots {
-  display: flex; gap: 6px; margin-bottom: 6px;
-}
-.s17 .s17-path-dots i {
-  width: 22px; height: 6px; border-radius: 3px;
-  background: rgba(94,234,212,0.14);
-  display: block;
-}
-.s17 .s17-path-dots i.on { background: var(--teal-400); }
-.s17 .s17-path-personal .s17-path-dots i.on { background: var(--mint); }
-.s17 .s17-path-meta {
-  font-family: var(--f-mono); font-size: 11px; color: var(--on-dark-dim);
-  letter-spacing: 0.02em;
-}
-.s17 .s17-viz-cap {
-  margin-top: 12px; font-family: var(--f-mono); font-size: 10px;
-  color: rgba(245,242,234,0.32); letter-spacing: 0.04em;
-}
-.s17 .s17-viz-cap code { color: rgba(245,242,234,0.5); font-size: 10px; }
-
+.s17 .s17-phone-col { display: flex; justify-content: center; padding-top: 2px; }
 .s17 .s17-right { padding-top: 6px; display: flex; flex-direction: column; gap: 22px; }
 .s17 .s17-headline {
   font-family: var(--f-display); font-weight: 500;
-  font-size: 38px; line-height: 1.15; letter-spacing: -0.015em;
-  color: var(--on-dark); margin: 0; max-width: 520px;
+  font-size: 40px; line-height: 1.14; letter-spacing: -0.018em;
+  color: var(--on-dark); margin: 0; max-width: 720px;
 }
 .s17 .s17-stat-row { display: flex; gap: 12px; flex-wrap: wrap; }
 .s17 .kpi-pill-dark {
@@ -3243,41 +3233,97 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
 .s17 .kpi-pill-dark b { color: var(--mint); }
 .s17 .kpi-pill-dark i { color: rgba(245,242,234,0.68); }
 .s17 .kpi-pill-dark:hover { background: rgba(20,184,166,0.25); }
-
-.s17 .s17-quotes { display: flex; flex-direction: column; gap: 18px; margin-top: 4px; }
+.s17 .s17-quotes { display: flex; flex-direction: column; gap: 18px; }
 .s17 .s17-quote blockquote {
   margin: 0 0 8px;
   font-family: var(--f-serif); font-style: italic; font-weight: 400;
-  font-size: 20px; line-height: 1.38;
+  font-size: 22px; line-height: 1.38;
   color: var(--on-dark);
 }
 .s17 .s17-quote cite {
   display: block; font-style: normal;
   font-family: var(--f-display); font-weight: 500;
-  font-size: 12.5px; letter-spacing: 0.05em; color: var(--on-dark-mute);
+  font-size: 13px; letter-spacing: 0.05em; color: var(--on-dark-mute);
 }
 .s17 .s17-quote cite .s17-ts {
-  font-family: var(--f-mono); font-size: 11.5px; color: rgba(245,242,234,0.4); margin-left: 4px;
+  font-family: var(--f-mono); font-size: 12px; color: rgba(245,242,234,0.4); margin-left: 4px;
 }
 .s17 .s17-insight {
-  margin-top: 6px; padding-top: 18px;
+  margin-top: 2px; padding-top: 18px;
   border-top: 1px solid rgba(94,234,212,0.16);
 }
 .s17 .s17-insight-eb {
   display: block;
-  font-family: var(--f-display); font-weight: 600; font-size: 14px;
+  font-family: var(--f-display); font-weight: 600; font-size: 15px;
   letter-spacing: 0.01em; color: var(--mint); margin-bottom: 6px;
 }
 .s17 .s17-insight p {
   margin: 0; font-family: var(--f-display); font-weight: 400;
-  font-size: 14px; line-height: 1.48; color: rgba(245,242,234,0.78);
+  font-size: 15px; line-height: 1.48; color: rgba(245,242,234,0.82);
 }
 
-/* Hide CSS-mock pathway when a real screenshot is loaded into the asset container */
-.s17 .s17-viz-card.has-asset .s17-viz-top,
-.s17 .s17-viz-card.has-asset .s17-path { display: none; }
-.s17 .s17-viz-card.has-asset { padding: 0; background: transparent; border: 0; box-shadow: none; }
-.s17 .s17-viz-card.has-asset .asset-img { border-radius: 22px; }
+/* Screen mock: Learn pathways */
+.screen-learn-lite {
+  background: linear-gradient(175deg, #0D4B44 0%, #06231F 100%);
+  color: var(--text-on-dark); padding: 42px 18px 12px;
+  display: flex; flex-direction: column; gap: 8px;
+}
+.screen-learn-lite .screen-status { display: flex; justify-content: space-between; font-size: 10px; font-weight: 600; opacity: 0.82; letter-spacing: 0.02em; }
+.screen-learn-lite .screen-status .icons { display: flex; gap: 4px; align-items: center; }
+.screen-learn-lite .screen-status .wifi { width: 10px; height: 7px; background: currentColor; clip-path: polygon(0 70%, 100% 70%, 100% 100%, 0 100%); }
+.screen-learn-lite .screen-status .battery { width: 18px; height: 8px; border: 1px solid currentColor; border-radius: 2px; position: relative; padding: 1px; }
+.screen-learn-lite .screen-status .battery::after { content:''; display:block; width: 78%; height: 100%; background: currentColor; border-radius: 1px; }
+.screen-learn-lite .learn-top {
+  padding-bottom: 8px; border-bottom: 1px solid rgba(94,234,212,0.12);
+}
+.screen-learn-lite .learn-title {
+  display: block; font-family: var(--f-display); font-weight: 600; font-size: 18px;
+  color: var(--on-dark); letter-spacing: -0.01em;
+}
+.screen-learn-lite .learn-sub {
+  display: block; font-family: var(--f-mono); font-size: 10px; color: var(--teal-300);
+  letter-spacing: 0.04em; margin-top: 2px;
+}
+.screen-learn-lite .learn-path {
+  padding: 8px 10px; border-radius: 8px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(94,234,212,0.10);
+}
+.screen-learn-lite .learn-path-active {
+  background: rgba(20,184,166,0.10); border-color: rgba(94,234,212,0.22);
+}
+.screen-learn-lite .learn-path-personal {
+  background: rgba(52,238,167,0.06); border-color: rgba(52,238,167,0.28);
+}
+.screen-learn-lite .learn-path-head {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: 5px;
+}
+.screen-learn-lite .learn-path-name {
+  font-family: var(--f-display); font-weight: 500; font-size: 12.5px;
+  color: var(--on-dark); letter-spacing: -0.005em;
+}
+.screen-learn-lite .learn-path-tag {
+  font-family: var(--f-mono); font-weight: 500; font-size: 8px;
+  letter-spacing: 0.12em; text-transform: uppercase; color: var(--on-dark-mute);
+  padding: 2px 6px; border-radius: 999px;
+  background: rgba(20,184,166,0.08); border: 1px solid rgba(94,234,212,0.18);
+}
+.screen-learn-lite .learn-path-tag-mint {
+  color: var(--mint); background: rgba(52,238,167,0.10);
+  border-color: rgba(52,238,167,0.40);
+}
+.screen-learn-lite .learn-path-dots { display: flex; gap: 3px; margin-bottom: 4px; }
+.screen-learn-lite .learn-path-dots i {
+  flex: 1; height: 4px; border-radius: 2px;
+  background: rgba(94,234,212,0.14);
+}
+.screen-learn-lite .learn-path-dots i.on { background: var(--teal-400); }
+.screen-learn-lite .learn-path-dots i.on-mint { background: var(--mint); }
+.screen-learn-lite .learn-path-meta {
+  font-family: var(--f-mono); font-size: 9.5px; color: var(--on-dark-dim);
+  letter-spacing: 0.02em;
+}
 
 /* ============ SLIDE 18 — COMPETITIVE COMPARISON ============ */
 .s18 .slide-frame { padding: 80px 112px 72px 112px; }
@@ -3301,7 +3347,7 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
 }
 .s18 .s18-head, .s18 .s18-row {
   display: grid;
-  grid-template-columns: 1.1fr 1.4fr 1.7fr 0.5fr;
+  grid-template-columns: 1.1fr 1.5fr 2.1fr;
   column-gap: 32px; align-items: center;
   padding: 14px 4px;
 }
@@ -3313,6 +3359,7 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
   font-family: var(--f-display); font-weight: 500; font-size: 11px;
   letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-mute);
 }
+.s18 .s18-head .s18-col-adds { color: var(--teal-700); }
 .s18 .s18-row {
   border-bottom: 1px solid rgba(10,26,28,0.1);
   transition: background 160ms var(--ease-out);
@@ -3320,34 +3367,34 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
 .s18 .s18-row:last-child { border-bottom: 1px solid rgba(10,26,28,0.2); }
 .s18 .s18-row:hover { background: rgba(20,184,166,0.045); }
 .s18 .s18-col-tool {
-  display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+  display: flex; flex-direction: column; align-items: flex-start; gap: 6px;
 }
 .s18 .s18-tool-name {
-  font-family: var(--f-display); font-weight: 600; font-size: 19px;
+  font-family: var(--f-display); font-weight: 600; font-size: 20px;
   letter-spacing: -0.005em; color: var(--ink);
 }
 .s18 .s18-tool-alias {
   font-family: var(--f-display); font-weight: 400; font-size: 13px;
-  color: var(--ink-dim); margin-left: -4px;
+  color: var(--ink-dim); margin-left: 4px;
 }
-.s18 .s18-col-does, .s18 .s18-col-gap {
+.s18 .s18-col-does {
   font-family: var(--f-display); font-weight: 400; font-size: 15px;
-  line-height: 1.4; color: var(--ink);
+  line-height: 1.45; color: var(--ink-mute);
 }
-.s18 .s18-col-gap { color: var(--ink-mute); }
-.s18 .s18-col-ours { justify-self: center; }
-.s18 .s18-check {
-  width: 28px; height: 28px; border-radius: 50%;
-  background: var(--teal-700); display: inline-block;
-  position: relative;
-  box-shadow: 0 0 0 4px rgba(13,118,110,0.12);
+.s18 .s18-col-adds {
+  display: flex; flex-wrap: wrap; gap: 8px;
 }
-.s18 .s18-check::before {
-  content: ''; position: absolute; top: 9px; left: 7px;
-  width: 6px; height: 12px;
-  border-right: 2px solid var(--paper);
-  border-bottom: 2px solid var(--paper);
-  transform: rotate(45deg);
+.s18 .s18-add {
+  display: inline-flex; align-items: center;
+  padding: 6px 12px; border-radius: 999px;
+  font-family: var(--f-display); font-weight: 500; font-size: 13px;
+  letter-spacing: 0.01em;
+  background: rgba(13,118,110,0.08); color: var(--teal-700);
+  border: 1px solid rgba(13,118,110,0.22);
+}
+.s18 .s18-add-hi {
+  background: rgba(13,118,110,0.18); color: var(--teal-700);
+  border-color: rgba(13,118,110,0.45); font-weight: 600;
 }
 .s18 .chip-mini {
   font-family: var(--f-mono); font-weight: 600; font-size: 10px;
@@ -3391,54 +3438,59 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
   background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1111 926' fill='none' stroke='%235EEAD4' stroke-width='4.42' stroke-opacity='0.08'><path d='M362.623 67.9956L1108.12 500.738V424.673L380.34 2.20996H26.4495L2.07227 67.9956H362.623Z'/><path d='M744.53 462.71L1108.13 67.9956L1079.29 2.20996L655.08 462.71L1079.29 923.21L1108.13 857.424L744.53 462.71Z'/><path d='M380.34 923.208L1108.12 500.745V424.681L362.623 857.423H2.07227L26.4495 923.208H380.34Z'/></svg>") no-repeat center / contain;
   pointer-events: none; z-index: 0;
 }
-.s19 .slide-frame { padding: 80px 140px 72px 140px; position: relative; z-index: 1; }
-.s19 .s19-stack {
-  margin-top: 36px;
-  display: flex; flex-direction: column; gap: 38px;
-  max-width: 1500px;
+.s19 .slide-frame { padding: 76px 96px 64px 96px; position: relative; z-index: 1; }
+.s19 .s19-row {
+  margin-top: 44px;
+  display: grid; grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 44px; align-items: flex-start;
 }
-.s19 .s19-quote { margin: 0; position: relative; }
+.s19 .s19-quote {
+  margin: 0; display: flex; flex-direction: column; gap: 16px;
+  position: relative;
+}
+.s19 .s19-quote-mid {
+  padding: 24px 22px;
+  border-radius: 16px;
+  background: rgba(20,184,166,0.06);
+  border: 1px solid rgba(94,234,212,0.24);
+}
+.s19 .s19-mark {
+  font-family: var(--f-serif); font-style: italic; font-weight: 500;
+  font-size: 72px; line-height: 0.7; color: rgba(94,234,212,0.35);
+  letter-spacing: -0.04em;
+}
+.s19 .s19-quote-mid .s19-mark { color: var(--mint); }
 .s19 .s19-quote blockquote {
-  margin: 0 0 10px; padding: 0;
+  margin: 0; padding: 0;
   font-family: var(--f-serif); font-style: italic; font-weight: 400;
-  line-height: 1.16; letter-spacing: -0.015em;
+  font-size: 26px; line-height: 1.28; letter-spacing: -0.01em;
   color: var(--on-dark);
 }
-.s19 .s19-quote-1 blockquote { font-size: 54px; max-width: 1280px; }
-.s19 .s19-quote-2 {
-  padding-left: 160px;
-  border-left: 1px solid rgba(94,234,212,0.22);
-  margin-left: 80px;
-}
-.s19 .s19-quote-2 blockquote { font-size: 42px; max-width: 1100px; }
-.s19 .s19-quote-3 {
-  text-align: right;
-  padding-right: 40px;
-}
-.s19 .s19-quote-3 blockquote { font-size: 36px; max-width: 1000px; margin-left: auto; }
+.s19 .s19-quote-mid blockquote { font-size: 28px; }
 .s19 .s19-quote .s19-hl {
   font-style: normal; font-weight: 500;
   color: var(--mint);
-  background: linear-gradient(180deg, transparent 65%, rgba(52,238,167,0.14) 65%, rgba(52,238,167,0.14) 92%, transparent 92%);
+  background: linear-gradient(180deg, transparent 70%, rgba(52,238,167,0.16) 70%, rgba(52,238,167,0.16) 94%, transparent 94%);
   padding: 0 2px;
 }
 .s19 .s19-quote figcaption {
   font-family: var(--f-display); font-weight: 500; font-size: 13px;
-  letter-spacing: 0.06em; color: var(--on-dark-mute);
+  letter-spacing: 0.04em; color: var(--on-dark-mute);
+  padding-top: 10px; border-top: 1px solid rgba(94,234,212,0.14);
 }
-.s19 .s19-quote-3 figcaption { text-align: right; }
 .s19 .s19-quote figcaption .s19-ts {
   font-family: var(--f-mono); font-size: 12px; color: rgba(245,242,234,0.4); margin-left: 4px;
 }
+.s19 .s19-clip { margin-top: 2px; }
 .s19 .s19-divider {
-  margin-top: 44px; width: 80px; height: 1px;
-  background: rgba(94,234,212,0.4);
-}
-.s19 .s19-transition {
-  margin-top: 14px;
+  margin-top: 40px;
   font-family: var(--f-display); font-weight: 500; font-size: 12px;
   letter-spacing: 0.28em; text-transform: uppercase;
   color: var(--teal-300);
+  display: inline-flex; align-items: center; gap: 12px;
+}
+.s19 .s19-divider::before {
+  content: ''; display: inline-block; width: 40px; height: 1px; background: rgba(94,234,212,0.4);
 }
 
 /* ============ SLIDE 22 — POST-SESSION SATISFACTION ============ */
@@ -3616,71 +3668,110 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
     radial-gradient(900px 720px at 10% 0%, rgba(20,184,166,0.04), transparent 60%),
     linear-gradient(180deg, #083832 0%, #062823 60%, #051F1C 100%);
 }
-.s23 .slide-frame { padding: 80px 112px 72px 112px; }
-.s23 .s23-grid {
-  display: grid; grid-template-columns: 0.9fr 1.3fr;
-  gap: 72px; margin-top: 32px; align-items: flex-start;
-}
-.s23 .s23-left { padding-right: 10px; }
+.s23 .slide-frame { padding: 72px 112px 60px 112px; }
+.s23 .s23-intro { margin-top: 22px; max-width: 1400px; }
 .s23 .s23-headline {
-  margin: 0 0 18px;
+  margin: 0 0 10px;
   font-family: var(--f-display); font-weight: 500;
-  font-size: 36px; line-height: 1.18; letter-spacing: -0.015em;
-  color: var(--on-dark); max-width: 520px;
+  font-size: 42px; line-height: 1.14; letter-spacing: -0.018em;
+  color: var(--on-dark);
 }
-.s23 .s23-body {
-  margin: 0 0 14px; font-family: var(--f-display); font-weight: 400;
-  font-size: 15.5px; line-height: 1.55; color: rgba(245,242,234,0.76);
-  max-width: 540px;
+.s23 .s23-headline .hl {
+  color: var(--mint); font-weight: 600;
+  border-bottom: 2px solid rgba(52,238,167,0.45);
 }
-.s23 .s23-badge {
-  display: inline-flex; align-items: center; gap: 12px;
-  margin-top: 22px; padding: 12px 18px;
-  border: 1px solid rgba(94,234,212,0.28); border-radius: 10px;
-  background: rgba(20,184,166,0.08);
+.s23 .s23-lede {
+  margin: 0; font-family: var(--f-display); font-weight: 400;
+  font-size: 15.5px; line-height: 1.5; color: rgba(245,242,234,0.72);
+  max-width: 1100px;
 }
-.s23 .s23-badge-dot {
-  width: 6px; height: 6px; border-radius: 50%; background: var(--mint);
-  box-shadow: 0 0 0 3px rgba(52,238,167,0.18);
+.s23 .s23-ledger {
+  margin-top: 26px;
+  border-top: 1px solid rgba(94,234,212,0.22);
 }
-.s23 .s23-badge-text {
-  font-family: var(--f-display); font-weight: 500; font-size: 12.5px;
-  letter-spacing: 0.02em; color: var(--on-dark);
+.s23 .s23-ledger-head, .s23 .s23-row {
+  display: grid; grid-template-columns: 1.1fr 1fr 1.2fr;
+  column-gap: 40px; align-items: flex-start;
+  padding: 14px 2px;
 }
-
 .s23 .s23-ledger-head {
-  display: grid; grid-template-columns: 320px 1fr;
-  gap: 28px; padding-bottom: 12px;
   border-bottom: 1px solid rgba(94,234,212,0.22);
+  padding-top: 10px; padding-bottom: 10px;
 }
-.s23 .s23-ledger-head span {
-  font-family: var(--f-display); font-weight: 500; font-size: 11.5px;
-  letter-spacing: 0.22em; text-transform: uppercase; color: var(--on-dark-mute);
+.s23 .s23-h {
+  font-family: var(--f-display); font-weight: 500; font-size: 11px;
+  letter-spacing: 0.22em; text-transform: uppercase;
 }
-.s23 .s23-ledger { display: flex; flex-direction: column; }
+.s23 .s23-h-limit  { color: var(--gold); }
+.s23 .s23-h-impact { color: var(--on-dark-mute); }
+.s23 .s23-h-prod   { color: var(--mint); }
 .s23 .s23-row {
-  display: grid; grid-template-columns: 320px 1fr;
-  gap: 28px; padding: 18px 0;
   border-bottom: 1px solid rgba(94,234,212,0.08);
+  padding: 16px 2px;
 }
-.s23 .s23-row:last-child { border-bottom: 0; }
-.s23 .s23-row-l {
+.s23 .s23-row:last-of-type { border-bottom: 1px solid rgba(94,234,212,0.22); }
+.s23 .s23-limit {
   display: flex; flex-direction: column; gap: 6px;
 }
-.s23 .s23-row-tag {
-  font-family: var(--f-mono); font-weight: 600; font-size: 11px;
-  letter-spacing: 0.12em; color: var(--gold);
+.s23 .s23-tag {
+  font-family: var(--f-mono); font-weight: 600; font-size: 10.5px;
+  letter-spacing: 0.14em; color: var(--gold);
   padding: 3px 8px; border-radius: 3px;
   background: rgba(245,158,11,0.12); border: 1px solid rgba(245,158,11,0.28);
   align-self: flex-start;
 }
-.s23 .s23-row-title {
-  font-family: var(--f-display); font-weight: 500; font-size: 17px;
+.s23 .s23-title {
+  font-family: var(--f-display); font-weight: 600; font-size: 17px;
   color: var(--on-dark); letter-spacing: -0.005em;
 }
-.s23 .s23-row-r {
-  font-family: var(--f-display); font-weight: 400; font-size: 15px;
-  line-height: 1.5; color: rgba(245,242,234,0.82);
+.s23 .s23-detail {
+  font-family: var(--f-display); font-weight: 400; font-size: 13.5px;
+  line-height: 1.45; color: rgba(245,242,234,0.62);
+}
+.s23 .s23-impact { display: flex; flex-direction: column; gap: 6px; }
+.s23 .s23-impact-metric {
+  font-family: var(--f-mono); font-weight: 700; font-size: 15px;
+  color: var(--gold); letter-spacing: 0.02em; align-self: flex-start;
+  padding-bottom: 3px; border-bottom: 1px dashed rgba(245,158,11,0.35);
+}
+.s23 .s23-impact-note {
+  font-family: var(--f-display); font-weight: 400; font-size: 13.5px;
+  line-height: 1.45; color: rgba(245,242,234,0.72);
+}
+.s23 .s23-prod {
+  font-family: var(--f-display); font-weight: 400; font-size: 14px;
+  line-height: 1.48; color: var(--on-dark);
+  display: flex; align-items: flex-start; gap: 10px;
+}
+.s23 .s23-prod em { font-style: italic; font-family: var(--f-serif); color: var(--mint); }
+.s23 .s23-prod-check {
+  flex: 0 0 18px; width: 18px; height: 18px; border-radius: 50%;
+  background: var(--mint); position: relative;
+  box-shadow: 0 0 0 3px rgba(52,238,167,0.18);
+  margin-top: 2px;
+}
+.s23 .s23-prod-check::before {
+  content: ''; position: absolute; top: 5px; left: 4px;
+  width: 4px; height: 8px;
+  border-right: 2px solid var(--forest-deep);
+  border-bottom: 2px solid var(--forest-deep);
+  transform: rotate(45deg);
+}
+.s23 .s23-take {
+  margin-top: 18px; padding: 14px 20px;
+  border-radius: 10px;
+  background: rgba(52,238,167,0.06);
+  border: 1px solid rgba(52,238,167,0.24);
+  display: flex; align-items: baseline; gap: 16px;
+}
+.s23 .s23-take-eb {
+  font-family: var(--f-display); font-weight: 600; font-size: 11.5px;
+  letter-spacing: 0.24em; text-transform: uppercase; color: var(--mint);
+  flex-shrink: 0;
+}
+.s23 .s23-take p {
+  margin: 0; font-family: var(--f-display); font-weight: 400;
+  font-size: 14px; line-height: 1.5; color: var(--on-dark);
 }
 
 /* ============ SLIDE 26 — P07 PARADOX (named duel) ============ */
@@ -3764,24 +3855,71 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
 .s26 .s26-clip { width: 340px; }
 
 /* ============ SLIDE 27 — F1 REMEDIATIONS ============ */
-.s27 .slide-frame { padding: 80px 112px 72px 112px; }
-.s27 .s27-hero { margin-top: 28px; max-width: 1240px; }
+.s27 .slide-frame { padding: 72px 112px 60px 112px; }
+.s27 .s27-hero { margin-top: 22px; max-width: 1600px; display: flex; flex-direction: column; gap: 22px; }
+.s27 .s27-compare {
+  display: grid; grid-template-columns: 1fr 1fr;
+  column-gap: 28px;
+}
+.s27 .s27-compare-col {
+  padding: 18px 22px; border-radius: 12px;
+  display: flex; flex-direction: column; gap: 6px;
+  position: relative;
+}
+.s27 .s27-compare-good {
+  background: rgba(52,238,167,0.08);
+  border: 1px solid rgba(52,238,167,0.30);
+}
+.s27 .s27-compare-good::before {
+  content: '\2713'; position: absolute; top: 16px; right: 20px;
+  font-family: var(--f-display); font-size: 20px; font-weight: 700;
+  color: var(--mint);
+  width: 28px; height: 28px; border-radius: 50%;
+  background: rgba(52,238,167,0.15);
+  display: flex; align-items: center; justify-content: center;
+  line-height: 1;
+}
+.s27 .s27-compare-bad {
+  background: rgba(6,40,35,0.35);
+  border: 1px dashed rgba(245,242,234,0.20);
+}
+.s27 .s27-compare-bad::before {
+  content: '\2014'; position: absolute; top: 16px; right: 20px;
+  font-family: var(--f-display); font-size: 20px; font-weight: 500;
+  color: rgba(245,242,234,0.32);
+  width: 28px; height: 28px; border-radius: 50%;
+  background: rgba(245,242,234,0.06);
+  display: flex; align-items: center; justify-content: center;
+  line-height: 1;
+}
+.s27 .s27-compare-eb {
+  font-family: var(--f-display); font-weight: 500; font-size: 11px;
+  letter-spacing: 0.22em; text-transform: uppercase;
+}
+.s27 .s27-compare-good .s27-compare-eb { color: var(--mint); }
+.s27 .s27-compare-bad  .s27-compare-eb { color: rgba(245,242,234,0.36); }
+.s27 .s27-compare-bad  .s27-compare-eb em { font-style: italic; font-family: var(--f-serif); text-transform: none; letter-spacing: 0; font-weight: 500; }
+.s27 .s27-compare-word {
+  font-family: var(--f-display); font-weight: 600; font-size: 24px;
+  letter-spacing: -0.01em; color: var(--on-dark);
+  padding-right: 40px;
+}
+.s27 .s27-compare-bad .s27-compare-word { color: rgba(245,242,234,0.58); }
+.s27 .s27-compare-note {
+  font-family: var(--f-display); font-weight: 400; font-size: 14px;
+  line-height: 1.45; color: rgba(245,242,234,0.68);
+}
 .s27 .s27-headline {
-  margin: 0 0 12px; font-family: var(--f-display); font-weight: 500;
-  font-size: 42px; line-height: 1.14; letter-spacing: -0.018em;
+  margin: 0; font-family: var(--f-display); font-weight: 500;
+  font-size: 32px; line-height: 1.16; letter-spacing: -0.015em;
   color: var(--on-dark);
 }
 .s27 .s27-headline .hl {
   color: var(--mint); font-weight: 600;
   border-bottom: 2px solid rgba(52,238,167,0.45);
 }
-.s27 .s27-lede {
-  margin: 0; max-width: 960px;
-  font-family: var(--f-display); font-weight: 400;
-  font-size: 16px; line-height: 1.5; color: rgba(245,242,234,0.72);
-}
 .s27 .s27-table {
-  margin-top: 28px;
+  margin-top: 22px;
   border-top: 1px solid rgba(94,234,212,0.22);
 }
 .s27 .s27-head, .s27 .s27-row {
@@ -3876,41 +4014,61 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
 }
 .s28 .s28-stats { display: flex; gap: 12px; flex-wrap: wrap; }
 
-.s28 .s28-spectrum { margin-top: 40px; padding: 0 40px; }
-.s28 .s28-spectrum-ends {
+.s28 .s28-spectrum { margin-top: 34px; padding: 0 10px; }
+.s28 .s28-spec-ends {
   display: flex; justify-content: space-between; align-items: center;
   font-family: var(--f-display); font-weight: 500; font-size: 12px;
-  letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-mute);
-  margin-bottom: 20px;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  padding: 0 6px;
 }
-.s28 .s28-spectrum-end-l { color: #B45309; }
-.s28 .s28-spectrum-end-r { color: var(--teal-700); }
-.s28 .s28-spectrum-track {
-  position: relative; height: 120px;
+.s28 .s28-spec-end-l { color: #B45309; }
+.s28 .s28-spec-end-r { color: var(--teal-700); }
+.s28 .s28-spec-track {
+  position: relative; height: 280px; margin: 18px 0 0;
 }
-.s28 .s28-spectrum-rule {
-  position: absolute; top: 60px; left: 0; right: 0; height: 2px;
+.s28 .s28-spec-rule {
+  position: absolute; top: 50%; left: 0; right: 0; height: 2px;
   background: linear-gradient(90deg, rgba(180,83,9,0.45) 0%, rgba(245,158,11,0.45) 30%, rgba(94,234,212,0.45) 65%, rgba(13,118,110,0.65) 100%);
   border-radius: 2px;
+  transform: translateY(-50%);
 }
 .s28 .s28-plot {
-  position: absolute; top: 60px; transform: translate(-50%, -50%);
-  background: transparent; border: 0; padding: 0; cursor: pointer;
-  display: flex; flex-direction: column; align-items: center; gap: 8px;
-  width: 220px;
+  position: absolute; top: 0; bottom: 0; left: 0;
+  transform: translateX(-50%);
+  display: flex; flex-direction: column; align-items: center;
+  width: 200px;
 }
-.s28 .s28-plot:nth-child(odd) { flex-direction: column-reverse; }
+.s28 .s28-plot-above { justify-content: flex-start; padding-top: 12px; }
+.s28 .s28-plot-below { justify-content: flex-end; padding-bottom: 12px; }
 .s28 .s28-plot-dot {
-  width: 16px; height: 16px; border-radius: 50%;
+  width: 14px; height: 14px; border-radius: 50%;
   background: #B45309; border: 3px solid var(--paper);
   box-shadow: 0 0 0 2px rgba(180,83,9,0.3), 0 2px 8px rgba(0,0,0,0.1);
   transition: transform 180ms var(--ease-out);
+  position: relative; top: 50%; transform: translateY(-50%);
 }
+.s28 .s28-plot-above .s28-plot-dot { top: auto; bottom: calc(50% - 7px); transform: translateY(50%); }
+.s28 .s28-plot-below .s28-plot-dot { top: calc(50% - 7px); transform: translateY(-50%); }
 .s28 .s28-plot-dot-mint {
   background: var(--teal-700);
   box-shadow: 0 0 0 2px rgba(13,118,110,0.3), 0 2px 8px rgba(0,0,0,0.1);
 }
-.s28 .s28-plot:hover .s28-plot-dot { transform: scale(1.15); }
+.s28 .s28-plot-tick {
+  width: 1px; background: rgba(10,26,28,0.22);
+  margin: 4px 0;
+}
+.s28 .s28-plot-above .s28-plot-tick { height: 34px; order: 2; }
+.s28 .s28-plot-above .s28-plot-label { order: 1; }
+.s28 .s28-plot-above .s28-plot-dot { order: 3; }
+.s28 .s28-plot-below .s28-plot-tick { height: 34px; }
+.s28 .s28-plot-label {
+  border: 0; background: transparent; padding: 8px 10px; cursor: pointer;
+  display: flex; flex-direction: column; gap: 4px; align-items: center;
+  max-width: 190px; text-align: center;
+  border-radius: 8px;
+  transition: background 160ms var(--ease-out);
+}
+.s28 .s28-plot-label:hover { background: rgba(20,184,166,0.08); }
 .s28 .s28-plot-ident {
   font-family: var(--f-display); font-weight: 600; font-size: 13px;
   letter-spacing: 0.04em; color: var(--ink);
@@ -3919,19 +4077,13 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
   font-family: var(--f-mono); font-weight: 400; font-size: 11px;
   color: var(--ink-dim); margin-left: 4px;
 }
-.s28 .s28-plot-label {
+.s28 .s28-plot-quote {
   font-family: var(--f-serif); font-style: italic; font-weight: 400;
-  font-size: 14px; line-height: 1.28; color: var(--ink-mute);
-  text-align: center; max-width: 200px;
+  font-size: 15px; line-height: 1.28; color: var(--ink);
 }
-.s28 .s28-plot:nth-child(odd) .s28-plot-ident,
-.s28 .s28-plot:nth-child(odd) .s28-plot-label { margin-top: 0; }
-.s28 .s28-spectrum-caption {
-  display: flex; justify-content: space-between;
-  margin-top: 24px; padding: 0 10px;
-  font-family: var(--f-mono); font-size: 11px;
-  color: var(--ink-dim); letter-spacing: 0.04em;
-}
+.s28 .s28-plot:hover .s28-plot-dot { transform: scale(1.15); }
+.s28 .s28-plot-above:hover .s28-plot-dot { transform: translateY(50%) scale(1.15); }
+.s28 .s28-plot-below:hover .s28-plot-dot { transform: translateY(-50%) scale(1.15); }
 
 .s28 .s28-grid {
   margin-top: 40px; padding-top: 26px;
@@ -3958,75 +4110,95 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
 .s28 .s28-block-cite:last-child { margin-bottom: 0; }
 
 /* ============ SLIDE 29 — F2 PRINCIPLE + RECOMMENDATIONS ============ */
-.s29 .slide-frame { padding: 80px 112px 72px 112px; }
-.s29 .s29-grid {
-  margin-top: 32px;
-  display: grid; grid-template-columns: 1fr 1.2fr;
-  column-gap: 80px; position: relative;
+.s29 .slide-frame { padding: 72px 112px 60px 112px; }
+.s29 .s29-hero {
+  margin-top: 22px; max-width: 1600px;
+  display: grid; grid-template-columns: 1.1fr 1fr;
+  column-gap: 56px; align-items: flex-start;
+  padding-bottom: 24px; border-bottom: 1px solid rgba(94,234,212,0.18);
 }
-.s29 .s29-grid::before {
-  content: ''; position: absolute; top: 10px; bottom: 10px; left: 45.5%;
-  width: 1px; background: rgba(94,234,212,0.18);
+.s29 .s29-headline {
+  margin: 0; font-family: var(--f-display); font-weight: 500;
+  font-size: 40px; line-height: 1.14; letter-spacing: -0.018em;
+  color: var(--on-dark);
 }
-.s29 .s29-col-eyebrow {
-  font-family: var(--f-display); font-weight: 500;
-  font-size: 12px; letter-spacing: 0.24em; text-transform: uppercase;
-  color: var(--teal-300); margin-bottom: 24px;
+.s29 .s29-headline .s29-hl {
+  color: var(--mint); font-weight: 600;
+  border-bottom: 2px solid rgba(52,238,167,0.45);
 }
-.s29 .s29-principle-text {
-  margin: 0 0 16px; font-family: var(--f-display); font-weight: 400;
-  font-size: 22px; line-height: 1.4; color: var(--on-dark);
-  max-width: 620px;
+.s29 .s29-principle {
+  margin: 0 0 0; grid-column: 1;
+  font-family: var(--f-display); font-weight: 400;
+  font-size: 19px; line-height: 1.55; color: rgba(245,242,234,0.88);
+  max-width: 680px; padding-top: 4px;
 }
-.s29 .s29-principle-text .s29-hl {
-  color: var(--mint); font-weight: 500;
-}
-.s29 .s29-principle-emphasis {
-  font-family: var(--f-serif); font-style: italic; font-weight: 400;
-  font-size: 20px; color: rgba(245,242,234,0.88);
-}
+.s29 .s29-bold { color: var(--on-dark); font-weight: 600; }
+.s29 .s29-principle { grid-column: 1 / -1; margin-top: 18px; }
 .s29 .s29-evidence {
-  margin-top: 28px; padding-top: 20px;
-  border-top: 1px solid rgba(94,234,212,0.18);
-}
-.s29 .s29-evidence-eb {
-  font-family: var(--f-display); font-weight: 600; font-size: 12px;
-  letter-spacing: 0.22em; text-transform: uppercase;
-  color: var(--teal-300); margin-bottom: 10px;
+  grid-column: 1 / -1; margin-top: 18px;
+  padding: 16px 22px; border-radius: 10px;
+  background: rgba(20,184,166,0.08); border: 1px solid rgba(94,234,212,0.24);
 }
 .s29 .s29-ev-quote {
   margin: 0 0 8px; font-family: var(--f-serif); font-style: italic;
-  font-size: 17px; line-height: 1.4; color: var(--on-dark);
+  font-size: 20px; line-height: 1.38; color: var(--on-dark);
 }
 .s29 .s29-ev-cite {
   display: block; font-style: normal;
   font-family: var(--f-display); font-weight: 500;
-  font-size: 12.5px; letter-spacing: 0.04em; color: var(--on-dark-mute);
+  font-size: 13px; letter-spacing: 0.04em; color: var(--on-dark-mute);
 }
 .s29 .s29-ev-cite .s29-ts { font-family: var(--f-mono); color: rgba(245,242,234,0.4); margin-left: 4px; }
 
+.s29 .s29-recs { margin-top: 26px; }
+.s29 .s29-recs-head {
+  display: flex; justify-content: space-between; align-items: baseline;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(94,234,212,0.22);
+}
+.s29 .s29-col-eyebrow {
+  font-family: var(--f-display); font-weight: 500;
+  font-size: 12px; letter-spacing: 0.24em; text-transform: uppercase;
+  color: var(--teal-300);
+}
+.s29 .s29-col-meta {
+  font-family: var(--f-mono); font-size: 11px;
+  color: var(--on-dark-dim); letter-spacing: 0.04em;
+}
 .s29 .s29-rec-list {
   list-style: none; padding: 0; margin: 0;
-  display: flex; flex-direction: column;
+  display: grid; grid-template-columns: 1fr 1fr;
+  column-gap: 56px;
 }
 .s29 .s29-rec {
-  display: grid; grid-template-columns: 60px 1fr;
-  gap: 22px; padding: 18px 0;
+  display: grid; grid-template-columns: 50px 1fr;
+  gap: 18px; padding: 18px 0;
   border-bottom: 1px solid rgba(94,234,212,0.08);
+  align-items: flex-start;
 }
-.s29 .s29-rec:last-child { border-bottom: 0; }
+.s29 .s29-rec:nth-last-child(-n+2) { border-bottom: 0; }
 .s29 .s29-rec-num {
   font-family: var(--f-display); font-weight: 700;
-  font-size: 28px; line-height: 1; letter-spacing: -0.02em;
+  font-size: 32px; line-height: 1; letter-spacing: -0.02em;
   color: var(--mint); font-variant-numeric: tabular-nums;
 }
+.s29 .s29-rec-body { display: flex; flex-direction: column; gap: 6px; }
 .s29 .s29-rec-title {
-  margin: 0 0 6px; font-family: var(--f-display); font-weight: 500;
-  font-size: 17px; line-height: 1.3; color: var(--on-dark);
+  margin: 0; font-family: var(--f-display); font-weight: 600;
+  font-size: 18px; line-height: 1.28; color: var(--on-dark);
+  letter-spacing: -0.005em;
 }
 .s29 .s29-rec-detail {
   margin: 0; font-family: var(--f-display); font-weight: 400;
-  font-size: 14px; line-height: 1.5; color: rgba(245,242,234,0.72);
+  font-size: 15px; line-height: 1.5; color: rgba(245,242,234,0.78);
+}
+.s29 .s29-rec-when {
+  align-self: flex-start; margin-top: 4px;
+  font-family: var(--f-mono); font-weight: 600; font-size: 10px;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--teal-300);
+  padding: 3px 8px; border-radius: 3px;
+  background: rgba(20,184,166,0.12); border: 1px solid rgba(94,234,212,0.24);
 }
 
 .s29 .s29-foot {
@@ -4081,57 +4253,37 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
   font-family: var(--f-mono); font-weight: 700; margin-right: 4px;
 }
 
-.s30 .s30-right { padding-top: 4px; display: flex; flex-direction: column; gap: 18px; }
+.s30 .s30-right { padding-top: 4px; display: flex; flex-direction: column; gap: 20px; }
 .s30 .s30-headline {
   margin: 0; font-family: var(--f-display); font-weight: 500;
-  font-size: 36px; line-height: 1.14; letter-spacing: -0.015em;
-  color: var(--ink); max-width: 700px;
+  font-size: 38px; line-height: 1.14; letter-spacing: -0.018em;
+  color: var(--ink); max-width: 780px;
 }
 .s30 .s30-headline .ital {
   font-family: var(--f-serif); font-style: italic; font-weight: 500;
   color: var(--teal-700);
 }
 .s30 .s30-stat-row { display: flex; gap: 12px; flex-wrap: wrap; }
-.s30 .s30-quote {
-  padding: 18px 22px;
-  border-left: none;
-  background: rgba(20,184,166,0.05);
-  border-radius: 10px;
-  border: 1px solid rgba(13,118,110,0.15);
-  position: relative;
+.s30 .s30-qblock {
+  padding-top: 18px; border-top: 1px solid rgba(10,26,28,0.14);
 }
-.s30 .s30-quote::before {
-  content: '\201C'; position: absolute; top: -4px; left: 14px;
-  font-family: var(--f-serif); font-size: 48px; color: rgba(13,118,110,0.35);
-  line-height: 1;
-}
-.s30 .s30-quote blockquote {
-  margin: 8px 0 8px 28px;
+.s30 .s30-qblock blockquote {
+  margin: 0 0 8px;
   font-family: var(--f-serif); font-style: italic; font-weight: 400;
-  font-size: 22px; line-height: 1.35; color: var(--ink);
+  font-size: 24px; line-height: 1.34; letter-spacing: -0.005em;
+  color: var(--ink);
 }
-.s30 .s30-quote cite {
-  display: block; font-style: normal; margin-left: 28px;
+.s30 .s30-qblock cite {
+  display: block; font-style: normal;
   font-family: var(--f-display); font-weight: 500;
-  font-size: 13px; letter-spacing: 0.04em; color: var(--ink-mute);
+  font-size: 13px; letter-spacing: 0.05em; color: var(--ink-mute);
 }
-.s30 .s30-quote cite .s30-ts { font-family: var(--f-mono); color: var(--ink-dim); margin-left: 4px; }
-
-.s30 .s30-micro { display: flex; flex-direction: column; gap: 10px; }
-.s30 .s30-micro-row {
-  display: grid; grid-template-columns: 80px 1fr; gap: 16px; align-items: baseline;
-  padding: 8px 0; border-bottom: 1px solid rgba(10,26,28,0.08);
+.s30 .s30-qblock cite .s30-ts {
+  font-family: var(--f-mono); font-size: 12px; color: var(--ink-dim); margin-left: 4px;
 }
-.s30 .s30-micro-row:last-child { border-bottom: 0; }
-.s30 .s30-micro-row span {
-  font-family: var(--f-display); font-weight: 400;
-  font-size: 14px; line-height: 1.48; color: var(--ink);
-}
-.s30 .s30-micro-row .chip, .s30 .s30-micro-row .chip-inline { justify-self: start; }
-
+.s30 .s30-clip { max-width: 380px; }
 .s30 .s30-rec {
-  margin-top: 4px; padding: 16px 20px;
-  border-radius: 10px;
+  padding: 16px 20px; border-radius: 10px;
   background: rgba(52,238,167,0.08);
   border: 1px solid rgba(52,238,167,0.32);
 }
@@ -4154,8 +4306,6 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
 .s30 .s30-rec-tag-hi {
   color: var(--mint); background: rgba(52,238,167,0.15); border-color: rgba(52,238,167,0.45);
 }
-
-.s30 .s30-clip { position: absolute; bottom: 72px; left: 112px; width: 320px; }
 
 /* Meds calendar CSS mock (drops in if assets/screenshots/meds-popover.png lands) */
 .screen-meds-lite {
@@ -5315,59 +5465,94 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
       <div class="eyebrow">What resonated &middot; AI coach</div>
       <div style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-dim);font-weight:500">Contextual intelligence</div>
     </div>
-    <div class="s16-hero reveal d2">
-      <div class="s16-stat-block">
-        <span class="s16-stat-num">7<i class="s16-stat-of">/7</i></span>
-        <button class="s16-stat-sub chip-trigger" data-cite="coach-77">found it useful after using it</button>
-      </div>
-      <h1 class="s16-headline">
-        Useful beyond novelty. Valued for <span class="ital">exploration, questions, and coaching feedback</span> &mdash; the things UI screens don&apos;t do well.
-      </h1>
-    </div>
     <div class="s16-grid">
-      <div class="s16-col s16-col-advantage reveal d3">
-        <div class="s16-col-eyebrow">The contextual advantage</div>
-        <div class="s16-qblock">
-          <blockquote>It&apos;s focused on this app and what I&apos;m going through. I don&apos;t have to tell it anything because it already knows.</blockquote>
-          <cite><button class="chip" data-cite="p07">P07</button> <span class="s16-ts">[30:04]</span> &middot; target demographic</cite>
-        </div>
-        <div class="s16-qblock">
-          <blockquote>I personally don&apos;t have anyone that I&apos;m going through like a weight loss journey with. So it&apos;s just me, myself, and I.</blockquote>
-          <cite><button class="chip" data-cite="p05">P05</button> <span class="s16-ts">[38:22]</span> &middot; solo journey</cite>
-        </div>
-      </div>
-      <div class="s16-col s16-col-vs reveal d4">
-        <div class="s16-col-eyebrow">Why it beats a generic chatbot</div>
-        <div class="s16-qblock">
-          <blockquote>Helpful overall &mdash; to ask those questions without having to call your doctor.</blockquote>
-          <cite><button class="chip" data-cite="p01">P01</button> <span class="s16-ts">[33:43]</span> &middot; doctor-visit supplement</cite>
-        </div>
-        <div class="s16-qblock">
-          <blockquote>The screens feel more natural, but I like the idea of talking to the coach because I like the feedback.</blockquote>
-          <cite><button class="chip" data-cite="p04">P04</button> <span class="s16-ts">[28:48]</span> &middot; chat + UI coexist</cite>
-        </div>
-      </div>
-    </div>
-    <div class="s16-foot reveal d5">
-      <div class="s16-caveat">
-        <button class="kpi-pill chip-trigger" data-cite="coach-discover-caveat"><b>2&ndash;3/7</b><i>found it independently on the directed task</i></button>
-        <p class="s16-caveat-note">Discoverability is a distinct issue. <button class="chip chip-inline" data-cite="coach-labeling">Finding 2</button> covers the labelling problem and the remediation path.</p>
-      </div>
-      <div class="s16-clip" data-video="p05-coach-3822">
-        <div class="clip-card compact" role="button" tabindex="0" aria-label="Play clip">
-          <div class="clip-thumb">
-            <div class="clip-waveform" aria-hidden="true">
-              <span style="height:32%"></span><span style="height:58%"></span><span style="height:44%"></span><span style="height:70%"></span><span style="height:38%"></span><span style="height:82%"></span><span style="height:46%"></span><span style="height:60%"></span><span style="height:34%"></span><span style="height:72%"></span><span style="height:50%"></span><span style="height:40%"></span><span style="height:66%"></span><span style="height:48%"></span><span style="height:78%"></span><span style="height:42%"></span>
-            </div>
-            <div class="clip-play" aria-hidden="true"></div>
+      <div class="s16-left reveal d2">
+        <div class="s16-hero">
+          <div class="s16-stat-block">
+            <span class="s16-stat-num">7<i class="s16-stat-of">/7</i></span>
+            <button class="s16-stat-sub chip-trigger" data-cite="coach-77">found it useful after using it</button>
           </div>
-          <div class="clip-info">
-            <div class="clip-info-top">
-              <span class="rec-dot"></span>
-              <span class="clip-label-text">Dovetail clip &middot; P05 @ 38:22</span>
-              <span class="ts">0:11</span>
+          <h1 class="s16-headline">Valued for <span class="ital">exploration, questions, and coaching feedback</span> &mdash; the things UI screens don&apos;t do well.</h1>
+        </div>
+        <div class="s16-quotes">
+          <div class="s16-qblock">
+            <blockquote>It&apos;s focused on this app and what I&apos;m going through. I don&apos;t have to tell it anything because it already knows.</blockquote>
+            <cite><button class="chip" data-cite="p07">P07</button> <span class="s16-ts">[30:04]</span> &middot; target demographic</cite>
+          </div>
+          <div class="s16-qblock">
+            <blockquote>I personally don&apos;t have anyone that I&apos;m going through like a weight loss journey with. So it&apos;s just me, myself, and I.</blockquote>
+            <cite><button class="chip" data-cite="p05">P05</button> <span class="s16-ts">[38:22]</span> &middot; solo journey</cite>
+          </div>
+        </div>
+        <div class="s16-foot">
+          <div class="s16-caveat">
+            <button class="kpi-pill chip-trigger" data-cite="coach-discover-caveat"><b>2&ndash;3/7</b><i>found it independently on the directed task</i></button>
+            <p class="s16-caveat-note">Discoverability is a separate issue &mdash; see <button class="chip chip-inline" data-cite="coach-labeling">Finding 2</button>.</p>
+          </div>
+          <div class="s16-clip" data-video="p05-coach-3822">
+            <div class="clip-card compact" role="button" tabindex="0" aria-label="Play clip">
+              <div class="clip-thumb">
+                <div class="clip-waveform" aria-hidden="true">
+                  <span style="height:32%"></span><span style="height:58%"></span><span style="height:44%"></span><span style="height:70%"></span><span style="height:38%"></span><span style="height:82%"></span><span style="height:46%"></span><span style="height:60%"></span><span style="height:34%"></span><span style="height:72%"></span><span style="height:50%"></span><span style="height:40%"></span><span style="height:66%"></span><span style="height:48%"></span><span style="height:78%"></span><span style="height:42%"></span>
+                </div>
+                <div class="clip-play" aria-hidden="true"></div>
+              </div>
+              <div class="clip-info">
+                <div class="clip-info-top">
+                  <span class="rec-dot"></span>
+                  <span class="clip-label-text">Dovetail clip &middot; P05 @ 38:22</span>
+                  <span class="ts">0:11</span>
+                </div>
+                <div class="clip-quote">&ldquo;It&rsquo;s just me, myself, and I&hellip;&rdquo;</div>
+              </div>
             </div>
-            <div class="clip-quote">&ldquo;It&rsquo;s just me, myself, and I&hellip;&rdquo;</div>
+          </div>
+        </div>
+      </div>
+      <div class="s16-right reveal d3">
+        <div class="phone" aria-label="iPhone Air showing the AI Coach chat">
+          <div class="btn-side btn-action"></div>
+          <div class="btn-side btn-vol-up"></div>
+          <div class="btn-side btn-vol-down"></div>
+          <div class="btn-side btn-power"></div>
+          <div class="phone-screen">
+            <div class="phone-island" aria-hidden="true"></div>
+            <div class="screen screen-coach-lite" data-asset="ai-coach" data-asset-folder="screenshots" data-asset-ext="png">
+              <div class="screen-status">
+                <span class="time">9:41</span>
+                <span class="icons"><span class="wifi"></span><span class="battery"></span></span>
+              </div>
+              <div class="coach-top">
+                <span class="coach-back">&larr;</span>
+                <span class="coach-title">Coach</span>
+                <span class="coach-dot" aria-hidden="true"></span>
+              </div>
+              <div class="coach-sub">Context-aware &middot; Zepbound &middot; week 22</div>
+              <div class="coach-thread">
+                <div class="coach-msg coach-msg-user">
+                  <div class="coach-bubble">How many calories do I have left today?</div>
+                </div>
+                <div class="coach-msg coach-msg-ai">
+                  <div class="coach-avatar" aria-hidden="true"></div>
+                  <div class="coach-bubble">
+                    You have <b>420</b> left on your 1,200 target. Based on what you&rsquo;ve logged, you&rsquo;re short on protein &mdash; aim for <b>20&ndash;25g</b> at dinner.
+                  </div>
+                </div>
+                <div class="coach-msg coach-msg-user">
+                  <div class="coach-bubble">Ideas?</div>
+                </div>
+                <div class="coach-msg coach-msg-ai">
+                  <div class="coach-avatar" aria-hidden="true"></div>
+                  <div class="coach-bubble">
+                    Grilled salmon with greens. Chicken stir-fry. Greek yogurt + berries if you want lighter.
+                  </div>
+                </div>
+              </div>
+              <div class="coach-input">
+                <span class="coach-input-ph">Ask Coach&hellip;</span>
+                <span class="coach-input-mic" aria-hidden="true"></span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -5390,54 +5575,66 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
       <div style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--on-dark-mute);font-weight:500">Validated format &middot; Discoverability-bound</div>
     </div>
     <div class="s17-grid">
-      <div class="s17-viz reveal d2">
-        <div class="s17-viz-card" data-asset="learn-pathway" data-asset-folder="screenshots" data-asset-ext="png">
-          <div class="s17-viz-top">
-            <span class="s17-viz-title">Learn</span>
-            <span class="s17-viz-tag">Your pathways</span>
-          </div>
-          <div class="s17-path" data-tag="CORE">
-            <div class="s17-path-head">
-              <span class="s17-path-name">Medication fundamentals</span>
-              <span class="s17-path-tag">Core</span>
+      <div class="s17-phone-col reveal d2">
+        <div class="phone" aria-label="iPhone Air showing the Learn pathway overview">
+          <div class="btn-side btn-action"></div>
+          <div class="btn-side btn-vol-up"></div>
+          <div class="btn-side btn-vol-down"></div>
+          <div class="btn-side btn-power"></div>
+          <div class="phone-screen">
+            <div class="phone-island" aria-hidden="true"></div>
+            <div class="screen screen-learn-lite" data-asset="learn-pathway" data-asset-folder="screenshots" data-asset-ext="png">
+              <div class="screen-status">
+                <span class="time">9:41</span>
+                <span class="icons"><span class="wifi"></span><span class="battery"></span></span>
+              </div>
+              <div class="learn-top">
+                <span class="learn-title">Learn</span>
+                <span class="learn-sub">Your pathways</span>
+              </div>
+              <div class="learn-path learn-path-active">
+                <div class="learn-path-head">
+                  <span class="learn-path-name">Medication fundamentals</span>
+                  <span class="learn-path-tag">Core</span>
+                </div>
+                <div class="learn-path-dots"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></div>
+                <div class="learn-path-meta">4 of 6</div>
+              </div>
+              <div class="learn-path">
+                <div class="learn-path-head">
+                  <span class="learn-path-name">Nutrition with GLP-1s</span>
+                  <span class="learn-path-tag">Core</span>
+                </div>
+                <div class="learn-path-dots"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></div>
+                <div class="learn-path-meta">2 of 5</div>
+              </div>
+              <div class="learn-path learn-path-personal">
+                <div class="learn-path-head">
+                  <span class="learn-path-name">Your emotional patterns</span>
+                  <span class="learn-path-tag learn-path-tag-mint">Personalised</span>
+                </div>
+                <div class="learn-path-dots"><i class="on on-mint"></i><i></i><i></i><i></i></div>
+                <div class="learn-path-meta">AI-curated &middot; 1 of 4</div>
+              </div>
+              <div class="learn-path">
+                <div class="learn-path-head">
+                  <span class="learn-path-name">Building daily habits</span>
+                  <span class="learn-path-tag">Core</span>
+                </div>
+                <div class="learn-path-dots"><i></i><i></i><i></i><i></i><i></i></div>
+                <div class="learn-path-meta">Not started</div>
+              </div>
+              <div class="learn-path">
+                <div class="learn-path-head">
+                  <span class="learn-path-name">Handling side effects</span>
+                  <span class="learn-path-tag">Core</span>
+                </div>
+                <div class="learn-path-dots"><i></i><i></i><i></i></div>
+                <div class="learn-path-meta">Not started</div>
+              </div>
             </div>
-            <div class="s17-path-dots"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></div>
-            <div class="s17-path-meta">CBT-grounded &middot; 4 of 6 complete</div>
-          </div>
-          <div class="s17-path" data-tag="CORE">
-            <div class="s17-path-head">
-              <span class="s17-path-name">Nutrition with GLP-1s</span>
-              <span class="s17-path-tag">Core</span>
-            </div>
-            <div class="s17-path-dots"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></div>
-            <div class="s17-path-meta">ACT-informed &middot; 2 of 5 complete</div>
-          </div>
-          <div class="s17-path s17-path-personal" data-tag="PERSONAL">
-            <div class="s17-path-head">
-              <span class="s17-path-name">Your emotional patterns</span>
-              <span class="s17-path-tag s17-path-tag-mint">Personalised</span>
-            </div>
-            <div class="s17-path-dots"><i class="on"></i><i></i><i></i><i></i></div>
-            <div class="s17-path-meta">AI-curated from your reflections &middot; 1 of 4</div>
-          </div>
-          <div class="s17-path" data-tag="CORE">
-            <div class="s17-path-head">
-              <span class="s17-path-name">Building daily habits</span>
-              <span class="s17-path-tag">Core</span>
-            </div>
-            <div class="s17-path-dots"><i></i><i></i><i></i><i></i><i></i></div>
-            <div class="s17-path-meta">Behavioural activation &middot; not started</div>
-          </div>
-          <div class="s17-path" data-tag="CORE">
-            <div class="s17-path-head">
-              <span class="s17-path-name">Handling side effects</span>
-              <span class="s17-path-tag">Core</span>
-            </div>
-            <div class="s17-path-dots"><i></i><i></i><i></i></div>
-            <div class="s17-path-meta">Clinical guidance &middot; not started</div>
           </div>
         </div>
-        <div class="s17-viz-cap">Stylised preview &middot; real screen drops in when <code>assets/screenshots/learn-pathway.png</code> is added.</div>
       </div>
       <div class="s17-right reveal d3">
         <h1 class="s17-headline">The format works. Content resonated across every participant who found it.</h1>
@@ -5485,39 +5682,70 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
     <div class="s18-table reveal d3">
       <div class="s18-head">
         <span class="s18-col s18-col-tool">Current tool</span>
-        <span class="s18-col s18-col-does">What it does for them</span>
-        <span class="s18-col s18-col-gap">Where it falls short</span>
-        <span class="s18-col s18-col-ours">This app</span>
+        <span class="s18-col s18-col-does">What it covers</span>
+        <span class="s18-col s18-col-adds">What this app adds</span>
       </div>
       <div class="s18-row">
-        <span class="s18-col s18-col-tool"><span class="s18-tool-name">MyFitnessPal</span><button class="chip chip-mini" data-cite="p04">P04</button></span>
-        <span class="s18-col s18-col-does">Calorie tracking (lapsed when it went paid)</span>
-        <span class="s18-col s18-col-gap">No GLP-1 awareness &middot; no photo logging &middot; no AI</span>
-        <span class="s18-col s18-col-ours"><span class="s18-check" aria-label="Full coverage"></span></span>
+        <span class="s18-col s18-col-tool">
+          <span class="s18-tool-name">MyFitnessPal</span>
+          <button class="chip chip-mini" data-cite="p04">P04</button>
+        </span>
+        <span class="s18-col s18-col-does">Calorie tracking &middot; lapsed when it went paid.</span>
+        <span class="s18-col s18-col-adds">
+          <span class="s18-add">+ GLP-1 context</span>
+          <span class="s18-add">+ Photo logging</span>
+          <span class="s18-add">+ AI coach</span>
+          <span class="s18-add">+ Injection tracking</span>
+        </span>
       </div>
       <div class="s18-row">
-        <span class="s18-col s18-col-tool"><span class="s18-tool-name">Shotzy</span><button class="chip chip-mini" data-cite="p05">P05</button></span>
-        <span class="s18-col s18-col-does">Injection tracking</span>
-        <span class="s18-col s18-col-gap">No site-rotation history &middot; no nutrition</span>
-        <span class="s18-col s18-col-ours"><span class="s18-check" aria-label="Full coverage"></span></span>
+        <span class="s18-col s18-col-tool">
+          <span class="s18-tool-name">Shotzy</span>
+          <button class="chip chip-mini" data-cite="p05">P05</button>
+        </span>
+        <span class="s18-col s18-col-does">Injection tracking &middot; no site-rotation history.</span>
+        <span class="s18-col s18-col-adds">
+          <span class="s18-add">+ Rotation history</span>
+          <span class="s18-add">+ Nutrition</span>
+          <span class="s18-add">+ AI coach</span>
+          <span class="s18-add">+ Learning</span>
+        </span>
       </div>
       <div class="s18-row">
-        <span class="s18-col s18-col-tool"><span class="s18-tool-name">Healthi</span> <span class="s18-tool-alias">(WW successor)</span><button class="chip chip-mini" data-cite="p03">P03</button></span>
-        <span class="s18-col s18-col-does">Weight tracking, community</span>
-        <span class="s18-col s18-col-gap">No AI &middot; no medication tracking</span>
-        <span class="s18-col s18-col-ours"><span class="s18-check" aria-label="Full coverage"></span></span>
+        <span class="s18-col s18-col-tool">
+          <span class="s18-tool-name">Healthi <span class="s18-tool-alias">(WW successor)</span></span>
+          <button class="chip chip-mini" data-cite="p03">P03</button>
+        </span>
+        <span class="s18-col s18-col-does">Weight tracking + community.</span>
+        <span class="s18-col s18-col-adds">
+          <span class="s18-add">+ Medication</span>
+          <span class="s18-add">+ AI coach</span>
+          <span class="s18-add">+ Body map</span>
+          <span class="s18-add">+ Behavioural content</span>
+        </span>
       </div>
       <div class="s18-row">
-        <span class="s18-col s18-col-tool"><span class="s18-tool-name">Microhealth</span><button class="chip chip-mini" data-cite="p02">P02</button></span>
-        <span class="s18-col s18-col-does">Infusion tracking for a bleeding disorder</span>
-        <span class="s18-col s18-col-gap">No nutrition &middot; limited body map &middot; &ldquo;tried to add my GLP-1 &mdash; couldn&rsquo;t&rdquo;</span>
-        <span class="s18-col s18-col-ours"><span class="s18-check" aria-label="Full coverage"></span></span>
+        <span class="s18-col s18-col-tool">
+          <span class="s18-tool-name">Microhealth</span>
+          <button class="chip chip-mini" data-cite="p02">P02</button>
+        </span>
+        <span class="s18-col s18-col-does">Infusion tracking &middot; tried to add GLP-1, couldn&apos;t.</span>
+        <span class="s18-col s18-col-adds">
+          <span class="s18-add">+ GLP-1 support</span>
+          <span class="s18-add">+ Nutrition</span>
+          <span class="s18-add">+ Full body map</span>
+          <span class="s18-add">+ AI coach</span>
+        </span>
       </div>
       <div class="s18-row">
-        <span class="s18-col s18-col-tool"><span class="s18-tool-name">Apple Health</span><button class="chip chip-mini" data-cite="p07">P07</button></span>
-        <span class="s18-col s18-col-does">Step counting at dance class, once a week</span>
-        <span class="s18-col s18-col-gap">No nutrition &middot; no AI &middot; no medication</span>
-        <span class="s18-col s18-col-ours"><span class="s18-check" aria-label="Full coverage"></span></span>
+        <span class="s18-col s18-col-tool">
+          <span class="s18-tool-name">Apple Health</span>
+          <button class="chip chip-mini" data-cite="p07">P07</button>
+        </span>
+        <span class="s18-col s18-col-does">Step counting at dance class, once a week.</span>
+        <span class="s18-col s18-col-adds">
+          <span class="s18-add s18-add-hi">+ Everything GLP-1-specific</span>
+        </span>
       </div>
     </div>
     <div class="s18-foot reveal d4">
@@ -5567,22 +5795,42 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
       <div class="eyebrow">In their words</div>
       <div style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--on-dark-mute);font-weight:500">Section capstone</div>
     </div>
-    <div class="s19-stack">
-      <figure class="s19-quote s19-quote-1 reveal d2">
-        <blockquote>It&apos;s a nutritional app, it&apos;s a fitness app, it&apos;s everything wrapped up in one&hellip; I would <span class="s19-hl">highly recommend</span> it.</blockquote>
-        <figcaption><button class="chip" data-cite="p04">P04</button> <span class="s19-ts">[48:26]</span> &middot; 49F &middot; Zepbound &middot; the cohort&apos;s strongest advocate</figcaption>
+    <div class="s19-row">
+      <figure class="s19-quote reveal d2">
+        <span class="s19-mark" aria-hidden="true">&ldquo;</span>
+        <blockquote>It&apos;s a nutritional app, it&apos;s a fitness app, it&apos;s everything <span class="s19-hl">wrapped up in one</span>&hellip; I would highly recommend it.</blockquote>
+        <figcaption><button class="chip" data-cite="p04">P04</button> &middot; 49F &middot; Zepbound <span class="s19-ts">[48:26]</span></figcaption>
       </figure>
-      <figure class="s19-quote s19-quote-2 reveal d3">
-        <blockquote>It would be great if the advertising could be geared towards tracking your journey, because this is not something you&apos;re just gonna lose weight on. You have to <span class="s19-hl">modify your life</span>.</blockquote>
-        <figcaption><button class="chip" data-cite="p07">P07</button> <span class="s19-ts">[52:52]</span> &middot; 57F &middot; Zepbound &middot; target demographic</figcaption>
+      <figure class="s19-quote s19-quote-mid reveal d3">
+        <span class="s19-mark" aria-hidden="true">&ldquo;</span>
+        <blockquote>You have to <span class="s19-hl">modify your life</span>. This is not something you&apos;re just gonna lose weight on.</blockquote>
+        <figcaption><button class="chip" data-cite="p07">P07</button> &middot; 57F &middot; Zepbound &middot; target demographic <span class="s19-ts">[52:52]</span></figcaption>
+        <div class="s19-clip" data-video="p07-lifestyle-5348">
+          <div class="clip-card compact" role="button" tabindex="0" aria-label="Play clip">
+            <div class="clip-thumb">
+              <div class="clip-waveform" aria-hidden="true">
+                <span style="height:30%"></span><span style="height:52%"></span><span style="height:42%"></span><span style="height:68%"></span><span style="height:40%"></span><span style="height:78%"></span><span style="height:46%"></span><span style="height:62%"></span><span style="height:36%"></span><span style="height:70%"></span><span style="height:48%"></span><span style="height:58%"></span><span style="height:64%"></span><span style="height:42%"></span><span style="height:56%"></span><span style="height:38%"></span>
+              </div>
+              <div class="clip-play" aria-hidden="true"></div>
+            </div>
+            <div class="clip-info">
+              <div class="clip-info-top">
+                <span class="rec-dot"></span>
+                <span class="clip-label-text">Dovetail &middot; P07 @ 52:52</span>
+                <span class="ts">0:10</span>
+              </div>
+              <div class="clip-quote">&ldquo;Modify your life&hellip;&rdquo;</div>
+            </div>
+          </div>
+        </div>
       </figure>
-      <figure class="s19-quote s19-quote-3 reveal d4">
+      <figure class="s19-quote reveal d4">
+        <span class="s19-mark" aria-hidden="true">&ldquo;</span>
         <blockquote>This looks like it kind of <span class="s19-hl">combines a lot</span>, like more than one app.</blockquote>
-        <figcaption><button class="chip" data-cite="p05">P05</button> <span class="s19-ts">[10:40]</span> &middot; 61F &middot; Zepbound+ &middot; first impression</figcaption>
+        <figcaption><button class="chip" data-cite="p05">P05</button> &middot; 61F &middot; Zepbound+ <span class="s19-ts">[10:40]</span></figcaption>
       </figure>
     </div>
-    <div class="s19-divider reveal d5"></div>
-    <div class="s19-transition reveal d5">Task-level evidence follows.</div>
+    <div class="s19-divider reveal d5">Task-level evidence follows.</div>
     <div class="slide-foot">
       <div class="foot-left">
         <svg class="mark" viewBox="0 0 1128 431" aria-label="BIX" style="color: var(--on-dark)"><use href="#bix-logo"/></svg>
@@ -5798,60 +6046,80 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
       <div class="eyebrow">Section 04 &middot; Prototype context</div>
       <div style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--on-dark-mute);font-weight:500">Honest ledger &middot; 4 limitations</div>
     </div>
-    <div class="s23-grid">
-      <div class="s23-left reveal d2">
-        <h1 class="s23-headline">A live interactive prototype, not a mockup. Participants treated it as a real app.</h1>
-        <p class="s23-body">The prototype was a fully interactive PWA built in Lovable with live AI integration, running on iOS in the lab. Not a Figma click-through. Where specific prototype constraints affected specific findings, we name them directly.</p>
-        <p class="s23-body">None of the four limitations below alter the top-line conclusions. We flag them so downstream readers can weight the evidence accurately.</p>
-        <div class="s23-badge">
-          <span class="s23-badge-dot"></span>
-          <span class="s23-badge-text">No limitation materially changes Finding 1, Finding 2, or the SEQ / satisfaction means.</span>
+    <div class="s23-intro reveal d2">
+      <h1 class="s23-headline">A few prototype constraints nudged specific scores down. <span class="hl">They aren&apos;t in the product.</span></h1>
+      <p class="s23-lede">We&apos;re flagging these so no one reads a prototype artefact as a product finding. In each row, the left shows what happened in the lab. The right shows what the production app will do instead.</p>
+    </div>
+    <div class="s23-ledger reveal d3">
+      <div class="s23-ledger-head">
+        <span class="s23-h s23-h-limit">In the lab</span>
+        <span class="s23-h s23-h-impact">What it nudged</span>
+        <span class="s23-h s23-h-prod">In the product</span>
+      </div>
+      <div class="s23-row">
+        <div class="s23-limit">
+          <span class="s23-tag">PL2</span>
+          <span class="s23-title">Microphone was non-functional</span>
+          <span class="s23-detail"><button class="chip chip-inline" data-cite="p07">P07</button> and <button class="chip chip-inline" data-cite="p05">P05</button> tried to use voice input; it didn&apos;t respond.</span>
+        </div>
+        <div class="s23-impact">
+          <span class="s23-impact-metric">T4 SEQ &minus;0.3</span>
+          <span class="s23-impact-note">P07 explicitly attributed her 5/7 to this, not the Coach itself.</span>
+        </div>
+        <div class="s23-prod">
+          <span class="s23-prod-check" aria-hidden="true"></span>
+          Voice input ships in production. The demand is confirmed &mdash; the deflated score isn&apos;t.
         </div>
       </div>
-      <div class="s23-right reveal d3">
-        <div class="s23-ledger-head">
-          <span>Limitation</span>
-          <span>Effect on the record</span>
+      <div class="s23-row">
+        <div class="s23-limit">
+          <span class="s23-tag">PL4</span>
+          <span class="s23-title">Live AI responses were variable</span>
+          <span class="s23-detail">Lovable AI occasionally missed the intent or returned off-topic recipes. See <button class="chip chip-inline" data-cite="pl4-t4-range">examples</button>.</span>
         </div>
-        <div class="s23-ledger">
-          <div class="s23-row">
-            <div class="s23-row-l">
-              <span class="s23-row-tag">PL2</span>
-              <span class="s23-row-title">Microphone non-functional</span>
-            </div>
-            <div class="s23-row-r">
-              <button class="chip chip-inline" data-cite="p07">P07</button>&apos;s T4 SEQ of 5 was explicitly attributed to this. <button class="chip chip-inline" data-cite="pl2-voice">Confirms voice-input demand</button> &mdash; not a Coach usability issue.
-            </div>
-          </div>
-          <div class="s23-row">
-            <div class="s23-row-l">
-              <span class="s23-row-tag">PL4</span>
-              <span class="s23-row-title">AI response variability</span>
-            </div>
-            <div class="s23-row-r">
-              Live Lovable AI produced inconsistent responses across sessions. May explain <button class="chip chip-inline" data-cite="pl4-t4-range">some T4 SEQ range</button> (4&ndash;7). The capability is real; the reliability is a prototype artefact.
-            </div>
-          </div>
-          <div class="s23-row">
-            <div class="s23-row-l">
-              <span class="s23-row-tag">PL3</span>
-              <span class="s23-row-title">Dose customisation not functional</span>
-            </div>
-            <div class="s23-row-r">
-              <button class="chip chip-inline" data-cite="p01">P01</button> and <button class="chip chip-inline" data-cite="p04">P04</button> tried to change dose. Expected behaviour the fixed-persona prototype could not support. Production supports per-user dose edits.
-            </div>
-          </div>
-          <div class="s23-row">
-            <div class="s23-row-l">
-              <span class="s23-row-tag">PL5</span>
-              <span class="s23-row-title">Catch-up logging out of scope</span>
-            </div>
-            <div class="s23-row-r">
-              Production has morning / evening catch-up flows to retroactively log missed entries. The prototype did not. Surfaces as an adoption lever for <button class="chip chip-inline" data-cite="refl-p01">reflections</button> in the pilot.
-            </div>
-          </div>
+        <div class="s23-impact">
+          <span class="s23-impact-metric">T4 range 4&ndash;7</span>
+          <span class="s23-impact-note">Unreliable responses widened the spread of task-ease scores on the AI Coach task.</span>
+        </div>
+        <div class="s23-prod">
+          <span class="s23-prod-check" aria-hidden="true"></span>
+          Production uses a tuned, scoped model. Every Coach interaction stays inside the GLP-1 context.
         </div>
       </div>
+      <div class="s23-row">
+        <div class="s23-limit">
+          <span class="s23-tag">PL3</span>
+          <span class="s23-title">Dose customisation was locked</span>
+          <span class="s23-detail"><button class="chip chip-inline" data-cite="p01">P01</button> and <button class="chip chip-inline" data-cite="p04">P04</button> tried to edit their dose and hit the fixed-persona wall.</span>
+        </div>
+        <div class="s23-impact">
+          <span class="s23-impact-metric">2 brief friction moments</span>
+          <span class="s23-impact-note">Minor; neither participant scored the task lower because of it.</span>
+        </div>
+        <div class="s23-prod">
+          <span class="s23-prod-check" aria-hidden="true"></span>
+          Per-user dose edits are built in production. The behaviour we saw <em>is</em> what the app supports.
+        </div>
+      </div>
+      <div class="s23-row">
+        <div class="s23-limit">
+          <span class="s23-tag">PL5</span>
+          <span class="s23-title">Catch-up logging wasn&apos;t in the prototype</span>
+          <span class="s23-detail">Morning and evening catch-up flows &mdash; retroactive logging of missed entries &mdash; were out of scope for the session build.</span>
+        </div>
+        <div class="s23-impact">
+          <span class="s23-impact-metric">Reflections adoption</span>
+          <span class="s23-impact-note">Without catch-up, <button class="chip chip-inline" data-cite="refl-p01">evening reflections</button> read as lower-value than they will in daily use.</span>
+        </div>
+        <div class="s23-prod">
+          <span class="s23-prod-check" aria-hidden="true"></span>
+          Catch-up flows ship in production. Evening reflections pair with same-day logging in one surface.
+        </div>
+      </div>
+    </div>
+    <div class="s23-take reveal d4">
+      <span class="s23-take-eb">Takeaway</span>
+      <p>Every limitation above tells the same story: the lab pulled a specific score down, and the production app doesn&apos;t have that constraint. No conclusion in this deck relies on a prototype artefact.</p>
     </div>
     <div class="slide-foot">
       <div class="foot-left">
@@ -6108,8 +6376,19 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
       <div style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--on-dark-mute);font-weight:500">4 items &middot; all low complexity</div>
     </div>
     <div class="s27-hero reveal d2">
-      <h1 class="s27-headline">Every item is <span class="hl">ticketable pre-pilot</span>. No architectural changes required.</h1>
-      <p class="s27-lede">Contrast, visual weight, distinct confirmation states, and CTA placement. Four refinements, scoped small, that close the affordance gap surfaced in Finding 1.</p>
+      <div class="s27-compare">
+        <div class="s27-compare-col s27-compare-good">
+          <span class="s27-compare-eb">What we have</span>
+          <span class="s27-compare-word">Visual-presentation gaps</span>
+          <span class="s27-compare-note">How things look. Contrast, weight, placement. Easy to fix.</span>
+        </div>
+        <div class="s27-compare-col s27-compare-bad">
+          <span class="s27-compare-eb">What we <em>don&apos;t</em> have</span>
+          <span class="s27-compare-word">Architectural issues</span>
+          <span class="s27-compare-note">How the app is structured. Information architecture, flows, data model. Those would be expensive.</span>
+        </div>
+      </div>
+      <h1 class="s27-headline">Every remediation below is a <span class="hl">visual tweak</span>. No structural changes. No new screens. No redesign.</h1>
     </div>
     <div class="s27-table reveal d3">
       <div class="s27-head">
@@ -6193,36 +6472,44 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
       </div>
     </div>
     <div class="s28-spectrum reveal d3">
-      <div class="s28-spectrum-ends">
-        <span class="s28-spectrum-end s28-spectrum-end-l">Customer service</span>
-        <span class="s28-spectrum-end s28-spectrum-end-r">Focused on my journey</span>
+      <div class="s28-spec-ends">
+        <span class="s28-spec-end s28-spec-end-l">Reactive help</span>
+        <span class="s28-spec-end s28-spec-end-r">Proactive partner</span>
       </div>
-      <div class="s28-spectrum-track">
-        <div class="s28-spectrum-rule"></div>
-        <button class="s28-plot chip-trigger" style="left:8%" data-cite="p02">
+      <div class="s28-spec-track">
+        <div class="s28-spec-rule"></div>
+        <div class="s28-plot s28-plot-above" style="left:12%">
+          <button class="s28-plot-label chip-trigger" data-cite="p02">
+            <span class="s28-plot-ident">P02 <span class="s28-plot-ts">[31:49]</span></span>
+            <span class="s28-plot-quote">&ldquo;Customer service type thing&rdquo;</span>
+          </button>
+          <span class="s28-plot-tick"></span>
           <span class="s28-plot-dot"></span>
-          <span class="s28-plot-ident">P02 <span class="s28-plot-ts">[31:49]</span></span>
-          <span class="s28-plot-label">&ldquo;Customer service type thing&rdquo;</span>
-        </button>
-        <button class="s28-plot chip-trigger" style="left:34%" data-cite="p04">
+        </div>
+        <div class="s28-plot s28-plot-below" style="left:38%">
           <span class="s28-plot-dot"></span>
-          <span class="s28-plot-ident">P04 <span class="s28-plot-ts">[09:44]</span></span>
-          <span class="s28-plot-label">&ldquo;Tutorial? Pumping you up?&rdquo;</span>
-        </button>
-        <button class="s28-plot chip-trigger" style="left:64%" data-cite="p05">
+          <span class="s28-plot-tick"></span>
+          <button class="s28-plot-label chip-trigger" data-cite="p04">
+            <span class="s28-plot-ident">P04 <span class="s28-plot-ts">[09:44]</span></span>
+            <span class="s28-plot-quote">&ldquo;Tutorial? Pumping you up?&rdquo;</span>
+          </button>
+        </div>
+        <div class="s28-plot s28-plot-above" style="left:64%">
+          <button class="s28-plot-label chip-trigger" data-cite="p05">
+            <span class="s28-plot-ident">P05 <span class="s28-plot-ts">[36:49]</span></span>
+            <span class="s28-plot-quote">&ldquo;A buddy&rdquo;</span>
+          </button>
+          <span class="s28-plot-tick"></span>
           <span class="s28-plot-dot s28-plot-dot-mint"></span>
-          <span class="s28-plot-ident">P05 <span class="s28-plot-ts">[36:49]</span></span>
-          <span class="s28-plot-label">&ldquo;A buddy&rdquo;</span>
-        </button>
-        <button class="s28-plot chip-trigger" style="left:90%" data-cite="p07">
+        </div>
+        <div class="s28-plot s28-plot-below" style="left:88%">
           <span class="s28-plot-dot s28-plot-dot-mint"></span>
-          <span class="s28-plot-ident">P07 <span class="s28-plot-ts">[30:04]</span></span>
-          <span class="s28-plot-label">&ldquo;Focused on my journey&rdquo;</span>
-        </button>
-      </div>
-      <div class="s28-spectrum-caption">
-        <span class="s28-spectrum-cap-l">Reactive help</span>
-        <span class="s28-spectrum-cap-r">Proactive partner</span>
+          <span class="s28-plot-tick"></span>
+          <button class="s28-plot-label chip-trigger" data-cite="p07">
+            <span class="s28-plot-ident">P07 <span class="s28-plot-ts">[30:04]</span></span>
+            <span class="s28-plot-quote">&ldquo;Focused on my journey&rdquo;</span>
+          </button>
+        </div>
       </div>
     </div>
     <div class="s28-grid reveal d4">
@@ -6256,52 +6543,55 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
       <div class="eyebrow">Finding 02 &middot; Design principle + recommendations</div>
       <div style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--on-dark-mute);font-weight:500">Both paths. Not a choice.</div>
     </div>
-    <div class="s29-grid">
-      <div class="s29-principle reveal d2">
-        <div class="s29-col-eyebrow">What this means</div>
-        <p class="s29-principle-text">
-          The AI Coach is most valuable for <span class="s29-hl">exploration, questions, and coaching feedback</span>. UI screens are most natural for <span class="s29-hl">repetitive, structured actions</span>.
-        </p>
-        <p class="s29-principle-text s29-principle-emphasis">Both paths should coexist. This isn&apos;t a chat-vs-UI choice &mdash; each does a different job.</p>
-        <div class="s29-evidence">
-          <div class="s29-evidence-eb">Evidence for the temporal model</div>
-          <blockquote class="s29-ev-quote">If I was first starting out, I would prefer [chat] because it gives you coaching. But once you&apos;re in the rhythm, just going to the body diagram.</blockquote>
-          <cite class="s29-ev-cite"><button class="chip" data-cite="p05">P05</button> <span class="s29-ts">[42:29]</span> &middot; onboarding vs. maintenance</cite>
-        </div>
+    <div class="s29-hero reveal d2">
+      <h1 class="s29-headline">Chat and UI aren&apos;t a choice. <span class="s29-hl">They do different jobs.</span></h1>
+      <p class="s29-principle">
+        The AI Coach is the right tool for <strong class="s29-bold">exploration, open questions, and coaching feedback</strong>. UI screens are the right tool for <strong class="s29-bold">repetitive, structured actions</strong>. Both paths should coexist &mdash; each serves a need the other can&apos;t.
+      </p>
+      <div class="s29-evidence">
+        <blockquote class="s29-ev-quote">&ldquo;If I was first starting out, I would prefer [chat] because it gives you coaching. But once you&apos;re in the rhythm, just going to the body diagram.&rdquo;</blockquote>
+        <cite class="s29-ev-cite"><button class="chip" data-cite="p05">P05</button> <span class="s29-ts">[42:29]</span> &middot; onboarding &rarr; maintenance &middot; the temporal model</cite>
       </div>
-      <div class="s29-recs reveal d3">
-        <div class="s29-col-eyebrow">Recommendations</div>
-        <ol class="s29-rec-list">
-          <li class="s29-rec">
-            <span class="s29-rec-num">01</span>
-            <div class="s29-rec-body">
-              <h4 class="s29-rec-title">Increase Coach prominence beyond the bottom nav</h4>
-              <p class="s29-rec-detail">Surface Coach-initiating affordances from within other features. The bottom-tab-only entry point is the discoverability bottleneck.</p>
-            </div>
-          </li>
-          <li class="s29-rec">
-            <span class="s29-rec-num">02</span>
-            <div class="s29-rec-body">
-              <h4 class="s29-rec-title">Rename or add a descriptive subtitle</h4>
-              <p class="s29-rec-detail">&ldquo;Coach&rdquo; alone doesn&apos;t communicate the feature. Candidate: subtitle on first launch (&ldquo;Ask questions. Get context-aware answers.&rdquo;). Revisit label A/B in the pilot.</p>
-            </div>
-          </li>
-          <li class="s29-rec">
-            <span class="s29-rec-num">03</span>
-            <div class="s29-rec-body">
-              <h4 class="s29-rec-title">Add contextual &ldquo;Ask Coach about this&rdquo; prompts</h4>
-              <p class="s29-rec-detail">Embed Coach entry points inside meal, meds, learning, and reflection flows &mdash; at the moment the user has a question, not as a separate destination.</p>
-            </div>
-          </li>
-          <li class="s29-rec">
-            <span class="s29-rec-num">04</span>
-            <div class="s29-rec-body">
-              <h4 class="s29-rec-title">Monitor natural discovery in the diary study</h4>
-              <p class="s29-rec-detail">Single-session discoverability is the hardest measure. Multi-day exposure may resolve it without the rename. Diary-study telemetry will tell us which levers matter.</p>
-            </div>
-          </li>
-        </ol>
+    </div>
+    <div class="s29-recs reveal d3">
+      <div class="s29-recs-head">
+        <span class="s29-col-eyebrow">Recommendations &middot; 4 levers</span>
+        <span class="s29-col-meta">All low complexity &middot; sequenced pre-pilot &rarr; in pilot</span>
       </div>
+      <ol class="s29-rec-list">
+        <li class="s29-rec">
+          <span class="s29-rec-num">01</span>
+          <div class="s29-rec-body">
+            <h4 class="s29-rec-title">Raise Coach prominence beyond the bottom nav</h4>
+            <p class="s29-rec-detail">The single-tab entry point is the bottleneck. Add a home-screen Coach affordance and surface Coach-initiating links inside meal, meds, learning, and reflection flows.</p>
+            <span class="s29-rec-when">Pre-pilot</span>
+          </div>
+        </li>
+        <li class="s29-rec">
+          <span class="s29-rec-num">02</span>
+          <div class="s29-rec-body">
+            <h4 class="s29-rec-title">Rename, or add a descriptive subtitle</h4>
+            <p class="s29-rec-detail">&ldquo;Coach&rdquo; alone doesn&apos;t signal the feature&apos;s job. Candidate: subtitle on first launch &mdash; &ldquo;Ask questions. Get context-aware answers.&rdquo; Revisit labels via a pilot A/B.</p>
+            <span class="s29-rec-when">Pre-pilot</span>
+          </div>
+        </li>
+        <li class="s29-rec">
+          <span class="s29-rec-num">03</span>
+          <div class="s29-rec-body">
+            <h4 class="s29-rec-title">Contextual &ldquo;Ask Coach about this&rdquo; prompts</h4>
+            <p class="s29-rec-detail">Put the Coach at the moment of the question, not a destination. Meal screen: &ldquo;Why was this logged high-carb?&rdquo; Meds screen: &ldquo;What if I missed today&apos;s dose?&rdquo; Small surfaces, in-context.</p>
+            <span class="s29-rec-when">Pre-pilot</span>
+          </div>
+        </li>
+        <li class="s29-rec">
+          <span class="s29-rec-num">04</span>
+          <div class="s29-rec-body">
+            <h4 class="s29-rec-title">Measure natural discovery in the diary study</h4>
+            <p class="s29-rec-detail">Single-session discoverability is the hardest bar. Multi-day usage may resolve it without the rename. Telemetry (time-to-first-Coach, return rate) will tell us which levers actually moved adoption.</p>
+            <span class="s29-rec-when">In pilot</span>
+          </div>
+        </li>
+      </ol>
     </div>
     <div class="s29-foot reveal d4">
       <button class="s29-tag-btn chip-trigger" data-cite="coach-77"><span class="s29-tag-k">Strength</span><span class="s29-tag-v">High (post-discovery)</span></button>
@@ -6412,49 +6702,35 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
           <button class="kpi-pill chip-trigger" data-cite="meds-3of7"><b>3/7</b><i>went to meds first</i></button>
           <button class="kpi-pill chip-trigger" data-cite="meds-today-taps"><b>3/3</b><i>tapped &ldquo;today&rdquo;</i></button>
         </div>
-        <div class="s30-quote">
+        <div class="s30-qblock">
           <blockquote>It literally says meds. So I would have expected that if I went there, that would have been an option.</blockquote>
           <cite><button class="chip" data-cite="p07">P07</button> <span class="s30-ts">[17:52]</span> &middot; the clearest articulation</cite>
         </div>
-        <div class="s30-micro">
-          <div class="s30-micro-row">
-            <button class="chip" data-cite="p03">P03</button>
-            <span>Went to meds, tried tapping the calendar, couldn&apos;t find logging. Self-attributed the error.</span>
-          </div>
-          <div class="s30-micro-row">
-            <button class="chip" data-cite="p05">P05</button>
-            <span>Went to meds, saw schedule &amp; dosage info, but no logging surface. Backed out.</span>
-          </div>
-          <div class="s30-micro-row">
-            <button class="chip chip-inline" data-cite="meds-learning-transfer">Learning transfer</button>
-            <span>P03 explicitly avoided the same pattern on T3 after her T2 error: &ldquo;Well I learned not to hit those.&rdquo;</span>
+        <div class="s30-clip" data-video="p07-meds-1752">
+          <div class="clip-card compact" role="button" tabindex="0" aria-label="Play clip">
+            <div class="clip-thumb">
+              <div class="clip-waveform" aria-hidden="true">
+                <span style="height:34%"></span><span style="height:52%"></span><span style="height:42%"></span><span style="height:68%"></span><span style="height:40%"></span><span style="height:76%"></span><span style="height:44%"></span><span style="height:60%"></span><span style="height:50%"></span><span style="height:72%"></span><span style="height:38%"></span><span style="height:64%"></span><span style="height:46%"></span><span style="height:58%"></span><span style="height:48%"></span><span style="height:66%"></span>
+              </div>
+              <div class="clip-play" aria-hidden="true"></div>
+            </div>
+            <div class="clip-info">
+              <div class="clip-info-top">
+                <span class="rec-dot"></span>
+                <span class="clip-label-text">Dovetail clip &middot; P07 @ 17:52</span>
+                <span class="ts">0:08</span>
+              </div>
+              <div class="clip-quote">&ldquo;It literally says meds&hellip;&rdquo;</div>
+            </div>
           </div>
         </div>
         <div class="s30-rec">
           <div class="s30-rec-eb">Recommendation</div>
-          <p>Make the meds calendar&apos;s &ldquo;today&rdquo; date tappable to initiate the injection logging flow. The users&apos; instinct reveals the natural entry point &mdash; support it.</p>
+          <p>Make the meds calendar&apos;s &ldquo;today&rdquo; date tappable to initiate the injection logging flow. Also seen in <button class="chip chip-inline" data-cite="p03">P03</button>, <button class="chip chip-inline" data-cite="p05">P05</button> &mdash; plus <button class="chip chip-inline" data-cite="meds-learning-transfer">fast learning-transfer</button> once corrected.</p>
           <div class="s30-rec-tags">
             <span class="s30-rec-tag">Low complexity</span>
             <span class="s30-rec-tag s30-rec-tag-hi">High impact</span>
           </div>
-        </div>
-      </div>
-    </div>
-    <div class="s30-clip reveal d5" data-video="p07-meds-1752">
-      <div class="clip-card compact" role="button" tabindex="0" aria-label="Play clip">
-        <div class="clip-thumb">
-          <div class="clip-waveform" aria-hidden="true">
-            <span style="height:34%"></span><span style="height:52%"></span><span style="height:42%"></span><span style="height:68%"></span><span style="height:40%"></span><span style="height:76%"></span><span style="height:44%"></span><span style="height:60%"></span><span style="height:50%"></span><span style="height:72%"></span><span style="height:38%"></span><span style="height:64%"></span><span style="height:46%"></span><span style="height:58%"></span><span style="height:48%"></span><span style="height:66%"></span>
-          </div>
-          <div class="clip-play" aria-hidden="true"></div>
-        </div>
-        <div class="clip-info">
-          <div class="clip-info-top">
-            <span class="rec-dot"></span>
-            <span class="clip-label-text">Dovetail clip &middot; P07 @ 17:52</span>
-            <span class="ts">0:08</span>
-          </div>
-          <div class="clip-quote">&ldquo;It literally says meds&hellip;&rdquo;</div>
         </div>
       </div>
     </div>
