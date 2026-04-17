@@ -6,18 +6,22 @@ Session log of misses, root causes, and fixes. Read at the start of every sessio
 
 ## ⚠️ IMPORTANT — read before building more slides
 
-Slides 1–15 are shipped. Sessions 6+ will build 16–38 (plus reinsert the two deferred slides). Before you touch `index.html`, internalise the conventions below so you don't fight them.
+Slides 1–30 are shipped. Sessions 7+ will build 31–38. Before you touch `index.html`, internalise the conventions below so you don't fight them.
 
-### Deferred slides — DO NOT lose, MUST reinsert
+### ⚠️ ALSO READ — "Session 6 addendum — tone recalibration + layout adjacency" at the bottom of this file
 
-Two POC slides are preserved in the DOM under `.slide-deferred`:
+That block logs the single most-drifted-from rule across sessions 5 and 6: **we are NOT doing pithy marketing-y content. Let the content speak for itself.** The addendum has a concrete before/after table from the Session 6 rework pass — read it and match the "After" voice. It also covers the phone-slide adjacency rule (don't put phones on the same side in consecutive slides, even across bg-family changes).
 
-| Token | Blueprint slide | Section | Inserts during |
-|---|---|---|---|
-| `.s-deferred-seq` (old `s4`) | **Slide 21** — SEQ Scores & Task Completion | Task-by-Task Results | Session 6 |
-| `.s-deferred-f1`  (old `s6`) | **Slide 25** — Finding 1 (Visual Differentiation) | Design Findings & Opportunities | Session 7 |
+### Deferred slides — both reinserted in Session 6
 
-They have full styling + interactivity from Sessions 1–4. To reinsert: move the section to its correct ordinal position, flip `.slide-deferred` → `.slide`, rename the scoped class (e.g. `.s-deferred-seq` → `.s21`), add to the `SLIDES` array, renumber `.foot-page`, **grep the entire CSS for `\.s-deferred-seq\b` and rename every occurrence** (same discipline as the rename bug from session 5).
+Both POC slides previously under `.slide-deferred` have been reinserted at their blueprint positions:
+
+| Token (former) | Now | Section |
+|---|---|---|
+| `.s-deferred-seq` | **Slide 21** — What We Measured · Understanding SEQ | Detailed Results |
+| `.s-deferred-f1`  | **Slide 25** — Finding 1 · Visual Differentiation | Design Findings & Opportunities |
+
+No more deferred slides remain. CSS selectors fully renamed to `.s21` / `.s25`. If you ever defer a slide again, use `.slide-deferred` + a unique scoped class and grep both CSS and JS for the token before/after every rename (Session 6 caught a stale `.s4` reference in `bindSEQ()` because the Session 5 rename only covered CSS).
 
 ### The structural invariants — DO NOT override these
 
@@ -404,4 +408,73 @@ Verified by reading each CITATIONS popover against the slide surface. No popover
 29. **Verify compound-selector correctness after a descendant-combinator rename.** Run `grep "\.sNEW\.[a-zA-Z0-9_-]\+"` and confirm every hit is a legitimate compound, not a child-class pattern.
 30. **Running asset list in `todo.md`** is a first-class artifact. Update it every time a new asset hook is wired in. Helps async file prep.
 31. **Blueprint is the content authority, not the strict slide-count authority.** If two blueprint slides merge cleanly into one interactive HTML slide (like SEQ 21+22), make the call deliberately and flag for review.
+
+
+## Session 6 addendum — tone recalibration + layout adjacency
+
+### ⚠️ IMPORTANT — Tone drift caught by the user on every new content slide in 16–30
+
+After shipping slides 16–30, the user flagged that the content had "made a sales pitch" across the entire range. This is the same miss logged in Session 5 — I caught it there, logged it, and then drifted right back into the pattern when building new slides. Locking this in more forcefully now.
+
+**The rule:** *We are not doing pithy marketing-y content. Let the content speak for itself. Balance punchy with professional research readout; when in doubt, go professional.*
+
+**Specific patterns that are banned** (added to the Session-5 list — these were all present in Batch A/B/C and had to be removed):
+
+- **Headlines that editorialise the finding instead of stating it.** Before: *"Users tried to log from the meds calendar. They were right — the screen just doesn't support it yet."* After: *"Three participants tried to log from the meds calendar. The instinct is correct; the screen does not yet support it."* The editorial move is "They were right." Drop it — the reader sees that themselves.
+- **Dramatic italic emphasis in headlines ("None of *them*," "They were *right*," etc.).** Italic is for the rare anchor-word that earns the emphasis, not for dramatising the beat. When an entire headline carries drama, the deck loses authority.
+- **Over-punctuated headline rhythms ("X. Y. Z — W.").** Pitch-deck cadence. Prefer a complete declarative sentence, or a stat + explanatory clause.
+- **"landed in the excellent band"** / **"cleared the bar"** / **"tells the same story"** / **"nudged scores down"** — narrative verbs substituting for the actual number. State the number. "Every measure scored 6.4 or higher" not "every measure landed in the excellent band."
+- **"visual tweak"** / **"easy wins"** / **"no redesign"** / **"just a CSS fix"** — casual product-team vocabulary. Translate for a PI audience: "visual-styling change," "low-effort remediation," "no information-architecture changes."
+- **Meta-text that reads as internal deck taglines** (e.g. *"Honest ledger · 4 limitations"*, *"Both paths. Not a choice."*). Prefer descriptive counts / labels: *"4 prototype limitations"*, *"Design principle + 4 recommendations."*
+- **"Everything X-specific"** type catch-all feature claims. Always name the specific features instead. *"+ Everything GLP-1-specific"* → *"+ Medication, Nutrition, AI coach, Body map, Learning."*
+- **"The ground X doesn't cover"** / **"the things X doesn't do well"** — colloquial clause endings. If the contrast matters, write it as a full clause; if it doesn't, cut it.
+- **Emphasised-bold-in-running-prose** (`<strong style="font-weight:600">still said she would…</strong>`). The emphasis editorialises. Let the sentence stand without ornamentation.
+- **"It tells the same story" / "It's the same story" rhythm** for connecting evidence rows. Prefer "follows the same pattern" or "the evidence is consistent."
+- **"It's just me, myself, and I"-style colloquial framings** in editorial text (fine in participant quotes). Body copy stays plain-English-declarative.
+
+**Calibration procedure** for every new headline / body paragraph:
+
+1. Read the copy out loud as if presenting it to a principal investigator on a funding committee. If any clause makes a clinical VP of R&D wince, it is wrong.
+2. Check for each pattern above. If a sentence matches one, rewrite until it doesn't.
+3. Check that every claim is a *stateable fact* — a count, a rate, a quote, a behavioural observation — rather than an editorial framing of facts.
+4. Italic emphasis is for one anchor phrase per slide maximum, and only when it survives the "would a PI italicise this?" test.
+5. Look at the previous slide's content and this slide's content side-by-side. Is the voice consistent? If this slide feels more enthusiastic, trim it.
+
+**Example before/after set** (shipped corrections from the Session 6 rework pass):
+
+| Before (pitch-y) | After (PI voice) |
+|---|---|
+| "Valued for exploration, questions, and coaching feedback — the things UI screens don't do well." | "Valued for exploration, open questions, and coaching feedback." |
+| "The format works. Content resonated across every participant who found it." | "Format understood. Content engaged with by every participant who reached the section." |
+| "Five participants named the app they currently use. *None of them* covers the full GLP-1 journey." | "Five participants named the app they currently use. None covers the full GLP-1 journey." |
+| "Every measure landed in the *excellent band*. Every participant scored above 5.8." | "Every measure scored 6.4 or higher. Every participant averaged 5.8 or above." |
+| "A few prototype constraints nudged specific scores down. *They aren't in the product.*" | "Four prototype constraints affected specific scores. None is present in the production build." |
+| "Every remediation below is a *visual tweak*. No structural changes. No new screens. No redesign." | "Every remediation below is a visual-styling change. No information-architecture changes. No new screens." |
+| "Chat and UI aren't a choice. *They do different jobs.*" | "Chat and UI are not substitutes. They address different user needs." |
+| "Users tried to log from the meds calendar. *They were right* — the screen just doesn't support it yet." | "Three participants tried to log from the meds calendar. The instinct is correct; the screen does not yet support it." |
+
+### Miss: Layout adjacency between phone slides
+
+Built s16 (AI Coach, paper) with phone-RIGHT + content-LEFT, the same spatial composition as s15 (Body Map, dark) which has phone-RIGHT + stat/quotes-LEFT. Different bg families, same phone-side positioning. The user caught the near-miss: even with a bg-family change, a phone slide immediately after another phone slide with the phone on the same side reads as repetitive.
+
+**Fix:** swapped to s16 phone-LEFT + content-RIGHT, s17 phone-RIGHT + content-LEFT. Implementation via CSS `order` on children (DOM preserved for screen-reader logical order).
+
+**Rule going forward — phone slide adjacency:** *when two phone slides are adjacent (even with bg-family change), the phone must be on opposite sides.* Track the phone-side in the rotation audit alongside bg family and layout family.
+
+### Standing-rule additions (32–37)
+
+32. **No editorial framing of facts.** State the number, name the behaviour, quote the participant. Don't tell the reader what the evidence means — they read the slide faster than you can write the interpretation.
+33. **Dramatic italic emphasis is for anchor words, not headline drama.** Maximum one italic per slide, and only if the anchor word earns it.
+34. **Translate casual product-team vocabulary** (visual tweak, easy win, no redesign, just a CSS fix) into research-neutral equivalents (visual-styling change, low-effort remediation, no information-architecture changes). Business stakeholders are not engineers; don't assume the dev vocabulary.
+35. **Meta captions are descriptive, not editorial.** "4 prototype limitations" not "Honest ledger · 4 limitations." "Design principle + 4 recommendations" not "Both paths. Not a choice."
+36. **Feature-coverage claims are specific, not catch-all.** "+ Medication, Nutrition, AI coach, Body map, Learning" beats "+ Everything GLP-1-specific" every time.
+37. **Phone slides separated by a non-phone slide, OR phone on opposite sides.** Treat phone-side as a rotation axis alongside bg family and layout family.
+
+### Session-start protocol update
+
+Add to the existing Session Start Protocol (Session 1 rules):
+
+- **Read the "tone recalibration" block above (this section) first.** It is the single most-drifted-from rule across sessions 5 and 6.
+- **Before writing any new slide copy, read the shipped slides immediately before and after the target position** and note the tone register. Match it. If the surrounding deck reads clean-declarative, do not drift into punchy-editorial.
+- **Maintain the phone-side rotation log** alongside bg/layout when auditing new slides.
 
