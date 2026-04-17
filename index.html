@@ -1338,6 +1338,19 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
   border: 1px solid rgba(255,255,255,0.08);
   margin-bottom: 16px;
 }
+
+/* Clip-card states when a real video file is present */
+.clip-card.has-video { cursor: pointer; }
+.clip-card.has-video:hover .clip-play { box-shadow: 0 0 0 12px rgba(52,238,167,0.12); transform: translate(-50%, -50%) scale(1.08); }
+.clip-card.playing { cursor: default; }
+.clip-card.playing .clip-thumb { background: #000; border-color: rgba(255,255,255,0.12); }
+.clip-video {
+  width: 100%; height: 100%;
+  display: block;
+  object-fit: cover;
+  border-radius: inherit;
+  background: #000;
+}
 .clip-thumb::after {
   content: "";
   position: absolute; inset: 0;
@@ -6914,6 +6927,47 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
     document.querySelectorAll('.phone').forEach(attachPhoneMagnifier);
   }
 
+  // Auto-wire Dovetail clip cards that have a matching mp4 in assets/videos/.
+  // Before the file exists: the styled placeholder (waveform + play dot + quote) renders as built.
+  // Once the file exists: clicking the card inlines a real <video controls> in the thumb area
+  // and keeps the clip-info strip below. No layout shift, same footprint.
+  function loadClipVideos() {
+    document.querySelectorAll('[data-video]').forEach(wrapper => {
+      const slug = wrapper.dataset.video;
+      if (!slug) return;
+      const src = `assets/videos/${slug}.mp4`;
+      const card = wrapper.matches('.clip-card') ? wrapper : wrapper.querySelector('.clip-card');
+      if (!card) return;
+      const probe = document.createElement('video');
+      probe.preload = 'metadata';
+      probe.muted = true;
+      probe.playsInline = true;
+      probe.onloadedmetadata = () => {
+        card.classList.add('has-video');
+        card.dataset.videoSrc = src;
+        // First click swaps the thumb for a real <video controls autoplay>. Subsequent clicks are no-ops
+        // (native controls take over). Escape / click-outside ends playback cleanly.
+        const onClick = (e) => {
+          e.preventDefault();
+          card.removeEventListener('click', onClick);
+          const thumb = card.querySelector('.clip-thumb');
+          if (!thumb) return;
+          const v = document.createElement('video');
+          v.src = src;
+          v.controls = true;
+          v.autoplay = true;
+          v.playsInline = true;
+          v.className = 'clip-video';
+          thumb.replaceChildren(v);
+          card.classList.add('playing');
+        };
+        card.addEventListener('click', onClick);
+      };
+      probe.onerror = () => { /* file missing — keep the styled placeholder */ };
+      probe.src = src;
+    });
+  }
+
   // Auto-load generic data-asset images (lab photo, screenshots, etc.)
   function loadDataAssets() {
     document.querySelectorAll('[data-asset]').forEach(el => {
@@ -8040,6 +8094,7 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
   paintDotBars();
   loadHeadshots();
   loadDataAssets();
+  loadClipVideos();
   initPhoneMagnifiers();
   // Auto-collapse navigator on tablet/mobile (defer to user to open)
   if (window.matchMedia('(max-width: 1100px)').matches) {
