@@ -2266,7 +2266,9 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
   display: flex; align-items: center; justify-content: center;
 }
 .team-row.support .team-avatar { width: 72px; height: 72px; margin-bottom: 0; flex-shrink: 0; }
-.team-avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.team-avatar img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; display: block; }
+/* Per-person crop biases — tweak the percent if the face isn't centered ideally. */
+.team-avatar[data-headshot="henry-levinson"] img { object-position: 50% 22%; }
 .team-avatar .monogram {
   font-family: var(--f-display); font-weight: 600; font-size: 42px; color: var(--text-on-dark);
   letter-spacing: -0.02em; text-transform: uppercase;
@@ -2333,6 +2335,15 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
   content: ''; position: absolute; inset: -20px; pointer-events: none;
   background: radial-gradient(60% 55% at 50% 50%, rgba(52,238,167,0.12), transparent 70%);
 }
+
+/* ============ ASSET OVERLAY (real screenshots overlay CSS mocks when available) ============ */
+[data-asset] { position: relative; }
+[data-asset] > .asset-img {
+  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block;
+  z-index: 2; border-radius: inherit;
+}
+/* When a screenshot is loaded into a phone .screen, hide the CSS mock underneath for clarity */
+.screen.has-asset > *:not(.asset-img) { visibility: hidden; }
 
 /* ============ APP SCREEN — HOME (placeholder for slide 4) ============ */
 .screen-home-lite { background: linear-gradient(170deg, #071F1C 0%, #04110F 100%); color: var(--text-on-dark); padding: 44px 26px 26px; display: flex; flex-direction: column; gap: 14px; }
@@ -2496,27 +2507,6 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
           <div class="team-role">Technology Scout</div>
         </div>
       </div>
-      <div class="team-divider-band reveal d4">
-        <span class="rule"></span>
-        <span class="label">Additional support from BI Ingelheim</span>
-        <span class="rule"></span>
-      </div>
-      <div class="team-row support reveal d5">
-        <div class="team-member">
-          <div class="team-avatar" data-headshot="andrea-reyes-montenegro"><span class="monogram">AR</span></div>
-          <div class="team-info">
-            <div class="team-name">Andrea Reyes Montenegro</div>
-            <div class="team-role">UX Designer</div>
-          </div>
-        </div>
-        <div class="team-member">
-          <div class="team-avatar" data-headshot="jeannine-kramer"><span class="monogram">JK</span></div>
-          <div class="team-info">
-            <div class="team-name">Jeannine Krämer</div>
-            <div class="team-role">UX Designer</div>
-          </div>
-        </div>
-      </div>
     </div>
     <div class="slide-foot">
       <div class="foot-left">
@@ -2630,7 +2620,7 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
           <div class="btn-side btn-power"></div>
           <div class="phone-screen">
             <div class="phone-island" aria-hidden="true"></div>
-            <div class="screen screen-home-lite">
+            <div class="screen screen-home-lite" data-asset="home-wellness" data-asset-folder="screenshots" data-asset-ext="png">
               <div class="screen-status">
                 <span class="time">9:41</span>
                 <span class="icons"><span class="wifi"></span><span class="battery"></span></span>
@@ -3390,6 +3380,7 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
         inserted.alt = slug.replace(/-/g, ' ');
         inserted.className = 'asset-img';
         el.appendChild(inserted);
+        el.classList.add('has-asset');
       };
       img.src = `assets/${folder}/${slug}.${ext}`;
     });
