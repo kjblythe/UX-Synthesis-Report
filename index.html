@@ -2198,19 +2198,20 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
   content: ''; position: absolute; inset: 0; pointer-events: none;
   background: radial-gradient(60% 40% at 30% 60%, rgba(52,238,167,0.05), transparent 70%);
 }
-.slide-section-starter .slide-frame { padding: 88px 112px 112px 112px; }
-.slide-section-starter .ss-inner {
-  position: relative; flex: 1;
-  display: flex; flex-direction: column; justify-content: space-between;
+.slide-section-starter .slide-frame { padding: 96px 112px 72px 112px; gap: 0; }
+.slide-section-starter .ss-eyebrow {
+  font-family: var(--f-display); font-weight: 500; font-size: 14px; letter-spacing: 0.28em; text-transform: uppercase;
+  color: var(--teal-300); margin-bottom: auto;
 }
-.slide-section-starter .ss-focus {
-  display: flex; flex-direction: column; align-items: flex-start; gap: 18px;
+.slide-section-starter .ss-body {
+  display: flex; flex-direction: column; align-items: flex-start;
+  gap: 16px;
+  padding-bottom: 40px;
 }
-.slide-section-starter .ss-titleblock { display: flex; flex-direction: column; align-items: flex-start; gap: 14px; }
-.slide-section-starter .ss-eyebrow { font-family: var(--f-display); font-weight: 500; font-size: 13px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--teal-300); }
 .slide-section-starter .ss-num {
-  font-family: var(--f-display); font-weight: 700; letter-spacing: -0.04em; line-height: 0.88;
-  font-size: 340px;
+  font-family: var(--f-display); font-weight: 700; letter-spacing: -0.04em; line-height: 0.86;
+  font-size: 340px; color: var(--mint-accent);
+  margin: 0 0 8px 0;
 }
 .starter-a .ss-num { color: var(--mint-accent); }
 .starter-b .ss-num { color: var(--teal-300); }
@@ -2447,7 +2448,7 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
         <span class="title-accent">Usability Testing Results</span>
       </h1>
       <div class="title-sub reveal d4">
-        Seven patients. Six tasks. One day in the life of the app.
+        Seven participants. Six tasks. Moderated usability evaluation of the pre-pilot prototype.
       </div>
       <div class="title-meta reveal d5">
         In-Person Moderated Testing<span class="sep"></span>April 7, 2026<span class="sep"></span>Bala Cynwyd, PA
@@ -2664,16 +2665,12 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
 <section class="slide s5 slide-section-starter starter-a">
   <svg class="x-watermark" viewBox="0 0 1111 926" aria-hidden="true"><use href="#x-symbol"/></svg>
   <div class="slide-frame">
-    <div class="ss-inner">
-      <div class="ss-eyebrow reveal d1">Section 01</div>
-      <div class="ss-focus">
-        <div class="ss-num reveal d2">01</div>
-        <div class="ss-titleblock reveal d3">
-          <h1 class="ss-title">Executive <span class="title-accent">Summary</span></h1>
-          <p class="ss-sub">Seven patients. Six tasks. A clear verdict.</p>
-          <div class="ss-rule"></div>
-        </div>
-      </div>
+    <div class="ss-eyebrow reveal d1">Section 01</div>
+    <div class="ss-body">
+      <div class="ss-num reveal d2">01</div>
+      <h1 class="ss-title reveal d3">Executive <span class="title-accent">Summary</span></h1>
+      <p class="ss-sub reveal d4">Findings across all seven participants, above-benchmark performance, and the single primary usability gap.</p>
+      <div class="ss-rule reveal d5"></div>
     </div>
     <div class="slide-foot">
       <div class="foot-left">
