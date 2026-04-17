@@ -1235,6 +1235,17 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
   font-style: normal; color: var(--ink-mute);
   font-weight: 400;
 }
+.s6 .kpi-pill .kpi-hint {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 16px; height: 16px; margin-left: 4px;
+  border-radius: 50%;
+  background: rgba(20,184,166,0.14);
+  color: var(--teal-700);
+  font-family: var(--f-display); font-weight: 700; font-size: 11px; line-height: 1;
+  letter-spacing: 0;
+  transition: background 160ms ease;
+}
+.s6 .kpi-pill:hover .kpi-hint { background: rgba(20,184,166,0.28); }
 .s6 .kpi-pill.kpi-mint {
   background: rgba(52, 238, 167, 0.12);
   border-color: rgba(52, 238, 167, 0.3);
@@ -2647,6 +2658,26 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
   font-family: var(--f-display); font-weight: 400; font-size: 15px; line-height: 1.4;
   color: var(--text-on-dark); letter-spacing: -0.005em;
 }
+.s11 .summary-delta {
+  appearance: none; background: transparent; border: 0; padding: 0; margin: 4px 0 0 0;
+  display: inline-flex; align-items: center; gap: 8px;
+  color: inherit; font: inherit; cursor: pointer;
+}
+.s11 .summary-delta .delta-arrow {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 22px; height: 22px; border-radius: 50%;
+  background: var(--mint-accent); color: #062823;
+  font-weight: 800; font-size: 13px;
+}
+.s11 .summary-delta .delta-val {
+  font-family: var(--f-display); font-weight: 700; font-size: 22px; line-height: 1;
+  letter-spacing: -0.01em; color: var(--mint-accent); font-variant-numeric: tabular-nums;
+}
+.s11 .summary-delta .delta-lbl {
+  font-family: var(--f-display); font-weight: 500; font-size: 12px; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--text-dim-dark);
+}
+.s11 .summary-delta:hover .delta-arrow { transform: translateY(-1px); transition: transform 160ms var(--ease-out); }
 .s11 .flow-note { display: flex; align-items: flex-start; gap: 14px; padding-left: 28px; border-left: 1px solid rgba(94,234,212,0.16); }
 .s11 .note-tag {
   display: inline-block;
@@ -2878,10 +2909,8 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
 }
 .team-member:hover .team-avatar { box-shadow: 0 24px 48px -16px rgba(10,26,28,0.36), 0 4px 12px -2px rgba(10,26,28,0.14); }
 .team-avatar img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; display: block; }
-/* Per-person crop biases — object-position: the 2nd % picks which part of the source image
-   anchors to the container. 0% = top of image, 100% = bottom. Henry's face is near the bottom
-   of the source, so we anchor toward the bottom. */
-.team-avatar[data-headshot="henry-levinson"] img { object-position: 50% 65%; }
+/* Per-person crop biases — object-position picks which part of the source image anchors
+   to the container. Defaults to 50% 50% (centered). Tweak per person if needed. */
 .team-avatar .monogram {
   font-family: var(--f-display); font-weight: 600; font-size: 64px; color: var(--text-on-dark);
   letter-spacing: -0.02em; text-transform: uppercase;
@@ -3329,7 +3358,7 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
             <p>Satisfaction averaged 6.6/7, task ease 6.4/7 &mdash; well above the industry benchmark of 5.5. The most critical scorer <button class="chip chip-inline" data-cite="p03">P03</button> still said she would replace her current app with this one; <button class="chip chip-inline" data-cite="p04">P04</button> said she&apos;d replace her handwritten gratitude journal.</p>
             <div class="kpi-row">
               <button class="kpi-pill chip-trigger" data-cite="satisfaction-66"><b>6.6</b><i>/7 satisfaction</i></button>
-              <button class="kpi-pill chip-trigger" data-cite="seq-mean"><b>6.4</b><i>/7 SEQ &middot; vs 5.5 benchmark</i></button>
+              <button class="kpi-pill chip-trigger" data-cite="seq-mean" aria-label="6.4 out of 7 SEQ, details"><b>6.4</b><i>/7 SEQ &middot; vs 5.5 benchmark</i><span class="kpi-hint" aria-hidden="true">?</span></button>
               <button class="kpi-pill chip-trigger" data-cite="willing-replace"><b>2/7</b><i>would replace today&apos;s app</i></button>
             </div>
           </div>
@@ -3779,7 +3808,11 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
         <div class="summary-num">6.4<i>/ 7</i></div>
         <div class="summary-meta">
           <div class="summary-lbl">Overall mean SEQ</div>
-          <div class="summary-sub">All six tasks cleared the industry benchmark.</div>
+          <button type="button" class="summary-delta chip-trigger" data-cite="seq-mean" aria-label="+0.9 above benchmark, details">
+            <span class="delta-arrow" aria-hidden="true">&uarr;</span>
+            <span class="delta-val">+0.9</span>
+            <span class="delta-lbl">vs 5.5 industry benchmark</span>
+          </button>
         </div>
       </div>
       <div class="flow-note">
@@ -4867,7 +4900,7 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
     'team-henry': {
       label: 'Core team · BI X US',
       title: 'Henry Levinson',
-      detail: 'Engineer, IT Rotation.',
+      detail: 'Full Stack Engineer.',
       meta: '<a href="mailto:henry.levinson@boehringer-ingelheim.com" class="pop-email">henry.levinson@boehringer-ingelheim.com</a>'
     },
     'team-allen': {
@@ -4970,10 +5003,10 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
 
     // ---------- Slide-4 supporting ----------
     'seq-mean': {
-      label: 'Our mean · 6.4 / 7',
-      title: 'What a 6.4 actually means',
-      detail: 'SEQ of 6.4 sits squarely in MeasuringU\u2019s \u201Ceasy\u201D band (6.0\u20136.9). Their research correlates 5.9 with an 86% task completion rate. Every one of our six tasks scored above that correlation point. No single participant logged below a 5.',
-      meta: 'The mean masks unanimity, not variance. Click the breakdown to see task-by-task.'
+      label: 'Metric \u00b7 SEQ',
+      title: '6.4 / 7  \u2014  +0.9 above the industry benchmark',
+      detail: 'The Single Ease Question is a standardised post-task usability metric: after each task, participants rate \u201Coverall, how easy or difficult was this task?\u201D on a 7-point scale. Because it\u2019s standardised, the scores can be benchmarked against any product that\u2019s been formally evaluated.',
+      meta: 'Industry benchmark \u00b7 5.5 / 7 (50th percentile across 400+ tasks and 10,000+ users, MeasuringU). Our 6.4 sits in the \u201Ceasy\u201D band; 5.9 correlates with an 86% task completion rate, and every task in our study scored above that threshold. Slide 21 has the full per-task and per-participant distribution.'
     },
     'seq-source': {
       label: 'Benchmark source',
