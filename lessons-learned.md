@@ -238,5 +238,17 @@ In one session I shipped two separate bugs with the same root cause. Both needed
 - Before declaring a new `position`/`inset`/`display` rule, grep the CSS for earlier rules targeting the same elements with the same specificity. If equal-specificity rules exist, either raise specificity intentionally (compound selector) or scope with `:not()`.
 - **Validation protocol:** Playwright-render every layout change. `getBoundingClientRect()` tells you whether an element is where you expect it. For any slide that visually "isn't showing content," the diagnosis is almost always position/size collapse — not z-index, not opacity. Check dimensions before blaming anything else.
 
+### ⚠️ IMPORTANT — CSS scoping must follow slide class renames
+
+When the POC slides were renumbered to their blueprint positions (old `s2`→`s6`, old `s3`→`s7`, old `s5`→`s14`, old `s4`/`s6` → deferred), I updated the HTML `class` attributes but left the CSS selectors scoped to the OLD class names (`.s2 .exec-grid`, `.s3 .quote-wrap`, `.s5 .meal-grid`, …). 140+ rules stopped matching. The slides rendered with structure only — no per-slide typography, grid layout, or component styling. Exec Summary and Anchor Quote both shipped "looking wrong" for several sessions before the user flagged it.
+
+**Rule going forward:** **any time a slide's class token changes (e.g. `.s2` → `.s6`), grep the entire CSS for `\.<old-class>\b` and update every selector in the same commit.** The class token is structural — changing it is a rename, not an edit. Treat it like renaming a function: update the declaration AND every call site, or the rename is incomplete.
+
+**Safe rename protocol:**
+1. Before changing a slide's class, `grep -c "\.<old-class>\b"` to know how many rules you're about to break.
+2. Rename any class that will be claimed by another slide FIRST (e.g. rename old `.s6` → `.s-deferred-f1` before renaming `.s2` → `.s6`). Otherwise the second rename steps on the first.
+3. Use `replace_all: true` on `".<old> "` (trailing space — descendant combinator) and `".<old>."` (compound selector). Watch out for dropped trailing space — if the replacement loses the combinator, compound selectors like `.s6 .foo` turn into `.sNew.foo` (matches the same element with both classes, which is never what you want).
+4. Verify with Playwright-render immediately.
+
 
 
