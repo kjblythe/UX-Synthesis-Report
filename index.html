@@ -2182,14 +2182,19 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
   content: ''; position: absolute; inset: 0; pointer-events: none;
   background: radial-gradient(60% 40% at 30% 60%, rgba(52,238,167,0.05), transparent 70%);
 }
-.slide-section-starter .ss-body {
-  position: relative; height: 100%; display: flex; flex-direction: column; justify-content: space-between;
-  padding: 120px 140px 160px;
+.slide-section-starter .slide-frame { padding: 88px 112px 112px 112px; }
+.slide-section-starter .ss-inner {
+  position: relative; flex: 1;
+  display: flex; flex-direction: column; justify-content: space-between;
 }
+.slide-section-starter .ss-focus {
+  display: flex; flex-direction: column; align-items: flex-start; gap: 18px;
+}
+.slide-section-starter .ss-titleblock { display: flex; flex-direction: column; align-items: flex-start; gap: 14px; }
 .slide-section-starter .ss-eyebrow { font-family: var(--f-display); font-weight: 500; font-size: 13px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--teal-300); }
 .slide-section-starter .ss-num {
   font-family: var(--f-display); font-weight: 700; letter-spacing: -0.04em; line-height: 0.88;
-  font-size: 360px;
+  font-size: 340px;
 }
 .starter-a .ss-num { color: var(--mint-accent); }
 .starter-b .ss-num { color: var(--teal-300); }
@@ -2649,15 +2654,20 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
   </div>
 </section>
 
-<!-- SLIDE 5: SECTION STARTER — EXECUTIVE SUMMARY — shell (replaced in A5) -->
-<section class="slide s5 slide-shell">
+<!-- SLIDE 5: SECTION STARTER — EXECUTIVE SUMMARY -->
+<section class="slide s5 slide-section-starter starter-a">
+  <svg class="x-watermark" viewBox="0 0 1111 926" aria-hidden="true"><use href="#x-symbol"/></svg>
   <div class="slide-frame">
-    <div class="shell-body">
-      <div class="shell-eyebrow reveal d1">Slide 05 · Section Starter</div>
-      <div class="shell-num reveal d2">05</div>
-      <h1 class="shell-title reveal d3">Section 01 — Executive Summary</h1>
-      <p class="shell-sub reveal d4">Under construction — replaced in sub-chunk A5.</p>
-      <span class="shell-tag reveal d5"><span class="dot"></span>Batch A · In Progress</span>
+    <div class="ss-inner">
+      <div class="ss-eyebrow reveal d1">Section 01</div>
+      <div class="ss-focus">
+        <div class="ss-num reveal d2">01</div>
+        <div class="ss-titleblock reveal d3">
+          <h1 class="ss-title">Executive <span class="title-accent">Summary</span></h1>
+          <p class="ss-sub">Seven patients. Six tasks. A clear verdict.</p>
+          <div class="ss-rule"></div>
+        </div>
+      </div>
     </div>
     <div class="slide-foot">
       <div class="foot-left">
