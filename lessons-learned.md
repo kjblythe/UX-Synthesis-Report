@@ -223,5 +223,20 @@ Build blueprint slides 1–15 in three batches of 5. Batch A first. See `todo.md
 - **Slide 5 content not rendering** — the `.ss-inner > ss-focus` flex-column with `justify-content: space-between` collapsed content to the bottom edge off-canvas in certain viewport scales. Rebuilt to match slide 1's proven layout pattern (direct children of `.slide-frame`, no extra wrapper, explicit left alignment).
 - **Henry crop** — `object-position` moved from 22% → 8% (head was at the very bottom of the source image; needed to shift the crop further toward the top of the frame).
 
+### ⚠️ IMPORTANT — CSS same-specificity rule collisions (standing rule)
+
+In one session I shipped two separate bugs with the same root cause. Both needed Playwright-rendering to catch, because by-eye inspection of the HTML/CSS looked correct.
+
+**Bug 1 — slide 5 empty.** I declared `.slide-section-starter { position: relative }`. Specificity 10. The base `.slide { position: absolute; inset: 0 }` is also specificity 10, declared earlier. Mine won. A relative section without explicit height collapses to 0 when its children are absolute. The `ss-body { bottom: 120px }` then rendered at y = -468px — above the canvas. Content was "gone."
+
+**Bug 2 — slide 4 phone image collapsed.** I declared `[data-asset] { position: relative }` to give asset overlay containers a positioning context for absolutely-positioned child images. Specificity 10. The base `.screen { position: absolute; inset: 0 }` is also specificity 10, declared earlier. Mine won on the `.screen[data-asset]` element. Inset:0 stopped applying, the flex container collapsed to padding height (70px), and the real screenshot rendered at 70px tall — "barely displaying."
+
+**Rule going forward:**
+
+- When introducing a utility rule like `.foo { position: relative }` or `[attr] { display: ... }`, always scope it so it does NOT collide with already-positioned container classes. Use `:not(.screen):not(.phone-screen):not(.phone)` or equivalent exclusions.
+- **Never override the base `.slide` positioning** (`position: absolute; inset: 0`) on a slide variant. The entire deck relies on that invariant. If a section needs extra effects, use `::before`/`::after` with `inset: 0` — which work because `.slide` is already positioned.
+- Before declaring a new `position`/`inset`/`display` rule, grep the CSS for earlier rules targeting the same elements with the same specificity. If equal-specificity rules exist, either raise specificity intentionally (compound selector) or scope with `:not()`.
+- **Validation protocol:** Playwright-render every layout change. `getBoundingClientRect()` tells you whether an element is where you expect it. For any slide that visually "isn't showing content," the diagnosis is almost always position/size collapse — not z-index, not opacity. Check dimensions before blaming anything else.
+
 
 
