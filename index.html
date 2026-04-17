@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>GLP-1 Support App — Pre-Pilot Usability Testing Results</title>
+<title>MetabolX — Pre-Pilot Usability Testing Results</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,500;1,9..144,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
@@ -2186,50 +2186,54 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
 .slide-shell .shell-tag .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--mint-accent); box-shadow: 0 0 0 3px rgba(52,238,167,0.18); }
 
 /* ============ SECTION STARTER (slides 5, 8, 12) ============ */
-.slide-section-starter { background: linear-gradient(135deg, var(--forest-base) 0%, var(--forest-deep) 100%); position: relative; overflow: hidden; }
+.slide-section-starter { background: linear-gradient(135deg, var(--forest-base) 0%, var(--forest-deep) 100%); position: relative; overflow: hidden; color: var(--text-on-dark); }
 .slide-section-starter .x-watermark {
   position: absolute; width: 1600px; height: 1200px; pointer-events: none;
-  color: var(--forest-rim); opacity: 0.45; mix-blend-mode: screen;
+  color: var(--forest-rim); opacity: 0.55;
+  z-index: 1;
 }
 .slide-section-starter.starter-a .x-watermark { right: -320px; top: -160px; transform: rotate(-6deg); }
 .slide-section-starter.starter-b .x-watermark { left: -380px; bottom: -240px; transform: rotate(186deg); }
 .slide-section-starter.starter-c .x-watermark { right: -380px; bottom: -200px; transform: rotate(12deg); }
 .slide-section-starter::before {
   content: ''; position: absolute; inset: 0; pointer-events: none;
-  background: radial-gradient(60% 40% at 30% 60%, rgba(52,238,167,0.05), transparent 70%);
+  background: radial-gradient(60% 40% at 28% 72%, rgba(52,238,167,0.08), transparent 70%);
+  z-index: 0;
 }
-.slide-section-starter .slide-frame { padding: 96px 112px 72px 112px; gap: 0; }
+/* Deterministic absolute positioning — content never gets pushed off-canvas */
+.slide-section-starter .slide-frame { padding: 0; display: block; }
 .slide-section-starter .ss-eyebrow {
+  position: absolute; top: 96px; left: 112px;
   font-family: var(--f-display); font-weight: 500; font-size: 14px; letter-spacing: 0.28em; text-transform: uppercase;
-  color: var(--teal-300); margin-bottom: auto;
+  color: var(--teal-300);
+  z-index: 3;
 }
 .slide-section-starter .ss-body {
+  position: absolute; left: 112px; right: 112px; bottom: 120px;
   display: flex; flex-direction: column; align-items: flex-start;
-  gap: 16px;
-  padding-bottom: 40px;
+  gap: 14px;
+  z-index: 3;
 }
 .slide-section-starter .ss-num {
+  display: block;
   font-family: var(--f-display); font-weight: 700; letter-spacing: -0.04em; line-height: 0.86;
-  font-size: 340px; color: var(--mint-accent);
-  margin: 0 0 8px 0;
+  font-size: 320px; color: var(--mint-accent);
+  margin: 0 0 4px 0;
 }
-.starter-a .ss-num { color: var(--mint-accent); }
-.starter-b .ss-num { color: var(--teal-300); }
-.starter-c .ss-num { color: var(--teal-400); }
 .slide-section-starter .ss-title {
   font-family: var(--f-display); font-weight: 600; font-size: 72px; line-height: 1.05; letter-spacing: -0.02em;
   color: var(--text-on-dark); max-width: 1200px;
+  margin: 0;
 }
 .slide-section-starter .ss-title .title-accent { color: var(--teal-300); }
 .slide-section-starter .ss-sub {
   font-family: var(--f-display); font-weight: 400; font-size: 22px; line-height: 1.5;
-  color: var(--text-dim-dark); max-width: 820px; margin-top: 24px;
+  color: var(--text-dim-dark); max-width: 820px; margin: 6px 0 0 0;
 }
 .slide-section-starter .ss-rule {
-  width: 88px; height: 2px; background: var(--mint-accent); margin-top: 48px; border-radius: 2px;
+  width: 88px; height: 2px; background: var(--mint-accent); margin-top: 18px; border-radius: 2px;
 }
-.starter-b .ss-rule { background: var(--teal-300); }
-.starter-c .ss-rule { background: var(--teal-400); }
+.slide-section-starter .slide-foot { z-index: 3; }
 
 /* ============ SLIDE 2 — MEET THE TEAM ============ */
 .s2 .slide-frame { padding-bottom: 96px; }
@@ -2238,6 +2242,7 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
   font-family: var(--f-display); font-weight: 600; font-size: 46px; line-height: 1.1; letter-spacing: -0.02em;
   color: var(--ink); margin: 0; max-width: 900px;
 }
+.team-headline .hl { color: var(--teal-700); }
 .team-lede {
   font-family: var(--f-display); font-weight: 400; font-size: 15px; line-height: 1.5; color: var(--ink-mute);
   margin: 0; text-align: right;
@@ -2362,10 +2367,11 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
   position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; display: block;
   z-index: 2; border-radius: inherit;
 }
-/* Inside a phone screen, the image should fill edge-to-edge (frame already adopts image aspect via JS) */
-.screen.has-asset > .asset-img { object-fit: cover; }
-/* When a screenshot is loaded into a phone .screen, hide the CSS mock underneath for clarity */
-.screen.has-asset > *:not(.asset-img):not(.phone-island) { visibility: hidden; }
+/* Phone screens: aspect is matched dynamically to the image (see loadDataAssets JS),
+   so object-fit: cover shows the image edge-to-edge with no crop and no letterbox. */
+.phone .screen.has-asset > .asset-img { object-fit: cover; }
+/* Hide the CSS mock content when a real screenshot is loaded — remove from layout entirely */
+.screen.has-asset > :not(.asset-img) { display: none !important; }
 
 /* ============ APP SCREEN — HOME (placeholder for slide 4) ============ */
 .screen-home-lite { background: linear-gradient(170deg, #071F1C 0%, #04110F 100%); color: var(--text-on-dark); padding: 44px 26px 26px; display: flex; flex-direction: column; gap: 14px; }
@@ -2465,7 +2471,7 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
     <div class="title-body">
       <div class="title-eyebrow reveal d2">Pre-Pilot Research Readout · April 2026</div>
       <h1 class="title-main reveal d3">
-        GLP-1 Support App<br/>
+        MetabolX<br/>
         <span class="title-accent">Usability Testing Results</span>
       </h1>
       <div class="title-sub reveal d4">
@@ -2493,7 +2499,7 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
       <div style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-dim);font-weight:500">BI X US</div>
     </div>
     <div class="team-head reveal d2">
-      <h1 class="team-headline">Six core-team members built the prototype and ran the study.</h1>
+      <h1 class="team-headline">The BI X team developing <span class="hl">MetabolX</span>.</h1>
       <p class="team-lede">Tap any photo for role and contact.</p>
     </div>
     <div class="team-grid reveal d3">
@@ -2589,39 +2595,39 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
   <div class="slide-frame">
     <div class="reveal d1" style="display:flex;align-items:center;justify-content:space-between">
       <div class="eyebrow">The Product</div>
-      <div style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--on-dark-mute);font-weight:500">GLP-1 Support App &middot; Pre-Pilot Prototype</div>
+      <div style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--on-dark-mute);font-weight:500">MetabolX &middot; Pre-Pilot Prototype</div>
     </div>
     <div class="product-grid">
       <div class="product-col">
-        <h1 class="reveal d2">A GLP-1 patient support app with <span class="hl">four integrated modules</span>.</h1>
-        <p class="lede reveal d3">The prototype combines medication logging, photo-based nutrition tracking, a context-aware AI coach paired with behavioral learning pathways, and evening reflections. A daily Wellness Score summarises activity across modules.</p>
+        <h1 class="reveal d2"><span class="hl">MetabolX</span> is a GLP-1 patient support app with four integrated modules.</h1>
+        <p class="lede reveal d3">A daily Wellness Score summarises activity across the four modules below.</p>
         <div class="product-props">
           <div class="product-prop reveal d4">
             <div class="num">01</div>
             <div class="body">
               <div class="lead">Medication tracking</div>
-              <div class="detail">Body-map injection log with rotation history &amp; site reminders.</div>
+              <div class="detail">Body-map injection log with rotation history and site reminders.</div>
             </div>
           </div>
           <div class="product-prop reveal d5">
             <div class="num">02</div>
             <div class="body">
               <div class="lead">AI-powered nutrition</div>
-              <div class="detail">Photograph a meal &mdash; the app recognizes the food, logs calories and macros, scores balance.</div>
+              <div class="detail">Photo-based meal recognition with calorie, macro, and balance analysis.</div>
             </div>
           </div>
           <div class="product-prop reveal d6">
             <div class="num">03</div>
             <div class="body">
-              <div class="lead">AI Coach &amp; behavioral learning</div>
-              <div class="detail">Live contextual coach plus CBT-, ACT-, and IM-grounded learning pathways.</div>
+              <div class="lead">AI Coach</div>
+              <div class="detail">Context-aware coach with insights drawn from the user&rsquo;s own logged data.</div>
             </div>
           </div>
           <div class="product-prop reveal d7">
             <div class="num">04</div>
             <div class="body">
-              <div class="lead">Evening reflections</div>
-              <div class="detail">A bedtime wind-down that captures mood, gratitude, and the day&rsquo;s patterns.</div>
+              <div class="lead">Behavioral learning &amp; reflections</div>
+              <div class="detail">Integrated CBT- and ACT-grounded pathways paired with an evening reflection flow.</div>
             </div>
           </div>
         </div>
@@ -3391,15 +3397,17 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
         inserted.className = 'asset-img';
         el.appendChild(inserted);
         el.classList.add('has-asset');
-        // If this asset lives inside a phone .screen, resize the phone frame to match the image's natural aspect ratio
-        // so the screenshot fills the screen area without any cropping. The 7px bezel is preserved on all sides.
+        // If this asset lives inside a phone .screen, resize the phone frame so the screen area
+        // exactly matches the image's native aspect ratio. With aspects matched, object-fit:cover
+        // produces no cropping or letterboxing.
         const phone = el.closest('.phone');
         if (phone && img.naturalWidth && img.naturalHeight && el.classList.contains('screen')) {
-          const bezel = 7; // matches .phone-screen inset and .phone padding
-          const phoneW = phone.getBoundingClientRect().width || 330;
+          // Native CSS dimensions, independent of any canvas transform:scale
+          const phoneW = 330; // .phone width in local CSS pixels
+          const bezel  = 7;   // .phone padding + .phone-screen inset
           const screenW = phoneW - bezel * 2;
           const screenH = screenW * (img.naturalHeight / img.naturalWidth);
-          const phoneH = screenH + bezel * 2;
+          const phoneH  = screenH + bezel * 2;
           phone.style.aspectRatio = `${phoneW} / ${phoneH}`;
         }
       };
