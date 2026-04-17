@@ -168,3 +168,31 @@ Session log of misses, root causes, and fixes. Read at the start of every sessio
 26. Flip-above behavior for popovers uses canvas-bottom, not window-bottom. Measure popover height after append (offsetHeight) before final positioning.
 27. When a numeric callout has a directional marker line, the line anchors on the primary glyph only. Units and subunits float beside, not above/below.
 
+---
+
+## Session 5 — 2026-04-17 — Build slides 1–15 (in progress)
+
+### ⚠️ IMPORTANT — DEFERRED POC SLIDES TO REINSERT IN SESSION 6+
+
+Two POC slides are held under `.slide-deferred` at the bottom of `index.html`. They are NOT part of the blueprint's slides 1–15 and must be reinserted at their correct blueprint positions when we build the rest of the deck. **Do not lose these.**
+
+| POC class | Blueprint slide | Section | Reinsert during |
+|---|---|---|---|
+| `.s-deferred-seq` (originally `s4`) | **Slide 21 · SEQ Scores & Task Completion** | Task-by-Task Results | Session 6 (slides 16–23) |
+| `.s-deferred-f1` (originally `s6`) | **Slide 25 · Finding 1 — Visual Differentiation & Affordance Clarity** | Design Findings & Opportunities | Session 7 (slides 24–33) |
+
+**Reinsertion protocol:**
+1. Re-read the blueprint entry for the target slide position to confirm content still aligns.
+2. Move the `.slide-deferred` section back to its correct sequential position in the HTML.
+3. Swap the class back from `.slide-deferred` → `.slide`, rename the section class (e.g. `.s-deferred-seq` → `.s21`).
+4. Update the `SLIDES` array to include it, renumber `.foot-page`, and verify `data-on-enter="animateSEQ"` still fires.
+5. Verify popover `data-cite` references, chip behavior, and navigator thumbnail still match.
+
+Both slides passed QA in sessions 1–4 with full polish (SEQ chart interactions, P07 paradox table, phone-frame annotations). Re-use AS-IS unless the blueprint has evolved.
+
+### Session 5 plan (this session)
+
+Build blueprint slides 1–15 in three batches of 5. Batch A first. See `todo.md` for the full plan.
+
+
+
