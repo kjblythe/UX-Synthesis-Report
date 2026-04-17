@@ -2864,8 +2864,9 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
   font-family: var(--f-display); font-weight: 400; font-size: 14px; letter-spacing: 0.04em;
   color: rgba(245,242,234,0.38); text-align: center; padding: 20px;
 }
-/* When a real photo loads, hide the placeholder layer */
+/* When a real photo loads, hide the placeholder layer and fill the frame (crop, don't letterbox) */
 .s9 .study-photo.has-asset .study-photo-placeholder { display: none; }
+.s9 .study-photo.has-asset > .asset-img { object-fit: cover; }
 
 /* ============ SLIDE 2 — MEET THE TEAM ============ */
 .s6 .slide-frame { padding-bottom: 96px; }
@@ -3975,7 +3976,7 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
           <div class="btn-side btn-power"></div>
           <div class="phone-screen">
             <div class="phone-island" aria-hidden="true"></div>
-            <div class="screen screen-meal">
+            <div class="screen screen-meal" data-asset="meal-logging" data-asset-folder="screenshots" data-asset-ext="png">
               <div class="screen-status">
                 <span class="time">12:47</span>
                 <span class="icons"><span class="wifi"></span><span class="battery"></span></span>
