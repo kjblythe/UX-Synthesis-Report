@@ -2140,6 +2140,22 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
 .slide .reveal.d6 { transition-delay: 520ms; }
 .slide .reveal.d7 { transition-delay: 600ms; }
 
+/* ============ BATCH-A BG DIFFERENTIATORS ============ */
+/* S3 (Agenda): dark forest with accent shifted to lower-left so it reads distinct from S4's upper-right mint emphasis */
+.slide.s3 {
+  background:
+    radial-gradient(900px 700px at 15% 100%, rgba(20,184,166,0.10), transparent 60%),
+    radial-gradient(1100px 800px at 92% 10%, rgba(6,40,35,0.9), transparent 55%),
+    linear-gradient(180deg, #0B3E37 0%, #093631 60%, #05231F 100%);
+}
+/* S4 (What Is This App?): adds a warmer mint glow behind the phone column */
+.slide.s4 {
+  background:
+    radial-gradient(1000px 760px at 82% 55%, rgba(52,238,167,0.12), transparent 60%),
+    radial-gradient(1200px 800px at 10% 0%, rgba(6,40,35,0.9), transparent 55%),
+    linear-gradient(180deg, #0C433C 0%, #0A3B35 60%, #062823 100%);
+}
+
 /* ============ DEFERRED SLIDES ============ */
 /* .slide-deferred sections are preserved in the DOM for later sessions but excluded from the active deck */
 .slide-deferred { display: none !important; }
