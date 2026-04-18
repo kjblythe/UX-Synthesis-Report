@@ -390,6 +390,8 @@ Updated as each slide is built. File names/paths use the stable hooks wired into
 | s17 — Learning pathways | `data-asset="learn-pathway"` | `assets/screenshots/learn-pathway.png` | ⏳ needed |
 | s25 — F1 home screen | `data-asset="home-wellness"` | `assets/screenshots/home-wellness.png` (shared with s4) | ✅ present (reuses s4's asset) |
 | s30 — Meds calendar popover | `data-asset="meds-popover"` | `assets/screenshots/meds-popover.png` | ⏳ needed |
+| s32 — Nutrition · calorie view | `data-asset="nutrition-calorie"` | `assets/screenshots/nutrition-calorie.png` | ⏳ needed |
+| s32 — Nutrition · guided view | `data-asset="nutrition-guided"` | `assets/screenshots/nutrition-guided.png` | ⏳ needed |
 
 ### Dovetail video clips
 | Slide | Hook attribute | File path | Clip content | Status |
@@ -402,6 +404,9 @@ Updated as each slide is built. File names/paths use the stable hooks wired into
 | s18 — Competitive Advantage | `data-video="p03-replace-5234"` | `assets/videos/p03-replace-5234.mp4` | P03 @ 52:34 "I would definitely consider replacing…" | ⏳ needed |
 | s26 — P07 Paradox (upcoming) | `data-video="p07-techdiscomfort-0346"` | `assets/videos/p07-techdiscomfort-0346.mp4` | P07 @ 03:46 "There's always some apps that challenge me…" | planned |
 | s30 — Meds screen (upcoming) | `data-video="p07-meds-1752"` | `assets/videos/p07-meds-1752.mp4` | P07 @ 17:52 "It literally says meds…" | planned |
+| s33 — Reflections (P04 keep) | `data-video="p04-reflections-3744"` | `assets/videos/p04-reflections-3744.mp4` | P04 @ 37:44 "I would absolutely keep it like this…" | ⏳ needed |
+| s33 — Reflections (P01 still) | `data-video="p01-reflections-5301"` | `assets/videos/p01-reflections-5301.mp4` | P01 @ 53:01 "I actually like the app though." | ⏳ needed |
+| s38 — Closing | `data-video="p07-lifestyle-5348"` | `assets/videos/p07-lifestyle-5348.mp4` (shared with s7) | P07 @ 53:48 — reused as closing bookend | shares s7 asset |
 
 ### Team headshots
 | Slot | Hook | File path | Status |

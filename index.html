@@ -4404,6 +4404,731 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
 .screen-meds-lite .meds-sw-today { background: var(--gold); }
 .screen-meds-lite .meds-sw-next  { background: transparent; border: 1px dashed rgba(52,238,167,0.6); }
 
+/* ============ SLIDE 31 — F4 TEMPORAL NAVIGATION ============ */
+.s31 .slide-frame { padding: 76px 112px 72px 112px; display: flex; flex-direction: column; }
+.s31 .s31-head { margin-top: 30px; display: flex; align-items: flex-end; justify-content: space-between; gap: 48px; }
+.s31 .s31-headline {
+  font-family: var(--f-display); font-weight: 600;
+  font-size: 46px; line-height: 1.1; letter-spacing: -0.018em;
+  color: var(--on-dark); max-width: 1060px; margin: 0;
+}
+.s31 .s31-stat-row { display: flex; gap: 12px; flex-wrap: wrap; flex-shrink: 0; }
+.s31 .s31-stat-row .kpi-pill {
+  background: rgba(52,238,167,0.06); border-color: rgba(52,238,167,0.26);
+  color: var(--on-dark);
+}
+.s31 .s31-stat-row .kpi-pill b { color: var(--mint); font-size: 20px; }
+.s31 .s31-stat-row .kpi-pill i { color: var(--on-dark-dim); font-size: 14px; }
+.s31 .s31-cases {
+  margin-top: 42px;
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid rgba(94,234,212,0.18);
+  border-bottom: 1px solid rgba(94,234,212,0.18);
+}
+.s31 .s31-case {
+  padding: 28px 28px 28px 0;
+  margin-right: 28px;
+  border-right: 1px solid rgba(94,234,212,0.10);
+  display: flex; flex-direction: column;
+}
+.s31 .s31-case:last-child { border-right: none; margin-right: 0; padding-right: 0; }
+.s31 .s31-case-eb {
+  font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--teal-300); font-weight: 600; margin-bottom: 14px;
+}
+.s31 .s31-case-quote {
+  font-family: var(--f-serif); font-style: italic;
+  font-size: 20px; line-height: 1.35; color: var(--on-dark);
+  margin: 0 0 14px 0;
+}
+.s31 .s31-case-cite {
+  font-style: normal; font-size: 13px; color: var(--on-dark-dim);
+  display: inline-flex; align-items: center; gap: 8px;
+  margin-top: auto;
+}
+.s31 .s31-case-cite .s31-ts {
+  font-family: var(--f-mono); letter-spacing: 0.02em; color: var(--on-dark-mute);
+  font-size: 12px;
+}
+.s31 .s31-recs { margin-top: 32px; display: flex; flex-direction: column; gap: 16px; }
+.s31 .s31-recs-head {
+  display: flex; justify-content: space-between; align-items: center;
+  padding-bottom: 10px;
+}
+.s31 .s31-recs-eb {
+  font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--mint); font-weight: 600;
+}
+.s31 .s31-recs-meta {
+  background: transparent; border: 1px solid rgba(94,234,212,0.22);
+  color: var(--on-dark-dim); padding: 7px 14px; border-radius: 999px;
+  font-family: var(--f-display); font-size: 13px; font-weight: 500; letter-spacing: 0;
+  cursor: pointer; transition: background 160ms ease, border-color 160ms ease, color 160ms ease;
+}
+.s31 .s31-recs-meta:hover {
+  background: rgba(94,234,212,0.08); border-color: rgba(94,234,212,0.45); color: var(--on-dark);
+}
+.s31 .s31-rec-list {
+  list-style: none; padding: 0; margin: 0;
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+.s31 .s31-rec {
+  display: flex; align-items: flex-start; gap: 14px;
+  padding-top: 16px; border-top: 1px solid rgba(94,234,212,0.22);
+}
+.s31 .s31-rec-num {
+  font-family: var(--f-display); font-weight: 700;
+  font-size: 26px; line-height: 1; color: var(--mint);
+  letter-spacing: -0.02em; flex-shrink: 0;
+}
+.s31 .s31-rec-text {
+  font-size: 16px; line-height: 1.45; color: var(--on-dark);
+  font-weight: 400;
+}
+
+/* ============ SLIDE 32 — F5 NUTRITIONAL DISPLAY (DUAL-PHONE COMPARE) ============ */
+.s32 .slide-frame { padding: 68px 96px 68px 96px; display: flex; flex-direction: column; }
+.s32 .s32-head { margin-top: 20px; display: flex; align-items: flex-end; justify-content: space-between; gap: 48px; }
+.s32 .s32-headline {
+  font-family: var(--f-display); font-weight: 600;
+  font-size: 42px; line-height: 1.1; letter-spacing: -0.018em;
+  color: var(--ink); max-width: 1080px; margin: 0;
+}
+.s32 .s32-stat-row { display: flex; gap: 12px; flex-wrap: wrap; flex-shrink: 0; }
+.s32 .s32-stat-row .kpi-pill b { font-size: 19px; }
+.s32 .s32-stat-row .kpi-pill i { font-size: 14px; }
+.s32 .s32-compare {
+  margin-top: 28px;
+  display: grid; grid-template-columns: 1fr auto 1fr;
+  gap: 0; align-items: center; justify-items: center;
+}
+.s32 .s32-phone-col { display: flex; flex-direction: column; align-items: center; gap: 16px; }
+.s32 .s32-phone-cap { text-align: center; }
+.s32 .s32-phone-cap-eb {
+  display: block;
+  font-family: var(--f-display); font-weight: 600;
+  font-size: 17px; letter-spacing: -0.005em; color: var(--ink);
+}
+.s32 .s32-phone-cap-sub {
+  display: block; margin-top: 4px;
+  font-size: 14px; color: var(--ink-mute); letter-spacing: 0;
+  font-weight: 400;
+}
+.s32 .s32-phone-cap-sub em { font-family: var(--f-serif); font-style: italic; color: var(--teal-700); font-weight: 500; }
+.s32 .s32-phone { transform: scale(0.58); transform-origin: top center; margin-bottom: -332px; }
+.s32 .s32-plus {
+  display: flex; flex-direction: column; align-items: center;
+  gap: 12px; padding: 0 18px; align-self: center;
+  transform: translateY(20px);
+}
+.s32 .s32-plus-mark {
+  width: 58px; height: 58px; border-radius: 50%;
+  background: rgba(20,184,166,0.08); border: 1px solid rgba(20,184,166,0.3);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--f-display); font-weight: 300; font-size: 46px;
+  color: var(--teal-700); line-height: 1;
+}
+.s32 .s32-plus-label {
+  font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--teal-700); font-weight: 600; white-space: nowrap;
+}
+.s32 .s32-synth {
+  margin-top: 28px;
+  display: grid; grid-template-columns: 1.15fr 1fr;
+  gap: 48px; align-items: center;
+  padding-top: 26px;
+  border-top: 1px solid rgba(10,26,28,0.14);
+}
+.s32 .s32-synth-eb {
+  font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--teal-700); font-weight: 600; margin-bottom: 10px;
+}
+.s32 .s32-synth-p {
+  font-size: 19px; line-height: 1.5; color: var(--ink);
+  margin: 0; font-weight: 400;
+}
+.s32 .s32-synth-quote blockquote {
+  font-family: var(--f-serif); font-style: italic;
+  font-size: 26px; line-height: 1.25; color: var(--ink);
+  margin: 0 0 10px 0;
+}
+.s32 .s32-synth-quote cite {
+  font-style: normal; font-size: 13px; color: var(--ink-mute);
+  display: inline-flex; align-items: center; gap: 8px;
+}
+.s32 .s32-synth-quote cite .s32-ts {
+  font-family: var(--f-mono); color: var(--ink-mute); letter-spacing: 0.02em; font-size: 12px;
+}
+
+/* ---- Nutrition CSS mocks (drop in if assets/screenshots/nutrition-*.png land) ---- */
+.screen-nutrition-cal, .screen-nutrition-gui {
+  background: linear-gradient(170deg, #0D4B44 0%, #06231F 100%);
+  color: var(--on-dark); padding: 44px 20px 16px;
+  display: flex; flex-direction: column; gap: 12px;
+}
+.screen-nutrition-cal .screen-status, .screen-nutrition-gui .screen-status {
+  display: flex; justify-content: space-between; font-size: 10px; font-weight: 600; opacity: 0.82; letter-spacing: 0.02em;
+}
+.screen-nutrition-cal .screen-status .icons, .screen-nutrition-gui .screen-status .icons { display: flex; gap: 4px; align-items: center; }
+.screen-nutrition-cal .screen-status .wifi, .screen-nutrition-gui .screen-status .wifi {
+  width: 10px; height: 7px; background: currentColor;
+  clip-path: polygon(0 70%, 100% 70%, 100% 100%, 0 100%);
+}
+.screen-nutrition-cal .screen-status .battery, .screen-nutrition-gui .screen-status .battery {
+  width: 18px; height: 8px; border: 1px solid currentColor; border-radius: 2px; position: relative; padding: 1px;
+}
+.screen-nutrition-cal .screen-status .battery::after, .screen-nutrition-gui .screen-status .battery::after {
+  content:''; display:block; width: 78%; height: 100%; background: currentColor; border-radius: 1px;
+}
+.screen-nutrition-cal .nut-top, .screen-nutrition-gui .nut-top {
+  display: flex; justify-content: space-between; align-items: center;
+  font-family: var(--f-display); font-size: 12px; color: var(--on-dark-mute);
+  padding-bottom: 6px; border-bottom: 1px solid rgba(94,234,212,0.14);
+}
+.screen-nutrition-cal .nut-title, .screen-nutrition-gui .nut-title {
+  font-weight: 600; font-size: 16px; color: var(--on-dark); letter-spacing: -0.01em;
+}
+.screen-nutrition-cal .nut-back, .screen-nutrition-gui .nut-back,
+.screen-nutrition-cal .nut-edit, .screen-nutrition-gui .nut-edit {
+  color: var(--teal-300); font-weight: 500; font-size: 11px;
+}
+.screen-nutrition-cal .nut-photo, .screen-nutrition-gui .nut-photo {
+  height: 120px; border-radius: 10px;
+  background:
+    linear-gradient(135deg, rgba(52,238,167,0.18), rgba(20,184,166,0.12) 40%, rgba(13,118,110,0.22) 100%),
+    radial-gradient(60px 40px at 30% 40%, rgba(245,158,11,0.35), transparent 70%),
+    radial-gradient(80px 50px at 70% 60%, rgba(94,234,212,0.35), transparent 70%),
+    #0A3B35;
+  border: 1px solid rgba(94,234,212,0.18);
+  position: relative; overflow: hidden;
+}
+.screen-nutrition-cal .nut-photo-tag, .screen-nutrition-gui .nut-photo-tag {
+  position: absolute; left: 8px; bottom: 8px;
+  font-size: 9.5px; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--mint); font-weight: 600;
+  background: rgba(6,35,31,0.7); padding: 3px 8px; border-radius: 999px;
+  border: 1px solid rgba(52,238,167,0.3);
+}
+.screen-nutrition-cal .nut-cal-hero {
+  display: flex; align-items: baseline; gap: 6px;
+  padding: 4px 0 0 2px;
+}
+.screen-nutrition-cal .nut-cal-n {
+  font-family: var(--f-display); font-weight: 700;
+  font-size: 44px; line-height: 1; letter-spacing: -0.025em; color: var(--mint);
+  font-variant-numeric: tabular-nums;
+}
+.screen-nutrition-cal .nut-cal-u { font-family: var(--f-display); font-size: 14px; color: var(--on-dark-dim); font-weight: 500; }
+.screen-nutrition-cal .nut-cal-ring-row {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px;
+}
+.screen-nutrition-cal .nut-ring {
+  padding: 10px 8px;
+  border: 1px solid rgba(94,234,212,0.18);
+  border-radius: 10px;
+  background: rgba(20,184,166,0.06);
+  text-align: center;
+}
+.screen-nutrition-cal .nut-ring-n {
+  font-family: var(--f-display); font-weight: 700;
+  font-size: 22px; line-height: 1; color: var(--on-dark);
+  font-variant-numeric: tabular-nums; letter-spacing: -0.02em;
+}
+.screen-nutrition-cal .nut-ring-n span { font-size: 12px; font-weight: 500; color: var(--on-dark-dim); margin-left: 2px; }
+.screen-nutrition-cal .nut-ring-k {
+  margin-top: 6px; font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--on-dark-mute); font-weight: 600;
+}
+.screen-nutrition-cal .nut-daily {
+  padding: 10px 12px; border-radius: 10px;
+  background: rgba(6,35,31,0.55); border: 1px solid rgba(94,234,212,0.14);
+}
+.screen-nutrition-cal .nut-daily-k {
+  font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--on-dark-mute); font-weight: 600;
+}
+.screen-nutrition-cal .nut-daily-bar {
+  margin: 8px 0;
+  height: 6px; border-radius: 999px;
+  background: rgba(94,234,212,0.14); position: relative; overflow: hidden;
+}
+.screen-nutrition-cal .nut-daily-bar span {
+  position: absolute; left: 0; top: 0; bottom: 0;
+  background: linear-gradient(90deg, var(--mint), var(--teal-400));
+  border-radius: 999px;
+}
+.screen-nutrition-cal .nut-daily-v {
+  font-family: var(--f-mono); font-size: 11px; color: var(--teal-300); letter-spacing: 0.01em;
+}
+.screen-nutrition-gui .nut-gui-tag {
+  margin-top: 4px;
+  padding: 10px 14px; border-radius: 10px;
+  background: rgba(52,238,167,0.12); border: 1px solid rgba(52,238,167,0.28);
+  color: var(--mint); font-family: var(--f-display); font-weight: 600; font-size: 17px;
+  letter-spacing: -0.01em;
+}
+.screen-nutrition-gui .nut-gui-rows {
+  list-style: none; padding: 0; margin: 0;
+  display: flex; flex-direction: column; gap: 6px;
+}
+.screen-nutrition-gui .nut-gui-rows li {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 10px 12px; border-radius: 8px;
+  background: rgba(20,184,166,0.04);
+  border: 1px solid rgba(94,234,212,0.12);
+}
+.screen-nutrition-gui .nut-gui-k {
+  font-family: var(--f-display); font-weight: 500; font-size: 12px; color: var(--on-dark);
+}
+.screen-nutrition-gui .nut-gui-v {
+  font-family: var(--f-display); font-weight: 600; font-size: 11px; letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.screen-nutrition-gui .nut-gui-hi { color: var(--mint); }
+.screen-nutrition-gui .nut-gui-ok { color: var(--teal-300); }
+.screen-nutrition-gui .nut-gui-lo { color: var(--on-dark-dim); }
+
+/* ============ SLIDE 33 — F6 REFLECTIONS ENGAGEMENT SPECTRUM ============ */
+.s33 .slide-frame { padding: 68px 96px 68px 96px; display: flex; flex-direction: column; }
+.s33 .s33-head { margin-top: 20px; display: flex; align-items: flex-end; justify-content: space-between; gap: 48px; }
+.s33 .s33-headline {
+  font-family: var(--f-display); font-weight: 600;
+  font-size: 38px; line-height: 1.12; letter-spacing: -0.015em;
+  color: var(--on-dark); max-width: 1180px; margin: 0;
+}
+.s33 .s33-stat-row { display: flex; gap: 12px; flex-wrap: wrap; flex-shrink: 0; }
+.s33 .s33-stat-row .kpi-pill {
+  background: rgba(52,238,167,0.06); border-color: rgba(52,238,167,0.26); color: var(--on-dark);
+}
+.s33 .s33-stat-row .kpi-pill b { color: var(--mint); font-size: 19px; }
+.s33 .s33-stat-row .kpi-pill i { color: var(--on-dark-dim); font-size: 14px; }
+.s33 .s33-spectrum { margin-top: 36px; padding: 0 4px; }
+.s33 .s33-spec-ends {
+  display: flex; justify-content: space-between; align-items: center;
+  font-family: var(--f-display); font-weight: 500; font-size: 12px;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  padding: 0 2px;
+}
+.s33 .s33-spec-end-l { color: #FCA5A5; }
+.s33 .s33-spec-end-m { color: var(--on-dark-dim); font-size: 11px; letter-spacing: 0.18em; }
+.s33 .s33-spec-end-r { color: var(--mint); }
+.s33 .s33-spec-track {
+  position: relative; height: 236px; margin: 14px 0 0;
+}
+.s33 .s33-spec-rule {
+  position: absolute; top: 50%; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, rgba(252,165,165,0.55) 0%, rgba(245,158,11,0.4) 25%, rgba(94,234,212,0.45) 65%, rgba(52,238,167,0.75) 100%);
+  border-radius: 2px;
+  transform: translateY(-50%);
+}
+.s33 .s33-plot {
+  position: absolute; top: 0; bottom: 0;
+  width: 168px;
+  transform: translateX(-50%);
+}
+.s33 .s33-plot-dot {
+  position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 13px; height: 13px; border-radius: 50%;
+  background: var(--on-dark-dim);
+  border: 3px solid #0A3B35;
+  box-shadow: 0 0 0 2px rgba(245,242,234,0.14);
+  transition: transform 180ms var(--ease-out);
+  z-index: 3;
+}
+.s33 .s33-plot-dot-coral {
+  background: #FCA5A5;
+  box-shadow: 0 0 0 2px rgba(252,165,165,0.3);
+}
+.s33 .s33-plot-dot-mint {
+  background: var(--mint);
+  box-shadow: 0 0 0 2px rgba(52,238,167,0.3);
+}
+.s33 .s33-plot-tick {
+  position: absolute; left: 50%; width: 1px;
+  background: rgba(245,242,234,0.22);
+  transform: translateX(-50%);
+  z-index: 2;
+}
+.s33 .s33-plot-above .s33-plot-tick { bottom: calc(50% + 12px); height: 20px; }
+.s33 .s33-plot-below .s33-plot-tick { top: calc(50% + 12px); height: 20px; }
+.s33 .s33-plot-label {
+  position: absolute; left: 50%;
+  transform: translateX(-50%);
+  width: 168px;
+  border: 0; background: transparent; padding: 6px 8px; cursor: pointer;
+  display: flex; flex-direction: column; gap: 3px; align-items: center;
+  text-align: center;
+  border-radius: 8px;
+  transition: background 160ms var(--ease-out);
+}
+.s33 .s33-plot-above .s33-plot-label { bottom: calc(50% + 38px); }
+.s33 .s33-plot-below .s33-plot-label { top: calc(50% + 38px); }
+.s33 .s33-plot-label:hover { background: rgba(52,238,167,0.08); }
+.s33 .s33-plot-ident {
+  font-family: var(--f-display); font-weight: 600; font-size: 12.5px;
+  letter-spacing: 0.04em; color: var(--on-dark);
+}
+.s33 .s33-plot-ts {
+  font-family: var(--f-mono); font-weight: 400; font-size: 10.5px;
+  color: var(--on-dark-mute); margin-left: 3px;
+}
+.s33 .s33-plot-quote {
+  font-family: var(--f-serif); font-style: italic; font-weight: 400;
+  font-size: 13.5px; line-height: 1.28; color: var(--on-dark-dim);
+}
+.s33 .s33-plot-anchor .s33-plot-quote { color: var(--mint); }
+.s33 .s33-plot:hover .s33-plot-dot { transform: translate(-50%, -50%) scale(1.15); }
+.s33 .s33-capstone {
+  margin-top: 10px;
+  padding: 14px 18px;
+  border: 1px solid rgba(245,242,234,0.12);
+  border-radius: 10px;
+  background: rgba(10,26,28,0.3);
+}
+.s33 .s33-capstone-p {
+  margin: 0; color: var(--on-dark);
+  font-size: 16px; line-height: 1.5;
+}
+.s33 .s33-capstone-p .s33-ts {
+  font-family: var(--f-mono); color: var(--on-dark-mute); font-size: 12.5px; letter-spacing: 0.02em; margin-left: 2px;
+}
+.s33 .s33-adopt {
+  margin-top: 26px; padding-top: 22px;
+  border-top: 1px solid rgba(94,234,212,0.18);
+}
+.s33 .s33-adopt-eb {
+  font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--mint); font-weight: 600;
+}
+.s33 .s33-adopt-head { margin-bottom: 16px; }
+.s33 .s33-adopt-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+.s33 .s33-adopt-lever {
+  display: flex; align-items: flex-start; gap: 14px;
+}
+.s33 .s33-adopt-num {
+  font-family: var(--f-display); font-weight: 700;
+  font-size: 26px; line-height: 1;
+  color: var(--mint); letter-spacing: -0.02em; flex-shrink: 0;
+}
+.s33 .s33-adopt-title {
+  font-family: var(--f-display); font-weight: 600;
+  font-size: 16px; line-height: 1.25; color: var(--on-dark);
+  margin: 0 0 6px 0;
+}
+.s33 .s33-adopt-detail {
+  margin: 0; font-size: 14px; line-height: 1.45; color: var(--on-dark-dim);
+}
+.s33 .s33-clips {
+  position: absolute; right: 96px; bottom: 92px;
+  display: flex; gap: 12px; flex-wrap: nowrap;
+}
+.s33 .s33-clip { max-width: 320px; }
+.s33 .s33-clip .clip-card.compact {
+  background: rgba(10,26,28,0.45);
+  border-color: rgba(94,234,212,0.22);
+}
+
+/* ============ SLIDE 35 — REMEDIATION PRIORITY MATRIX (TIERED WATERFALL) ============ */
+.s35 .slide-frame { padding: 68px 112px 68px 112px; display: flex; flex-direction: column; }
+.s35 .s35-head { margin-top: 24px; max-width: 1400px; }
+.s35 .s35-headline {
+  font-family: var(--f-display); font-weight: 500;
+  font-size: 26px; line-height: 1.35; letter-spacing: -0.005em;
+  color: var(--ink-mute); margin: 0;
+}
+.s35 .s35-tiers {
+  margin-top: 36px;
+  display: flex; flex-direction: column; gap: 20px;
+  align-items: center;
+}
+.s35 .s35-tier {
+  width: 100%;
+  padding: 22px 28px;
+  border: 1px solid rgba(10,26,28,0.12);
+  border-radius: 12px;
+  background: rgba(255,255,255,0.35);
+  position: relative;
+  transition: background 200ms var(--ease-out);
+}
+.s35 .s35-tier-1 {
+  max-width: 100%;
+  background: linear-gradient(180deg, rgba(52,238,167,0.08), rgba(20,184,166,0.04));
+  border-color: rgba(20,184,166,0.3);
+}
+.s35 .s35-tier-2 {
+  max-width: 88%;
+  background: rgba(255,255,255,0.42);
+  border-color: rgba(10,26,28,0.14);
+}
+.s35 .s35-tier-3 {
+  max-width: 76%;
+  background: rgba(235,227,209,0.55);
+  border-color: rgba(10,26,28,0.12);
+}
+.s35 .s35-tier-head {
+  display: flex; align-items: baseline; gap: 18px;
+  padding-bottom: 12px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid rgba(10,26,28,0.08);
+}
+.s35 .s35-tier-num {
+  font-family: var(--f-mono); font-weight: 500; font-size: 12px;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--teal-700);
+}
+.s35 .s35-tier-title {
+  font-family: var(--f-display); font-weight: 600;
+  font-size: 22px; line-height: 1.1; letter-spacing: -0.01em;
+  color: var(--ink); flex: 1;
+}
+.s35 .s35-tier-meta {
+  background: transparent; border: 1px solid rgba(20,184,166,0.3);
+  color: var(--teal-700); padding: 6px 12px; border-radius: 999px;
+  font-family: var(--f-display); font-size: 12px; font-weight: 500; letter-spacing: 0.02em;
+  cursor: pointer; transition: background 160ms ease, border-color 160ms ease;
+  flex-shrink: 0;
+}
+.s35 .s35-tier-meta:hover {
+  background: rgba(20,184,166,0.1); border-color: rgba(20,184,166,0.5);
+}
+.s35 .s35-tier-items {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 4px 36px;
+}
+.s35 .s35-tier-item {
+  display: flex; align-items: center; gap: 14px;
+  padding: 9px 0;
+  border-bottom: 1px solid rgba(10,26,28,0.07);
+}
+.s35 .s35-tier-item-text {
+  flex: 1;
+  font-size: 15.5px; line-height: 1.4; color: var(--ink); font-weight: 400;
+}
+.s35 .s35-tier-ref {
+  flex-shrink: 0;
+  background: transparent; border: 1px solid rgba(13,118,110,0.4);
+  color: var(--teal-700); padding: 2px 10px; border-radius: 4px;
+  font-family: var(--f-mono); font-size: 11px; font-weight: 600; letter-spacing: 0.04em;
+  cursor: pointer; transition: background 160ms ease, color 160ms ease;
+}
+.s35 .s35-tier-ref:hover { background: var(--teal-700); color: var(--paper); }
+
+/* ============ SLIDE 36 — DIARY STUDY LEDGER (DIRECTIONAL) ============ */
+.s36 .slide-frame { padding: 68px 112px 68px 112px; display: flex; flex-direction: column; }
+.s36 .s36-head { margin-top: 26px; }
+.s36 .s36-headline {
+  font-family: var(--f-display); font-weight: 600;
+  font-size: 44px; line-height: 1.1; letter-spacing: -0.02em;
+  color: var(--on-dark); margin: 0;
+}
+.s36 .s36-ledger { margin-top: 38px; }
+.s36 .s36-ledger-cols {
+  display: grid; grid-template-columns: 1fr 60px 1fr;
+  gap: 36px;
+  padding-bottom: 14px;
+  margin-bottom: 6px;
+  border-bottom: 1px solid rgba(94,234,212,0.22);
+}
+.s36 .s36-col-head {
+  font-family: var(--f-display); font-weight: 500;
+  font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase;
+}
+.s36 .s36-col-head-l { color: var(--teal-300); }
+.s36 .s36-col-head-r { color: var(--mint); }
+.s36 .s36-col-head-arrow {}
+.s36 .s36-rows { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
+.s36 .s36-row {
+  display: grid; grid-template-columns: 1fr 60px 1fr;
+  gap: 36px; align-items: center;
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(245,242,234,0.08);
+}
+.s36 .s36-row:last-child { border-bottom: none; }
+.s36 .s36-claim {
+  background: transparent; border: 0;
+  padding: 8px 0; cursor: pointer;
+  font-family: var(--f-display); font-weight: 500;
+  font-size: 17px; line-height: 1.38; letter-spacing: -0.003em;
+  color: var(--on-dark); text-align: left;
+  border-radius: 4px;
+  transition: color 160ms ease, background 160ms ease;
+}
+.s36 .s36-claim:hover { color: var(--mint); background: rgba(52,238,167,0.06); padding-left: 8px; padding-right: 8px; }
+.s36 .s36-claim-r {
+  font-family: var(--f-serif); font-style: italic; font-weight: 400;
+  color: var(--teal-300);
+}
+.s36 .s36-arrow {
+  color: var(--mint); opacity: 0.55;
+  display: flex; align-items: center; justify-content: center;
+}
+
+/* ============ SLIDE 37 — STRATEGIC TAKEAWAY (THREE-PILLAR) ============ */
+.s37 .slide-frame { padding: 68px 112px 68px 112px; display: flex; flex-direction: column; }
+.s37 .s37-head { margin-top: 24px; max-width: 1400px; }
+.s37 .s37-headline {
+  font-family: var(--f-display); font-weight: 600;
+  font-size: 40px; line-height: 1.15; letter-spacing: -0.018em;
+  color: var(--ink); margin: 0 0 14px 0;
+}
+.s37 .s37-sub {
+  font-family: var(--f-display); font-weight: 400;
+  font-size: 22px; line-height: 1.4; letter-spacing: -0.002em;
+  color: var(--ink-mute); margin: 0; max-width: 1100px;
+}
+.s37 .s37-diagram {
+  margin-top: 46px;
+  position: relative;
+  width: 1100px;
+  height: 460px;
+  align-self: center;
+}
+.s37 .s37-connectors {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  color: rgba(13,118,110,0.38);
+  pointer-events: none;
+}
+.s37 .s37-pillar { position: absolute; }
+.s37 .s37-pillar-l { left: 0; top: 140px; width: 280px; }
+.s37 .s37-pillar-r { right: 0; top: 140px; width: 280px; }
+.s37 .s37-pillar-b { left: 50%; top: 340px; width: 340px; transform: translateX(-50%); }
+.s37 .s37-pillar-btn {
+  width: 100%;
+  background: rgba(255,255,255,0.6);
+  border: 1px solid rgba(20,184,166,0.3);
+  border-radius: 14px;
+  padding: 22px 24px;
+  display: flex; flex-direction: column; gap: 6px; text-align: left;
+  cursor: pointer;
+  transition: background 180ms var(--ease-out), border-color 180ms var(--ease-out), transform 180ms var(--ease-out);
+  box-shadow: 0 12px 30px -18px rgba(6,35,31,0.2);
+}
+.s37 .s37-pillar-btn:hover {
+  background: rgba(52,238,167,0.1);
+  border-color: rgba(20,184,166,0.55);
+  transform: translateY(-2px);
+}
+.s37 .s37-pillar-eb {
+  font-family: var(--f-mono); font-weight: 500; font-size: 11px;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--teal-700);
+}
+.s37 .s37-pillar-title {
+  font-family: var(--f-display); font-weight: 700;
+  font-size: 32px; line-height: 1; letter-spacing: -0.02em;
+  color: var(--ink);
+}
+.s37 .s37-pillar-sub {
+  font-size: 14px; line-height: 1.4; color: var(--ink-mute);
+  font-weight: 400; margin-top: 4px;
+}
+.s37 .s37-core {
+  position: absolute; left: 50%; top: 140px;
+  transform: translateX(-50%);
+  width: 220px; height: 220px;
+}
+.s37 .s37-core-btn {
+  width: 100%; height: 100%;
+  background: transparent; border: 0; padding: 0; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+}
+.s37 .s37-core-ring {
+  display: flex; align-items: center; justify-content: center;
+  width: 200px; height: 200px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(52,238,167,0.22), rgba(20,184,166,0.08) 50%, transparent 100%);
+  border: 2px solid var(--teal-700);
+  box-shadow:
+    0 0 0 6px rgba(52,238,167,0.08),
+    0 0 0 14px rgba(20,184,166,0.05),
+    0 20px 40px -20px rgba(13,118,110,0.35);
+  transition: transform 240ms var(--ease-out), box-shadow 240ms var(--ease-out);
+}
+.s37 .s37-core-btn:hover .s37-core-ring {
+  transform: scale(1.04);
+  box-shadow:
+    0 0 0 6px rgba(52,238,167,0.14),
+    0 0 0 14px rgba(20,184,166,0.1),
+    0 20px 40px -20px rgba(13,118,110,0.5);
+}
+.s37 .s37-core-label {
+  font-family: var(--f-display); font-weight: 600;
+  font-size: 18px; letter-spacing: -0.005em;
+  color: var(--teal-700); text-align: center;
+  padding: 0 18px;
+}
+
+/* ============ SLIDE 38 — CLOSING · IN THEIR WORDS (DIAGONAL MONTAGE) ============ */
+.s38 .slide-frame { padding: 68px 112px 68px 112px; display: flex; flex-direction: column; position: relative; }
+.s38 .s38-watermark {
+  position: absolute;
+  right: -120px; bottom: -60px;
+  width: 520px; height: 440px;
+  color: var(--mint); opacity: 0.04;
+  pointer-events: none;
+  z-index: 0;
+}
+.s38 .s38-stage {
+  position: relative; flex: 1;
+  margin-top: 32px;
+  z-index: 1;
+}
+.s38 .s38-q {
+  position: absolute; margin: 0;
+  max-width: 620px;
+}
+.s38 .s38-q-1 { top: 8px; left: 20px; max-width: 780px; }
+.s38 .s38-q-2 { top: 210px; right: 60px; max-width: 560px; text-align: right; }
+.s38 .s38-q-3 { top: 420px; left: 80px; max-width: 640px; }
+.s38 .s38-q-4 { top: 590px; right: 120px; max-width: 480px; text-align: right; }
+.s38 .s38-quote {
+  font-family: var(--f-serif); font-style: italic; font-weight: 300;
+  font-size: 34px; line-height: 1.3; letter-spacing: -0.005em;
+  color: var(--on-dark);
+  margin: 0 0 12px 0;
+}
+.s38 .s38-q-1 .s38-quote {
+  font-size: 48px; font-weight: 300; line-height: 1.2;
+  color: var(--mint);
+}
+.s38 .s38-q-2 .s38-quote, .s38 .s38-q-4 .s38-quote {
+  color: var(--teal-300);
+}
+.s38 .s38-cite {
+  font-family: var(--f-display); font-weight: 500;
+  font-size: 13px; letter-spacing: 0.06em;
+  color: var(--on-dark-mute);
+  display: inline-flex; align-items: baseline; gap: 8px;
+}
+.s38 .s38-q-2 .s38-cite, .s38 .s38-q-4 .s38-cite {
+  justify-content: flex-end;
+  display: flex;
+}
+.s38 .s38-pid {
+  font-family: var(--f-display); font-weight: 700;
+  font-size: 14px; letter-spacing: 0.04em;
+  color: var(--mint);
+}
+.s38 .s38-ts {
+  font-family: var(--f-mono); font-weight: 400; font-size: 12px;
+  color: var(--on-dark-mute); letter-spacing: 0.02em;
+}
+.s38 .s38-clip {
+  position: absolute; bottom: 16px; right: 20px;
+  max-width: 340px;
+  z-index: 2;
+}
+.s38 .s38-clip .clip-card.compact {
+  background: rgba(10,26,28,0.55);
+  border-color: rgba(94,234,212,0.28);
+}
+
 </style>
 
 <style id="print">
@@ -6735,6 +7460,655 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
     </div>
   </div>
 </section>
+
+<!-- SLIDE 31: FINDING 4 — TEMPORAL NAVIGATION FOR PROGRESS -->
+<section class="slide s31 slide-dark">
+  <div class="slide-frame">
+    <div class="reveal d1" style="display:flex;align-items:center;justify-content:space-between">
+      <div class="eyebrow">Finding 04 &middot; Temporal navigation for progress</div>
+      <div style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--on-dark-mute);font-weight:500">Severity medium &middot; Complexity low&ndash;medium</div>
+    </div>
+    <div class="s31-head reveal d2">
+      <h1 class="s31-headline">Three participants independently sought a non-AI path to progress data.</h1>
+      <div class="s31-stat-row">
+        <button class="kpi-pill chip-trigger" data-cite="temporal-3of7"><b>3/7</b><i>sought a direct progress path</i></button>
+        <button class="kpi-pill chip-trigger" data-cite="temporal-progress-icon"><b>0/7</b><i>read the up-trend arrow as progress</i></button>
+      </div>
+    </div>
+    <div class="s31-cases reveal d3">
+      <div class="s31-case">
+        <div class="s31-case-eb">Doctor-visit prep</div>
+        <blockquote class="s31-case-quote">Even if the doctor asks &ldquo;what day?&rdquo; and you can&apos;t remember what happened.</blockquote>
+        <cite class="s31-case-cite"><button class="chip" data-cite="p01">P01</button> <span class="s31-ts">[21:30]</span></cite>
+      </div>
+      <div class="s31-case">
+        <div class="s31-case-eb">Emotional-pattern recognition</div>
+        <blockquote class="s31-case-quote">You can figure out why and kind of pull into why you emotionally ate.</blockquote>
+        <cite class="s31-case-cite"><button class="chip" data-cite="p04">P04</button> <span class="s31-ts">[38:23]</span></cite>
+      </div>
+      <div class="s31-case">
+        <div class="s31-case-eb">Forward meal planning</div>
+        <blockquote class="s31-case-quote">It told me how many calories I had left for the day&hellip; what am I going to have for dinner?</blockquote>
+        <cite class="s31-case-cite"><button class="chip" data-cite="p07">P07</button> <span class="s31-ts">[23:46]</span></cite>
+      </div>
+      <div class="s31-case">
+        <div class="s31-case-eb">Quick self-check</div>
+        <blockquote class="s31-case-quote">I would love if there was just a button on the front. It&apos;s quicker.</blockquote>
+        <cite class="s31-case-cite"><button class="chip" data-cite="p03">P03</button> <span class="s31-ts">[29:44]</span></cite>
+      </div>
+    </div>
+    <div class="s31-recs reveal d4">
+      <div class="s31-recs-head">
+        <span class="s31-recs-eb">Recommendations &middot; 4 levers</span>
+        <button class="s31-recs-meta chip-trigger" data-cite="temporal-catch-up">Catch-up logging partially addresses this in production</button>
+      </div>
+      <ol class="s31-rec-list">
+        <li class="s31-rec">
+          <span class="s31-rec-num">01</span>
+          <span class="s31-rec-text">Daily / 7-day / 30-day trend toggle on the progress view.</span>
+        </li>
+        <li class="s31-rec">
+          <span class="s31-rec-num">02</span>
+          <span class="s31-rec-text">Date-specific calendar for historical lookback (&ldquo;what happened last Tuesday?&rdquo;).</span>
+        </li>
+        <li class="s31-rec">
+          <span class="s31-rec-num">03</span>
+          <span class="s31-rec-text">Raise the prominence of the progress entry point &mdash; P01 expected a calendar icon.</span>
+        </li>
+        <li class="s31-rec">
+          <span class="s31-rec-num">04</span>
+          <span class="s31-rec-text">Design for the doctor-visit use case &mdash; exportable or shareable summaries.</span>
+        </li>
+      </ol>
+    </div>
+    <div class="slide-foot">
+      <div class="foot-left">
+        <svg class="mark" viewBox="0 0 1128 431" aria-label="BIX" style="color: var(--on-dark)"><use href="#bix-logo"/></svg>
+        <span class="foot-internal">BI X Digital Innovation Lab &nbsp;|&nbsp; ONLY FOR INTERNAL USE</span>
+      </div>
+      <div class="foot-page">31</div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 32: FINDING 5 — NUTRITIONAL DISPLAY: SHOW BOTH BY DEFAULT -->
+<section class="slide s32 slide-paper">
+  <div class="slide-frame">
+    <div class="reveal d1" style="display:flex;align-items:center;justify-content:space-between">
+      <div class="eyebrow">Finding 05 &middot; Nutritional display</div>
+      <div style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-dim);font-weight:500">Severity low &middot; Complexity low</div>
+    </div>
+    <div class="s32-head reveal d2">
+      <h1 class="s32-headline">Calorie numbers and qualitative descriptors are complementary, not substitutable.</h1>
+      <div class="s32-stat-row">
+        <button class="kpi-pill chip-trigger" data-cite="nutrition-67"><b>6/7</b><i>preferred the calorie view</i></button>
+        <button class="kpi-pill chip-trigger" data-cite="nutrition-p06-combined"><b>P06</b><i>articulated the combined-view opportunity</i></button>
+      </div>
+    </div>
+    <div class="s32-compare reveal d3">
+      <div class="s32-phone-col">
+        <div class="s32-phone-cap">
+          <span class="s32-phone-cap-eb">Calorie view</span>
+          <span class="s32-phone-cap-sub">The numbers &mdash; <em>what</em>.</span>
+        </div>
+        <div class="phone s32-phone" aria-label="iPhone Air showing the calorie-view nutrition screen">
+          <div class="btn-side btn-action"></div>
+          <div class="btn-side btn-vol-up"></div>
+          <div class="btn-side btn-vol-down"></div>
+          <div class="btn-side btn-power"></div>
+          <div class="phone-screen">
+            <div class="phone-island" aria-hidden="true"></div>
+            <div class="screen screen-nutrition-cal" data-asset="nutrition-calorie" data-asset-folder="screenshots" data-asset-ext="png">
+              <div class="screen-status">
+                <span class="time">9:41</span>
+                <span class="icons"><span class="wifi"></span><span class="battery"></span></span>
+              </div>
+              <div class="nut-top">
+                <span class="nut-back">&larr;</span>
+                <span class="nut-title">Lunch</span>
+                <span class="nut-edit">Edit</span>
+              </div>
+              <div class="nut-photo">
+                <span class="nut-photo-tag">Photo &middot; AI recognised</span>
+              </div>
+              <div class="nut-cal-hero">
+                <span class="nut-cal-n">585</span>
+                <span class="nut-cal-u">kcal</span>
+              </div>
+              <div class="nut-cal-ring-row">
+                <div class="nut-ring">
+                  <div class="nut-ring-n">46<span>g</span></div>
+                  <div class="nut-ring-k">Protein</div>
+                </div>
+                <div class="nut-ring">
+                  <div class="nut-ring-n">42<span>g</span></div>
+                  <div class="nut-ring-k">Carbs</div>
+                </div>
+                <div class="nut-ring">
+                  <div class="nut-ring-n">18<span>g</span></div>
+                  <div class="nut-ring-k">Fat</div>
+                </div>
+              </div>
+              <div class="nut-daily">
+                <div class="nut-daily-k">Daily target</div>
+                <div class="nut-daily-bar"><span style="width:58%"></span></div>
+                <div class="nut-daily-v">585 / 1,450 kcal &middot; 865 left</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="s32-plus" aria-hidden="true">
+        <div class="s32-plus-mark">+</div>
+        <div class="s32-plus-label">Combined by default</div>
+      </div>
+      <div class="s32-phone-col">
+        <div class="s32-phone-cap">
+          <span class="s32-phone-cap-eb">Guided view</span>
+          <span class="s32-phone-cap-sub">The context &mdash; <em>why</em>.</span>
+        </div>
+        <div class="phone s32-phone" aria-label="iPhone Air showing the guided nutrition view">
+          <div class="btn-side btn-action"></div>
+          <div class="btn-side btn-vol-up"></div>
+          <div class="btn-side btn-vol-down"></div>
+          <div class="btn-side btn-power"></div>
+          <div class="phone-screen">
+            <div class="phone-island" aria-hidden="true"></div>
+            <div class="screen screen-nutrition-gui" data-asset="nutrition-guided" data-asset-folder="screenshots" data-asset-ext="png">
+              <div class="screen-status">
+                <span class="time">9:41</span>
+                <span class="icons"><span class="wifi"></span><span class="battery"></span></span>
+              </div>
+              <div class="nut-top">
+                <span class="nut-back">&larr;</span>
+                <span class="nut-title">Lunch</span>
+                <span class="nut-edit">Edit</span>
+              </div>
+              <div class="nut-photo">
+                <span class="nut-photo-tag">Photo &middot; AI recognised</span>
+              </div>
+              <div class="nut-gui-tag">Good balance.</div>
+              <ul class="nut-gui-rows">
+                <li><span class="nut-gui-k">Protein</span><span class="nut-gui-v nut-gui-hi">High</span></li>
+                <li><span class="nut-gui-k">Vegetables</span><span class="nut-gui-v nut-gui-ok">Good</span></li>
+                <li><span class="nut-gui-k">Whole foods</span><span class="nut-gui-v nut-gui-hi">Excellent</span></li>
+                <li><span class="nut-gui-k">Added sugar</span><span class="nut-gui-v nut-gui-lo">Low</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="s32-synth reveal d4">
+      <div class="s32-synth-body">
+        <div class="s32-synth-eb">Default behaviour</div>
+        <p class="s32-synth-p">Show the numbers and the qualitative descriptors together. The &ldquo;mode&rdquo; becomes a user toggle to <button class="chip chip-inline" data-cite="nutrition-hide-calories">hide calories</button> &mdash; not a forced choice between two views.</p>
+      </div>
+      <div class="s32-synth-quote">
+        <blockquote>If they could combine the two, that would be amazing.</blockquote>
+        <cite><button class="chip" data-cite="p06">P06</button> <span class="s32-ts">[22:46]</span></cite>
+      </div>
+    </div>
+    <div class="slide-foot">
+      <div class="foot-left">
+        <svg class="mark" viewBox="0 0 1128 431" aria-label="BIX" style="color: var(--ink)"><use href="#bix-logo"/></svg>
+        <span class="foot-internal">BI X Digital Innovation Lab &nbsp;|&nbsp; ONLY FOR INTERNAL USE</span>
+      </div>
+      <div class="foot-page">32</div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 33: FINDING 6 — REFLECTIONS: A SEGMENT FEATURE WITH HIGH CEILING -->
+<section class="slide s33 slide-dark">
+  <div class="slide-frame">
+    <div class="reveal d1" style="display:flex;align-items:center;justify-content:space-between">
+      <div class="eyebrow">Finding 06 &middot; Evening reflections</div>
+      <div style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--on-dark-mute);font-weight:500">Segment feature &middot; Adoption strategy</div>
+    </div>
+    <div class="s33-head reveal d2">
+      <h1 class="s33-headline">Reflections is a segment feature, not a universal one. The ceiling is high for the right users.</h1>
+      <div class="s33-stat-row">
+        <button class="kpi-pill chip-trigger" data-cite="refl-47"><b>4/7</b><i>engaged meaningfully</i></button>
+        <button class="kpi-pill chip-trigger" data-cite="refl-p04-replace"><b>P04</b><i>would replace her handwritten journal</i></button>
+      </div>
+    </div>
+    <div class="s33-spectrum reveal d3">
+      <div class="s33-spec-ends">
+        <span class="s33-spec-end s33-spec-end-l">Refused</span>
+        <span class="s33-spec-end s33-spec-end-m">Conditional &middot; would with prompts</span>
+        <span class="s33-spec-end s33-spec-end-r">Strong adoption</span>
+      </div>
+      <div class="s33-spec-track">
+        <div class="s33-spec-rule"></div>
+        <div class="s33-plot s33-plot-above" style="left:5%">
+          <button class="s33-plot-label chip-trigger" data-cite="refl-p01">
+            <span class="s33-plot-ident">P01 <span class="s33-plot-ts">[51:46]</span></span>
+            <span class="s33-plot-quote">&ldquo;I hate this.&rdquo;</span>
+          </button>
+          <span class="s33-plot-tick"></span>
+          <span class="s33-plot-dot s33-plot-dot-coral"></span>
+        </div>
+        <div class="s33-plot s33-plot-below" style="left:22%">
+          <span class="s33-plot-dot"></span>
+          <span class="s33-plot-tick"></span>
+          <button class="s33-plot-label chip-trigger" data-cite="refl-p03">
+            <span class="s33-plot-ident">P03 <span class="s33-plot-ts">[41:18]</span></span>
+            <span class="s33-plot-quote">Typed &ldquo;yes&rdquo; for every prompt</span>
+          </button>
+        </div>
+        <div class="s33-plot s33-plot-above" style="left:36%">
+          <button class="s33-plot-label chip-trigger" data-cite="refl-p02">
+            <span class="s33-plot-ident">P02</span>
+            <span class="s33-plot-quote">Used AI Coach to journal instead</span>
+          </button>
+          <span class="s33-plot-tick"></span>
+          <span class="s33-plot-dot"></span>
+        </div>
+        <div class="s33-plot s33-plot-below" style="left:55%">
+          <span class="s33-plot-dot"></span>
+          <span class="s33-plot-tick"></span>
+          <button class="s33-plot-label chip-trigger" data-cite="refl-p07-prompt">
+            <span class="s33-plot-ident">P07 <span class="s33-plot-ts">[45:46]</span></span>
+            <span class="s33-plot-quote">&ldquo;If it prompted me at the end of the day.&rdquo;</span>
+          </button>
+        </div>
+        <div class="s33-plot s33-plot-above" style="left:68%">
+          <button class="s33-plot-label chip-trigger" data-cite="refl-p06">
+            <span class="s33-plot-ident">P06</span>
+            <span class="s33-plot-quote">Would with habituation</span>
+          </button>
+          <span class="s33-plot-tick"></span>
+          <span class="s33-plot-dot"></span>
+        </div>
+        <div class="s33-plot s33-plot-below" style="left:80%">
+          <span class="s33-plot-dot s33-plot-dot-mint"></span>
+          <span class="s33-plot-tick"></span>
+          <button class="s33-plot-label chip-trigger" data-cite="refl-p05">
+            <span class="s33-plot-ident">P05 <span class="s33-plot-ts">[57:17]</span></span>
+            <span class="s33-plot-quote">&ldquo;If it made me feel good, I would&hellip;&rdquo;</span>
+          </button>
+        </div>
+        <div class="s33-plot s33-plot-above" style="left:95%">
+          <button class="s33-plot-label chip-trigger s33-plot-anchor" data-cite="refl-p04-replace">
+            <span class="s33-plot-ident">P04 <span class="s33-plot-ts">[37:44]</span></span>
+            <span class="s33-plot-quote">&ldquo;I would absolutely keep it.&rdquo;</span>
+          </button>
+          <span class="s33-plot-tick"></span>
+          <span class="s33-plot-dot s33-plot-dot-mint"></span>
+        </div>
+      </div>
+    </div>
+    <div class="s33-capstone reveal d4">
+      <p class="s33-capstone-p">
+        <button class="chip chip-inline" data-cite="p01">P01</button> refused reflections <span class="s33-ts">[51:46]</span> &mdash; and immediately said, &ldquo;I actually like the app though.&rdquo; <span class="s33-ts">[53:01]</span>
+      </p>
+    </div>
+    <div class="s33-adopt reveal d5">
+      <div class="s33-adopt-head">
+        <span class="s33-adopt-eb">Adoption levers &middot; 3 signals from the cohort</span>
+      </div>
+      <div class="s33-adopt-grid">
+        <div class="s33-adopt-lever">
+          <span class="s33-adopt-num">01</span>
+          <div class="s33-adopt-body">
+            <h4 class="s33-adopt-title">Bedtime push notification</h4>
+            <p class="s33-adopt-detail">Hooks into <button class="chip chip-inline" data-cite="p07">P07</button>&apos;s existing phone-before-bed habit. The most-cited condition for adoption.</p>
+          </div>
+        </div>
+        <div class="s33-adopt-lever">
+          <span class="s33-adopt-num">02</span>
+          <div class="s33-adopt-body">
+            <h4 class="s33-adopt-title">Immediate AI-personalised positive feedback</h4>
+            <p class="s33-adopt-detail">Noticed by <button class="chip chip-inline" data-cite="p05">P05</button> and <button class="chip chip-inline" data-cite="p06">P06</button>. The response to reflection inputs was warm, specific, and unprompted &mdash; not generic encouragement.</p>
+          </div>
+        </div>
+        <div class="s33-adopt-lever">
+          <span class="s33-adopt-num">03</span>
+          <div class="s33-adopt-body">
+            <h4 class="s33-adopt-title">Catch-up logging in the evening flow</h4>
+            <p class="s33-adopt-detail">Practical utility alongside the emotional reflection. Reduces the &ldquo;one more thing to do&rdquo; cost by bundling forgotten-meal logging with the wind-down.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="s33-clips reveal d6">
+      <div class="s33-clip" data-video="p04-reflections-3744">
+        <div class="clip-card compact" role="button" tabindex="0" aria-label="Play clip">
+          <div class="clip-thumb">
+            <div class="clip-waveform" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+            <div class="clip-play" aria-hidden="true"></div>
+          </div>
+          <div class="clip-info">
+            <div class="clip-info-top">
+              <span class="rec-dot"></span>
+              <span class="clip-label-text">Dovetail clip &middot; P04 @ 37:44</span>
+            </div>
+            <div class="clip-quote">&ldquo;I would absolutely keep it&hellip;&rdquo;</div>
+          </div>
+        </div>
+      </div>
+      <div class="s33-clip" data-video="p01-reflections-5301">
+        <div class="clip-card compact" role="button" tabindex="0" aria-label="Play clip">
+          <div class="clip-thumb">
+            <div class="clip-waveform" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+            <div class="clip-play" aria-hidden="true"></div>
+          </div>
+          <div class="clip-info">
+            <div class="clip-info-top">
+              <span class="rec-dot"></span>
+              <span class="clip-label-text">Dovetail clip &middot; P01 @ 53:01</span>
+            </div>
+            <div class="clip-quote">&ldquo;I actually like the app though.&rdquo;</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-foot">
+      <div class="foot-left">
+        <svg class="mark" viewBox="0 0 1128 431" aria-label="BIX" style="color: var(--on-dark)"><use href="#bix-logo"/></svg>
+        <span class="foot-internal">BI X Digital Innovation Lab &nbsp;|&nbsp; ONLY FOR INTERNAL USE</span>
+      </div>
+      <div class="foot-page">33</div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 34: SECTION STARTER — RECOMMENDATIONS & NEXT STEPS -->
+<section class="slide s34 slide-section-starter starter-a">
+  <svg class="x-watermark" viewBox="0 0 1111 926" aria-hidden="true"><use href="#x-symbol"/></svg>
+  <div class="slide-frame">
+    <div class="ss-eyebrow reveal d1">Section 06</div>
+    <div class="ss-body">
+      <div class="ss-num reveal d2">06</div>
+      <h1 class="ss-title reveal d3">Recommendations <span class="title-accent">&amp; Next Steps</span></h1>
+      <p class="ss-sub reveal d4">Prioritised remediations, and what the diary study will answer.</p>
+      <div class="ss-rule reveal d5"></div>
+    </div>
+    <div class="slide-foot">
+      <div class="foot-left">
+        <svg class="mark" viewBox="0 0 1128 431" aria-label="BIX" style="color: var(--on-dark)"><use href="#bix-logo"/></svg>
+        <span class="foot-internal">BI X Digital Innovation Lab &nbsp;|&nbsp; ONLY FOR INTERNAL USE</span>
+      </div>
+      <div class="foot-page">34</div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 35: REMEDIATION PRIORITY MATRIX -->
+<section class="slide s35 slide-paper">
+  <div class="slide-frame">
+    <div class="reveal d1" style="display:flex;align-items:center;justify-content:space-between">
+      <div class="eyebrow">Remediation priority &middot; 3 tiers</div>
+      <div style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-dim);font-weight:500">4 before the pilot &middot; 4 during build &middot; 4 to monitor</div>
+    </div>
+    <div class="s35-head reveal d2">
+      <h1 class="s35-headline">Twelve items. Sequenced by what must land before the diary study, what should build alongside it, and what the study itself will teach us.</h1>
+    </div>
+    <div class="s35-tiers reveal d3">
+      <div class="s35-tier s35-tier-1">
+        <div class="s35-tier-head">
+          <span class="s35-tier-num">Tier 01</span>
+          <span class="s35-tier-title">Fix before the diary study</span>
+          <button class="s35-tier-meta chip-trigger" data-cite="tier-1-criteria">High impact &middot; Low effort</button>
+        </div>
+        <ul class="s35-tier-items">
+          <li class="s35-tier-item">
+            <span class="s35-tier-item-text">Restyle bottom navigation for visibility and contrast</span>
+            <button class="s35-tier-ref chip-trigger" data-cite="f1-short">F1</button>
+          </li>
+          <li class="s35-tier-item">
+            <span class="s35-tier-item-text">Restyle toasts and add persistent &ldquo;last logged&rdquo; indicators</span>
+            <button class="s35-tier-ref chip-trigger" data-cite="f1-last-logged">F1</button>
+          </li>
+          <li class="s35-tier-item">
+            <span class="s35-tier-item-text">Move card CTAs above the fold or make decorative icons tappable</span>
+            <button class="s35-tier-ref chip-trigger" data-cite="f11-card-cta">F11</button>
+          </li>
+          <li class="s35-tier-item">
+            <span class="s35-tier-item-text">Make the meds calendar &ldquo;today&rdquo; date tappable for injection logging</span>
+            <button class="s35-tier-ref chip-trigger" data-cite="meds-3of7">F3</button>
+          </li>
+        </ul>
+      </div>
+      <div class="s35-tier s35-tier-2">
+        <div class="s35-tier-head">
+          <span class="s35-tier-num">Tier 02</span>
+          <span class="s35-tier-title">Build alongside the diary study</span>
+          <button class="s35-tier-meta chip-trigger" data-cite="tier-2-criteria">High impact &middot; Medium effort</button>
+        </div>
+        <ul class="s35-tier-items">
+          <li class="s35-tier-item">
+            <span class="s35-tier-item-text">Temporal navigation &mdash; daily / 7-day / 30-day trends + date-specific calendar</span>
+            <button class="s35-tier-ref chip-trigger" data-cite="temporal-3of7">F4</button>
+          </li>
+          <li class="s35-tier-item">
+            <span class="s35-tier-item-text">Combined nutritional display &mdash; numbers and descriptors by default</span>
+            <button class="s35-tier-ref chip-trigger" data-cite="nutrition-hide-calories">F5</button>
+          </li>
+          <li class="s35-tier-item">
+            <span class="s35-tier-item-text">Bedtime push notification for evening reflections</span>
+            <button class="s35-tier-ref chip-trigger" data-cite="refl-p07-prompt">F6</button>
+          </li>
+          <li class="s35-tier-item">
+            <span class="s35-tier-item-text">Raise AI Coach prominence &mdash; contextual &ldquo;Ask Coach about this&rdquo; prompts, possible rename</span>
+            <button class="s35-tier-ref chip-trigger" data-cite="coach-labeling">F2</button>
+          </li>
+        </ul>
+      </div>
+      <div class="s35-tier s35-tier-3">
+        <div class="s35-tier-head">
+          <span class="s35-tier-num">Tier 03</span>
+          <span class="s35-tier-title">Monitor during the diary study</span>
+          <button class="s35-tier-meta chip-trigger" data-cite="tier-3-criteria">Questions multi-day use will answer</button>
+        </div>
+        <ul class="s35-tier-items">
+          <li class="s35-tier-item">
+            <span class="s35-tier-item-text">AI Coach discoverability with multi-day usage &mdash; may resolve naturally</span>
+            <button class="s35-tier-ref chip-trigger" data-cite="coach-discover-caveat">F2</button>
+          </li>
+          <li class="s35-tier-item">
+            <span class="s35-tier-item-text">Reflection adoption rates by user segment</span>
+            <button class="s35-tier-ref chip-trigger" data-cite="refl-47">F6</button>
+          </li>
+          <li class="s35-tier-item">
+            <span class="s35-tier-item-text">Voice-input demand &mdash; confirmed in-session, measure frequency in the field</span>
+            <button class="s35-tier-ref chip-trigger" data-cite="pl2-voice">PL2</button>
+          </li>
+          <li class="s35-tier-item">
+            <span class="s35-tier-item-text">Learning content engagement depth and return rate</span>
+            <button class="s35-tier-ref chip-trigger" data-cite="learn-77">F7</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="slide-foot">
+      <div class="foot-left">
+        <svg class="mark" viewBox="0 0 1128 431" aria-label="BIX" style="color: var(--ink)"><use href="#bix-logo"/></svg>
+        <span class="foot-internal">BI X Digital Innovation Lab &nbsp;|&nbsp; ONLY FOR INTERNAL USE</span>
+      </div>
+      <div class="foot-page">35</div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 36: WHAT THIS MEANS FOR THE DIARY STUDY -->
+<section class="slide s36 slide-dark">
+  <div class="slide-frame">
+    <div class="reveal d1" style="display:flex;align-items:center;justify-content:space-between">
+      <div class="eyebrow">What this study validated &middot; What the diary study will answer</div>
+      <div style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--on-dark-mute);font-weight:500">Handoff &middot; 6 claim pairs</div>
+    </div>
+    <div class="s36-head reveal d2">
+      <h1 class="s36-headline">Usability testing validates. The diary study extends.</h1>
+    </div>
+    <div class="s36-ledger reveal d3">
+      <div class="s36-ledger-cols">
+        <div class="s36-col-head s36-col-head-l">Validated in this study</div>
+        <div class="s36-col-head-arrow" aria-hidden="true"></div>
+        <div class="s36-col-head s36-col-head-r">Answered by the diary study</div>
+      </div>
+      <ul class="s36-rows">
+        <li class="s36-row">
+          <button class="s36-claim s36-claim-l chip-trigger" data-cite="diary-core">Core concept resonates with target users</button>
+          <span class="s36-arrow" aria-hidden="true">
+            <svg width="60" height="14" viewBox="0 0 60 14" fill="none"><path d="M0 7 L52 7 M47 2 L52 7 L47 12" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+          </span>
+          <button class="s36-claim s36-claim-r chip-trigger" data-cite="diary-q-sustain">Does engagement sustain over two months?</button>
+        </li>
+        <li class="s36-row">
+          <button class="s36-claim s36-claim-l chip-trigger" data-cite="diary-features">Photo meal logging, body map, and AI Coach generate first-session value</button>
+          <span class="s36-arrow" aria-hidden="true">
+            <svg width="60" height="14" viewBox="0 0 60 14" fill="none"><path d="M0 7 L52 7 M47 2 L52 7 L47 12" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+          </span>
+          <button class="s36-claim s36-claim-r chip-trigger" data-cite="diary-q-habits">Do users form daily tracking habits?</button>
+        </li>
+        <li class="s36-row">
+          <button class="s36-claim s36-claim-l chip-trigger" data-cite="diary-coach-post">AI Coach provides unique value post-discovery</button>
+          <span class="s36-arrow" aria-hidden="true">
+            <svg width="60" height="14" viewBox="0 0 60 14" fill="none"><path d="M0 7 L52 7 M47 2 L52 7 L47 12" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+          </span>
+          <button class="s36-claim s36-claim-r chip-trigger" data-cite="diary-q-coach-curve">Does Coach usage increase or decrease over time?</button>
+        </li>
+        <li class="s36-row">
+          <button class="s36-claim s36-claim-l chip-trigger" data-cite="diary-learn">Learning content is well-structured and valued</button>
+          <span class="s36-arrow" aria-hidden="true">
+            <svg width="60" height="14" viewBox="0 0 60 14" fill="none"><path d="M0 7 L52 7 M47 2 L52 7 L47 12" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+          </span>
+          <button class="s36-claim s36-claim-r chip-trigger" data-cite="diary-q-learn-return">Do users complete pathways and return to content?</button>
+        </li>
+        <li class="s36-row">
+          <button class="s36-claim s36-claim-l chip-trigger" data-cite="diary-refl">Reflections work for the right users</button>
+          <span class="s36-arrow" aria-hidden="true">
+            <svg width="60" height="14" viewBox="0 0 60 14" fill="none"><path d="M0 7 L52 7 M47 2 L52 7 L47 12" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+          </span>
+          <button class="s36-claim s36-claim-r chip-trigger" data-cite="diary-q-refl-adopt">What adoption rate does the bedtime prompt achieve?</button>
+        </li>
+        <li class="s36-row">
+          <button class="s36-claim s36-claim-l chip-trigger" data-cite="diary-f1">Usability gaps are visual-styling, not information-architecture</button>
+          <span class="s36-arrow" aria-hidden="true">
+            <svg width="60" height="14" viewBox="0 0 60 14" fill="none"><path d="M0 7 L52 7 M47 2 L52 7 L47 12" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+          </span>
+          <button class="s36-claim s36-claim-r chip-trigger" data-cite="diary-q-remed">Do the Tier 1 remediations resolve discoverability?</button>
+        </li>
+      </ul>
+    </div>
+    <div class="slide-foot">
+      <div class="foot-left">
+        <svg class="mark" viewBox="0 0 1128 431" aria-label="BIX" style="color: var(--on-dark)"><use href="#bix-logo"/></svg>
+        <span class="foot-internal">BI X Digital Innovation Lab &nbsp;|&nbsp; ONLY FOR INTERNAL USE</span>
+      </div>
+      <div class="foot-page">36</div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 37: STRATEGIC TAKEAWAY (THREE-PILLAR + WELLNESS CORE) -->
+<section class="slide s37 slide-paper">
+  <div class="slide-frame">
+    <div class="reveal d1" style="display:flex;align-items:center;justify-content:space-between">
+      <div class="eyebrow">Strategic takeaway</div>
+      <div style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-dim);font-weight:500">n = 7 &middot; endorsements 7/7 &middot; would replace current app 2/7</div>
+    </div>
+    <div class="s37-head reveal d2">
+      <h1 class="s37-headline">Every participant understood the concept. Every participant endorsed the integration.</h1>
+      <p class="s37-sub">The refinements identified are visual-styling changes to an architecture that already works.</p>
+    </div>
+    <div class="s37-diagram reveal d3" aria-label="Three-pillar diagram showing Track, Learn, and Reflect feeding the Wellness Score">
+      <svg class="s37-connectors" viewBox="0 0 1200 400" aria-hidden="true" preserveAspectRatio="none">
+        <line x1="220" y1="200" x2="560" y2="200" stroke="currentColor" stroke-width="1.5" stroke-dasharray="4 6" />
+        <line x1="600" y1="200" x2="600" y2="320" stroke="currentColor" stroke-width="1.5" stroke-dasharray="4 6" />
+        <line x1="980" y1="200" x2="640" y2="200" stroke="currentColor" stroke-width="1.5" stroke-dasharray="4 6" />
+      </svg>
+      <div class="s37-pillar s37-pillar-l">
+        <button class="s37-pillar-btn chip-trigger" data-cite="pillar-track">
+          <span class="s37-pillar-eb">Pillar 01</span>
+          <span class="s37-pillar-title">Track</span>
+          <span class="s37-pillar-sub">Medication logging &middot; body map &middot; photo meal logging</span>
+        </button>
+      </div>
+      <div class="s37-core">
+        <button class="s37-core-btn chip-trigger" data-cite="pillar-wellness">
+          <span class="s37-core-ring">
+            <span class="s37-core-label">Wellness Score</span>
+          </span>
+        </button>
+      </div>
+      <div class="s37-pillar s37-pillar-r">
+        <button class="s37-pillar-btn chip-trigger" data-cite="pillar-learn">
+          <span class="s37-pillar-eb">Pillar 02</span>
+          <span class="s37-pillar-title">Learn</span>
+          <span class="s37-pillar-sub">Behavioural pathways &middot; CBT &middot; ACT &middot; AI Coach</span>
+        </button>
+      </div>
+      <div class="s37-pillar s37-pillar-b">
+        <button class="s37-pillar-btn chip-trigger" data-cite="pillar-reflect">
+          <span class="s37-pillar-eb">Pillar 03</span>
+          <span class="s37-pillar-title">Reflect</span>
+          <span class="s37-pillar-sub">Evening wind-down &middot; journaling &middot; catch-up logging</span>
+        </button>
+      </div>
+    </div>
+    <div class="slide-foot">
+      <div class="foot-left">
+        <svg class="mark" viewBox="0 0 1128 431" aria-label="BIX" style="color: var(--ink)"><use href="#bix-logo"/></svg>
+        <span class="foot-internal">BI X Digital Innovation Lab &nbsp;|&nbsp; ONLY FOR INTERNAL USE</span>
+      </div>
+      <div class="foot-page">37</div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 38: CLOSING — IN THEIR WORDS -->
+<section class="slide s38 slide-dark">
+  <svg class="s38-watermark" viewBox="0 0 1111 926" aria-hidden="true"><use href="#x-symbol"/></svg>
+  <div class="slide-frame">
+    <div class="reveal d1" style="display:flex;align-items:center;justify-content:space-between">
+      <div class="eyebrow">Closing</div>
+      <div style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--on-dark-mute);font-weight:500">In their words</div>
+    </div>
+    <div class="s38-stage">
+      <figure class="s38-q s38-q-1 reveal d2">
+        <blockquote class="s38-quote">It&apos;s easy to take the medication and lose weight, but you have to change your lifestyle.</blockquote>
+        <figcaption class="s38-cite"><span class="s38-pid">P07</span> <span class="s38-ts">[53:48]</span> &middot; target demographic &middot; Zepbound, 5 months</figcaption>
+      </figure>
+      <figure class="s38-q s38-q-2 reveal d3">
+        <blockquote class="s38-quote">I would definitely consider replacing the one I use with this.</blockquote>
+        <figcaption class="s38-cite"><span class="s38-pid">P03</span> <span class="s38-ts">[52:34]</span> &middot; the cohort&apos;s most critical scorer</figcaption>
+      </figure>
+      <figure class="s38-q s38-q-3 reveal d4">
+        <blockquote class="s38-quote">I personally don&apos;t have anyone that I&apos;m going through like a weight loss journey with.</blockquote>
+        <figcaption class="s38-cite"><span class="s38-pid">P05</span> <span class="s38-ts">[38:22]</span> &middot; on the AI Coach as companion</figcaption>
+      </figure>
+      <figure class="s38-q s38-q-4 reveal d5">
+        <blockquote class="s38-quote">I would highly recommend it.</blockquote>
+        <figcaption class="s38-cite"><span class="s38-pid">P04</span> <span class="s38-ts">[48:26]</span> &middot; strongest overall endorsement</figcaption>
+      </figure>
+      <div class="s38-clip reveal d6" data-video="p07-lifestyle-5348">
+        <div class="clip-card compact" role="button" tabindex="0" aria-label="Play clip">
+          <div class="clip-thumb">
+            <div class="clip-waveform" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+            <div class="clip-play" aria-hidden="true"></div>
+          </div>
+          <div class="clip-info">
+            <div class="clip-info-top">
+              <span class="rec-dot"></span>
+              <span class="clip-label-text">Dovetail clip &middot; P07 @ 53:48</span>
+            </div>
+            <div class="clip-quote">The final moment.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-foot">
+      <div class="foot-left">
+        <svg class="mark" viewBox="0 0 1128 431" aria-label="BIX" style="color: var(--on-dark)"><use href="#bix-logo"/></svg>
+        <span class="foot-internal">BI X Digital Innovation Lab &nbsp;|&nbsp; ONLY FOR INTERNAL USE</span>
+      </div>
+      <div class="foot-page">38</div>
+    </div>
+  </div>
+</section>
       </div>
     </div>
     <div id="controls" class="controls">
@@ -6805,7 +8179,15 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
     { id: 's27', num: 27, section: 'Design Findings & Opportunities',   title: 'Finding 1 — Remediations',      thumb: 'remediation' },
     { id: 's28', num: 28, section: 'Design Findings & Opportunities',   title: 'Finding 2 — AI Coach Discoverability', thumb: 'spectrum' },
     { id: 's29', num: 29, section: 'Design Findings & Opportunities',   title: 'Finding 2 — Recommendations',   thumb: 'recs' },
-    { id: 's30', num: 30, section: 'Design Findings & Opportunities',   title: 'Finding 3 — Meds Screen',       thumb: 'meds' }
+    { id: 's30', num: 30, section: 'Design Findings & Opportunities',   title: 'Finding 3 — Meds Screen',       thumb: 'meds' },
+    { id: 's31', num: 31, section: 'Design Findings & Opportunities',   title: 'Finding 4 — Temporal Navigation', thumb: 'temporal' },
+    { id: 's32', num: 32, section: 'Design Findings & Opportunities',   title: 'Finding 5 — Nutritional Display', thumb: 'nutrition' },
+    { id: 's33', num: 33, section: 'Design Findings & Opportunities',   title: 'Finding 6 — Reflections Spectrum', thumb: 'refl' },
+    { id: 's34', num: 34, section: 'Recommendations & Next Steps',      title: 'Section Starter',               thumb: 'sec-recs' },
+    { id: 's35', num: 35, section: 'Recommendations & Next Steps',      title: 'Remediation Priority Matrix',   thumb: 'priority' },
+    { id: 's36', num: 36, section: 'Recommendations & Next Steps',      title: 'What the Diary Study Answers',  thumb: 'diary' },
+    { id: 's37', num: 37, section: 'Recommendations & Next Steps',      title: 'Strategic Takeaway',            thumb: 'takeaway' },
+    { id: 's38', num: 38, section: 'Recommendations & Next Steps',      title: 'Closing — In Their Words',      thumb: 'closing' }
   ];
   let current = 0;
 
@@ -7064,7 +8446,15 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
       remediation:   'background:linear-gradient(135deg,#0A3B35,#062823); position:relative;',
       spectrum:      'background:linear-gradient(135deg,#F3ECDB,#EBE3D1); position:relative;',
       recs:          'background:linear-gradient(135deg,#0A3B35,#062823); position:relative;',
-      meds:          'background:linear-gradient(135deg,#F3ECDB,#EBE3D1); position:relative;'
+      meds:          'background:linear-gradient(135deg,#F3ECDB,#EBE3D1); position:relative;',
+      temporal:      'background:linear-gradient(135deg,#0A3B35,#062823); position:relative;',
+      nutrition:     'background:linear-gradient(135deg,#F3ECDB,#EBE3D1); position:relative;',
+      refl:          'background:linear-gradient(135deg,#0A3B35,#062823); position:relative;',
+      'sec-recs':    'background:linear-gradient(135deg,#0C433C,#062823); position:relative;',
+      priority:      'background:linear-gradient(135deg,#F3ECDB,#EBE3D1); position:relative;',
+      diary:         'background:linear-gradient(135deg,#0A3B35,#062823); position:relative;',
+      takeaway:      'background:linear-gradient(135deg,#F3ECDB,#EBE3D1); position:relative;',
+      closing:       'background:linear-gradient(135deg,#0A3B35,#062823); position:relative;'
     };
     el.setAttribute('style', el.getAttribute('style') + ';' + (styles[key]||''));
     // minimal preview ornament
@@ -7121,10 +8511,10 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
         <span style="position:absolute;left:6px;top:18px;right:42%;font-family:var(--f-display);font-size:7px;font-weight:600;color:#F5F2EA;line-height:1.2">A GLP-1 companion.</span>
         <span style="position:absolute;right:6px;top:10px;bottom:6px;width:22px;border-radius:4px;background:#111;border:1px solid #2b2b2e"></span>
         <span style="position:absolute;right:13px;top:14px;width:8px;height:2px;border-radius:2px;background:#0A1A1C"></span>`;
-    } else if (key === 'sec-exec' || key === 'sec-study' || key === 'sec-resonated' || key === 'sec-detail' || key === 'sec-findings') {
-      const label = { 'sec-exec': 'Executive Summary', 'sec-study': 'Study Design', 'sec-resonated': 'What Resonated', 'sec-detail': 'Detailed Results', 'sec-findings': 'Design Findings' }[key];
-      const num   = { 'sec-exec': '01',                'sec-study': '02',         'sec-resonated': '03',              'sec-detail': '04',               'sec-findings': '05' }[key];
-      const color = { 'sec-exec': '#34EEA7',           'sec-study': '#5EEAD4',    'sec-resonated': '#14B8A6',         'sec-detail': '#34EEA7',          'sec-findings': '#5EEAD4' }[key];
+    } else if (key === 'sec-exec' || key === 'sec-study' || key === 'sec-resonated' || key === 'sec-detail' || key === 'sec-findings' || key === 'sec-recs') {
+      const label = { 'sec-exec': 'Executive Summary', 'sec-study': 'Study Design', 'sec-resonated': 'What Resonated', 'sec-detail': 'Detailed Results', 'sec-findings': 'Design Findings', 'sec-recs': 'Recs & Next Steps' }[key];
+      const num   = { 'sec-exec': '01',                'sec-study': '02',         'sec-resonated': '03',              'sec-detail': '04',               'sec-findings': '05',               'sec-recs': '06' }[key];
+      const color = { 'sec-exec': '#34EEA7',           'sec-study': '#5EEAD4',    'sec-resonated': '#14B8A6',         'sec-detail': '#34EEA7',          'sec-findings': '#5EEAD4',          'sec-recs': '#34EEA7' }[key];
       el.innerHTML = `<span style="position:absolute;right:-4px;top:-4px;width:48px;height:44px;opacity:0.3;color:#5EEAD4"><svg width="100%" height="100%" viewBox="0 0 1111 926" fill="none"><use href="#x-symbol"/></svg></span>
         <span style="position:absolute;left:8px;top:6px;font-family:var(--f-display);font-size:22px;font-weight:700;color:${color};line-height:1;letter-spacing:-0.02em">${num}</span>
         <span style="position:absolute;left:8px;bottom:6px;font-size:5.5px;color:#5EEAD4;letter-spacing:0.12em;font-weight:600;text-transform:uppercase">${label}</span>`;
@@ -7231,6 +8621,59 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
         </span>
         <span style="position:absolute;left:28px;top:22px;right:6px;font-family:var(--f-serif);font-style:italic;font-size:7px;color:#0A1A1C;line-height:1.2">&ldquo;It literally says meds.&rdquo;</span>
         <span style="position:absolute;right:6px;bottom:6px;font-size:5px;color:#0D9488;font-weight:700;letter-spacing:0.08em">3/7</span>`;
+    } else if (key === 'temporal') {
+      el.innerHTML = `<span style="position:absolute;left:6px;top:6px;font-size:6px;letter-spacing:0.16em;color:#5EEAD4;font-weight:600;text-transform:uppercase">Progress · F4</span>
+        <span style="position:absolute;left:6px;right:6px;top:20px;bottom:16px;display:grid;grid-template-columns:repeat(4,1fr);gap:2px">
+          ${[1,2,3,4].map(()=>`<span style="display:flex;flex-direction:column;gap:1.5px;padding:1px 2px;border-right:1px solid rgba(94,234,212,0.15)"><span style="font-size:4.5px;color:#5EEAD4;letter-spacing:0.06em;font-weight:600">USE</span><span style="font-family:var(--f-serif);font-style:italic;font-size:6px;color:#F5F2EA;line-height:1.1;opacity:0.9">quote&hellip;</span></span>`).join('')}
+        </span>
+        <span style="position:absolute;right:6px;bottom:4px;font-family:var(--f-display);font-size:10px;font-weight:700;color:#34EEA7;letter-spacing:-0.02em">3/7</span>`;
+    } else if (key === 'nutrition') {
+      el.innerHTML = `<span style="position:absolute;left:6px;top:6px;font-size:6px;letter-spacing:0.16em;color:#0D9488;font-weight:700;text-transform:uppercase">Nutrition · F5</span>
+        <span style="position:absolute;left:8px;top:20px;width:18px;height:30px;border-radius:3px;background:#111;border:1px solid #2b2b2e;overflow:hidden">
+          <span style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-family:var(--f-display);font-size:7px;font-weight:700;color:#34EEA7;line-height:1">585</span>
+        </span>
+        <span style="position:absolute;left:30px;top:30%;font-family:var(--f-display);font-weight:300;font-size:16px;color:#0D9488;line-height:1">+</span>
+        <span style="position:absolute;right:8px;top:20px;width:18px;height:30px;border-radius:3px;background:#111;border:1px solid #2b2b2e;overflow:hidden">
+          <span style="position:absolute;left:1.5px;right:1.5px;top:50%;transform:translateY(-50%);height:4px;border-radius:1px;background:rgba(52,238,167,0.55)"></span>
+        </span>
+        <span style="position:absolute;left:6px;right:6px;bottom:4px;font-size:5px;color:#4A5558;letter-spacing:0.04em;text-align:center">Combined by default</span>`;
+    } else if (key === 'closing') {
+      el.innerHTML = `<span style="position:absolute;left:6px;top:6px;font-size:6px;letter-spacing:0.16em;color:#5EEAD4;font-weight:600;text-transform:uppercase">Closing</span>
+        <span style="position:absolute;left:6px;top:18px;right:32%;font-family:var(--f-serif);font-style:italic;font-size:7.5px;color:#34EEA7;line-height:1.2">&ldquo;change your lifestyle.&rdquo;</span>
+        <span style="position:absolute;right:6px;top:34px;font-family:var(--f-serif);font-style:italic;font-size:6.5px;color:#5EEAD4;line-height:1.2;text-align:right;max-width:55%">&ldquo;replacing the one I use&rdquo;</span>
+        <span style="position:absolute;left:6px;bottom:14px;font-family:var(--f-serif);font-style:italic;font-size:6.5px;color:#F5F2EA;line-height:1.2;opacity:0.75;max-width:60%">&ldquo;me, myself, and I&rdquo;</span>
+        <span style="position:absolute;right:6px;bottom:4px;font-family:var(--f-serif);font-style:italic;font-size:6px;color:#5EEAD4;line-height:1.2">&ldquo;highly recommend&rdquo;</span>`;
+    } else if (key === 'takeaway') {
+      el.innerHTML = `<span style="position:absolute;left:6px;top:6px;font-size:6px;letter-spacing:0.16em;color:#0D9488;font-weight:700;text-transform:uppercase">Takeaway</span>
+        <span style="position:absolute;left:10%;top:52%;transform:translate(-50%,-50%);width:16px;height:8px;border-radius:2px;background:rgba(20,184,166,0.6)"></span>
+        <span style="position:absolute;right:10%;top:52%;transform:translate(50%,-50%);width:16px;height:8px;border-radius:2px;background:rgba(20,184,166,0.6)"></span>
+        <span style="position:absolute;left:50%;bottom:18%;transform:translateX(-50%);width:18px;height:8px;border-radius:2px;background:rgba(52,238,167,0.65)"></span>
+        <span style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:20px;height:20px;border-radius:50%;background:radial-gradient(circle at 30% 30%,rgba(52,238,167,0.35),rgba(20,184,166,0.2));border:1.5px solid #0D9488;box-shadow:0 0 0 2px rgba(52,238,167,0.15)"></span>`;
+    } else if (key === 'diary') {
+      el.innerHTML = `<span style="position:absolute;left:6px;top:6px;font-size:5px;letter-spacing:0.16em;color:#5EEAD4;font-weight:600;text-transform:uppercase">Validated</span>
+        <span style="position:absolute;right:6px;top:6px;font-size:5px;letter-spacing:0.16em;color:#34EEA7;font-weight:600;text-transform:uppercase">Diary</span>
+        <span style="position:absolute;left:6px;right:6px;top:18px;bottom:6px;display:flex;flex-direction:column;gap:2px">
+          ${[1,2,3,4].map(()=>`<span style="display:flex;align-items:center;gap:3px"><span style="flex:1;height:1.5px;background:rgba(94,234,212,0.3)"></span><span style="color:#34EEA7;font-size:6px;line-height:1;opacity:0.6">\u203A</span><span style="flex:1;height:1.5px;background:rgba(52,238,167,0.3)"></span></span>`).join('')}
+        </span>`;
+    } else if (key === 'priority') {
+      el.innerHTML = `<span style="position:absolute;left:6px;top:6px;font-size:6px;letter-spacing:0.16em;color:#0D9488;font-weight:700;text-transform:uppercase">Priority</span>
+        <span style="position:absolute;left:6px;right:6px;top:18px;bottom:6px;display:flex;flex-direction:column;gap:2px;align-items:center">
+          <span style="width:100%;height:10px;border-radius:1.5px;background:rgba(20,184,166,0.25);border:1px solid rgba(20,184,166,0.45)"></span>
+          <span style="width:85%;height:10px;border-radius:1.5px;background:rgba(245,242,234,0.55);border:1px solid rgba(10,26,28,0.12)"></span>
+          <span style="width:70%;height:10px;border-radius:1.5px;background:rgba(235,227,209,0.7);border:1px solid rgba(10,26,28,0.1)"></span>
+        </span>`;
+    } else if (key === 'refl') {
+      el.innerHTML = `<span style="position:absolute;left:6px;top:6px;font-size:6px;letter-spacing:0.16em;color:#5EEAD4;font-weight:600;text-transform:uppercase">Reflections · F6</span>
+        <span style="position:absolute;left:6px;right:6px;top:50%;transform:translateY(-50%);height:1px;background:linear-gradient(90deg,rgba(252,165,165,0.6),rgba(245,158,11,0.45) 35%,rgba(94,234,212,0.5) 70%,rgba(52,238,167,0.8))"></span>
+        <span style="position:absolute;left:7%;top:50%;transform:translate(-50%,-50%);width:3.5px;height:3.5px;border-radius:50%;background:#FCA5A5;box-shadow:0 0 0 1px rgba(252,165,165,0.35)"></span>
+        <span style="position:absolute;left:24%;top:50%;transform:translate(-50%,-50%);width:3px;height:3px;border-radius:50%;background:#94A3B8"></span>
+        <span style="position:absolute;left:38%;top:50%;transform:translate(-50%,-50%);width:3px;height:3px;border-radius:50%;background:#94A3B8"></span>
+        <span style="position:absolute;left:55%;top:50%;transform:translate(-50%,-50%);width:3px;height:3px;border-radius:50%;background:#94A3B8"></span>
+        <span style="position:absolute;left:68%;top:50%;transform:translate(-50%,-50%);width:3px;height:3px;border-radius:50%;background:#94A3B8"></span>
+        <span style="position:absolute;left:80%;top:50%;transform:translate(-50%,-50%);width:3.5px;height:3.5px;border-radius:50%;background:#34EEA7;box-shadow:0 0 0 1px rgba(52,238,167,0.35)"></span>
+        <span style="position:absolute;left:93%;top:50%;transform:translate(-50%,-50%);width:4px;height:4px;border-radius:50%;background:#34EEA7;box-shadow:0 0 0 1.5px rgba(52,238,167,0.4)"></span>
+        <span style="position:absolute;left:4px;bottom:4px;font-size:4.5px;color:#FCA5A5;letter-spacing:0.06em">REFUSED</span>
+        <span style="position:absolute;right:4px;bottom:4px;font-size:4.5px;color:#34EEA7;letter-spacing:0.06em">STRONG</span>`;
     }
   }
 
@@ -7980,6 +9423,212 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
       title: 'Fast learning curve even when discoverability is imperfect',
       detail: 'After her T2 meds-screen error, P03 explicitly avoided the same pattern on T3 [18:03]: \u201CWell I learned not to hit those.\u201D One imperfect first-try led to clean execution on the next task.',
       meta: 'The cohort\u2019s ability to self-correct after one friction moment suggests the cost of F1 / F3 gaps is lower in multi-day use than in first-session metrics.'
+    },
+
+    // ---------- Slide 31 · F4 Temporal navigation ----------
+    'temporal-3of7': {
+      label: 'Finding 4 \u00b7 Temporal navigation',
+      title: '3 of 7 independently sought a non-AI progress path',
+      list: [
+        { id: 'P01', text: '[35:37] Expected a calendar icon. \u201CI was looking for like a calendar.\u201D Also surfaced doctor-visit prep as the use case [21:30].' },
+        { id: 'P03', text: '[29:44] Wanted a button on the home screen: \u201CIt\u2019s quicker. You don\u2019t have to type a question.\u201D' },
+        { id: 'P04', text: '[22:35] Expected the wellness score to function as a weekly summary. Also surfaced emotional-eating patterns as a use case [38:23].' }
+      ],
+      meta: 'P07\u2019s forward-planning use case [23:46] is related but not a direct request \u2014 she used today\u2019s calorie view to plan dinner. The pattern generalises: users want structured, at-a-glance access to trends and history, not just AI conversation.'
+    },
+    'temporal-progress-icon': {
+      label: 'Design detail \u00b7 progress entry point',
+      title: 'The up-trend arrow on the home screen was not read as progress',
+      detail: 'No participant tapped the small up-trend arrow on the home screen as their first move for progress data. P01 expected a calendar icon. P03 expected a button. P04 expected the wellness-score rings to do it. The current icon is the right function in the wrong visual language.',
+      meta: 'Remediation is contrast + labelling, not a new information architecture. See Finding 1 for the broader affordance pattern this is part of.'
+    },
+    'temporal-catch-up': {
+      label: 'Production feature \u00b7 catch-up logging',
+      title: 'Morning + evening catch-up logging \u2014 partially addresses this',
+      detail: 'The production build includes a morning recap of yesterday\u2019s unlogged items and an evening quick-log before reflection. This ensures data completeness \u2014 an implicit pressure on the temporal-navigation need. It does not, however, give users a browsing/summary surface for trends and historical lookback.',
+      meta: 'The catch-up flow was not in the prototype (PL5 in the limitations ledger). Temporal navigation remains a design gap for viewing, even when completeness is solved for logging.'
+    },
+
+    // ---------- Slide 32 · F5 Nutritional display ----------
+    'nutrition-67': {
+      label: 'Finding 5 \u00b7 Nutritional display',
+      title: '6 of 7 preferred the calorie view once they saw it',
+      list: [
+        { id: 'P01', text: 'Started calorie \u00b7 preferred calorie. Macro view \u201Cmore confusing \u2014 I don\u2019t know what they\u2019re talking about with the mixed and the whole.\u201D [27:42]' },
+        { id: 'P02', text: 'Started macro \u00b7 preferred calorie. Liked the photo + numeric view.' },
+        { id: 'P03', text: 'Started calorie \u00b7 preferred calorie. \u201CWe worry about the calories.\u201D [23:36]' },
+        { id: 'P04', text: 'Started macro \u00b7 preferred calorie. \u201CI like that much better. It tells you how many carbs, how many grams of protein.\u201D [19:37]' },
+        { id: 'P05', text: 'Started calorie \u00b7 ambivalent / macro-leaning. The only participant who wavered \u2014 tracks protein, not calories. [31:10]' },
+        { id: 'P06', text: 'Started macro \u00b7 requested combined view. \u201CIf they could combine the two, that would be amazing.\u201D [22:46]' },
+        { id: 'P07', text: 'Started calorie \u00b7 preferred calorie. Guided view \u201Cnot as direct.\u201D Calorie view enabled forward planning \u2014 \u201Cwhat can I have for dinner?\u201D [23:46]' }
+      ],
+      meta: 'Initial view alternated across sessions. Preference held regardless of starting view for all but P05 and P06. The calorie number was the anchor; qualitative language was the context.'
+    },
+    'nutrition-p06-combined': {
+      label: 'P06 \u00b7 The combined-view moment',
+      title: '\u201CIf they could combine the two, that would be amazing.\u201D',
+      detail: '36F \u00b7 Zepbound \u00b7 2 months \u00b7 Tech comfort 6/7. Newest GLP-1 user in the cohort. P06 started on the macro view and articulated the design call unprompted: users want the numbers (calories, grams) AND the qualitative descriptors (\u201Cgood balance,\u201D \u201Cprotein: high\u201D) together \u2014 not a mode switch between them.',
+      meta: 'P06\u2019s framing reframes the binary: calorie-vs-macro is the wrong choice. The actual choice is whether to display calories at all \u2014 a toggle for users who find calorie counting counterproductive, not a view selector.'
+    },
+    'nutrition-hide-calories': {
+      label: 'Design pattern \u00b7 the healthier default',
+      title: 'The toggle is \u201Chide calories,\u201D not \u201Cchoose a view\u201D',
+      detail: 'A combined-by-default display respects the 6/7 who want specific numbers while preserving the motivational language P06 valued. The \u201Cmode\u201D collapses from a binary view selector to a single user preference: show or hide the calorie readout. For users whose relationship with calorie counting is healthier without it, the qualitative layer stands alone. For everyone else, they see both.',
+      meta: '5/7 said they\u2019d pick one view and stick with it. If both are combined by default, most users never need to toggle.'
+    },
+
+    // ---------- Slide 33 · F6 Reflections ----------
+    'refl-47': {
+      label: 'Finding 6 \u00b7 Evening reflections',
+      title: '4 of 7 engaged meaningfully. The other 3 have specific adoption conditions.',
+      list: [
+        { id: 'P04', text: 'Strong adoption. Existing gratitude journaler. Would replace handwritten journal with the app.' },
+        { id: 'P05', text: 'Conditional. Would engage once she saw the immediate AI-personalised feedback.' },
+        { id: 'P06', text: 'Conditional. Would use if habituated into the evening routine.' },
+        { id: 'P07', text: 'Conditional. \u201CI would more likely do it if it prompted me at the end of the day.\u201D [45:46]' },
+        { id: 'P02', text: 'Partial. Substituted AI Coach for the journaling surface.' },
+        { id: 'P03', text: 'Minimal. Typed \u201Cyes\u201D for every prompt. \u201CNatural to ask the questions. Whether I would have an answer, I don\u2019t know.\u201D [41:18]' },
+        { id: 'P01', text: 'Refused. \u201CI hate this.\u201D [51:46] Immediately followed by \u201CI actually like the app though.\u201D [53:01]' }
+      ],
+      meta: 'Reflections is a segment feature, not a universal one. The prototype intentionally didn\u2019t force adoption \u2014 so the refusal and the conditional positions are clean signals, not artefacts of forced usage.'
+    },
+    'refl-p04-replace': {
+      label: 'P04 \u00b7 Strongest endorsement',
+      title: '\u201CI would absolutely keep it like this. All in one place.\u201D [37:44]',
+      detail: 'P04 is an existing handwritten gratitude journaler. She was the only participant who articulated substitution: the app\u2019s evening reflection surface would replace her physical journal. That\u2019s a practical-utility win on top of the emotional-reflection design.',
+      meta: 'Consolidation framing \u2014 \u201Call in one place\u201D \u2014 recurs in her other quotes across the session. Reflections slot into her pattern of preferring one app for everything.'
+    },
+    'refl-p07-prompt': {
+      label: 'P07 \u00b7 Adoption condition',
+      title: 'A prompt at the end of the day would close the gap',
+      detail: '57F \u00b7 Zepbound \u00b7 5 months \u00b7 Tech comfort 5/7. Target demographic. P07 described her habit of checking her phone before bed \u2014 the exact window a bedtime push notification would slot into. The engagement barrier here is scheduling, not content.',
+      meta: 'P07\u2019s existing phone-before-bed habit is the most-cited behavioural hook for the adoption strategy. She also articulated the app\u2019s value proposition in the session\u2019s closing moments [53:48].'
+    },
+    'refl-p06': {
+      label: 'P06 \u00b7 Habituation path',
+      title: 'Conditional engagement \u2014 content recognised, habit not yet formed',
+      detail: '36F \u00b7 Zepbound \u00b7 2 months \u00b7 Tech comfort 6/7. P06 noticed the AI-personalised response to her reflection input and found it warm. Her engagement pattern is consistent with a newer GLP-1 user: willing to try, needs the app to do the scheduling.',
+      meta: 'Same adoption lever as P07 \u2014 a prompt at the right moment. The AI-feedback loop is a second complementary signal, not a replacement.'
+    },
+
+    // ---------- Slide 35 · Remediation priority matrix ----------
+    'tier-1-criteria': {
+      label: 'Tier 1 \u00b7 Fix before the diary study',
+      title: 'High impact on discoverability \u00b7 Low engineering effort',
+      detail: 'Four items that are visual-styling and UI-binding changes only \u2014 no information-architecture shifts, no new screens. Each item has direct first-session evidence from the cohort. The bundle lands before the pilot so diary-study telemetry measures the remediated product, not the prototype.',
+      meta: 'Scoped per item \u00b7 less than a sprint each. The toast + persistent-indicator pair ships together because a toast is only useful alongside a persistent state cue.'
+    },
+    'tier-2-criteria': {
+      label: 'Tier 2 \u00b7 Build alongside the diary study',
+      title: 'High impact \u00b7 Medium effort \u00b7 data-model or AI-integration changes',
+      detail: 'Four items where the design direction is clear but the engineering scope goes beyond styling \u2014 new views, new surfaces, notification infrastructure, or AI rewiring. These build in parallel with the diary study so they are ready for the next phase, and so the design can be iterated on using early field data.',
+      meta: 'Sequencing matters \u00b7 temporal navigation + nutrition combined view lead because they surfaced across the widest spread of participant needs.'
+    },
+    'tier-3-criteria': {
+      label: 'Tier 3 \u00b7 Monitor during the diary study',
+      title: 'Open questions where multi-day use is the best instrument',
+      detail: 'Four items the study itself will answer. In each case single-session testing is the wrong instrument \u2014 the question is about habit formation, discoverability over time, or demand frequency. We instrument telemetry rather than shipping remediation blind.',
+      meta: 'If Tier 3 items need action, they move to Tier 1 or 2 after the study \u2014 with stronger evidence than this session alone can provide.'
+    },
+
+    // ---------- Slide 36 · Diary study ledger ----------
+    'diary-core': {
+      label: 'Validated \u00b7 Core concept',
+      title: 'All seven participants understood and endorsed the integrated concept',
+      detail: 'Independent articulations of the app\u2019s purpose across the cohort \u2014 P07 \u201Cit\u2019s for someone taking this medication to track their entire wellness\u201D [13:14], P05 \u201Cit kind of combines a lot, more than one app\u201D [10:40], P04 \u201Cit\u2019s a nutritional app, it\u2019s a fitness app, it\u2019s everything wrapped up in one\u201D [48:26]. No participant required explanation of the app\u2019s value.',
+      meta: 'Validated in single-session use. The diary study will show whether that understanding translates into sustained multi-day engagement.'
+    },
+    'diary-q-sustain': {
+      label: 'Diary study \u00b7 Engagement sustainment',
+      title: 'Does first-session enthusiasm survive week four?',
+      detail: 'The novelty ceiling for interactive prototypes is well-known. Two months of daily use will show whether photo logging, body map, and AI Coach remain preferred methods or drop off after the initial habit-formation window.',
+      meta: 'Telemetry \u00b7 per-feature daily/weekly return rate, median session length, and 30-day + 60-day retention cohorts.'
+    },
+    'diary-features': {
+      label: 'Validated \u00b7 Feature-level value',
+      title: 'Three features generated first-session delight, all with distinct evidence',
+      detail: 'Photo meal logging \u2014 6/7 unprompted adoption + genuine surprise moments (P02, P05). Body map \u2014 7/7 positive, direct competitor comparisons from P02 and P05. AI Coach \u2014 7/7 post-discovery usefulness across all seven participants.',
+      meta: 'Validation is at the feature level. The diary study tests whether these features become the scaffolding of a daily habit.'
+    },
+    'diary-q-habits': {
+      label: 'Diary study \u00b7 Habit formation',
+      title: 'Do users form a daily tracking habit?',
+      detail: 'Single-session enthusiasm does not predict habit. The diary study measures what percentage of days per week each user logs a meal, logs an injection, reaches the AI Coach, and opens the app without prompting.',
+      meta: 'Habit threshold \u00b7 5-of-7 days logged for a feature, sustained across consecutive weeks. Falls short \u2192 adoption lever adjustment.'
+    },
+    'diary-coach-post': {
+      label: 'Validated \u00b7 AI Coach (post-discovery)',
+      title: 'Post-discovery usefulness is unanimous',
+      detail: 'Every participant who engaged with the Coach valued it. Use cases spanned progress summaries (P07), meal ideas (P03, P06), health questions (P01), side-effect management (P04), and emotional support (P05). The value signal is across use case, not concentrated in one.',
+      meta: 'Discoverability was the single gate \u2014 Finding 2. Remediations raise Coach prominence so the gate closes in the diary study.'
+    },
+    'diary-q-coach-curve': {
+      label: 'Diary study \u00b7 Coach usage curve',
+      title: 'Does usage increase, plateau, or decay over time?',
+      detail: 'P05\u2019s temporal model [42:29] predicts the curve: chat for onboarding, UI for maintenance. If she\u2019s right, Coach usage peaks in weeks 1\u20132 and settles to a lower steady-state. If Coach becomes a long-tail resource for open questions, usage plateaus higher than the logging features.',
+      meta: 'Telemetry \u00b7 weekly Coach sessions per user, message count per session, and category (progress / recipe / health / emotional / meal planning).'
+    },
+    'diary-learn': {
+      label: 'Validated \u00b7 Learning pathways',
+      title: 'Format understood, content engaged with by 7/7 who reached it',
+      detail: 'Pathway structure resonated. CBT / ACT foundations went unremarked as a framework \u2014 participants just found the content useful. The session discoverability gap belongs to Finding 1 (bottom-nav visibility), not to the Learn feature itself.',
+      meta: 'Once Tier 1 nav remediations ship, Learn discoverability should resolve. The diary study then tells us whether users use it.'
+    },
+    'diary-q-learn-return': {
+      label: 'Diary study \u00b7 Pathway completion + return',
+      title: 'Do users finish pathways? Do they come back?',
+      detail: 'P03 articulated the ceiling: \u201CFor somebody who is new, absolutely.\u201D [37:13] The question is segmentation \u2014 who completes pathways, who bails mid-way, and whether there\u2019s a return cohort for reference/re-read.',
+      meta: 'Telemetry \u00b7 pathway start rate, completion rate, lesson-level drop-off, and re-visit rate by user tenure on GLP-1 (bucketed).'
+    },
+    'diary-refl': {
+      label: 'Validated \u00b7 Reflections',
+      title: 'Segment feature, not universal \u2014 and the right response is segmentation',
+      detail: '4/7 meaningful engagement, 2/7 conditional, 1/7 refusal. This was the expected outcome. The P01 refusal + \u201CI actually like the app though\u201D [53:01] is a clean signal that opt-out doesn\u2019t damage overall app sentiment.',
+      meta: 'The diary study\u2019s job is not to prove reflections work for everyone \u2014 it\u2019s to find out what the adoption rate is when the bedtime prompt is live.'
+    },
+    'diary-q-refl-adopt': {
+      label: 'Diary study \u00b7 Reflection adoption rate',
+      title: 'What percentage of nights does the bedtime prompt produce a reflection?',
+      detail: 'P07\u2019s existing phone-before-bed habit is the hook we\u2019re designing for. Adoption success is a non-trivial minority \u2014 30\u201350% of nights for engaged users is realistic per comparable product data. Below 20% or above 70% would both be interesting signals.',
+      meta: 'Telemetry \u00b7 prompt-issued / reflection-completed rate per user per week, segmented by tech-comfort and GLP-1 tenure.'
+    },
+    'diary-f1': {
+      label: 'Validated \u00b7 Architecture',
+      title: 'The architecture is sound; Finding 1 is visual-styling',
+      detail: 'The P07 paradox is the strongest evidence: the least tech-comfortable participant navigated every feature on the first attempt. Where navigation failed for others, the cause was invisible affordance, not wrong information architecture. The Tier 1 remediations test that diagnosis.',
+      meta: 'If Tier 1 lands and discoverability improves in the diary study, the diagnosis is confirmed. If it doesn\u2019t, the architecture revisits.'
+    },
+    'diary-q-remed': {
+      label: 'Diary study \u00b7 Remediation efficacy',
+      title: 'Do Tier 1 remediations close the F1 discoverability gap?',
+      detail: 'Specifically \u00b7 does the restyled bottom nav land (measured by Learn tab tap frequency), does the persistent \u201Clast logged\u201D indicator reduce logging-confirmation confusion (measured by re-tap / double-log rate), and does the meds calendar today-tap become a used logging entry point (measured by its share of injection logs).',
+      meta: 'If efficacy holds, the architecture-is-sound hypothesis is validated at scale. The diary study is the test bed for the remediation set.'
+    },
+
+    // ---------- Slide 37 · Strategic takeaway ----------
+    'pillar-track': {
+      label: 'Pillar 01 \u00b7 Track',
+      title: 'Medication logging + nutrition + body map \u2014 three validated surfaces',
+      detail: 'Medication logging scored SEQ 6.6 with 7/7 full completion. Photo meal logging was the unanimous delight moment \u2014 6/7 chose it unprompted. Body map received universal approval at mean usefulness 6.7/7, and both P02 and P05 explicitly said it was better than their current tools.',
+      meta: 'Validated surfaces \u2192 Slides 14 (meal), 15 (body map), 30 (meds). The tracking layer is the app\u2019s daily-engagement anchor.'
+    },
+    'pillar-learn': {
+      label: 'Pillar 02 \u00b7 Learn',
+      title: 'Behavioural pathways + AI Coach \u2014 two complementary paths for the same need',
+      detail: 'Pathways (CBT- and ACT-grounded content) were engaged with by every participant who reached the section. AI Coach was found useful by 7/7 post-discovery, with value across exploration, questions, and coaching feedback. The design principle: structured content for self-directed learning, AI for open-ended exploration.',
+      meta: 'Validated \u2192 Slides 16 (Coach), 17 (Learning). Finding 2 (Slide 28\u201329) addresses the Coach discoverability gap; Learn resolves once Finding 1 bottom-nav remediations ship.'
+    },
+    'pillar-reflect': {
+      label: 'Pillar 03 \u00b7 Reflect',
+      title: 'Evening wind-down + journaling + catch-up logging \u2014 a segment feature by design',
+      detail: '4/7 meaningful engagement. P04 would replace her handwritten gratitude journal with it. P01 refused it and still endorsed the app. This is the edge case that proves the feature is opt-in by design, not a universal requirement.',
+      meta: 'Validated \u2192 Slide 33. Bedtime push + AI-personalised feedback + catch-up logging are the three adoption levers. Adoption rate is a diary-study question.'
+    },
+    'pillar-wellness': {
+      label: 'Wellness Score \u00b7 The unifying surface',
+      title: 'All seven participants decoded the rings unprompted',
+      detail: 'The home-screen Wellness Score was treated as primary navigation. P07 articulated it without hesitation: \u201CGood range, about three-quarters of where you should be.\u201D Participants tapped rings to drill into each pillar \u2014 Track, Learn, Reflect \u2014 without a prompt.',
+      meta: 'The score is the architectural anchor. Each pillar feeds it; users see it as their summary. Finding 1 remediations strengthen its surrounding affordances without changing its central role.'
     },
 
     // ---------- Slide 15 · Body map ----------
