@@ -395,6 +395,7 @@ Updated as each slide is built. File names/paths use the stable hooks wired into
 | Slide | Hook attribute | File path | Clip content | Status |
 |---|---|---|---|---|
 | s7 — Anchor quote | `data-video="p07-lifestyle-5348"` | `assets/videos/p07-lifestyle-5348.mp4` | P07 @ 53:48 "It's easy to take the medication and lose weight…" | ⏳ needed |
+| s19 — Value prop | `data-video="p07-modifylife-5252"` | `assets/videos/p07-modifylife-5252.mp4` | P07 @ 52:52 "You have to modify your life…" (distinct from s7) | ⏳ needed |
 | s14 — Photo meal logging | `data-video="p02-photomeal-2038"` | `assets/videos/p02-photomeal-2038.mp4` | P02 @ 20:38 "I didn't think it was gonna pick up the whole meal…" | ⏳ needed |
 | s15 — Body map | `data-video="p02-bodymap-1546"` | `assets/videos/p02-bodymap-1546.mp4` | P02 @ 15:46 "This is a lot better…" | ⏳ needed |
 | s16 — AI Coach | `data-video="p05-coach-3822"` | `assets/videos/p05-coach-3822.mp4` | P05 @ 38:22 "I personally don't have anyone…" | ⏳ needed |
