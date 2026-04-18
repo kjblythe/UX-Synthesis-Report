@@ -478,3 +478,42 @@ Add to the existing Session Start Protocol (Session 1 rules):
 - **Before writing any new slide copy, read the shipped slides immediately before and after the target position** and note the tone register. Match it. If the surrounding deck reads clean-declarative, do not drift into punchy-editorial.
 - **Maintain the phone-side rotation log** alongside bg/layout when auditing new slides.
 
+
+## Session 7 — 2026-04-18 — Build slides 31–38 (deck complete)
+
+Eight new slides built: F4 Temporal Navigation (s31), F5 Nutritional Display (s32, dual-phone), F6 Reflections Spectrum (s33), Section Starter · Recs & Next Steps (s34), Remediation Priority Matrix (s35, tiered waterfall), Diary Study Ledger (s36), Strategic Takeaway (s37, three-pillar diagram), and Closing · In Their Words (s38, diagonal montage). Deck is now 38 slides across 7 sections — the full blueprint scope.
+
+### Win: One-slide-at-a-time chunking discipline
+
+Built each slide in the sequence HTML → CSS → SLIDES array → paintThumb branch → CITATIONS. Committed the updates for each slide before moving to the next. Verification at every step (grep-check + node-eval). No rename-protocol bugs, no dropped CSS selectors, no orphan data-cite references. The Session 6 pattern of "build a batch, then fix the bugs at the end" costs more than "build one, check, move on."
+
+### Win: Dual-phone comparison as a spatial composition (s32)
+
+The layout at s32 (paper, two iPhone frames + centered `+` + synthesis band) was a new composition for the deck. Scaled each phone to 0.58 with a negative-margin trick on the column wrapper so the tall phone geometry compresses into the slide band. The `+` mark is a circle with a light teal fill — reads as "these combine," not "pick one." Phone-side rotation stays clean because s32 is a dual-phone composition (not same-side-as-s30).
+
+### Win: Tiered waterfall beats 2×2 matrix for priority (s35)
+
+Blueprint suggested "2×2 or tiered waterfall" for the priority matrix. Went with the waterfall: three horizontal bands with decreasing max-width (100% → 88% → 76%) that visually stages "must-fix → parallel-build → monitor" as a top-weighted pyramid. A 2×2 would have read as quadrant-generic and cropped the "12 items sequenced" story into four boxes. The stagger makes the priority visible.
+
+### Win: Directional-arrow ledger for the validated-vs-diary-study handoff (s36)
+
+Built as `grid-template-columns: 1fr 60px 1fr` with inline SVG arrows in the 60px middle column (NOT CSS-border triangles per Session 5 rule 48). Each row is a pair of chips — left side is declarative ("Core concept resonates"), right side is a diary-study question ("Does engagement sustain?"). The typography contrast (sans for validated, serif-italic for questions) carries the "what we know vs. what we'll learn" handoff.
+
+### Miss: Initial Playwright screenshot attempt used `location.hash` navigation
+
+`location.hash = 's31'` doesn't trigger `goTo()` in the current app (no hashchange listener rewires the slide pointer). The first screenshot pass captured slide 1 for every target. Fix: click the matching `.nav-item` directly — `document.querySelectorAll('.nav-item')[idx-1].click()`.
+
+**Rule going forward:** When visually verifying via Playwright, click nav items or call `window.goTo(idx)` directly. Hash-based navigation is for bookmark/URL state only, not programmatic jumping.
+
+### Miss: Reveal animation masks content in quick-capture screenshots
+
+The `.reveal` opacity-0 → opacity-1 transition has staggered delays (d1 = 120 ms, d2 = 220 ms, … up to d6 = 620 ms). A 280 ms post-click wait caught content mid-animation. Bumped to 1100 ms for reliable captures.
+
+**Rule going forward:** Post-navigation Playwright waits should be ≥ 1000 ms to let the full reveal cascade settle before screenshot.
+
+### Standing-rule additions from Session 7
+
+38. **Node-eval the CITATIONS and SLIDES literal after every slide build** to catch syntax errors before Playwright-level testing. `node -e "const C = (new Function('return (' + m[1] + ')'))();"` takes seconds and surfaces trailing-comma, bad-escape, and unterminated-string bugs earlier than page-render testing.
+39. **Inline SVG for arrows and connectors, not CSS-border triangles.** Rule 48 (Session 5) was about html2canvas safety — applies everywhere, not just tight-packed slides.
+40. **Dual-phone and multi-phone compositions count as their own phone-side rotation family.** Treat "dual-phone centered" as distinct from "phone-left" and "phone-right" when checking adjacency.
+
