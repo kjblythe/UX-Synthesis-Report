@@ -5065,65 +5065,68 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
 }
 
 /* ============ SLIDE 38 — CLOSING · IN THEIR WORDS (DIAGONAL MONTAGE) ============ */
-.s38 .slide-frame { padding: 68px 112px 68px 112px; display: flex; flex-direction: column; position: relative; }
+.s38 .slide-frame { padding: 68px 112px 72px 112px; display: flex; flex-direction: column; }
 .s38 .s38-watermark {
   position: absolute;
-  right: -120px; bottom: -60px;
+  right: -60px; bottom: 60px;
   width: 520px; height: 440px;
-  color: var(--mint); opacity: 0.04;
+  color: var(--mint); opacity: 0.05;
   pointer-events: none;
   z-index: 0;
 }
 .s38 .s38-stage {
   position: relative; flex: 1;
-  margin-top: 32px;
+  margin-top: 40px;
   z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto auto auto;
+  grid-template-areas:
+    "q1 q1"
+    "q2 q2"
+    "q3 q4"
+    "clip clip";
+  column-gap: 72px;
+  row-gap: 36px;
+  align-content: space-between;
 }
-.s38 .s38-q {
-  position: absolute; margin: 0;
-  max-width: 620px;
-}
-.s38 .s38-q-1 { top: 8px; left: 20px; max-width: 780px; }
-.s38 .s38-q-2 { top: 210px; right: 60px; max-width: 560px; text-align: right; }
-.s38 .s38-q-3 { top: 420px; left: 80px; max-width: 640px; }
-.s38 .s38-q-4 { top: 590px; right: 120px; max-width: 480px; text-align: right; }
+.s38 .s38-q { margin: 0; }
+.s38 .s38-q-1 { grid-area: q1; max-width: 1200px; }
+.s38 .s38-q-2 { grid-area: q2; justify-self: end; text-align: right; max-width: 760px; }
+.s38 .s38-q-3 { grid-area: q3; max-width: 560px; }
+.s38 .s38-q-4 { grid-area: q4; justify-self: end; text-align: right; max-width: 480px; align-self: end; }
 .s38 .s38-quote {
   font-family: var(--f-serif); font-style: italic; font-weight: 300;
-  font-size: 34px; line-height: 1.3; letter-spacing: -0.005em;
+  font-size: 28px; line-height: 1.3; letter-spacing: -0.005em;
   color: var(--on-dark);
-  margin: 0 0 12px 0;
+  margin: 0 0 10px 0;
 }
 .s38 .s38-q-1 .s38-quote {
-  font-size: 48px; font-weight: 300; line-height: 1.2;
+  font-size: 54px; font-weight: 300; line-height: 1.15;
   color: var(--mint);
+  margin-bottom: 14px;
 }
-.s38 .s38-q-2 .s38-quote, .s38 .s38-q-4 .s38-quote {
-  color: var(--teal-300);
-}
+.s38 .s38-q-2 .s38-quote { color: var(--teal-300); font-size: 30px; }
+.s38 .s38-q-3 .s38-quote { color: var(--on-dark); }
+.s38 .s38-q-4 .s38-quote { color: var(--teal-300); }
 .s38 .s38-cite {
-  font-family: var(--f-display); font-weight: 500;
+  font-family: var(--f-display); font-style: normal; font-weight: 500;
   font-size: 13px; letter-spacing: 0.06em;
   color: var(--on-dark-mute);
-  display: inline-flex; align-items: baseline; gap: 8px;
+  display: flex; align-items: baseline; gap: 10px;
+  flex-wrap: wrap;
 }
-.s38 .s38-q-2 .s38-cite, .s38 .s38-q-4 .s38-cite {
-  justify-content: flex-end;
-  display: flex;
-}
+.s38 .s38-q-2 .s38-cite, .s38 .s38-q-4 .s38-cite { justify-content: flex-end; }
 .s38 .s38-pid {
   font-family: var(--f-display); font-weight: 700;
-  font-size: 14px; letter-spacing: 0.04em;
+  font-size: 14px; letter-spacing: 0.06em;
   color: var(--mint);
 }
 .s38 .s38-ts {
   font-family: var(--f-mono); font-weight: 400; font-size: 12px;
   color: var(--on-dark-mute); letter-spacing: 0.02em;
 }
-.s38 .s38-clip {
-  position: absolute; bottom: 16px; right: 20px;
-  max-width: 340px;
-  z-index: 2;
-}
+.s38 .s38-clip { grid-area: clip; justify-self: end; max-width: 360px; margin-top: 12px; z-index: 2; }
 .s38 .s38-clip .clip-card.compact {
   background: rgba(10,26,28,0.55);
   border-color: rgba(94,234,212,0.28);
