@@ -1387,6 +1387,28 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
   border-bottom: 10px solid transparent;
   margin-left: 4px;
 }
+/* Canonical Dovetail waveform — 16 bars, same pattern across every clip card.
+   Heights defined here rather than inline so a single CSS edit re-tunes every
+   instance deck-wide. */
+.clip-waveform span { background: rgba(94,234,212,0.5); }
+.clip-waveform span:nth-child(1)  { height: 30%; }
+.clip-waveform span:nth-child(2)  { height: 54%; }
+.clip-waveform span:nth-child(3)  { height: 42%; }
+.clip-waveform span:nth-child(4)  { height: 68%; }
+.clip-waveform span:nth-child(5)  { height: 38%; }
+.clip-waveform span:nth-child(6)  { height: 78%; }
+.clip-waveform span:nth-child(7)  { height: 46%; }
+.clip-waveform span:nth-child(8)  { height: 62%; }
+.clip-waveform span:nth-child(9)  { height: 36%; }
+.clip-waveform span:nth-child(10) { height: 72%; }
+.clip-waveform span:nth-child(11) { height: 50%; }
+.clip-waveform span:nth-child(12) { height: 44%; }
+.clip-waveform span:nth-child(13) { height: 66%; }
+.clip-waveform span:nth-child(14) { height: 48%; }
+.clip-waveform span:nth-child(15) { height: 74%; }
+.clip-waveform span:nth-child(16) { height: 40%; }
+/* Duration pill hides until loadClipVideos populates it from real mp4 metadata */
+.clip-info-top .ts:empty, .clip-meta .ts:empty { display: none; }
 .clip-meta {
   display: flex; align-items: center; justify-content: space-between;
   margin-bottom: 10px;
@@ -4766,14 +4788,12 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
           <span>Dovetail clip</span>
         </div>
         <div class="clip-thumb">
-          <div class="clip-waveform" aria-hidden="true">
-            <span style="height:18%"></span><span style="height:32%"></span><span style="height:56%"></span><span style="height:72%"></span><span style="height:44%"></span><span style="height:84%"></span><span style="height:60%"></span><span style="height:36%"></span><span style="height:70%"></span><span style="height:50%"></span><span style="height:82%"></span><span style="height:46%"></span><span style="height:64%"></span><span style="height:30%"></span><span style="height:52%"></span><span style="height:78%"></span><span style="height:40%"></span><span style="height:60%"></span><span style="height:88%"></span><span style="height:48%"></span><span style="height:34%"></span><span style="height:62%"></span><span style="height:24%"></span><span style="height:56%"></span>
-          </div>
+          <div class="clip-waveform" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
           <div class="clip-play" aria-hidden="true"></div>
         </div>
         <div class="clip-meta">
-          <span class="pid">P07 &middot; 53:48</span>
-          <span class="ts">0:12</span>
+          <span class="pid">P07 @ 53:48</span>
+          <span class="ts"></span>
         </div>
         <div class="clip-quote">&ldquo;...you have to change your lifestyle.&rdquo;</div>
       </div>
@@ -5304,16 +5324,14 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
         <div class="meal-clip reveal d7" data-video="p02-meal-surprise-2038">
           <div class="clip-card compact" role="button" tabindex="0" aria-label="Play clip">
             <div class="clip-thumb">
-              <div class="clip-waveform" aria-hidden="true">
-                <span style="height:28%"></span><span style="height:54%"></span><span style="height:68%"></span><span style="height:36%"></span><span style="height:82%"></span><span style="height:44%"></span><span style="height:60%"></span><span style="height:72%"></span><span style="height:40%"></span><span style="height:88%"></span><span style="height:50%"></span><span style="height:34%"></span><span style="height:64%"></span><span style="height:46%"></span><span style="height:76%"></span><span style="height:56%"></span>
-              </div>
+              <div class="clip-waveform" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
               <div class="clip-play" aria-hidden="true"></div>
             </div>
             <div class="clip-info">
               <div class="clip-info-top">
                 <span class="rec-dot"></span>
                 <span class="clip-label-text">Dovetail clip &middot; P02 @ 20:38</span>
-                <span class="ts">0:10</span>
+                <span class="ts"></span>
               </div>
               <div class="clip-quote">&ldquo;I didn&rsquo;t think it was gonna pick up the whole meal&hellip;&rdquo;</div>
             </div>
@@ -5370,16 +5388,14 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
         <div class="bm-clip reveal d5" data-video="p02-bodymap-1546">
           <div class="clip-card compact" role="button" tabindex="0" aria-label="Play clip">
             <div class="clip-thumb">
-              <div class="clip-waveform" aria-hidden="true">
-                <span style="height:26%"></span><span style="height:44%"></span><span style="height:62%"></span><span style="height:38%"></span><span style="height:78%"></span><span style="height:50%"></span><span style="height:30%"></span><span style="height:68%"></span><span style="height:52%"></span><span style="height:40%"></span><span style="height:86%"></span><span style="height:56%"></span><span style="height:44%"></span><span style="height:72%"></span><span style="height:36%"></span><span style="height:60%"></span>
-              </div>
+              <div class="clip-waveform" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
               <div class="clip-play" aria-hidden="true"></div>
             </div>
             <div class="clip-info">
               <div class="clip-info-top">
                 <span class="rec-dot"></span>
                 <span class="clip-label-text">Dovetail clip &middot; P02 @ 15:46</span>
-                <span class="ts">0:08</span>
+                <span class="ts"></span>
               </div>
               <div class="clip-quote">&ldquo;This is a lot better&hellip;&rdquo;</div>
             </div>
@@ -5483,16 +5499,14 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
           <div class="s16-clip" data-video="p05-coach-3822">
             <div class="clip-card compact" role="button" tabindex="0" aria-label="Play clip">
               <div class="clip-thumb">
-                <div class="clip-waveform" aria-hidden="true">
-                  <span style="height:32%"></span><span style="height:58%"></span><span style="height:44%"></span><span style="height:70%"></span><span style="height:38%"></span><span style="height:82%"></span><span style="height:46%"></span><span style="height:60%"></span><span style="height:34%"></span><span style="height:72%"></span><span style="height:50%"></span><span style="height:40%"></span><span style="height:66%"></span><span style="height:48%"></span><span style="height:78%"></span><span style="height:42%"></span>
-                </div>
+                <div class="clip-waveform" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
                 <div class="clip-play" aria-hidden="true"></div>
               </div>
               <div class="clip-info">
                 <div class="clip-info-top">
                   <span class="rec-dot"></span>
                   <span class="clip-label-text">Dovetail clip &middot; P05 @ 38:22</span>
-                  <span class="ts">0:11</span>
+                  <span class="ts"></span>
                 </div>
                 <div class="clip-quote">&ldquo;It&rsquo;s just me, myself, and I&hellip;&rdquo;</div>
               </div>
@@ -5757,16 +5771,14 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
       <div class="s18-clip" data-video="p03-replace-5234">
         <div class="clip-card compact" role="button" tabindex="0" aria-label="Play clip">
           <div class="clip-thumb">
-            <div class="clip-waveform" aria-hidden="true">
-              <span style="height:28%"></span><span style="height:52%"></span><span style="height:38%"></span><span style="height:66%"></span><span style="height:44%"></span><span style="height:76%"></span><span style="height:34%"></span><span style="height:60%"></span><span style="height:46%"></span><span style="height:72%"></span><span style="height:40%"></span><span style="height:56%"></span><span style="height:64%"></span><span style="height:42%"></span><span style="height:58%"></span><span style="height:36%"></span>
-            </div>
+            <div class="clip-waveform" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
             <div class="clip-play" aria-hidden="true"></div>
           </div>
           <div class="clip-info">
             <div class="clip-info-top">
               <span class="rec-dot"></span>
               <span class="clip-label-text">Dovetail clip &middot; P03 @ 52:34</span>
-              <span class="ts">0:09</span>
+              <span class="ts"></span>
             </div>
             <div class="clip-quote">&ldquo;I would definitely consider replacing&hellip;&rdquo;</div>
           </div>
@@ -5800,19 +5812,17 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
         <span class="s19-mark" aria-hidden="true">&ldquo;</span>
         <blockquote>You have to <span class="s19-hl">modify your life</span>. This is not something you&apos;re just gonna lose weight on.</blockquote>
         <figcaption><button class="chip" data-cite="p07">P07</button> &middot; 57F &middot; Zepbound &middot; target demographic <span class="s19-ts">[52:52]</span></figcaption>
-        <div class="s19-clip" data-video="p07-lifestyle-5348">
+        <div class="s19-clip" data-video="p07-modifylife-5252">
           <div class="clip-card compact" role="button" tabindex="0" aria-label="Play clip">
             <div class="clip-thumb">
-              <div class="clip-waveform" aria-hidden="true">
-                <span style="height:30%"></span><span style="height:52%"></span><span style="height:42%"></span><span style="height:68%"></span><span style="height:40%"></span><span style="height:78%"></span><span style="height:46%"></span><span style="height:62%"></span><span style="height:36%"></span><span style="height:70%"></span><span style="height:48%"></span><span style="height:58%"></span><span style="height:64%"></span><span style="height:42%"></span><span style="height:56%"></span><span style="height:38%"></span>
-              </div>
+              <div class="clip-waveform" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
               <div class="clip-play" aria-hidden="true"></div>
             </div>
             <div class="clip-info">
               <div class="clip-info-top">
                 <span class="rec-dot"></span>
-                <span class="clip-label-text">Dovetail &middot; P07 @ 52:52</span>
-                <span class="ts">0:10</span>
+                <span class="clip-label-text">Dovetail clip &middot; P07 @ 52:52</span>
+                <span class="ts"></span>
               </div>
               <div class="clip-quote">&ldquo;Modify your life&hellip;&rdquo;</div>
             </div>
@@ -6337,16 +6347,14 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
       <div class="s26-clip" data-video="p07-techdiscomfort-0346">
         <div class="clip-card compact" role="button" tabindex="0" aria-label="Play clip">
           <div class="clip-thumb">
-            <div class="clip-waveform" aria-hidden="true">
-              <span style="height:30%"></span><span style="height:48%"></span><span style="height:38%"></span><span style="height:64%"></span><span style="height:44%"></span><span style="height:76%"></span><span style="height:34%"></span><span style="height:58%"></span><span style="height:50%"></span><span style="height:72%"></span><span style="height:42%"></span><span style="height:66%"></span><span style="height:38%"></span><span style="height:54%"></span><span style="height:46%"></span><span style="height:60%"></span>
-            </div>
+            <div class="clip-waveform" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
             <div class="clip-play" aria-hidden="true"></div>
           </div>
           <div class="clip-info">
             <div class="clip-info-top">
               <span class="rec-dot"></span>
               <span class="clip-label-text">Dovetail clip &middot; P07 @ 03:46</span>
-              <span class="ts">0:09</span>
+              <span class="ts"></span>
             </div>
             <div class="clip-quote">&ldquo;There&rsquo;s always some apps that challenge me&hellip;&rdquo;</div>
           </div>
@@ -6695,16 +6703,14 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
         <div class="s30-clip" data-video="p07-meds-1752">
           <div class="clip-card compact" role="button" tabindex="0" aria-label="Play clip">
             <div class="clip-thumb">
-              <div class="clip-waveform" aria-hidden="true">
-                <span style="height:34%"></span><span style="height:52%"></span><span style="height:42%"></span><span style="height:68%"></span><span style="height:40%"></span><span style="height:76%"></span><span style="height:44%"></span><span style="height:60%"></span><span style="height:50%"></span><span style="height:72%"></span><span style="height:38%"></span><span style="height:64%"></span><span style="height:46%"></span><span style="height:58%"></span><span style="height:48%"></span><span style="height:66%"></span>
-              </div>
+              <div class="clip-waveform" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
               <div class="clip-play" aria-hidden="true"></div>
             </div>
             <div class="clip-info">
               <div class="clip-info-top">
                 <span class="rec-dot"></span>
                 <span class="clip-label-text">Dovetail clip &middot; P07 @ 17:52</span>
-                <span class="ts">0:08</span>
+                <span class="ts"></span>
               </div>
               <div class="clip-quote">&ldquo;It literally says meds&hellip;&rdquo;</div>
             </div>
@@ -6948,6 +6954,15 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
       probe.onloadedmetadata = () => {
         card.classList.add('has-video');
         card.dataset.videoSrc = src;
+        // Populate the real duration into the .ts element (was empty placeholder until now).
+        const d = Math.floor(probe.duration || 0);
+        if (d > 0) {
+          const tsEl = card.querySelector('.clip-info-top .ts, .clip-meta .ts');
+          if (tsEl && !tsEl.textContent.trim()) {
+            const mm = Math.floor(d / 60), ss = d % 60;
+            tsEl.textContent = `${mm}:${String(ss).padStart(2,'0')}`;
+          }
+        }
         // First click swaps the thumb for a real <video controls autoplay>. Subsequent clicks are no-ops
         // (native controls take over). Escape / click-outside ends playback cleanly.
         const onClick = (e) => {
