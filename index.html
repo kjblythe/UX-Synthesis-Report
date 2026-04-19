@@ -3100,7 +3100,7 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
   display: flex; align-items: baseline; justify-content: space-between;
 }
 .s-howto .howto-close .line {
-  font-family: var(--f-serif); font-style: italic; font-size: 17px; color: var(--ink-2); letter-spacing: -0.005em;
+  font-family: var(--f-display); font-weight: 400; font-size: 14px; line-height: 1.45; color: var(--ink-mute);
 }
 .s-howto .howto-close .hint {
   font-size: 11px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-dim);
@@ -5392,18 +5392,18 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
   <div class="slide-frame">
     <div class="reveal d1" style="display:flex;align-items:center;justify-content:space-between">
       <div class="eyebrow">How to use this deck</div>
-      <div style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-dim);font-weight:500">Interactive research readout</div>
+      <div style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-dim);font-weight:500">4 interactive element types</div>
     </div>
     <div class="howto-head reveal d2">
-      <h1>A research readout, <span class="ital">not a slide show</span>.</h1>
-      <p class="howto-lede">Every participant ID, data point, and video card in this deck is tappable. Underneath each slide sits the full research spine &mdash; participant detail, per-task data, verbatim quotes, session moments &mdash; pulled in on demand so the surface stays clean.</p>
+      <h1>Four element types in this deck open supporting research detail on click.</h1>
+      <p class="howto-lede">Each opens a popover with participant context, per-task data, verbatim quotes, or the corresponding session recording. Opening a popover is not required to follow the slide. The interactive detail is supporting reference material.</p>
     </div>
     <div class="howto-grid reveal d3">
       <div class="howto-specimen">
         <div class="howto-spec-body">
           <div class="howto-spec-eb"><span class="n">01</span>Participant chips</div>
-          <div class="howto-spec-title">Click any P01&ndash;P07 pill.</div>
-          <p class="howto-spec-desc">Opens the participant&apos;s profile &mdash; demographics, current tools, tech comfort, and key moments from their session.</p>
+          <div class="howto-spec-title">Participant identifiers (P01&ndash;P07)</div>
+          <p class="howto-spec-desc">Each ID pill opens the participant&apos;s profile: demographics, GLP-1 medication and duration, self-rated tech comfort, currently-used health apps, and key moments from their session.</p>
         </div>
         <div class="howto-spec-demo">
           <button class="chip chip-inline" data-cite="p07">P07</button>
@@ -5413,9 +5413,9 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
       </div>
       <div class="howto-specimen">
         <div class="howto-spec-body">
-          <div class="howto-spec-eb"><span class="n">02</span>Data points</div>
-          <div class="howto-spec-title">Click any KPI or table cell.</div>
-          <p class="howto-spec-desc">Numbers carry their own context &mdash; per-participant breakdown, methodology notes, and the behavioural observation behind the figure.</p>
+          <div class="howto-spec-eb"><span class="n">02</span>Data pills and table cells</div>
+          <div class="howto-spec-title">KPI pills, SEQ scores, heat-matrix cells</div>
+          <p class="howto-spec-desc">Each opens the underlying data: per-participant breakdown, methodology notes, and the behavioural observation that the figure is drawn from.</p>
         </div>
         <div class="howto-spec-demo">
           <button class="kpi-pill chip-trigger" data-cite="seq-mean" aria-label="SEQ mean 6.4, details"><b>6.4</b><i>/7 SEQ</i><span class="kpi-hint" aria-hidden="true">?</span></button>
@@ -5425,9 +5425,9 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
       </div>
       <div class="howto-specimen">
         <div class="howto-spec-body">
-          <div class="howto-spec-eb"><span class="n">03</span>Dovetail clips</div>
-          <div class="howto-spec-title">Click any clip card.</div>
-          <p class="howto-spec-desc">Links straight to the moment in the Dovetail session recording. Ten clips flagged throughout the deck, tagged with participant and timestamp.</p>
+          <div class="howto-spec-eb"><span class="n">03</span>Dovetail clip cards</div>
+          <div class="howto-spec-title">Session-recording moments</div>
+          <p class="howto-spec-desc">Each clip card links to the flagged moment in the corresponding Dovetail session recording. Ten clips are placed across the deck, tagged with participant ID and session timestamp.</p>
         </div>
         <div class="howto-spec-demo demo-clip">
           <div class="clip-card compact" role="button" tabindex="0" aria-label="Play clip" data-video="p07-lifestyle-5348">
@@ -5448,8 +5448,8 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
       <div class="howto-specimen">
         <div class="howto-spec-body">
           <div class="howto-spec-eb"><span class="n">04</span>Slide navigator</div>
-          <div class="howto-spec-title">Press N, or use the left panel.</div>
-          <p class="howto-spec-desc">Jump between any of the 39 slides. Thumbnails are grouped by the six sections in the agenda. Arrow keys advance slide-by-slide.</p>
+          <div class="howto-spec-title">Left-side panel &middot; 39 slides, 6 sections</div>
+          <p class="howto-spec-desc">Lists every slide grouped by section. Keyboard shortcut N toggles the panel open and closed; arrow keys advance slide-by-slide; clicking a thumbnail jumps to that slide.</p>
         </div>
         <div class="howto-spec-demo">
           <span class="howto-key">N</span>
@@ -5459,8 +5459,8 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
       </div>
     </div>
     <div class="howto-close reveal d4">
-      <div class="line">Skim for the top-line story. Drill in where the numbers matter.</div>
-      <div class="hint">Built for stakeholder review</div>
+      <div class="line">Popovers close when clicking outside the card or using the close button.</div>
+      <div class="hint">PDF export &middot; navigator and popovers hidden</div>
     </div>
     <div class="slide-foot">
       <div class="foot-left">
