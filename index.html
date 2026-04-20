@@ -7305,7 +7305,7 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
     <div class="s27-foot reveal d4">
       <div class="s27-foot-left">
         <span class="s27-foot-eb">What gets measured in the pilot</span>
-        <p>Post-remediation, discoverability of the bottom nav, FAB, and confirmation states becomes a direct diary-study measure. The pilot will tell us whether the visual refinements resolve the issues in multi-day use.</p>
+        <p>If these remediations are applied, their effect on discoverability of the bottom nav, FAB, and confirmation states becomes directly measurable in the diary study under multi-day use.</p>
       </div>
       <div class="s27-foot-right">
         <button class="s27-cta chip-trigger" data-cite="ui-polish">
@@ -7980,16 +7980,16 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
   <div class="slide-frame">
     <div class="reveal d1" style="display:flex;align-items:center;justify-content:space-between">
       <div class="eyebrow">Remediation priority &middot; 3 tiers</div>
-      <div style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-dim);font-weight:500">4 before the pilot &middot; 4 during build &middot; 4 to monitor</div>
+      <div style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-dim);font-weight:500">4 should fix &middot; 4 nice to have &middot; 4 to monitor</div>
     </div>
     <div class="s35-head reveal d2">
-      <h1 class="s35-headline">Twelve items. Sequenced by what must land before the diary study, what should build alongside it, and what the study itself will teach us.</h1>
+      <h1 class="s35-headline">Twelve items across three tiers of recommendation: what should fix, what would be nice to have, and what the study itself will answer.</h1>
     </div>
     <div class="s35-tiers reveal d3">
       <div class="s35-tier s35-tier-1">
         <div class="s35-tier-head">
           <span class="s35-tier-num">Tier 01</span>
-          <span class="s35-tier-title">Fix before the diary study</span>
+          <span class="s35-tier-title">Should fix</span>
           <button class="s35-tier-meta chip-trigger" data-cite="tier-1-criteria">High impact &middot; Low effort</button>
         </div>
         <ul class="s35-tier-items">
@@ -8014,7 +8014,7 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
       <div class="s35-tier s35-tier-2">
         <div class="s35-tier-head">
           <span class="s35-tier-num">Tier 02</span>
-          <span class="s35-tier-title">Build alongside the diary study</span>
+          <span class="s35-tier-title">Nice to have</span>
           <button class="s35-tier-meta chip-trigger" data-cite="tier-2-criteria">High impact &middot; Medium effort</button>
         </div>
         <ul class="s35-tier-items">
@@ -8039,7 +8039,7 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
       <div class="s35-tier s35-tier-3">
         <div class="s35-tier-head">
           <span class="s35-tier-num">Tier 03</span>
-          <span class="s35-tier-title">Monitor during the diary study</span>
+          <span class="s35-tier-title">Monitor during study</span>
           <button class="s35-tier-meta chip-trigger" data-cite="tier-3-criteria">Questions multi-day use will answer</button>
         </div>
         <ul class="s35-tier-items">
@@ -9500,7 +9500,7 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
     'pl2-voice': {
       label: 'Limitation \u00b7 PL2',
       title: 'Microphone non-functional \u2014 and what it tells us',
-      detail: 'The prototype\u2019s voice input button was non-functional. Both P05 and P07 tried it. P07 explicitly attributed her T4 SEQ of 5 to this \u2014 if the voice had worked, her score would have been higher. The failure is a confirmed demand signal: voice input is wanted. We build it in production regardless of whether this session\u2019s T4 score deflation was the only reason to include it.',
+      detail: 'The prototype\u2019s voice input button was non-functional. Both P05 and P07 tried it. P07 explicitly attributed her T4 SEQ of 5 to this \u2014 if the voice had worked, her score would have been higher. The failure is a confirmed demand signal: voice input is wanted. Voice input is already part of the production build, independent of whether this session\u2019s T4 score deflation was the only reason to include it.',
       meta: 'Not a finding. A note that flags where prototype artefacts deflated a specific metric.'
     },
     'pl4-t4-range': {
@@ -9514,14 +9514,14 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
     'rem-low': {
       label: 'Complexity · Low',
       title: 'Low-effort remediation',
-      detail: 'Visual styling and component-level changes only. No data-model changes, no new screens, no information-architecture shifts. Scoped for the pre-pilot release.',
+      detail: 'Visual styling and component-level changes only. No data-model changes, no new screens, no information-architecture shifts.',
       meta: 'Estimated engineering effort · less than a sprint per item, often less than a day.'
     },
     'rem-med': {
       label: 'Complexity · Low\u2013Medium',
       title: 'Low-to-medium-effort remediation',
       detail: 'Toast restyling is low. Adding persistent \u201Clast logged\u201D indicators on the home screen touches state and data rendering \u2014 medium. Combined, the pair represents the largest change on the F1 remediation list.',
-      meta: 'Both pieces should ship together \u2014 a toast is only useful in combination with a persistent state cue.'
+      meta: 'Both pieces belong together \u2014 a toast is only useful in combination with a persistent state cue.'
     },
     'f1-last-logged': {
       label: 'Design detail · persistent state',
@@ -9648,22 +9648,22 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
 
     // ---------- Slide 35 · Remediation priority matrix ----------
     'tier-1-criteria': {
-      label: 'Tier 1 \u00b7 Fix before the diary study',
+      label: 'Tier 1 \u00b7 Should fix',
       title: 'High impact on discoverability \u00b7 Low engineering effort',
-      detail: 'Four items that are visual-styling and UI-binding changes only \u2014 no information-architecture shifts, no new screens. Each item has direct first-session evidence from the cohort. The bundle lands before the pilot so diary-study telemetry measures the remediated product, not the prototype.',
+      detail: 'Four items that are visual-styling and UI-binding changes only \u2014 no information-architecture shifts, no new screens. Each item has direct first-session evidence from the cohort. These are the highest-priority recommendations; if applied, their effect becomes directly measurable in the diary study.',
       meta: 'Scoped per item \u00b7 less than a sprint each. The toast + persistent-indicator pair ships together because a toast is only useful alongside a persistent state cue.'
     },
     'tier-2-criteria': {
-      label: 'Tier 2 \u00b7 Build alongside the diary study',
+      label: 'Tier 2 \u00b7 Nice to have',
       title: 'High impact \u00b7 Medium effort \u00b7 data-model or AI-integration changes',
-      detail: 'Four items where the design direction is clear but the engineering scope goes beyond styling \u2014 new views, new surfaces, notification infrastructure, or AI rewiring. These build in parallel with the diary study so they are ready for the next phase, and so the design can be iterated on using early field data.',
+      detail: 'Four items where the design direction is clear but the engineering scope goes beyond styling \u2014 new views, new surfaces, notification infrastructure, or AI rewiring. Not required for the diary study to run; opportunities for consideration if the product moves forward into further development.',
       meta: 'Sequencing matters \u00b7 temporal navigation + nutrition combined view lead because they surfaced across the widest spread of participant needs.'
     },
     'tier-3-criteria': {
-      label: 'Tier 3 \u00b7 Monitor during the diary study',
+      label: 'Tier 3 \u00b7 Monitor during study',
       title: 'Open questions where multi-day use is the best instrument',
-      detail: 'Four items the study itself will answer. In each case single-session testing is the wrong instrument \u2014 the question is about habit formation, discoverability over time, or demand frequency. We instrument telemetry rather than shipping remediation blind.',
-      meta: 'If Tier 3 items need action, they move to Tier 1 or 2 after the study \u2014 with stronger evidence than this session alone can provide.'
+      detail: 'Four items the study itself will answer. In each case single-session testing is the wrong instrument \u2014 the question is about habit formation, discoverability over time, or demand frequency. The recommendation is to measure via telemetry before any remediation is considered.',
+      meta: 'If the study surfaces evidence that a Tier 3 item needs action, it would move to a higher-priority recommendation at that point.'
     },
 
     // ---------- Slide 36 · Diary study ledger ----------
@@ -9707,7 +9707,7 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
       label: 'Validated \u00b7 Learning pathways',
       title: 'Format understood, content engaged with by 7/7 who reached it',
       detail: 'Pathway structure resonated. CBT / ACT foundations went unremarked as a framework \u2014 participants just found the content useful. The session discoverability gap belongs to Finding 1 (bottom-nav visibility), not to the Learn feature itself.',
-      meta: 'Once Tier 1 nav remediations ship, Learn discoverability should resolve. The diary study then tells us whether users use it.'
+      meta: 'If Tier 1 nav remediations are applied, Learn discoverability should resolve. The diary study then tells us whether users engage.'
     },
     'diary-q-learn-return': {
       label: 'Diary study \u00b7 Pathway completion + return',
@@ -9751,7 +9751,7 @@ body:fullscreen .topbar:hover, body:-webkit-full-screen .topbar:hover { opacity:
       label: 'Pillar 02 \u00b7 Learn',
       title: 'Behavioural pathways + AI Coach \u2014 two complementary paths for the same need',
       detail: 'Pathways (CBT- and ACT-grounded content) were engaged with by every participant who reached the section. AI Coach was found useful by 7/7 post-discovery, with value across exploration, questions, and coaching feedback. The design principle: structured content for self-directed learning, AI for open-ended exploration.',
-      meta: 'Validated \u2192 Slides 16 (Coach), 17 (Learning). Finding 2 (Slide 28\u201329) addresses the Coach discoverability gap; Learn resolves once Finding 1 bottom-nav remediations ship.'
+      meta: 'Validated \u2192 Slides 16 (Coach), 17 (Learning). Finding 2 (Slide 28\u201329) addresses the Coach discoverability gap; Learn resolves if Finding 1 bottom-nav remediations are applied.'
     },
     'pillar-reflect': {
       label: 'Pillar 03 \u00b7 Reflect',
